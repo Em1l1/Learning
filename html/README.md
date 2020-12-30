@@ -1,5 +1,7 @@
 # HTML
 
+[html y CSS](https://www.notion.so/Curso-definitivo-de-HTML-y-CSS-7196d473c6b046d2b8de4a0edaa82dc6)
+
 La web se conforma de tres conceptos:
 
     URL => Uniform Resource Locator.
@@ -22,7 +24,7 @@ No. 1
 
 ![](anatomia-web.webp)
 
-No. 2
+No. 2()
 
 ![](anatomia-web1.webp)
 
