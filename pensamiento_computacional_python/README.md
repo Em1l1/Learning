@@ -87,7 +87,7 @@ Interpretados - Traduce a lenguaje maquina
 
 Compilado Traduce - antes que ejecute las maquinas
 
-# objetos
+# Objetos
 
 Valores en memoria
 
@@ -102,9 +102,10 @@ Vector
 **Enteros o Flotantes**
 
 
-# Asignacion de Variables
+# Asignaci&oacute;n de Variables
 
 Asignaci&oacute;n 
+
 ```python 
 Face inicial de un novato: 
 
