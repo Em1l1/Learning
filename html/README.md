@@ -16,7 +16,7 @@ HTML es un estándar, así que no importa desde que navegador, que dispositivo s
 
 Anatomia de HTML
 
-* Formas de estructurar la anatomia de HTML
+* Estructura: Anatomia de HTML
 
 No. 1
 
@@ -34,13 +34,14 @@ No.4
 
 ![](anatomia-web4.webp)
 
-No. 5
-
-![](anatomia-web5.webp)
-
 # Etiqueta multimedia
 
 ## Tipos de Imgenes 
+
+Tabla de difrencias en las imagenes
+
+
+![](table_diferent.webp)
 
 > .jpg Comprimir las imagen al nivel estandar  que es de 100kb a 70kb, lo recomendable.
 
@@ -93,11 +94,11 @@ __Video__
 
 Etiequeta video: atributos
 
-* Controls: Agrega al video los controles para reproducir, pausar y adelantar
+* ***Controls:*** Agrega al video los controles para reproducir, pausar y adelantar
 
-* Prelod="auto": Hace que el navegador cargue el video, al acceder a la pagina
+* ***Prelod="auto":*** Hace que el navegador cargue el video, al acceder a la pagina
 
-* source:  especifica recursos de medios múltiples para los elementos ``` <picture> , <audio> , o <video> ```. Es un elemento vacío. Normalmente se utiliza para servir el mismo contenido multimedia en varios formatos soportados por diferentes navegadores
+* ***source:***  especifica recursos de medios múltiples para los elementos ``` <picture> , <audio> , o <video> ```. Es un elemento vacío. Normalmente se utiliza para servir el mismo contenido multimedia en varios formatos soportados por diferentes navegadores
 
 ```html
 <video controls preload="auto"><source src="" /></video>
