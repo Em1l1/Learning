@@ -10,7 +10,7 @@ HTML es el código que se utiliza para estructurar el contenido de tu web, y dar
 
 HTML son siglas, Hyper Text Markup Language (Lenguaje de Marcado de Hipertexto).
 Hyper Text  significa que el texto tiene interactividad, conexión con otros documentos.
-_Markup _significa que le pone etiquetas a los elementos. Por eso también se le conoce como un lenguaje de etiquetas.
+_Markup_ significa que le pone etiquetas a los elementos. Por eso también se le conoce como un lenguaje de etiquetas.
 HTML es un lenguaje interpretado.
 HTML es un estándar, así que no importa desde que navegador, que dispositivo se ejecute, es lo mismo en cualquier sitio. Sigue siendo el mismo código.
 
