@@ -1,0 +1,25 @@
+#suma calculadora
+#def operador(numero_1, numero_2):
+#	numero = input("En que numero pienzas " + numero_1 + "tienes un numero?: ")
+#	numero = input("Dame el segundo numero " + numero_2 )
+3#	numero = float(numero	numero = numero  + numero_1
+	Print("El resultado es" + numero)
+
+#Operaciones
+menu = """ Bienvenido al operador de numeros 
+
+1 - suma
+2 - resta
+3 - multiplicacion
+4 - division
+
+Elige una opcion: """
+
+opcion = int(input(menu))
+
+if opcion == 1:
+	operador("suma", numero_2)
+elif opcion == 2:
+	operador("resta", numero_2)
+else:
+	print('Ingresa una opcion correcta por favor')
