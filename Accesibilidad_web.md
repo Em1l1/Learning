@@ -33,7 +33,7 @@ WAI - Web Accessibility Initiative : Iniciativa dentro de W3C cuya meta es asegu
 
 | Perceptieble | Operables | Comprensible | Robusto |
 |-----|:------:|:-----:|--------|
-  1. Tratar de que todos los usuarios de una manera sencilla y fácil puedan percibir nuestro sitio.| 2. Tratar que nuestra sitio se pueda utilizar con otras herramientas que no sean el mouse o teclado.| 3.  Tratar de que nuestra sitio sea el usuario pueda entenderlo fácilmente.| 4. Que nuestro sitio puedo utilizar de mejor posible las herramientas (performance).|
+|1. Tratar de que todos los usuarios de una manera sencilla y fácil puedan percibir nuestro sitio.| 2. Tratar que nuestra sitio se pueda utilizar con otras herramientas que no sean el mouse o teclado.| 3.  Tratar de que nuestra sitio sea el usuario pueda entenderlo fácilmente.| 4. Que nuestro sitio puedo utilizar de mejor posible las herramientas (performance).|
 
  ### **Tecnologías asistivas:**
 
