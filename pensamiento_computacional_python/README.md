@@ -115,7 +115,7 @@ z = (a * x) / 2
 ```
 
 ```python
-Correcci&oacute;n de asignacion de variables:
+Correccion de asignacion de variables:
 
 base = 2
 altura = 4
