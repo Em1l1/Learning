@@ -1,0 +1,53 @@
+<html>
+    <head>
+    	<link rel="stylesheet" href="index.css" />
+    </head>
+    <body>
+    	<div id="container"></div>
+
+    	<script src="http://fb.me/react-with-addons-0.13.3.js"></script>
+    	<script src="http://fb.me/JSXTransformer-0.13.3.js"></script>
+    	<script type="text/jsx;harmon=true">
+    		var ReactCSSTransitionGroup = React.addons.CSSTranstionGroup;
+
+    		class TodoList extends React.Component{
+    		constructor(props) {
+    		super(props);
+    		this.state = { items: 'hello', 'world', 'click',
+    			'me' ] }
+       	  }
+
+       	  handleAdd() {
+       	  	var newItems = this.state.items.concat([prompt('Agregue una tarea')]);
+       	  	this.setSate({ items: newItems });
+       	  }
+       		handleRemove(i) {
+       		var newItems = this.state.items;
+       		newItems.splice(i, 1);
+       		this.setState({ items: newItems });
+      	  	}
+
+       		render(){
+       			return <div>
+       				<button onClick={this.handleAdd.bind(this)}>Agregar tarea</button>
+       				<ReactCSSTransitionGroup transitionName="example">
+       					{
+       						this.state.items.map((item, i)) => {
+       							return <div key={item} onClick={this.
+       								handleRemove.bind(this, i)}>
+       							 	{item}
+       							</div>
+       				    	})
+       					}
+       				</ReactCSSTransitionGroup>
+       			</div>
+       	  	}
+    	}
+
+    	React.render(
+    		<TodoList />,
+    		document.getElementById('container');
+    	)
+    	</script>
+    </body>
+</html>
