@@ -1,0 +1,2 @@
+class Pyment:
+  id = int

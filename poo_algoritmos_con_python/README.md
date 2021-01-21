@@ -8,6 +8,7 @@
 - [Instancias](#Instancias)
 - [Atributos de la instancia](#Atributos-de-la-instancia)
 - [Métodos de instancia](#Métodos-de-instancia)
+- [Tipos de datos abstractos y clases, Instancias](#Tipos-de-datos-abstractos-y-clases-Instancias)
 
 # Objetivos
   * Entender cómo funciona la Programación Orientado a Objetos
@@ -86,7 +87,7 @@ el cual podemos construir objetos específicos. La clase señala las propiedades
 que los hoteles que modelemos tendrán, pero no es ningún hotel específico. Para
 eso necesitamos las instancias.
 
-## Instancias
+### Instancias
 
 Mientras que las clases proveen la estructura, las instancias son los objetos
 reales que creamos en nuestro programa: un hotel llamado PlatziHotel o Hilton.
@@ -200,9 +201,9 @@ class Persona:
 >>> erika = Persona('erika', 32)
 
 >>> david.saluda(erika)
-'Hola Erika, me llamo Dvaid'
+'Hola Erika, me llamo David'
 ```
-Instancias
+## Instancias
 
 * Mientras que la clase es un molde, a los objetos creados se le conocen como instancias.
 * Cuando se crea una instancia, se ejecuta el m&eacute;todo ```__init__```
