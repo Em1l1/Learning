@@ -246,5 +246,21 @@ Ejemplo:
 
 ## ARIA states
 
+[ARIA Labels and Relationships](https://developers.google.com/web/fundamentals/accessibility/semantics-aria/aria-labels-and-relationships)
+
+
+
+    Lo importante es que las personas que navegan con un lector de pantalla le demos una experiencia casi igual a las personas que utilizan tecnologías asistivas
+
+Qué son
+
+Comunican estados y cambios de estados en elementos que se suelen comunicar visualmente. Tenemos que comunicar los diferentes estados que tengamos en nuestras aplicaciones a nuestros usuarios
+
+  **aria-hidden="true"** → nos ayuda a esconder el contenido del carrusel para que el Voice Over no lo lea cuando aún no hemos tenido interacción con el carrusel
+
+```html
+<li aria-hidden="true"><button><img src="/images/project4.png" class="project project4" alt="Mi cuarto proyecto"></button></li>
+<li aria-hidden="true"><button><img src="/images/project5.png" class="project project5" alt="Mi quinto proyecto" ></button></li>
+```
 
 # 5. Utilizar CSS para aumentar la acessibilidad de un sitio web
