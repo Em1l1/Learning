@@ -264,3 +264,131 @@ Comunican estados y cambios de estados en elementos que se suelen comunicar visu
 ```
 
 # 5. Utilizar CSS para aumentar la acessibilidad de un sitio web
+
+## Contrastes de color
+
+![](img/_color.webp)
+
+## Iconos
+
+Consulta agregarle una etique de title="" a cada enlace no seria correcto!? no romperia el diseño original y le agregaria ese texto para identificar cuando se hace :hover sobre el.
+
+```html
+<ul class=“social-media”>
+<li>
+<a
+href=“https://twitter.com/gmzjuliana"
+title=“Twitter"
+target=”_blank”
+><img src=“images/twitter.png” alt=“twitter”
+/></a>
+</li>
+<li>
+<a
+href=“https://github.com/gmzjuliana"
+title=“Github"
+target=”_blank”
+><img src=“images/github-logo.png” alt=“github”
+/></a>
+</li>
+<li>
+<a
+href="https://www.linkedin.com/in/gomezjuliana/“
+title=“LinkedIn"
+target=”_blank”
+><img src=“images/linkedin.png” alt=“linkedin”
+/></a>
+</li>
+</ul>
+```
+## Skip Links
+
+[Skip Links:](https://a11y-101.com/development/skip-link) son enlaces de página internos que ayudan a la navegación por la página actual, en lugar de a páginas completamente nuevas.
+
+Es lo más recomendable, gracias a ello tenemos por defecto este comportamiento habilitado.
+Antes de ello, aprendan bien a posicionar la etiqueta main, semánticamente tiene un orden que hay que cumplir.
+
+Si te preocupa la compatibilidad de Main: Incluso es aceptado por Internet Explorer 11 con la propiedad: width: tuvalor, pero para 2020 la el uso de este browser es del 2%, así que: Ni se preocupen ya por darle soporte, está “prácticamente muerto IE 11”
+
+## Estilos de foco y hover
+
+* [:focus-within](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-within)
+
+La pseudo-clase CSS :focus-within representa un elemento que ha recibido el foco o que contiene un elemento que ha recibido el foco.
+
+buenas prácticas para cuando escriban CSS.
+
+El orden de las propiedades dentro de los selectores si importa y tienen un orden:
+
+  -  Position
+  -  Modelo de caja
+  -  Texto
+  -  color
+  -  Miscelanea
+
+```css
+.button {
+  display: block;
+  width: 220px;
+  height: 40px;
+  position: relative;
+  text-transform: uppercase;
+  background-color: #fff;
+  @extend h1;
+}
+```
+
+# 6. Extender la accesibilidad usando JavaScript
+
+  ## Manejando el foco del teclado - botones
+
+  ## Manejando el foco del teclado - el carousel
+
+  **Tabindex**
+
+  Inidca si su elemento puede ser enfocado, y si participa en la navegaci&oacute;n secuencial del teclado.
+
+  Valores de Tabindex:
+
+  **Valor negativo(-1):** El elemento debe ser enfocado, pero no debe de ser accesible a través de la navegación.
+
+  **Valor positivo (>0):** Debe poder ser enfocado y su orden relativo es definido por el valor del atributo.
+
+  **Valor de 0:** Debe ser enfocado y ser accesible a través de la navegación secuencial del teclado, pero su orden relativo es definido por convención de la plataforma.
+
+  ## Coordinando el foco del teclado con el foco de lectores de pantallas
+
+  setAttribute: Agrega un nuevo atributo.
+
+  remoteAttribute: Elimina un atributo
+
+  ## Manejando modales
+
+  ## Mejorando la accesibilidad con teclado de nuestro modal
+
+*  [keycode](http://keycode.info/)
+
+El `focus()` se envía a un elemento cuando se enfoca. Este evento es implícitamente aplicable a un conjunto limitado de elementos, tales como elementos de formulario `( <input>, <select>, etc.)` y enlaces `( <a href>).` En versiones recientes del navegador, el evento se puede extender para incluir todos los tipos de elementos al establecer explícitamente la tabindexpropiedad del elemento . Un elemento puede enfocarse mediante comandos del teclado, como la tecla Tabulador, o haciendo clic con el mouse sobre el elemento.
+
+
+## Ayudando a nuestros usuarios a interactuar correctamente con el sitio
+
+> “El poder de la Web está en su universalidad. El acceso de todas las personas independientemente de la discapacidad es un aspecto esencial.”
+
+## Validando formularios
+
+El atributo es require (No recibe ningún valor)
+este atributo hace que al momento de hacer un submit, si el input en el que pusiste el require esta vacío, lo enfoca y nos avisa de forma automática que es obligatorio llenarlo.
+
+```html
+<label for="nombre">Nombre</label>
+<input type="text" name="nombre" id="nombre" require />
+```
+
+[require | html](https://www.w3schools.com/tags/att_input_required.asp)
+
+## Manejando cambios dinámicos
+
+**aria-live:** Se utilizan para establecer la prioridad con la que el lector de pantalla debe tratar a cambios a las regiones en vivo - los valores posibles son: off, politeo assertive. La configuración predeterminada es off. Este atributo es, con mucho, el más importante.
+
+[ARIA live regions](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions)
