@@ -170,11 +170,12 @@ Next character = Search + Shift + Right
 
 ## ARIA - Accessible Rich Internet Applications
 
-ARIA ( Accessible Rich Internet Applications ): Un conjunto de atributos especiales para accesibilidad que pueden añadirse a cualquier etiqueta, pero especialmente adaptado a HTML.
+ARIA (Accessible Rich Internet Applications): Un conjunto de atributos especiales para accesibilidad que pueden añadirse a cualquier etiqueta, pero especialmente adaptado a HTML.
 
 Fue creado por la W3C, lo crearon para que podamos comunicar cambios especiales en nuestras aplicaciones.
 
 * [ARIA]: Accessible Rich Internet Applications
+* [HTML]: Hyper Text Markup Language
 * [W3C]: World Wide Web Consortium
 
 
@@ -183,3 +184,67 @@ Fue creado por la W3C, lo crearon para que podamos comunicar cambios especiales 
   - Roles
   - Propiedades
   - Estados
+
+  ## ARIA roles
+
+  Roles de ARIA: Define el tipo general del objeto ( como un artículo, una alerta o un deslizador)
+
+Los roles le comunican al navegadores cuales son las interacciones que debería esperar y cómo se va a usar este objeto en nuestro proyecto. Se usan en situaciones muy especificas, es mejor depender del HTML semántico para comunicar los roles.
+
+
+  - Los roles definen el tipo general del objeto (como un artículo, una alerta o un deslizador)
+
+  - Comunican al navegador cuales son las interacciones que se debe esperar y como se va a usar este objeto dentro de nuestra página o aplicación
+
+  - Se usan en situaciones muy específicas
+
+  - Es una especificación muy difícil de usar
+
+  - Los navegadores y especialmente los lectores de pantalla navegan diferentes roles en diferentes estilos
+
+
+## ARIA properties
+Propiedades de ARIA: Comunican atributos que son esenciales para el comportamiento o significado de un elemento pero que suelen comunicar visualmente.
+
+`Atributo: “aria-label”`
+
+[HTML <label> for Attribute](https://www.w3schools.com/tags/att_label_for.asp)
+
+
+    Las propiedades ARIA la vamos a usar más seguido
+
+Qué son
+
+Comunican atributos que son esenciales para el comportamiento o significado de un elemento pero que se suelen comunicar visualmente
+
+    Agregar significado a nuestro contenido visual
+
+ARIA label
+
+    Podemos usar para agregar un string para describir un elemento de nuestro código
+    Aria Ejemplo:
+
+
+```html
+<form class="form-container">
+  Nombre<input type="text" aria-label="nombre"/> <br />
+  Correo<input type="text" aria-label="correo"/> <br />
+  <div class="message-input">Mensaje<input type="text" /> <br /></div>
+  <button class="send-button">Enviar</button>
+</form>
+```
+
+Ejemplo: 
+
+<form class="form-container">
+  Nombre<input type="text" aria-label="nombre"/> <br />
+  Correo<input type="text" aria-label="correo"/> <br />
+  <div class="message-input">Mensaje<input type="text" /> <br /></div>
+  <button class="send-button">Enviar</button>
+</form>
+
+
+## ARIA states
+
+
+# 5. Utilizar CSS para aumentar la acessibilidad de un sitio web
