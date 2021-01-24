@@ -1,6 +1,7 @@
 # Administracion de Servidores Linux
 ##### Jhon Edison Castro Sánchez
 
+# 1. Bases del sistema operativo
 
   ## Distribuciones más utilizadas de Linux
 
@@ -117,3 +118,196 @@ Por ejemplo, para añadir permisos de ejecución a nuestro usuario propietario u
 También podemos cambiar al usuario propietario del archivo con el comando `chown`.
 
   * `sudo chown nuevo-usuario:grupo-usuarios nombre-del-archivo`
+
+  ## Conociendo las terminales en linux 
+
+  Las distribuciones de Linux para servidores no incluyen interfaz gráfica, ya que consumen muchos recursos. Esto significa que siempre vamos a trabajar desde la terminal.
+
+Tendremos disponibles 6 terminales virtuales a las que podemos entrar o salir con las teclas Ctrl + Alt + Fx. También podemos usar el comando chvt. La séptima terminal es la interfaz gráfica, así que en este caso no disponemos de ella.
+
+Cada usuario activo en nuestro sistema operativo crea una nueva conexión. Podemos ver todas estas conexiones con los comandos who y w (este último nos da un poco más de información).
+
+Para ver todos los procesos que corren en el sistema podemos usar el comando ps. Para filtrar los procesos y ver únicamente las conexiones de los usuarios usamos ps -ft tty.
+
+Este comando nos muestra el identificador de cada proceso. Para terminarlo podemos usar el comando kill -9 PID.
+
+* [chmod](https://es.wikipedia.org/wiki/Chmod)
+
+## Manejo y monitoreo de procesos y recursos del sistema
+
+Para ver todos los procesos que corren en el sistema podemos usar el comando ps. Recuerda que puedes ver la documentación de este comando con el comando man ps.
+
+El comando grep nos ayuda a filtrar el resultado de un comando o archivo dependiendo de las palabras de cada línea. Para esto también vamos a usar el pipe (|), un símbolo que nos ayuda a enviar el resultado de un comando a un segundo comando.
+
+Por ejemplo, el comando ps aux | grep platzi imprime los procesos activos del sistema y, con ayuda del pipe, envía la lista al comando grep para filtrar el resultado, mostrando únicamente las líneas con la palabra platzi.
+
+* Ejecutar script en sengundo plano:
+
+  * script &
+  * nohup script & 
+
+|
+ps: Muestra los procesos corriendo. Modificadores:
+
+    aux: Muestra todos los procesos
+
+jobs: Al igual que el comando anterior, muestra los procesos. A diferencia de ps, es un comando interno de la terminal
+fg: Abre un proceso que estaba pausado
+nohup: Genera un archivo llamado “nohup.out” que muestra toda la información que produjo un proceso
+grep: Nos ayuda a filtrar el resultado de un comando o el contenido de un archivo dependiendo de las palabras (o incluso expresión regular) que le indiquemos
+|
+|
+Símbolos especiales
+|
+"|" Pipe: Envia el standard output de un comando al standard input de otro.
+"&" Ampersand: Envia un proceso al background
+"./": Ruta de archivo a ejecutar
+
+Pipe: Nos permite concatenar comandos
+ls -l | wc -l: cuantas lineas tiene este
+cat [peliculas.csv] | wc -l: nos indica cuantas lineas tiene este archivo.
+cat [peliculas.csv] | wc -l | grep [Thriller] wc -l : nos indica cuantas lineas tiene del parametro que estamos buscando.
+** cat movies.dat | grep Thriller | awk -F"::" '{printf("%s\n", $3)}’: nos imprime las categorias que contenga Thriller
+** cat movies.dat | grep Thriller | awk -F"::" ‘{printf("%s\n", $3)}’ | grep -v Comedy : grep -v evitamos que no nos imprima el parametro que le mandamos.
+
+  ## Monitoreo de recursos del sistema
+
+El comando top nos permite interactuar con una interfaz gráfica que nos muestra información específica del sistema operativo: cantidad de usuarios, tareas corriendo o “durmiendo”, identificadores de los procesos, entre otras.
+
+Para ver la información de la CPU podemos usar el comando cat /proc/cpuinfo | grep "processor". Recuerda que Linux hace diferencia entra mayúsculas y minúsculas, pero puedes usar el comando grep -i para filtrar sin estas diferencias.
+
+Para ver la información de la memoria podemos usar el comando free o, para que la información sea más fácil de leer, free -h. Y para ver el uso del disco duro está el comando du o du -hsc.
+
+Comandos
+|
+|
+top: Muestra la siguiente información del sistema:
+
+    load average (carga promedio): Provee una representación en números del 1 al número de procesadores que tenga nuestro servidor del uso de los mismos.
+    Uso de la memoria
+    Cantidad de usuarios
+    Uso del CPU
+    Procesos
+    Etc
+
+free: Me muestra información sobre la memoria de mi sistema. Con el modificador -h la información es más legible para un humano
+du: Muestra información sobre el disco duro. Con el modificador -hsc y un directorio especificado muestra el tamaño de ese directorio
+htop: Funciona como top pero funciona de forma más intuitiva
+|
+Comandos útiles
+|
+cat /proc/cpuinfo | grep "processor": Muestra información sobre el CPU
+sudo ps auxf | sort -nr -k 3 | head -5: Muestra los 5 procesos que más uso hacen del CPU
+sudo ps auxf | sort -nr -k 4 | head -5: Muestra los 5 procesos que más uso hacen de la memoria RAM
+
+# 2. Instalación y manejo de software en Linux
+
+## Análisis de los parámetros de red
+
+Una IP es un identificador único para los equipos que están conectados a una red.
+
+Las IPs Privadas se utilizan para identificar los dispositivos dentro de una red local. Por ejemplo: los dispositivos conectados en tu casa u oficina.
+
+Las IPs Públicas son la que se asignan a cualquier dispositivo conectado a Internet. Por ejemplo: los servidores que alojan tus sitios web, el router que te da acceso a internet, entre otros.
+
+Si tu dispositivo tiene una IP pública significa que puede conectarse a otro que también tenga una. Por esto mismo, no puede haber dos dispositivos con la misma IP pública.
+
+Para encontrar la dirección IP de nuestros dispositivos podemos usar los comandos ifconfig en Linux y Mac o ipconfig en Windows. También podemos usar el comando ip a.
+
+Para ver el nombre/identificador de nuestro equipo en todas las redes podemos usar el comando hostname. También podemos ver qué dispositivo nos permite acceso a Internet con el comando route -n.
+
+Para identificar las IPs de diferentes dominios podemos usar el comando nslookup nombredominio.ext. También podemos usar el comando curl para realizar consultas a algún servidor.
+
+<h1>2.1 Análisis de los parámetros de red</h1>
+
+En la administración de servidores siempre existen IPs privadas e IPs públicas.
+
+La ip pública:
+Permite una conexión remota desde cualquier lugar al servidor, mediante el protocolo SSH.
+
+ifconfig ==> Interface Configuration
+Se enlistan las tarjetas que tenemos y su direccionamiento especifico.
+
+ip a ==> ip address show
+También muestra la información de la red.
+Algunos modificadores para este comando son -4 para listar solo las ipv4 ó -6 para listar las ipv6.
+
+hostname
+Para visualizar el nombre del equipo, este hostname es como se identifica el equipo en las redes.
+
+route -n
+Para visualizar la puerta de enlace predeterminada del equipo. Muestra la IP routing table.
+
+nslookup nombredominio
+Para visualizar la ip de cualquier dominio especifico.
+
+curl
+Puede realizar simulaciones como las que hace Postman.
+
+wget nombredominio
+Para obtener información desde internet.
+
+[Herramientas de desarrollo Backend: JSON Viewer y Postman](https://platzi.com/clases/1650-prework/21963-herramientas-de-desarrollo-backend-json-viewer-y-p/)
+
+## Administración de paquetes acorde a la distribución
+
+Cada distribución de Linux maneja su software de maneras diferentes.
+Red Hat / CentOS / Fedora
+
+Su gestor de paquetes es .rpm (Red hat Package Manager). La base de datos de este gestor está localizada en /var/lib/rpm.
+
+El comando rpm -qa nos permite listar todos los rpms instalados en la máquina. Con rpm -i nombre-del-paquete.rpm instalamos los paquetes y con rpm -e nombre-del-paquete.rpm los removemos el sistema.
+
+Los paquetes se pueden instalar desde un repositorio sin tener que conocer la ruta del archivo o las dependencias con el comando yum install nombre-del-paquete.
+
+También podemos buscar paquetes más específicos con el comando yum search posible-nombre-del-paquete .
+Debian / Ubuntu
+
+Su administración de paquetes es .deb. Podemos realizar las instalaciones con dpkg -i nombre-del-paquete.deb o repositorios apt.
+
+Su base de datos está localizada en /var/lib/dpkg. Con el comando dpkg -l listamos todos los debs instalados en la máquina. Instalamos los paquetes con dpkg -i nombre-del-paquete y los removemos del sistema con dpkg -r nombre-del-paquete.
+
+Si ya tenemos software configurado podemos usar el comando dpkg-reconfigure nombre-paquete para volver a ejecutar el asistente de configuración (si está disponible).
+
+También podemos realizar las instalaciones con el comando apt install nombre-paquete y búsquedas de paquetes con apt search posible-nombre-paquete.
+
+
+
+    Red Hat / CentOS / Fedora
+        .rpm Red Hat Package Manager.
+            Base de datos RPM, localizada en var/lib/rpm
+            rpm -qa Listar todos los rpms instalados en la máquina. (query all)
+            rpm -i paquete.rpm Realizar la instalación de un paquete. (install)
+            rpm -e paquete.rpm Remover un paquete del sistema. (erase)
+        Repositorios yum Permite instalar un paquete desde un repositorio sin tener que conocer la ruta del archivo o las dependencias.
+            yum install paquete
+    Debian / Ubuntu
+        .deb Debian package management.
+            Base de datos DPKG, localizada en /var/lib/dpkg
+            dpkg -l Listar todos los debs instalados en la máquina.
+            dpkg -i paquete.deb Realizar la instalación de un paquete.
+            dpkg -r paquete.deb Remover un paquete del sistema.
+        dpkg-reconfigure
+            dpkg-reconfigure paquete Volver a ejecutar el asistente de configuración si está disponible.
+        repositorios apt otra forma de instalar.
+            apt install paquete
+
+
+## Manejo de paquetes en sistemas basados en Debian
+
+Antes de actualizar el software de nuestro sistema debemos ejecutar el comando sudo apt update para saber qué paquetes pueden actualizarse y desde dónde se realizará la descarga. Luego de esto podremos actualizar todas las herramientas del sistema usando el comando sudo apt upgrade.
+
+Recuerda que todo lo que tenga que ver con actualizaciones o modificaciones del sistema operativo necesitará permisos con sudo. También necesitarás conexión a Internet.
+
+Manejo de paquetes en sistemas basados en Debian
+|
+Comandos útiles
+|
+sudo apt update: Actualiza la información local sobre los repositorios de Ubuntu
+sudo apt upgrade: Actualiza todos los programas que tenemos instalados en la máquina
+sudo snap install paquete: Instala un paquete con el nuevo gestor de paquetes de Canonical, snap
+date: Imprime la fecha actual
+
+[Canonical Livepatch Service](https://ubuntu.com/security/livepatch)
+
+[Snapcraft | Getting started](https://snapcraft.io/docs/getting-started#5)
