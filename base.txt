@@ -1,0 +1,15 @@
+
+	Hola, que tal como estas?
+
+	Te Escribo desde un archivo, bash shell
+
+
+
+
+
+
+	Shell Scripting Tutoriales
+
+
+
+scritp, scripts
