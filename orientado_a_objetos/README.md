@@ -1,4 +1,47 @@
 # Programación Orientada a Objetos?
+#### Isis Garcia
+
+# Tabla de contenido
+- [Programación Orientado a Objetos](#Programación-Orientado-a-Objetos)
+- [¿Qué resuelve la Programación Orientada a Objetos?](#¿Qué-resuelve-la-Programación-Orientada-a-Objetos?)
+- [Paradigma Orientado a Objetos](#Paradigma-Orientado-a-Objetos)
+- [Lenguajes Orientados a Objetos](#Lenguajes-Orientados-a-Objetos)
+- [Configurar Entorno de Desarrollo](#Configurar-Entorno-de-Desarrollo)
+- [Diagramas de Modelado](#Diagramas-de-Modelado)
+  - [Diagramas de Modelado](#Diagramas-de-Modelado)
+  - [Asignaci&oacute;n](#Asignaci&oacute;n)
+  - [Herencia](#Herencia)
+  - [Agregación](#Agregación)
+  - [Composición](#Composición)
+- [Objetos](#Objetos)
+- [Abstracción y Clases](#Abstracción-y-Clases)
+- [Modularidad](#Modularidad)
+- [Clase](#Clase)
+- [lases en UML y su sintaxis en código](#lases-en-UML-y-su-sintaxis-en-código)
+- [Clase - objeto](#Clase---objeto)
+- [¿Qué es la herencia?](#¿Qué-es-la-herencia?)
+  - [Reto Adopci&oacute;n de Animales](#Reto-Adopci&oacute;n-de-Animales)
+  - [efiniendo clases](#efiniendo-clases)
+  - [Objetos, método constructor y su sintaxis en código](#Objetos,-método-constructor-y-su-sintaxis-en-código)
+- [M&eacute;todo constructor](#M&eacute;todo-constructor)
+- [Clases en Java y Python](#Clases-en-Java-y-Python)
+- [Declarando un Método Constructor en Java y JavaScript](#Declarando-un-Método-Constructor-en-Java-y-JavaScript)
+- [JavaScript orientado a objetos](#JavaScript-orientado-a-objetos)
+- [Declarando un Método Constructor en Python](#Declarando-un-Método-Constructor-en-Python)
+- [herencia](#herencia)
+  - [Javas y PHP](#Javas-y-PHP)
+  - [Otros tipos de Herencia](#Otros-tipos-de-Herencia)
+- [Encapsulamiento](#Encapsulamiento)
+- [Getters y Setters Python](#Getters-y-Setters-Python)
+- [Generando polimorfismo en Java](#Generando-polimorfismo-en-Java)
+- [El Diagrama UML de Uber](#El-Diagrama-UML-de-Uber)
+  - [Asociación](#Asociación)
+  - [herencia](#herencia)
+  - [Composición](#Composición)
+- [](#)
+- [](#)
+
+## Programación Orientado a Objetos
 Vas a programar más rápido. Tener un análisis previo de lo que estás realizando te ayudará a generar código mucho más veloz
 
 Dejas de ser Programador Jr. Podrás responder preguntas como ¿Qué es encapsulamiento?, ¿Qué es Abstracción?, ¿Qué es Herencia?, ¿Qué es Polimorfismo? en futuras entrevistas de trabajo
@@ -366,11 +409,11 @@ Transcribamos el código JavaScript que generamos en la clase anterior a este nu
 
   ## Declarando un Método Constructor en Python 
 
-  En Python encontrarás un concepto denominado Métodos Mágicos, estos métodos son llamados automáticamente y estrictamente bajo ciertas reglas. El método constructor en Python forma parte de esta familia de métodos y como aprendimos en la clase anterior lo declaramos usando ```__init__```, aunque si nos ponemos estrictos este método no construye el objeto en sí. El encargado de hacer esto es ```__new__``` y el método ```__init__``` se encargará de personalizar la instanciación de la clase, esto significa que lo que esté dentro de ```__init__``` será lo primero que se ejecute cuando se cree un objeto de esta clase.
+  En Python encontrarás un concepto denominado Métodos Mágicos, estos métodos son llamados automáticamente y estrictamente bajo ciertas reglas. El método constructor en Python forma parte de esta familia de métodos y como aprendimos en la clase anterior lo declaramos usando `__init__`, aunque si nos ponemos estrictos este método no construye el objeto en sí. El encargado de hacer esto es `__new__` y el método `__init__` se encargará de personalizar la instanciación de la clase, esto significa que lo que esté dentro de `__init__` será lo primero que se ejecute cuando se cree un objeto de esta clase.
 
-  Para nuestro proyecto tenemos la necesidad de que algunas variables se inicialicen obligatoriamente cuando ocurra la instanciación. Así que declaremos el método ```__init__``` en las clases de nuestro proyecto con las propiedades obligatorias.
+  Para nuestro proyecto tenemos la necesidad de que algunas variables se inicialicen obligatoriamente cuando ocurra la instanciación. Así que declaremos el método `__init__` en las clases de nuestro proyecto con las propiedades obligatorias.
 
-  Para la clase Account quedaría algo así, notarás que usamos la palabra clave self, esta es muy parecida a lo que venimos trabajando a otros lenguajes con this. Y como su nombre lo dice hace referencia a los datos que componen la clase, en este caso ```self.name``` está llamando al atributo name que se encuentra en la línea 3 de la clase y, le está asignando el dato que se pasa en el método ```__init__``` de la línea 8.
+  Para la clase Account quedaría algo así, notarás que usamos la palabra clave self, esta es muy parecida a lo que venimos trabajando a otros lenguajes con this. Y como su nombre lo dice hace referencia a los datos que componen la clase, en este caso `self.name` está llamando al atributo name que se encuentra en la línea 3 de la clase y, le está asignando el dato que se pasa en el método `__init__` de la línea 8.
 
 # herencia
 
@@ -388,11 +431,11 @@ En clases anteriores te mencioné que otro punto de partida que puedes tomar par
 
 Notarás que a nivel de código parece inservible pero cuando estemos en el caso de uso Pagar un Viaje, probablemente en ese momento no sabremos cuál es el método de pago, y necesitemos ingresar un dato lo suficientemente genérico que conceptualmente nos dé la información que necesitamos, en este caso que es un Payment. Este es un tipo de Polimorfismo y uno de los principios SOLID del software que obedece a la Inyección de Dependencias. Lo veremos más adelante a detalle.
 
-# Encapsulamiento:
+# Encapsulamiento
 
 Es hacer que los datos sean inviolables, inalterable o hacer que se esconda, cuando se le asigne un Modificador de Acceso.
 
-Modificadores de Acceso:
+**Modificadores de Acceso:**
 
 Public: Es el mas permisivos de todos, Accede a todo.
 Protected: Podrá ser accedido por la clase, paquetes y subclases.

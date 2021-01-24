@@ -9,6 +9,7 @@
 - [Atributos de la instancia](#Atributos-de-la-instancia)
 - [Métodos de instancia](#Métodos-de-instancia)
 - [Tipos de datos abstractos y clases, Instancias](#Tipos-de-datos-abstractos-y-clases-Instancias)
+- [Instancias](#Instancias)
 
 # Objetivos
   * Entender cómo funciona la Programación Orientado a Objetos
