@@ -1,6 +1,62 @@
 # Pensamiento Computacional con Python   
 _David Aroesti_
 
+# Tabla de Contenido
+- [History](#History)
+  - [C&oacute;mputo y computadoras](#C&oacute;mputo-y-computadoras)
+- [Lenguajes de Programaci&oacute;n](#Lenguajes-de-Programaci&oacute;n)
+  - [¿Qué es un lenguaje de programación?](#¿Qué-es-un-lenguaje-de-programación?)
+  - [¿Qué tipos de lenguaje de programación existen?](#¿Qué-tipos-de-lenguaje-de-programación-existen?)
+  - [Lenguaje de programación de bajo nivel](#Lenguaje-de-programación-de-bajo-nivel)
+  - [Lenguaje máquina](#Lenguaje-máquina)
+  - [Lenguaje ensamblador](#Lenguaje-ensamblador)
+- [Lenguaje de programación de alto nivel](#Lenguaje-de-programación-de-alto-nivel)
+  - [Traductor](#Traductor)
+  - [Compilador](#Compilador)
+- [Objetos](#Objetos)
+- [Tipos](#Tipos)
+- [Escalares -  No Escalares](#Escalares---No-Escalares)
+- [Asignaci&oacute;n de Variables](#Asignaci&oacute;n-de-Variables)
+  - [__Garbage Colletor__](#_Garbage-Colletor_)
+- [Variables y Entradas](#Variables-y-Entradas)
+  - [Entradas](#Entradas)
+- [Programas Ramificados](#Programas-Ramificados)
+  - [Iteraciones - Loops](#Iteraciones---Loops)
+- [Bucles for](#Bucles-for)
+  - [Representaci&oacute;n de flotantes](#Representaci&oacute;n-de-flotantes)
+- [Programas Num&eacute;ricos](#Programas-Num&eacute;ricos)
+  - [Enumeraci&oacute;n Exhaustiva](#Enumeraci&oacute;n-Exhaustiva)
+  - [Aproximaci&oacute;n de Soluciones](#Aproximaci&oacute;n-de-Soluciones)
+  - [B&uacute;squeda binaria](#B&uacute;squeda-binaria)
+- [Funciones y astraci&oacute;n](#Funciones-y-astraci&oacute;n)
+  - [Descomposici&oacute;n](#Descomposici&oacute;n)
+  - [Scope o Alcance](#Scope-o-Alcance)
+- [Especificaciones del c&oacute;digo](#Especificaciones-del-c&oacute;digo)
+  - [Recursividad](#Recursividad)
+  - [Factoriales](#Factoriales)
+  - [Recursividad](#Recursividad)
+- [Tipos estructurados, mutabilidad y funciones de alto nivel](#Tipos-estructurados,-mutabilidad-y-funciones-de-alto-nivel)
+  - [Tuplas](#Tuplas)
+  - [Rangos](#Rangos)
+  - [Listas y mutabilidad](#Listas-y-mutabilidad)
+  - [Clonaci&oacute;n](#Clonaci&oacute;n)
+  - [List comprehension](#List-comprehension)
+  - [Diccionarios](#Diccionarios)
+- [Pruebas y debugging](#Pruebas-y-debugging)
+  - [Prueba de caja negra](#Prueba-de-caja-negra)
+  - [Preubas de caja de cristal](#Preubas-de-caja-de-cristal)
+- [Debugging](#Debugging)
+  - [Reglas generales](#Reglas-generales)
+    - [Diseño de experimentos](#Diseño-de-experimentos)
+    - [Errores comunes](#Errores-comunes)
+- [Excepciones y afirmaciones](#Excepciones-y-afirmaciones)
+  - [Manejo de excepcio](#Manejo-de-excepcio)
+  - [Excepciones comunes](#Excepciones-comunes)
+  - [Afirmaciones](#Afirmaciones)
+
+
+## History
+
   “Primera computadora” creada por los griegos, calcula la posición del sol, luna y algunas constelaciones.
 
   En 1801, Telar de Jacquar, separa el resultado de la informacion que contiene las instrucciones.
@@ -46,7 +102,7 @@ _David Aroesti_
 
 * Es el más primitivo de los lenguajes y es una colección de dígitos binarios o bits (0 y 1) que la computadora lee e interpreta y son los únicos idiomas que las computadoras entienden.
 
-  Ejemplo: 10110000 01100001
+  Ejemplo: `10110000 01100001`
 
 * No entendemos muy bien lo que dice ¿verdad? Por eso, el lenguaje ensamblador nos permite entender mejor a qué se refiere éste código.
 
@@ -60,7 +116,7 @@ _David Aroesti_
 
 * Este genera códigos compactos, rápidos y eficientes creados por el programador que tiene el control total de la máquina.
 
-* Ejemplo: MOV AL, 61h (asigna el valor hexadecimal 61 al registro “AL”)
+* Ejemplo: `MOV AL, 61h (asigna el valor hexadecimal 61 al registro “AL”)`
 
 ## Lenguaje de programación de alto nivel
 
@@ -73,19 +129,19 @@ _David Aroesti_
 
 ### Compilador
 
-* Permite traducir todo un programa de una sola vez, haciendo una ejecución más rápida y puede almacenarse para usarse luego sin volver a hacer la traducción.
+Permite traducir todo un programa de una sola vez, haciendo una ejecución más rápida y puede almacenarse para usarse luego sin volver a hacer la traducción.
 
-Alto Nivel - Entenden los humanos
+* **Alto Nivel** - Entenden los humanos
 
-Bajo Nivel - Solo maquinas la entienden
+* **Bajo Nivel** - Solo maquinas la entienden
 
-General - 
+* **General** - 
 
-Dominio Especifico - targetiados a aplicaciones especificas
+* **Dominio Especifico** - targetiados a aplicaciones especificas
 
-Interpretados - Traduce a lenguaje maquina
+* **Interpretados** - Traduce a lenguaje maquina
 
-Compilado Traduce - antes que ejecute las maquinas
+* **Compilado Traduce** - antes que ejecute las maquinas
 
 # Objetos
 
@@ -146,13 +202,16 @@ Recoleccion de basura informatica. El espacio de memoria se va llenando con dife
 f'Yo amo a {my_str}, ' * 100
 ```
 
-> En Python 3.6 se añadió (PEP 498) una nueva notación para cadenas llamada cadenas "f", que simplifica la inserción de variables y expresiones en las cadenas. Una cadena "f" contiene variables y expresiones entre llaves ({}) que se sustituyen directamente por su valor ``` mi_variable = f'({})' ```
+> En Python 3.6 se añadió (PEP 498) una nueva notación para cadenas llamada cadenas "f", que simplifica la inserción de variables y expresiones en las cadenas. Una cadena "f" contiene variables y expresiones entre llaves ({}) que se sustituyen directamente por su valor 
 
-
+```python
+mi_variable = f'({})'
+```
 
 ### Entradas
 
-input - para recibir datos del usuario del programa 
+**`input`** - para recibir datos del usuario del programa 
+
 ```python
  nombre = intput('Cual es tu nombre: ') 
  print(f'Tu nombre es {nombre}') 
@@ -188,13 +247,13 @@ input - para recibir datos del usuario del programa
 
   ## Iteraciones - Loops
 
-  _La mayoria de las tareas computacionales no se pueden lograr con ramificaciones._
+    La mayoria de las tareas computacionales no se pueden lograr con ramificaciones.
 
-  __Cuando queremos que un programa haga lo mismo varias veces, utilizamos iteraciones.__
+  Cuando queremos que un programa haga lo mismo varias veces, utilizamos iteraciones.
 
-  _Se puede Escribir iteraciones dentro de iteraciones._
+  > Se puede Escribir iteraciones dentro de iteraciones.
 
-  _Podemos utilizar break para salir anticipadamente de una iteracion._
+  Podemos utilizar break para salir anticipadamente de una iteracion.
 
   ***Tener cuidado de iteraciones infinitas.***
 
@@ -206,11 +265,11 @@ input - para recibir datos del usuario del programa
   Los bucles definidos se implementan en Python a través del keyword ``` for.``` Por su parte, los bucles indefinidos se implementan con el keyword ``` while.```
 
 
-  > ``` break ``` termina el bucle y permite continuar con el resto del flujo de nuestro programa.
+  > ` break ` termina el bucle y permite continuar con el resto del flujo de nuestro programa. 
 
-  > ``` continue ``` termina la iteración en curso y continua con el siguiente ciclo de iteración.
+  > ` continue ` termina la iteración en curso y continua con el siguiente ciclo de iteración.
 
-Python lo puede hacer por nosotros con el constructo ``` for ... in .... ```
+Python lo puede hacer por nosotros con el constructo ` for ... in .... `
 
 ## Representaci&oacute;n de flotantes
 
@@ -221,7 +280,7 @@ La mayoría del tiempo los números flotantes (tipo float) son una muy buena apr
 
 ## Enumeraci&oacute;n Exhaustiva
 
-Llamada 'Adivina y verifica'
+Llamada `'Adivina y verifica'`
 
 Las coomputadoras actuales son muy r&aacute;pidas
 
@@ -239,7 +298,7 @@ Podemos apromar soluciones con un margen de error que llamaremos epsilon.
 
   Es altamenete eficiente, pues corta el espacio b&uacute;squeda en dos por cada iteraci&oacute;n
 
-  Métodos Numéricos, el metodo usado en la clase es conocido como método de la bisección, es un tipo de búsqueda incremental en el que el intervalo se divide siempre a la mitad.
+  **Métodos Numéricos**, el metodo usado en la clase es conocido como método de la bisección, es un tipo de búsqueda incremental en el que el intervalo se divide siempre a la mitad.
 
   Existen diversos métodos que tiene una mejor convergencia para la aproximación a la solución, el mas conocido es el metodo newtoh raphson.
 
@@ -253,7 +312,7 @@ Podemos apromar soluciones con un margen de error que llamaremos epsilon.
 
   Se puede pensar como mini programas dentro de un programa mayor.
 
-Definici&oacute;n de funciones
+**Definici&oacute;n de funciones**
 
   ```python
     def <nombre>(<parametros>):
@@ -302,7 +361,7 @@ Definici&oacute;n de funciones
   total = a + b
   return total
   ```
-El docstring o la documentación está dividido en tres partes importantes que son las siguientes:
+El `docstring` o la documentación está dividido en tres partes importantes que son las siguientes:
 
 Primero se da una descripción clara y concisa de la función y su funcionamiento
 
@@ -325,7 +384,7 @@ Por ultimo se agrega que es lo que devuelve nuestra función
 
   ## Recursividad
   
-  “El límite por omisión es de 1000 llamadas recursivas. Es posible modificar el tamaño máximo de la pila de recursión mediante la instrucción sys.setrecursionlimit(n). Sin embargo, si se está alcanzando este límite suele ser una buena idea pensar si realmente el algoritmo recursivo es el que mejor resuelve el problema.”
+  “El límite por omisión es de 1000 llamadas recursivas. Es posible modificar el tamaño máximo de la pila de recursión mediante la instrucción `sys.setrecursionlimit(n)`. Sin embargo, si se está alcanzando este límite suele ser una buena idea pensar si realmente el algoritmo recursivo es el que mejor resuelve el problema.”
   [uniwebsidad](https://uniwebsidad.com/libros/algoritmos-python/capitulo-18/limitaciones)
 
   # Tipos estructurados, mutabilidad y funciones de alto nivel
@@ -337,18 +396,19 @@ Por ultimo se agrega que es lo que devuelve nuestra función
 
 _Las tuplas al igual que las listas en Python son secuencias pero las tuplas son secuencias inmutables (eso significa que no se pueden modificar) de objetos._
 
-Las tuplas, el contenido debe ir “empaquetado” mediante paréntesis “()”, mientras que para las listas, se empaquetan en corchetes “[]”.
+Las tuplas, el contenido debe ir “empaquetado” mediante paréntesis `“()”`, mientras que para las listas, se empaquetan en corchetes `“[]”`.
 
 ## Rangos
 
 - Representa una secuencia de enteros.
-- range(comienzo,fin, pasos)
+- `range(comienzo,fin, pasos)`
 - Al igual que las cadenas y las tuplas, los rangos son inmutables.
 - Muy eficientes en uso de memoria y normalmente utilizados en for loops.
 
 ## Listas y mutabilidad
 
 Los nuevos que encontré además de los de la clase:
+
 ```python
 lista.extend(iterable) #extiende la lista con valores dentro de un iterable como un range()
 
@@ -380,7 +440,7 @@ lista.copy() #Genera una copia de la lista. También útil para clonar listas.
   ## Clonaci&oacute;n
 
   * Casi siempre es mejor clonar una lista en vez de mutarla.
-  * Para clonar una lista podemos utilizar rebanadas __(slices)__ o la funci&oacute;n **list**.
+  * Para clonar una lista podemos utilizar rebanadas `(slices)` o la funci&oacute;n **`list`**.
 
   ## List comprehension
   * Es una forma concisa de aplicar operaciones a los valores de una secuencia.
@@ -415,31 +475,31 @@ lista.copy() #Genera una copia de la lista. También útil para clonar listas.
   * Regression testing o mocks.
 
 El testing tambien es un campo interesante,
-Aqui la lista de los ** 7 principios de Testing ** de acuerdo al libro de ISTQB.
+Aqui la lista de los **7 principios de Testing** de acuerdo al libro de ISTQB.
 
-***1 Las pruebas muestran la presencia de defectos***
+***1. Las pruebas muestran la presencia de defectos***
 
 Significa que las pruebas pueden demostrar que EXISTEN problemas, pero no que los problemas NO EXISTEN.
 El objetivo principal de llevar a cabo una prueba es para detectar defectos. Trabajando bajo la premisa de que cada producto contiene defectos de algún tipo, una prueba que revela los errores es generalmente mejor que una que no lo hace. Todas las pruebas por lo tanto, deben ser diseñados para revelar tantos errores como sea posible
 
-***2 Las pruebas exhaustivas son imposibles***
+***2. Las pruebas exhaustivas son imposibles***
 
 Las pruebas exhaustivas tratan de cubrir todas las combinaciones posibles de datos en el software, a fin de garantizar que ninguna situación puede surgir, una vez probado el software se ha liberado. Excepto en aplicaciones muy simples, el número de combinaciones posibles de datos es demasiado alta, es más eficaz y eficiente que los ingenieros de pruebas se centren en las funcionalidades de acuerdo a riesgos y prioridades.
 
-***3 Pruebas tempranas.***
+***3. Pruebas tempranas.***
 
 Un producto (incluyendo los documentos, tales como la especificación del producto) se puede probar tan pronto como se ha creado. ISTQB recomienda probar un producto tan pronto como sea posible, corregir los errores más rápidamente posible. Los estudios han demostrado que los errores identificados al final del proceso de desarrollo por lo general cuestan más para resolver.
 Por ejemplo: un error encontrado en las especificaciones puede ser bastante sencillo de solucionar. Sin embargo, si ese error se transfiere a la codificación de software, una vez descubierto el error puede ser muy costoso y consume tiempo.
 
-***4 Agrupamiento de Defectos***
+***4. Agrupamiento de Defectos***
 
 Los estudios sugieren que los problemas en un elemento de software tienden a agruparse en torno a un conjunto limitado de módulos o áreas. Una vez que estas áreas han sido identificadas, los administradores eficientes de prueba son capaces de enfocar las pruebas en las zonas sensibles, mientras que siguen buscando a los errores en los módulos de software restantes. Me recuerda al 80/20.
 
-***5 La paradoja del “Pesticida”***
+***5. La paradoja del “Pesticida”***
 
 Al igual que el sobre uso de un pesticida, un conjunto de pruebas que se utilizan repetidamente en el disminuirá en su eficacia. Usando una variedad de pruebas y técnicas expondrá una serie de defectos a través de las diferentes áreas del producto.
 
-***6 La prueba es dependiente del contexto***
+***6. La prueba es dependiente del contexto***
 
 Las mismas pruebas no se deben aplicar en todos los ámbitos. Distintos productos de software tienen diferentes requisitos, funciones y propósitos. Una prueba diseñada para realizarse en un sitio web, por ejemplo, puede ser menos eficaz cuando se aplica a una aplicación de intranet. Una prueba diseñada para una forma de pago con tarjeta de crédito puede ser innecesariamente rigurosa si se realiza en un foro de discusión.
 En general, cuanto mayor es la probabilidad y el impacto de los daños causados ​​por el software fallado, mayor es la inversión en la realización de pruebas de software.
@@ -471,7 +531,7 @@ Declarar que una prueba no ha descubierto ningún error no es lo mismo que decla
   #### Errores comunes
 
   * Encuentra a los sospechosos comunes.
-  * En lugar de preguntarte por qu&eacute; un programa no funciona, prg&uacute;ntate por qu&eacute; est&aacute; funcionando de esta manera.
+  * En lugar de preguntarte por qu&eacute; un programa no funciona, preg&uacute;ntate por qu&eacute; est&aacute; funcionando de esta manera.
   * Es posible que el bug no se encuentre donde crees que est&aacute;.
   * Expl&iacute;cale el problema a otra persona. De preferencia que no tenga contexto.
   * Lleva un registro de lo que has tratado, preferentemente en la forma de tests.
@@ -483,24 +543,25 @@ Declarar que una prueba no ha descubierto ningún error no es lo mismo que decla
 
 Los manejos de excepciones son muy comunes en la programación, no tienen nada de excepcional. 
 
-Las excepciones de Python normalmente se relacionan con errores de semántica, también podemos crear nuestras propias excepciones, pero cuando una excepción no se maneja (unhandled exception), el programa termina en error.
+Las excepciones de Python normalmente se relacionan con errores de semántica, también podemos crear nuestras propias excepciones, pero cuando una excepción no se maneja `(unhandled exception)`, el programa termina en error.
 
-Las excepciones se manejan con los keywords: try, except, finally. Se pueden utilizar también para ramificar programas.
+Las excepciones se manejan con los `keywords: try, except, finally`. Se pueden utilizar también para ramificar programas.
 
-No deben manejarse de manera silenciosa (por ejemplo, con print statements). Para crear tu propia excepción utiliza el keyword raise.
+No deben manejarse de manera silenciosa `(por ejemplo, con print statements)`. Para crear tu propia excepción utiliza el keyword raise.
 
- ## Excepciones comunes:
-***ImportError*** : una importación falla.
+ ## Excepciones comunes
 
-***IndexError*** : una lista se indexa con un número fuera de rango.
+***`ImportError`*** : una importación falla.
 
-***NameError*** : se usa una variable desconocida.
+***`IndexError`*** : una lista se indexa con un número fuera de rango.
 
-***SyntaxError*** : el código no se puede analizar correctamente.
+***`NameError`*** : se usa una variable desconocida.
 
-***TypeError*** : se llama a una función en un valor de un tipo inapropiado.
+***`SyntaxError`*** : el código no se puede analizar correctamente.
 
-***ValueError*** : se llama a una función en un valor del tipo correcto, pero con un valor inapropiado.
+***`TypeError`*** : se llama a una función en un valor de un tipo inapropiado.
+
+***`ValueError`*** : se llama a una función en un valor del tipo correcto, pero con un valor inapropiado.
 
   ## Afirmaciones
 
