@@ -1,0 +1,68 @@
+
+	Auto Rename Tag
+	
+	Beautify
+
+	Bracket Pair Colorized
+
+	CodeSnap
+
+	Color Highlignt
+
+	java
+
+	Docker
+
+	EsLint
+
+	file-icons
+
+	go
+
+	File Downloader
+
+	JavaScript and TypeScript Nightly
+
+	Jupyter 	Opcional
+
+	Live Server
+
+	Markdown Preview GitHub Styling
+
+	Material Icon Theme
+
+	Markdown+Math
+
+	Monokai Pro
+
+	Moonlight
+
+	Open in browser
+
+	outrun
+
+	Path Intellisense
+
+	php
+
+	polance
+
+	Prettier
+
+	simple icons
+	
+	SynthWave 84
+
+	vscode Icons Team 
+
+	Visual Studio IntelliCode
+
+	python Docstring Generator
+
+
+	python Docstring Generator
+
+--------------------------------------------------------------
+
+	Instalar Fire Code - Fonts
+

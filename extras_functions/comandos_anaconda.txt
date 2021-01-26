@@ -1,0 +1,12 @@
+
+
+Terminal
+# Iniciar entorno Virutal de anaconda
+
+conda activate
+
+anaconda-navigator		# Ejecutar entorno de desarrollo
+
+conda deactivate			# Desactivar el entorno virtual
+
+

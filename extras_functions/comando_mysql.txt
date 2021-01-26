@@ -1,0 +1,8 @@
+
+	systemctl status mysql
+
+	sudo mysql_secure_installation
+
+	sudo mysql
+
+	

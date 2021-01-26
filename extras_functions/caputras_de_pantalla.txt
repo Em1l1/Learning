@@ -1,0 +1,19 @@
+Capturas de pantalla desde la Terminal
+
+Scrot es una aplicacion que se ejecuta desde el terminal y que tepermite realizar una captura de pantalla facilmente
+
+scrot
+
+La captura de  pantalla se guradara en el directorio en el que hayas ejecutado esta orden.
+
+scrot -u 
+
+Captura una determinada ventana (las que tengas seleccionada)
+
+scrot -s
+
+Caputura un area especifica de la pantalla.
+
+enlace para mas informacion
+
+ https://www.atareao.es/ubuntu/realizar-una-captura-de-pantalla-en-ubuntu/

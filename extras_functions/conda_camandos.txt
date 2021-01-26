@@ -1,0 +1,22 @@
+conda acticado (base), puede ser porque auto_activate_base esta configurado en True. Puede verificar esto usando el siguiente comando 
+
+conda config --show | grep auto_activate_base
+
+Para establecer falso
+
+conda config --set auto_activate_base False
+
+con ello desactivamos (base) y entramos a nuestra terminal normal.
+
+Para activar conda:
+
+conda activate
+
+# ejecutamos
+
+anaconda-navigator
+
+# cerramos
+
+conda deactivate
+

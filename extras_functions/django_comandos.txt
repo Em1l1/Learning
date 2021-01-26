@@ -1,0 +1,8 @@
+
+	source .env/bin/activate   # Activar entorno Virtual
+
+	python manage.py runserver
+	
+	# Iniciarmos el servidor
+
+	deactivate			# Cerramos entorno virutal
