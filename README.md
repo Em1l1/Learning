@@ -66,7 +66,7 @@ Las Oportunidades
 
 Una oportunidad de negocio para un emprendedor puede no serlo para otro.
  
- [curso-para-comenzar-tu-camino-emprendedor.pdf](https://drive.google.com/drive/u/1/folders/1z1ylkvZ9AB67YxnuNcq-k_2DpXJmq_KR)
+ [curso-para-comenzar-tu-camino-emprendedor.pdf](https://drive.google.com/file/d/1i-U6pixJgPWKZv5uY6NowU5p3nHP6N-_/view?usp=sharing)
 
   ### Problemas Cercanos
   ### Problemas Lejanos
