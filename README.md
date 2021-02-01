@@ -130,7 +130,7 @@ Sugerencia: no lo pienses tanto.
   [reto1](https://drive.google.com/file/d/1Qn65bDr9PimiFV0wHHUZxf9V6tkzB3RX/view?usp=sharing)
 
 <li>
-  <a href="https://drive.google.com/file/d/1Qn65bDr9PimiFV0wHHUZxf9V6tkzB3RX/view?usp=sharing" target="blank">Reto-1</a>
+  <a href="https://drive.google.com/file/d/1Qn65bDr9PimiFV0wHHUZxf9V6tkzB3RX/view?usp=sharing" target="_blank">Reto-1</a>
 </li>
 
 # Fases del emprendimiento
