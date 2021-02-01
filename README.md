@@ -2,12 +2,12 @@
 ##### Mariana De Giobbi
 
 # Tabla de Contenido
-1. Conocer desafíos y consejos previos a iniciar tu proyecto
+- [1. Conocer desafíos y consejos previos a iniciar tu proyecto](#1.-Conocer-desafíos-y-consejos-previos-a-iniciar-tu-proyecto)
 Participa en la conferencia: "Habilidades blandas para humanistas en medios digitales"
 ¿Emprender es para ti?
 ¿Cómo elegir en qué emprender?
 El mercado: tendencias para emprender
-Lluvia de ideas
+  - [Lluvia de ideas](#Lluvia-de-ideas)
 2. Fases del emprendimiento
 Las ventajas comparativas de una idea de negocio
 Medir el interés de una idea
@@ -129,9 +129,6 @@ Sugerencia: no lo pienses tanto.
 
   [reto1](https://drive.google.com/file/d/1Qn65bDr9PimiFV0wHHUZxf9V6tkzB3RX/view?usp=sharing)
 
-<li>
-  <a href="https://drive.google.com/file/d/1Qn65bDr9PimiFV0wHHUZxf9V6tkzB3RX/view?usp=sharing" target="_blank">Reto-1</a>
-</li>
 
 # Fases del emprendimiento
 
