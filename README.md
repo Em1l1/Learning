@@ -127,7 +127,7 @@ Sugerencia: no lo pienses tanto.
 
   ## Lluvia de Ideas
 
-  [reto1](https://drive.google.com/drive/u/1/folders/1z1ylkvZ9AB67YxnuNcq-k_2DpXJmq_KR)
+  [reto1](https://drive.google.com/file/d/1Qn65bDr9PimiFV0wHHUZxf9V6tkzB3RX/view?usp=sharing)
 
 # Fases del emprendimiento
 
@@ -344,7 +344,7 @@ Incubadoras, aceleradoras y concursos privados
 
 - [Experiment Board.pdf](https://drive.google.com/drive/u/1/folders/1z1ylkvZ9AB67YxnuNcq-k_2DpXJmq_KR)
 
-[Reto-2](https://drive.google.com/drive/u/1/folders/1z1ylkvZ9AB67YxnuNcq-k_2DpXJmq_KR)
+[Reto-2](https://drive.google.com/file/d/1gDzJqsdGFMxzxO5zlrge6KRIOh65Sb7f/view?usp=sharing)
 
 # 3. Encontrar ideas de negocio rentables
 
@@ -377,7 +377,7 @@ Modelo de publicidad usuarios gratis a cambio de ver publicidad de empresas
 
 - [Canvanizer](https://canvanizer.com/choose-canvas)
 
-[reto-3](https://drive.google.com/drive/u/1/folders/1z1ylkvZ9AB67YxnuNcq-k_2DpXJmq_KR)
+[reto-3](https://drive.google.com/file/d/1mdutBr7Yi_VoFfmoG9BsgD6_y9r8f0OK/view?usp=sharing)
 
 # 4. Innovación para Emprender
 
@@ -465,7 +465,7 @@ El equipo unido por Misión y Pasión
 
 ## Reto: define tu modelo de negocio
 
-[reto-4](https://drive.google.com/drive/u/1/folders/1z1ylkvZ9AB67YxnuNcq-k_2DpXJmq_KR)
+[reto-4](https://drive.google.com/file/d/1bj2GEneTUJzg3QJfcB3MWFAsz10XWCK3/view?usp=sharing)
 
 # 5. El Producto
 
@@ -535,7 +535,7 @@ _Esta es la curva de adopción de la innovación, se explica así:_
 
 ## Reto: diseño de tu producto
 
-[Reto-5](https://drive.google.com/drive/u/1/folders/1z1ylkvZ9AB67YxnuNcq-k_2DpXJmq_KR)
+[Reto-5](https://drive.google.com/file/d/1QhcbNv5Y3HOb250onFyh4-lulQ_8rMj4/view?usp=sharing)
 
 # 6. Definición de la estrategia de marketing y análisis FODA
 
@@ -838,7 +838,7 @@ Que deseas comunicar, ¿Cómo quieres que te reconozcan? ¿A que empresas te vas
 
 **4. Distribución con otros empresas:** con tu fuerza de venta, a través de organizaciones empresariales
 
-[Reto-6](https://drive.google.com/drive/u/1/folders/1z1ylkvZ9AB67YxnuNcq-k_2DpXJmq_KR)
+[Reto-6](https://drive.google.com/file/d/1-cKjn6PYdGB-lkbqGyn_ABbAqXp3xKJQ/view?usp=sharing)
 
 # 7. Conclusiones
 
