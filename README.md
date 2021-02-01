@@ -129,6 +129,10 @@ Sugerencia: no lo pienses tanto.
 
   [reto1](https://drive.google.com/file/d/1Qn65bDr9PimiFV0wHHUZxf9V6tkzB3RX/view?usp=sharing)
 
+<li>
+  <a href="https://drive.google.com/file/d/1Qn65bDr9PimiFV0wHHUZxf9V6tkzB3RX/view?usp=sharing" target="blank">Reto-1</a>
+</li>
+
 # Fases del emprendimiento
 
 ## Las ventajas comparativas de una idea de negocio
