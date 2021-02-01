@@ -66,7 +66,7 @@ Las Oportunidades
 
 Una oportunidad de negocio para un emprendedor puede no serlo para otro.
  
- [curso-para-comenzar-tu-camino-emprendedor.pdf](doc/curso-para-comenzar-tu-camino-emprendedor.pdf)
+ [curso-para-comenzar-tu-camino-emprendedor.pdf](https://drive.google.com/drive/u/1/folders/1z1ylkvZ9AB67YxnuNcq-k_2DpXJmq_KR)
 
   ### Problemas Cercanos
   ### Problemas Lejanos
@@ -127,7 +127,7 @@ Sugerencia: no lo pienses tanto.
 
   ## Lluvia de Ideas
 
-  [reto1](doc/reto-1.pdf)
+  [reto1](https://drive.google.com/drive/u/1/folders/1z1ylkvZ9AB67YxnuNcq-k_2DpXJmq_KR)
 
 # Fases del emprendimiento
 
@@ -342,7 +342,9 @@ Incubadoras, aceleradoras y concursos privados
 
 ![](img/tablero-javelin.jpeg)
 
-- [Experiment Board.pdf](doc/ExperimentBoard.pdf)
+- [Experiment Board.pdf](https://drive.google.com/drive/u/1/folders/1z1ylkvZ9AB67YxnuNcq-k_2DpXJmq_KR)
+
+[Reto-2](https://drive.google.com/drive/u/1/folders/1z1ylkvZ9AB67YxnuNcq-k_2DpXJmq_KR)
 
 # 3. Encontrar ideas de negocio rentables
 
@@ -375,7 +377,7 @@ Modelo de publicidad usuarios gratis a cambio de ver publicidad de empresas
 
 - [Canvanizer](https://canvanizer.com/choose-canvas)
 
-[reto-3](doc/reto-3.pdf)
+[reto-3](https://drive.google.com/drive/u/1/folders/1z1ylkvZ9AB67YxnuNcq-k_2DpXJmq_KR)
 
 # 4. Innovación para Emprender
 
@@ -463,7 +465,7 @@ El equipo unido por Misión y Pasión
 
 ## Reto: define tu modelo de negocio
 
-[reto-4](doc/reto-4_.pdf)
+[reto-4](https://drive.google.com/drive/u/1/folders/1z1ylkvZ9AB67YxnuNcq-k_2DpXJmq_KR)
 
 # 5. El Producto
 
@@ -533,7 +535,7 @@ _Esta es la curva de adopción de la innovación, se explica así:_
 
 ## Reto: diseño de tu producto
 
-[Reto-5](doc/reto-5.pdf)
+[Reto-5](https://drive.google.com/drive/u/1/folders/1z1ylkvZ9AB67YxnuNcq-k_2DpXJmq_KR)
 
 # 6. Definición de la estrategia de marketing y análisis FODA
 
@@ -836,7 +838,7 @@ Que deseas comunicar, ¿Cómo quieres que te reconozcan? ¿A que empresas te vas
 
 **4. Distribución con otros empresas:** con tu fuerza de venta, a través de organizaciones empresariales
 
-[Reto-6](doc/reto-6.pdf)
+[Reto-6](https://drive.google.com/drive/u/1/folders/1z1ylkvZ9AB67YxnuNcq-k_2DpXJmq_KR)
 
 # 7. Conclusiones
 
