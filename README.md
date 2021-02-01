@@ -1,6 +1,53 @@
 # Emprender es para ti ❤️❤️❤️❤️
 ##### Mariana De Giobbi
 
+# Tabla de Contenido
+1. Conocer desafíos y consejos previos a iniciar tu proyecto
+Participa en la conferencia: "Habilidades blandas para humanistas en medios digitales"
+¿Emprender es para ti?
+¿Cómo elegir en qué emprender?
+El mercado: tendencias para emprender
+Lluvia de ideas
+2. Fases del emprendimiento
+Las ventajas comparativas de una idea de negocio
+Medir el interés de una idea
+Tablero de experimentación
+Definir el perfil del cliente y el mercado objetivo de un producto
+Encontrar elementos diferenciadores de tu producto en el mercado actual
+Requisitos para la diferenciación
+Definir el modelo de negocio
+Determinar las estrategias y el proceso de captación de clientes
+Definir las necesidades y estrategias de financiamiento
+Fases del emprendimiento
+3. Encontrar ideas de negocio rentables
+Patrones de modelo de negocio
+Patrones de modelo de negocio que parecen gratis
+Resumen y desafío: Uber
+4. Innovación para Emprender
+¿Qué es innovar? Desmintiendo mitos
+Tipos de innovación
+Cómo innovar en equipo
+La personalidad innovadora
+El proceso de innovación
+Reto: define tu modelo de negocio
+5. El Producto
+Planificación del producto o servicio
+¿Qué entendemos por atributos esenciales de un producto?
+Ciclo de vida del producto
+Reto: diseño de tu producto
+6. Definición de la estrategia de marketing y análisis FODA
+Diseñar una estrategia de marketing
+Matriz FODA
+La marca: imagen e identidad
+Identidad gráfica
+Plan de comunicación
+Las Relaciones Públicas
+Los modelos de fijación de precios
+Estrategias de distribución
+Reto: plan de comunicación
+7. Conclusiones
+Conclusiones
+
 
 [TED Ideas worth spreading](https://www.ted.com/talks/simon_sinek_how_great_leaders_inspire_action?language=es)
 
@@ -19,6 +66,8 @@ Las Oportunidades
 
 Una oportunidad de negocio para un emprendedor puede no serlo para otro.
  
+ [curso-para-comenzar-tu-camino-emprendedor.pdf](doc/curso-para-comenzar-tu-camino-emprendedor.pdf)
+
   ### Problemas Cercanos
   ### Problemas Lejanos
 
@@ -293,6 +342,8 @@ Incubadoras, aceleradoras y concursos privados
 
 ![](img/tablero-javelin.jpeg)
 
+- [Experiment Board.pdf](doc/ExperimentBoard.pdf)
+
 # 3. Encontrar ideas de negocio rentables
 
 ## Patrones de modelo de negocio
@@ -415,19 +466,380 @@ El equipo unido por Misión y Pasión
 [reto-4](doc/reto-4_.pdf)
 
 # 5. El Producto
-Planificación del producto o servicio
-¿Qué entendemos por atributos esenciales de un producto?
-Ciclo de vida del producto
-Reto: diseño de tu producto
+
+## Planificación del producto o servicio
+
+**Existen dos tipos de producto:**
+
+  - Tangibles
+  - Intangibles
+
+**Pasos para desarrollar un producto o servicio:**
+
+**1. Estudio de mercado:** Tendencias actuales de mercado, nuevas necesidades, gustos o hábitos del cliente, ¿qué está haciendo la competencia?
+
+**2. Propuestas de productos:** basado en las capacidades tecnologías de la empresa, las tendencias y necesidades del cliente.
+
+**3. Medición y decisión:** evaluar el potencial de cada alternativa para ser comercializado, publicitado, producido, cuales serian los precios de venta y los retornos en la inversión.
+
+**4. Producción**
+
+**5. Comercialización**
+
+## ¿Qué entendemos por atributos esenciales de un producto?
+
+1. Nucleo: propiedades físicas, químicas y técnicas del producto.
+2. Calidad: Valoración de los elementos que componen el núcleo comparado con la competencia.
+3. Valor de adquisición.
+4. Envase: protección del producto y componente de imagen.
+    1. Diseño, forma y tamaño: permiten la identificación del producto o la empresa.
+
+    2.  Marca, nombres y elementos gráficos.
+
+5. Servicio: ¿Cual sera el valor agregado que nos diferenciara de otras marcas?
+6. Imagen del producto & la empresa: la opinión que se crea en la mente del consumidor.
+
+## Ciclo de vida del producto
+
+**1. Introducción:** arranque lento en las ventas. El objetivo es lograr los “early adopters” y se deberá enfocar el 80% en darnos a conocer y el otro 20% en demás labores.
+  - Objetivo: Darnos a conocer.
+
+**2. Crecimiento:** las ventas se multiplican, comienza la rentabilidad y debemos estar preparados para poder hacer frente a la demanda creciente.
+  - Objetivo: Hacer frente a la demanda.
+
+**3. Maduración:** las ventas dejan de crecer pero se mantienen elevadas, tenemos una muy alta rentabilidad pero al saturar el mercado es posible que a futuro se genere una caída.
+- Objetivo: Preparamos para el declive, ahorrar e innovar.
+
+**4. Declive:** descienden las ventas, se generan cambios en los contextos y debemos innovar.
+- Objetivo: innovar para mantenernos en el mercado.
+
+![](img/imge-1.webp "Innovation Adoption Lifecycle")
+
+_Esta es la curva de adopción de la innovación, se explica así:_
+
+**1. Innovators:** Están en la cola izquierda de la campana, son personas super innovadoras y les gusta probar todo lo nuevo que llega al mercado, aun cuando no es tendencia.
+
+**2. Early Adopters:** Son las personas que les interesa esa nueva innovación. El punto clave es que ellos acojan el producto, de esto dependerá que sigamos o definitivamente caigamos en el abismo de los productos o servicios que “pudieron ser”.
+
+**3. Early majority:** Una vez aprobados por los primeros, viene una etapa del voz a voz y el conocimiento del producto, con esto genera el crecimiento de las ventas.
+
+**4. Late Majority:** Acá ya nos están acogiendo otra gran parte de los clientes, que no se vieron animados a comprar, sino hasta que vieron que más de la mitad de su grupo social ya lo tenia en su día a día.
+
+**5. Laggards:** Ya vienen las personas que están muy desconectadas del flujo continuo y desarrollo de las innovaciones y siempre los reciben cuando están finalizando su ciclo de vida.
+
+- **Ciclo de vida del producto**
+
+![](img/cicloDeVida.webp "Ciclo de vida del producto")
+
+## Reto: diseño de tu producto
+
+[Reto-5](doc/reto-5.pdf)
+
 # 6. Definición de la estrategia de marketing y análisis FODA
-Diseñar una estrategia de marketing
-Matriz FODA
-La marca: imagen e identidad
-Identidad gráfica
-Plan de comunicación
-Las Relaciones Públicas
-Los modelos de fijación de precios
-Estrategias de distribución
-Reto: plan de comunicación
+
+## Diseñar una estrategia de marketing
+
+**Paso 1.** _Identificar los objetivos comerciales basados en objetivos SMART._
+
+![](img/smart.png "SMART")
+
+**Paso 2:** _Definir el cliente (la voluntad, la capacidad financiera, la autoridad para comprar y deben ser posibles de ser contactados)._
+
+**Paso 3:** _Investigar la competencia._
+
+  **1. Primer nivel:** _producen lo mismo pero con otra marca._
+
+  **2. Segundo nivel:** _producen algo parecido pero no lo mismo._
+
+**Tercer nivel:** _producen cualquier otro producto que sirva para el mismo fin aunque sean muy distintos a nuestro producto._
+
+**Paso 4:** Plan de acción.
+
+## Matriz FODA
+
+**Generacion de Estrategias**
+
+![](img/Dofa.webp "Matriz DAFO (FODA)")
+
+**Cada cruce tiene un tipo de estrategia:**
+
+**1. Estrategias ofensivas:** Usa tus fortalezas para aprovechar las oportunidades. Es el Cristiano Ronaldo de las empresas, el que hará los goles.
+
+**2. Estrategias defensivas:** Usa tus fortalezas para evitar o mitigar las amenazas. Es el Carles Puyol, evitar a toda costa que nos hagan goles.
+
+**3. Estrategias adaptativas:** Superar las debilidades aprovechando las oportunidades. Es el Jurgen Klopp, sin importar que tantas falencias tengamos, aprovecha las oportunidades del entorno.
+
+**4. Estrategias supervivencia:** Reducir las debilidades y evitar las amenazas. Este no tengo ejemplo de fútbol >.<, pero es como la serie supervivencia al desnudo, tienes que sobrevivir a todas las cosas inclementes de la naturaleza, aun sabiendo que tienes muchas falencias, pues es cuestión de si vives o mueres.
+
+**An&aacute;lisis FODA**
+
+![](img/FODA.png "An&aacute;lisis FODA")
+
+**La matriz FODA** 
+
+Es una herramienta de análisis que puede ser aplicada a cualquier situación, individuo, producto, empresa, etc, que esté actuando como objeto de estudio en un momento determinado del tiempo
+
+**La sigla FODA, es un acróstico de:**
+- **Fortalezas** (factores críticos positivos con los que se cuenta),
+- **Oportunidades**, (aspectos positivos que podemos aprovechar utilizando nuestras fortalezas),
+- **Debilidades**, (factores críticos negativos que se deben eliminar o reducir) y
+- **Amenazas**, (aspectos negativos externos que podrían obstaculizar el logro de nuestros objetivos)
+
+## La marca: imagen e identidad
+
+- **Identidad:** componentes que caracterizan y forman la marca
+
+- **Marca:** percepcion qie se genera de cara a su grupo de interes .
+
+- **Branding:** Elementos visules que deberian ser faciles de recordar, dificiles de cambiar, multiculturales ( de acuerdo al publico objetivo) y tener un nombre que admita amplitud de mercado.
+
+- **Engloba:** Nombre + Logo
+- **Pakaging**
+- **Lema publicitario (slogan)**
+- **Lema corporativo (Tragline)**
+
+![](img/logo.webp "Infografia logotipos")
+
+- **Imagen VS Identidad:** La imagen es lo que perciben de tu marca y la identidad son los componentes que hacen tu marca única. La empresa tiene el control sobre la identidad mas no sobre la imagen.
+
+## Identidad gráfica
+
+**Los colores dan información sobre tu marca**
+
+Los colores comunican mucho y traen culturalmente asociaciones que son comunes a muchas personas. Por eso es importante tenerlos en cuenta al momento de tomar decisiones sobre la imagen de tu marca. Estas son algunas de las ideas que se asocian a los diferentes colores:
+
+- Plateado: balance, calma
+
+- Rojo: amor, pasión, apetito, entusiasmo, impacto, juventud
+
+- Azul: productividad, masculinidad, confianza
+
+- Verde: tranquilidad, salud, dinero, naturaleza, fertilidad, crecimiento, paz
+
+- Marrón: confiabilidad, practicidad
+
+- Blanco: pureza, vacío, espacioso, inocente, glamour
+
+- Negro: negativo, muerte, delgadez, glamour, elegancia, sofisticación
+
+- Amarillo: energía, optimismo (causa fatiga visual)
+
+- Naranja: entusiasmo, emocionante, calidez, amigable, alegre, confiable
+
+- Violeta: calma, relax, realeza, riqueza, éxito, sabiduría, creatividad
+
+- Rosa: femenino, joven, cálido
+
+Los colores pueden crear percepciones muy fuertes, pero cada persona va a percibir de forma ligeramente diferente las sensaciones que le evoquen esos colores. El objetivo final sería ser “dueño” de un color, como el tono de turquesa de “Tiffany & Co” o el tono de rojo de “Coca Cola”.
+
+**Las tipografías también ayudan a formar una percepción sobre tu marca**
+
+Estas son algunas de las ideas que se asocian a las diferentes tipografías:
+
+- Sans: modernidad, seguridad, alegría y estabilidad
+Fuentes más comunes: Helvética, Verdana, Arial, Tahoma y Bauhaus
+Ejemplo de una marca que lo utiliza: LinkedIn
+
+- Script: Creatividad, elegancia, afecto y seducción
+Fuentes más comunes: Lobster, Brush, Great Vibes i Edwardian
+Ejemplo de una marca que lo utiliza: Cadillac
+
+- Slab: Modernidad, solidez, fortaleza y audacia
+Fuentes más comunes: Rockwell, Courier, Bevauo y Museo
+Ejemplo de una marca que lo utiliza: Volvo o Sony
+
+- Moderna: Inteligencia, estilo, tecnología, tendencia
+Fuentes más comunes: Futura, Majoram, Infinity o Matchbook
+Ejemplo de una marca que lo utiliza: Absolut Vodka
+
+- Serif: Autoridad, tradición, respeto y seguridad
+Fuentes más comunes: Book Antigua, Garamond o Times New Roman
+Ejemplo de una marca que lo utiliza: Google (logo anterior a 2015)
+
+## Plan de comunicación
+
+**Plan de comunicación**
+
+**1. Identificar tu target**
+
+  a. ¿Principalmente Hombre o Mujer?
+
+  b. ¿De dónde es?
+
+  c. ¿Qué edad tiene?
+
+  d. ¿A qué se dedica?
+
+  e. ¿Qué nivel de estudios tiene?
+
+  f. ¿Qué nivel de ingresos tiene?
+
+  g. ¿Qué aficiones tiene?
+
+  h. ¿Qué medio de comunicación utiliza para 
+  estar informado?
+
+**2. Definir los objetivos de la comunicación**
+
+  a. ¿Qué quieres transmitir?
+
+  b. ¿Qué puede interesarle a tu público?
+
+  c. ¿Qué quieres que recuerde la persona que reciba el mensaje?
+
+  d. ¿Qué acción quieres que realice la persona que reciba el mensaje?
+
+**3. Diseñar el mensaje**
+
+  a. Claro y conciso
+
+  b. Lenguaje adaptado a tu público objetivo
+
+  c. Tono acorde a tu público objetivo y a tus objetivos
+
+  d. Sin faltas gramaticales ni errores ortográficos.
+
+**4. Presupuesto**
+
+  a. Profesionales para implantar el plan
+
+  b. Herramientas para programar y monitorizar las acciones
+
+  c. Publicidad, tanto online como offline
+
+## Las Relaciones Públicas
+
+**Para las relaciones públicas:**
+
+  - Consigue buenas criticas: Prepárate antes de llegar a la prensa.
+  - Habla de la solución: Como lo resuelves con tu producto.
+  - Habla de las personas: Tu eje es el público y sus problemas.
+  - Establecer lazos con los seguidores: La conversación es en dos vías, siempre responde.
+
+Lo más importante es no olvidar que tu eje de comunicación se centra en las personas y sus problemas.
+
+## Los modelos de fijación de precios
+
+**Los enfoques de determinación de precios:**
+
+1. Enfoques basados en costos:
+-Precio=costos (fijos + variables) / unidades vendidas. Vender menos de este precio implicaría caer en pérdidas
+
+2. Enfoque basado en la competencia
+
+**Indagar los precios de venta de la competencia**
+
+- Precios similares: mercado con mucha demanda y producto indiferenciado
+- Precios por encima: idea de calidad y prestigio
+Cuidar en no ir muy lejos del precio determinado por la oferta y la demanda
+- Precios por debajo: con la intención de ganar por volumen
+(No son una buena estrategia de diferenciación porque son difíciles de sostener en el tiempo)
+  + Enfoque basado en el valor para el cliente:
+  _“Ofrecer un valor para el cliente mayor al precio que ha pagado”_
+
+- Historia de “tornillo suelto”
+
+- Según las necesidades del cliente y los beneficios que debe aportarle el producto
+
+Tener en cuenta lo que se ofrece como producto, el beneficio que le estamos dando y lo que el cliente necesita, nos permitirá saber la relación precio-valor
+
+Ej. contador
+
+**En resumen:**
+- El precio comunica un estándar de calidad y estatus.
+- El precio determinará si se vende más o menos unidades.
+- Necesitamos tener en claro cual es el precio final para el que la empresa funcione.
+
+## Estrategias de distribución
+
+**I. Distribución directa**
+
+El propio fabricante es el encargado de suministrar su producto al consumidor final
+
+  - Visión cercana de las necesidades del cliente
+  - Posibilidad de tener mayor información sobre el cliente
+  - Requerirá mucho más personal
+  - Primeras etapas
+
+**II. Distribución indirecta**
+
+Se apoya en una cadena de distribuidores mayoristas.
+Precios más altos (cada intermediario suma su margen)
+
+  * Más y mejor llegada al cliente
+  * Pérdida de control
+  * Más competencia, ya que los distribuidores también venderán productos similares
+
+**III. Estrategia de distribución intensiva**
+
+Llegar al mayor número de establecimientos posibles
+
+**Ventajas:**
+
+  - Poner el producto en la mayor cantidad de puntos de venta posible
+  - Aprovechar para comunicar más sobre la marca y ser conocidos
+  - Juega un punto en contra al poder generar opiniones diferentes
+
+Esta estrategia es ideal para productos de uso básico, diario.
+
+**Desventajas:**
+- Costos altos
+
+Imagen de marca posiblemente afectada
+
+**IV. Estrategia de distribución selectiva**
+
+Seleccionamos un grupo concreto de puntos de venta
+
+**Ventajas:**
+
+  - Mejor control de precios ya que se tendrán menos intermediarios
+A - l tener presencia en los mejores mercados la imagen de marca no se verá afectada
+  - Posicionamiento de producto alto
+Desventajas:
+
+**Menos conocidos**
+
+La competencia puede vender en los puntos de venta a los que hemos renunciado
+
+**V. Distribución exclusiva**
+
+Permiso de distribución a solo unos pocos vendedores selectos. Con los que se firma una cláusula de exclusividad y no vender ningún otro producto de la competencia
+
+**Ventajas:**
+
+  - Ahorro en distribución
+  - Posicionamiento de lujo
+
+**Desventaja:**
+
+  - Riesgo de apostar a un “único caballo”
+  - El distribuidor debe ser un experto
+  - El consumidor debe estar altamente motivado para ir a buscarlo
+
+**VI. Resumen:**
+  - En el caso de comercializar un servicio conviene la distribución directa
+  - En el caso de productos nos puede convenir la distribución indirecta
+  - Si se quiere posicionar como de lujo, conviene la distribución exclusiva
+  - Si es un producto de uso diario, conviene la distribución intensiva
+
+## Reto: plan de comunicación
+
+**Para el caso de tu empresa.**
+
+**1. DOFA:** plantea como organización las fortalezas (aquello que ustedes hacen mejor (ejemplo un modelo especifico del servicio), un conocimiento especializado, recorrido en la industria…) debilidades (bajo reconocimiento (empresa nueva). OPortunidades y amenazas que esta pasando en el mercado y entorno que impulse o afecte tu empresa (aumenta el requerimiento de datos, bajo presupuesto de contratación)
+
+**2. Comunicación:**
+Que deseas comunicar, ¿Cómo quieres que te reconozcan? ¿A que empresas te vas a dirigir? ¿Qué beneficios deben conocer tus clientes (ejemplo seguimiento del proyecto, cumplimiento, postventa.)
+
+**3. Precio:** (acorde a l número de horas de desarrollo, basado en proyectos similares, por una mensualidad…)
+
+**4. Distribución con otros empresas:** con tu fuerza de venta, a través de organizaciones empresariales
+
+[Reto-6](doc/reto-6.pdf)
+
 # 7. Conclusiones
-Conclusiones
+
+## Conclusiones
+
+Llegaste la última clase. Felicitaciones. Eres una de esas personas que tienen la energía y toda la decisión para poder lograr lo que quiera. Así que te deseo lo mejor en este camino emprendedor que estás para empezar. 
