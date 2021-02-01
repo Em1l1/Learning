@@ -76,6 +76,10 @@ Sugerencia: no lo pienses tanto.
 
   |  Económico 🎟️   | Ambiental 🌎   | Social 👪   |
 
+  ## Lluvia de Ideas
+
+  [reto1](doc/reto-1.pdf)
+
 # Fases del emprendimiento
 
 ## Las ventajas comparativas de una idea de negocio
@@ -155,11 +159,11 @@ Sugerencia: no lo pienses tanto.
 
   Los requisitos para la diferenciación:
 
-    1.- Importante.
-    2.- Distinta.
-    3.- Inimitable.
-    4.- Asequible.
-    5.- Rentable.
+  1. Importante.
+  2. Distinta.
+  3. Inimitable.
+  4. Asequible.
+  5. Rentable.
 
 ## Definir el modelo de negocio
 
@@ -265,4 +269,165 @@ Incubadoras, aceleradoras y concursos privados
 * Ventajas: mentoria
 * Tienen objetivos propios.
 
-# Encontrar ideas de negocio rentables
+* [Tu startup merece un buen pitch, aprende cómo hacerlo](https://platzi.com/blog/aprende-a-hacer-tu-pitch/)
+
+## Fases del emprendimiento
+
+**Fases del emprendimiento**
+
+1. Al menos 2 barreras de entrada, fáciles de mantener para ti: **Que sean superables para nosotros y difíciles para los cometidores.**
+
+2. Medir interés mediante hipótesis. **Tablero Javelin**
+
+3. Para quien es más óptima la solución. **Quién lo necesita.**
+
+4. Aprende a diferenciarte. **Producto, Servicio, Personal, Imagen o canales.**
+
+5. Como haces para otorgar el valor, define el modelo, es el esqueleto del negocio. **Canvas**
+
+6. Varía entre las formas de captar clientes. **_Estrategia_**
+
+7. El financiamiento puede venir con asesoría o no, busca experiencia ajena. **Fuentes**
+
+**Tablero Javelin**
+
+![](img/tablero-javelin.jpeg)
+
+# 3. Encontrar ideas de negocio rentables
+
+## Patrones de modelo de negocio
+
+**Modelos de negocio:**
+
+1.- Long Tail (Cola Larga). - Contar con varios productos.
+
+2.- Cebo con anzuelo. - Vender o regalar un producto que requiera de productos complementarios.
+
+3.- Franquicia. - Explotar un negocio ya probado y establecido.
+
+4.- Suscripción. - Pagar una cuota fija cada cierto tiempo a cambio de un producto o servicio.
+
+[Qué es un Modelos de Negocios ](https://www.youtube.com/watch?v=p_ABY9DrmLI)
+
+## Patrones de modelo de negocio que parecen gratis
+
+Patrones de modelo que parecen gratis (clave es tener en cuenta el costo de adquisición de cada cliente)
+
+**Freemiun:** hay una versión gratis y una versión paga con mucha diferencia entre la propuesta del servicio.
+
+**Marketin y afiliados:** comisiones a quienes generen clientes. Una persona que ya tiene una audiencia, se le paga por venta.
+Modelo de publicidad usuarios gratis a cambio de ver publicidad de empresas
+
+**Plataformas multilaterales:** juntas dos grupos de personas que uno quiere lo que tiene el otro.
+
+## Resumen y desafío: Uber
+
+- [Canvanizer](https://canvanizer.com/choose-canvas)
+
+[reto3](doc/reto3.pdf)
+
+# 4. Innovación para Emprender
+
+## ¿Qué es innovar? Desmintiendo mitos
+
+**Mitos:**
+
+1. Innovación es creatividad: se puede innovar y no ser creativo Nuevo + Implementado=Impacto en el mercado
+2. Genio solitario: Trabajo de equipo
+3. Esperar la inspiración: Hay técnicas específicas para fomentar la innovación
+4. Solo sirven las ideas más extrañas: Ideas pequeñas y simples pueden producir un gran impacto
+5. “La idea” es lo más importante de mi negocio: La ejecución es la pieza más importante de tu negocio.
+
+## Tipos de innovación
+
+En principio hay 3 tipos de innovación:
+
+**Marginal:** Hacer mejor lo mismo que ya estábamos haciendo. Pequeñas mejoras en el proceso, productos, etc.
+
+**Sustancial:** Introducir cambios qué son nuevos para la empresa.
+
+**Disruptivos:** Introducir cambios qué son nuevos para él mundo (o al menos para el mercado en el que se encuentra la empresa).
+
+## Cómo innovar en equipo
+
+**Formar un equipo heterogéneo**
+
+- Que tenga distintos puntos de vista
+- Distintas edades
+- Que tengan distintas culturas
+- Sinergia
+- Diversidad
+
+**Buena Relación**
+
+- Confianza
+- Finidad
+- Cordialidad y respeto
+
+**Sin jerarquías ni roles**
+
+- Todos pueden aportar
+- No importa quién sabe más de un tema
+
+**Espacio de trabajo**
+
+- Cambiar el ambiente
+- Cambiar los días y horarios
+
+El equipo unido por Misión y Pasión
+
+## La personalidad innovadora
+
+**Técnicas de innovación**
+
+- Mantenerse presente
+- Amigarse con el fracaso
+- Conocer el status quo antes de romperlo
+- Cuestionar todo
+
+**Nutrirse de nueva información**
+
+- Combinar y asociar
+- Poner en práctica y experimentar
+
+> "Los emprendedores deben ser personas inquietas y resilientes que se mantengan en una búsqueda continua de aprendizaje y respuestas. La actitud lograra que la innovación sea una practica diaria"
+
+## El proceso de innovación
+
+![](img/Desig.png "proceso de innovación")
+
+**“Design Thinking”**
+
+**Empatizar:** investigar el problema, la competencia, cliente, el contexto , con esto generar oportunidades de mejora.
+
+**Definir:** definir el desafio, crear equipo e identificar el problema a solucionar.
+
+**Idear:** lluvia de ideas para ver como se va a solucionar el problema, selecionamos solo 1.
+
+**Prototipar:** buscamos hacer un mvp para implementar la idea (debe tener la soulción del prblema base) no puede tener menos.
+
+**Evaluar:** exponer el prototipo al cliente objetivo, tomar feedback y adaptar la solución e iterar. Puedes volver al inicio , es parte del proceso
+
+![](img/_desig.webp "Design Thinking")
+
+## Reto: define tu modelo de negocio
+
+[reto-4](doc/reto-4_.pdf)
+
+# 5. El Producto
+Planificación del producto o servicio
+¿Qué entendemos por atributos esenciales de un producto?
+Ciclo de vida del producto
+Reto: diseño de tu producto
+# 6. Definición de la estrategia de marketing y análisis FODA
+Diseñar una estrategia de marketing
+Matriz FODA
+La marca: imagen e identidad
+Identidad gráfica
+Plan de comunicación
+Las Relaciones Públicas
+Los modelos de fijación de precios
+Estrategias de distribución
+Reto: plan de comunicación
+# 7. Conclusiones
+Conclusiones
