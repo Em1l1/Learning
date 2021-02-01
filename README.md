@@ -324,7 +324,7 @@ Modelo de publicidad usuarios gratis a cambio de ver publicidad de empresas
 
 - [Canvanizer](https://canvanizer.com/choose-canvas)
 
-[reto3](doc/reto3.pdf)
+[reto-3](doc/reto-3.pdf)
 
 # 4. Innovación para Emprender
 
