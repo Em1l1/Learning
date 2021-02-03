@@ -1,6 +1,60 @@
 # Administracion de Servidores Linux
 ##### Jhon Edison Castro Sánchez
 
+# Tabla de Contenido
+- [1. Bases del sistema operativo](#1.-Bases-del-sistema-operativo)
+  - [Introducción](#Introducción)
+  - [Distribuciones más utilizadas de Linux](#Distribuciones-más-utilizadas-de-Linux)
+  - [Instalación de Ubuntu Server](#Instalación-de-Ubuntu-Server)
+  - [Instrucciones para instalar CentOS](#Instrucciones-para-instalar-CentOS)
+  - [Gestión del árbol de directorios](#Gestión-del-árbol-de-directorios)
+  - [Diferencias entre LESS, CAT, HEAD y TAIL para lectura de archivos](#Diferencias-entre-LESS,-CAT,-HEAD-y-TAIL-para-lectura-de-archivos)
+  - [Interacción con archivos y permisos](#Interacción-con-archivos-y-permisos)
+  - [Conociendo las terminales en linux](#Conociendo-las-terminales-en-linux)
+  - [Manejo y monitoreo de procesos y recursos del sistema](#Manejo-y-monitoreo-de-procesos-y-recursos-del-sistema)
+  - [Monitoreo de recursos del sistema](#Monitoreo-de-recursos-del-sistema)
+- [2. Instalación y manejo de software en Linux](#2.-Instalación-y-manejo-de-software-en-Linux)
+  - [Análisis de los parámetros de red](#Análisis-de-los-parámetros-de-red)
+  - [Administración de paquetes acorde a la distribución](#Administración-de-paquetes-acorde-a-la-distribución)
+  - [Manejo de paquetes en sistemas basados en Debian](#Manejo-de-paquetes-en-sistemas-basados-en-Debian)
+  - [Administración de software con YUM y RPM para CentOS](#Administración-de-software-con-YUM-y-RPM-para-CentOS)
+  - [Nagios: Desempaquetado, descompresión, compilación e instalación de paquetes](#Nagios:-Desempaquetado,-descompresión,-compilación-e-instalación-de-paquetes)
+- [3. Administración de usuarios](#3.-Administración-de-usuarios)
+  - [Los usuarios, una tarea vital en el proceso de administración del sistema operativo](#Los-usuarios,-una-tarea-vital-en-el-proceso-de-administración-del-sistema-operativo)
+  - [Creando y manejando cuentas de usuario en el sistema operativo](#Creando-y-manejando-cuentas-de-usuario-en-el-sistema-operativo)
+  - [Entendiendo la membresía de los grupos](#Entendiendo-la-membresía-de-los-grupos)
+  - [Usando PAM para el control de acceso de usuarios](#Usando-PAM-para-el-control-de-acceso-de-usuarios)
+- [4. Servicios en el sistema operativo](#4.-Servicios-en-el-sistema-operativo)
+  - [Autenticación de clientes y servidores sobre SSH](#Autenticación-de-clientes-y-servidores-sobre-SSH)
+  - [Configurando DNS con bind](#Configurando-DNS-con-bind)
+  - [Arranque, detención y recarga de servicios](#Arranque,-detención-y-recarga-de-servicios)
+  - [NGINX y Apache en Ubuntu server](#NGINX-y-Apache-en-Ubuntu-server)
+  - [Instalación y configuración de NGINX](#Instalación-y-configuración-de-NGINX)
+  - [¿Qué es NGINX Amplify?](#¿Qué-es-NGINX-Amplify?)
+  - [NGINX Amplify: Instalación y configuración de un servidor para producción](#NGINX-Amplify:-Instalación-y-configuración-de-un-servidor-para-producción)
+  - [Monitoreo de MySQL con Nagios](#Monitoreo-de-MySQL-con-Nagios)
+  - [Configuración de Nagios](#Configuración-de-Nagios)
+  - [Los logs, nuestros mejores amigos](#Los-logs,-nuestros-mejores-amigos)
+  - [Otros servicios de logs](#Otros-servicios-de-logs)
+- [5. Bash scripting](#5.-Bash-scripting)
+  - [Las bases de bash](#Las-bases-de-bash)
+  - [Las variables y su entorno de ejecución](#Las-variables-y-su-entorno-de-ejecución)
+  - [Automatizando tareas desde la terminal](#Automatizando-tareas-desde-la-terminal)
+  - [Automatizando la copia de seguridad](#Automatizando-la-copia-de-seguridad)
+  - [Crontab](#Crontab)
+- [6. Asegurando tu servidor](#6.-Asegurando-tu-servidor)
+  - [Entendiendo la gestión de vulnerabilidades](#Entendiendo-la-gestión-de-vulnerabilidades)
+  - [¿Qué es una superficie de ataque? Principio del menor privilegio](#¿Qué-es-una-superficie-de-ataque?-Principio-del-menor-privilegio)
+  - [El firewall y sus reglas](#El-firewall-y-sus-reglas)
+  - [Escaneo de puertos con NMAP y NIKTO desde Kali Linux](#Escaneo-de-puertos-con-NMAP-y-NIKTO-desde-Kali-Linux)
+  - [Lynis: Herramientas de auditoria de seguridad en Linux](#Lynis:-Herramientas-de-auditoria-de-seguridad-en-Linux)
+- [7. Proyecto](#7.-Proyecto)
+  - [Configuración de Node.js en un ambiente productivo](#Configuración-de-Node.js-en-un-ambiente-productivo)
+  - [Configuración de NGINX para la aplicación de Node.js](#Configuración-de-NGINX-para-la-aplicación-de-Node.js)
+- [8. Conclusiones](#8.-Conclusiones)
+  - [Conclusiones](#Conclusiones)
+
+
 # 1. Bases del sistema operativo
 
   ## Distribuciones más utilizadas de Linux
@@ -143,13 +197,13 @@ Por ejemplo, el comando ps aux | grep platzi imprime los procesos activos del si
 
 * Ejecutar script en sengundo plano:
 
-  * script &
-  * nohup script & 
+  * `script &`
+  * `nohup script &`
 
 |
-ps: Muestra los procesos corriendo. Modificadores:
+`ps`: Muestra los procesos corriendo. Modificadores:
 
-    aux: Muestra todos los procesos
+  `aux`: Muestra todos los procesos
 
 jobs: Al igual que el comando anterior, muestra los procesos. A diferencia de ps, es un comando interno de la terminal
 fg: Abre un proceso que estaba pausado
@@ -311,3 +365,121 @@ date: Imprime la fecha actual
 [Canonical Livepatch Service](https://ubuntu.com/security/livepatch)
 
 [Snapcraft | Getting started](https://snapcraft.io/docs/getting-started#5)
+
+  ## Administración de software con YUM y RPM para CentOS
+
+  • rpm -qa: ver todos los paquetes instalados
+• rpm -qi bash: Consultar información del paquete bash
+• rpm -qc bash: Ver configuración de bash
+• sudo yum update: (desde usuario root) actualizar repositorios.
+• yum-install net-tools: Este paquete incluye las herramientas importantes para controlar el subsistema de red del núcleo Linux. Esto incluye arp, ifconfig, netstat, rarp, nameif y route. Además, este paquete contiene utilidades relativas a tipos particulares de «hardware» de red (plipconfig, slattach, mii-tool) y aspectos avanzados de configuración IP (iptunnel, ipmaddr).
+Recordar que se debe tener cuidado con el tipo de enlaces que se agregan a los repositorios.
+
+rpm -qi paquete: Muestra la información de un paquete
+rpm -qc paquete: Muestra los archivos asociados a un paquete
+
+Datos interesantes
+|
+
+Instalar el paquete net-tools para tener disponible el comando ifconfig
+
+rpm -qa
+Enlista los paquetes instalados en el SO.
+
+rpm -qi nombre_paquete
+Mostrar la información sobre un paquete especifico.
+
+Con Bash podemos hacer scripting en SO Linux.
+
+rpm -qc nombre_paquete
+Muestra todos los archivos involucrados sobre el paquete.
+
+También podemos usar yum. Pero lo primero es dar yum update. Pero para poder ejecutarlo necesitamos un usuario con todos los permisos, por ejemplo el usuario root.
+
+Si se muestra un # al final del nombre del usuario, eso indica que estamos trabajando con un usuario root. Por ejemplo:
+[root@server ~]#
+
+Lo ideal es nunca trabajar con un usuario root. Lo ideal es crear usuarios que tengan ciertos permisos específicos, por medidas de seguridad y evitar errores.
+
+yum install net-tools
+Para habilitar el ifconfig.
+
+rpm -e nombre_paquete
+Para eliminar un paquete del SO.
+
+- [EPEL](https://fedoraproject.org/wiki/EPEL)
+
+  ## Nagios: Desempaquetado, descompresión, compilación e instalación de paquetes
+
+No todo el software que necesitamos se encuentra en los repositorios. Debido a esto, algunas veces debemos descargar el software, realizar un proceso de descompresión y desempaquetado para finalmente instalar la herramienta.
+
+Instalación de algunas herramientas para manejar una base de datos MySQL (recuerda que instalaremos y trabaremos con MySQL en una próxima clase):
+
+```console
+sudo apt install build-essential libgd-dev openssl libssl-dev unzip apache2 php gcc libdbi-perl libdbd-mysql-perl
+```
+
+Instalación de Nagios:
+
+`wget https://assets.nagios.com/downloads/nagioscore/releases/nagios-4.4.4.tar.gz -O nagioscore.tar.gz`
+
+**Descomprimir y desempaquetar archivos con tar:**
+
+`tar xvzf nagioscore.tar.gz`
+
+Este comando creará una carpeta nagios-4.4.4. El nombre de la carpeta puede variar dependiendo de la versión que descargaste. Entrando a esta carpeta podemos ejecutar diferentes archivos y comandos para configurar el software y realizar la instalación.
+
+```console
+# 1:
+sudo ./configure --with-https-conf=/etc/apache2/sites-enabled
+# 2:
+sudo make all
+# 3:
+sudo make install
+# 4:
+sudo make install-init
+# 5:
+sudo make install-commandmode
+# 6:
+sudo make install-config
+#7:
+sudo make install-webconf
+```
+Por último, para administrar el servicio de nagios podemos usar el comando `sudo systemctl (status, start, restart, reload, stop, enable, disable, list-dependencies) nagios`.
+
+
+
+# 3. Administración de usuarios
+Los usuarios, una tarea vital en el proceso de administración del sistema operativo
+Creando y manejando cuentas de usuario en el sistema operativo
+Entendiendo la membresía de los grupos
+Usando PAM para el control de acceso de usuarios
+4. Servicios en el sistema operativo
+Autenticación de clientes y servidores sobre SSH
+Configurando DNS con bind
+Arranque, detención y recarga de servicios
+NGINX y Apache en Ubuntu server
+Instalación y configuración de NGINX
+¿Qué es NGINX Amplify?
+NGINX Amplify: Instalación y configuración de un servidor para producción
+Monitoreo de MySQL con Nagios
+Configuración de Nagios
+Los logs, nuestros mejores amigos
+Otros servicios de logs
+5. Bash scripting
+Las bases de bash
+Las variables y su entorno de ejecución
+Automatizando tareas desde la terminal
+Automatizando la copia de seguridad
+Crontab
+6. Asegurando tu servidor
+Entendiendo la gestión de vulnerabilidades
+¿Qué es una superficie de ataque? Principio del menor privilegio
+El firewall y sus reglas
+Escaneo de puertos con NMAP y NIKTO desde Kali Linux
+Lynis: Herramientas de auditoria de seguridad en Linux
+7. Proyecto
+Configuración de Node.js en un ambiente productivo
+Configuración de NGINX para la aplicación de Node.js
+8. Conclusiones
+Conclusiones
