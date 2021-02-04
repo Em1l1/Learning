@@ -18,7 +18,7 @@
   - [Administración de paquetes acorde a la distribución](#Administración-de-paquetes-acorde-a-la-distribución)
   - [Manejo de paquetes en sistemas basados en Debian](#Manejo-de-paquetes-en-sistemas-basados-en-Debian)
   - [Administración de software con YUM y RPM para CentOS](#Administración-de-software-con-YUM-y-RPM-para-CentOS)
-  - [Nagios: Desempaquetado, descompresión, compilación e instalación de paquetes](#Nagios:-Desempaquetado-descompresión-compilación-e-instalación-de-paquetes)
+  - [Nagios: Desempaquetado, descompresión, compilación e instalación de paquetes](#Nagios-Desempaquetado-descompresión-compilación-e-instalación-de-paquetes)
 - [3. Administración de usuarios](#3.-Administración-de-usuarios)
   - [Los usuarios, una tarea vital en el proceso de administración del sistema operativo](#Los-usuarios,-una-tarea-vital-en-el-proceso-de-administración-del-sistema-operativo)
   - [Creando y manejando cuentas de usuario en el sistema operativo](#Creando-y-manejando-cuentas-de-usuario-en-el-sistema-operativo)
