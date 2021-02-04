@@ -3,80 +3,86 @@
 
 # Tabla de Contenido
 - [1. Conocer desafíos y consejos previos a iniciar tu proyecto](#1.-Conocer-desafíos-y-consejos-previos-a-iniciar-tu-proyecto)
-Participa en la conferencia: "Habilidades blandas para humanistas en medios digitales"
-¿Emprender es para ti?
-¿Cómo elegir en qué emprender?
-El mercado: tendencias para emprender
+  - [Participa en la conferencia: "Habilidades blandas para humanistas en medios digitales"](#Participa-en-la-conferencia:-"Habilidades-blandas-para-humanistas-en-medios-digitales")
+  - [¿Emprender es para ti?](#¿Emprender-es-para-ti?)
+  - [¿Cómo elegir en qué emprender?](#¿Cómo-elegir-en-qué-emprender?)
+  - [El mercado: tendencias para emprender](#El-mercado:-tendencias-para-emprender)
   - [Lluvia de ideas](#Lluvia-de-ideas)
-2. Fases del emprendimiento
-Las ventajas comparativas de una idea de negocio
-Medir el interés de una idea
-Tablero de experimentación
-Definir el perfil del cliente y el mercado objetivo de un producto
-Encontrar elementos diferenciadores de tu producto en el mercado actual
-Requisitos para la diferenciación
-Definir el modelo de negocio
-Determinar las estrategias y el proceso de captación de clientes
-Definir las necesidades y estrategias de financiamiento
-Fases del emprendimiento
-3. Encontrar ideas de negocio rentables
-Patrones de modelo de negocio
-Patrones de modelo de negocio que parecen gratis
-Resumen y desafío: Uber
-4. Innovación para Emprender
-¿Qué es innovar? Desmintiendo mitos
-Tipos de innovación
-Cómo innovar en equipo
-La personalidad innovadora
-El proceso de innovación
-Reto: define tu modelo de negocio
-5. El Producto
-Planificación del producto o servicio
-¿Qué entendemos por atributos esenciales de un producto?
-Ciclo de vida del producto
-Reto: diseño de tu producto
-6. Definición de la estrategia de marketing y análisis FODA
-Diseñar una estrategia de marketing
-Matriz FODA
-La marca: imagen e identidad
-Identidad gráfica
-Plan de comunicación
-Las Relaciones Públicas
-Los modelos de fijación de precios
-Estrategias de distribución
-Reto: plan de comunicación
-7. Conclusiones
-Conclusiones
+- [2. Fases del emprendimiento](#2.-Fases-del-emprendimiento)
+  - [Las ventajas comparativas de una idea de negocio](#Las-ventajas-comparativas-de-una-idea-de-negocio)
+  - [Medir el interés de una idea](#Medir-el-interés-de-una-idea)
+  - [Tablero de experimentación](#Tablero-de-experimentación)
+  - [Definir el perfil del cliente y el mercado objetivo de un producto](#Definir-el-perfil-del-cliente-y-el-mercado-objetivo-de-un-producto)
+  - [Encontrar elementos diferenciadores de tu producto en el mercado actual](#Encontrar-elementos-diferenciadores-de-tu-producto-en-el-mercado-actual)
+  - [Requisitos para la diferenciación](#Requisitos-para-la-diferenciación)
+  - [Definir el modelo de negocio](#Definir-el-modelo-de-negocio)
+  - [Determinar las estrategias y el proceso de captación de clientes](#Determinar-las-estrategias-y-el-proceso-de-captación-de-clientes)
+  - [Definir las necesidades y estrategias de financiamiento](#Definir-las-necesidades-y-estrategias-de-financiamiento)
+  - [Fases del emprendimiento](#Fases-del-emprendimiento)
+- [3. Encontrar ideas de negocio rentables](#3.-Encontrar-ideas-de-negocio-rentables)
+  - [Patrones de modelo de negocio](#Patrones-de-modelo-de-negocio)
+  - [Patrones de modelo de negocio que parecen gratis](#Patrones-de-modelo-de-negocio-que-parecen-gratis)
+  - [Resumen y desafío: Uber](#Resumen-y-desafío:-Uber)
+- [4. Innovación para Emprender](#4.-Innovación-para-Emprender)
+  - [¿Qué es innovar? Desmintiendo mitos](#¿Qué-es-innovar?-Desmintiendo-mitos)
+  - [Tipos de innovación](#Tipos-de-innovación)
+  - [Cómo innovar en equipo](#Cómo-innovar-en-equipo)
+  - [La personalidad innovadora](#La-personalidad-innovadora)
+  - [El proceso de innovación](#El-proceso-de-innovación)
+  - [Reto: define tu modelo de negocio](#Reto:-define-tu-modelo-negocio)
+- [5. El Producto](#5.-El-Producto)
+  - [Planificación del producto o servicio](#Planificación-del-producto-o-servicio)
+  - [¿Qué entendemos por atributos esenciales de un producto?](#¿Qué-entendemos-por-atributos-esenciales-de-un-producto?)
+  - [Ciclo de vida del producto](#Ciclo-de-vida-del-producto)
+  - [Reto: diseño de tu producto](#Reto:-diseño-de-tu-producto)
+- [6. Definición de la estrategia de marketing y análisis FODA](#6.-Definición-de-la-estrategia-de-marketing-y-análisis-FODA)
+  - [Diseñar una estrategia de marketing](#Diseñar-una-estrategia-de-marketing)
+  - [Matriz FODA](#Matriz-FODA)
+  - [La marca: imagen e identidad](#La-marca:-imagen-e-identidad)
+  - [Identidad gráfica](#Identidad-gráfica)
+  - [Plan de comunicación](#Plan-de-comunicación)
+  - [Las Relaciones Públicas](#Las-Relaciones-Públicas)
+  - [Los modelos de fijación de precios](#Los-modelos-de-fijación-de-precios)
+  - [Estrategias de distribución](#Estrategias-de-distribución)
+  - [Reto: plan de comunicación](#Reto:-plan-de-comunicación)
+- [7. Conclusiones](#7.-Conclusiones)
+  - [Conclusiones](#Conclusiones)
 
+# 1. Conocer desafíos y consejos previos a iniciar tu proyecto
+
+  ## Participa en la conferencia: "Habilidades blandas para humanistas en medios digitales"
 
 [TED Ideas worth spreading](https://www.ted.com/talks/simon_sinek_how_great_leaders_inspire_action?language=es)
 
 * Encuentra primero el "por qu&eacute;", luego el "c&oacute;mo" y finalmente el "qu&eacute;".
 
-¿Cuál es tu propósito?
+  ## ¿Emprender es para ti?
+
+**¿Cuál es tu propósito?**
   
-  *Es la pasión te dará las fuerzas necesarias, para recorrer el camino de Emprender.
+  * Es la pasión te dará las fuerzas necesarias, para recorrer el camino de Emprender.
 
 ¿Qué te apasiona?
 
   * Problemas = Oportunidades
   * Diferentes aristas
 
-Las Oportunidades
+  ## ¿Cómo elegir en qué emprender?
+
+**Las Oportunidades**
 
 Una oportunidad de negocio para un emprendedor puede no serlo para otro.
  
  [curso-para-comenzar-tu-camino-emprendedor.pdf](https://drive.google.com/file/d/1i-U6pixJgPWKZv5uY6NowU5p3nHP6N-_/view?usp=sharing)
 
-  ### Problemas Cercanos
-  ### Problemas Lejanos
+  - **Problemas Cercanos**
+  - **Problemas Lejanos**
+  - **Estar preparado**
+  - **Prepárate**
 
-* Estar preparado 
-* Prepárate
+  **Imagina tu día a día**
 
-  ## Imagina tu día a día
-
-  Crecimiento de la Empresa
+  ***Crecimiento de la Empresa***
 
 1.- Encontrar un tema que tenga que ver contigo y luego ver problemas relacionados a eso.
 
@@ -88,7 +94,7 @@ Una oportunidad de negocio para un emprendedor puede no serlo para otro.
 
 Sugerencia: no lo pienses tanto.
 
-## El mercado
+## El mercado: tendencias para emprender
 
 * Tendencia para Emprender
 
@@ -97,7 +103,7 @@ Sugerencia: no lo pienses tanto.
     > "Haz algo que las personas quieran"
 
 
-    #### Tendencia o Moda
+  **Tendencia o Moda**
 
     Tendencia: Largo plazo, hacía donde va el mundo.
 
@@ -110,9 +116,9 @@ Sugerencia: no lo pienses tanto.
   |   Cervecería Artesanal |  **Hábitos de consumo que van cambiando:** tables vs jugueterías. |
   |  Barberías |  **Avance de la Tecnología:** Internet y todo en la nube. |
 
-  GameStop: Videojuegos físicos
+  **GameStop:** Videojuegos físicos
 
-  nvidia: Videojuegos online
+  **nvidia:** Videojuegos online
 
   **¿Comó identificarlas?**
 
@@ -120,8 +126,7 @@ Sugerencia: no lo pienses tanto.
   * Tendencias relacionadas con el rubro que cierran.
   * Acciones del rubro que suben o bajan.
 
-
-    #### Empresas de Triple Impacto
+    **Empresas de Triple Impacto**
 
   |  Económico 🎟️   | Ambiental 🌎   | Social 👪   |
 
