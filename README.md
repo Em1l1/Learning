@@ -6,19 +6,33 @@
 - [¿Por qué accesibilidad?](#¿Por-qué-accesibilidad?)
   - [Historia de WCAG](#Historia-de-WCAG)
   - [¿Qué es WCAG?](#¿Qué-es-WCAG?)
-- [Los cuatro principio](#Los-cuatro-principio)
-- [Tecnologías asistivas](#Tecnologías-asistivas)
+  - [Los cuatro principio](#Los-cuatro-principio)
+  - [Tecnologías asistivas](#Tecnologías-asistivas)
 - [3. Evaluar la accessibilidad de sitios web](3.-Evaluar-la-accessibilidad-de-sitios-web)
-- [Pruebas con simuladores de discapacidades visuales](#Pruebas-con-simuladores-de-discapacidades-visuales)
-- [Pruebas manuales con tu teclado](#Pruebas-manuales-con-tu-teclado)
-- [Pruebas manuales con tu teclado](#Pruebas-manuales-con-tu-teclado)
-- [Pruebas manuales con lectores de pantalla](#Pruebas-manuales-con-lectores-de-pantalla)
-- [Pruebas manuales con VoiceOver](#Pruebas-manuales-con-VoiceOver)
+  - [Pruebas con simuladores de discapacidades visuales](#Pruebas-con-simuladores-de-discapacidades-visuales)
+  - [Pruebas manuales con tu teclado](#Pruebas-manuales-con-tu-teclado)
+  - [Pruebas manuales con lectores de pantalla](#Pruebas-manuales-con-lectores-de-pantalla)
+  - [Pruebas manuales con VoiceOver](#Pruebas-manuales-con-VoiceOver)
 - [4. Refactorizar HTML para ser mas accessible](#4.-Refactorizar-HTML-para-ser-mas-accessible)
-  - [¿Qué es el HTML semántico y por qué es importante?](#¿Qué-es-el-HTML-semántico-y-por-qué-es-importante?)
-  - [Usando HTML semántico en el header de nuestro sitio](#Usando-HTML-semántico-en-el-header-de-nuestro-sitio)
-  - [](#)
-  - [](#)
+    - [¿Qué es el HTML semántico y por qué es importante?](#¿Qué-es-el-HTML-semántico-y-por-qué-es-importante?)
+    - [Usando HTML semántico en el header de nuestro sitio](#Usando-HTML-semántico-en-el-header-de-nuestro-sitio)
+    - [ARIA - Accessible Rich Internet Applications](#ARIA---Accessible-Rich-Internet-Applications)
+    - [ARIA roles](#ARIA-roles)
+    - [ARIA properties](#ARIA-properties)
+    - [ARIA states](#ARIA-states)
+- [5. Utilizar CSS para aumentar la acessibilidad de un sitio web](#5.-Utilizar-CSS-para-aumentar-la-acessibilidad-de-un-sitio-web)
+    - [Iconos](#Iconos)
+    - [Skip Links](#Skip-Links)
+    - [Estilos de foco y hover](#Estilos-de-foco-y-hover)
+- [6. Extender la accesibilidad usando JavaScript](#6.-Extender-la-accesibilidad-usando-JavaScript)
+    - [Manejando el foco del teclado - botones](#Manejando-el-foco-del-teclado---botones)
+    - [Manejando el foco del teclado - el carousel](#Manejando-el-foco-del-teclado---el-carousel)
+    - [Coordinando el foco del teclado con el foco de lectores de pantallas](#Coordinando-el-foco-del-teclado-con-el-foco-de-lectores-de-pantallas)
+    - [Manejando modales](#Manejando-modales)
+    - [Mejorando la accesibilidad con teclado de nuestro modal](#Mejorando-la-accesibilidad-con-teclado-de-nuestro-modal)
+    - [Ayudando a nuestros usuarios a interactuar correctamente con el sitio](#Ayudando-a-nuestros-usuarios-a-interactuar-correctamente-con-el-sitio)
+    - [Validando formularios](#Validando-formularios)
+    - [Manejando cambios dinámicos](#Manejando-cambios-dinámicos)
 
 
   ## Accesibilidad 
@@ -170,13 +184,15 @@ Next character = Search + Shift + Right
 
 ## ARIA - Accessible Rich Internet Applications
 
-ARIA (Accessible Rich Internet Applications): Un conjunto de atributos especiales para accesibilidad que pueden añadirse a cualquier etiqueta, pero especialmente adaptado a HTML.
+ARIA[ARIA] (Accessible Rich Internet Applications): Un conjunto de atributos especiales para accesibilidad que pueden añadirse a cualquier etiqueta, pero especialmente adaptado a HTML.
 
 Fue creado por la W3C, lo crearon para que podamos comunicar cambios especiales en nuestras aplicaciones.
 
-* [ARIA]: Accessible Rich Internet Applications
-* [HTML]: Hyper Text Markup Language
-* [W3C]: World Wide Web Consortium
+[ARIA]: Accessible Rich Internet Applications
+
+[HTML]: Hyper Text Markup Language
+
+[W3C]: World Wide Web Consortium
 
 
 **Atributos de ARIA:**
@@ -187,7 +203,7 @@ Fue creado por la W3C, lo crearon para que podamos comunicar cambios especiales 
 
   ## ARIA roles
 
-  Roles de ARIA: Define el tipo general del objeto ( como un artículo, una alerta o un deslizador)
+ **Roles de ARIA:** Define el tipo general del objeto ( como un artículo, una alerta o un deslizador)
 
 Los roles le comunican al navegadores cuales son las interacciones que debería esperar y cómo se va a usar este objeto en nuestro proyecto. Se usan en situaciones muy especificas, es mejor depender del HTML semántico para comunicar los roles.
 
@@ -217,12 +233,12 @@ Qué son
 
 Comunican atributos que son esenciales para el comportamiento o significado de un elemento pero que se suelen comunicar visualmente
 
-    Agregar significado a nuestro contenido visual
+  Agregar significado a nuestro contenido visual
 
 ARIA label
 
-    Podemos usar para agregar un string para describir un elemento de nuestro código
-    Aria Ejemplo:
+  Podemos usar para agregar un string para describir un elemento de nuestro código
+  Aria Ejemplo:
 
 
 ```html
@@ -250,9 +266,9 @@ Ejemplo:
 
 
 
-    Lo importante es que las personas que navegan con un lector de pantalla le demos una experiencia casi igual a las personas que utilizan tecnologías asistivas
+  Lo importante es que las personas que navegan con un lector de pantalla le demos una experiencia casi igual a las personas que utilizan tecnologías asistivas
 
-Qué son
+**Qué son**
 
 Comunican estados y cambios de estados en elementos que se suelen comunicar visualmente. Tenemos que comunicar los diferentes estados que tengamos en nuestras aplicaciones a nuestros usuarios
 
@@ -358,9 +374,9 @@ El orden de las propiedades dentro de los selectores si importa y tienen un orde
 
   ## Coordinando el foco del teclado con el foco de lectores de pantallas
 
-  setAttribute: Agrega un nuevo atributo.
+  `setAttribute:` Agrega un nuevo atributo.
 
-  remoteAttribute: Elimina un atributo
+  `remoteAttribute:` Elimina un atributo
 
   ## Manejando modales
 
