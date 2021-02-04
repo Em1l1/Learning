@@ -65,4 +65,17 @@
 --------------------------------------------------------------
 
 	Instalar Fire Code - Fonts
+	
+--------------------------------------------------------------
+
+	Extensiones en navegador
+	
+	- octotree
+	- Adguard Adblocker
+	- LenguageTool
+	- Ract Developers Tools
+	- Gitlab tree
+	- GitHub File Icons
+	- Text to speech that brings productivity
+	
 
