@@ -22,7 +22,7 @@
   - [RAW en Android y activar cuadrícula](#RAW-en-Android-y-activar-cuadrícula)
   - [RAW en iPhone](#RAW-en-iPhone)
 - [5. Edición de fotografía móvil](#5.-Edición-de-fotografía-móvil)
-  - [Herramientas de edición: Exposición, contraste, ajuste, enfoques y claridad](#Herramientas-de-edición:-Exposición,-contraste,-ajuste,-enfoques-y-claridad)
+  - [Herramientas de edición: Exposición, contraste, ajuste, enfoques y claridad](#Herramientas-de-edición-Exposición-contraste-ajuste-enfoques-y-claridad)
   - [Herramientas de edición: Saturación, tono, tono de piel, balance de blancos y viñeta](#Herramientas-de-edición-Saturación-tono-tono-de-piel-balance-de-blancos-y-viñeta)
   - [Herramientas de edición: Grano, difuminar, tono separado, bordes y HSL](#Herramientas-de-edición-Grano-difuminar-tono-separado-bordes-y-HSL)
   - [Aprendiendo a exportar en VSCO](#Aprendiendo-a-exportar-en-VSCO)
