@@ -455,16 +455,144 @@ sudo make install-config
 #7:
 sudo make install-webconf
 ```
+
+Error en el paso al ejecutar `sudo make install`, primero tienen que hacer lo siguiente:
+
+```console
+sudo make install-groups-users
+sudo usermod -a -G nagios www-data
+```
+
 Por último, para administrar el servicio de nagios podemos usar el comando `sudo systemctl (status, start, restart, reload, stop, enable, disable, list-dependencies) nagios`.
 
 - [Nagios](https://www.nagios.org)
 - [assets-nagios](https://assets.nagios.com/downloads/nagioscore/releases/nagios-4.4.4.tar.gz)
 - [Nagios-plugins](https://nagios-plugins.org/download/nagios-plugins-2.2.1.tar.gz)
 
+**Instalar plugins-nagios**
+
+```console
+wget https://nagios-plugins.org/download/nagios-plugins-2.2.1.tar.gz -O nagios-plugins.tar.gz
+tar xzvf nagios-plugins.tar.gz
+cd nagios-plugins-2.2.1
+sudo ./configure
+sudo make all
+sudo make install
+```
+
+- [plugings-nagios](https://support.nagios.com/kb/article.php?id=569#Ubuntu)
+
+La instalacion a continuacion es opcional, eliges la primera o la segunda ambos instalan los paquetes.
+
+```console
+sudo apt update
+
+sudo apt-get install -y autoconf gcc libc6 libmcrypt-dev make libssl-dev wget bc gawk dc build-essential snmp libnet-snmp-perl gettext -y
+
+sudo apt-get install -y libpqxx3-dev
+
+sudo apt-get install -y libdbi-dev
+
+wget https://github.com/FreeRADIUS/freeradius-client/archive/release_1_1_7.tar.gz
+
+ tar xvzf release_1_1_7.tar.gz
+
+ ls
+
+ ls -
+ 
+--------------------------------
+ cd freeradius-client-release_1_1_7/
+
+ sudo ./configure
+
+ sudo make
+
+ sudo make install
+
+ sudo apt-get install -y libldap2-dev
+
+ sudo apt-get install -y libmysqlclient-dev
+
+ sudo apt-get install -y dnsutils
+
+ sudo apt-get install -y smbclient
+
+ sudo apt-get install -y qstat -y
+
+ sudo apt-get install -y fping
+
+ sudo apt-get install -y qmail-tools
+
+ cd ..
+
+------------------------------------------
+
+wget --no-check-certificate -O nagios-plugins.tar.gz https://github.com/nagios-plugins/nagios-plugins/archive/release-2.2.1.tar.gz
+
+o
+
+wget https://nagios-plugins.org/download/nagios-plugins-2.2.1.tar.gz -O nagios-plugins.tar.gz
+
+
+tar zxf nagios-plugins.tar.gz
+
+cd nagios-plugins-release-2.2.1/
+
+ls
+
+sudo ./tools/setup
+
+sudo ./configure
+
+sudo make
+
+sudo make install
+
+sudo systemctl restart apache2.service
+
+sudo systemctl status apache2.service
+
+sudo systemctl start nagios.service
+
+sudo systemctl restart nagios.service
+
+sudo systemctl start nagios.service
+
+sudo systemctl status nagios.service
+
+history 
+```
 
 # 3. Administración de usuarios
+
   ## Los usuarios, una tarea vital en el proceso de administración del sistema operativo
+
+El comando `id` nos muestra el identificador único `(uid)` de cada usuario en nuestro sistema operativo. El ID 0 está reservado para el usuario root.
+
+Con el comando `whoami` podemos ver con qué usuario estamos trabajando en este momento. Podemos ver todos los usuarios del sistema leyendo el archivo `/etc/passwd`.
+
+Las contraseñas de los usuarios están almacenadas en el archivo `etc/shadow`, pero están cifradas. Y solo el usuario root tiene permisos de lectura/escritura.
+
+Para cambiar la contraseña de nuestros usuarios usamos el comando `passwd`.
+
+Comandos útiles
+
+**cat /etc/passwd:** Muestra todos los usuarios del sistema operativo
+**cat /etc/shadow:** Muestra las contraseñas del sistema operativo
+
   ## Creando y manejando cuentas de usuario en el sistema operativo
+
+**Comandos para administrar cuentas de usuarios**
+
+- **sudo useradd nombre-usuario:** crea un usuario sin asignarle inmediatamente alguna contraseña ni consultar más información. Debemos terminar de configurar esta cuenta a mano posteriormente.
+- **sudo adduser nombre-usuario:** crea un nuevo usuario con contraseña y algo más de información. También creará una nueva carpeta en la `carpeta /home/`.
+- **userdel nombre-usuario:** eliminar cuentas de usuarios.
+- **usermod:** modificar la información de alguna cuenta.
+
+Nunca modifiques a mano el archivo `/etc/passwd`. Para administrar los usuarios debemos usar los comandos que estudiamos en clase.
+
+
   ## Entendiendo la membresía de los grupos
   ## Usando PAM para el control de acceso de usuarios
 # 4. Servicios en el sistema operativo
