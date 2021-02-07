@@ -583,7 +583,7 @@ Comandos útiles
 
   ## Creando y manejando cuentas de usuario en el sistema operativo
 
-**Comandos para administrar cuentas de usuarios**
+**Comandos para administrar cuentas de usuarios ⚑**
 
 - **sudo useradd nombre-usuario:** crea un usuario sin asignarle inmediatamente alguna contraseña ni consultar más información. Debemos terminar de configurar esta cuenta a mano posteriormente.
 - **sudo adduser nombre-usuario:** crea un nuevo usuario con contraseña y algo más de información. También creará una nueva carpeta en la `carpeta /home/`.
@@ -592,9 +592,50 @@ Comandos útiles
 
 Nunca modifiques a mano el archivo `/etc/passwd`. Para administrar los usuarios debemos usar los comandos que estudiamos en clase.
 
+- Un truco al momento de utilizar el comando history es filtrar los resultados con `grep` obteniendo así información más precisa, en el ejemplo de la clase, se puede utilizar el comando:
+
+`history | grep passwd`
 
   ## Entendiendo la membresía de los grupos
+
+Los grupos nos ayudan a darle los mismos permisos a diferentes usuarios al mismo tiempo, sin necesidad de asignar el mismo permiso a cada usuario individualmente. Todos los usuarios que pertenezcan al mismo grupo tendrán los mismos permisos.
+
+Para cambiar de usuario sin necesidad de reiniciar el sistema podemos usar el comando `su - nombre-usuario`. También podemos cambiar de usuario sin necesidad de saber su contraseña usando el comando `sudo su - nombre-usuario`.
+
+Para ver a qué grupos pertenecen nuestros usuarios usamos el comando groups nombre-usuario. Para agregar usuarios a un nuevo grupo usamos el comando `sudo gpasswd -a nombre-usuario nombre-grupo`. Los eliminamos de la misma forma con `gpasswd -d`.
+
+Para esto también podemos usar el comando `sudo usermod -aG nombre-grupo nombre-usuario`. Recuerda que en este caso el orden en que escribimos el grupo y el ususario se invierte.
+
+Para listar los permisos de nuestros usuarios ejecutamos el comando `sudo -l`.
+
+**Comandos**
+
+- `su - usuario`: Switch User, cambia de usuario
+- `groups usuario`: Muestra a que grupos pertenece cierto usuario
+- `sudo gpasswd -a usuario grupo`: Agrega un usuario a un grupo
+- `sudo gpasswd -d usuario grupo`: Quita a un usuario de un grupo
+- `usermod -aG grupo usuario`: Agrega un usuario a un grupo
+- `sudo -l`: Muestra que permisos tiene el usuario actual
+
   ## Usando PAM para el control de acceso de usuarios
+
+PAM es un mecanismo para administrar a los usuarios de nuestro sistema operativo. Nos permite autenticar usuarios, controlar la cantidad de procesos que ejecutan cada uno, verificar la fortaleza de sus contraseñas, ver la hora a la que se conectan por SSH, entre otras.
+
+Con el comando `pwscore` podemos probar qué tan fuertes son nuestras contraseñas. Recuerda que para usar este comando en sistemas basados en Ubuntu debemos instalar el paquete `libpwquality-tools`.
+
+El comando ulimit nos ayuda a listar los permisos de nuestros usuarios. Para limitar el número de procesos que nuestros usuarios pueden realizar ejecutamos `ulimit -u max-numero-procesos`.
+
+**Comandos**
+
+- **pwscore:** Evalúa si una contraseña es buena o mala del 0 al 100
+- **ulimit:** Muestra los permisos que tiene el usuario actual. Modificadores:
+
+- **ulimit -u numero:** Cambia la cantidad de procesos que mi usuario puede ejecutar
+
+**Comandos útiles**
+
+- **sudo vi /etc/security/time.conf:** Modifica el archivo que indica en que horarios pueden conectarse ciertos usuarios
+
 # 4. Servicios en el sistema operativo
   ## Autenticación de clientes y servidores sobre SSH
   ## Configurando DNS con bind
