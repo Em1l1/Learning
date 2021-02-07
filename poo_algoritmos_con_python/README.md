@@ -1,23 +1,53 @@
-# Programación Orientado a Objetos
+# 🎙️🥸 POO y Algoritmos con Python 🌋⌨️
 #### David Aroesti
 
-# Tabla de contenido
-- [Objetivos del curos](#Objetivos)
-- [Programacion orientada a objetos - python](#Programación-orientada-a-objetos-en-Python)
-- [Clases](#Clases)
-- [Instancias](#Instancias)
-- [Atributos de la instancia](#Atributos-de-la-instancia)
-- [Métodos de instancia](#Métodos-de-instancia)
-- [Tipos de datos abstractos y clases, Instancias](#Tipos-de-datos-abstractos-y-clases-Instancias)
-- [Instancias](#Instancias)
+[![](img/python.jpg "Curso POO y Algoritmos con Python")](https://platzi.com/clases/poo-python/)
 
-# Objetivos
+
+# Tabla de contenido
+ 
+- [1. Programación Orientada a Objetos](#1.-Programación-Orientada-a-Objetos)
+    - [Introducción al curso](#Introducción-al-curso)
+    - [Programación Orientada a Objetos](#Programación-Orientada-a-Objetos)
+    - [Tipos de datos abstractos y clases, Instancias](#Tipos-de-datos-abstractos-y-clases-Instancias)
+    - [Decomposición](#Decomposición)
+    - [Abstracción](#Abstracción)
+    - [Funciones: base de los decoradores](#Funciones-base-de-los-decoradores)
+    - [Setters, getters y decorador property](#Setters-getters-y-decorador-property)
+    - [Encapsulación, getters and setters](#Encapsulación-getters-and-setters)
+    - [Herencia](#Herencia)
+    - [Polimorfismo](#Polimorfismo)
+- [2. Complejidad algorítmica](#2.-Complejidad-algorítmica)
+    - [Introducción a la complejidad algorítmica](#Introducción-a-la-complejidad-algorítmica)
+    - [Conteo abstracto de operación](#Conteo-abstracto-de-operación)
+    - [Notación asintótica](#Notación-asintótica)
+    - [Clases de complejidad algorítmica](#Clases-de-complejidad-algorítmica)
+- [3. Algoritmos de búsqueda y ordenación](#3.-Algoritmos-de-búsqueda-y-ordenación)
+    - [Búsqueda lineal](#Búsqueda-lineal)
+    - [Búsqueda binaria](#Búsqueda-binaria)
+    - [Ordenamiento de burbuja](#Ordenamiento-de-burbuja)
+    - [Ordenamiento por inserción](#Ordenamiento-por-inserción)
+    - [Ordenamiento por mezcla](#Ordenamiento-por-mezcla)
+- [4. Ambientes virtuales](#4.-Ambientes-virtuales)
+    - [Ambientes virtuales](#Ambientes-virtuales)
+- [5. Graficado](#5.-Graficado)
+    - [¿Por qué graficar?](#¿Por-qué-graficar?)
+    - [Graficado simple](#Graficado-simple)
+- [6. Algoritmos de optimización](#6.-Algoritmos-de-optimización)
+    - [Introducción a la optimización](#Introducción-a-la-optimización)
+    - [El problema del morral](#El-problema-del-morral)
+    - [Conclusiones](#Conclusiones)
+
+# 1. Programación Orientada a Objetos
+
+## Introducción al curso
+
   * Entender cómo funciona la Programación Orientado a Objetos
   * Entender cómo medir la eficiencia temporal y espacial de nuestro algoritmo.
   * Entender cómo y por qué grafica.
   * Aprender a resolver problemas de búsqueda, ordenación y optimización.
 
-  ## Programación orientada a objetos en Python
+## Programación Orientada a Objetos
 
 Uno de los elementos más importantes de los lenguajes de programación
 es la utilización de clases para organizar programas en módulos y abstracciones
@@ -59,7 +89,7 @@ etc.)```, también pueden escribir una fracción muy pequeña de los tipos útil
 permiten crear funciones, ahora veremos los mecanismos que nos permiten crear
 nuevos tipos (o clases).
 
-## Clases
+**Clases**
 
 Las estructuras primitivas con las que hemos trabajado hasta ahora nos permiten
 definir cosas sencillas, como el costo de algo, el nombre de un usuario, las
@@ -79,8 +109,8 @@ no? ¿Si el cuarto tiene cama doble o sencilla? Esto nos lleva a una falta fuert
 de organización y es justamente el punto que justifica la existencia de clases.
 
 Las clases nos permiten crear nuevos tipos que contiene información arbitraria
-sobre un objeto. En el caso del hotel, podríamos crear dos clases Hotel() y
-Cuarto() que nos permitiera dar seguimiento a las propiedades como número de
+sobre un objeto. En el caso del hotel, podríamos crear dos `clases Hotel()` y
+`Cuarto()` que nos permitiera dar seguimiento a las propiedades como número de
 cuartos, ocupación, aseo, tipo de habitación, etc.
 
 Es importante resaltar que las clases sólo proveen estructura. Son un molde con
@@ -88,7 +118,7 @@ el cual podemos construir objetos específicos. La clase señala las propiedades
 que los hoteles que modelemos tendrán, pero no es ningún hotel específico. Para
 eso necesitamos las instancias.
 
-### Instancias
+**Instancias**
 
 Mientras que las clases proveen la estructura, las instancias son los objetos
 reales que creamos en nuestro programa: un hotel llamado PlatziHotel o Hilton.
@@ -110,12 +140,12 @@ llamando al constructor de la clase.
 hotle = Hotel()
 ```
 
-## Atributos de la instancia
+**Atributos de la instancia**
 
 Todas las clases crean objetos y todos los objetos tienen atributos. Utilizamos
 el método especial __init__ para definir el estado inicial de nuestra instancia.
-Recibe como primer parámetro obligatorio self (que es simplemente una
-referencia a la instancia).
+Recibe como primer parámetro obligatorio `self (que es simplemente una referencia a la instancia)`.
+
 ```python
 class Hotel:
     
@@ -129,13 +159,14 @@ hotel = Hotel(numero_maximo_de_huespedes=50, lugares_de_estacionamiento=20)
 print(hotel.lugares_de_estacionamiento) # 20
 ```
 
-## Métodos de instancia
+**Métodos de instancia**
 
 Mientras que los atributos de la instancia describen lo que representa el
 objeto, los métodos de instancia nos indican qué podemos hacer con las
 instancias de dicha clase y normalmente operan en los mencionados atributos.
 Los métodos son equivalentes a funciones dentro de la definición de la clase,
 pero todos reciben self como primer argumento.
+
 ```python
 class Hotel:
 
@@ -156,11 +187,13 @@ hotel.anadir_huespedes(3)
 hotel.checkout(1)
 hotel.ocupacion_total() # 2
 ```
+
 Ahora que ya sabemos qué son las clases y cómo las podemos utilizar en nuestros
 programas, platícanos qué clases te serían útiles para modelar en uno de tus
 programas.
 
 ## Tipos de datos abstractos y clases, Instancias
+
 
 **Tipos de datos abstractos**
 
@@ -185,6 +218,7 @@ class <nombre_de_la_clase>(<super_clase>):
     def <nombre_del_metodo>(self, <params>):
         <expresion>
 ```
+
 ```python
 # Definicion
 class Persona:
@@ -217,3 +251,31 @@ class Persona:
 
 * Se accede a los atributos con la notaci&oacute;n de punto.
 * Puede tener atributos privados. Por convenci&oacute; comienzan con ```_```
+
+## Decomposición
+## Abstracción
+## Funciones: base de los decoradores
+## Setters, getters y decorador property
+## Encapsulación, getters and setters
+## Herencia
+## Polimorfismo
+# 2. Complejidad algorítmica
+## Introducción a la complejidad algorítmica
+## Conteo abstracto de operación
+## Notación asintótica
+## Clases de complejidad algorítmica
+# 3. Algoritmos de búsqueda y ordenación
+## Búsqueda lineal
+## Búsqueda binaria
+## Ordenamiento de burbuja
+## Ordenamiento por inserción
+## Ordenamiento por mezcla
+# 4. Ambientes virtuales
+## Ambientes virtuales
+# 5. Graficado
+# ¿Por qué graficar?
+# Graficado simple
+# 6. Algoritmos de optimización
+## Introducción a la optimización
+## El problema del morral
+## Conclusiones
