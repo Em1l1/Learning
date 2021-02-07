@@ -636,14 +636,370 @@ El comando ulimit nos ayuda a listar los permisos de nuestros usuarios. Para lim
 
 - **sudo vi /etc/security/time.conf:** Modifica el archivo que indica en que horarios pueden conectarse ciertos usuarios
 
+```console
+ls /etc/pam.d
+ls /lib64/security
+ls /etc/security
+pwscore
+ulimit -a
+ulimit -u 10  --numero de procesos
+vi script.sh
+chmod +x script.sh
+./script.sh
+vi /etc/security/time.conf
+sudo vi /etc/security/time.conf
+gpasswd -a dbz wheel  # centos wheel | Ubuntu sudo
+groups dbz
+```
+
 # 4. Servicios en el sistema operativo
+
   ## Autenticación de clientes y servidores sobre SSH
+
+**SSH** es un protocolo que nos ayuda a conectarnos a nuestros servidores desde nuestras máquinas para administrarlos de forma remota. No es muy recomendado usar otros protocolos como Telnet, ya que son inseguros y están deprecados.
+
+Con el comando **ssh-keygen** podemos generar llaves públicas y privadas en nuestros sistemas, de esta forma podremos conectarnos a servidores remotos o, si es el caso, permitir que otras personas se conecten a nuestra máquina.
+
+Para conectarnos desde nuestra máquina a un servidor remoto debemos:
+
+1. Ejecutar el comando `ssh-copy-id -i` `ubicación-llave-pública nombre-usuario@dirección-IP-servidor-remoto` y escribir nuestra contraseña para enviar nuestra llave pública al servidor.
+
+Conocer IP `ifconfig wlan0`
+
+2. Usar el comando `ssh nombre-usuario@dirección-IP-servidor-remoto` para conectarnos al servidor sin necesidad de escribir contraseñas.
+También podemos usar el comando `ssh -v ...` para ver la información o los errores de nuestra conexión con el servidor. Puedes usar la letra v hasta 4 veces **(-vvvv)** para leer más información.
+
+Las configuraciones de SSH se encuentran en el archivo `/etc/ssh/sshd_config`.
+
+**SSH:** Secure Shell, es un protocolo que permite conectar dos computadoras de forma remota sin necesidad de un password, únicamente con la interacción de una llave pública y una llave privada (aunque podemos colocar una contraseña sobre las llaves)
+
+**Configuración**
+
+1. En el servidor, abrir el archivo `/etc/ssh/sshd_config` con algún editor. Leer el archivo y configurar a gusto.
+2. En la consola de la máquina cliente abrir `ssh-keygen` para generar las llaves
+3. Elegir ubicación para guardar la llave privada
+Ejecutar `ssh-copy-id -i directorio_de_llave/id_rsa`.`pub nombre_usuario@direccion_ip_del_servidor` para copiar la llave pública al servidor
+
+**Ejecutar ssh**
+
+`nombre_usuario@direccion_ip_del_servidor` en la máquina cliente para conectarnos exitosamente de forma remota
+
+**Tips**
+
+En lugar de descargar `Putty` en Windows podemos utilizar el emulador de consola Unix llamado `Cmder` para ejecutar los comandos vistos en clase. Incluso si esto falla, lo que personalmente recomiendo es instalar un subsistema de linux si tenemos Windows 10. Platzi tiene incluso un artículo sobre como hacer eso: https://platzi.com/clases/1378-python-practico/19200-importante-instalando-ubuntu-bash-en-windows-para-/
+Si la conexión falla, podemos usar el modificador` -v (verbose)` en el comando `ssh` para poder ver la información que envían las máquinas que intentan conectarse. La “v” puede repetirse hasta cuatro veces, quedando el comando, por ejemplo, como: `ssh -vvvv nombre_usuario@direccion_ip_del_servidor`. A mas “v” pongamos, más información se mostrará
+
+BONUS
+
+**Reto:** Restringir el acceso al usuario root por ssh, y permitir solo un usuario determinado conectado
+
+Solución:
+
+Colocar en el archivo` /etc/ssh/sshd_config` del 
+
+servidor las siguientes líneas:
+
+```bash
+PermitRootLogin no
+AllowUsers nombre_usuario
+```
+
+Ejecutar el siguiente comando para reiniciar el 
+
+**servicio de ssh:**
+
+`sudo service sshd restart`
+
   ## Configurando DNS con bind
+
+Antes de empezar a configurar el servicio de DNS, es importante conocer algo de historia, así como algunas alternativas que tenemos para comprar DNS.
+
+**Contexto histórico de los DNS**
+
+En Junio de 1983 alrededor de 70 sitios estuvieron conectados a la red de ciencias de la computación, permitiendo de esta forma la unión de algunos establecimientos gubernamentales, científicos y universitarios para que pudieran compartir datos, por esta razón los archivos de host no eran suficientes para hacer la replicación entre sitios, por este motivo en noviembre de 1983 se publicó el [RFC 882](https://www.techopedia.com/definition/27929/request-for-comments-rfc) que define el servicio de nombre de dominios. Paso siguiente en octubre de 1984 se crearon 7 TLDs (Dominios de nivel superior) o también conocidos como dominios de propósito general .arpa, .com, .org, .edu, .gov, .mil y la letra de los países respetando su código ISO.
+
+**Instalación de Bind**
+
+Para realizar el proceso de instalación de `bind` lo primero que realizaremos es verificar que `bind` se encuentre en los repositorios, para esto utilizaremos otro gestor de paquetes llamado `aptitude`, para instalarlo simplemente diremos `sudo apt install aptitude`.
+
+Con aptitude instalado buscaremos el paquete `bind` utilizando para ellos una expresión regular.
+
+![](img/bind.webp "terminal linux")
+
+El proceso de instalación se realiza con `sudo apt install -y bind9` , la opción `-y` es para confirmar que si queremos instalar el paquete en mención.
+
+Validamos la instalación con `netstat` y verificaremos que el puerto 53 esté en escucha
+
+![](img/nets.webp "netstat")
+
+Si deseamos ver el programa que está ejecutando este servicio agregamos el modificador `p` a `netstat`, así como sudo. `sudo netstat -ltnp`
+
+![](img/nets1.webp "Servicio ejecutando netstat")
+
+Para realizar consultas al DNS podemos utilizar varias herramientas, entre ellas **dig**, que me permiten conocer más al respecto del nombre de dominio, para ello usaremos el dominio platzi.com y lo buscaremos en la máquina local, es decir 127.0.0.1
+
+```shell
+dig www.platzi.com @127.0.0.1
+```
+
+Allí encontraremos una salida, nos interesa la parte de respuesta y la de tiempo de ejecución para validar que la respuesta se dio desde localhost.
+
+![](img/nets2.webp)
+
+Paso siguiente después de instalarlo es verificar todo lo que viene incluido dentro del paquete como lo son los archivos de configuración manuales entre otros, para esto podemos hacer uso de `dpkg -L bind9`.
+
+![](img/dpkg.webp)
+
+El archivo de configuración principal será `/etc/bind/named.conf`, también tenemos el archivo `/etc/bind/rndc.key` en este se puede configurar la clave que se puede usar para obtener acceso al nombre de dominio.
+
+Podemos ver la versión de bind de dos formas named -v o una versión extendida con named -V
+
+Si deseas adquirir tu DNS, tienes varias opciones:
+
+1. [Namecheap](https://www.namecheap.com)
+2. [Hover](https://www.hover.com)
+3. [Route 53](https://aws.amazon.com/es/route53/)
+
+Como cliente tienes varias opciones para configurar tus DNS, lo que influirá directamente en tu velocidad, seguridad o reputación. Para eso te daré algunas opciones, el orden no significa nada:
+
+1. [OpenDns](https://www.opendns.com)
+2. [Google DNS](https://developers.google.com/speed/public-dns/)
+3. [Neustar UltraDNS](https://www.home.neustar/dns-services)
+4. [Cloudflare](https://www.cloudflare.com/dns)
+5. [quad](https://www.quad9.net)
+6. [Public DNS](https://public-dns.info)
+7. [Yandex DNS](https://dns.yandex.com)
+
+Existe una herramienta que nos permite seleccionar cuál será el DNS que debemos utilizar basados en nuestra ubicación y nuestras búsquedas, se llama [namebench](https://code.google.com/archive/p/namebench/downloads). Para ello sólo basta instalarlo y ejecutarlo en la máquina cliente y con esto obtendremos sugerencias al respecto.
+
+- [Domain Requirements](https://tools.ietf.org/html/rfc920)
+
   ## Arranque, detención y recarga de servicios
+
+  El comando **systemctl** nos permite manejar los procesos de nuestro sistema operativo. Nuestros servicios pueden estar **activos** (es decir, encendidos) o **inactivos** (apagados). También podemos configurar si están **habilitados** o **deshabilitados** para correr automáticamente con el arranque del sistema.
+
+- `sudo systemctl status nombre-servicio`: ver el estado de nuestros servicios.
+- `sudo systemctl (enable, disable) nombre-servicio`: activar o desactivar el arranque automático de nuestros servicios.
+- `sudo systemctl (start, stop, restart) nombre-servicio`: encender, apagar o reiniciar los servicios.
+- `sudo systemctl list-units -t service --all`: ver todos los servicios del sistema.
+
+El comando `journalctl` nos permite ver los logs de los procesos de nuestro sistema operativo. Recuerda que todos ellos están almacenados en la carpeta `/var/log/`.
+
+- `sudo journalctl -fu nombre-servicio` (apache2): ver los logs de nuestros servicios y hacer un seguimiento.
+- `sudo journalctl --disk-usage`: ver la cantidad de espacio que ocupan nuestros logs.
+- `sudo journalctl --list-boots`: ver los logs desde el último arranque del sistema.
+- `sudo journalctl -p (critic, info, warning, error)`: filtrar los logs por el tipo de mensaje.
+- `sudo journalctl -o json`: ver los logs en formato JSON.
+
   ## NGINX y Apache en Ubuntu server
+
+  NGINX y Apache son softwares para montar servidores web, puedes realizar la instalación de ambos en el sistema operativo, teniendo como base que pueden estar corriendo al mismo tiempo, siempre y cuando no estén a la espera de conexiones por el mismo puerto.
+
+Para validar los puertos que tienen un proceso activo usamos:
+
+```shell
+sudo netstat -tulpn
+```
+
+Podríamos tener una infraestructura donde NGINX puede servir como proxy y Apache como servidor web.
+
+[![](img/nginx.webp "Servidor nginx")](https://guides.wp-bullet.com/how-to-configure-nginx-reverse-proxy-wordpress-cache-apache/)
+
+Si revisamos las estadísticas podemos ver que Apache aún es el líder del mercado en servidores web, seguido por NGINX, es por esta razón que veremos la instalación y configuración de ambos.
+
+![](img/N-A.webp "porsentaje web que usan varios servidores web")
+
+Existen en internet artículos interesantes de comparación entre ambos y el caso de uso de cada uno de ellos.
+
+- [Apache vs Nginx](https://www.digitalocean.com/community/tutorials/apache-vs-nginx-practical-considerations)
+- [NGINX? How different is it from Apache](https://www.nginx.com/faq/what-is-nginx-how-different-is-it-from-e-g-apache/)
+
+**Proceso de instalación**
+
+**Apache**
+
+Ejecuta el siguiente comando
+
+```shell
+sudo apt install apache2
+```
+
+**NGINX**
+
+**Ejecuta el siguiente comando**
+
+`sudo apt install nginx nginx-extras`
+
+Para verificar si los servicios está corriendon se debe ejecutar los siguientes comandos:
+
+```bash
+systemctl status apache2
+systemctl status nginx
+```
+
+Si se siguió el orden de instalación, NGINX no debe estar ejecutándose, pues por defecto intentará levantarse en el puerto 80, el cual ya se encuentra ocupado por Apache, para ello cambiaremos el puerto de Apache al puerto alterno `http 8080`.
+
+`sudo nano /etc/apache2/ports.conf`
+
+A continuación tenemos que cambiar el puerto al `8080`, para esto se debe cambiar la instrucción Listen `8080` dentro del documento ports.conf.
+
+Después abrimos nuestro archivo de configuración de Apache `sudo nano /etc/apache2/sites-available/000-default.conf` y cambiamos el virtualhost a `8080 <VirtualHost *:8080>`
+
+Después realizamos el proceso de detener apache2 y volverlo a encender, con los siguientes comandos
+
+```bash
+sudo systemctl restart apache2
+systemctl status apache2
+systemctl status nginx
+```
+
+Ambos sitios deberían estar activos y en ejecución.
+Paso siguiente, dirígete al archivo de configuración de NGINX donde te asegurarás que exista una directiva en el location llamada proxy_pass que contenga lo siguiente:
+
+```bash
+cd /etc/nginx/sites-enabled # Archivo default
+```
+
+`proxy_pass http://127.0.0.1:8080`
+
+![](img/server.webp "listen server")
+
+Si por alguna razón el servidor Apache no se encuentra en la misma máquina, debemos cambiar la dirección IP y el puerto respectivo.
+
+Apache tiene un comando para activar sitios que es `a2ensite` que recibe como parámetro el archivo de configuración definido en `/etc/apache2/sites-available`. NGINX no cuenta con este comando, motivo por el cual se tiene un enlace blando, es decir, cuando creemos un archivo de configuración en `/etc/nginx/sites-available` debemos ejecutar `sudo ln -s /etc/nginx/sites-available/configuracion_nginx /etc/nginx/sites-enabled/`
+
+Apache también me permite deshabilitar sitios y agregar módulos
+
+```bash
+sudo a2dissite 000-default
+
+sudo a2enmod rewrite headers env dir mime
+```
+
+Si queremos activar `letsecrypt` en NGINX, debemos agregar una línea en el `.htaccess` en la ruta `/var/www/html/nombre_host/.htaccess`. La linea es `SetEnvIf X-Forwarded-Proto https`
+
+![](img/set.webp)
+
+**Conclusión**
+
+Antes de realizar la elección de uno de los dos, deberías mirar el tipo de proyecto en el que estás trabajando y que se acople mejor a tus necesidades, es un proceso de evaluación y prueba en cada uno de los aspectos que esperamos como administradores de sistemas.
+Existen múltiples diferencias entre ambos proyectos, que tienen impacto real en el rendimiento y tiempo de configuración para lograr que el servicio quede funcionando perfectamente. Algunos prefieren NGINX por la sintaxis de configuración, otros eligen basado en las estadísticas presentadas y otros por simple experiencia con trabajos anteriores. Yo te recomiendo probar ambos y elegir según el proyecto, o quizás puedes usarlos ambos y sacar lo mejor de cada uno.
+
   ## Instalación y configuración de NGINX
+
+Busqueda de nginx en el repositorio 
+
+`sudo apt search "nginx$"`
+
+Actualizamos el repositorio e Instalamos **nginx**
+
+```bash
+sudo apt update && sudo apt install nginx
+
+# Verificamos el estado Nginx
+sudo systemctl status nginx # En consola saldra inactive, ya que apache esta utilzando el pueto 80. Dos servidores no pueden funcionar en el mismo puetto.
+
+sudo netstat -tulpn # Servidores que se estan ejecutando
+
+sudo systemctl stop apache2 # Apagar apache2
+sudo systemctl status apache2 # Verificamos que este apagados
+
+sudo systemctl start nginx # Iniciamos nginx
+sudo systemctl status nginx # Verfificamos status nginx
+
+# configuracion_nginx
+cd /etc/nginx
+
+vim nginx.conf  # Configuramos 
+
+/etc/nginx$ cd sites-available
+/etc/nginx/sites-available$ less default
+
+/etc/nginx/sites-available$ cd /var/www/html
+/var/www/html$ ls
+index.html index.nginx-debian.html
+
+/var/www/html$ curl localhost
+/var/www/html$ curl -I localhost # Nuestra los datos relevantes
+
+/var/www/html$ cd /etc/nginx/sites-enabled/
+/etc/nginx/sites-enabled$ ll
+```
   ## ¿Qué es NGINX Amplify?
+
+NGINX Amplify es una herramienta SaaS que permite realizar el monitoreo de NGINX y NGINX Plus. Los factores que permite monitorear son el rendimiento, configuraciones con análisis estático. parámetros del sistema operativo, así como PHP-FPM, bases de datos y otros componentes. Nginx Amplify es de fácil configuración y llevar control de nuestros servidores es agradable por los tableros de administración que posee.
+
+Con NGINX Amplify podrás **recolectar más de 100 métricas de NGINX** y el sistema operativo. Amplify analiza los archivos de configuración propios del servidor, detecta configuraciones incorrectas y da recomendaciones de seguridad, también permite crear notificaciones que pueden ser enviadas por correo o a un canal de Slack con un simple clic.
+
+Los tableros de mando de Amplify sirven para verificar la disponibilidad del sitio e identificar situaciones anómalas en diferentes periodos de tiempo. Otra característica a destacar es que NGINX Amplify te permite administrar varios sitios, direcciones IP y un nombre para identificarlo.
+
+Si necesitas conocer un poco más de esta herramienta visita el sitio:
+
+[![](img/Amplify.svg "NGINX Amplify")](https://www.nginx.com/products/nginx-amplify/)
+
   ## NGINX Amplify: Instalación y configuración de un servidor para producción
+
+**NGINX Amplify** es una herramienta que permite monitorear aplicaciones y servicios de NGNIX. Nos ayuda a detectar problemas en nuestros proyectos, trackear las peticiones, conexiones, tiempos de respuesta, tráfico, uso de CPU, entre otras.
+
+Instalar **NGINX Amplify**
+
+```bash
+# Verificamos si existe python 2.7
+python --version # No esta instalado, lo Instalamos
+
+sudo apt install python2.7
+
+# Nos movemos a la carpeta de nginx
+cd /etc/nginx/
+/etc/nginx$ grep -i include\.*conf nginx.config
+/etc/nginx$ sudo su
+root@name/etc/nginx$ cat > conf.d/stub_status.conf
+server{
+  listen 127.0.0.1:80;
+  server_name 127.0.0.1;
+  location /nginx_status {
+            stub_status on;
+            allow 127.0.0.1;
+            deny all;
+  }
+}     # Guardamos el archivo
+
+
+root@name/etc/nginx$ cat conf.d/stub_status.conf # Verificamos que los datos esten correctos
+
+root@name/etc/nginx$ kill -HUP `cat /var/run/nginx.pid` # Matar el proceso
+
+root@name/etc/nginx$ systemctl restart nginx && systemctl enable nginx  # reinicamos y iniciamos nginx
+```
+
+Al crear el archivo `cat > conf.d/stub_status.conf` no vemos el error. Ejecutamos el siguiente comando
+
+```bash
+nginx -t -c /etc/nginx/nginx.conf
+```
+
+Muestra la ubicaci&oacute;n del error, corregimos. 
+
+- [Command Kill](https://rm-rf.es/linux-enviar-senales-a-un-proceso-con-el-comando-kill/)
+
+
+**Dato interesante, en ubuntu20.04** se puede instalar en Ubuntu 20 de la siguiente manera:
+
+Después de darle los permisos de ejecución al archivo
+
+```bash
+install.sh # editatr con vi o nano
+
+“packages_url=” # se edita la linea que dice 
+
+https://packages.amplify.nginx.com/py3/ # se reemplaza la url de las comillas por esta
+
+# Se ejecuta como dice en Nginx Amplify 
+
+API_KEY=’#####…’ sh ./install.sh
+```
+Y listo ya con eso!
+
   ## Monitoreo de MySQL con Nagios
   ## Configuración de Nagios
   ## Los logs, nuestros mejores amigos
