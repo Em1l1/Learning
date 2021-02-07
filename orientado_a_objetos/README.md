@@ -38,8 +38,6 @@
   - [Asociación](#Asociación)
   - [herencia](#herencia)
   - [Composición](#Composición)
-- [](#)
-- [](#)
 
 ## Programación Orientado a Objetos
 Vas a programar más rápido. Tener un análisis previo de lo que estás realizando te ayudará a generar código mucho más veloz
