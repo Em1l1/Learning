@@ -415,16 +415,295 @@ They might have an impact on the overall estimate for the project.
 
   [review-ii](doc.review-ii.pdf)
 
-5. Create deliverable design
-Creating deliverable design
-Refactoring, meetings and release
-6. Protect your very valuable software
-Understanding the principles of defensive development
-Functional and unit testing
-Review: protect your very valuable software
-7. Understanding Continuous Integration (CI) and testing
-Types of software testing
-Handle accidents when building the code and what CI means
+# 5. Create deliverable design
+
+  ## Creating deliverable design
+
+**1. Refactoring your design**
+Refactoring is the process of modifying the structure of your code, without modifying its behavior.
+
+Reactoring is done to improve ypur code and your desing.
+
+Refactoring allows you to have cleaner, more readable code.
+
+Clean up any duplication, ugliness, old code, etc.
+
+Once you're done coding, go back and clean up your code for the future.
+
+**2. SRP Single Responsibility Princiole**
+
+An idea of the SRP is that all of your classes, modules and functions should have only one Responsibility and one reason to change.
+
+E.G Car-ponit A to point B.
+
+Youu have implemented the Single Responsibility Principle correctly when ech of your objetcs has only one reason to change.
+
+**DRY Don't Repeat Yourself**
+
+__What is DRY?__
+
+DRY is about having each piece of information and behavior in ypur system in a specific, single place.
+
+The DRY principle is aimed at reducing repetition of infomation of all kinds.
+
+__Imagine you have section of your code with__
+
+1. A password request when you enter the firts page.
+2. The same password request at the end of the shopping cart page.
+3. Again at the end of the address confirmation page.
+
+Avoid repetition - Make it DRY
+
+Refactoring, SRP and DRY are all realated to improving ypur design. 
+
+**I want to complement the information with this research that I did it.**
+
+**This is an image with a SOLID design principles.**
+
+![](img/so.jpg "SOLID design principles.")
+
+**It’s an amazing topic.**
+
+**Definitions are:**
+
+![](img/sol.png "SOLID ")
+
+
+  ## Refactoring, meetings and release
+
+**1. Reactoring and stand up meetings**
+
+Refactoring is the process of modifying the structure of your code, without modifying its behavior.
+
+Refactoring is done to increase the cleanness, flexibilty, and extensibility of your code, and usually is related to a specific improvement of your design.
+
+**2. Definition is done**
+
+When everything is complete, then you have definition, it's done.
+
+**You have**
+
+  - Finished all your tasks.
+  - Done your refactoring.
+  - Done any demos the iteration is complete.
+
+  When all the work is done, so is your iteration...
+
+**3. Ship out/Release software with quality and value**
+
+Your software must always hove awesome quality and value.
+
+You should aim at perfection ...
+
+However, let's not get caught up in the idea of only releasing software when it's "Perfect".
+
+Your desing should be "good-enough" to work well.
+
+Perfect desing is just marvelous and fantastic, but delivering working, effective software is what pays the bills.
+
+**Refactoring**
+
+![](img/refact.png "Refactoring")
+
+# 6. Protect your very valuable software
+
+  ## Understanding the principles of defensive development
+
+**1. Defend your software form yourself and your peers**
+
+Imagine your are playing the Super Bowl. Your've just cored a touchdown that will give you the advantage over the other team.
+
+What would you do?
+Talk to your teammates and make sure their number one  priority is protecting that advantage that you have just gotten.
+
+This is where the concept of Defensive Development comes from.
+Once you have reached a point where your software is woriking you need to protect it and make sure it continues working.
+
+Let's look at techniques to do that...
+
+**2. Technique #1 - Version control With your code repository**
+
+Version Control is a super cool technology you can use, it's one of the best defensive tools.
+
+VC software helps you keep track of changes made to your code. VC allows you to control defferent version of yuor files, defferent version of your code, different version of what you have committed.
+
+**Committing:** Is a very important word here - saving your files onto the version control software. You are committing new versions of your files into your VC repository,
+
+Your commit those changes to your branch or branches. **The branch** is the file of code your are eorking on.
+
+Withein this branch you can have additional branches, for different uses and  modifications on different brandhes. original file and modified version.
+
+It lets multiple people check changes back into the repository and distribute them. It keeps track of the history - who changes what, when and why.
+
+It tags so you can find version of your code from "way back when". Version contrl works mainly as a repository, it dosen't test your code. 
+
+![](img/control.png "Version Contral")
+
+**3. Technique #2 - Control your dependencies**
+
+dependencies make your code more complex. 
+
+sometimes you want to test some functionality of your code, but that functionality is tied to another task you haven't done yet. What do you do in that case?
+
+Real-World cade always has dependencies, it's never isolated. Sometimes you have code that depends on something external, like a database.
+
+You have to figure out a way to test that functionality independent of those dependencies.
+
+Always check your dependencies for connectivity necessities. In other words, you need to dind a way to keep thidngs independent, but working together at the same time to male testing easier.
+
+You can use tool like ANT for your JAVA Projexts and it all revolves around XML Build Script that is a file you build for ANT and tells the tool what to do when you need to build. Packaging ...
+
+It's not enough to use version control to ensure your code stays safe. You also need to worry about compiling your code and Packaging in into a deployable unit.
+
+Packaging your software is really important, remember that your software must be usable. I a nutshell - Take care of your work!
+
+```php
+?php echo
+"Hello World!"
+```
+
+![](img/control-version.png "Test-driven development TDD")
+
+[tes-driven](doc/test-driven.pdf)
+
+  ## Functional and unit testing
+
+**1. Functional testing**
+
+What things can go wrong in a development project?
+Different problems will ariese when Working
+
+Sometimes even the best developer breaks the build.
+
+Coming up with tests is your job. There are a lot of good frameworks out there.
+
+Remember they only run your tests, they don't build them for your.
+
+A testing framework is a collection of tools that help you build your Tests. Your tests need to guarantee your software's optimal functionality.
+
+Always think about functional testing.
+
+**2. Techinique #3 - unit testing**
+
+  **Testing methods**
+
+  **Manual testing:** a developer or group of developers that manually start testing the code's functionality.
+
+  **Automated testing:** If you have a more complex piece of software then it will be much better to perform autmated testing.
+
+
+**3. Tecnique #4 - Let your peers undertand your code - Document ot!**
+
+  **Unit testing**
+
+  Unit testing is all about creating automatic tests for the smallest components of the code to test their business logic.
+
+  That is going to be essencial to the development adn the effectiveness of your teseting.
+
+  Unit testing ties together with the continuos integration process manu companies have, whenever new code is submitted to source control the software will test the build and email people to let them know there is a problem with their code.
+
+  Thisngs may work great in isolation, but when different components of the code interact or when users use the system bufs can be overlooked.
+
+  **System testing:** hooking everything together and then treating it like a black box. It focuses on the over all functionality, making sure the system handles interactions well.
+  
+  **Debriefing. Let uour peers understand your code - document it!**
+
+  Have stand up meetings to:
+
+  - Inform your customers of any chanfes you have made to the code.
+  - Document your changes.
+  - Analyze them along with your peers.
+  - Keep them informed - reasons.
+
+  It's important you vecome an expert communicator and standup meetings will be the place where you will be required to shine.
+
+  Find ways to adapt your speech depending on your listener.
+
+  ## Review: protect your very valuable software
+
+**Refactoring your design:** Refactoring is the process of modifying the structure of your code, without modifying its behavior.
+
+**SRP Single Responsibility Principle:** Every object in your system should have a single responsibility, and all the object’s services should be focused on that single responsibility.
+
+**Refactoring and Standup meetings:** Refactoring is the process of modifying the structure of your code, without modifying its behavior.
+
+**DRY Don’t Repeat Yourself:** DRY is about having each piece of information and behavior in your system in a specific, single place. The DRY principle is a principle of Software Development aimed at reducing repetition of information of all kinds.
+
+**Definition is done:** When everything is complete , then you have definition, it’s done.
+
+Ship out / Release Software with Quality and **Value:** Your Software must always have awesome quality and awesome value, aim at Perfection, settle for Functionality.
+
+Defend your software from yourself and your **peers:** Test Driven Development (TDD) is all about writing your Code with testing in mind. It’s about writing Tests before any code and
+letting these Tests drive your Implementation.
+
+Technique #1 - Version Control with your code **repository:** Version Control is a super cool technology you can use, it’s one of the best Defensive tools you can use. Version Control lets
+you create a repository to keep your code in a single place to ease backup and recovery.
+
+**Technique #2 - Control your dependencies:** You need to find a way to keep things independent, but working together at the same time to make Testing easier. You need to find a way to apply Independent Tests. Create Mock Objects to do this.
+
+**Functional Testing:** Your tests need to guarantee your Software’s optimal Functionality.
+
+**Technique #3 - Always Exercise your Code-Unit Testing:** Unit testing is all about creating tests that run automatically to test the smallest components of the code for their business logic.
+
+**Technique #4 - Let your peers understand your Code-Document it!** In form your Customers of any changes you have made to the code Document your changes Analyze them along with your peers. Keep them informed with reasons.
+
+[Review III](doc/Review-III.pdf)
+
+# 7. Understanding Continuous Integration (CI) and testing
+
+  ## Types of software testing
+
+  **1. Black-box**
+
+There are diferent approaches to testing and different viewpoints.
+
+Users see the system from the outside, they don't look at the database tables they don't evaluate the algorithms.
+
+Users want functionality. For an end user a software program is a black-box
+
+  - No code evaluation
+  - No database evaluation
+  - No algorithm evaluation
+  - input-output
+  - State transitons (e.g. GPS)
+  - Boundary case errors (Month 13, day 23)
+
+  **2. Gray-box**
+
+Testers are looking for functionality. They do little bit more of deep dive to make sure things are really happening the way you said they would be.
+This is gray-box testing.
+
+Testers might be interested in:
+
+- Auditing, not available throungh user interface.
+- Data designed for other system (output), delayed ordes for example.
+- System added information.
+- Security risks, memory leaks, clean uninstalling.
+
+  **3. While-box testing**
+
+  Testing done by other Developers
+  The deepest level of testing.
+
+  They really look at all the details and look for:
+
+  - Clas designs
+  - Duplicated code
+  - Representation inconsistencies, etc.
+  - All the branches of code
+  - Error handling
+  - Code-on-code
+
+  **Who am I**
+
+  Let's play a little game. Can you guess the concept if I give you some clues?
+  - I am the king of testing done by Developers and I am looging for glitches, bugs, and code duplicates...
+  - I am the kind of testing done by end users, I am looking for functionality...
+  - I am the kind of testing done testers, I look at the database, and other software building principles, but I don't go sooo deep...
+
+
+  ## Handle accidents when building the code and what CI means
+
 8. Test your Software!
 TDD Test-Driven Development
 Review: test your software!
