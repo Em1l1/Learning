@@ -704,6 +704,15 @@ Testers might be interested in:
 
   ## Handle accidents when building the code and what CI means
 
+  **1. Handle accidents when building the code**
+
+
+your are sure your code compiles, you have tested it and commited in into the respository. But something happens and your code doesn't compile. So the next person who checks it out of the repository is going to be in trouble.
+How's your Continuous Integration?
+
+
+  **2. Continuous Integration CI**
+
 8. Test your Software!
 TDD Test-Driven Development
 Review: test your software!
