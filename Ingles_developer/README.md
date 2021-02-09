@@ -8,7 +8,7 @@
   - [Customer-oriented requirements and important concepts for iteration cycles](#Customer-oriented-requirements-and-important-concepts-for-iteration-cycles)
   - [How iteration cycles works](#How-iteration-cycles-works)
   - [Planning considering priorities](#Planning-considering-priorities)
-  - [Review: communicate with your customer accurately](#Review:-communicate-with-your-customer-accurately)
+  - [Review: communicate with your customer accurately](#Review-communicate-with-your-customer-accurately)
 - [3. Understand your customer and the requirements](#3.-Understand-your-customer-and-the-requirements)
   - [Prioritizing requirements](#Prioritizing-requirements)
   - [Backlog and Milestone 1.0](#Backlog-and-Milestone-1.0)
