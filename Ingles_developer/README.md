@@ -2,46 +2,45 @@
 #### Carlos Arriaga
 
 # Tabla de contenido
-1. Understand the fundamentals of software development
-Participa en los eventos semanales de la Escuela de Inglés
-Introduction to software development
-2. Communicate with your customer accurately
-Customer-oriented requirements and important concepts for iteration cycles
-How iteration cycles works
-Planning considering priorities
-Review: communicate with your customer accurately
-3. Understand your customer and the requirements
-Prioritizing requirements
-Backlog and Milestone 1.0
-4. Organize your tasks!
-Organizing your time into user stories and tasks
-Stand-up meetings, analyze and design
-Review: organize your tasks!
-5. Create deliverable design
-Creating deliverable design
-Refactoring, meetings and release
-6. Protect your very valuable software
-Understanding the principles of defensive development
-Functional and unit testing
-Review: protect your very valuable software
-7. Understanding Continuous Integration (CI) and testing
-Types of software testing
-Handle accidents when building the code and what CI means
-8. Test your Software!
-TDD Test-Driven Development
-Review: test your software!
-9. Be ready for the end
-Prepare for the next iteration
-End an iteration
-10. Fix your bugs!
-Handle bugs to fit your process
-Continuous integration test delivery method
-Review: fix your bugs!
-11. See the real world!
-Best practices for software development in real life
-12. Expert Mentorship
-Cómo puedo mejorar mi inglés
-Play
+- [1. Understand the fundamentals of software development](#1.-Understand-the-fundamentals-of-software-development)
+  - [Introduction to software development](#Introduction-to-software-develop)
+- [2. Communicate with your customer accurately](#2.-Communicate-with-your-customer-accurately)
+  - [Customer-oriented requirements and important concepts for iteration cycles](#Customer-oriented-requirements-and-important-concepts-for-iteration-cycles)
+  - [How iteration cycles works](#How-iteration-cycles-works)
+  - [Planning considering priorities](#Planning-considering-priorities)
+  - [Review: communicate with your customer accurately](#Review:-communicate-with-your-customer-accurately)
+- [3. Understand your customer and the requirements](#3.-Understand-your-customer-and-the-requirements)
+  - [Prioritizing requirements](#Prioritizing-requirements)
+  - [Backlog and Milestone 1.0](#Backlog-and-Milestone-1.0)
+- [4. Organize your tasks!](#4.-Organize-your-tasks!)
+  - [Organizing your time into user stories and tasks](#Organizing-your-time-into-user-stories-and-tasks)
+  - [Stand-up meetings, analyze and design](#Stand-up-meetings-analyze-and-design)
+  - [Review: organize your tasks!](#Review-organize-your-tasks!)
+- [5. Create deliverable design](#5.-Create-deliverable-design)
+  - [Creating deliverable design](#Creating-deliverable-design)
+  - [Refactoring, meetings and release](#Refactoring-meetings-and-release)
+- [6. Protect your very valuable software](#6.-Protect-your-very-valuable-software)
+  - [Understanding the principles of defensive development](#Understanding-the-principles-of-defensive-development)
+  - [Functional and unit testing](#Functional-and-unit-testing)
+  - [Review: protect your very valuable software](#Review-protect-your-very-valuable-software)
+- [7. Understanding Continuous Integration (CI) and testing](#7.-Understanding-Continuous-Integration-(CI)-and-testing)
+  - [Types of software testing](#Types-of-software-testing)
+  - [Handle accidents when building the code and what CI means](#Handle-accidents-when-building-the-code-and-what-CI-means)
+- [8. Test your Software!](#8.-Test-your-Software!)
+  - [TDD Test-Driven Development](#TDD-Test-Driven-Development)
+  - [Review: test your software!](#Review-test-your-software!)
+- [9. Be ready for the end](#9.-Be-ready-for-the-end)
+  - [Prepare for the next iteration](#Prepare-for-the-next-iteration)
+  - [End an iteration](#End-an-iteration)
+- [10. Fix your bugs!](#10.-Fix-your-bugs!)
+  - [Handle bugs to fit your process](#Handle-bugs-to-fit-your-process)
+  - [Continuous integration test delivery method](#Continuous-integration-test-delivery-method)
+  - [Review: fix your bugs!](#Review-fix-your-bugs!)
+- [11. See the real world!](#11.-See-the-real-world!)
+  - [Best practices for software development in real life](#Best-practices-for-software-development-in-real-life)
+- [12. Expert Mentorship](#12.-Expert-Mentorship)
+  - [Cómo puedo mejorar mi inglés](#Cómo-puedo-mejorar-mi-inglés)
+  - [Play](#Play)
 
 # 1. Understand the fundamentals of software development
 
