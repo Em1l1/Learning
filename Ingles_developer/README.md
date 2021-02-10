@@ -50,9 +50,9 @@ In this lesson you will learn about: Customer’s Inception, User Stories, Devel
 
 **Challenge:** using your new knowledge of Software Development, answer a Multiple Choice Quiz to reinforce your concepts.
 
-[Customer Freedback.pdf](doc/Customer-Feedback.pdf)
+[Customer Freedback.pdf](https://drive.google.com/file/d/1kfJnEwzJHTQUDI0kEnZlBY8clCK7HB7M/view?usp=sharing)
 
-[Ingles Developers Slides](doc/ingles-developers-slides.pdf)
+[Ingles Developers Slides](https://drive.google.com/file/d/1qnSNg2NSCRhFn0epY7BENOEE6yMVcGj4/view?usp=sharing)
 
 
 # 2. Communicate with your customer accurately
@@ -126,7 +126,7 @@ Total = 9 days.
 ![](img/desig.webp)
 
 
-[Design Thinkking](doc/design-thinkingf_reduce.pdf)
+[Design Thinkking](https://drive.google.com/file/d/1gYxH9NB_l4jiSyDztdGj_4dX9fsV9ufG/view?usp=sharing)
 
 ## How iteration cycles works
 
@@ -184,7 +184,7 @@ It is essential your team comes to a consensus, only then can you start estimati
 
 Eliminate assumptions, have a meeting and agree on Estimates by playing planning poker.
 
-[prioritizing with the customer](doc/prioritizing-with-the-customer.pdf)
+[prioritizing with the customer](https://drive.google.com/file/d/1svIVGr9pDJXkDn5EfEMUztu1j9ICRDOH/view?usp=sharing)
 
   ## Planning considering priorities
 
