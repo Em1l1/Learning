@@ -710,21 +710,329 @@ Testers might be interested in:
 your are sure your code compiles, you have tested it and commited in into the respository. But something happens and your code doesn't compile. So the next person who checks it out of the repository is going to be in trouble.
 How's your Continuous Integration?
 
+There are many things that can go wrong with software development. Can you thikk of one example of problems that might arise when developing new software?
+Do you have the same problems when you are working with small or big teams?
+Leave a commet.
 
   **2. Continuous Integration CI**
 
-8. Test your Software!
-TDD Test-Driven Development
-Review: test your software!
-9. Be ready for the end
-Prepare for the next iteration
-End an iteration
-10. Fix your bugs!
-Handle bugs to fit your process
+  Contiinuous Integration is a technique that guarantees the reduction in the impact of comflicts by doing the following:
+
+Core principles of CI
+
+  - Continuously submiting working, runnable software into source control that will be built and tested.
+  - Using antomation to enable source control to build and test the lastest version of the code submitted by the developers.
+  - Continuous Integration tools run your tests as soon as you submit your code.
+  - Source control emails the developers last involved in conflicts that appear when submitting.
+  - Continuous Integration wraps version control, compilation and testing into a single repeatable process.
+
+Source Control guarantes the impact reduction of conflicts. The benefits of using Source Control.
+
+- Avoid Merge Hell 
+- Fix bugs quickly, testable build.
+- Ensure Ownership
+
+All done through constant communication with your fellow Developers.
+
+# 8. Test your Software!
+
+  ## TDD Test-Driven Development
+
+**1. Test-Drive Development (TDD) is all about designing tests first, then code.**
+
+TDD is all about designing tests first, then code.
+
+Unit testing system testing, black-box, gray-box and white-box, but what is the real philosophy behind all this?
+
+Well, the idea is to think about testing as a driver.
+
+_Testing is so Important:_ That you want to use it as effectively as you possibly can and to do this you need to follow the Test-Driven Development philosophy.
+
+TDD is all  about writing tests before writing the code, and will allow you to have solid, specific ideas avout what your software needs to do.
+This gives you clarity.
+
+[Test Driven Development (TDD)](https://www.youtube.com/watch?v=z6gOPonp2t0&feature=youtu.be)
+
+**2. Make your code go from RED to GREEN**
+
+Most of the time you will be writing tests before you even start writing code.
+
+Those tests will fail the first time you can run them and that is only logical. Before we write any new code we need to write a filing test.
+
+RED!
+
+Your goal is to get your tests to pass. That is to go "GREEN". 
+"GREEN" refers to the green bar that JUNIT/Visual Studio display when the test passes.
+
+  - Red = Failing
+  - Green = Passing
+
+Testing a single element promotes implementing the simplest code possible to make your tests pass.
+
+RED-GREEN-REFACTOR!!!
+
+**3. Never Skip Tests!**
+
+Remember to automate your tests whenever possible.
+
+  * Repetitive tasks
+  * People vs Computers
+
+  Do unit testing and system testing.
+  System testing exercises the functionality of the system from front to back in real world, back box scenarios.
+
+  ## Review: test your software!
+
+**Black-box Testing** It’s the kind of testing done by Users, focusing on functionality.
+
+**Gray-box Testing** It’s the kind of testing done by Testers, probably looking at the data, security risks, auditing.
+
+**White-box Testing** Deep testing done by other developers, looking for inconsistencies in the Code.
+
+**Continuous Integration (CI)** Continuous Integration is a technique that guarantees the reduction in the impact of conflicts.
+
+**Test-Driven Development (TDD)** TDD is all about writing tests before you start writing the code that will give the software its functionality, and will allow you to have solid, specific ideas about what your Software needs to do.
+
+**Make your code go from RED to GREEN** The only goal you should have at this point is to get your tests to pass. That is to go “GREEN”.
+
+**Never Skip Tests!** People aren’t great at performing repetitive tasks carefully, but computers are. Always test your Code.
+
+[Review-IV](doc/Review-IV.pdf)
+
+# 9. Be ready for the end
+
+  ## Prepare for the next iteration
+  ---
+
+**Correct and report your bugs!**
+
+Eventually your testers going to find a bug. Actully they'll probably find lots of them.
+
+So what happens then?
+Do you just report the bugs to the team and fix them? Cycle?
+
+**The actual life cycle of a bug**
+
+  - A tester finds the bus
+  - The tester files a bug report
+  - You create a story to fix the bug
+  - You fix the bug
+  - Check the fix and verify that it works
+  - Update the bug report
+  - Reprioritize
+
+**Add more user stories to fix your bugs (Always be adjusting)**
+
+Now you are sure you have bugs in your code.
+
+  - Fixing your bugs will take some time
+  - This creates extra tasks
+  - Remember akk tge tasks need to be
+
+All that time needs to be taken into condideration when estimating the length of your iterations...
+
+  - More User stories
+  - more tasks
+  - more work
+  - more time
+
+**Reprioritize your user stories**
+
+The time has come to  reprioritize your stories based on the bugs. 
+Reprioritization is critical because you want to make sure you are doing the right thing on the project at all times.
+
+Constant communication is key. Reprioritizing user stories will call for adjustments on the fly or once iterations have finished.
+
+Take this chance to adjust, adapt and overcome.
+
+Getting feedbakc and recommendations from other developers can truly make a difference. 
+
+Ask questions like:
+
+  - What do you suggest we do here?
+  - What are your thoughts on this?
+  - What do you think should be our number one priority right now?
+
+[retrospective-session](doc/retrospective-session.pdf)
+
+  ## End an iteration
+  ---
+
+**Plan your next iteration**
+
+The end of your Iteration is here.
+You have already finished the work for this iteration so it's time for the restrospective session.
+
+![](img/plan1.png "Plan your next Iteration")
+
+It's important you have a standard set of questions to review, think about the future, calculate your metrics.
+
+What questions do you think you can ask agter the Iteration?
+
+Ask questions like:
+  - What did we do well in this Iteration?
+  - What are our takeaways after this Iterations/Sprint?
+  - What are our areas of opportunity and how can we improve?
+  - What are our main-points?
+
+Once that is done, start again. Follow the standard procedure for Iterations.
+
+  - Spaeking to the customer
+  - Analyzubg the requirements
+  - Coming up with user stories
+  - Estimating user stories--learn from your VELOCITY
+  - Playing planning poker to reach consensus
+  - Start again
+
+  ![](img/tests.png "Think about this… I share a picture of example")
+
+**Estimate again and learn from your data (VELOCIITY)**
+
+Calculate your metrics and make sure you are readjusting after the iteration, your team may be working faster than you thought or more slowly.
+
+Perhaps you could check your task breakdown approach.
+
+Adjusting is good
+
+Initial Project Velocity = 0.7
+
+You have finished an Iteration and your team...
+
+...Finished in a rush.
+...Finished early.
+...Finished late.
+
+**What would you do in these cases**
+**Leave your comments in the chat**
+
+[in-a-rush-early-and-late](doc/in-a-rush-early-and-late.pdf)
+
+# 10. Fix your bugs!
+
+  ## Handle bugs to fit your process
+
+**Continuous delivery - fix functional bugs**
+
+- Create stories to fix bugs
+- Take into consideration when estimating time
+- First fix functional bugs
+- Everything revolver about customer-oriented functionality
+
+**Estimate bug-fixing effort**
+
+***Spike test***
+
+- Period in which there is an “explosion” in the testing activities
+- Random and continuous
+- Weed out bugs
+- Take a week to do it
+- Pick a random sample of test that are failing and try to fix them
+- Estimate bug fix rate
+
+[bug-fix](doc/bug-fix.pdf)
+
+  ## Continuous integration test delivery method
+
+**Continuous delivery as a method for functionality**
+
+Continuous Integration Test Delivery is acloud enabled fast delivery for functionality.
+It works better when two or more people are working on code, and committing new code to source control.
+
+Frequency ensures fast response when a bug comes up.
+
+This methid is really just a process for delivering functionality.
+
+It lets your team be successful because you are delivering functional software that has been tested and delivered on time, with quality that is present in all your processes.
+
+Remember this very counter - intuitive principle of software development:
+
+- If it hurts do it often and it won't hurt as much.
+- Beautiful code is nece but tested and readable code is delivered on time.
+- Real success comes from dekivering functionality.
+
+
+  ## Review: fix your bugs!
+
+**Lifecycle of a bug**
+
+- Tester finds
+- Tester files a bug report
+- Create a story to fix the bug
+- Fix the bug
+- Check the fix and test
+- Update bug report
+
+**Release your code to the real world**
+
+***Continuous delivery - fix functional bugs***
+
+- Create stories to fix bugs
+- Take into consideration when estimating time
+- First fix functional bugs
+- Everything revolver about customer-oriented functionality
+
+**Estimate bug-fixing effort**
+
+**Spike test**
+
+- Period in which there is an “explosion” in the testing activities
+- Random and continuous
+- Weed out bugs
+- Take a week to do it
+- Pick a random sample of test that are failing and try to fix them
+- Estimate bug fix rate
+
 Continuous integration test delivery method
-Review: fix your bugs!
-11. See the real world!
-Best practices for software development in real life
-12. Expert Mentorship
-Cómo puedo mejorar mi inglés
-Play
+Cloud enables a fast delivery method for functionality
+Works better when multiple people are working on code, committing to source control.
+
+Frequency ensures fast response when a bug comes up.
+
+Process for delivering functionality
+
+[review-v](doc/review-v.pdf)
+
+# 11. See the real world!
+
+# Best practices for software development in real life
+
+**1. The definition of a software development process**
+
+  _A structure imposed on the development of a software product that produces great, functional software_
+
+**2. Developing iteratively**
+
+  _Working following mini project cycles - Iterations, to promote customer feedback and deliverability_
+
+**3. The backlog Tecnique**
+
+  _It's big board in your office where you can track the progress of your User sotries and tasks._
+
+  _There are three task classes on the backlog_
+
+  _1. To do_
+  _2. Doing_
+  _3. Done_
+
+  _Opt. Burn down rate/Calorie Burning Rate_
+
+**4. The user stories technique**
+
+  _A User Story is the representation of an individual task the software has to do, it is composed of smaller tasks and it contains a title, a description, an estimate, and a priority value._
+
+**5. The version control techniques**
+
+ _VC is a difensive tool (multiple access repository) that keeps track of the different version of your code._
+
+**6. The continuous integration techniques**
+
+  _It's technique that guarantees the reduction of conflict impact by putting together version control, compilation and testing into a single repeatable process._
+
+**7. Test-Driven Development**
+
+  _TDD id all about writing tests before you even start writing the code that will give the software its functionality, and will allow you to have clear, solied, specific ideas about what your software meeds to do._
+
+# 12. Expert Mentorship
+  # Cómo puedo mejorar mi inglés
+
+  
