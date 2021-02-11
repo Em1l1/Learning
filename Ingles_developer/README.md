@@ -54,6 +54,8 @@ In this lesson you will learn about: Customer’s Inception, User Stories, Devel
 
 [Ingles Developers Slides](https://drive.google.com/file/d/1qnSNg2NSCRhFn0epY7BENOEE6yMVcGj4/view?usp=sharing)
 
+[Speaking](https://drive.google.com/file/d/1R2PJzJFie_Zl9UrUO_lqnJLRTewSutPE/view?usp=sharing)
+
 
 # 2. Communicate with your customer accurately
 
@@ -243,7 +245,7 @@ Then select the set of features to be delivered in milestone 1.0
 
 **Milestone:** It is a MAJOR release, when you show your Customer your working, functional Software and and you expect to get paid for it.
 
-[review](doc/review-i.pdf)
+[review-I](https://drive.google.com/file/d/1IlKSFiHUqjbL5QuCOfK8r_6_CA3rIoXL/view?usp=sharing)
 
 # 3. Understand your customer and the requirements
 
@@ -297,7 +299,7 @@ Add a little reality into the plan.
 
 - Be confident in your plans by applying velocity and not overworking yourself and your team.
 
-[prioritizing with the customer](doc/prioritizing-with-the-customer.pdf)
+[prioritizing with the customer](https://drive.google.com/file/d/1svIVGr9pDJXkDn5EfEMUztu1j9ICRDOH/view?usp=sharing)
 
   ## Backlog and Milestone 1.0
 
@@ -356,7 +358,7 @@ Tasks describe the actual software development work that needs to be done and ar
 
 ![](img/carlos.png)
 
-[updating-your](doc/updating-your.pdf)
+[updating-your](https://drive.google.com/file/d/1ALwWyKSwhUJsfIMmXbwvMzj8WZjUXTUT/view?usp=sharing)
 
   ## Stand-up meetings, analyze and design
 
@@ -386,7 +388,7 @@ Modifications might forece you to add or delete tasks from  your backlog.
 
 They might have an impact on the overall estimate for the project.
 
-  [burn-downate](doc/burn-downate.pdf)
+  [burn-downate](https://drive.google.com/file/d/1Cpbhlym3lCLt1sfQqKZnnxpnhjOWB95D/view?usp=sharing)
 
 ## Review: organize your tasks!
 
@@ -413,7 +415,7 @@ They might have an impact on the overall estimate for the project.
 **Modeling your Design:** Once you know you need to adjust remember you must adjust your Backlog, User Stories and Estimates too.
 
 
-  [review-ii](doc.review-ii.pdf)
+  [review-ii](https://drive.google.com/file/d/1dCaIwCDbEsWD0PJ_mFqrWelTU78UzxYH/view?usp=sharing)
 
 # 5. Create deliverable design
 
@@ -558,13 +560,13 @@ It's not enough to use version control to ensure your code stays safe. You also 
 Packaging your software is really important, remember that your software must be usable. I a nutshell - Take care of your work!
 
 ```php
-?php echo
-"Hello World!"
+?php 
+echo "Hello World!"
 ```
 
 ![](img/control-version.png "Test-driven development TDD")
 
-[tes-driven](doc/test-driven.pdf)
+[test-driven](https://drive.google.com/file/d/1ApCNHpZeambNgw6VTVecvlIBBRSUsEpi/view?usp=sharing)
 
   ## Functional and unit testing
 
@@ -647,7 +649,7 @@ you create a repository to keep your code in a single place to ease backup and r
 
 **Technique #4 - Let your peers understand your Code-Document it!** In form your Customers of any changes you have made to the code Document your changes Analyze them along with your peers. Keep them informed with reasons.
 
-[Review III](doc/Review-III.pdf)
+[Review III](https://drive.google.com/file/d/1i-cqDmJv_stJuHWmDdHg-va2sC64qRxk/view?usp=sharing)
 
 # 7. Understanding Continuous Integration (CI) and testing
 
@@ -797,7 +799,7 @@ Remember to automate your tests whenever possible.
 
 **Never Skip Tests!** People aren’t great at performing repetitive tasks carefully, but computers are. Always test your Code.
 
-[Review-IV](doc/Review-IV.pdf)
+[Review-IV](https://drive.google.com/file/d/1jbpvV5GBZ_N3g1CS_iR2P295iXMGJzr3/view?usp=sharing)
 
 # 9. Be ready for the end
 
@@ -853,7 +855,7 @@ Ask questions like:
   - What are your thoughts on this?
   - What do you think should be our number one priority right now?
 
-[retrospective-session](doc/retrospective-session.pdf)
+[retrospective-session](https://drive.google.com/file/d/1rYXY-w36JardCsXuSsw5Y6VFaG_55OhB/view?usp=sharing)
 
   ## End an iteration
   ---
@@ -905,7 +907,7 @@ You have finished an Iteration and your team...
 **What would you do in these cases**
 **Leave your comments in the chat**
 
-[in-a-rush-early-and-late](doc/in-a-rush-early-and-late.pdf)
+[in-a-rush-early-and-late](https://drive.google.com/file/d/1FJTLNgDoFzE79yATOm6l-7h0XcKB4VCi/view?usp=sharing)
 
 # 10. Fix your bugs!
 
@@ -929,7 +931,7 @@ You have finished an Iteration and your team...
 - Pick a random sample of test that are failing and try to fix them
 - Estimate bug fix rate
 
-[bug-fix](doc/bug-fix.pdf)
+[bug-fix](https://drive.google.com/file/d/1hhGVaMxH5Cl3dBmiUbpSlNtggXztwcFp/view?usp=sharing)
 
   ## Continuous integration test delivery method
 
@@ -990,7 +992,7 @@ Frequency ensures fast response when a bug comes up.
 
 Process for delivering functionality
 
-[review-v](doc/review-v.pdf)
+[review-v](https://drive.google.com/file/d/1i5y_Av882P60gW2SHSCt5lAZv9omxgot/view?usp=sharing)
 
 # 11. See the real world!
 
