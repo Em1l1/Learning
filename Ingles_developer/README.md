@@ -50,11 +50,11 @@ In this lesson you will learn about: Customer’s Inception, User Stories, Devel
 
 **Challenge:** using your new knowledge of Software Development, answer a Multiple Choice Quiz to reinforce your concepts.
 
-[Customer Freedback.pdf](https://drive.google.com/file/d/1kfJnEwzJHTQUDI0kEnZlBY8clCK7HB7M/view?usp=sharing)
+  - [Customer Freedback.pdf](https://drive.google.com/file/d/1kfJnEwzJHTQUDI0kEnZlBY8clCK7HB7M/view?usp=sharing)
 
-[Ingles Developers Slides](https://drive.google.com/file/d/1qnSNg2NSCRhFn0epY7BENOEE6yMVcGj4/view?usp=sharing)
+  - [Ingles Developers Slides](https://drive.google.com/file/d/1qnSNg2NSCRhFn0epY7BENOEE6yMVcGj4/view?usp=sharing)
 
-[Speaking](https://drive.google.com/file/d/1R2PJzJFie_Zl9UrUO_lqnJLRTewSutPE/view?usp=sharing)
+  - [Speaking](https://drive.google.com/file/d/1R2PJzJFie_Zl9UrUO_lqnJLRTewSutPE/view?usp=sharing)
 
 
 # 2. Communicate with your customer accurately
@@ -125,10 +125,10 @@ Total = 9 days.
 
 **Desing Thinking summary**
 
-![](img/desig.webp)
+![](https://i.ibb.co/WvNjqYG/desig.webp "Desing Thinking summary")
 
 
-[Design Thinkking](https://drive.google.com/file/d/1gYxH9NB_l4jiSyDztdGj_4dX9fsV9ufG/view?usp=sharing)
+  - [Design Thinkking](https://drive.google.com/file/d/1gYxH9NB_l4jiSyDztdGj_4dX9fsV9ufG/view?usp=sharing)
 
 ## How iteration cycles works
 
@@ -142,7 +142,7 @@ Your get to ask the quwstion: how am I doing?
 
 Each iteration is a mini cycle to produce quality software with requirements, design, code and test.
 
-![](img/cycles.jpeg)
+![](https://i.imgur.com/USdjEpK.jpg)
 
 Each cycle produces working quality software. 
 A process is really just a sequence of steps.
@@ -186,7 +186,7 @@ It is essential your team comes to a consensus, only then can you start estimati
 
 Eliminate assumptions, have a meeting and agree on Estimates by playing planning poker.
 
-[prioritizing with the customer](https://drive.google.com/file/d/1svIVGr9pDJXkDn5EfEMUztu1j9ICRDOH/view?usp=sharing)
+  - [prioritizing with the customer](https://drive.google.com/file/d/1svIVGr9pDJXkDn5EfEMUztu1j9ICRDOH/view?usp=sharing)
 
   ## Planning considering priorities
 
@@ -219,7 +219,8 @@ Then select the set of features to be delivered in milestone 1.0
 
   Don't try to include fancy functions, instead focus on delivering software that will cover baseline functionality.
 
-  ![](img/milestons.jpeg)
+  ![](https://i.imgur.com/PuWYdHZ.jpg)
+
 
   ## Review: communicate with your customer accurately
 
@@ -245,7 +246,7 @@ Then select the set of features to be delivered in milestone 1.0
 
 **Milestone:** It is a MAJOR release, when you show your Customer your working, functional Software and and you expect to get paid for it.
 
-[review-I](https://drive.google.com/file/d/1IlKSFiHUqjbL5QuCOfK8r_6_CA3rIoXL/view?usp=sharing)
+- [review-I](https://drive.google.com/file/d/1IlKSFiHUqjbL5QuCOfK8r_6_CA3rIoXL/view?usp=sharing)
 
 # 3. Understand your customer and the requirements
 
@@ -299,7 +300,7 @@ Add a little reality into the plan.
 
 - Be confident in your plans by applying velocity and not overworking yourself and your team.
 
-[prioritizing with the customer](https://drive.google.com/file/d/1svIVGr9pDJXkDn5EfEMUztu1j9ICRDOH/view?usp=sharing)
+- [prioritizing with the customer](https://drive.google.com/file/d/1svIVGr9pDJXkDn5EfEMUztu1j9ICRDOH/view?usp=sharing)
 
   ## Backlog and Milestone 1.0
 
@@ -321,15 +322,15 @@ Once you have agreed-upon an  achievable set of user stories for milestone 1.0, 
 
 **This is an example of the user mapping stories**
 
-![](img/maping.png "user mapping stories")
+![Imgur](https://i.imgur.com/D5g8WeH.png "user mapping stories")
 
 **The kanban board, because is very easy to use**
 
-![](img/map1.png "The kanban board")
+![Imgur](https://i.imgur.com/w6DB8Vk.png "The kanban board")
 
 **This is commonly used in the software development**
 
-![](img/map2.png "The software development")
+![Imgur](https://i.imgur.com/yqiX5cB.png "The software development")
 
 # 4. Organize your tasks!
 
@@ -356,9 +357,9 @@ It's always best to rely on the task estimates.
 
 Tasks describe the actual software development work that needs to be done and are far less of a guesstimate than a coarse-grained user story estimate.
 
-![](img/carlos.png)
+![Imgur](https://i.imgur.com/6vpDiBL.jpg)
 
-[updating-your](https://drive.google.com/file/d/1ALwWyKSwhUJsfIMmXbwvMzj8WZjUXTUT/view?usp=sharing)
+  - [updating-your](https://drive.google.com/file/d/1ALwWyKSwhUJsfIMmXbwvMzj8WZjUXTUT/view?usp=sharing)
 
   ## Stand-up meetings, analyze and design
 
@@ -388,7 +389,7 @@ Modifications might forece you to add or delete tasks from  your backlog.
 
 They might have an impact on the overall estimate for the project.
 
-  [burn-downate](https://drive.google.com/file/d/1Cpbhlym3lCLt1sfQqKZnnxpnhjOWB95D/view?usp=sharing)
+  - [burn-downate](https://drive.google.com/file/d/1Cpbhlym3lCLt1sfQqKZnnxpnhjOWB95D/view?usp=sharing)
 
 ## Review: organize your tasks!
 
@@ -415,7 +416,7 @@ They might have an impact on the overall estimate for the project.
 **Modeling your Design:** Once you know you need to adjust remember you must adjust your Backlog, User Stories and Estimates too.
 
 
-  [review-ii](https://drive.google.com/file/d/1dCaIwCDbEsWD0PJ_mFqrWelTU78UzxYH/view?usp=sharing)
+  - [review-ii](https://drive.google.com/file/d/1dCaIwCDbEsWD0PJ_mFqrWelTU78UzxYH/view?usp=sharing)
 
 # 5. Create deliverable design
 
@@ -462,13 +463,13 @@ Refactoring, SRP and DRY are all realated to improving ypur design.
 
 **This is an image with a SOLID design principles.**
 
-![](img/so.jpg "SOLID design principles.")
+![Imgur](https://i.imgur.com/yb68yTe.jpg "SOLID design principles")
 
 **It’s an amazing topic.**
 
 **Definitions are:**
 
-![](img/sol.png "SOLID ")
+![Imgur](https://i.imgur.com/8cyNdeq.png "SOLID ")
 
 
   ## Refactoring, meetings and release
@@ -505,7 +506,7 @@ Perfect desing is just marvelous and fantastic, but delivering working, effectiv
 
 **Refactoring**
 
-![](img/refact.png "Refactoring")
+![Imgur](https://i.imgur.com/aofBxlO.jpg "Refactoring")
 
 # 6. Protect your very valuable software
 
@@ -539,7 +540,7 @@ It lets multiple people check changes back into the repository and distribute th
 
 It tags so you can find version of your code from "way back when". Version contrl works mainly as a repository, it dosen't test your code. 
 
-![](img/control.png "Version Contral")
+![Imgur](https://i.imgur.com/NVjQGEf.jpg "Version Contral")
 
 **3. Technique #2 - Control your dependencies**
 
@@ -564,9 +565,9 @@ Packaging your software is really important, remember that your software must be
 echo "Hello World!"
 ```
 
-![](img/control-version.png "Test-driven development TDD")
+![Imgur](https://i.imgur.com/ft4o3IK.jpg "Test-driven development TDD")
 
-[test-driven](https://drive.google.com/file/d/1ApCNHpZeambNgw6VTVecvlIBBRSUsEpi/view?usp=sharing)
+  - [test-driven](https://drive.google.com/file/d/1ApCNHpZeambNgw6VTVecvlIBBRSUsEpi/view?usp=sharing)
 
   ## Functional and unit testing
 
@@ -633,12 +634,12 @@ Always think about functional testing.
 
 **Definition is done:** When everything is complete , then you have definition, it’s done.
 
-Ship out / Release Software with Quality and **Value:** Your Software must always have awesome quality and awesome value, aim at Perfection, settle for Functionality.
+**Ship out / Release Software with Quality and Value:** Your Software must always have awesome quality and awesome value, aim at Perfection, settle for Functionality.
 
-Defend your software from yourself and your **peers:** Test Driven Development (TDD) is all about writing your Code with testing in mind. It’s about writing Tests before any code and
+**Defend your software from yourself and your peers:** Test Driven Development (TDD) is all about writing your Code with testing in mind. It’s about writing Tests before any code and
 letting these Tests drive your Implementation.
 
-Technique #1 - Version Control with your code **repository:** Version Control is a super cool technology you can use, it’s one of the best Defensive tools you can use. Version Control lets
+**Technique #1 - Version Control with your code repository:** Version Control is a super cool technology you can use, it’s one of the best Defensive tools you can use. Version Control lets
 you create a repository to keep your code in a single place to ease backup and recovery.
 
 **Technique #2 - Control your dependencies:** You need to find a way to keep things independent, but working together at the same time to make Testing easier. You need to find a way to apply Independent Tests. Create Mock Objects to do this.
@@ -649,7 +650,7 @@ you create a repository to keep your code in a single place to ease backup and r
 
 **Technique #4 - Let your peers understand your Code-Document it!** In form your Customers of any changes you have made to the code Document your changes Analyze them along with your peers. Keep them informed with reasons.
 
-[Review III](https://drive.google.com/file/d/1i-cqDmJv_stJuHWmDdHg-va2sC64qRxk/view?usp=sharing)
+  - [Review III](https://drive.google.com/file/d/1i-cqDmJv_stJuHWmDdHg-va2sC64qRxk/view?usp=sharing)
 
 # 7. Understanding Continuous Integration (CI) and testing
 
@@ -753,7 +754,7 @@ _Testing is so Important:_ That you want to use it as effectively as you possibl
 TDD is all  about writing tests before writing the code, and will allow you to have solid, specific ideas avout what your software needs to do.
 This gives you clarity.
 
-[Test Driven Development (TDD)](https://www.youtube.com/watch?v=z6gOPonp2t0&feature=youtu.be)
+  - [Test Driven Development (TDD)](https://www.youtube.com/watch?v=z6gOPonp2t0&feature=youtu.be)
 
 **2. Make your code go from RED to GREEN**
 
@@ -799,7 +800,7 @@ Remember to automate your tests whenever possible.
 
 **Never Skip Tests!** People aren’t great at performing repetitive tasks carefully, but computers are. Always test your Code.
 
-[Review-IV](https://drive.google.com/file/d/1jbpvV5GBZ_N3g1CS_iR2P295iXMGJzr3/view?usp=sharing)
+  - [Review-IV](https://drive.google.com/file/d/1jbpvV5GBZ_N3g1CS_iR2P295iXMGJzr3/view?usp=sharing)
 
 # 9. Be ready for the end
 
@@ -855,7 +856,7 @@ Ask questions like:
   - What are your thoughts on this?
   - What do you think should be our number one priority right now?
 
-[retrospective-session](https://drive.google.com/file/d/1rYXY-w36JardCsXuSsw5Y6VFaG_55OhB/view?usp=sharing)
+  - [retrospective-session](https://drive.google.com/file/d/1rYXY-w36JardCsXuSsw5Y6VFaG_55OhB/view?usp=sharing)
 
   ## End an iteration
   ---
@@ -865,7 +866,7 @@ Ask questions like:
 The end of your Iteration is here.
 You have already finished the work for this iteration so it's time for the restrospective session.
 
-![](img/plan1.png "Plan your next Iteration")
+![Imgur](https://i.imgur.com/fvNLh8z.png "Plan your next Iteration")
 
 It's important you have a standard set of questions to review, think about the future, calculate your metrics.
 
@@ -886,7 +887,7 @@ Once that is done, start again. Follow the standard procedure for Iterations.
   - Playing planning poker to reach consensus
   - Start again
 
-  ![](img/tests.png "Think about this… I share a picture of example")
+  ![Imgur](https://i.imgur.com/fgusMiM.png "Think about this… I share a picture of example")
 
 **Estimate again and learn from your data (VELOCIITY)**
 
@@ -907,7 +908,7 @@ You have finished an Iteration and your team...
 **What would you do in these cases**
 **Leave your comments in the chat**
 
-[in-a-rush-early-and-late](https://drive.google.com/file/d/1FJTLNgDoFzE79yATOm6l-7h0XcKB4VCi/view?usp=sharing)
+  - [in-a-rush-early-and-late](https://drive.google.com/file/d/1FJTLNgDoFzE79yATOm6l-7h0XcKB4VCi/view?usp=sharing)
 
 # 10. Fix your bugs!
 
@@ -931,7 +932,7 @@ You have finished an Iteration and your team...
 - Pick a random sample of test that are failing and try to fix them
 - Estimate bug fix rate
 
-[bug-fix](https://drive.google.com/file/d/1hhGVaMxH5Cl3dBmiUbpSlNtggXztwcFp/view?usp=sharing)
+  - [bug-fix](https://drive.google.com/file/d/1hhGVaMxH5Cl3dBmiUbpSlNtggXztwcFp/view?usp=sharing)
 
   ## Continuous integration test delivery method
 
@@ -992,7 +993,7 @@ Frequency ensures fast response when a bug comes up.
 
 Process for delivering functionality
 
-[review-v](https://drive.google.com/file/d/1i5y_Av882P60gW2SHSCt5lAZv9omxgot/view?usp=sharing)
+- [review-v](https://drive.google.com/file/d/1i5y_Av882P60gW2SHSCt5lAZv9omxgot/view?usp=sharing)
 
 # 11. See the real world!
 
