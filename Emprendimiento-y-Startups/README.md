@@ -279,3 +279,10 @@ Importante tomar en cuenta a la hora de hacer un pitch para vender una idea:
     - El Option Pool es asignar un porcentaje de las acciones de la empresa para ser repartido en los principales empleados.
     - Las acciones tienen dos valores fundamentales: El poder de voto y el poder financiero.
     - Los eventos de liquidez son momentos como cuando se levanta capital o se sale a la bolsa en los cuales pueden existir transacciones comerciales.
+
+  **Tips Cap table:**
+
+  - **Darles participación a tus empleados -> ¿Cómo? -> Con Vesting de opciones:** Una promesa que se lo van a ganar a lo largo de unos años. NUNCA DAR sin una promesa de valor.
+  - **Option pool:** Se reservan acciones de la empresa para darselo a empleados.
+  - **Mientras más tarde llegan los inversores**, más uno tiene que pagar por la parte de la empresa.
+  - **Acciones:** Hay acciones que dan poder de voto y otras poder financiero.
