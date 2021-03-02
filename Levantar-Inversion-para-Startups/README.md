@@ -49,7 +49,7 @@
 
     - Los inversionistas tienen oportunidad de particiopar con muchas empresas
 
-      - Por qu&eacute; la turya?
+      - Por qu&eacute; la tu ya?
       - Por qu&eacute; ahora?
 
       > "Estamos vendiendo parte de nuestra empresa para diverificar el reisgo y tener m&aacute; probabilidad de &eacute;xito"
@@ -68,17 +68,17 @@
 
   **Creando algo valioso**
 
-    - Conocimiento de industria
-    - Claridad
-    - Desempeño
-    - Confianza
+  - Conocimiento de industria
+  - Claridad
+  - Desempeño
+  - Confianza
 
   **Invitando a la oportunidad**
 
-    - Profesional
-    - Seguimiento
-    - Preguntas ¿Si o No?
-    - Capacidad de cerrar el trato
+  - Profesional
+  - Seguimiento
+  - Preguntas ¿Si o No?
+  - Capacidad de cerrar el trato
 
   ## ¿Por qué los inversionistas invierten?
 
@@ -120,19 +120,19 @@ Esta confianza hay que ir trabajándola a través de relaciones a largo plazo.
 
     + Manejadores de dinero para una o varias familias que invierten en directo.
 
-  **Fondos de VC**
+  - **Fondos de VC**
 
     + Fondos dedicados **únicamente** a invertir en Startups.
 
-  **Fondos Internacionales**
+  - **Fondos Internacionales**
 
     + Fondos dedicados únicamente a invertir en Startups, que **cubren varias regiones del mundo**
 
-  **Fondos Corporativos**
+  - **Fondos Corporativos**
 
-  + Fondos que son parte de un corporativo, invierten con una visión de retorno o Estratégia.
+    + Fondos que son parte de un corporativo, invierten con una visión de retorno o Estratégia.
 
-  **Programas Gubernamentales**
+  - **Programas Gubernamentales**
 
 **Tamaño de ticket**
 
@@ -172,14 +172,14 @@ Cada vez que una startup recibe fondos los inversores y los fundadores negocian 
   >
   > "Framework" De Santiago: 
     
-    > **Prepare -> Execute**
-    >
-    > **Prepare**
-      > Terms - Dates - Closing process - Story - Inversor
-    > **Execute**
-      > Reach out - Schedule - Yes|No (on dates) - Are we done?
+  > **Prepare -> Execute**
+  >
+  > **Prepare**
+  >> Terms - Dates - Closing process - Story - Inversor
+  > **Execute**
+    > Reach out - Schedule - Yes|No (on dates) - Are we done?
 
-      **Estimar cuanto capital necesitas levantar**
+    **Estimar cuanto capital necesitas levantar**
 
 
   ## Cómo estimar cuanto dinero necesitas levantar
