@@ -201,7 +201,7 @@ Ejercicio: **Levantar todo al principio**
 **Etapas**
 
 | Seed  | Series A | Series B/C | Late Stage/Unicorn  |
-| :----: | :-----: | :-----: | :-----: | :-----: | :-----: |
+| :----: | :-----: | :-----: | :-----: |
 | Driver | Team | Product | Customers | Business |
 | Cost | 1X | 10X | 100X | 1000X |
 | Risk  | Very High | High | Medium  | Low |
