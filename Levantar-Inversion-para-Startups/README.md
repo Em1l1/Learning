@@ -207,6 +207,7 @@ Ejercicio: **Levantar todo al principio**
 | Risk  | Very High | High | Medium  | Low |
 | Size/Ppt | 1-10 | 10-50 | 50-200 | 500-1000 |
 
+
 **Solución: Levantar en etaps**
 
 | Ventajas | Desventajas|
@@ -228,7 +229,7 @@ Recuros suficienetes para lograr dos cosas:
 
   Scalable customer acquisitions    (about to be) Profitable unit economics
 
-     Scalable profitable business   Exit
+  Scalable profitable business   Exit
 
 **Una siguiente etapa**
 
@@ -333,30 +334,162 @@ Recuros suficienetes para lograr dos cosas:
 
   ## Lista de inversionistas
 
+> "Ok, todo esta bien, pero ¿a quién le hago el pitch? ¿a quién le tocó la puerta?"
 
+**CRM**
+
+  Tu agenda telefónica de **contactos importantes** que pueden cambiar el rumbo de tu empresa.
+
+**Excel**
+
+  **Una herramienta** sencilla y práctica, pero requiere desciplina.
+
+**Pipedrive o Notion**
+
+  **Un poco más poderoso**, pero también requiere darle forma correcta y el mantenimiento.
+
+**Hubspot, Close.io o Saledforece**
+
+  Herremientas profundas, profesionales que permiten cosas fantásticas, pero **normalmente a un costo.**
+
+  > Lo que importa es el uso y la disciplina.
+
+  - [CRM ventas y software | Pipedrive](https://www.pipedrive.com/es)
+  - [Notion](https://www.notion.so)
+  - [HubSpot](https://www.hubspot.com)
+  - [Close CRM](https://close.com)
+  - [Salesforce](https://www.salesforce.com/mx/?ir=1)
 
   ## Encontrando inversionistas
+
+### Fuete 1: Conocidos
+
+- LinkedIn, E-mail, Facebook, contactos de personas que tengan interes en el proyecto
+
+### Fuente 2: Los conocidos de tus concidos.
+
+- Los que conoces y tienes confianza, han de conocer de inversionista y grandes contactos.
+
+### Fuente 3: The usual suspects
+
+- Inversionista, conocer las asociaciones y saber donde encontrarlos. Para conversar con ellos del proyecto y inversión.
+
+### Fuente 4: Otras Startups (Que conoces)
+
+- Informate sobre sobre otras startups de como obtuvieron inversion.
+
+### Fuente 5: Crunchbase y similares (u otras startups que no conoces)
+
+- Conocer como otras startups, obtiene capital de inversion.
+
+### Fuente 6: Linkedin
+
+- Conocer a los inversionistaas, y establecer contacto con ellos.
+
+### Fuente 7: Eventos (Y us apps)
+
+- Emprendimiento, realizar networking. Execente lugar de perfiles de próximos inversionistas.
+
+### Fuente 8: Noticias
+
+- Conocer inversionistas y empresas en la que invierten.
+
+### Fuente 9, 10, 11: Escuela, Endeavour
+
+- Pensar en una nueva fuente de inversión, ir en busca de ellos.
+
+  - [LAVCA](https://www.salesforce.com/mx/?ir=1)
+  - [Crunchbase](https://www.crunchbase.com)
 
 # 4. Phase 1: lead activation
 
   ## Construyendo relaciones
 
+**¿Obteniendo una reunión warm or cold?**
 
+  - Pedir la ayuda explícitamente y como siempre la práctica hace al maestro
+
+  **Cold**
+
+  Enviar correos en frío, lo realices de la mejor manera. Para obtener una respuesta, en muchas ocasiones no van a responder, pero los que responden cambian tu vida.
+
+  **El secreto de los intros**
+
+  Ambos estar interesados. Y establecer contacto. Es probable que uno de ellos no tiene interes, nos dará los detalles del porque no le interesa conocer. Muy fuena fuente de retroalimentaciñon.
 
 # 5. Phase 1: lead qualification
 
   ## De prospecto a relación
 
+**Llamda, café, reunión**
 
+Crear una red, para establecer en contacto. Aún que no estemos levantando capital. Y pedir su orientación. Para cuando levantar capital, el proyecto este con los detalles de porque levantar capital.
+
+**¿Cómo ganar amigos?**
+
+  - Tener un interés real por su objetivo
+  - Crear valor
+  - Seguimiento
+  - Respeto
+  - Atención
+  - No crítica, pesimismo ni chisme
+
+  **Go-gives**
+
+  Conseguir lo que queries, y darle a los demás. Agregarle valor a los inversionistas. 
+
+  **Actualización mensual**
+
+  Escribir una actualización a todos los inversionistas, sobre los datos y acciones de crecimiento. 
+
+  **Compartir**
+
+  - Métricas
+  - Aprendizajes
+  - Éxitos y Fracasos
+  - Objetivos
+  - Cambios
+  - Evolución
+
+> **Consistente, entretenido y transparente**
 
 # 6. Phase 1: nurturing
 
   ## Ejecutar el levantamiento de capital
 
+**Definir fechas**
 
+Estamos listos para levantar capital, invitarlos a un si o un no. 
+
+**Contactar a todos**
+
+Presentación, para responder todas las preguntas. Y obtener retroalimentación.
+
+**Embudo de reuniones**
+
+  - primera reunión: pitch
+  - Segunda reunión: preguntas y observaciones
+  - Due diligence
+  - Respuesta
+
+**Due diligence** = La verificación de que todo es cierto
+
+**Conseguir una respuesta**
+
+Oye, estoy llegando a la fecha de cierre. Te apuntas o no.
+
+>  «No llegarás a ningún lado si tienes una gran visión pero no estás solucionando el problema del cliente. Si no solucionas problemas, nunca vas a adquirir la capacidad necesaria para hacer realidad esa gran visión». Y la manera de resolver problemas es descubrirlos sobre la marcha y luego pivotar para afrontarlos. - Jeff Lawson, consejero delegado de la empresa de comunicaciones en la nube Twilio
   
+La visión explica a menudo por qué los equipos de una startup pueden pivotar de una manera que a los equipos de producto tradicionales les resulta muy difícil. La estructura del equipo de la startup obliga a la empresa a afrontar la realidad y sus desagradables peculiaridades, siempre valiéndose de la visión como guía
+
   ## Conclusión: ¿qué es lo importante?
 
+**Si tienes una gran empresa y una red, tú vas a poder seleccionar a tus socios.**
 
-  
+  - **Nunca pares de hacer el pitch**
 
+La mejor forma de crecer una startup y como persona siempre será el feedback que te den porque siempre te permitirá avanzar y obtener una mejora continua en todos tus procesos de empresa, negocios y como ser humano, al crear relaciones con personas que siempre te aportaran consejos y capital relaciónal.
+
+**La importancia de pedir Feedback**
+
+La mejor forma de crecer una startup y como persona siempre será el feedback que te den porque siempre te permitirá avanzar y obtener una mejora continua en todos tus procesos de empresa, negocios y como ser humano, al crear relaciones con personas que siempre te aportaran consejos y capital relaciónal.
