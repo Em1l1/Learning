@@ -179,7 +179,7 @@ Cada vez que una startup recibe fondos los inversores y los fundadores negocian 
   > **Execute**
     > Reach out - Schedule - Yes|No (on dates) - Are we done?
 
-    **Estimar cuanto capital necesitas levantar**
+  **Estimar cuanto capital necesitas levantar**
 
 
   ## Cómo estimar cuanto dinero necesitas levantar
@@ -198,7 +198,9 @@ Ejercicio: **Levantar todo al principio**
 | Ángel | Pre-seed | seed | Post seed | Series A/B | Grown |
 | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: |
 
-|  | Seed  | Series A | Series B/C | Late Stage/Unicorn  |
+**Etapas**
+
+| Seed  | Series A | Series B/C | Late Stage/Unicorn  |
 | :----: | :-----: | :-----: | :-----: | :-----: | :-----: |
 | Driver | Team | Product | Customers | Business |
 | Cost | 1X | 10X | 100X | 1000X |
@@ -209,8 +211,8 @@ Ejercicio: **Levantar todo al principio**
 
 | Ventajas | Desventajas|
 | :-------: | :---------: |
-| Menos dilución| Tner que levantar cada 6, 12 o 18 |
-| Socios adcuados para cada etapa | |
+| Menos dilución| Tener que levantar cada 6, 12 o 18 |
+| Socios adecuados para cada etapa | |
 | Tomar decisiones conforme más información| |
 
 **¿Qué buscamos?**
@@ -255,9 +257,10 @@ Recuros suficienetes para lograr dos cosas:
 
   **Mundo real**
 
-    Dilución máxima de 20% por ronda.     Ejemplo: Alibaba Group
-    **No es ideal, pero no es el fin del mundo**
+  Dilución máxima de 20% por ronda.     Ejemplo: Alibaba Group
 
+  **No es ideal, pero no es el fin del mundo**
+  
   ## Términos: nota o equity
 
 - Inversionista tradicional :  "Quiero acciones"
