@@ -83,7 +83,9 @@ Recuerda que puedes probar estas distribuciones con una máquina virtual o el pr
 
   * Instalamos el sistema operativo
 
-  * Virtualbox, muestra errores al instalar ubuntu-server. Lo que comendable es instalar Qemu.
+  * Errores al instalar ubuntu-server en virtual box. 
+
+  **Recomenadacion:** Utilizar **QEMU** para virtualizar **Ubunut-server.**
 
   [![](img/qemu.jpeg "máquina virtual")](https://geeksencuarentena.com/linux/como-instalar-kvm-en-ubuntu-20-04/)
 
@@ -120,11 +122,17 @@ Recuerda que puedes probar estas distribuciones con una máquina virtual o el pr
   ## Gestión del árbol de directorios
 
 - **pwd:** nos muestra nuestra ubicación actual en el árbol de directorios `(Print Working Directory).`
-**ls:** nos muestra el contenido de las carpetas de nuestro sistema operativo. Podemos especificar alguna ruta o, por defecto, listar el contenido de la carpeta donde estamos trabajando.
+
+- **ls:** nos muestra el contenido de las carpetas de nuestro sistema operativo. Podemos especificar alguna ruta o, por defecto, listar el contenido de la carpeta donde estamos trabajando.
+
 - **cd:** cambiar nuestra ubicación en el árbol de directorios `(Change Directory).` Usamos dos puntos `(..)` para referirnos al directorio padre y solo uno `(.)` para referirnos a nuestro directorio actual.
+
 - **touch:** nos ayuda a crear archivos desde la terminal.
+
 - **mkdir:** nos ayuda a crear carpetas desde la terminal.
+
 - **cp:** nos permite duplicar archivos y carpetas.
+
 - **mv:** cambiar el nombre de nuestros archivos y carpetas.
 
 Recuerda que la terminal de Linux es sensible a la diferencia entre mayúsculas o minúsculas.
@@ -132,13 +140,14 @@ Recuerda que la terminal de Linux es sensible a la diferencia entre mayúsculas 
   ## Diferencias entre LESS, CAT, HEAD y TAIL para lectura de archivos
 
 - **cat:** nos permite leer archivos en su totalidad.
-- **less:** nos ayuda a leer el contenido de nuestros archivos por páginas. Nos movemos con las flechas del teclado o la tecla de espacio. Salimos de la lectura del archivo con la letra q. Buscamos palabras específicas escribiendo /palabra.
+
+- **less:** nos ayuda a leer el contenido de nuestros archivos por páginas. Nos movemos con las flechas del teclado o la tecla de espacio. Salimos de la lectura del archivo con la letra `q`. Buscamos palabras específicas escribiendo `/palabra`.
 - **tail:** nos muestra las últimas 10 líneas de nuestros archivos.
 - **head:** nos muestra las primeras 10 líneas de nuestros archivos.
 
   ## Interacción con archivos y permisos
 
-Interacción con archivos y permisos
+**Interacción con archivos y permisos**
 
 Con el comando **ls -l** podemos observar la lista de archivos de nuestro directorio actual con información un poco más detallada. El primer campo nos indica los diferentes permisos para cada archivo o directorio. Por ejemplo: **-rwxrw-r--**.
 
@@ -175,15 +184,17 @@ Por ejemplo, para añadir permisos de ejecución a nuestro usuario propietario u
 
 También podemos cambiar al usuario propietario del archivo con el comando `chown`.
 
-  * `sudo chown nuevo-usuario:grupo-usuarios nombre-del-archivo`
+  ```bash
+  sudo chown nuevo-usuario:grupo-usuarios nombre-del-archivo
+  ```
 
   ## Conociendo las terminales en linux 
 
-  Las distribuciones de Linux para servidores no incluyen interfaz gráfica, ya que consumen muchos recursos. Esto significa que siempre vamos a trabajar desde la terminal.
+Las distribuciones de Linux para servidores no incluyen interfaz gráfica, ya que consumen muchos recursos. Esto significa que siempre vamos a trabajar desde la terminal.
 
 Tendremos disponibles 6 terminales virtuales a las que podemos entrar o salir con las teclas `Ctrl + Alt + Fx`. También podemos usar el comando `chvt`. La séptima terminal es la interfaz gráfica, así que en este caso no disponemos de ella.
 
-Cada usuario activo en nuestro sistema operativo crea una nueva conexión. Podemos ver todas estas conexiones con los comandos who y w (este último nos da un poco más de información).
+Cada usuario activo en nuestro sistema operativo crea una nueva conexión. Podemos ver todas estas conexiones con los comandos `who y w` (este último nos da un poco más de información).
 
 Para ver todos los procesos que corren en el sistema podemos usar el comando `ps`. Para filtrar los procesos y ver únicamente las conexiones de los usuarios usamos `ps -ft tty`.
 
@@ -204,10 +215,11 @@ Por ejemplo, el comando `ps aux | grep platzi` imprime los procesos activos del 
   * `script &`
   * `nohup script &`
 
-|
-`ps`: Muestra los procesos corriendo. Modificadores:
+- `ps`: Muestra los procesos corriendo. 
 
-`aux`: Muestra todos los procesos
+**Modificadores:**
+
+- `aux`: Muestra todos los procesos
 
 - `jobs`: Al igual que el comando anterior, muestra los procesos. A diferencia de ps, es un comando interno de la terminal
 - `fg`: Abre un proceso que estaba pausado
@@ -216,9 +228,9 @@ nohup: Genera un archivo llamado “nohup.out” que muestra toda la informació
 
 **Símbolos especiales**
 
-`| # Pipe`: Envia el standard output de un comando al standard input de otro.
-`&` Ampersand: Envia un proceso al background
-`./`: Ruta de archivo a ejecutar
+  - `| # Pipe`: Envia el standard output de un comando al standard input de otro.
+  - `&` Ampersand: Envia un proceso al background
+  - `./`: Ruta de archivo a ejecutar
 
 - `Pipe`: Nos permite concatenar comandos
 - `ls -l | wc -l`: cuantas lineas tiene este
@@ -239,7 +251,7 @@ Para ver la información de la memoria podemos usar el comando free o, para que 
 
 `top`: Muestra la siguiente información del sistema:
 
-```console
+```bash
   load average (carga promedio): Provee una representación en números del 1 al número de procesadores que tenga nuestro servidor del uso de los mismos.
   Uso de la memoria
   Cantidad de usuarios
@@ -254,7 +266,7 @@ Para ver la información de la memoria podemos usar el comando free o, para que 
 
 **Comandos útiles**
 
-```console
+```bash
 cat /proc/cpuinfo | grep "processor" # : Muestra información sobre el CPU
 sudo ps auxf | sort -nr -k 3 | head -5 # : Muestra los 5 procesos que más uso hacen del CPU
 sudo ps auxf | sort -nr -k 4 | head -5 # : Muestra los 5 procesos que más uso hacen de la memoria RAM
@@ -270,7 +282,7 @@ Las **IPs Privadas** se utilizan para identificar los dispositivos dentro de una
 
 Las **IPs Públicas** son la que se asignan a cualquier dispositivo conectado a Internet. Por ejemplo: los servidores que alojan tus sitios web, el router que te da acceso a internet, entre otros.
 
-Si tu dispositivo tiene una IP pública significa que puede conectarse a otro que también tenga una. Por esto mismo, no puede haber dos dispositivos con la misma IP pública.
+Si tu **dispositivo tiene una IP pública** significa que puede conectarse a otro que también tenga una. Por esto mismo, no puede haber dos dispositivos con la misma IP pública.
 
 Para **encontrar la dirección IP de nuestros dispositivos** podemos usar los comandos ifconfig en Linux y Mac o ipconfig en Windows. También podemos usar el comando ip a.
 
@@ -282,29 +294,29 @@ Para identificar las IPs de diferentes dominios podemos usar el comando` nslooku
 
 En la administración de servidores siempre existen IPs privadas e IPs públicas.
 
-**La ip pública:**
+  - **La ip pública:**
 Permite una conexión remota desde cualquier lugar al servidor, mediante el protocolo SSH.
 
-**ifconfig ==> Interface Configuration**
+  - **ifconfig ==> Interface Configuration**
 Se enlistan las tarjetas que tenemos y su direccionamiento especifico.
 
-**ip a ==> ip address** show
+  - **ip a ==> ip address** show
 También muestra la información de la red.
 Algunos modificadores para este comando son -4 para listar solo las ipv4 ó -6 para listar las ipv6.
 
-`hostname`
+  - `hostname`
 Para visualizar el nombre del equipo, este hostname es como se identifica el equipo en las redes.
 
-`route -n`
+  - `route -n`
 Para visualizar la puerta de enlace predeterminada del equipo. Muestra la IP routing table.
 
-`nslookup nombredominio`
+  - `nslookup nombredominio`
 Para visualizar la ip de cualquier dominio especifico.
 
-`curl`
+  - `curl`
 Puede realizar simulaciones como las que hace Postman.
 
-`wget nombredominio`
+  - `wget nombredominio`
 Para obtener información desde internet.
 
 [Herramientas de desarrollo Backend: JSON Viewer y Postman](https://platzi.com/clases/1650-prework/21963-herramientas-de-desarrollo-backend-json-viewer-y-p/)
@@ -312,7 +324,8 @@ Para obtener información desde internet.
 ## Administración de paquetes acorde a la distribución
 
 Cada distribución de Linux maneja su software de maneras diferentes.
-Red Hat / CentOS / Fedora
+
+**Red Hat / CentOS / Fedora**
 
 Su gestor de paquetes es `.rpm `(Red hat Package Manager). La base de datos de este gestor está localizada en `/var/lib/rpm`.
 
@@ -334,7 +347,7 @@ También podemos realizar las instalaciones con el comando a`pt install nombre-p
 
 **Red Hat / CentOS / Fedora**
 
-`.rpm` Red Hat Package Manager.
+  - `.rpm` Red Hat Package Manager.
   - Base de datos RPM, localizada en `var/lib/rpm
     rpm -qa` Listar todos los rpms instalados en la máquina. (query all)
   -  `rpm -i` paquete.rpm Realizar la instalación de un paquete. (install)
@@ -406,8 +419,8 @@ Muestra todos los archivos involucrados sobre el paquete.
 
 También podemos usar `yum`. Pero lo primero es dar `yum update`. Pero para poder ejecutarlo necesitamos un usuario con todos los permisos, por ejemplo el usuario root.
 
-Si se muestra un # al final del nombre del usuario, eso indica que estamos trabajando con un usuario root. Por ejemplo:
-`[root@server ~]#`
+Si se muestra un `#` al final del nombre del usuario, eso indica que estamos trabajando con un usuario root. Por ejemplo:
+`[root@server ~] #`
 
 Lo ideal es nunca trabajar con un usuario root. Lo ideal es crear usuarios que tengan ciertos permisos específicos, por medidas de seguridad y evitar errores.
 
@@ -425,41 +438,52 @@ No todo el software que necesitamos se encuentra en los repositorios. Debido a e
 
 Instalación de algunas herramientas para manejar una base de datos MySQL (recuerda que instalaremos y trabaremos con MySQL en una próxima clase):
 
-```console
+```bash
 sudo apt install build-essential libgd-dev openssl libssl-dev unzip apache2 php gcc libdbi-perl libdbd-mysql-perl
 ```
 
-Instalación de Nagios:
+**Instalación de Nagios:**
 
-`wget https://assets.nagios.com/downloads/nagioscore/releases/nagios-4.4.4.tar.gz -O nagioscore.tar.gz`
+```shell
+wget https://assets.nagios.com/downloads/nagioscore/releases/nagios-4.4.4.tar.gz -O nagioscore.tar.gz
+```
 
 **Descomprimir y desempaquetar archivos con tar:**
 
-`tar xvzf nagioscore.tar.gz`
+```bash
+tar xvzf nagioscore.tar.gz
+```
 
-Este comando creará una carpeta nagios-4.4.4. El nombre de la carpeta puede variar dependiendo de la versión que descargaste. Entrando a esta carpeta podemos ejecutar diferentes archivos y comandos para configurar el software y realizar la instalación.
+Este comando creará una carpeta nagios-4.4.4. El nombre de la carpeta puede variar dependiendo de la versión de descarga. Ingresar a la carpeta, luego ejecutar los diferentes archivos y comandos para configurar el software e instalación.
 
-```console
+```bash
 # 1:
 sudo ./configure --with-https-conf=/etc/apache2/sites-enabled
+
 # 2:
 sudo make all
+
 # 3:
 sudo make install
+
 # 4:
 sudo make install-init
+
 # 5:
 sudo make install-commandmode
+
 # 6:
 sudo make install-config
+
 #7:
 sudo make install-webconf
 ```
 
 Error en el paso al ejecutar `sudo make install`, primero tienen que hacer lo siguiente:
 
-```console
+```bash
 sudo make install-groups-users
+
 sudo usermod -a -G nagios www-data
 ```
 
@@ -469,14 +493,24 @@ Por último, para administrar el servicio de nagios podemos usar el comando `sud
 - [assets-nagios](https://assets.nagios.com/downloads/nagioscore/releases/nagios-4.4.4.tar.gz)
 - [Nagios-plugins](https://nagios-plugins.org/download/nagios-plugins-2.2.1.tar.gz)
 
+```shell
+# Nagios-plugins
+https://nagios-plugins.org/download/nagios-plugins-2.2.1.tar.gz
+```
+
 **Instalar plugins-nagios**
 
-```console
+```shell
 wget https://nagios-plugins.org/download/nagios-plugins-2.2.1.tar.gz -O nagios-plugins.tar.gz
+
 tar xzvf nagios-plugins.tar.gz
+
 cd nagios-plugins-2.2.1
+
 sudo ./configure
+
 sudo make all
+
 sudo make install
 ```
 
@@ -484,7 +518,7 @@ sudo make install
 
 La instalacion a continuacion es opcional, eliges la primera o la segunda ambos instalan los paquetes.
 
-```console
+```bash
 sudo apt update
 
 sudo apt-get install -y autoconf gcc libc6 libmcrypt-dev make libssl-dev wget bc gawk dc build-essential snmp libnet-snmp-perl gettext -y
@@ -578,23 +612,25 @@ Para cambiar la contraseña de nuestros usuarios usamos el comando `passwd`.
 
 Comandos útiles
 
-**cat /etc/passwd:** Muestra todos los usuarios del sistema operativo
-**cat /etc/shadow:** Muestra las contraseñas del sistema operativo
+  - **cat /etc/passwd:** Muestra todos los usuarios del sistema operativo
+  - **cat /etc/shadow:** Muestra las contraseñas del sistema operativo
 
   ## Creando y manejando cuentas de usuario en el sistema operativo
 
 **Comandos para administrar cuentas de usuarios ⚑**
 
-- **sudo useradd nombre-usuario:** crea un usuario sin asignarle inmediatamente alguna contraseña ni consultar más información. Debemos terminar de configurar esta cuenta a mano posteriormente.
-- **sudo adduser nombre-usuario:** crea un nuevo usuario con contraseña y algo más de información. También creará una nueva carpeta en la `carpeta /home/`.
-- **userdel nombre-usuario:** eliminar cuentas de usuarios.
-- **usermod:** modificar la información de alguna cuenta.
+  - **sudo useradd nombre-usuario:** crea un usuario sin asignarle inmediatamente alguna contraseña ni consultar más información. Debemos terminar de configurar esta cuenta a mano posteriormente.
+  - **sudo adduser nombre-usuario:** crea un nuevo usuario con contraseña y algo más de información. También creará una nueva carpeta en la `carpeta /home/`.
+  - **userdel nombre-usuario:** eliminar cuentas de usuarios.
+  - **usermod:** modificar la información de alguna cuenta.
 
 Nunca modifiques a mano el archivo `/etc/passwd`. Para administrar los usuarios debemos usar los comandos que estudiamos en clase.
 
-- Un truco al momento de utilizar el comando history es filtrar los resultados con `grep` obteniendo así información más precisa, en el ejemplo de la clase, se puede utilizar el comando:
+  - Un truco al momento de utilizar el comando history es filtrar los resultados con `grep` obteniendo así información más precisa, en el ejemplo de la clase, se puede utilizar el comando:
 
-`history | grep passwd`
+```shell
+  history | grep passwd
+```
 
   ## Entendiendo la membresía de los grupos
 
@@ -602,28 +638,91 @@ Los grupos nos ayudan a darle los mismos permisos a diferentes usuarios al mismo
 
 Para cambiar de usuario sin necesidad de reiniciar el sistema podemos usar el comando `su - nombre-usuario`. También podemos cambiar de usuario sin necesidad de saber su contraseña usando el comando `sudo su - nombre-usuario`.
 
-Para ver a qué grupos pertenecen nuestros usuarios usamos el comando groups nombre-usuario. Para agregar usuarios a un nuevo grupo usamos el comando `sudo gpasswd -a nombre-usuario nombre-grupo`. Los eliminamos de la misma forma con `gpasswd -d`.
+Para ver a qué grupos pertenecen nuestros usuarios usamos el comando 
 
-Para esto también podemos usar el comando `sudo usermod -aG nombre-grupo nombre-usuario`. Recuerda que en este caso el orden en que escribimos el grupo y el ususario se invierte.
+```shell
+groups nombre-usuario
+```
 
-Para listar los permisos de nuestros usuarios ejecutamos el comando `sudo -l`.
+Para agregar usuarios a un nuevo grupo usamos el comando.
+
+```shell
+sudo gpasswd -a nombre-usuario nombre-grupo
+```
+
+Los eliminamos de la misma forma con 
+
+```shell
+gpasswd -d
+```
+
+Para esto también podemos usar el comando 
+
+```shell
+sudo usermod -aG nombre-grupo nombre-usuario
+```
+
+Recuerda que en este caso el orden en que escribimos el grupo y el ususario se invierte.
+
+Para listar los permisos de nuestros usuarios ejecutamos el comando.
+
+```shell
+sudo -l
+```
 
 **Comandos**
 
-- `su - usuario`: Switch User, cambia de usuario
-- `groups usuario`: Muestra a que grupos pertenece cierto usuario
-- `sudo gpasswd -a usuario grupo`: Agrega un usuario a un grupo
-- `sudo gpasswd -d usuario grupo`: Quita a un usuario de un grupo
-- `usermod -aG grupo usuario`: Agrega un usuario a un grupo
-- `sudo -l`: Muestra que permisos tiene el usuario actual
+Switch User, cambia de usuario:
+
+```shell
+su - usuario
+```
+
+Muestra a que grupos pertenece cierto usuario:
+
+```shell
+groups usuario
+```
+
+Agrega un usuario a un grupo:
+
+```shell
+sudo gpasswd -a usuario grupo
+```
+
+Quita a un usuario de un grupo:
+
+```shell
+sudo gpasswd -d usuario grupo
+```
+
+Agrega un usuario a un grupo:
+
+```shell
+usermod -aG grupo usuario
+```
+
+Muestra que permisos tiene el usuario actual:
+
+```shell
+sudo -l
+```
 
   ## Usando PAM para el control de acceso de usuarios
 
-PAM es un mecanismo para administrar a los usuarios de nuestro sistema operativo. Nos permite autenticar usuarios, controlar la cantidad de procesos que ejecutan cada uno, verificar la fortaleza de sus contraseñas, ver la hora a la que se conectan por SSH, entre otras.
+`PAM` es un mecanismo para administrar a los usuarios de nuestro sistema operativo. Nos permite autenticar usuarios, controlar la cantidad de procesos que ejecutan cada uno, verificar la fortaleza de sus contraseñas, ver la hora a la que se conectan por `SSH`, entre otras.
 
-Con el comando `pwscore` podemos probar qué tan fuertes son nuestras contraseñas. Recuerda que para usar este comando en sistemas basados en Ubuntu debemos instalar el paquete `libpwquality-tools`.
+Con el comando `pwscore` podemos probar qué tan fuertes son nuestras contraseñas. Recuerda que para usar este comando en sistemas basados en Ubuntu debemos instalar el paquete: 
 
-El comando ulimit nos ayuda a listar los permisos de nuestros usuarios. Para limitar el número de procesos que nuestros usuarios pueden realizar ejecutamos `ulimit -u max-numero-procesos`.
+```shell
+libpwquality-tools
+```
+
+El comando ulimit nos ayuda a listar los permisos de nuestros usuarios. Para limitar el número de procesos que nuestros usuarios pueden realizar ejecutamos:
+
+```shell
+ulimit -u max-numero-procesos
+```
 
 **Comandos**
 
@@ -636,19 +735,31 @@ El comando ulimit nos ayuda a listar los permisos de nuestros usuarios. Para lim
 
 - **sudo vi /etc/security/time.conf:** Modifica el archivo que indica en que horarios pueden conectarse ciertos usuarios
 
-```console
+```shell
 ls /etc/pam.d
+
 ls /lib64/security
+
 ls /etc/security
+
 pwscore
+
 ulimit -a
+
 ulimit -u 10  --numero de procesos
+
 vi script.sh
+
 chmod +x script.sh
+
 ./script.sh
+
 vi /etc/security/time.conf
+
 sudo vi /etc/security/time.conf
+
 gpasswd -a dbz wheel  # centos wheel | Ubuntu sudo
+
 groups dbz
 ```
 
@@ -662,32 +773,81 @@ Con el comando **ssh-keygen** podemos generar llaves públicas y privadas en nue
 
 Para conectarnos desde nuestra máquina a un servidor remoto debemos:
 
-1. Ejecutar el comando `ssh-copy-id -i` `ubicación-llave-pública nombre-usuario@dirección-IP-servidor-remoto` y escribir nuestra contraseña para enviar nuestra llave pública al servidor.
+**1. Ejecutar el comando**
 
-Conocer IP `ifconfig wlan0`
+```shell
+ssh-copy-id -i
 
-2. Usar el comando `ssh nombre-usuario@dirección-IP-servidor-remoto` para conectarnos al servidor sin necesidad de escribir contraseñas.
+ubicación-llave-pública 
+
+nombre-usuario@dirección-IP-servidor-remoto
+```
+
+y escribir nuestra contraseña para enviar nuestra llave pública al servidor.
+
+**Conocer IP**
+
+```shell
+ifconfig wlan0
+```
+
+2. Usar el comando 
+
+```shell
+ssh nombre-usuario@dirección-IP-servidor-remoto
+```
+
+para conectarnos al servidor sin necesidad de escribir contraseñas.
 También podemos usar el comando `ssh -v ...` para ver la información o los errores de nuestra conexión con el servidor. Puedes usar la letra v hasta 4 veces **(-vvvv)** para leer más información.
 
-Las configuraciones de SSH se encuentran en el archivo `/etc/ssh/sshd_config`.
+Las configuraciones de SSH se encuentran en el archivo 
+
+```shell
+/etc/ssh/sshd_config
+```
 
 **SSH:** Secure Shell, es un protocolo que permite conectar dos computadoras de forma remota sin necesidad de un password, únicamente con la interacción de una llave pública y una llave privada (aunque podemos colocar una contraseña sobre las llaves)
 
 **Configuración**
 
-1. En el servidor, abrir el archivo `/etc/ssh/sshd_config` con algún editor. Leer el archivo y configurar a gusto.
-2. En la consola de la máquina cliente abrir `ssh-keygen` para generar las llaves
-3. Elegir ubicación para guardar la llave privada
-Ejecutar `ssh-copy-id -i directorio_de_llave/id_rsa`.`pub nombre_usuario@direccion_ip_del_servidor` para copiar la llave pública al servidor
+1. En el servidor, abrir el archivo:
+
+```shell
+/etc/ssh/sshd_config
+```
+
+ con algún editor. Leer el archivo y configurar a gusto.
+
+2. En la consola de la máquina cliente abrir 
+
+```shell
+ssh-keygen
+```
+
+para generar las llaves
+
+3. Elegir ubicación para guardar la llave privada Ejecutar:
+
+```shell
+ssh-copy-id -i directorio_de_llave/id_rsa
+
+pub nombre_usuario@direccion_ip_del_servidor
+```
+
+para copiar la llave pública al servidor
 
 **Ejecutar ssh**
 
-`nombre_usuario@direccion_ip_del_servidor` en la máquina cliente para conectarnos exitosamente de forma remota
+```shell
+nombre_usuario@direccion_ip_del_servidor
+```
+
+en la máquina cliente para conectarnos exitosamente de forma remota
 
 **Tips**
 
-En lugar de descargar `Putty` en Windows podemos utilizar el emulador de consola Unix llamado `Cmder` para ejecutar los comandos vistos en clase. Incluso si esto falla, lo que personalmente recomiendo es instalar un subsistema de linux si tenemos Windows 10. Platzi tiene incluso un artículo sobre como hacer eso: https://platzi.com/clases/1378-python-practico/19200-importante-instalando-ubuntu-bash-en-windows-para-/
-Si la conexión falla, podemos usar el modificador` -v (verbose)` en el comando `ssh` para poder ver la información que envían las máquinas que intentan conectarse. La “v” puede repetirse hasta cuatro veces, quedando el comando, por ejemplo, como: `ssh -vvvv nombre_usuario@direccion_ip_del_servidor`. A mas “v” pongamos, más información se mostrará
+En lugar de descargar `Putty` en Windows podemos utilizar el emulador de consola Unix llamado `Cmder` para ejecutar los comandos vistos en clase. Incluso si esto falla, lo que personalmente recomiendo es instalar un subsistema de linux si tenemos Windows 10. Platzi tiene incluso un artículo sobre como hacer eso: [Ubunut-en-windows10]( https://platzi.com/clases/1378-python-practico/19200-importante-instalando-ubuntu-bash-en-windows-para-/)
+Si la conexión falla, podemos usar el modificador `-v (verbose)` en el comando `ssh` para poder ver la información que envían las máquinas que intentan conectarse. La “v” puede repetirse hasta cuatro veces, quedando el comando, por ejemplo, como: `ssh -vvvv nombre_usuario@direccion_ip_del_servidor`. A mas “v” pongamos, más información se mostrará
 
 BONUS
 
@@ -972,6 +1132,8 @@ root@name/etc/nginx$ kill -HUP `cat /var/run/nginx.pid` # Matar el proceso
 root@name/etc/nginx$ systemctl restart nginx && systemctl enable nginx  # reinicamos y iniciamos nginx
 ```
 
+***
+**Verificar sintaxis del archivo `nginx.config`**
 Al crear el archivo `cat > conf.d/stub_status.conf` no vemos el error. Ejecutamos el siguiente comando
 
 ```bash
@@ -982,8 +1144,9 @@ Muestra la ubicaci&oacute;n del error, corregimos.
 
 - [Command Kill](https://rm-rf.es/linux-enviar-senales-a-un-proceso-con-el-comando-kill/)
 
+***
 
-**Dato interesante, en ubuntu20.04** se puede instalar en Ubuntu 20 de la siguiente manera:
+**Dato interesante de Amplify, en ubuntu20.04** se puede instalar en Ubuntu 20 de la siguiente manera:
 
 Después de darle los permisos de ejecución al archivo
 
@@ -998,12 +1161,197 @@ https://packages.amplify.nginx.com/py3/ # se reemplaza la url de las comillas po
 
 API_KEY=’#####…’ sh ./install.sh
 ```
+---
+
+**Iniciar Amplify**
+
+  - [Amplify-nginx](https://amplify.nginx.com/)
+
+  1. Crear una cuenta .
+  2. Seguir los pasos de instalacion que recomienda Amplify.
+  3. Ejecutar los comandos e instalar.
+  4. Iniciar amplify
+
+```bash
+service amplify-agent start # Iniciar | stop # Detener
+```
+
 Y listo ya con eso!
 
+---
+**Al instalar bpytop**
+
+```bash
+sudo snap install bpytop
+```
+
+Ejecutamos los siguientes comandos:
+
+```bash
+sudo snap connect bpytop:mount-observe
+sudo snap connect bpytop:network-control
+sudo snap connect bpytop:hardware-observe
+sudo snap connect bpytop:system-observe
+sudo snap connect bpytop:process-control
+sudo snap connect bpytop:physical-memory-observe
+```
+---
+
   ## Monitoreo de MySQL con Nagios
+
+**Instalación de MySQL:**
+
+**Buscamos si MYSQL se encuntra instalado en nuestro equipo**
+
+```bash
+sudo apt search "mysql-server$"
+```
+
+```bash
+sudo apt install mysql-server
+```
+
+Conexión a una base de datos MySQL:
+
+```bash
+mysql -u nombre-usuario -p
+```
+
+Escribe tu contraseña en una nueva línea, de otra forma quedará guardada en tu historial de comandos. En caso de que el host de la base de datos se encuentre en alguna otra máquina debes especificarlo con `-h ip-host`.
+
+Recuerda que puedes encontrar la información de tu base de datos (incluyendo la contraseña) en el archivo `/etc/mysql/debian.cnf`.
+
+  - Instalar MySQL Server
+
+```bash
+sudo apt install mysql-server
+```
+
+  - Obtener el password de MySQL
+
+```bash
+sudo vim /etc/mysql/debian.cnf
+```
+
+  - Iniciar sesión en MySQL
+
+```bash
+mysql -u debian-sys-maint -p
+```
+
+  - Asegurar el server de la base de datos
+
+```bash
+sudo mysql_secure_installation
+```
+
+  - Verificar que Apache esté funcionando
+
+```bash
+systemctl status apache2
+```
+
+  - Activar módulos rewrite y cgi
+
+```bash
+sudo a2enmod rewrite cgi
+```
+
+  - Reiniciar Apache
+
+```bash
+sudo systemctl restart apache2
+```
+
+  - Crear un usuario para Nagios
+
+```bash
+sudo htpasswd -c /usr/local/nagios/etc/htpasswd.users nagiosadmin # ASKING kafka 123
+```
+
+  - Entrar a Nagios en nuestro navegador web, escribiendo como dirección:
+
+```bash
+direccion_ip_del_servidor:8080/nagios
+```
+
+Es muy importante notar que estamos ingresando en el puerto 8080, ya que ahí es donde está funcionando Apache
+
+- **Instalar las siguientes dependencias:**
+
+```bash
+sudo apt install -y libmcrypt-dev make libssl-dev bc gawk dc build-essential snmp libnet-snmp-perl gettext
+```
+
+- Si no instalaste los plugins en las clases anteriores, debes hacer lo siguiente: en primer lugar, posicionado en tu home, descargarlos
+
+```bash
+wget https://nagios-plugins.org/download/nagios-plugins-2.2.1.tar.gz -0 plugins.tar.gz -O plugins.tar.gz
+```
+
+- Desempaquetar y descomprimir el archivo de plugins
+
+```bash
+tar xzvf plugins.tar.gz
+```
+
+- Ya en la carpeta de plugins que se creo con el paso anterior, configurar los mismos
+
+```shell
+sudo ./config
+```
+
+- Verificar que no existan errores ni warnings
+
+```shell
+sudo /usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg
+```
+
+- Reiniciar Nagios
+
+```shell
+sudo systemctl restart nagios
+```
+
+- En nuestro home, descargar el plugin de MySQL
+
+```shell
+wget https://labs.consol.de/assets/downloads/nagios/check_mysql_health-2.2.2.tar.gz -O mysqlplugin.tar.gz
+```
+
+- Desempaquetar y descomprimir el archivo del plugin
+
+```shell
+tar xzvf mysqlplugin.tar.gz
+```
+
+**Dato curiosos | nagios**
+
+Está arrojando error al momento de meter la ruta `ip/nagios` en el navegador, recuerden que cuando instalamos NGINX puesimos NGINX a escuchar en el puerto `80` y a apache2 en el `8080` lo pueden corroborar con 
+
+```bash
+sudo netstat -tulpn
+```
+Para que puedan acceder a nagios solo agreguen el puerto en la url: 
+
+```bash
+ip:8080/nagios
+```
+
+Espero les sea de ayuda.
+
   ## Configuración de Nagios
+
+
+
   ## Los logs, nuestros mejores amigos
+
+
+
   ## Otros servicios de logs
+
+
+
 # 5. Bash scripting
   ## Las bases de bash
   ## Las variables y su entorno de ejecución
