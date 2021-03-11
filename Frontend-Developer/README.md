@@ -593,24 +593,263 @@ La propiedad `position` tiene 7 valores diferentes: relative, absolute, fixed, s
   
   ## OOCSS, BEM, SMACSS, ITCSS y Atomic Design
 
+**OOCSS**
+
+css orientado a objetos. Separa el diseño del contenido, así podemos reutilizar nuestro código.
+
+```css
+// ejemplo, en vez de para cada elemento una clase.
+.globalWidth {
+	width: 100%;
+}
+```
+
+**BEM**
+
+Block Element Modifier. Separa los elementos y los modificadores.
+
+```css
+.header {}  // bloque
+.header__button--red {} // block, element, modifier
+```
+
+**SMACSS**
+
+Scalable and Modular Arquitecture for CSS. Arquitectura de css escalable y modular. PAra eso se realizan cinco pasos.
+  
+  1. Dividir nuestro css en componentes base
+  2. Definir Layout. Elementos que se utilizan solo una vez. ej. Footer, Header
+  3. Definir Modulos. Componentes que se usan mas de una vez
+  4. Definir Estados. Estos estados definen los cambios que existen en nuestros elementos/componentes. ej. Cambio de color cuando hacen hover
+  5. Definir Temas. Separar los temas y sus cambios. Si tuvieras temas
+
+**ITCSS**
+
+Inverted Triangle CSS. Triangulo Invertido de CSS. Lo que nos indica esta metodologia es poder dividir todos nuestros archivos de css en ciertas partes para que no se mezclen.
+
+Triangulo invertido, desde arriba hacia abajo:
+
+  - Ajustes
+  - Herramientas
+  - Generico
+  - Elementos
+  - Objetos
+  - Componentes
+  - Utilidades
+
+Especificidad: elementos o clases con mayor peso que otros.
+
+  - Magnitud
+  - Claridad
+
+**Atomic Design**
+
+Basados en la quimica.
+Atomos < Moleculas < Organismos < Templates < Paginas
+
+La eleccion de la metodologia depende del proyecto y del equipo
+
+Anotacion: No es buena practica usar !important
+
+- [An Introduction To Object Oriented CSS (OOCSS)](https://www.smashingmagazine.com/2011/12/an-introduction-to-object-oriented-css-oocss/)
+- [Get BEM](http://getbem.com/introduction/)
+- [Scalable and Modular Architecture for CSS](http://smacss.com)
+- [ITCSS: Scalable and Maintainable CSS Architecture](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/)
+- [atomic design](https://bradfrost.com/blog/post/atomic-web-design/)
   
   ## Reto 2: Identifica el error de arquitectura del siguiente bloque de código
-5. Construcción de componentes
-¿Qué es un componente? Analicemos nuestros diseños
-Estructura con HTML y BEM de un menú desplegable
-Estilizando nuestro menú desplegable con CSS
-Creación de un buscador
-Creación de un carousel de imágenes con CSS: Estructura principal
-Creación de un carousel de imágenes con CSS: Detalle de cada item
-6. Maquetación y diseño responsivo
-Flexbox
-Nuestro nuevo sistema de layout: CSS Grid
-Maquetación de la pantalla de login: Estructura HTML
-Maquetación de la pantalla de login: Estilización con CSS
-Estilización de inputs y footer en la pantalla de login
-Media queries
-Maquetación de la pantalla principal
-Reto 3: Maquetación de la pantalla de Not Found
+
+Una de las metodologías que podemos utilizar para organizar nuestro código es BEM (Bloque, Elemento, Modificador).
+
+A continuación, te mostraré 3 bloques de código. Identifica cuál bloque de código es el indicado para usar esta metodología.
+
+![](img/reto2-1.webp)
+
+![](img/reto2-2.webp)
+
+![](img/reto2-3.webp)
+
+La ultima ya que podemos identificar
+
+**Bloques:** main
+**Elementos:** main__form
+**Modificador:** main__form–input
+# 5. Construcción de componentes
+  ## ¿Qué es un componente? Analicemos nuestros diseños
+
+Un componente, tanto en diseño como desarrollo web, es un elemento muy pequeño que tiene la capacidad de ser reutilizado en diferentes partes de una aplicación. Por ejemplo: botones, iconos, cards, entre otras. Puedes apreciarlos en las plataformas que visitas todos los días: Twitter, Facebook, Platzi, YouTube y muchas más.
+
+- [Flexbox vs CSS Grid:¿Cuál es la diferencia?](https://platzi.com/blog/flexbox-vs-css-grid-cual-es-la-diferencia/)
+
+- [Introduction to Storybook for React](https://storybook.js.org/docs/react/get-started/introduction)
+- [Adding Storybook Style Guide to a Create React App](https://www.youtube.com/watch?v=va-JzrmaiUM)
+  ## Estructura con HTML y BEM de un menú desplegable
+
+- [Hrramientas de Design](https://iconos8.es)
+- [IconMoon](https://icomoon.io)
+- [Fontawesome](https://fontawesome.com)
+  ## Estilizando nuestro menú desplegable con CSS
+
+**Menu desplegable**
+
+```html
+<details>
+  <summary>Label</summary>
+  <ul>
+  	<li>Item</li>
+    <li>Item</li>
+  </ul>
+</details>
+```
+
+- [Fonts Google](https://fonts.google.com)
+- [Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+  ## Creación de un buscador
+
+  - **Backround-image :** Con esto añadimos nuestra imagen, cómo parámetro en url() le pasaremos la ruta de nuestro icono.
+  - **Backround-size:** Con esto le damos el tamaño a nuestro icono.
+Backroung-repeat: Aquí le decimos que no se repita, por que si no lo hacemos nuestro icono hará un patrón por todo nuestro input; Prueba no colocandolo para que veas la magia.
+  - **Backround-position-y:** Con esto vamos a centrar nuestro icono verticalmente
+  - **background-position-x:** Con número positivos se moverá a la derecha, con negativos se moverá a la izquierda, es justo como un plano cartesiano 😉
+
+Por si se quedaron con la duda de cómo colocar el título y el buscador al centro solo tienen que agregar esto al .main del css:
+
+```css
+/* maind */
+display: flex;
+flex-direction: column;
+justify-content: center; 
+align-items: center;
+```
+  ## Creación de un carousel de imágenes con CSS: Estructura principal
+
+Carrusel sin es croll:
+
+```css
+::-webkit-scrollbar {
+      display: none;
+}
+```
+
+Firefox, se le pone `scrollbar-width: none` al selector de nuestro carousel.
+
+- [Pexels](https://www.pexels.com)
+- [PostCSS sorting](https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-postcss-sorting)
+- []()
+## Creación de un carousel de imágenes con CSS: Detalle de cada item
+
+El selector ~ de CSS nos permite dar estilos a todos que cumplan los requisitos y sean “hermanos directos”, es decir, que tengan el mismo elemento padre.
+Por ejemplo:
+
+```css
+.PrimerTitulo ~ h2 {
+  background-color: red;
+}
+```
+
+```html
+<article class="ContenedorPadre">
+  <h2 class="PrimerTitulo">Este es el primer elemento H2</h2>
+  <!-- Este título tendrá color de fondo rojo -->
+  <h2>Este es el segundo elemento H2</h2>
+  <div class="ElementoPadreDiferente">
+      <!-- Este título NO tendrá color de fondo rojo porque su padre es diferente -->
+    <h2>Este es el tercer elemento H2</h2>
+  </div>
+  <!-- Este título también tendrá color de fondo rojo -->
+  <h2>Este es el cuarto elemento H2</h2>
+</article>
+```
+
+También existe el selector +. Solo aplica los estilos al primer hermano directo de nuestros elementos.
+Por ejemplo:
+
+```css
+.PrimerTitulo + h2 {
+  background-color: blue;
+}
+```
+
+```html
+<article class="ContenedorPadre">
+  <h2 class="PrimerTitulo">Este es el primer elemento H2</h2>
+  <!-- Este título SÍ tendrá color de fondo azul -->
+  <h2>Este es el segundo elemento H2</h2>
+  <div class="ElementoPadreDiferente">
+      <!-- Este título NO tendrá color de fondo azul -->
+    <h2>Este es el tercer elemento H2</h2>
+  </div>
+  <!-- Este título no tendrá color de fondo azul -->
+  <h2>Este es el cuarto elemento H2</h2>
+</article>
+```
+---
+
+Si alguien necesita poner imágenes sin descargarlas puede usar la unsplash, dejo la documentación de su API y un ejemplo, es muy simple de usar:
+
+[Unsplash Source](https://source.unsplash.com)
+
+```bash
+https://source.unsplash.com/random
+```
+
+Y si quieren diferentes que cada una pueden pasarle un parametro como término de busqueda
+
+```bash
+https://source.unsplash.com/random?movie
+https://source.unsplash.com/random?people
+```
+
+---
+
+Reto - Configurar el titulo, icons y opacidad
+
+```css
+  .carousel-item__details img {
+    height: 15px;
+  }
+  .carousel-item__details p {
+    margin: 0px
+  }
+  .carousel-item__details:hover {
+    opacity: 1;
+    color: white;
+  }
+```
+
+# 6. Maquetación y diseño responsivo
+  ## Flexbox
+
+
+  
+  ## Nuestro nuevo sistema de layout: CSS Grid
+
+
+  
+  ## Maquetación de la pantalla de login: Estructura HTML
+
+
+  
+  ## Maquetación de la pantalla de login: Estilización con CSS
+
+
+  
+  ## Estilización de inputs y footer en la pantalla de login
+
+
+  
+  ## Media queries
+
+
+  
+  ## Maquetación de la pantalla principal
+
+
+  
+  ## Reto 3: Maquetación de la pantalla de Not Found
+
+
+  
 7. Preprocesadores
 ¿Qué es un preprocesador, cuáles existen y cuáles son sus diferencias?
 Instalación de SASS y configuración inicial
