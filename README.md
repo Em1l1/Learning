@@ -1099,6 +1099,16 @@ Si necesitas conocer un poco más de esta herramienta visita el sitio:
 
   ## NGINX Amplify: Instalación y configuración de un servidor para producción
 
+  **Eliminar qmail**
+
+  al instalar amplify, qmail no permitira la instalacion. Contiene errores, eliminar qmail es una de las soluciones...
+
+  ```bash
+  sudo apt-get remove --purge qmail
+  
+  sudo apt-get update
+  ```
+
 **NGINX Amplify** es una herramienta que permite monitorear aplicaciones y servicios de NGNIX. Nos ayuda a detectar problemas en nuestros proyectos, trackear las peticiones, conexiones, tiempos de respuesta, tráfico, uso de CPU, entre otras.
 
 Instalar **NGINX Amplify**
@@ -1336,36 +1346,905 @@ Para que puedan acceder a nagios solo agreguen el puerto en la url:
 
 ```bash
 ip:8080/nagios
+
+192.168.122.60:8080/nagios
 ```
 
 Espero les sea de ayuda.
 
   ## Configuración de Nagios
 
+**Luego de descargar el plugin de nagios, se debe ingresar a la carpeta:**
 
+```bash
+cd check_mysql_health-2.2.2
+```
+
+una vez allí se procede con la ejecución del siguiente script:
+
+```bash
+sudo ./configure
+```
+
+Porteriormente ejecutan:
+
+```bash
+sudo make
+```
+
+y luego:
+
+```bash
+sudo make install
+```
+
+Para finalizar reinician los servicios de nagios:
+
+```bash
+sudo systemctl restart nagios
+```
+
+**Instrucciones**
+
+- Ya en la consola de MySQL, crear un usuario
+
+```bash
+$ sudo mysql
+
+> GRANT SELECT ON *.* TO 'nagios'@'localhost' IDENTIFIED BY 'nagiosplatziS14*';
+
+> GRANT ALL PRIVILEGES ON *.* TO 'nagios'@'localhost'; # otra anera de dar privilegios
+
+FLUSH PRIVILEGES; 
+```
+
+- Configurar Nagios
+
+```bash
+sudo vim /usr/local/nagios/etc/nagios.cfg
+
+#Ya dentro del archivo, agregar la siguiente linea:
+
+cfg_file=/usr/local/nagios/etc/objects/mysqlmonitoring.cfg
+Crear comandos para hacer uso de Nagios
+sudo vim /usr/local/nagios/etc/objects/commands.cfg
+
+#Ya dentro del archivo, agregar las siguientes líneas:
+
+define command {
+	command_name check_mysql_health
+	command_line $USER1$/check_mysql_health -H $ARG4$ --username $ARG1$ --password $ARG2$ --port $ARG5$  --mode $ARG3$
+}
+```
+
+- Crear el archivo que nombrarmos en la configuración en el archivo nagios.cfg
+
+
+```bash
+sudo vim /usr/local/nagios/etc/objects/mysqlmonitoring.cfg
+
+#Ya en el archivo, agregar las siguientes líneas
+
+define service {
+	use local-service
+	host_name localhost
+	service_description MySQL connection-time
+	check_command check_mysql_health!nagios!nagiosplatziS14*!connection-time!127.0.0.1!3306!
+}
+```
+
+OJO! En la clase hay un pequeño typo, como puede verse arriba, la directiva correcta es host_name y no hostname, les va a dar error si lo ponen de esta última forma
+
+Reiniciar nagios
+
+```bash
+sudo systemctl restart nagios
+```
+
+---
+**Solución: ACTUALIZAR NAGIOS CORE.** 
+
+Deben hacer los pasos de instalación de nagios nuevamente, pero con la versión actual correcta.
+
+Instalación de Nagios: colocar la última versión.
+
+```bash
+wget https://assets.nagios.com/downloads/nagioscore/releases/nagios-4.4.X.tar.gz
+```
+
+Descomprimir y desempaquetar archivos con tar:
+
+```bash
+tar xvzf nagios-4.4.X.tar.gz
+```
+
+Ir a la carpeta:
+
+```bash
+cd nagios-4.4.X
+```
+Configuración:
+
+```bash
+# 1:
+
+sudo ./configure --with-https-conf=/etc/apache2/sites-enabled
+
+# 2:
+
+sudo make all
+
+# 3:
+
+sudo make install
+
+# 4:
+
+sudo make install-init
+
+# 5:
+
+sudo make install-commandmode
+
+# 6:
+
+sudo make install-config
+
+# 7:
+
+sudo make install-webconf
+```
 
   ## Los logs, nuestros mejores amigos
 
+`find [ruta]:` Buscar algo en el sistema operativo.
+Modificadores:
 
+  - `-type:` Indica que tipo estamos buscando; archivos, directorios y enlaces
+  - `-name:` Indica el nombre de lo que estamos buscando
+  - `-iname:` Indica el nombre de lo que estamos buscando, pero sin tener en cuenta mayúsculas y minúsculas
+  - `!:` Niega la expresión que buscamos (es decir, busca lo contrario)
+  - `-mtime:` Muestra archivos con cambios en los últimos n minutos
+  - `grep [string] [archivo]:` Busca una cadena de caracteres o expresión regular en un archivo determinado. Si ejecutamos por ejemplo algo como comando | grep [string] vamos a filtrar el resultado de un comando por la cadena o regex que especifiquemos
+  - `awk:` Es un lenguaje que nos ayuda a filtrar patrones en un archivo, organizarlos y darles formato
+
+  ---
+
+**Buscar algo en el sistema operativo**
+
+### **FIND**
+
+Nos ayuda a buscar archivos y/o carpetas en el sistema operativo. Podemos filtrar por tipo de archivo con -type, por nombre con -name, sin hacer diferencia entre mayúsculas y minúsculas con -i, por fecha de modificación con -mtime, entre otros.
+
+Por ejemplo:
+
+```bash
+find /etc -type f
+sudo find /etc -mtime 10
+find /var/log -name "*.log" -type f
+find /var/log -iname "*.LOG" -type f
+```
+
+### **GREP**
+
+Nos ayuda a filtrar el resultado de un comando o archivo dependiendo de las palabras de cada línea.
+
+Por ejemplo:
+
+```bash
+grep "server" /etc/nginx/sites-available/default
+ps aux | grep platzi
+```
+
+### **AWK**
+
+Es un lenguaje de scripting que nos ayuda a procesar información usando patrones para filtrar, reorganizar y darle formato a nuestros datos.
+
+Por ejemplo:
+
+```bash
+awk '{print $1}' /var/log/nginx/access.log
+awk '{print $1}' /var/log/nginx/access.log | sort | uniq -c | sort -nr
+```
+
+`$ find RUTA type TIPO (Tipo de archivo - f para files)`
+
+```shell
+// ejemplo
+$ find /etc f
+```
+
+**Buscar logs**
+  - shell
+```
+// En la ruta de logs busque todos los logs y que sean archivos
+$ find /var/log/ -name "*.log" -type f
+```
+
+  - Para que no distinga de mayúsculas y minúsculas
+
+```shell
+$ find /var/log/ -iname "*.LOG" -type f
+```
+
+  - Todos los archivos que no tengan extensión `.log`
+
+```shel
+$ find /var/log/ ! -iname "*.LOG" -type f
+```
+
+  - Archivos modificados en el último tiempo (10 minutos)
+
+```bash
+$ sudo find /etc/ -mtime 10
+```
+
+  - Para hacer una redirección
+
+```bash
+$ sudo find /etc/ -mtime 10 2> /dev/null # (el número 2 es la salida de error, a continuación se muestran las salidas de errores que existen)
+
+0 -> Archivos de Entrada
+
+1 -> Archivos de Salida
+
+2 -> Archivos de Error
+```
+
+  - Buscar una palabra especifica sobre un archivo
+
+```bash
+$ grep "server" /etc/nginx/sites-available/default
+```
+
+  - Ver los logs de nginx, para saber cuales son las IP’s que se conectan a mi sitio
+
+```shell
+$ awk '{print $1}' /var/log/nginx/access.log
+```
+
+  - El anterior caso pero organizado y únicamente de la salida anterior (es como si las agrupara)
+
+```bash
+$ awk '{print $1}' /var/log/nginx/access.log | sort | uniq -c
+```
+
+  - El anterior caso que las redirija por el número de veces que han accedido.
+
+```shell
+awk '{print $1}' /var/log/nginx/access.log | sort | uniq -c | sort -nr
+```
+
+  - Ver errores en el servidor
+
+```shell
+awk '{print $9}' /var/log/nginx/access.log | sort | uniq -c | sort -nr
+```
+
+  - La respuesta del anterior comando es
+
+```bash
+6 200
+5 404
+1 304
+```
+
+El número depende de la respuesta del servidor, el 200 esta ok y el 404 es no encontrado.
+
+Ver que imprimir
+
+```bash
+cat /var/log/nginx/access.log
+```
 
   ## Otros servicios de logs
 
+Un servidor puede llegar a registrar millones de líneas de datos en un log. Para facilitar el monitoreo y mantenimiento podemos usar herramientas o tecnologías que nos permitan tomar esta información sin procesar y convertirla en visualizaciones fáciles de consumir y entender.
 
+El primer paso para seleccionar las herramientas que usaremos. Lo primero es tener una base de conocimiento que nos identifique el servidor en circunstancias normales y de esta forma con la ayuda de estas herramientas detectar preocupaciones o incluso tendencias con una sola mirada.
+
+Algunas herramientas que podemos tener en distribuciones Linux son:
+
+[Collectd](https://collectd.org/)
+
+Es un demonio que recopila datos de rendimiento, y junto con la herramienta collectd web, es capaz de generar reportes que se pueden visualizar en un navegador WEB. Se puede establecer un servidor y a él conectarle un número ilimitado de clientes remotos. Podemos agregar más plugins si los necesitamos, para ello podemos visitar la página https://collectd.org/wiki/index.php/Table_of_Plugins
+
+[Nmon](http://nmon.sourceforge.net/pmwiki.php)
+
+Obtener visualizaciones rápidas de mi sistema. Se instala con `apt install nmon`. Tiene una característica especial que me permite guardar en archivos de formato nmon que se pueden convertir en información que puede ser presentada en html con la herramienta `nmonchart`. `Nmon -f -s 15 -c 20`, se recolectará información por cinco minutos mostrados en incrementos de 15 segundos 20 veces.
+
+[Munin](http://munin-monitoring.org/)
+
+Es una herramienta para analizar el rendimiento del servidor que contiene gráficos históricos para facilitar la identificación de problemas en el tiempo.
+
+[Grafana](https://grafana.com/)
+
+Permite consultar, visualizar, alertar y ante todo entender las métricas de negocio sin importar dónde están almacenadas. Se puede crear, explorar y compartir tableros de mando con el equipo basados en el principio de la cultura orientada a los datos.
+
+También podemos instalar agentes de monitoreo en los servidores, algunas opciones son https://newrelic.com/ y https://www.datadoghq.com/, podemos tener una prueba del servicio y analizar el rendimiento de nuestro servidor.
+
+Cabe aclarar que también necesitará algún sistema de alarma automatizado que nos envíe alertas de forma proactiva cuando las cosas no estén funcionando bien.
 
 # 5. Bash scripting
   ## Las bases de bash
+
+> ¿Qué es Bash? Es una shell de UNIX y el intérprete de comandos por defecto en la mayoría de distribuciónes GNU/Linux. Se pueden crear scripts, los cuales por convención terminan con la extensión `.sh`
+
+Los archivos de Bash usan la extensión `.sh`. La primera línea la utilizamos para definir un intérprete, si nuestro archivo debe ejecutarse con Python, Bash o cualquier otro lenguaje: `#!/bin/bash`.
+
+Las variables se definen de la siguiente manera:
+
+```bash
+VARIABLE="Valor de la variable, que en este caso es un string."
+```
+
+Y se utilizan con el signo `$` seguido del nombre de la variable:
+
+```shell
+echo $WELCOME
+```
+
+También podemos ejecutar los comandos que normalmente usamos en la terminal, así como `ls, pwd, mkdir`, entre otros.
+
+```bash
+# Ejecutar pwd
+pwd
+
+# Guardar el resultado de pwd en una variable
+$COPY_PWD=$(pwd)
+```
+
+Todas las líneas de comentarios deben comenzar con el signo `#`:
+
+```bash
+# Esto es un comentario...
+```
+
   ## Las variables y su entorno de ejecución
+
+Las **variables de entorno** son un conjunto de variables globales en nuestros sistemas que nos permiten acceder de forma más fácil a una ruta o un conjunto de comandos difíciles de recordar. Podemos usarlas en la terminal y en los archivos de bash.
+
+El comando `env` nos permite ver todas las variables de entorno de nuestro sistema.
+
+**`env:`** Muestra las variables del sistema operativo
+
+### **Variables de entorno**
+
+**`$PATH:`** Guarda las rutas donde se ubican los archivos binarios que pueden ejecutarse directamente en la consola
+
+**Scripts útiles**
+
+- Verificar la cantidad de espacio en el S.O
+
+```bash
+#!/bin/bash
+# Verificar la cantidad de espacio en el S.O
+# Desarrollado por Jhon Edison
+
+CWD=$(pwd)
+FECHA=$(date +"%F%T")
+echo $FECHA
+
+df -h | grep /dev > uso_disco_"$FECHA".txt
+df -h | grep /dev/sda2 >> uso_disco_"$FECHA".txt
+
+echo "Se ha generado un archivo en la ubicación $CWD"
+```
   ## Automatizando tareas desde la terminal
+
+Nuestro principal trabajo como administradores de sistemas es automatizar las tareas y procesos de nuestro servidor. En esta clase vamos a realizar un script que nos permita realizar una copia de seguridad de una base de datos MYSQL.
+
+**Scripts útiles**
+
+- Generar backup de base de datos MySQL
+
+```bash
+#!/bin/bash
+# Shell script to restore a backup
+#
+# Desarrollado para platzi by  Jhon Edison Castro Sánchez @edisoncast
+
+set -e
+
+readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+readonly SCRIPT_NAME="$(basename "$0")"
+
+run
+restore_backup
+
+function assert_is_installed {
+  local readonly name="$1"
+
+  if [[ ! $(command -v ${name}) ]]; then
+    log_error "The binary '$name' is required by this script but is not installed or in the system's PATH."
+    exit 1
+  fi
+}
+
+function log_error {
+  local readonly message="$1"
+  log "ERROR" "$message"
+}
+
+function log {
+  local readonly level="$1"
+  local readonly message="$2"
+  local readonly timestamp=$(date +"%Y-%m-%d %H:%M:%S")
+  >&2 echo -e "${timestamp} [${level}] [$SCRIPT_NAME] ${message}"
+}
+
+function run {
+  assert_is_installed "mysql"
+  assert_is_installed "mysqldump"
+  assert_is_installed "gzip"
+  assert_is_installed "aws"
+}
+
+function restore_backup {
+    local BAK="$(echo $HOME/restore)"
+    local MYSQL="$(which mysql)"
+    local GZIP="$(which gzip)"
+    local NOW=$(date +"%d-%m-%Y")
+    local BUCKET="xxxxx"
+    local DATABASE="xxxxxxx"
+    USER="xxxxxx"
+    PASS="xxxxxx"
+    HOST="xxxxxxxx"
+    DATABASE="xxxxx"
+
+    [ ! -d "$BAK" ] && mkdir -p "$BAK"
+
+    FILE=$BAK/$DATABASE.$NOW-$(date +"%T").gz
+
+    local SECONDS=0
+
+    aws configure set s3.signature_version s3v4
+    aws s3 sync "s3://$BUCKET" $BAK --exact-timestamps
+
+    cd $BAK
+
+    local FILE="$(find . -iname "*.gz" -type f -print0 | xargs --no-run-if-empty -0 stat -c "%y %n" | sort -r | head -n 1 |awk '{print $4}')"
+
+    gunzip < $FILE | $MYSQL -u $USER -h $HOST -p$PASS $DATABASE
+
+    duration=$SECONDS
+    echo "$(($duration / 60)) minutes and $(($duration % 60)) seconds elapsed."
+}
+```
+
+[Contrab](https://github.com/MineiToshio/CursosPlatzi/tree/master/Introducci%C3%B3n%20a%20Terminal%20y%20L%C3%ADnea%20de%20Comandos)
+
+Una de las herramientas más potentes de los sistemas UNIX, que nos permite programar la ejecución de diferentes scripts. Con crontab podemos agendar todo lo que necesitemos para facilitar nuestro trabajo y automatizar tareas.
+
+`contrab -l` despliega el crontab que tenemos instalado. Cada una de las primeras 5 columnas que tenemos al correr este comando especifica en qué momento exacto queremos que se ejecute la tarea que vamos a definir en la sexta columna.
+
+Columna 1: minuto 0-59
+Columna 2: hora 0-23
+Columna 3: día del mes 1-31
+Columna 4: mes 1-12
+Columna 5: día de la semana 0-7 (donde 0 y 7 equivalen a domingo)
+Columna 6: script o comando que queremos que se ejecute
+
+`crontab -e:` edita las tareas que tengo agendadas. Con la letra i podemos escribir.
+
+Recuerda que el crontab se ejecuta si y solo si la computadora está encendida.
+
+`pushd y popd:` te permiten navegar entre dos directorios fácilmente.
+
   ## Automatizando la copia de seguridad
+
+
+**copia.sh** 
+Script automatizado que realiza una copia de la base de datos de mysql.
+
+```bash
+#!/bin/bash
+# Shell script to get a backup and send to S3, you can change to scp
+# Desarrollado para platzi by  Jhon Edison Castro Sánchez @edisoncast
+
+set -e
+
+readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+readonly SCRIPT_NAME="$(basename "$0")"
+
+run
+make_backup
+
+function assert_is_installed {
+  local readonly name="$1"
+
+  if [[ ! $(command -v ${name}) ]]; then
+    log_error "The binary '$name' is required by this script but is not installed or in the system's PATH."
+    exit 1
+  fi
+}
+
+function log_error {
+  local readonly message="$1"
+  log "ERROR" "$message"
+}
+
+function log {
+  local readonly level="$1"
+  local readonly message="$2"
+  local readonly timestamp=$(date +"%Y-%m-%d %H:%M:%S")
+  >&2 echo -e "${timestamp} [${level}] [$SCRIPT_NAME] ${message}"
+}
+
+function run {
+  assert_is_installed "mysql"
+  assert_is_installed "mysqldump"
+  assert_is_installed "gzip"
+  assert_is_installed "aws"
+}
+
+function make_backup {
+    local BAK="$(echo $HOME/mysql)"
+    local MYSQL="$(which mysql)"
+    local MYSQLDUMP="$(which mysqldump)"
+    local GZIP="$(which gzip)"
+    local NOW=$(date +"%d-%m-%Y")
+    local BUCKET="xxxxx"
+    USER="xxxxxx"
+    PASS="xxxxxx"
+    HOST="xxxxxxxx"
+    DATABASE="xxxxx"
+
+    [ ! -d "$BAK" ] && mkdir -p "$BAK"
+
+    FILE=$BAK/$DATABASE.$NOW-$(date +"%T").gz
+
+    local SECONDS=0
+
+    $MYSQLDUMP --single-transaction --set-gtid-purged=OFF -u $USER -h $HOST -p$PASS $DATABASE | $GZIP -9 > $FILE
+
+    duration=$SECONDS
+    echo "$(($duration / 60)) minutes and $(($duration % 60)) seconds elapsed."
+    aws s3 cp $BAK "s3://$BUCKET" --recursive
+}
+```
+
   ## Crontab
+
+
+Para ejecutar nuestra tarea de copia de seguridad debemos hacer uso de `cron`, el cual es un administrador regular de procesos en segundo plano que comprueba si existen tareas para ejecutar, teniendo en cuenta la hora del sistema.
+
+Las configuraciones de las tareas a ejecutar se almacenan en el archivo `crontab` que puede ser editado con el comando `crontab -e`, si requerimos listar las tareas que tenemos configuradas ejecutamos `crontab -l`.
+
+A continuación te muestro lo que se imprime en la pantalla al correr el comando `crontab -e`
+
+![](img/cron.webp)
+
+Para establecer una tarea automatizada con `cron` se debe seguir un formato específico para definir una tarea como se muestra a continuación:
+
+![](img/cron1.webp)
+
+Lo siguiente sería definir la periodicidad de nuestro cron, para ello podemos hacer pruebas en el sitio https://crontab.guru. Nosotros queremos que nuestra copia se ejecute todos los días a las 03:15 de la mañana, pues es el momento donde menos tráfico tenemos en nuestra base de datos.
+
+![](img/cron2.webp)
+
+Nuestro cron quedaría de la siguiente manera:
+
+```bash
+15 3 * * * /usr/bin/bash /home/platzi/copia.sh
+```
+
+Con esto se ejecutaría nuestro script en los horarios definidos.
+
+Podríamos también realizar un escaneo automático de la máquina todos los días a las 05:00 PM y generar un reporte del estado de seguridad de la máquina con lynis.
+
+```bash
+* 17 * * * /usr/sbin/lynis --quick > /home/edison/Documentos/Platzi/lynis_files/$(date +"\%F") 2>/dev/null
+```
+
+Verificamos la carpeta y encontramos la salida
+
+![](img/cron3.webp)
+
+Esto funcionará bien siempre y cuando la máquina esté encendida, si no es así, podríamos revisar [anacron](https://linux.die.net/man/8/anacron).
+
 # 6. Asegurando tu servidor
   ## Entendiendo la gestión de vulnerabilidades
+
+Al construir aplicaciones debemos enfrentarnos a la comodidad de los usuarios al crear sus contraseñas y la seguridad que necesitamos para que los atacantes informáticos no consigan acceso a nuestra información.
+
+Existen algunos comandos que no debemos utilizar, ya que son vulnerables por defecto, así como `telnet` o comandos `r*`. En vez de estos comandos podemos usar protocolos seguros como SSH.
+
+Debemos tener presente cuáles son los servicios y puertos abiertos de nuestro sistema operativo. También debemos ser muy cuidadosos con los permisos de los usuarios.
+
+Para verificar las actualizaciones de seguridad e instalarlas en nuestra máquina podemos usar los siguientes comandos:
+
+```bash
+# CentOS
+yum check-update --security
+yum update security
+
+# Ubuntu
+apt-get update
+apt-get upgrade
+Recuerda que la seguridad informática no es un producto, sino un proceso constante.
+```
+
+**Malas prácticas**
+
+  - No desactivar el usuario root
+  - Realizar un login con usuario y password (sin ssh)
+  - No validar la versión de software usada
+  - Utilizar comandos r* o telnet
+  - No identificar los servicios y puertos abiertos en el S.O
+  - No gestionar correctamente los permisos de los usuarios
+
+
+**Ejemplos de comandos r:**
+
+  - **rcp:** remote copy, sirve para copiar archivos entre servidores.
+  - **rsh:** remote shell. Permite ejecutar shell de manera remota entre servidores.
+  - **rexec:** remote exec. Permite ejecutar un comando de manera remota en otro servidor
+  - **rlogin:** remote login. Permite entrar a otro servidor de manera remota.
+
+Estas utilerias vienen por default en la mayoría de las distribuciones linux y unix, son muy antiguas y su problema principal es que toda la comunicación es  sin cifrar (lo mismo que con telnet y ftp ) lo cual es un problema de seguridad. Pueden capturar nuestro usuario y password, así como capturar toda la comunicación entre 2 servidores que será transparente para quien la capture.
+  
   ## ¿Qué es una superficie de ataque? Principio del menor privilegio
+
+La Superficie de Ataque es el conjunto de vulnerabilidades o datos conocidos que pueden ser explotados por un atacante informático. Cada servicio de nuestras aplicaciones es un nuevo punto de entrada a nuestra red. No solo debemos proteger nuestros servidores, también debemos proteger todos los servicios que corren en él.
+
+**Lynis** es una herramienta que analiza nuestros servidores y para darnos algunas recomendaciones. La estudiaremos más a fondo en una próxima clase. También existen frameworks o manuales como **OWASP** que nos explican las características de aplicaciones web vulnerables y cómo programarlas de forma segura.
+
+--- 
+Una superficie de ataque es el conjunto de datos conocidos o vulnerabilidades que pueden ser explotados por un atacante informático.
+
+Software útil para la gestión de vulnerabilidades
+
+  - **Lynis:** Analiza nuestro servidor y nos da recomendaciones
+
+Manuales y frameworks útiles para la seguridad de nuestro servidor
+|
+
+  - **SCAP:** El Security Content Automation Protocol es un conjunto de reglas sobre la expresión y manipulación de información relacionada con configuraciones y fallos.
+  - **OWASP:** El Open Web Application Security Project es un proyecto de código abierto destinado a pelear contra la inseguridad informática
+
   ## El firewall y sus reglas
+
+Los **Firewalls** son herramientas que monitorean el tráfico de nuestras redes para identificar amenazas e impedir que afecten nuestro sistema.
+
+Recuerda que la seguridad informática es un proceso constante, así que ninguna herramienta (incluyendo el firewall) puede garantizarnos seguridad absoluta.
+
+En Ubuntu Server podemos usar ufw (Uncomplicated Firewall) para crear algunas reglas, verificar los puertos que tenemos abiertos y realizar una protección básica de nuestro sistema:
+
+  - `sudo ufw (enable, reset, status):` activar, desactivar o ver el estado y reglas de nuestro firewall.
+  - `sudo ufw allow numero-puerto:` permitir el acceso por medio de un puerto específico. Recuerda que el puerto 22 es por donde trabajamos con SSH.
+  - `sudo ufw status numbered:` ver el número de nuestras reglas.
+  - `sudo ufw delete numero-regla:` borrar alguna de nuestras reglas.
+sudo ufw allow from numero-ip proto tcp to any port numero-puerto: restringir el acceso de un servicio por alguno de sus puertos a solo un número limitado de IPs específicas.
+
+---
+
+  - `sudo ufw status:` Muestra el estado (activo/inactivo) y las reglas del firewall. Con el modificador numbered me muestra las reglas numeradas
+  - `sudo ufw allow puerto:` Habilita un puerto
+  - `sudo ufw enable:` Enciende el firewall
+  - `sudo ufw delete numero_de_regla:` Borra una regla
+  - `sudo ufw allow from direccion_ip proto protocolo to any port puerto:` Restringe las direcciones ip que pueden conectarse a cierto puerto. Recordar que SSH trabaja con el protocolo TCP
+
+  ```bash
+  $ sudo ufw allow from 192.168.10.127 proto tcp to any port 22 comment 'permitir ssh IP'
+  ```
+  - `sudo ufw reset:` Elimina todas las reglas
+
+**Recomendación**
+
+Abrir al público únicamente el puerto 80 (http), 443 (https). Para un conjunto de IP’s específicas, habilitar el puerto 22 (ssh)
+  
   ## Escaneo de puertos con NMAP y NIKTO desde Kali Linux
+
+**Comandos**
+
+- Realiza un mapeo de la red
+
+```bash
+$ nmap -sV -sC -0 -oA nombre_de_archivo dirección_ip_del_servidor
+```
+
+- Escanea vulnerabilidades en un servidor
+
+```bash
+$ nikto -h ip_del_host -o nombre_de_archivo
+```
+
   ## Lynis: Herramientas de auditoria de seguridad en Linux
+
+Instalación de Lynis:
+
+```bash
+sudo apt install lynis
+```
+
+Con el comando `sudo linis audit system` podremos ver todas las recomendaciones y sugerencias que nos da lynis para mejorar la seguridad de nuestro sistema.
+
+- [Home | OpenSCAP portal](https://www.open-scap.org/)
+- [Security Auditing and Compliance Solutions - CISOfy](https://cisofy.com/)
+- [Software Repository| Community CISOFY](https://packages.cisofy.com/community/)
+
+**Comandos**
+
+```bash
+sudo lynis audit system
+```
+
+Realiza un escaneo del sistema operativo, mostrándonos sugerencias y el estado de peligro de ciertos detalles en nuestra distribución
+  
+  - [Aprender a Auditar la seguridad de tu Linux](https://www.welivesecurity.com/la-es/2014/09/01/tutorial-de-lynis-aprende-auditar-seguridad-linux/)
+
 # 7. Proyecto
   ## Configuración de Node.js en un ambiente productivo
+
+**Instrucciones**
+
+
+- Clonar el repositorio necesario para realizar la clase
+
+```bash
+git clone https://github.com/edisoncast/linux-platzi
+````
+
+- Instalar Node.js y npm
+
+```bash
+sudo apt install nodejs npm
+````
+
+- Posicionados en el home, descargar Node 10
+
+```bash
+curl -sL https://deb.nodesource.com/setup_10.x -o node_setup.sh
+````
+
+- Instalar Node 10
+
+```bash
+sudo bash node_setup.sh
+````
+
+- Instalar gcc, g++ y make
+
+```bash
+sudo apt install gcc g++ make
+````
+
+- Finalizar el proceso de instalación de la versión 10 de Node
+
+```bash
+sudo apt install -y nodejs
+````
+
+- Agregar el usuario nodejs si todavía no lo creaste
+
+```bash
+sudo adduser nodejs
+````
+
+- En la carpeta de linux-platzi, ejecutar el archivo server.js
+
+```bash
+node server.js
+````
+
+- Crear un archivo de configuración para el servicio de Node
+
+```bash
+sudo vim /lib/systemd/system/platzi@3000.service
+````
+
+```bash
+# Una vez creado el archivo, llenarlo con la siguiente información
+
+[Unit]
+Description=Balanceo de carga para Platzi
+Documentation=https://github.com/edisoncast/linux-platzi
+After=network.target
+
+[Service]
+Environment=PORT=%i
+Type=simple
+User=nodejs
+WorkingDirectory=/home/nodejs/linux-platzi
+ExecStart=/usr/bin/node /home/nodejs/linux-platzi/server.js
+Restart-on=failure
+
+[Install]
+WantedBy=multi-user.target
+```
+
   ## Configuración de NGINX para la aplicación de Node.js
+
+**Instrucciones**
+
+- Cambiar el usuario a nodejs
+
+```bash
+sudo su - nodejs
+```
+
+- Clonar el repositorio necesario para la clase
+
+```bash
+git clone https://github.com/edisoncast/linux-platzi
+```
+
+- Cambiar el nombre a la carpeta de `linux-platzi a server`
+
+- Corregir los errores en el archivo de configuración del servicio en `/lib/systemd/system/platzi@.service`
+
+- Iniciar el servicio (debemos estar en la carpeta `/server/configuracion_servidor/bash)`
+
+```bash
+./enable.sh
+./start.sh
+```
+
+- Iniciar el servicio de Nginx (Apagar antes Apache si es necesario)
+
+```bash
+sudo systemctl start nginx
+```
+
+- Una vez en la carpeta `/etc/nginx/sites-available/` eliminar el contenido de la configuración de Nginx
+
+```bash
+sudo truncate -s0 default
+````
+
+- Editar el archivo de configuración
+
+```bash
+sudo vim default
+
+# Una vez en el archivo, escribir lo siguiente
+
+server  {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+	
+	server_name _;
+	
+	location / {
+		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+		proxy_set_header Host $host;
+		proxy_http_version 1.1;
+		proxy_pass http://backend;
+	}
+}
+
+upstream backend {
+	server 127.0.0.1:3000;
+	server 127.0.0.1:3001;
+	server 127.0.0.1:3002;
+	server 127.0.0.1:3003;
+}
+```
+
+- Validamos que la configuración establecida fue correcta
+
+```bash
+sudo nginx -t
+```
+
+- Reiniciamos nginx
+
+```bash
+sudo systemctl restart nginx
+```
+
+- Probamos todo haciendo un curl a localhost
+
+```bash
+curl localhost
+```
+
+Identificar que servidor y en que puerto es corriendo, con el siguiente comando:
+
+```bash
+sudo netstat -peanut
+```
+
 # 8. Conclusiones
   ## Conclusiones
