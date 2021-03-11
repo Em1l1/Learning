@@ -520,7 +520,7 @@ Una página de fuentes que me gusta mucho es [fonts.google.com]().
 
 **outline:** Un término algo desconocido es el esquema de los elementos HTML. Un esquema es una línea (por defecto, de color azúl) que se dibuja alrededor de los elementos que hace que “se destaquen”.
 
-Lo anterior sucede mucho en elementos como los <input>s y los <button>s. Si no queremos ver esa línea, lo que hacemos es `outline: none;`. Aunque también podemos decirle que tenga determinado estilo, color, tamaño, entre otras. Por ejemplo:
+Lo anterior sucede mucho en elementos como los `<input>`s y los `<button>`s. Si no queremos ver esa línea, lo que hacemos es `outline: none;`. Aunque también podemos decirle que tenga determinado estilo, color, tamaño, entre otras. Por ejemplo:
 
 ```css
 outline-style: solid;
@@ -530,7 +530,7 @@ outline-width: 5px;
 
 **box-sizing:** Cuando trabajamos con paddings, por ejemplo, veremos que el tamaño de nuestro elemento crece. Es decir, si tengo:
 
-```html
+```css
 div {
    background: pink;
    width: 20px;
@@ -540,19 +540,61 @@ div {
 
 Y luego le agrego un padding de 20px, veré en el navegador que mi `div` ya no tiene un ancho y un alto de `20px`, sino de `40px` cada uno. Lo que quiere decir que el padding hizo que creciera mi elemento. Sin embargo, si yo no quiero que el padding afecte los 20px originales, le agrego la propiedad `box-sizing` para que el tamaño total del elemento incluya el padding también y no se vea afectado por él.
 
-transition: Las transiciones CSS le permiten cambiar los valores de las propiedades sin problemas durante una duración determinada. Debemos tener presente que una transición NO es una animación. Una transición va de un punto A a un punto B sin interrupciones o saltos en medio.
+**transition:** Las transiciones CSS le permiten cambiar los valores de las propiedades sin problemas durante una duración determinada. Debemos tener presente que una transición NO es una animación. Una transición va de un punto A a un punto B sin interrupciones o saltos en medio.
 
 Te comparto la siguiente documentación para que puedas visualizar las propiedades y valores que puedes utilizar:
 
+  - [CSS Transitions](https://www.w3schools.com/css/css3_transitions.asp)
+  - [Using CSS Transitions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions)
+  - [CSS-TRICKS](https://css-tricks.com/almanac/properties/t/transition/)
+
+**Animation:** Esta propiedad permite que animemos nuestros elementos.
+
+Te comparto la siguiente documentación para que puedas visualizar las propiedades y valores que puedes utilizar:
+
+  - [CSS Transitions](https://www.w3schools.com/css/css3_transitions.asp)
+  - [Using CSS Transitions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions)
+  - [CSS-TRICKS](https://css-tricks.com/almanac/properties/t/transition/)
 
   ## Posicionamiento en CSS
 
+El posicionamiento en CSS es una de las cosas más importantes, pues establece cómo van a estar ubicados nuestros elementos en la pantalla.
 
+En CSS los elementos se posicionan utilizando las propiedades top (superior), bottom (inferior), left (izquierda) y right (derecha), pero sólo funcionarán si la propiedad position está establecida. Esto quiere decir que si quiero que mi elemento div esté completamente a la derecha, debo escribir en mi CSS lo siguiente:
 
-4. Arquitectura CSS
-¿Qué son y para qué nos sirven las arquitecturas CSS?
-OOCSS, BEM, SMACSS, ITCSS y Atomic Design
-Reto 2: Identifica el error de arquitectura del siguiente bloque de código
+```bash
+div { position: absolute: right: 0px; }
+```
+
+La propiedad `position` tiene 7 valores diferentes: relative, absolute, fixed, sticky, static, initial e inherit. Veremos de qué se tratan:
+
+  ![](img/posi-css.webp)
+
+  - [CSS Layout - The position Property](https://www.w3schools.com/css/css_positioning.asp)
+
+# 4. Arquitectura CSS
+  ## ¿Qué son y para qué nos sirven las arquitecturas CSS?
+
+**Los objetivos son:**
+
+  - **Predecible >** Escribir reglas claras.
+  - **Reutilizable >** No escribir codigo redundante.
+  - **Mantenible >** Que sea facil de leer y adaptarnos a los estandares.
+  - **Escalable >** Que pueda crecer facilmente pero sin afectar el rendimiento.
+
+**Buenas practicas**
+
+  - Establecer reglas para que el equipo se entienda.
+  - Explicar la estructura base o dar los fundamentos del proyecto a un nuevo integrante.
+  - Evitar hojas de estilo muy extensas
+  - Tener una buena documentación explicando ciertos aspectos del codigo.
+
+  > estas cuatro características de una arquitectura óptima de CSS tienen una estrecha relación entre sí. La experiencia y la práctica te acercarán progresivamente a ellas permitiéndote a ti (y a los que hagan uso de tu código en un futuro) trabajar de forma más cómoda sobre una estructura eficiente y estable.
+  
+  ## OOCSS, BEM, SMACSS, ITCSS y Atomic Design
+
+  
+  ## Reto 2: Identifica el error de arquitectura del siguiente bloque de código
 5. Construcción de componentes
 ¿Qué es un componente? Analicemos nuestros diseños
 Estructura con HTML y BEM de un menú desplegable
