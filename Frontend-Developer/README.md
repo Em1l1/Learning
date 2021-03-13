@@ -63,7 +63,7 @@
 # 1. Introducción al curso
 ## Presentación y bienvenida al curso de Frontend Developer
 
-+ [document Fornted Developer.pdf](doc/frontend-developer-slides.pdf)
++ [document Fornted Developer.pdf](https://drive.google.com/file/d/1PYrhh06CCDi0bogcqQNsCYldC7yocHpG/view?usp=sharing)
 
 ## HTML y CSS: definición y usos
 
@@ -109,7 +109,7 @@ Pasos que sigue el navegador para construir las páginas web:
   5. Se ““pintan”” los nodos en la pantalla para que los usuarios vean el contenido de la página web.
 
 ## 5 tips para aprender CSS
-![JavaScript](img/javascript.webp)
+![JavaScript](https://i.ibb.co/QCHjb9D/javascript.webp)
 
 # 2. Conceptos iniciales de HTML
   ## Anatomía de un Elemento HTML: Atributos, Anidamiento y Elementos vacíos
@@ -137,11 +137,11 @@ También existen elementos vacíos. Estos elementos no tienen contenido ni etiqu
 <img src="puppy.png" alt="mi mascota">
 ```
 
-![](img/a-css.webp)
+![](https://i.ibb.co/m8H0WmM/a-css.webp)
 
   ## Anatomía de un Documento HTML: DOCTYPE, html, head y body
 
-![](img/a-html.webp)
+![](https://i.ibb.co/NrWgFWP/a-html.webp)
 
 ```html
 <!DOCTYPE html>
@@ -184,7 +184,7 @@ Al hacer en nuestro editor de código html:5 vemos que nos aparece la siguiente 
 
 Veamos la descripción de estos elementos:
 
-![](img/f-html1.webp)
+![](https://i.ibb.co/xJh74rj/f-html1.webp)
 
 Si por ejemplo queremos añadir en nuestro documento estilos o JavaScript, lo hacemos con las etiquetas `<style>` y `<script>` respectivamente, que `a` su vez deben ir dentro de la etiqueta raíz `<html>`, algo así:
 
@@ -210,15 +210,15 @@ Si por ejemplo queremos añadir en nuestro documento estilos o JavaScript, lo ha
 
 Descripción de algunos elementos vacíos:
 
-![](img/f-html2.webp)
+![](https://i.ibb.co/BN4krWb/f-html2.webp)
 
 Descripción de las etiquetas semánticas para la estructura base de nuestra página:
 
-![](img/f-html3.webp)
+![](https://i.ibb.co/RzntSwc/f-html3.webp)
 
 Descripción de otras etiquetas muy usadas:
 
-![](img/f-html4.webp)
+![](https://i.ibb.co/t3FmPhR/f-html4.webp)
 
   ## La importancia del código semántico
 
@@ -251,7 +251,7 @@ Ya conocimos la importancia de hacer nuestro HTML de forma semántica. Así que,
 
 A continuación te mostraré un código HTML y la idea es que tu lo organices de forma semántica, es decir, que uses las etiquetas más adecuadas.
 
-![](img/reto1.webp)
+![](https://i.ibb.co/m9z2HDp/reto1.webp)
 
 **Solucion del reto**
 
@@ -259,15 +259,15 @@ A continuación te mostraré un código HTML y la idea es que tu lo organices de
 <!DOCTYPE html>
 <htmllang="es">
 <head>
-    <metacharset="UTF-8">
-    <metahttp-equiv="X-UA-Compatible"content="IE=edge">
-    <metaname="viewport"content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"content="IE=edge">
+    <meta name="viewport"content="width=device-width, initial-scale=1.0">
     <title>Platzi Video</title>
 </head>
 <body>
-    <h1style="color:#98CA3F">Platzi Video</h1>
+    <h1 style="color:#98CA3F">Platzi Video</h1>
     <div>
-        <h3style="color: #59c959;font-style: oblique;">  Sección Principal</h3>
+        <h3 style="color: #59c959;font-style: oblique;">  Sección Principal</h3>
     </div>
     <div>
         <ul>
@@ -281,8 +281,8 @@ A continuación te mostraré un código HTML y la idea es que tu lo organices de
     </div>
     <Footer>
            <p>
-               <ahref="ulrejemplo.com">Terminos y condiciones</a><br>
-               <ahref="ulrejemplo.com">Política de privacidad</a> 
+               <a href="ulrejemplo.com">Terminos y condiciones</a><br>
+               <a href="ulrejemplo.com">Política de privacidad</a> 
            </p>
     </Footer>
         
@@ -365,7 +365,7 @@ p:nth-child(2n) {
 }
 ```
 
-![](img/p-css.webp)
+![](https://i.ibb.co/gtmT4rG/p-css.webp)
 
 [Pseudo-classes](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)
 
@@ -379,11 +379,11 @@ Todos los elementos de HTML tienen un modelo de caja y esta compuesto por cuatro
 
 Las propiedades de margin, padding, se asignan en dirección a las manecillas del reloj, como bien dicen en la clase. En caso de no poner todos los valores.
 
-![](img/margin.webp)
+![](https://i.ibb.co/k2cpq0w/margin.webp)
 
 No olvidemos el outline, que también hace parte del modelo de caja.
 
-![](img/outline.webp)
+![](https://i.ibb.co/fFX5DtJ/outline.webp)
 
 **Ejemplo**
 
@@ -476,7 +476,7 @@ REM hace referencia a la etiqueta root de nuestro archivo HTML, la cual es la et
 
 Todos los elementos en CSS son cuadrados o rectángulos y aparte de eso, estos elementos tienen un comportamiento que se define a través de la propiedad display. Los display más comunes y usados son: block, inline, inline-block, none, table, flex y grid. Veamos de qué se tratan:
 
-![](img/display.webp)
+![](https://i.ibb.co/4NvQzkC/display.webp)
 
   ## Funciones de las propiedades CSS más usadas
 
@@ -491,7 +491,7 @@ Todos los elementos en CSS son cuadrados o rectángulos y aparte de eso, estos e
 **color:** Define el color de nuestros textos. Estos colores los podemos escribir de 3 formas en CSS:
 
   - Con los **nombres de los colores.** Por ejemplo: `black, red, green`.
-  - **Sistema hexadecimal:** Donde blanco se define como `#FFFFFF` y negro como #000000. Una página que me gusta mucho para sacar colores en hexadecimal es colorhunt.co.
+  - **Sistema hexadecimal:** Donde blanco se define como `#FFFFFF` y negro como `#000000`. Una página que me gusta mucho para sacar colores en hexadecimal es colorhunt.co.
   - **RGB:** Donde la R significa Red, G significa Green y B significa Blue; por lo que escribimos `rgb(red, green, blue)` y cada uno de ellos es un valor de 0 a 255 que describe la intensidad de ese color. Por ejemplo, para denotar el color verde, escribimos: `rgb(0, 255, 0)`. También a estos valores se les puede agregar una opacidad (transparencia) que va de 0 a 1, por ejemplo: `rgba(0, 255, 0, 0.5)` lo que quiere decir que el color verde lo queremos con una transparencia del 50%.
 
 **border:** Define el tamaño, estilo y color del borde de un elemento. Por ejemplo: `border: 2px solid yellow;`.
@@ -514,7 +514,7 @@ Si solo quiero que mi elemento tenga un padding a la derecha de 10px, escribirí
 
 **font-family:** Define la familia tipográfica de la fuente. Por ejemplo: `font-family: 'Roboto', sans-serif;`.
 
-Una página de fuentes que me gusta mucho es [fonts.google.com]().
+Página de fuentes [fonts.google.com](https://fonts.google.com).
 
 **opacity:** Determina la transparencia del elemento. Tiene valores entre 0 y 1, que pueden verse como un porcentaje. Por ejemplo, si quiero que mi elemento se vea con una transparencia del 50%, escribiría: `opacity: 0.5;`.
 
@@ -568,7 +568,7 @@ div { position: absolute: right: 0px; }
 
 La propiedad `position` tiene 7 valores diferentes: relative, absolute, fixed, sticky, static, initial e inherit. Veremos de qué se tratan:
 
-  ![](img/posi-css.webp)
+  ![](https://i.ibb.co/FXJ8B3n/posi-css.webp)
 
   - [CSS Layout - The position Property](https://www.w3schools.com/css/css_positioning.asp)
 
@@ -663,11 +663,11 @@ Una de las metodologías que podemos utilizar para organizar nuestro código es 
 
 A continuación, te mostraré 3 bloques de código. Identifica cuál bloque de código es el indicado para usar esta metodología.
 
-![](img/reto2-1.webp)
+![](https://i.ibb.co/0jhw5hn/reto2-1.webp)
 
-![](img/reto2-2.webp)
+![](https://i.ibb.co/4FnGWbJ/reto2-2.webp)
 
-![](img/reto2-3.webp)
+![](https://i.ibb.co/wQSKjcb/reto2-3.webp)
 
 La ultima ya que podemos identificar
 
@@ -735,7 +735,6 @@ Firefox, se le pone `scrollbar-width: none` al selector de nuestro carousel.
 
 - [Pexels](https://www.pexels.com)
 - [PostCSS sorting](https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-postcss-sorting)
-- []()
 ## Creación de un carousel de imágenes con CSS: Detalle de cada item
 
 El selector ~ de CSS nos permite dar estilos a todos que cumplan los requisitos y sean “hermanos directos”, es decir, que tengan el mismo elemento padre.
@@ -787,7 +786,7 @@ Por ejemplo:
 
 Si alguien necesita poner imágenes sin descargarlas puede usar la unsplash, dejo la documentación de su API y un ejemplo, es muy simple de usar:
 
-[Unsplash Source](https://source.unsplash.com)
+- [Unsplash Source](https://source.unsplash.com)
 
 ```bash
 https://source.unsplash.com/random
@@ -820,47 +819,362 @@ Reto - Configurar el titulo, icons y opacidad
 # 6. Maquetación y diseño responsivo
   ## Flexbox
 
+Uno de los trabajos más difíciles en CSS es alinear elementos. Para hacerlo más fácil podemos contar con Flexbox.
 
+Es importante tener presente que tendremos un contenedor y los elementos que queremos organizar dependiendo de nuestras necesidades.
+
+![](https://i.ibb.co/xLd3wrV/flex-box.webp)
+
+- [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+- [FLEXBOX-FROGGY](https://flexboxfroggy.com)
+- [basic concepts of flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox)
+- [Flexbox Cheatsheet](https://darekkay.com/flexbox-cheatsheet/)
   
   ## Nuestro nuevo sistema de layout: CSS Grid
 
+Con CSS Grid podemos maquetar todo el layout/estructura general de nuestro sitio para que se adapten a diferentes tamaños de pantalla, lo que conocemos como diseño responsivo.
 
+Al igual que Flebox, tenemos propiedades diferentes, tanto para el contenedor como para los elementos, y podemos usarlos dependiendo de nuestras necesidades.
+
+- [A Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
+- [Grid](https://developer.mozilla.org/en-US/docs/Web/CSS/grid)
+- [Layout Land](https://www.youtube.com/channel/UC7TizprGknbDalbHplROtag)
+- [8 Games to learn CSS the fun way](https://dev.to/devmount/8-games-to-learn-css-the-fun-way-4e0f)
   
   ## Maquetación de la pantalla de login: Estructura HTML
 
+En esta clase vamos a continuar con la construcción de nuestro proyecto PlatziVideo. Para esto vamos a reutilizar la estructura y estilos del menú desplegable que construimos en las siguientes clases:
 
+  - Estructura con HTML y BEM de un menú desplegable
+  - Estilizando nuestro menú desplegable con CSS
+
+**Metodología BEM :**
+
+Separa los bloques, elementos y modificadores.
+
+  - **Bloque:** `login`
+  - **Elemento:** `login__cotnainer`
+  - **Modificador:** `Login__container–form, –social-media y --register`
   
+  ![](https://i.ibb.co/PCQjmHd/login.webp)
   ## Maquetación de la pantalla de login: Estilización con CSS
 
+- **La propiedad:** `min-height` sirve para indicar un tamaño mínimo de alto para el elemento (en el ejemplo fue para la clase login)
+- **La función matemática:** calc te sirve justamente para realizar operaciones y definir un valor en base a variables.
+- **Las variables utilizadas en la función anterior:**
+100vh : 100% de view height = 100% del alto visible en pantalla.
+200px: Es el valor que le quita del alto del Header, por la intención de ella es centrarlo en base al espacio que queda sin contar la cabecera.
 
-  
+- [Propiedad min-height](https://uniwebsidad.com/libros/referencia-css2/min-height)
+- [calc | css](https://developer.mozilla.org/es/docs/Web/CSS/calc())
   ## Estilización de inputs y footer en la pantalla de login
 
-
+```css
+.input {
+    background-color: transparent;
+    border-left: 0px;
+    border-top: 0px;
+    border-right: 0px;
+    border-bottom: 2px solid white;
+    font-family: 'Muli', sans-serif;
+    font-size: 16px;
+    margin-bottom: 20px;
+    padding: 0px 20px;
+    outline: none;
+    height: 50px;
+}
+::placeholder {
+    color: white;
+}
+.button {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    font-family: 'Muli', sans-serif;
+    letter-spacing: 1px;
+    height: 50px;
+    margin: 0px 10px;
+}
+.button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.footer {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    background-color:transparent;
+}
+.footer a {
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    padding-left: 30px;
+    text-decoration: none;
+}
+.footer a:hover {
+    text-decoration: underline;
+}
+```
   
   ## Media queries
 
+Los media queries nos ayudan a ajustar nuestros diseño a dispositivos más pequeños como tablets y celulares.
 
+Es recomendable seguir la metodología de Mobile First: comenzar a diseñar para el dispositivo más pequeño e ir creando las media queries para las pantallas más grandes.
+
+```css
+@media only screen and (max-width: 600px) {
+  .register__container {
+````    background-color: transparent;
+    border: none;
+    padding: 0px;
+    width: 100%;
+  }
+  .footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+```
   
   ## Maquetación de la pantalla principal
 
+Animate a completar el desafío de la clase: añadir las secciones de tendencias y originales de PlatziVideo en la pantalla principal.
+Recuerda además que este curso hace parte de la Escuela de JavaScript de Platzi. El diseño de Frontend que nuestra profesora ha creado para el curso será el insumo principal para el resto de cursos. Parte del proceso de aprendizaje es que en los Curso del profesor Óscar Barajas, en especial en el Curso de React Router y Redux se realizarán validaciones del código CSS para optimizarlo y mejorarlo.
 
-  
+
+**Estilo al scroll**
+
+```css
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+::-webkit-scrollbar {
+  width: 8px; 
+  height: 8px;   
+  background:rgba(255,255,255,.4);
+  border-radius: 4px;
+}
+::-webkit-scrollbar:hover {
+  background: #b3b3b3;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+::-webkit-scrollbar:hover:active {
+  background: #999;
+}
+```
+
+Quitar el scroll del carrusel:
+
+```css
+.carrousel-video::webkit-scrollbar {
+  display: none;
+}
+```
+ 
+ - [Puntos de Corte | CSS](http://guia-frontend.uoc.edu/UOC/GEFv2/es/guide/breakpoints.html)
   ## Reto 3: Maquetación de la pantalla de Not Found
 
+Cuando ocurre un error de tipo 404 en nuestra aplicación, es bueno que tengamos una pantalla que nos indique sobre este error. Por tal motivo, creamos la siguiente vista:
 
+Ya hicimos en clases anteriores los componentes de Header y Footer, sólo debemos añadir dos cosas más:
+
+  1. Un texto grande que diga 404 y que haga una pulsación parecida al latido de nuestro corazón. Sin embargo, puedes realizar la animación que más te guste. Te recomiendo mirar en CodePen algunos proyectos sobre animaciones. Aquí te dejo un ejemplo:
+
+  - [Animate.css  ](https://codepen.io/levineuland/pen/AmwCL)
+
+  2. Un texto debajo del texto que dice 404 con el enunciado:
+
+![](https://i.ibb.co/4KTp9RC/not-found.gif)
   
-7. Preprocesadores
-¿Qué es un preprocesador, cuáles existen y cuáles son sus diferencias?
-Instalación de SASS y configuración inicial
-Hablemos de variables, herencia, anidamiento, operadores y más
-8. Accesibilidad
-La accesibilidad y nuestra responsabilidad como desarrolladores
-Mejorando la accesibilidad de nuestra página de inicio
-9. Conclusión
-Conclusión del curso y paso siguiente
-10. Bonus
-Visualización de un botón usando storybook para HTML
-Flexbox
+# 7. Preprocesadores
+  ## ¿Qué es un preprocesador, cuáles existen y cuáles son sus diferencias?
 
+CSS es un lenguaje de hojas de estilo que nos permite crear sitios web agradables para el usuario, sin embargo, nuestros archivos de CSS suelen ser bastante extensos, lo que produce una demanda significativa de nuestro tiempo y puede generar un trabajo menos productivo.
 
+Una de las cosas que puedes hacer para evitar tantas líneas de código es utilizar los preprocesadores de CSS, los cuales extienden las funcionalidades de CSS común, permitiéndonos tener variables, funciones, mixins, reutilización de código, flexibilidad en el desarrollo, etc.
+
+Pero, ¿cómo es que funcionan los preprocesadores?
+
+Un preprocesador se escribe con una sintaxis especial que nosotros le indicamos y debe compilarse a CSS para ser comprendido por el navegador. En sí lo que estamos haciendo es CSS pero con esteroides.
+
+![](https://i.ibb.co/Lv1JcwR/procecss.webp)
+
+Esta sintaxis que te menciono depende de cada preprocesador. Los más conocidos y usados son: LESS, SASS y Stylus. ¿Cuál usar? En mi opinión personal, esta decisión depende más de tus gustos personales y de qué tan cómodo o cómoda te sientas con una sintaxis o con otra, sin embargo, es también importante que dialogues con tu equipo y evalúen con qué preprocesador quieren trabajar dependiendo de las necesidades del proyecto.
+
+Aquí te comparto la documentación oficial de cada uno de ellos para que puedas evaluar sus diferencias en sintaxis:
+
+  - [Sass | CSS](https://sass-lang.com/guide)
+  - [less | CSS](http://lesscss.org/)
+  - [stylus | CSS](http://stylus-lang.com/)
+
+Para aprender muy bien CSS y este tema de preprocesadores, es muy importante que practiques y seas constante. Comenzar algo siempre va a ser muy difícil, pero con paciencia y dedicación podrías llegar a dominar estos temas fácilmente.
+
+Algo que me ayudó mucho cuando comencé, fue replicar páginas que me gustaban mucho (a modo de estudio, por supuesto). Comencé haciendo extensas líneas de CSS y quizás mis creaciones no eran las más bonitas, pero no me desmotivé, al contrario, seguí intentándolo y sumándole a esta práctica el tema de los preprocesadores, JavaScript, librerías, frameworks, etc.
+
+Así que ánimo, practica bastante y por qué no, comparte tu conocimiento con la comunidad de Platzi o comunidades de desarrollo del lugar en donde vives.
+
+  ## Instalación de SASS y configuración inicial
+
+- [Taller de Sass](https://github.com/teffcode/sass-workshop)
+
+  - Instalación de SASS con NPM:
+
+```bash
+npm install -g sass
+```
+
+  - Si usas Windows puedes usar el gestor de paquetes [Chocolatey Package Manager](https://chocolatey.org) e instalar SASS con el siguiente comando:
+
+```bash
+choco install sass
+```
+
+  - Si usas Mac puedes usar [Homebrew](https://brew.sh) para instalar SASS con el siguiente comando:
+
+```bash
+brew install sass/sass/sass
+```
+
+  - Visualizar nuestro proyecto con el siguiente comando:
+
+  ```bash
+  sass -watch rutal-del-proyecto/styles.scss ruta-del-archivo/style.css
+  ```
+  ## Hablemos de variables, herencia, anidamiento, operadores y más
+
+**VARIABLES:**
+
+  - Definimos la variable con $nombreDeVariable:
+
+```css
+$blanco : #fff;
+```
+
+  - Para usar nuestra variable por ejemplo en las etiquetas ancla:
+
+```css
+	a {
+	color: $blanco
+}
+```
+
+**ANIDAMIENTO:**
+
+  - Para usar una regla de estilos dentro de otra:
+
+```css
+.login__container—register {
+font-size: 14px;
+	a {
+		color: $blanco;
+		font-weight: bold;
+		text-decoration: none;
+	}
+}
+```
+
+  - En vez de como las teníamos antes:
+
+```css
+.login__container—register {
+font-size: 14px;
+ }
+.login__container—register a {
+	color: $blanco;
+	font-weight: bold;
+	text-decoration: none;
+}
+```
+
+**HERENCIA EN SASS:**
+
+Definimos una regla de estilos:
+
+```css
+.flex {
+display: flex;
+align-items: center;
+}
+```
+
+ - Y para heredarla a otra regla o elementos:
+
+```css
+.header {
+@extend .flex
+background-color: #000;
+heigth: 100px;
+width: 100%;
+}
+```
+
+**MIXINS**
+
+  - Se define el mixing con: `@mixin nombre` (sin punto precediendo el nombre)
+
+```css
+@mixin flex {
+display: flex;
+align-items: center;
+}
+```
+
+  - Para aplicarlo: donde se quiera incluir se pone `@include nombre`;
+
+```css
+.header {
+@include flex;
+background-color: #000;
+heigth: 100px;
+width: 100%;
+}
+```
+
+- [Sass Documentation](https://sass-lang.com/documentation)
+
+# 8. Accesibilidad
+  # La accesibilidad y nuestra responsabilidad como desarrolladores
+
+Debemos pensar en esas personas con una discapacidad visual que no tienen la posibilidad de ver lo mismo que la mayoría de nosotros. Estas personas no siempre usan el mouse, sino lectores de pantalla.
+
+Un Lector de Pantalla se encarga de leer toda la aplicación elemento por elemento. Que los lectores de pantalla funcionen es responsabilidad de las y los desarrolladores: debemos tener muy buena semántica, usar las etiquetas y atributos adecuados entre otras.
+
+  # Mejorando la accesibilidad de nuestra página de inicio
+
+ANDI (Accessible Name & Description Inspector) is a free tool to test web content for accessibility.
+
+**ANDI is a “favelet” or “bookmarklet” that will:**
+
+- Provide automated detection of accessibility issues
+- Reveal what a screen reader should say for interactive elements
+- Give practical suggestions to improve accessibility and check 508 compliance
+
+- [ANDI](https://www.ssa.gov/accessibility/andi/help/install.html)
+- [tabindex](https://developer.mozilla.org/es/docs/Web/HTML/Global_attributes/tabindex)
+- [VoiceOver](https://support.apple.com/es-lamr/HT202362)
+
+# 9. Conclusión
+  ## Conclusión del curso y paso siguiente
+
+¡Felicidades por haber llegado hasta aquí!
+
+Te invito a seguir practicando HTML y CSS. No te quedes únicamente con lo visto en este curso, no basta con aprenderse las etiquetas y la documentación. La práctica constante te llevará a un mejor aprendizaje de estas tecnologías y te convertirá en un mejor profesional.
+
+![](https://i.ibb.co/4RR2B1b/tenor.gif "Felicidades por llegar al final")
+
+# 10. Bonus
+  ## Visualización de un botón usando storybook para HTML
+
+- [La Cocina del Código](https://www.youtube.com/channel/UCY2ogSxB2beBNBRMKU_dXzA)
+- [Storybook: Instalación y Primeros Pasos con React](https://www.youtube.com/watch?v=WgsaTWmzvFE&list=PLfWyZ8S-Xzeed53YOiAa1U5WUSA4cRxFQ)
+
+  ## Flexbox
+
+[CSS Flexbox Simulator](https://juliansci.github.io/css-flexbox-simulator/)

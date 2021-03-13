@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+}
+.header {
+  display: flex;
+  height: 100vh;
+  flex-flow: column;
+}
+.header {
+  background-color: gold;
+}
+.content {
+  background: gray;
+}
+.footer {
+  background: red;
+}
