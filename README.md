@@ -8,7 +8,7 @@
   - [Instalación de Ubuntu Server](#Instalación-de-Ubuntu-Server)
   - [Instrucciones para instalar CentOS](#Instrucciones-para-instalar-CentOS)
   - [Gestión del árbol de directorios](#Gestión-del-árbol-de-directorios)
-  - [Diferencias entre LESS, CAT, HEAD y TAIL para lectura de archivos](#Diferencias-entre-LESS,-CAT,-HEAD-y-TAIL-para-lectura-de-archivos)
+  - [Diferencias entre LESS, CAT, HEAD y TAIL para lectura de archivos](#Diferencias-entre-LESS-CAT-HEAD-y-TAIL-para-lectura-de-archivos)
   - [Interacción con archivos y permisos](#Interacción-con-archivos-y-permisos)
   - [Conociendo las terminales en linux](#Conociendo-las-terminales-en-linux)
   - [Manejo y monitoreo de procesos y recursos del sistema](#Manejo-y-monitoreo-de-procesos-y-recursos-del-sistema)
@@ -20,14 +20,14 @@
   - [Administración de software con YUM y RPM para CentOS](#Administración-de-software-con-YUM-y-RPM-para-CentOS)
   - [Nagios: Desempaquetado, descompresión, compilación e instalación de paquetes](#Nagios-Desempaquetado-descompresión-compilación-e-instalación-de-paquetes)
 - [3. Administración de usuarios](#3.-Administración-de-usuarios)
-  - [Los usuarios, una tarea vital en el proceso de administración del sistema operativo](#Los-usuarios,-una-tarea-vital-en-el-proceso-de-administración-del-sistema-operativo)
+  - [Los usuarios, una tarea vital en el proceso de administración del sistema operativo](#Los-usuarios-una-tarea-vital-en-el-proceso-de-administración-del-sistema-operativo)
   - [Creando y manejando cuentas de usuario en el sistema operativo](#Creando-y-manejando-cuentas-de-usuario-en-el-sistema-operativo)
   - [Entendiendo la membresía de los grupos](#Entendiendo-la-membresía-de-los-grupos)
   - [Usando PAM para el control de acceso de usuarios](#Usando-PAM-para-el-control-de-acceso-de-usuarios)
 - [4. Servicios en el sistema operativo](#4.-Servicios-en-el-sistema-operativo)
   - [Autenticación de clientes y servidores sobre SSH](#Autenticación-de-clientes-y-servidores-sobre-SSH)
   - [Configurando DNS con bind](#Configurando-DNS-con-bind)
-  - [Arranque, detención y recarga de servicios](#Arranque,-detención-y-recarga-de-servicios)
+  - [Arranque, detención y recarga de servicios](#Arranque-detención-y-recarga-de-servicios)
   - [NGINX y Apache en Ubuntu server](#NGINX-y-Apache-en-Ubuntu-server)
   - [Instalación y configuración de NGINX](#Instalación-y-configuración-de-NGINX)
   - [¿Qué es NGINX Amplify?](#¿Qué-es-NGINX-Amplify?)
@@ -50,7 +50,7 @@
   - [Lynis: Herramientas de auditoria de seguridad en Linux](#Lynis-Herramientas-de-auditoria-de-seguridad-en-Linux)
 - [7. Proyecto](#7.-Proyecto)
   - [Configuración de Node.js en un ambiente productivo](#Configuración-de-Node.js-en-un-ambiente-productivo)
-  - [Configuración de NGINX para la aplicación de Node.js](#Configuración-de-NGINX-para-la-aplicación-de-Node.js)
+  - [Configuración de NGINX para la aplicación de Node.js](#Configuración-de-NGINX-para-la-aplicación-de-Node-js)
 - [8. Conclusiones](#8.-Conclusiones)
   - [Conclusiones](#Conclusiones)
 
@@ -87,7 +87,7 @@ Recuerda que puedes probar estas distribuciones con una máquina virtual o el pr
 
   **Recomenadacion:** Utilizar **QEMU** para virtualizar **Ubunut-server.**
 
-  [![](img/qemu.jpeg "máquina virtual")](https://geeksencuarentena.com/linux/como-instalar-kvm-en-ubuntu-20-04/)
+  [![](https://i.ibb.co/YP33d1q/qemu.jpg "máquina virtual")](https://geeksencuarentena.com/linux/como-instalar-kvm-en-ubuntu-20-04/)
 
 
   ## Instalación de CentOS
@@ -97,6 +97,8 @@ Recuerda que puedes probar estas distribuciones con una máquina virtual o el pr
   Descargar [CentOS](http://isoredirect.centos.org/centos/7/isos/x86_64/CentOS-7-x86_64-DVD-1908.iso)
 
   [CentOS Mirror](https://centos.org/)
+
+  - [Fylesystem.pdf](https://drive.google.com/file/d/1We9yMSEB9JZiD4fbPtguCykBfL8V4OAI/view?usp=sharing)
 
   **Crear una nueva máquina virtual**
 
@@ -211,7 +213,7 @@ El comando grep nos ayuda a filtrar el resultado de un comando o archivo dependi
 Por ejemplo, el comando `ps aux | grep platzi` imprime los procesos activos del sistema y, con ayuda del pipe, envía la lista al comando grep para filtrar el resultado, mostrando únicamente las líneas con la palabra platzi.
 
 * Ejecutar script en sengundo plano:
-
+img/cron3.webp
   * `script &`
   * `nohup script &`
 
@@ -251,14 +253,14 @@ Para ver la información de la memoria podemos usar el comando free o, para que 
 
 `top`: Muestra la siguiente información del sistema:
 
-```bash
+  ```bash
   load average (carga promedio): Provee una representación en números del 1 al número de procesadores que tenga nuestro servidor del uso de los mismos.
   Uso de la memoria
   Cantidad de usuarios
   Uso del CPU
   Procesos
   Etc
-```
+  ```
 
 - `free`: Me muestra información sobre la memoria de mi sistema. Con el modificador -h la información es más legible para un humano
 - `du`: Muestra información sobre el disco duro. Con el modificador -hsc y un directorio especificado muestra el tamaño de ese directorio
@@ -348,10 +350,10 @@ También podemos realizar las instalaciones con el comando a`pt install nombre-p
 **Red Hat / CentOS / Fedora**
 
   - `.rpm` Red Hat Package Manager.
-  - Base de datos RPM, localizada en `var/lib/rpm
-    rpm -qa` Listar todos los rpms instalados en la máquina. (query all)
-  -  `rpm -i` paquete.rpm Realizar la instalación de un paquete. (install)
-  -  `rpm -e paquete.rpm` Remover un paquete del sistema. (erase)
+  - Base de datos RPM, localizada en `var/lib/rpm` 
+  - `rpm -qa` Listar todos los rpms instalados en la máquina. `(query all)`
+  -  `rpm -i` paquete.rpm Realizar la instalación de un paquete. `(install)`
+  -  `rpm -e paquete.rpm` Remover un paquete del sistema. `(erase)`
 
 **Repositorios** 
 
@@ -884,17 +886,17 @@ Para realizar el proceso de instalación de `bind` lo primero que realizaremos e
 
 Con aptitude instalado buscaremos el paquete `bind` utilizando para ellos una expresión regular.
 
-![](img/bind.webp "terminal linux")
+![](https://i.ibb.co/n7rJs79/bind.webp "terminal linux")
 
 El proceso de instalación se realiza con `sudo apt install -y bind9` , la opción `-y` es para confirmar que si queremos instalar el paquete en mención.
 
 Validamos la instalación con `netstat` y verificaremos que el puerto 53 esté en escucha
 
-![](img/nets.webp "netstat")
+![](https://i.ibb.co/x5zGPBB/nets.webp "netstat")
 
 Si deseamos ver el programa que está ejecutando este servicio agregamos el modificador `p` a `netstat`, así como sudo. `sudo netstat -ltnp`
 
-![](img/nets1.webp "Servicio ejecutando netstat")
+![](https://i.ibb.co/kH189rK/nets1.webp "Servicio ejecutando netstat")
 
 Para realizar consultas al DNS podemos utilizar varias herramientas, entre ellas **dig**, que me permiten conocer más al respecto del nombre de dominio, para ello usaremos el dominio platzi.com y lo buscaremos en la máquina local, es decir 127.0.0.1
 
@@ -904,11 +906,11 @@ dig www.platzi.com @127.0.0.1
 
 Allí encontraremos una salida, nos interesa la parte de respuesta y la de tiempo de ejecución para validar que la respuesta se dio desde localhost.
 
-![](img/nets2.webp)
+![](https://i.ibb.co/PGv7Cqv/nets2.webp)
 
 Paso siguiente después de instalarlo es verificar todo lo que viene incluido dentro del paquete como lo son los archivos de configuración manuales entre otros, para esto podemos hacer uso de `dpkg -L bind9`.
 
-![](img/dpkg.webp)
+![](https://i.ibb.co/z6DzyRx/dpkg.webp)
 
 El archivo de configuración principal será `/etc/bind/named.conf`, también tenemos el archivo `/etc/bind/rndc.key` en este se puede configurar la clave que se puede usar para obtener acceso al nombre de dominio.
 
@@ -963,11 +965,11 @@ sudo netstat -tulpn
 
 Podríamos tener una infraestructura donde NGINX puede servir como proxy y Apache como servidor web.
 
-[![](img/nginx.webp "Servidor nginx")](https://guides.wp-bullet.com/how-to-configure-nginx-reverse-proxy-wordpress-cache-apache/)
+[![](https://i.ibb.co/BjhhCNQ/nginx.webp "Servidor nginx")](https://guides.wp-bullet.com/how-to-configure-nginx-reverse-proxy-wordpress-cache-apache/)
 
 Si revisamos las estadísticas podemos ver que Apache aún es el líder del mercado en servidores web, seguido por NGINX, es por esta razón que veremos la instalación y configuración de ambos.
 
-![](img/N-A.webp "porsentaje web que usan varios servidores web")
+![](https://i.ibb.co/Mp4S9Vr/N-A.webp "porsentaje web que usan varios servidores web")
 
 Existen en internet artículos interesantes de comparación entre ambos y el caso de uso de cada uno de ellos.
 
@@ -1022,7 +1024,7 @@ cd /etc/nginx/sites-enabled # Archivo default
 
 `proxy_pass http://127.0.0.1:8080`
 
-![](img/server.webp "listen server")
+![](https://i.ibb.co/XWxZZL7/server.webp "listen server")
 
 Si por alguna razón el servidor Apache no se encuentra en la misma máquina, debemos cambiar la dirección IP y el puerto respectivo.
 
@@ -1038,7 +1040,7 @@ sudo a2enmod rewrite headers env dir mime
 
 Si queremos activar `letsecrypt` en NGINX, debemos agregar una línea en el `.htaccess` en la ruta `/var/www/html/nombre_host/.htaccess`. La linea es `SetEnvIf X-Forwarded-Proto https`
 
-![](img/set.webp)
+![](https://i.ibb.co/gdbBMdL/set.webp)
 
 **Conclusión**
 
@@ -1913,15 +1915,15 @@ Las configuraciones de las tareas a ejecutar se almacenan en el archivo `crontab
 
 A continuación te muestro lo que se imprime en la pantalla al correr el comando `crontab -e`
 
-![](img/cron.webp)
+![](https://i.ibb.co/s95LzW3/cron.webp)
 
 Para establecer una tarea automatizada con `cron` se debe seguir un formato específico para definir una tarea como se muestra a continuación:
 
-![](img/cron1.webp)
+![](https://i.ibb.co/CnH2Jf1/cron1.webp)
 
 Lo siguiente sería definir la periodicidad de nuestro cron, para ello podemos hacer pruebas en el sitio https://crontab.guru. Nosotros queremos que nuestra copia se ejecute todos los días a las 03:15 de la mañana, pues es el momento donde menos tráfico tenemos en nuestra base de datos.
 
-![](img/cron2.webp)
+![](https://i.ibb.co/JqxjCKq/cron2.webp)
 
 Nuestro cron quedaría de la siguiente manera:
 
@@ -1939,7 +1941,7 @@ Podríamos también realizar un escaneo automático de la máquina todos los dí
 
 Verificamos la carpeta y encontramos la salida
 
-![](img/cron3.webp)
+![](https://i.ibb.co/swj8rRZ/cron3.webp)
 
 Esto funcionará bien siempre y cuando la máquina esté encendida, si no es así, podríamos revisar [anacron](https://linux.die.net/man/8/anacron).
 
@@ -2248,3 +2250,5 @@ sudo netstat -peanut
 
 # 8. Conclusiones
   ## Conclusiones
+
+Has aprendido como gestionar un servidor con ubunto server, tu carrera de devops va por buen camino.  Nunca pares de aprender!
