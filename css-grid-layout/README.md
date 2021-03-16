@@ -220,25 +220,116 @@ Los navegadores empezaron a sacar su compatible con los navegadores
 El colapso de márgenes ocurre cuando el margen top y bottom de 2 elementos colindan y el margen final es el que sea mayor. Es decir, si un elemento tiene margin-bottom: 20px y el otro elemento margin-top: 10px, el margen final entre ambos elementos no será de 30px, si no que será de solo 20px.
 Cabe aclarar que esto ocurre cuando usamos el display por defecto block.
 
+- [CodePen Home Alignment techniques · line-height · initial](https://codepen.io/teffcode_/pen/JjREaVK?editors=1100)
+- [Entendiendo el colapso de margen](https://developer.mozilla.org/es/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing)
+- [El caso del colapso de márgenes en CSS](https://cybmeta.com/colapso-de-margenes-en-css)
+- [Live Sass Compiler](https://www.youtube.com/watch?v=A1tyKkkziTc)
+
+Margin auto:
+Para explicarlo en palabras sencillas se necesita comprender que:
+1. Cuando se establece el margin: 0 auto; lo que hace el navegador es establecer el tamaño de los márgenes izquierdo y derecho por igual, además de que el superior e inferior tendrán 0 de margen, así:
+
+```css
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+```
+
+2. Por lo tanto como en este caso, el contenedor padre tiene un width: 180px; (espacio celeste) y el elemento del padre un width: 60px; (espacio rosado o celeste-claro), DETERMINARÁ que hay 120px de espacio libre para compartir entre `margin-left y margin-right`:
+
+Si se representaría de forma lógica en javascript:
+
+```javascript
+var espacioLibre = 180 - 60; // 120
+var porcionEquilibrada = espacioLibre / 2; // 2 porque se aplica hacia el eje x (izquierda y derecha)
+```
+
+Lo que daría:
+
+```js
+margin-left: 60px;
+margin-right: 60px;
+Y para el contenedor que va hacía la derecha (margin: 0 0 0 auto;), sería:
+
+var espacioLibre = 180 - 60; // 120
+var porcionEquilibrada = espacioLibre / 1 //esto porque solo se aplica hacía la izquierda (margin-left)
+y quedaría:
+
+margin-left: 120px;
+```
   ## Técnicas de alineamiento antes de CSS Grid: table-cell y positions
 
+- [Course · CSS Grid (Clase 8)](https://www.canva.com/design/DAEPv-8YXhU/f-h1db2rteK-JrSBlWQCmQ/view?utm_content=DAEPv-8YXhU&amp;utm_campaign=designshare&amp;utm_medium=link&amp;utm_source=sharebutton#13)
+- [Centering in CSS: A Complete Guid](https://css-tricks.com/centering-css-complete-guide/)
 
 
+- [Alignment techniques · positions · initial](https://codepen.io/teffcode_/pen/bGwgxXm)
   ## Técnicas de alineamiento de CSS Grid: pros y contras
 
-
+- [Pros y Contras de las tecnicas de alineamiento antes de css Grid](https://www.canva.com/design/DAEPx_rxzag/bZs1WSOkdrs4i9brspUiTA/view?utm_content=DAEPx_rxzag&amp;utm_campaign=designshare&amp;utm_medium=link&amp;utm_source=sharebutton)
+- [wextensible](https://www.wextensible.com/temas/css3-alinear/block.html)
 
   ## Modos de escritura y ejes de alineamiento + Reto
 
+- [Writing modes](https://www.canva.com/design/DAEPwdLmsWI/GfZVmQN4tivhrfzEMRSjkw/view?utm_content=DAEPwdLmsWI&amp;utm_campaign=designshare&amp;utm_medium=link&amp;utm_source=sharebutton)
 
+![](img/writing.png)
 
+Un cuadro resumen de como se vería cada propiedad writing mode aplicada.
+
+### [overflow (excedente)](https://developer.mozilla.org/es/docs/Web/CSS/overflow)
+
+  - **visible**
+
+Valor por defecto. El contenido no es recortado, podría ser dibujado fuera de la caja contenedora.
+  - **hidden**
+
+El contenido es recortado y no se muestran barras de posición.
+  - **scroll**
+
+El contenido es recortado y el navegador web usa las barras de desplazamiento, se haya recortado contenido o no. Esto previene cualquier problema con las barras de desplazamiento apareciendo o desapareciendo en un entorno dinámico. Puede que las impresoras impriman contenido excedente.
+  - **auto**
+
+Depende del agente de usuario. Navegadores de escritorio como Firefox proveen barras de desplazamiento si hay contenido excedente.
   ## Propiedades físicas y lógicas en CSS + Quiz
 
+[CSS Logical Properties](https://www.canva.com/design/DAEPwadrvmg/ldmhPG0L9qzRRhjTaYO9KQ/view?utm_content=DAEPwadrvmg&amp;utm_campaign=designshare&amp;utm_medium=link&amp;utm_source=sharebutton)
 
+### MODELOS DE CAJA (Físicas - Lógicas)
 
+#### Propiedades físicas
+
+```css
+MARGIN: margin-top | Margin-left | Margin-right | Margin-bottom
+
+PADDING: padding-top | paddding-left | padding-right | padding-bottom
+
+BORDER (-size-style-color): border-top | border-left | border-right | border-bottom
+
+POSITIONS top | left | right | bottom.
+```
+#### Propiedades Lógicas
+
+```css
+MARGIN: Margin-block-start | Margin-inline-start | Margin-inline-end | Margin-block-end
+
+PADDING padding-block-start | paddding-inline-start | padding-inline-end | padding-block-end
+
+BORDER(-size-style-color): border-block-start | border-inline-start | border-inline-end | border-block-end.
+
+POSITIONS: inset-block-start | inset-inline-start | inset-inline-end | inset-block-end
+```
+
+- [Caniuse | Compatibilidad en navegadores](https://caniuse.com)
   ## Técnicas de alineamiento con Flexbox
 
+- [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+- [Tecnica de alineamiento con flexbox](https://www.canva.com/design/DAEPwlhbCcE/TI_WagM_hIe6RoURIJOJeA/view?utm_content=DAEPwlhbCcE&amp;utm_campaign=designshare&amp;utm_medium=link&amp;utm_source=sharebutton)
 
+- [Alignment techniques · Flexbox · final](https://codepen.io/teffcode_/pen/dypNgoR)
+
+- [Guia definitiva de flexbox (1) - Main Axis y Cross Axis](https://www.youtube.com/watch?v=_YUJ37FARrU)
 
   ## Dibujemos con CSS + Reto
 
