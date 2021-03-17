@@ -421,14 +421,183 @@ Existen cinco tipos de datos que son primitivos:
   String:  // "esto es una string"
   ```
 
-3. Estructuras de Control y Funciones
-Condicionales
-Funciones que retornan valores
-Arrow functions
-Estructuras repetitivas: for
-Estructuras repetitivas: while
-Estructuras repetitivas: do-while
-Condicional múltiple: switch
+# 3. Estructuras de Control y Funciones
+  ## Condicionales
+
+En esta clase empezaremos a trabajar con estructuras de control, éstas nos permiten decidir el flujo de nuestro código.
+
+Empezaremos con los condicionales. Los condicionales nos permiten decidir si un código se ejecuta o no. También introducimos un nuevo tipo de datos primitivos: el booleano, que determina si un valor es falso o verdadero. Mediante un condicional `(if)` decidiremos si se ejecuta una parte de nuestro código cuando se cumpla o no cierta condición.
+
+  - Nos permite interpolar variables
+
+```javascript
+  `${}`= template.string  
+```
+
+Ejemplo:
+
+```javascript
+ar victor = {
+  nombre: 'Victor',
+  apellido: 'Juarez',
+  edad: 15,
+}
+
+function imprimirEdad(persona) {
+  console.log(`$(persona.edad) es: `)
+
+  if (persona.edad >= 18){
+    console.log('Es mayor de edad')
+  } else {
+    console.log('Es menor de edad');
+  }
+}
+
+imprimirEdad(victor)
+```
+  ## Funciones que retornan valores
+
+En esta clase seguiremos trabajando con condicionales para desglosar las funciones en funciones más pequeñas que retornen un valor.
+
+Debemos de tener en cuenta que el número 18 esta incluido dentro del rango de edad. Para ello utilizamos los símbolos `>=`.
+
+Return detiene la ejecución de una función y devuelve el valor de esa función.
+
+Las variables definidas con const se comportan como las variables, excepto que no pueden ser reasignadas. Las constantes pueden ser declaradas en mayúsculas o minúsculas. Pero por convención, para distinguirlas del resto de variables, se escribe todo en mayusculas.
+
+  -  Para indinicar constantes se usa const. Es una buena practica nombrarla con mayusculas 😄
+
+Ya casi no se usa el var, es mejor usar let, por que esta ultima respeta el scope de las funciones 😄
+
+ el scope es el alcance que tienen las variables dependiendo de donde esten declaradas. Ejemplo:
+
+  -Aqui la variable i solo existe dentro del bloque for:
+
+```javascript
+for(let i = 0; i < 10; i++) {
+	// Algo de codigo
+	// Si en vez de let, la variable usara var... La variable i seria usable desde cualquier punto del codigo!
+}
+```
+
+  - Aqui la variable nombre esta disponible solamente dentro de la funcion:
+
+```javascript
+function saludar(nombre) {
+	// Algo de codigo
+}
+```
+
+  - Aqui la variable esta definida al inicio del archivo, asi que esta disponible desde cualquier punto del codigo
+
+```javascript
+let nombreCool = 'TuNombre'
+```
+
+```javascript
+const MAYORIA_DE_EDAD = 18
+
+function esMayorDeEdad(persona) {
+  return persona.edad >= MAYORIA_DE_EDAD //18  Magic numver
+}
+
+
+function imprimirSiEsMayorDeEdad(persona) {
+  if(esMayorDeEdad) {
+    console.log(`${persona.nombre} es mayor de edad`)
+  } else {
+    console.log(`${persona.nombre} es menor de edad`)
+  }
+}
+
+imprimirSiEsMayorDeEdad(victor)
+```
+
+  ## Arrow functions
+
+En esta clase aprenderemos a utilizar Arrow Functions que permiten una nomenclatura más corta para escribir expresiones de funciones. Este tipo de funciones deben definirse antes de ser utilizadas.
+
+Al escribir las Arrow Functions no es necesario escribir la palabra function, la palabra return, ni las llaves.
+
+Ejempls de arrow function
+
+```javascript
+var MAYORIA_DE_EDAD = 18;
+
+var camilo = {
+    nombre: "Camilo",
+    edad: 12,
+};
+
+var daniel = {
+    nombre: "Daniel",
+    edad: 22,
+};
+
+
+const esMayorDeEdad = ({edad}) => edad >= MAYORIA_DE_EDAD;
+
+
+const imprimirSiEsMayorDeEdad = persona => esMayorDeEdad(persona)?
+console.log(`${persona.nombre} es mayor de edad`) : 
+console.log(`${persona.nombre} es menor de edad`);
+
+
+const permitirAcceso = perosna => !esMayorDeEdad(perosna)? 
+console.log(`ACCESO DENEGADO`) :
+console.log(`PERMITIR ACCESO`);
+```
+
+- [Operador condicional | ternario](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Conditional_Operator)
+
+  ## Estructuras repetitivas: for
+
+En esta clase estudiaremos una de las estructuras básicas de control. El bucle for, se utiliza para repetir una o más instrucciones un determinado número de veces.
+
+Para escribir un bucle for se coloca la palabra for seguida de paréntesis y llaves.
+Ej. `for( ){ }`. Dentro de los paréntesis irán las condiciones para ejecutar el bucle, y dentro las llaves irán las instrucciones que se deben repetir.
+
+En este ejemplo la variable i la utilizamos como contador.
+
+  ## Estructuras repetitivas: while
+
+En esta clase estudiaremos otra estructura repetitiva llamada while. While se ejecuta únicamente mientras la condición que se está evaluando es verdadera.
+
+En ocasiones nuestro código puede fallar por errores de syntaxis o errores lógicos. En caso de que quieras verificar tu código, debes utilizar un debugger. El código se detiene cada vez que lee esta palabra.
+
+```js
+while (condición) {
+    // Este código se va a ejecutar siempre a menos que la condicion cambie
+}
+```
+
+  ## Estructuras repetitivas: do-while
+
+Otra estructura repetitiva es el do-while. A diferencia de la instrucción while, un bucle do…while se ejecuta una vez antes de que se evalúe la expresión condicional.
+
+Desafío:
+
+```js
+var contador = 0;
+
+var llueve = () => Math.random()>0.25;
+
+do{
+  contador++;
+}while(!llueve());
+
+var frecuencia = contador===1 ? "vez":"veces";
+console.log(`Fui a ver si llovía ${contador} ${frecuencia}`);
+```
+
+  ## Condicional múltiple: switch
+
+Una ultima estructura de control se llama switch. Switch se utiliza para realizar diferentes acciones basadas en múltiples condiciones.
+
+Prompt, muestra un cuadro de mensaje que le pide al usuario que ingrese algúna información.
+
+Break, sirve para que el browser se salte un bucle.
+
 4. Arrays
 Introducción a arrays
 Filtrar un array
