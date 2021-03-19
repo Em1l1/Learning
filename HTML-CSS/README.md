@@ -134,26 +134,184 @@ Para la instalación de Atom seguiremos los siguiente pasos:
 
   ## Comprendamos Internet
 
+Internet es un conjunto descentralizado de redes de comunicación interconectadas, en otras palabras, son dos (o más) computadoras que se conectan entre sí. Los Protocolos son un conjunto de reglas que hacen posible la comunicación entre diferentes elementos que forman parte de un sistema.
 
+La **World Wide Web** es un sistema de distribución de documentos (de hipertexto o hipermedia) interconectados y accesibles vía internet, mientras que, 
+los **Hipertextos** son textos que contienen enlaces a otros textos.
+
+**FTP** es el protocolo de transferencia de archivos entre sistemas conectados a una red, así es cómo diferentes personas podemos compartir documentos entre nosotros.
+
+Hay algunas computadoras que solo utilizamos para entregar documentos los conocemos como servidores, en cambio, las computadoras que solo leen y reciben estos documentos los conocemos como **clientes**. 
+También existe el protocolo de comunicación **P2P** (Peer to Peer) donde una misma computadora trabaja como servidor y cliente al mismo tiempo.
+
+La **tecnología de la la información** es la aplicación de ordenadores y equipos de telecomunicación para almacenar, recuperar, transmitir y manipular datos, con frecuencia, utilizado en el contexto de negocios o empresas.
+
+La **Comunicación Síncrona** es comunicación en tiempo real, por ejemplo, en aplicaciones de mensajería y video-chat. Sin embargo, también existe la 
+**Comunicación Asíncrona**, comunicación en tiempo NO real, así funciona Gmail, puede pasar que recibamos un nuevo correo pero no lo leemos inmediatamente lo envían, por eso es comunicación asíncrona.
 
 # 2. Los básicos del web
 
   ## ¿Cómo funciona HTML?
 
+  **Estructura Basica html5**
 
+![](img/html.jpg "Estructura Basica HTML5")
+
+```html
+<html>
+  <head>
+    <meta>
+  </head>
+  <body>
+    <h1>Hola</h1>
+    <h2>Hola soy un h2</h2>
+    <p>Hola soy parrafo.</p>
+    <h3>Hola soyun h3</h3>
+    <footer>
+
+    </footer>
+  </body>
+</html>
+```
 
   ## Etiquetas y sus atributos
 
+Las Etiquetas son fragmentos de texto rodeados por corchetes angulares `(< y >)` con funciones y usos específicos:
 
+```html
+<html>Contenido</html>
+```
+
+Los Atributos afectan a los elementos por su presencia o enriquecen la definición de la misma. Por ejemplo, el atributo lang en la etiqueta html indica que el contenido de esta página esta en un idioma específico:
+
+```html
+<html lang=""es"">Contenido en Español</html>
+```
+
+Las etiquetas meta (meta tags) son etiquetas que se incorporan en el encabezado de una página web y son invisibles para los usuarios normales, sin embargo, son de gran utilidad para navegadores u otros programas que pueden valerse de esta información:
+
+```html
+<head>
+  <meta name=""description"" content=""Descripción de nuestra página"">
+</head>
+```
+
+```html
+Metadatos del documento
+
+<base>
+<head>
+<link>
+<meta>
+<style>
+<title>
+
+Seccionamiento del contenido
+
+<address>
+<article>
+<aside>
+<footer>
+<header>
+<h1>, <h2>, <h3>, <h4>, <h5>, <h6>
+<hgroup>
+<main>
+<nav>
+<section>
+
+Organizar bloques o secciones de contenido(Es importante para la accessibility y el SEO)
+
+
+<blockquote>
+<dd>
+<dir>
+<div>
+<dl>
+<dt>
+<figcaption>
+<figure>
+<hr>
+<li>
+<main>
+<ol>
+<p>
+<pre>
+<ul>
+```
+
+También encontramos etiquetas comunes como `<footer>` para agrupar el contenido del pie de página, <span> para guardar texto genérico y sin reglas de espaciado o tamaño predeterminadas, `<img src=""imagen-url.png"">` para incluir imágenes, entre otras.
 
   ## Reto 1: crea tu fiesta de gifs
 
+¡Bienvenido a tu primer reto!
 
+Ahora que sabes incluir elementos dentro de una web, te invito a que apliques lo aprendido creando una fiesta de gifs.
+
+Descarga algunos gifs bailarines en https://giphy.com/ sobre todo échale un ojo a la sección de stickers. Cuando tengas un conjunto de gifs bailarines ponlos dentro de la carpeta donde esté tu index.
+
+Tip: Trata de escoger los gifs que no tengan fondo, esto te ayudará a que no se vean cortados.
+
+Ahora que ya tienes una colección de gifs utiliza la estructura de las etiquetas para hacer una fiesta de gifs dentro de tu documento. Usa la etiqueta img para lograrlo.
 
   ## ¿Cómo funciona CSS?
 
+El CSS son las hojas de estilo en cascada que definen la apariencia de nuestros documentos en HTML.
 
+Para que nuestros estilos CSS se apliquen correctamente a nuestras páginas web, debemos utilizar la etiqueta link con el atributo href y la ruta a nuestro archivo .css:
 
+```html
+<html>
+        <head>
+                <link rel=""stylesheet"" href=""estilos.css"">
+        </head>
+        <body>
+                ... etc ... etc....
+        </body>
+</html>
+```
+
+Los Selectores nos permiten conectar las etiquetas de HTML con sus respectivos estilos en CSS.
+
+Existen muchos tipos de selectores, por ejemplo, los selectores de clase buscan el contenido que tenga un cierto valor en su atributo class:
+
+CSS (con punto antes del nombre de la clase):
+
+```css
+.caja { color: red; }
+```
+
+HTML:
+
+```html
+<div class=""caja"">Contenido</div>
+```
+
+También tenemos selectores de tipo ID (estos selectores solo pueden aplicar a un elemento, no va a funcionar si escribimos dos o más etiquetas con el mismo ID):
+
+CSS (con `#` antes del nombre del ID):
+
+```css
+#caja { color: red; }
+```
+
+HTML:
+
+```html
+<div id=""caja"">Contenido</div>
+```
+
+En CSS utilizamos atributos para definir los estilos de nuestros elementos, podemos modificar el color de la letra, tamaño, color de fondo, espaciado, entre otras:
+
+```css
+.caja {
+        color: red;
+        background: yellow;
+        font-size: 10px;
+        padding: 20px;
+}
+```
+
+Juego para familiarizarse con los [selectores CSS](https://flukeout.github.io/)
   ## ¿Cómo funciona JavaScript?
 
 
