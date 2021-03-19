@@ -37,8 +37,8 @@
   - [Completando el Sistema de Grillas](#Completando-el-Sistema-de-Grillas)
   - [Reto 3: implementación del sistema de grillas](#Reto-3-implementación-del-sistema-de-grillas)
   - [Maquetación del formulario](#Maquetación-del-formulario)
-  - [Creación de formulario: inputs](#Creación-de-formulario:-inputs)
-  - [Creación de formulario: botones](#Creación-de-formulario:-botones)
+  - [Creación de formulario: inputs](#Creación-de-formulario-inputs)
+  - [Creación de formulario: botones](#Creación-de-formulario-botones)
   - [¿Cómo crear tu cuenta en Paypal?](#¿Cómo-crear-tu-cuenta-en-Paypal?)
   - [Configuración del botón de pago con Paypal](#Configuración-del-botón-de-pago-con-Paypal)
   - [Autofill del formulario de PayPal](#Autofill-del-formulario-de-PayPal)
@@ -113,6 +113,8 @@ Para editar código y crear proyectos super cool necesitas un editor de texto, h
 Estos son los más populares, sin embargo para crear el proyecto de nuestro Curso Profesional de Desarrollo Web usaremos Atom.
 
 Para la instalación de Atom seguiremos los siguiente pasos:
+Para la instalación de Atom seguiremos los siguiente pasos:
+
 
 1. Ingresa a https://atom.io/
 
