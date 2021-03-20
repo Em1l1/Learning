@@ -1,0 +1,57 @@
+:root {
+  --sking: #f6c09c;
+  --background: #ed4042;
+  --red: #ed2850;
+  --dark-red: #680524;
+  --balck: #00243a;
+  --white: #fff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: borer-box;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.head {
+  width: 100px;
+  height: 200px;
+  background: var(--sking);
+  border-radius: 50px;
+  position: relative;
+}
+
+.eyes-left {
+  width: 20px;
+  height: 20px;
+  background: var(--white);
+  position: absolute;
+  top: 80px;
+  border-radius: 50%;
+  left: 30px;
+
+}
+
+.padre {
+  background-color: pink;
+  width: 100%;
+  height: 150px;
+}
+
+.padre-items {
+  background-color: red;
+  width: 50%;
+  height: 50%;
+}
+.padre-items-sub {
+  background-color: gold;
+  width: 50%;
+  height: 50%;
+}

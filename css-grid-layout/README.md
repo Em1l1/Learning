@@ -4,16 +4,16 @@
 
 # Tabla de Contenido
 
-- [1. Lleva tus conocimientos de CSS a otro nivel](#1.-Lleva-tus-conocimientos-de-CSS-a-otro-nivel)
+- [1. Lleva tus conocimientos de CSS a otro nivel](#1-Lleva-tus-conocimientos-de-CSS-a-otro-nivel)
   - [Tips para llevar tu conocimiento de CSS a otro nivel + Quices](#Tips-para-llevar-tu-conocimiento-de-CSS-a-otro-nivel-Quices)
-- [2. ¿De dónde venimos y en dónde estamos?](#2.-¿De-dónde-venimos-y-en-dónde-estamos?)
+- [2. ¿De dónde venimos y en dónde estamos?](#2-¿De-dónde-venimos-y-en-dónde-estamos?)
   - [¿Cómo fue pensado CSS cuando se creó?](#¿Cómo-fue-pensado-CSS-cuando-se-creó?)
   - [Limitaciones de CSS y el problema de los elementos flotantes](#Limitaciones-de-CSS-y-el-problema-de-los-elementos-flotantes)
   - [Herramientas que nos han facilitado el camino](#Herramientas-que-nos-han-facilitado-el-camino)
-- [3. ¿Cómo se llegó al concepto de CSS Grid?](#3.-¿Cómo-se-llegó-al-concepto-de-CSS-Grid?)
+- [3. ¿Cómo se llegó al concepto de CSS Grid?](#3-¿Cómo-se-llegó-al-concepto-de-CSS-Grid?)
   - [¿CSS Grid es una idea nueva? La evolución de la especificación](#¿CSS-Grid-es-una-idea-nueva?-La-evolución-de-la-especificación)
   - [¿Qué significa Grid para CSS?](#¿Qué-significa-Grid-para-CSS?)
-- [4. Control de alineamiento](#4.-Control-de-alineamiento)
+- [4. Control de alineamiento](#4-Control-de-alineamiento)
   - [Técnicas de alineamiento antes de CSS Grid: margin y line-height](#Técnicas-de-alineamiento-antes-de-CSS-Grid-margin-y-line-height)
   - [Técnicas de alineamiento antes de CSS Grid: table-cell y positions](#Técnicas-de-alineamiento-antes-de-CSS-Grid-table-cell-y-positions)
   - [Técnicas de alineamiento de CSS Grid: pros y contras](#Técnicas-de-alineamiento-de-CSS-Grid-pros-y-contras)
@@ -21,23 +21,23 @@
   - [Propiedades físicas y lógicas en CSS + Quiz](#Propiedades-físicas-y-lógicas-en-CSS-Quiz)
   - [Técnicas de alineamiento con Flexbox](#Técnicas-de-alineamiento-con-Flexbox)
   - [Dibujemos con CSS + Reto](#Dibujemos-con-CSS-Reto)
-- [5. Conceptos generales para comenzar a trabajar con CSS Grid](#5.-Conceptos-generales-para-comenzar-a-trabajar-con-CSS-Grid)
+- [5. Conceptos generales para comenzar a trabajar con CSS Grid](#5-Conceptos-generales-para-comenzar-a-trabajar-con-CSS-Grid)
   - [Grid y las relaciones padre e hijos inmediatos + Quíz](#Grid-y-las-relaciones-padre-e-hijos-inmediatos-Quíz)
   - [Lines, tracks, cell, area, gutters, grid axis, grid row, grid column + Reto](#Lines-tracks-cell-area-gutters-grid-axis-grid-row-grid-column-Reto)
   - [¡Iniciemos nuestro proyecto! Fase de creatividad e identificación de elementos](#¡Iniciemos-nuestro-proyecto!-Fase-de-creatividad-e-identificación-de-elementos)
-- [6. Propiedades y valores para el elemento padre](#6.-Propiedades-y-valores-para-el-elemento-padre)
+- [6. Propiedades y valores para el elemento padre](#6-Propiedades-y-valores-para-el-elemento-padre)
   - [Creando nuestro contenedor: ¿display: grid o display: inline-grid?](#Creando-nuestro-contenedor-¿display-grid-o-display-inline-grid?)
   - [Creando filas, columnas y espaciado + Reto](#Creando-filas-columnas-y-espaciado-Reto)
   - [Alineamiento en el elemento contenedor + Quiz](#Alineamiento-en-el-elemento-contenedor-Quiz)
   - [Generación automática de tracks + Quíz](#Generación-automática-de-tracks-Quíz)
   - [Funciones: repeat(), minmax() y fit-content() + Quíz](#Funciones-repeat-minmax-y-fit-contentQuíz)
-- [7. Propiedades y valores para los elementos hijos](#7.-Propiedades-y-valores-para-los-elementos-hijos)
+- [7. Propiedades y valores para los elementos hijos](#7-Propiedades-y-valores-para-los-elementos-hijos)
   - [¡Manos al código! Fase de construcción de la grid principal de nuestro proyecto](#¡Manos-al-código!-Fase-de-construcción-de-la-grid-principal-de-nuestro-proyecto)
   - [Ubicación + Reto](#Ubicación-Reto)
   - [Alineamiento en los elementos hijos + Quiz](#Alineamiento-en-los-elementos-hijos-Quiz)
   - [¡Manos al código! Fase de ubicación y alineamiento](#¡Manos-al-código!-Fase-de-ubicación-y-alineamiento)
   - [Continuando con la fase de ubicación y alineamiento](#Continuando-con-la-fase-de-ubicación-y-alineamiento)
-- [8. Lo que podemos lograr adicionalmente con CSS Grid](#8.-Lo-que-podemos-lograr-adicionalmente-con-CSS-Grid)
+- [8. Lo que podemos lograr adicionalmente con CSS Grid](#8-Lo-que-podemos-lograr-adicionalmente-con-CSS-Grid)
   - [Responsive y CSS Grid](#Responsive-y-CSS-Grid)
   - [Continúa con el Curso de Diseño Web con CSS Grid y Flexbox](#Continúa-con-el-Curso-de-Diseño-Web-con-CSS-Grid-y-Flexbox)
 
@@ -332,13 +332,236 @@ POSITIONS: inset-block-start | inset-inline-start | inset-inline-end | inset-blo
 - [Guia definitiva de flexbox (1) - Main Axis y Cross Axis](https://www.youtube.com/watch?v=_YUJ37FARrU)
 
   ## Dibujemos con CSS + Reto
+  
+- [DIBUJEMOS CON CSS + RETO](https://www.canva.com/design/DAEPwqvMuoM/HEntrkxBUyi9yl8ALkuiNQ/view?utm_content=DAEPwqvMuoM&amp;utm_campaign=designshare&amp;utm_medium=link&amp;utm_source=sharebutton)
+- [Single div](https://a.singlediv.com)
+- [DotCSS | Make CSS you secret super drawing tool](https://www.youtube.com/watch?v=Y0_FMCji3iE)
+- [Dotconferences](https://www.youtube.com/channel/UCSRhwaM00ay0fasnsw6EXKA)
+- [No tengas miedo a dibujar con CSS](https://dev.to/raulmar/no-tengas-miedo-a-dibujar-con-css-1ck)
+- [gigantic](https://gigantic.store/gigantic-flat-design-illustration-bundle-2/)
+
+**HTML**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div class="container">
+       <div class="head">
+        <div class="cuello"></div>
+        <div class="eye-left"></div>
+        <div class="eye-right"></div>
+        <div class="barba"></div>
+        <div class="sonrisa"></div>
+        <div class="dientes"></div>
+        <div class="negro"></div>
+        <div class="ceja"></div>
+        <div class="nariz"></div>
+        <div class="ear-left"></div>
+        <div class="ear-right"></div>
+        <div class="point-eye-left"></div>
+        <div class="point-eye-right"></div>
+        </div> 
+    </div>
+</body>
+</html>
+```
+
+**CSS**
+
+```
+:root{
+    --skin: #f6c09c;
+    --background: #ed4842;
+    --red: #ed2850;
+    --dark-red: #680254;
+    --black: #00243a;
+    --white: #fff;
+
+}
+
+body{
+    margin: 0;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.head{
+    width: 100px;
+    height: 180px;
+    background-color: var(--skin);
+    border-radius: 50px;
+    position: relative;
+}
+
+.ceja{
+    width: 100%;
+    height: 10px;
+    background-color: var(--skin);
+    position: absolute;
+    top: 54px;
+}
+
+.eye-left{
+    width: 20px;
+    height: 20px;
+    background-color: var(--white);
+    position: absolute;
+    top: 60px;
+    border-radius: 50%;
+    left: 32px;
+}
 
 
+.eye-right{
+    width: 20px;
+    height: 20px;
+    background-color: var(--white);
+    position: absolute;
+    top: 60px;
+    border-radius: 50%;
+    left: 52px;
+}
 
-5. Conceptos generales para comenzar a trabajar con CSS Grid
-Grid y las relaciones padre e hijos inmediatos + Quíz
-Lines, tracks, cell, area, gutters, grid axis, grid row, grid column + Reto
-¡Iniciemos nuestro proyecto! Fase de creatividad e identificación de elementos
+.nariz{
+    width: 25px;
+    height: 25px;
+    background-color: var(--skin);
+    position: absolute;
+    border-radius: 15px;
+    top: 80px;
+    left: 40px;
+}
+
+.barba{
+    width: 100px;
+    height: 100px;
+    background-color: var(--black);
+    position: absolute;
+    top: 90px;
+    border-radius: 30px;
+}
+
+.cuello{
+    width: 55px;
+    height: 35px;
+    background-color: var(--skin);
+    opacity: 0.7;
+    position: absolute;
+    left: 23px;
+    top: 180px;
+}
+
+.sonrisa{
+    width: 45px;
+    height: 28px;
+    background-color: var(--red);
+    position: absolute;
+    border-radius: 20px;
+    left: 28px;
+    top: 110px;
+}
+
+.dientes{
+    width: 30px;
+    height: 8px;
+    background-color: var(--white);
+    position: absolute;
+    left: 28px;
+    top: 117px;
+}
+
+.negro{
+    width: 50px;
+    height: 8px;
+    background-color: var(--black);
+    position: absolute;
+    left: 30px;
+    top: 109px;
+}
+
+.ear-left{
+    width: 15px;
+    height: 15px;
+    background-color: var(--skin);
+    position: absolute;
+    border-radius: 20px;
+    left: -10px;
+    top: 80px;
+}
+
+.ear-right{
+    width: 15px;
+    height: 15px;
+    background-color: var(--skin);
+    position: absolute;
+    border-radius: 20px;
+    left: 94px;
+    top: 80px;
+}
+
+.point-eye-left{
+    width: 5px;
+    height: 5px;
+    background-color: var(--black);
+    position: absolute;
+    border-radius: 20px;
+    left: 40px;
+    top: 68px;
+}
+
+.point-eye-right{
+    width: 5px;
+    height: 5px;
+    background-color: var(--black);
+    position: absolute;
+    border-radius: 20px;
+    left: 60px;
+    top: 68px;
+}
+```
+
+# 5. Conceptos generales para comenzar a trabajar con CSS Grid
+
+  ## Grid y las relaciones padre e hijos inmediatos + Quíz
+
+- [Grid ylas relaciones padre e hijos inmediatos](https://www.canva.com/design/DAEW0j7Iqqk/4wH6BM4jurjRl9rba-spuQ/view?utm_content=DAEW0j7Iqqk&amp;utm_campaign=designshare&amp;utm_medium=link&amp;utm_source=sharebutton)
+
+  ## Lines, tracks, cell, area, gutters, grid axis, grid row, grid column + Reto
+
+- [Lines, tracks...](https://www.canva.com/design/DAEW0pSs00Q/MnL5x4rrSaC7U5F_-1fWQQ/view)
+
+  ## ¡Iniciemos nuestro proyecto! Fase de creatividad e identificación de elementos
+
+- [Fase de creatividad e identificaci&oacute;n de elementos](https://www.canva.com/design/DAEQWdX-R6U/UNyZt4I2GoerlNT43617rA/watch?utm_content=DAEQWdX-R6U&amp;utm_campaign=designshare&amp;utm_medium=link&amp;utm_source=sharebutton)
+- [Dislplay: grid | inline-grid](https://www.canva.com/design/DAEPfFLZaPQ/KCwKnf-IVl5Rinrh1eGSCA/view?utm_content=DAEPfFLZaPQ&amp;utm_campaign=designshare&amp;utm_medium=link&amp;utm_source=sharebutton)
+
+**Im&aacute;genes libres**
+
+- [Pixabay](https://pixabay.com/es/)
+- [freepik](https://www.freepik.es)
+- [Pexels](https://www.pexels.com)
+
+**Tipogr&aacute;fia**
+
+- [GoogleFonts](https://fonts.google.com)
+
+**Paleta de colores**
+
+- [Palette](https://www.materialpalette.com)
+
 6. Propiedades y valores para el elemento padre
 Creando nuestro contenedor: ¿display: grid o display: inline-grid?
 Creando filas, columnas y espaciado + Reto
