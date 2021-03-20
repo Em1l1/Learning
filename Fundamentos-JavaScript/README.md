@@ -174,7 +174,9 @@ var str1= nombre.substr(-1)  // Acceder a una sub clase de una variable
 
   - **`UpperCamelCase`** (más conocido como PascalCase), cuando la primera letra de cada una de las palabras es mayúscula. Ejemplo: EjemploDeUpperCamelCase.
   - **`lowerCamelCase`** (o simplemente CamelCase), igual que la anterior con la excepción de que la primera letra es minúscula. Ejemplo: ejemploDeLowerCamelCase
-  ## Variables: Números
+  
+## Variables: Números
+
 
 En esta clase aprenderemos variables de tipo números y las operaciones más comunes en este tipo de variables.
 
@@ -598,30 +600,370 @@ Prompt, muestra un cuadro de mensaje que le pide al usuario que ingrese algúna 
 
 Break, sirve para que el browser se salte un bucle.
 
-4. Arrays
-Introducción a arrays
-Filtrar un array
-Transformar un array
-Reducir un array a un valor
-5. Programación Orientada a Objetos en JavaScript
-Cómo funcionan las clases en JavaScript
-Modificando un prototipo
-El contexto de las funciones: quién es this
-La verdad oculta sobre las clases en JavaScript
-Clases en JavaScript
-6. Asincronismo
-Funciones como parámetros
-Cómo funciona el asincronismo en JavaScript
-Cómo funciona el tiempo en JavaScript
-¿Qué pasó con swapi.co?
-Callbacks
-Haciendo múltiples requests
-Manejando el Orden y el Asincronismo en JavaScript
-Manejo de errores con callbacks
-Promesas
-Promesas Encadenadas
-Múltiples promesas en paralelo
-Async-await: lo último en asincronismo
+```js
+// Objeto que guarda los horoscopos, se imprimen los horoscopos no importando como se escriba May/Min
+const horoscopos = {
+    aries: '21 marzo - 19 abril',
+    tauro: '20 abril - 20 mayo',
+    geminis: '21 mayo - 20 junio',
+    cancer: '21 junio - 22 julio',
+    leo: '23 julio - 22 agosto',
+    virgo: '23 agosto - 22 septiembre',
+    libra:'23 septiembre - 22 octubre',
+    escorpion: '23 octubre - 21 noviembre',
+    sagitario: '22 noviembre - 21 diciembre',
+    capricornio: '22 diciember - 19 enero',
+    acuario: '20 enero - 18 febrero',
+    piscis: '19 febrero - 20 marzo'
+};
+
+// Evalua el signo y regresa el horóscopo
+const calcularSigno = function(signo){
+    switch(signo.toLowerCase()){
+        case 'aries':
+            console.log(horoscopos.aries);
+            break;
+        case 'tauro':
+            console.log(horoscopos.tauro);
+            break;
+        case 'geminis':
+        case 'géminis':
+            console.log(horoscopos.geminis);
+            break;
+        case 'cancer':
+        case 'cáncer':
+            console.log(horoscopos.cancer);
+            break;
+        case 'leo':
+            console.log(horoscopos.leo);
+            break;
+        case 'virgo':
+            console.log(horoscopos.virgo);
+            break;
+        case 'libra':
+            console.log(horoscopos.libra);
+            break;
+        case 'escorpion':
+        case 'escorpión':
+            console.log(horoscopos.escorpion);
+            break;
+        case 'sagitario':
+            console.log(horoscopos.sagitario);
+            break;
+        case 'capricornio':
+            console.log(horoscopos.capricornio);
+            break;
+        case 'acuario':
+            console.log(horoscopos.acuario);
+            break;
+        case 'piscis':
+            console.log(horoscopos.piscis);
+            break;
+        default:
+            console.log('Ese signo no existe');
+            break;
+    }
+};
+
+// Arrow function que sirve para seguir preguntando el signo que quieres ver hasta que se escriba la palabra "salir"
+var preguntarSigno = () => signoZodiacal = prompt('¿Cuál es tu signo? escribe salir para que no vuelva a preguntar.');
+
+// Asigna valor a la variable signoZodiacal para entrar al while
+preguntarSigno();
+
+// Se ejecuta mientras el usuario no escriba la palabra "salir"
+while(signoZodiacal.toLowerCase() !== 'salir'){
+    calcularSigno(signoZodiacal);
+    preguntarSigno();
+}
+```
+
+# 4. Arrays
+  ## Introducción a arrays
+
+Los arrays son estructuras que nos permiten organizar elementos dentro de una collección. Estos elementos pueden ser números, strings, booleanos, objetos, etc.
+
+**Arrays** 
+son estructuras de datos que nos permiten agrupar datos dentro de una colección.
+
+Para indicar que algo es un array utilizamos el símbolo `"[ ]"`
+`var personas = []`
+
+Dentro de los corchetes introducimos las variables que deseamos que contenga nuestro array, las variables pueden ser:
+
+  - Números
+  - Strings
+  - Objetos
+  - Funciones
+
+Incluso podemos mezclar diferentes tipos de datos.
+
+Si queremos acceder al 1er elemento de un array , escribimos el nombre del array seguido de los corchetes y el índice 0:
+
+```js 
+personas[0]
+```
+
+Si queremos acceder a los atributos de alguno de los elementos después del índice del elemento se agrega un “.” seguido del atributo:
+
+```js 
+personas[0].altura
+```
+
+Otra forma de acceder a los atributos es utilizando corchetes y el atributo pasarlo como un string:
+
+```js 
+personas[0].[‘altura’]
+```
+
+Se debe tomar en cuenta que estamos utilizando objetos, no colecciones, pero podemos acceder a los atributos.
+
+Los arrays como los strings tienen la propiedad `length`, indicándonos cuantos elementos contiene.
+
+- [Array](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array)
+
+  ## Filtrar un array
+
+**Prolijo:** Que se lleva a cabo con detenimiento en los más pequeños detalles.
+
+En esta clase aprenderemos como filtrar los arrays. Para filtrar siempre necesitamos establecer una condición. En este ejemplo nuestra condición es que la estatura de las personas sea mayor de 1.80mts.
+
+El método `filter ( )` crea una nueva matriz con todos los elementos que pasan la prueba implementada por la función proporcionada.
+
+Recuerda que si no hay elementos que pasen la prueba, filter devuelve un array vacío.
+
+Reto: escribe el filtrado de personas bajas.
+  ## Transformar un array
+
+En esta clase veremos cómo transformar un array. El método `map()` itera sobre los elementos de un array en el orden de inserción y devuelve array nuevo con los elementos modificados.
+
+### Las diferencia entre filter() y map() radica en sus callbacks, o sea en lo que retornan.
+
+- **filter():** retornará 1 subconjunto de un Array.
+
+- **map():** retornará un nuevo Array basándose en otro de referencia.
+
+  ## Reducir un array a un valor
+
+El método `reduce()` nos permite reducir, mediante una función que se aplica a cada uno de los elemento del array, todos los elementos de dicho array, a un valor único.
+
+```js
+const reducer = (acum, { cantidadDeLibros}) => acum + cantidadDeLibros
+
+var totalDeLibros = personas.reduce(reducer, 0)
+
+console.table(`En total todos tienen ${totalDeLibros} libros`)
+```
+
+# 5. Programación Orientada a Objetos en JavaScript
+  ## Cómo funcionan las clases en JavaScript
+
+  Las clases son funciones cuya sintaxis tiene dos componentes:
+
+  - expresiones
+  - declaraciones
+
+En esta clase veremos el uso de this. Dentro de una función, el valor de this depende de cómo es llamada ésta.
+
+Reto: agrega el atributo altura y la función soyAlto.
+
+  - Hablar de objetos en javascript es hablar de prototipos.
+  - `this` hace referencia al nuevo objeto que se acaba de crear.
+  - La función que define al prototipo retorna implícitamente this, es decir retorna el nuevo objeto que se creo.
+  - La palabra reservada new se utiliza para crear un nuevo objeto con el prototipo indicado.
+
+  ```js
+  function persona(nombre, altura) {
+  this.nombre = nombre
+  this.altura = altura
+  }
+  
+  persona.prototype.soyAlto = function () {
+    console.log(`${this.nombre} ${this.altura >= 1.8 ? 'es una persona' : 'no   es una persona'} alta`);
+  }
+  
+  var sacha = new persona('sacha', 1.88)
+  var arturo = new persona('arturo', 1.75)
+  ```
+
+  ## Modificando un prototipo
+
+**El prototipo es un objeto más de JS** , a partir de que lo modifiquemos, éste va a quedar modificado.
+
+Es de mucha importancia donde **colocamos las funciones que va a tener el prototipo**. Estos se deben de colocar juntos, ya que con ellos se va creando el prototipo del objeto, y deseamos que tenga juntas todas sus funciones.
+
+**Por ello definimos los prototipos arriba, y los utilizamos a lo largo del código.**
+
+- Cuando tenemos un error en JS, éste no se sigue ejecutando, se corta ahí la ejecución del código.
+
+  ## El contexto de las funciones: quién es this
+
+En esta clase explicamos por qué al introducir el arrow function salió un error. El error del contexto de this en JavaScript es uno de los errores más comunes.
+
+Recuerda que dentro de la arrow function, this está haciendo referencia al espacio global, a windows.
+
+`Window` es el objeto global dentro del navegador.
+
+Cuando this no es lo que esperamos, este es el principal error en JS.
+
+En las **Arrow functions**, se asigna la función , pero cambia el this dentro de la función , ya que trata de tomar el this global, es decir, el que está fuera de la Arrow function.
+
+Para comprobarlo en consola:
+
+```js
+this === window
+```
+
+  ## La verdad oculta sobre las clases en JavaScript
+
+Los objetos en JavaScript son “contenedores” dinámicos de propiedades. Estos objetos poseen un enlace a un objeto prototipo. Cuando intentamos acceder a la propiedad de un objeto, la propiedad no sólo se busca en el propio objeto sino también en el prototipo del objeto, en el prototipo del prototipo, y así sucesivamente hasta que se encuentre una propiedad que coincida con el nombre o se alcance el final de la cadena de prototipos.
+
+  ## Clases en JavaScript
+
+Las clases de JavaScript son introducidas en el ECMAScript 2015 y son una mejora en la sintaxis sobre la herencia basada en prototipos de JavaScript.
+
+La palabra clave extends se usa en declaraciones de clase o expresiones de clase para crear una clase que es hija de otra clase.
+
+El método constructor es un método especial para crear e inicializar un objeto creado a partir de una clase.
+
+  - **Las funciones prototipo se convierten en clases**
+
+```js
+ class Persona{}
+```
+
+  - Y la herencia se genera usando la palabra reservada extends
+
+```js
+class Desarrollador extends Persona{}
+```
+
+  - Lo importante es que al crear la herencia, el constructor hijo debe llamar al constructor superior es decir usar la función super() pasandole los parámetros que sean necesarios para la clase padre.
+
+```js
+class Desarrollador extends Persona{
+	constructor(nombre,apellido,altura)
+	super(nombre,apellido,altura)
+}
+```
+
+  - Las funciones ahora van dentro de la clase y no llevan la palabra clave function
+
+```js
+ class Persona{
+	//constructor
+
+	saludar(){
+		//console.log("hola")
+	}
+}
+```
+
+# 6. Asincronismo
+  ## Funciones como parámetros
+
+  En JavaScript, los parámetros de funciones son por defecto undefined. 
+  De todos modos, en algunas situaciones puede ser útil colocar un valor por defecto diferente que lo evalúe como verdadero.
+
+
+  ## Cómo funciona el asincronismo en JavaScript
+
+JavaScript sólo puede hacer una cosa a la vez, sin embargo; es capaz de delegar la ejecución de ciertas funciones a otros procesos. Este modelo de concurrencia se llama EventLoop.
+
+JavaScript delega en el navegador ciertas tareas y les asocia funciones que deberán ser ejecutadas al ser completadas. Estas funciones se llaman callbacks, y una vez que el navegador ha regresado con la respuesta, el callback asociado pasa a la cola de tareas para ser ejecutado una vez que JavaScript haya terminado todas las instrucciones que están en la pila de ejecución.
+
+Si se acumulan funciones en la cola de tareas y JavaScript se encuentra ejecutando procesos muy pesados, el EventLoop quedará bloqueado y esas funciones pudieran tardar demasiado en ejecutarse.
+
+```js
+while(true){
+console.warn(' NO VOY A BLOQUEAR EL EVENTLOOP')
+}
+```
+
+  ## Cómo funciona el tiempo en JavaScript
+
+En principio, cualquier tarea que se haya delegado al navegador a través de un callback, deberá esperar hasta que todas las instrucciones del programa principal se hayan ejecutado. Por esta razón el tiempo de espera definido en funciones como setTimeout, no garantizan que el callback se ejecute en ese tiempo exactamente, sino en cualquier momento a partir de allí, sólo cuando la cola de tareas se haya vaciado.
+
+> No voy a bloquear el Event Loop’ 😄
+
+  ## ¿Qué pasó con swapi.co?
+
+  ### [SWAPI.co](https://swapi.io) ha desaparecido
+Desafortunadamente, swapi.co ya no se mantiene y el servicio está actualmente inactivo. El autor del proyecto, Paul Hallett, quien creó y le dio mantenimiento ha desactivado desde hace tiempo esta API que muchos utilizamos en nuestros proyectos de JavaScript para aprender a integrar un backend a un frontend.
+
+### [SWAPI.dev](https://swapi.dev) una nueva solución
+Juriy Bura, junto a otros desarrolladores, han publicado una versión idéntica a la API utilizada por Swapi.io, la cual está disponible desde el dominio swapi.dev. Por lo tanto, de ahora en adelante, para continuar el curso sin problemas solo debes reemplazar swapi.io, la URL obliterada (la que ya no funciona), por la nueva versión que sí está disponible: swapi.dev.
+
+Este proyecto es mantenido por la comunidad y gracias a la filosofía del código libre es posible tener una nueva versión de la API para nuestros proyectos.
+
+Crea tu propia API de Star Wars
+¿Quieres tener tu propia versión de SWAPI?
+
+El código fuente del proyecto está disponible en GitHub, lo que te permite crear tu propia versión con solo realizar un Fork y subirlo a un servidor o consumirla en tu localhost.
+Este es el repositorio del proyecto original: https://github.com/phalt/swapi.
+
+¡Compártenos en los comentarios en link a tu repositorio fork de la API de Star Wars y qué cambios hiciste o planeas hacer en tu versión de este proyecto!
+
+  ## Callbacks
+  
+En esta clase aprenderemos que son los callbacks y usaremos una librería externa que se llama jQuery.
+
+Un callback es una función que se pasa a otra función como un argumento. Esta función se invoca, después, dentro de la función externa para completar alguna acción.
+
+- [jQuery CDN](https://code.jquery.com)
+- [jQuery](https://jquery.com)
+- [The Star Wars API](https://swapi.dev)
+  
+  ## Haciendo múltiples requests
+
+En esta clase accederemos a múltiples datos al mismo tiempo. Continuaremos trabajando con los jQuery y swapi.
+
+**Requests en Paralelo**
+
+Creamos una nueva función y modificamos levemente el código para hacer el callback ingresando solamente el id:
+
+```js
+const API_URL = 'https://swapi.co/api/'
+const PEOPLE_URL = 'people/:id'
+
+const opts = { crossDomain: true}
+const onPeopleResponse = function(person){
+    console.log(person.name)
+}
+
+function obtenerPersonaje(id){
+    const url = `${API_URL}${PEOPLE_URL.replace(':id', id)}`
+    $.get(url, opts, onPeopleResponse)
+}
+```
+Dado este código.
+En qué orden nos llegarán las respuestas?
+
+```js
+obtenerPersonaje(1)
+obtenerPersonaje(2)
+obtenerPersonaje(3)
+
+//  3
+//  2
+//  1
+```
+
+En este request el resultado llegó en el orden inverso en el que los pedimos.
+Por qué sucede esto?
+Por el asincronismo de JS.
+No sabemos en qué orden nos llegarán las respuestas, esto depende del servidor y de cada uno de los requests.
+Iniciamos los requests en un determinado orden pero no sabemos en qué orden van a llegar.
+
+  ## Manejando el Orden y el Asincronismo en JavaScript
+
+
+
+  ## Manejo de errores con callbacks
+  ## Promesas
+  ## Promesas Encadenadas
+  ## Múltiples promesas en paralelo
+  ## Async-await: lo último en asincronismo
 7. Juego de HTML
 Comenzando el juego
 Generando una secuencia de números
@@ -639,5 +981,3 @@ Entiende los closures de JavaScript
 Estructuras de datos inmutables
 Cambiando de contexto al llamar a una función
 ¿Cuándo hace falta poner el punto y coma al final de la línea?
-Play
-Mute
