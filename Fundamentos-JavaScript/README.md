@@ -957,14 +957,137 @@ Iniciamos los requests en un determinado orden pero no sabemos en qué orden van
 
   ## Manejando el Orden y el Asincronismo en JavaScript
 
+  Una manera de asegurar que se respete la secuencia en que hemos realizado múltiples tareas es utilizando callbacks, con lo que se ejecutará luego, en cada llamada. Lo importante es que el llamado al callback se haga a través de una función anónima. 
+  Sin embargo, al hacerlo de esta manera generamos una situación poco deseada llamada CallbackHell.
 
+  - [CallBacks, Promesas, Async/Await](https://medium.com/@jmz12/callbacks-promesas-y-async-await-que-alguien-me-explique-514137cb57e2)
 
   ## Manejo de errores con callbacks
+
+  Para solucionar el problema de quedarnos sin conexión, u otro error similar, en medio de una sucesión de callbacks utilizamos el método fail().
+
   ## Promesas
+
+En esta clase veremos las promesas, que son valores que aun no conocemos. Las promesas tienen tres estados:
+
+  - pending
+  - fullfilled
+  - rejected
+
+Las promesas se invocan de la siguiente forma:
+
+```js
+new Promise( ( resolve, reject ) => {
+  // --- llamado asíncrono
+  if( todoOK ) {
+     // -- se ejecutó el llamado exitosamente
+     resolve()
+  } else {
+     // -- hubo un error en el llamado
+     reject()
+  }
+} )
+```
+
+No olvides ver el material adjunto de esta clase.
+
+- [Promesas js](https://drive.google.com/file/d/1sI1ZaJK80XmRo4qVRA6Ka9m_GznvObbp/view?usp=sharing)
+
   ## Promesas Encadenadas
+
+A diferencia de los callbacks en el CallbackHell, que terminan estando anidados unos dentro de otros, cuando se usan Promesas la ejecución de las llamadas no se hacen de manera anidada sino de manera encadenada, al mismo nivel una debajo de la otra, lo que hace que el código sea mucho más legible y mantenible.
+
   ## Múltiples promesas en paralelo
+
+Para hacer el llamado a múltiples promesas, nos apoyamos en un array de ids con el que luego construimos otro arreglo de Promesas, que pasaremos como parámetro a `Promise.all( arregloDePromesas )`, con las promesas podemos encadenar llamadas en paralelo, algo que no es posible usando callbacks.
+
+  ### Multiples Requests en Paralelo
+
+Con promises podemos hacer los requests en paralelo sin alterar el orden de los objetos, lo que mejoraría mucho nuestro código y performance.
+
+Generamos un array con los ids de los personajes que queremos obtener. Y a partir de este vamos a generar otro array con múltiples promesas, donde cada elemento sea una promesa, la promesa de obtener un personaje con su id.
+
+Con el método `map()` vamos a recorrer el array ids y por cada elemento de este vamos a generar uno nuevo que va a ser una _promesa_.
+
+Estas promesas las guardamos en una variable ‘promesas’. A partir de cada objeto del array ids (de cada id) obtenemos una nueva promesa con la función _obtenerPersonaje(id)_.
+
+```js
+var ids = [1, 2, 3, 4, 5, 6, 7]
+var promesas = ids.map(function(id){
+    return obtenerPersonaje(id)
+})
+```
+
+  #### Expresado en arrow function
+
+```js
+var ids = [1, 2, 3, 4, 5, 6, 7]
+var promesas = ids.map( id => obtenerPersonaje(id) )
+
+// (7) [Promise, Promise, Promise, Promise, Promise, Promise, Promise]
+```
+
+Cómo obtenemos los valores de estas promesas cuando se resuelvan?
+Para esto podemos llamar a un método que tiene la clase de promesas llamado `Promise.all()`
+
+A este le pasamos el array ‘promesas’, le encadenamos el .then() que nos entrega los objetos y depués encadenamos el .catch() que se va a ejecutar si cualquiera de las promesas que tenemos en el array falla.
+
+```js
+Promise
+    .all(promesas)
+    .then( personajes => console.log(personajes))
+    .catch(onError)
+
+// (7) [{...}, {...}, {...}, {...}, {...}, {...}, {...}]
+//Si lo desglosamos tenemos en orden las respuestas de cauda una de las promesas.
+```
+
+Las promesas tienen un gran potencial por sobre los `callBakc`.
+El código queda mucho más prolijo y a demás podemos realizar promesas en paralelo.
+
+Código completo:
+
+```js
+const API_URL = 'https://swapi.co/api/'
+const PEOPLE_URL = 'people/:id'
+const opts = { crossDomain: true}
+
+function obtenerPersonaje(id) {
+    return new Promise((resolve, reject) => {
+        const url = `${API_URL}${PEOPLE_URL.replace(':id', id)}`
+        $
+            .get(url, opts, function(data){
+                resolve(data)
+            })
+            .fail(() => reject(id))
+    })
+}
+
+function onError(id){
+    console.log(`ERORRRRRRR!!!!!!!!!!! No se pudo obtener el personaje con id = ${id}.`)
+}
+
+var ids = []
+for (let i = 1; i <= 10; i++) {
+    ids.push(i)
+}
+console.log(ids.length)
+var promesas = ids.map( id => obtenerPersonaje(id) )
+
+Promise
+    .all(promesas)
+    .then(personajes => console.log(personajes))
+    .catch(onError)
+```
+
   ## Async-await: lo último en asincronismo
-7. Juego de HTML
+  
+`Async-await` es la manera más simple y clara de realizar tareas asíncronas. Await detiene la ejecución del programa hasta que todas las promesas sean resueltas. Para poder utilizar esta forma, hay que colocar async antes de la definición de la función, y encerrar el llamado a `Promises.all()` dentro de un bloque `try …catch`.
+
+
+
+
+7. JueCódigo completo:go de HTML
 Comenzando el juego
 Generando una secuencia de números
 Iluminando la secuencia de colores
