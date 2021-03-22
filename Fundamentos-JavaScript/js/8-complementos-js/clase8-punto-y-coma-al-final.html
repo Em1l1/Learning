@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¿Cuándo hace falta poner el punto y coma al final de la línea?</title>
+</head>
+<body>
+  <h1>¿Cuándo hace falta poner el punto y coma al final de la línea?</h1>
+  <script>
+/*     alert('hola')                                // No hace falta ;
+    var nombre = 'Victor'                       // No hace falta ;
+
+    const saludarAVictor = function (() =>)     // no hace falta ;
+
+    function saludar() {
+      console.log('Hola que tal?')
+    };                                          // No hace falta la ;
+
+    for (var i = 0; i < 10; i++) {
+      // 
+    };                                          // No es necesario ;
+ */
+
+
+    /* En este caso colocar ; en caso de no colocar, nos da un error */
+    console.log('Holo mi nombre es Sacha');
+    [1, 2, 3].forEach(n =>  console.log(n * 2))  
+
+    /* Colocar ; en esta es valido */
+    /* tipo de error : Uncaught TypeError: console.log(...) is not a function
+    at */
+    const nombre = 'Sacha'
+    console.log('Hola mi nombre es sacha');
+    `${nombre} es un desarrollador`
+
+    /* Uso adecuado  */
+    function calcularDoble(numero) {
+      return {
+        original: numero, doble: numero * 2
+      }
+    }
+  </script>
+</body>
+</html>

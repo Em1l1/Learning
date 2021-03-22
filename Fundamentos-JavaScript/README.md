@@ -1144,18 +1144,282 @@ ya no podrán ser modificadas ni declaradas nuevamente, en ninguna otra parte de
 
 La recomendación es reducir siempre al mínimo el alcance de nuestras variables, por lo que se debe usar let en lugar de var mientras sea posible.
 
+**var - let - const**
 
+  - Cuando declaramos variables con `var` siempre conviene declararlas ‘arriba’ del código en el que sea claro cuáles van a ser las variables que se van a usar dentro de nuestra función o programa.
+  - Dentro de una función javascript detecta todas las variables declaradas con ‘var’ y las ‘declara’ por sí solo como si estuvieran ‘arriba’ en el código. Por lo que si se declara un var dentro de un bloque else y este no es accedido por el condicional, la variable ‘var’ declarada dentro de ese else existe de todas maneras.
+  - Si utilizamos ‘let’, el alcance de esa variable se ve reducido únicamente al bloque de código donde es utilizado.
+  - ‘const’ se comporta parecido a let sólo que no es posible reasignarlo.
+  - Es posible modificar una variable ‘const’ en el caso de un array[ ] con el método push() por ejemplo.
+  - Reducir siempre al mínimo el alcance de nuestras variables.
+  - Utilizar 'let’ si tenemos que reasignar una variable.
+  - Si nunca tenemos que reasignar una variable usamos ‘const’.
 
   ## Memoización: ahorrando cómputo
 
+  La memorización es una técnica de programación que nos permite ahorrar cómputo o procesamiento en JavaScript, al ir almacenando el resultado invariable de una función para que no sea necesario volver a ejecutar todas las instrucciones de nuevo, cuando se vuelva a llamar con los mismos parámetros. Es similar a usar memoria cache.
+
+  ![](https://i.ibb.co/B2rfVKv/ahorro-computo.png)
+  
   ## ¿Hace cuántos días naciste?
+
+Con variables de tipo Date, se pueden realizar operaciones de suma y resta similares a las que se realizan con números.
+El resultado que se obtiene está en milisegundos, por lo que luego hay que hacer algunas operaciones adicionales para llevarlos a días, meses o años según queramos.
+También aplica para Horas, Minutos, Segundos y Milisegundos.
+
+```js
+getFullYear()
+getMonth()
+getDate()
+getHours()
+getMinutes()
+getSeconds()
+getMilliseconds()
+getTime()
+getDay()
+Date.now()
+```
+
+Ejemplo:
+
+```js
+var date = new Date()
+
+var dateNow = {
+
+	anio: date.getFullYear(),
+	mes: date.getMonth(),
+	dia: date.getDay()
+
+}
+
+console.log(`Hoy es: ${dateNow.dia}-${dateNow.mes}-${dateNow.anio}`)
+```
 
   ## Funciones recursivas
 
+La recursividad es un concepto muy importante en cualquier lenguaje de programación. Una función recursiva es básicamente aquella que se llama (o se ejecuta) a sí misma de forma controlada, hasta que sucede una condición base.
+
   ## Entiende los closures de JavaScript
+
+Un closure, básicamente, es una función que recuerda el estado de las variables al momento de ser invocada, y conserva este estado a través de reiteradas ejecuciones.
+Un aspecto fundamental de los closures es que son funciones que retornan otras funciones.
 
   ## Estructuras de datos inmutables
 
+Las estructuras de datos inmutables forman parte de los principios de la Programación Funcional y nos permiten evitar tener efectos colaterales en los datos. 
+En otras palabras, que hayan modificaciones en las variables sin nuestro consentimiento, produciendo comportamientos inesperados en el programa.
+
+Estructura de datos inmutables
+
+Las estructuras de datos inmutables nos van a permitir deshacernos de los “efectos colaterales” cuando estamos desarrollando (side effects; efecto de lado según Sacha).
+
+Dada el siguiente código:
+
+```js
+const pablo = {
+	nombre: 'Pablo',
+	apellido: 'Andrés',
+	edad: 30
+}
+
+const cumpleanos = persona => persona.edad++
+```
+
+La función modificará la edad en el objeto cada vez que se ejecute:
+
+```js
+pablo
+//{nombre: "Pablo", apellido: "Andrés", edad: 30}
+
+cumpleanos(pablo)
+//30
+
+pablo
+//{nombre: "Pablo", apellido: "Andrés", edad: 31}
+
+cumpleanos(pablo)
+//31
+
+pablo
+//{nombre: "Pablo", apellido: "Andrés", edad: 32}
+
+cumpleanos(pablo)
+//32
+
+pablo
+//{nombre: "Pablo", apellido: "Andrés", edad: 33}
+```
+
+Este es el llamado side effect (efecto de lado). La función puede modificar el objeto sin que nosotros así lo queramos.
+Para evitar este efecto colateral definimos una función inmutable.
+
+```js
+const cumpleanosInmutable = persona => ({
+	...persona,
+	edad: persona.edad + 1
+})
+```
+
+Si le pasamos el objeto ‘pablo’ la función nos devolverá un nuevo objeto sin modificar el anterior.
+
+```js
+
+pablo
+// {nombre: "Pablo", apellido: "Andrés", edad: 33}
+
+cumpleanosInmutable(pablo)
+// {nombre: "Pablo", apellido: "Andrés", edad: 34}
+
+cumpleanosInmutable(pablo)
+// {nombre: "Pablo", apellido: "Andrés", edad: 34}
+
+pablo
+// {nombre: "Pablo", apellido: "Andrés", edad: 33}
+
+cumpleanosInmutable(pablo)
+// {nombre: "Pablo", apellido: "Andrés", edad: 34}
+
+cumpleanosInmutable(pablo)
+// {nombre: "Pablo", apellido: "Andrés", edad: 34}
+
+pablo
+// {nombre: "Pablo", apellido: "Andrés", edad: 33}
+```
+
+La “desventaja” que tendremos es que para guardar el valor de la función vamos a tener que generar una nueva variable.
+
+```js
+const pabloViejo = cumpleanosInmutable(pablo)
+const pabloMasViejo = cumpleanosInmutable(pabloViejo)
+```
+
+Utilizar estructuras de datos es parte de las buenas prácticas de javascript ya que nos permite deshacernos de los “efectos de lado” y no preocuparnos de modificar código inconscientemente y que se “rompa todo” en cualquier otro lado.
+
   ## Cambiando de contexto al llamar a una función
 
+  El contexto (o alcance) de una función es por lo general, window.
+  Así que en ciertos casos, cuando intentamos referirnos a this en alguna parte del código, es posible que tengamos un
+  comportamiento inesperado, porque el contexto quizás no sea el que esperamos.
+
+  Existen al menos tres maneras de cambiar el contexto de una función.
+
+  - Usando el método `.bind`, enviamos la referencia a la función sin ejecutarla, pasando el contexto como parámetro.
+  - Usando el método `.call`, ejecutamos inmediatamente la función con el contexto indicado.
+  - Usando el método `.apply`, es similar a `.call` pero los parámetros adicionales se pasan como un arreglo de valores
+
+  Cambiando el contexto al llamar a una función
+
+El contexto en javascript está definido por el objeto ‘this’ cuando se ejecuta un código.
+Es muy común el error: ‘No se puede ejecutar este método porque es indefinido’, esto sucede porque el ‘this’ no es quien esperamos que sea.
+
+Dado el siguiente código:
+
+
+```js
+const pablo = {
+	nombre: 'Pablo',
+	apellido: 'Andrés',
+}
+const mariela = {
+	nombre: 'Mariela',
+	apellido: 'Riesnik',
+}
+
+function saludar() {
+	console.log(`Hola, mi nombre es ${this.nombre}`)
+}
+
+// Si ejecuto:
+
+saludar()
+// Hola, mi nombre es undefined
+
+// Ya que tenemos la función definida dentro de un contexto global el 'this' en saludar() refiere al objeto 'window'. Por lo tanto es lo mismo que:
+
+window.saludar()
+// Hola, mi nombre es undefined
+```
+
+Cómo hacemos para cambiar ese ‘this’ de la función?
+El método ‘.bind()’ se usa justamente para cambiar en contexto, el ‘this’, en una función.
+
+```js
+const saludarAPablo = saludar.bind(pablo)
+const saludarAMariela = saludar.bind(mariela)
+```
+
+‘.bind()’ nos devuelve una nueva función atando el parámetro,_ ‘(pablo)’_ en este caso, al ‘this’ dentro de esa función, saludar en este caso.
+Este nunca modifica a la función original.
+
+```js
+saludarAPablo()
+// Hola, mi nombre es Pablo
+
+saludarAMariela()
+// Hola, mi nombre es Mariela
+```
+
+Otra forma de usarlo:
+
+```js
+setTimeout( saludar.bind(pablo), 1000) == setTimeout(saludarAPablo, 1000)
+```
+
+Y otra, agregado un parámetro a la función:
+
+
+```js
+function saludar(saludo = 'Hola') {
+	console.log(`${saludo}, mi nombre es ${this.nombre}`)
+}
+setTimeout( saludar.bind(pablo, 'Hola loco!'), 1000)
+// Hola loco!, mi nombre es Pablo
+
+//también se puede agragar en la declaración de la constante.
+const saludarAPablo = saludar.bind(pablo, 'Hola loco!!')
+// Hola loco!!, mi nombre es Pablo
+```
+
+El primer parámetro es el contexto y luego van los siguientes parámetros en el orden en el que aparezcan.
+
+IMPORTANTE!!!
+La función .bind() no ejecuta la función a la que se agrega, sino que simplemente nos retorna una nueva función con ese contexto cambiado.
+Usando el método .bind, enviamos la referencia a la función sin ejecutarla, pasando el contexto como parámetro.
+
+Otros dos métodos que nos sirven para cambiar el contexto son: .call y .apply.
+
+Usando el método .call, ejecutamos inmediatamente la función con el contexto indicado.
+
+```js
+saludar.call(pablo)
+// Hola, mi nombre es Pablo  -  se ejecuta inmediatamente
+
+saludar.bind(pablo)
+// no produce ningún resultado, no la ejecuta.
+```
+
+Al .call le pasamos los parámetros separados por ‘,’ igual que en el .bind.
+
+```js
+saludar.call(pablo, 'Hola cheeee!!')
+// Hola cheeee!!, mi nombre es Pablo
+```
+
+Usando el método .apply, es similar a .call pero los parámetros adicionales se pasan como un arreglo de valores.
+
+
+```js
+saludar.apply(pablo, ['Hola mi querido'])
+// Hola mi querido, mi nombre es Pablo
+```
+
+Manejar a dónde refiere el ‘.this’ es algo que tenemos que tener muy presente, sobretodo cuando escribimos en modo asíncrono, ya que siempre que ejecutemos una función de esta naturaleza el ‘.this’ siempre cambia y es muy importante atarlo a nuestra clase, objeto o función.
+
   ## ¿Cuándo hace falta poner el punto y coma al final de la línea?
+
+  El punto y coma es opcional en JavaScript, excepto en algunos casos:
+
+  - Cuando usamos varias instrucciones en una mísma línea.
+  - Al comenzar la próxima línea con un array.
+  - Al comenzar la próxima línea con un template string.

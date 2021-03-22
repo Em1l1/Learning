@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cambiando de contexto al llamar a una función</title>
+</head>
+<body>
+  <h1>Cambiando de contexto al llamar a una función</h1>
+  <script>
+    const victor = {
+      nombre: 'Victor',
+      apellido: 'Juarez'
+    }
+
+    const jessica = {
+      nombre: 'Jessica',
+      apellido: 'Gomez'
+    }
+
+    function saludar(saludo = 'Hola') {
+      console.log(`${saludo}, mi nombre es ${this.nombre}`)
+    }
+
+    // const saludarAVictor = saludar.bind(victor)
+    // const saludarAJessica = saludar.bind(jessica)
+
+    // setTimeout(saludar.bind(victor, 'Hola che'), 1000)
+
+    // saludar.call(victor, 'Hola che')
+
+    saludar.apply(victor, ['Hola che'])
+
+  </script>
+</body>
+</html>

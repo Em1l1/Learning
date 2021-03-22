@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Closures de JavaScript</title>
+</head>
+<body>
+  <script>
+    function crearSaludo(finalDeFrase) {
+      return function (nombre) {
+        console.log(`Hola ${nombre} ${finalDeFrase}`)
+      }
+    }
+
+    const saludoArgentino = crearSaludo('che')
+    const saludoMexicano = crearSaludo('guey')
+    const saludoColombiano = crearSaludo('parce')
+
+    saludoArgentino('Victor')     // Hola victor che
+    saludoColombiano('Victor')    // Hola victor guey
+    saludoMexicano('victor')      // Hola victor parce
+  </script>
+</body>
+</html>
