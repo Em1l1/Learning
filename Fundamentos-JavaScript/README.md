@@ -1130,14 +1130,32 @@ Incluiremos una librería de mensajes con estilos mucho más agradables que el m
 
   ## Conclusiones del curso
 
+Felicitaciones, ya tienes unas bases sólidas para continuar aprendiendo frameworks más avanzados basados en JavaScript.
+
+# 8. Complementos
+  ## Diferencias entre var, let y const
+
+`var` es la manera más antigua de declarar variables. No es muy estricta en cuanto al alcance, ya que al declarar variables de esta forma, dichas variables podrán ser accedidas, e incluso modificadas, tanto dentro como fuera de los bloques internos en una función.
+Con `let` por otra parte, el alcance se reduce al bloque (las llaves) en el cual la variable fue declarada. Fuera de este bloque la variable no existe.
+Una vez declarada la variable con let, no se puede volver a declarar con en ninguna otra parte de la función.
+
+`const` al igual que `let` se define en el contexto o alcance de un bloque, a diferencia de `let` y `var`, las variables definidas como constantes `(const)`,
+ya no podrán ser modificadas ni declaradas nuevamente, en ninguna otra parte de la función o el contexto en el que ya existen.
+
+La recomendación es reducir siempre al mínimo el alcance de nuestras variables, por lo que se debe usar let en lugar de var mientras sea posible.
 
 
-8. Complementos
-Diferencias entre var, let y const
-Memoización: ahorrando cómputo
-¿Hace cuántos días naciste?
-Funciones recursivas
-Entiende los closures de JavaScript
-Estructuras de datos inmutables
-Cambiando de contexto al llamar a una función
-¿Cuándo hace falta poner el punto y coma al final de la línea?
+
+  ## Memoización: ahorrando cómputo
+
+  ## ¿Hace cuántos días naciste?
+
+  ## Funciones recursivas
+
+  ## Entiende los closures de JavaScript
+
+  ## Estructuras de datos inmutables
+
+  ## Cambiando de contexto al llamar a una función
+
+  ## ¿Cuándo hace falta poner el punto y coma al final de la línea?
