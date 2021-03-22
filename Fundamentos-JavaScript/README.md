@@ -1084,17 +1084,51 @@ Promise
   
 `Async-await` es la manera más simple y clara de realizar tareas asíncronas. Await detiene la ejecución del programa hasta que todas las promesas sean resueltas. Para poder utilizar esta forma, hay que colocar async antes de la definición de la función, y encerrar el llamado a `Promises.all()` dentro de un bloque `try …catch`.
 
+# 7. JueCódigo completo:go de HTML
+  ## Comenzando el juego
+
+  Crearemos el juego Simon (Simón dice), en el que se van iluminando una secuencia de botones que el jugador tendrá que ir repitiendo, si se equivoca volverá a comenzar. 
+  El juego tendrá 10 niveles de dificultad, que deberán ser superados para ganar.
+
+  ## Generando una secuencia de números
+
+Para generar la secuencia del juego usaremos un array con números aleatorios, que representarán el color del botón que se iluminará cada vez. 
+Usamos `new Array()` para crear el arreglo de manera dinámica, y llamamos al método fill para rellenar ese array con ceros y poder luego iterar sobre éste con `map()`
+
+- [Array.prototype.fill()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/fill)
+- [Hacks for Creating JavaScript Arrays](https://www.freecodecamp.org/news/https-medium-com-gladchinda-hacks-for-creating-javascript-arrays-a1b80cb372b/)
+
+  ## Iluminando la secuencia de colores
+
+En esta clase se observa la diferencia entre el uso de let y var para la declaración de variables y cómo esta diferencia afecta el alcance de la variable dentro de un ciclo for.
+Se recomienda siempre el uso de let cuando se trata de estructuras for, ya que al usar var, el valor de dicha variable se va a remplazar cada vez con la última asignación que se haga, mientras que con let, conservará su valor dentro de cada iteración.
+
+Siempre que sea posible debemos usar `const` sobre `let`, y `let` sobre `var`.
+
+  ## Obteniendo el input del usuario
+
+Para obtener el input del usuario agregamos un manejador para el evento click del mouse usando addEventListener para cada uno de los colores del juego. Utilizando la propiedad target devuelta por el evento click podemos identificar cuál es el botón que ha sido presionado.
+
+- [This en diferentes situaciones y su comportamiento](https://filisantillan.com/blog/this-en-diferentes-situaciones-y-su-comportamiento/)
+
+  ## Agregando la verificación del color elegido
+
+Para agregar atributos al objeto principal en el que está nuestro código, basta con usar this, haciendo referencia al contexto de la clase, 
+y agregar los atributos con un punto: `this.atributo = valor`
+
+La verificación del color elegido la haremos creando y removiendo los eventos del click al pasar el juego a cada nuevo nivel.
+
+- [Code | alanzzant/SimonColors](https://github.com/alanzzant/SimonColors)
+- [Simon Colors](https://alanzzant.github.io/SimonColors/)
+
+  ## Agregando los estados finales del juego
 
 
 
-7. JueCódigo completo:go de HTML
-Comenzando el juego
-Generando una secuencia de números
-Iluminando la secuencia de colores
-Obteniendo el input del usuario
-Agregando la verificación del color elegido
-Agregando los estados finales del juego
-Conclusiones del curso
+  ## Conclusiones del curso
+
+
+
 8. Complementos
 Diferencias entre var, let y const
 Memoización: ahorrando cómputo
