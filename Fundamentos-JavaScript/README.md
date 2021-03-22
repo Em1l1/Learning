@@ -1123,7 +1123,10 @@ La verificación del color elegido la haremos creando y removiendo los eventos d
 
   ## Agregando los estados finales del juego
 
+Incluiremos una librería de mensajes con estilos mucho más agradables que el mensaje básico de javascript para mostrar los estados finales del juego al usuario.
 
+- [SweetAlert | Js](https://sweetalert.js.org)
+- [<cdnjs>](https://cdnjs.com/libraries/sweetalert)
 
   ## Conclusiones del curso
 
