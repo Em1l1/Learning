@@ -7,7 +7,7 @@
 - [1. Apropiar los conceptos de asincronismo](#1-Apropiar-los-conceptos-de-asincronismo)
   - [Bienvenida al curso](#Bienvenida-al-curso)
   - [Introducción al asincronismo](#Introducción-al-asincronismo)
-  - [Presentación del reto](#Presentación-del -)
+  - [Presentación del reto](#Presentación-del-reto)
 - [2. Desarrollar soluciones utilizando asicronismo](#2-Desarrollar-soluciones-utilizando-asicronismo)
   - [Definición Estructura Callback](#Definición-Estructura-Callback)
   - [Peticiones a APIs usando Callbacks](#Peticiones-a-APIs-usando-Callbacks)
