@@ -48,7 +48,7 @@
 
 - [CSS2020](https://github.com/platzi/CSS2020)
 - [CSS a otro nivel](https://www.canva.com/design/DAEQFfekgdU/0jutcPgG2ibsiVm_JON5yg/view?utm_content=DAEQFfekgdU&amp;utm_campaign=designshare&amp;utm_medium=link&amp;utm_source=sharebutton)
-- [CSS a toro nivel](doc/)
+- [CSS a otroo nivel](https://drive.google.com/file/d/1BhluciAPvg-QMUQqLLpZKMA8ymqijlyx/view?usp=sharing)
 
   - **Tip 1:** No es necesario memorizar todas las propiedades y valores, lo importante es practicar.
   - **Tip 2:** Conoce los conceptos fundamentales de css: Esto es un tema amplio, lo importante es conocer los conceptos fundamentales de css como: layout, selectores, responsive, flujo normal, modelo de caja, herencia y cascada, Formatting Contexts.
@@ -81,7 +81,7 @@ Se siguió debatiendo el control del usuario sobre los estílos, esta idea térm
   - NETSCAPE
   - OPERA
 
-**CSS 2:**** nace en 1998, con correcciones con las limitaciones y el problema de los elementos FLOTANTES.
+**CSS 2:** nace en 1998, con correcciones con las limitaciones y el problema de los elementos FLOTANTES.
 
   ## Limitaciones de CSS y el problema de los elementos flotantes
 
@@ -127,7 +127,7 @@ Existen una gran cantidad de técnicas que son simplemente trucos
 
   - Por ello CSS se ha visto difícil y frágil porque no había herramientas de diseño
 
-RESUMEN: En el principio usar CSS implicaba usar trucos, comenzando desde las columnas, columnas de tamaño completo, el diseño responsivo, etc. Era de esta manera debido a que no se tenían muchas herramientas.
+En el principio usar CSS implicaba usar trucos, comenzando desde las columnas, columnas de tamaño completo, el diseño responsivo, etc. Era de esta manera debido a que no se tenían muchas herramientas.
 
   ## Herramientas que nos han facilitado el camino
 
@@ -136,18 +136,23 @@ RESUMEN: En el principio usar CSS implicaba usar trucos, comenzando desde las co
   - **Arquitecturas.**
 
     Cuando hacemos css tenemos una metodología de trabajo, que nos facilita el  programar.
+  
   - **Pre y post procesadores**
 
     Agregar prefijos y propiedades de acuerdo en que navegador estemos trabajando. Aunque siempre hay que verificar sus pros y contras.
+  
   - **Diseño de componentes.**
 
     Trabajar con componentes, a partir del elemento mas pequeño.
+  
   - **Frameworks.**
 
     Modelos de trabajo que nos facilita crear diseños web.
+  
   - **Performance**
 
     Verificar el rendimiento de nuestro código.
+  
   - **Accesibilidad**
 
     Lograr que todas las personas puedan acceder a nuestros sitios web.
@@ -274,7 +279,7 @@ margin-left: 120px;
 
 - [Writing modes](https://www.canva.com/design/DAEPwdLmsWI/GfZVmQN4tivhrfzEMRSjkw/view?utm_content=DAEPwdLmsWI&amp;utm_campaign=designshare&amp;utm_medium=link&amp;utm_source=sharebutton)
 
-![](img/writing.png)
+![](https://i.ibb.co/47tZ52v/writing.png)
 
 Un cuadro resumen de como se vería cada propiedad writing mode aplicada.
 
@@ -546,7 +551,6 @@ body{
   ## ¡Iniciemos nuestro proyecto! Fase de creatividad e identificación de elementos
 
 - [Fase de creatividad e identificaci&oacute;n de elementos](https://www.canva.com/design/DAEQWdX-R6U/UNyZt4I2GoerlNT43617rA/watch?utm_content=DAEQWdX-R6U&amp;utm_campaign=designshare&amp;utm_medium=link&amp;utm_source=sharebutton)
-- [Dislplay: grid | inline-grid](https://www.canva.com/design/DAEPfFLZaPQ/KCwKnf-IVl5Rinrh1eGSCA/view?utm_content=DAEPfFLZaPQ&amp;utm_campaign=designshare&amp;utm_medium=link&amp;utm_source=sharebutton)
 
 **Im&aacute;genes libres**
 
@@ -562,12 +566,158 @@ body{
 
 - [Palette](https://www.materialpalette.com)
 
-6. Propiedades y valores para el elemento padre
-Creando nuestro contenedor: ¿display: grid o display: inline-grid?
-Creando filas, columnas y espaciado + Reto
-Alineamiento en el elemento contenedor + Quiz
-Generación automática de tracks + Quíz
-Funciones: repeat(), minmax() y fit-content() + Quíz
+# 6. Propiedades y valores para el elemento padre
+
+## Creando nuestro contenedor: ¿display: grid o display: inline-grid?
+
+![](https://i.ibb.co/fvYQZgN/diferencias.webp)
+
+- Display ⇒ Desplegar, colocar a la vista, exhibir, lucir, Mostar, presentar
+
+- Outer ⇒ Denota cómo se comporta un elemento en relación a los otros
+
+- Inner ⇒ como se comportan los hijos directos del elemento.
+
+  - Display ⇒ Define el tipo de visualización de un elemento
+    
+    - Valores:
+      - Inner
+      - Outer
+
+    - Los valores block e inline definen dos cosas
+      - Valor externo (Outer)
+      - Valor interno (Inner)
+
+    - Cuando usamos `display: grid;` estamos diciendo `display: block grid`;
+      - Es decir que su comportamiento externo sera de tipo bloque
+
+    - Un elemento que tenga los atributos de bloque puede tener:
+      - Margin y padding
+      - width
+      - height
+
+    - Si pensamos en `display: inline-flex;` su relación con otros elementos no sera de bloque sino de línea
+    - Siempre volvemos al flujo normal del documento
+
+  - La diferencia entre grid e inline-grid es el comportamiento externo que tienen con otros elementos, usando grid sera de tipo bloque y usando inline-grid sera de tipo inline.
+
+- [Dislplay: grid | inline-grid](https://www.canva.com/design/DAEPfFLZaPQ/KCwKnf-IVl5Rinrh1eGSCA/view?utm_content=DAEPfFLZaPQ&amp;utm_campaign=designshare&amp;utm_medium=link&amp;utm_source=sharebutton)
+- [Los Elementos Block Y Elementos Inline](https://www.psdahtmlpasoapaso.com/blog/los-elementos-block-y-elementos-inline-fundamental/)
+
+## Creando filas, columnas y espaciado + Reto
+
+```css
+.container {
+    display: grid;
+    grid-template: repeat(4, 20px) / repeat(4, 20px);
+}
+```
+![](https://i.ibb.co/B3Q8CZs/www.webp)
+
+- Para poder crear columnas debemos usar grid-template-columns
+- Para crear filas debemos usar grid-template-rows
+- Para crear una grid debemos escribir en el CSS
+
+- [Columnas | Filas CSS Grid](https://www.canva.com/design/DAEPC3ca3BQ/Dldv9zjYSIE0LBb-BzEQng/view?utm_content=DAEPC3ca3BQ&amp;utm_campaign=designshare&amp;utm_medium=link&amp;utm_source=sharebutton#2)
+
+```css
+.container {
+	display: grid;
+	grid-template-columns: 20px 20px 20px;
+	grid-template-rows: 20px 20px 20px;
+}
+```
+
+- Pero si deseamos acortar esta forma podemos usar repeat
+
+```css
+.container {
+	display: grid;
+	grid-template-columns: repeat(3, 20px);
+	grid-template-rows: repeat(3, 20px);
+}
+```
+
+- Además, que grid cuenta con un shorthand
+
+```css
+.container {
+	display: grid;
+	grid-template: repeat(3, 20px);
+}
+```
+
+Si deseamos tener un espacio interno podemos usar la propiedad gap
+
+  - Existen varias maneras de implementarlo
+
+    - Antigua
+
+```csss
+.container {
+	display: grid;
+	grid-template: repeat(3, 20px);
+	grid-column-gap: 5px;
+	grid-row-gap: 5px;
+}
+```
+
+- Antigua corta
+
+```css
+.container {
+	display: grid;
+	grid-template: repeat(3, 20px);
+	grid-gap: 5px 5px;
+}
+```
+
+- Standard
+
+```css
+.container {
+	display: grid;
+	grid-template: repeat(3, 20px);
+	column-gap: 5px;
+	row-gap: 5px;
+}
+```
+
+- Standard corta
+
+```css
+.container {
+	display: grid;
+	grid-template: repeat(3, 20px);
+	gap: 5px 5px;
+}
+```
+
+- Tenemos el areas, para poder ubicar elementos de una manera más sencilla
+
+```css
+.container {
+	display: grid;
+	grid-template: repeat(5, 20px) / repeat(5, 20px);
+	grid-template-areas: 
+		"header header header header header"
+		"header header header header header"
+		"main main . sidebar sidebar"
+		"main main . sidebar sidebar"
+		"footer footer footer footer sidebar"
+}
+```
+
+![](https://i.ibb.co/cQxNZ3x/www1.webp)
+
+## Alineamiento en el elemento contenedor + Quiz
+
+- [Alineamiento](https://www.canva.com/design/DAEPfCLFLTM/wthWMlp0-8TWRlSbb_hhlg/watch?utm_content=DAEPfCLFLTM&amp;utm_campaign=designshare&amp;utm_medium=link&amp;utm_source=sharebutton)
+
+## Generación automática de tracks + Quíz
+
+## Funciones: repeat(), minmax() y fit-content() + Quíz
+
 7. Propiedades y valores para los elementos hijos
 ¡Manos al código! Fase de construcción de la grid principal de nuestro proyecto
 Ubicación + Reto
