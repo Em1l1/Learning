@@ -783,26 +783,41 @@ La función **`fit-content()`** organiza un contenido en especifico el cual lo r
 ## Ubicación + Reto
 
 
-- [](https://www.canva.com/design/DAEPg4rXU0g/Dsqsl-wmfJYpnJD--BUNsQ/view?utm_content=DAEPg4rXU0g&amp;utm_campaign=designshare&amp;utm_medium=link&amp;utm_source=sharebutton)
+- [Ubicacion](https://www.canva.com/design/DAEPg4rXU0g/Dsqsl-wmfJYpnJD--BUNsQ/view?utm_content=DAEPg4rXU0g&amp;utm_campaign=designshare&amp;utm_medium=link&amp;utm_source=sharebutton)
 ## Alineamiento en los elementos hijos + Quiz
 
-
+- [Alineamiento](https://www.canva.com/design/DAEPhN3s25E/dGrYaKR7Sbeyak9YhutA7A/view?utm_content=DAEPhN3s25E&amp;utm_campaign=designshare&amp;utm_medium=link&amp;utm_source=sharebutton)
 
 ## ¡Manos al código! Fase de ubicación y alineamiento
 
 
+  - [Construccion de la grid principal  ](https://www.canva.com/design/DAEPhfyIeP0/eeIEaOeZkFHP3osqh69P3g/view?utm_content=DAEPhfyIeP0&amp;utm_campaign=designshare&amp;utm_medium=link&amp;utm_source=sharebutton)
 
 ## Continuando con la fase de ubicación y alineamiento
 
-
+- [Ubicacion y alineamiento](https://codepen.io/brandonargel/pen/JjbLvbJ)
 
 # 8. Lo que podemos lograr adicionalmente con CSS Grid
 
 ## Responsive y CSS Grid
 
+Las **media queries** (en español “consultas de medios”) son útiles cuando deseas modificar tu página web o aplicación en función del tipo de dispositivo (como una impresora o una pantalla) o de características y parámetros específicos (como la resolución de la pantalla o el ancho del viewport del navegador).
+
+- Existe una gran variedad de dispositivos con diferentes tamaños de pantalla
+  - Debemos establecer los puntos de inicio y final
+    - Establecer el público, para determinar estos valores
+- Es crucial tener un rango de pixeles para trabajar `(min: 360px - max: 414px)`
+- Para aplicar los diseños usaremos la media queries
+- Para usar CSS Grid con reglas responsive es recomendable usar
+
+  - **`Auto fill`** ⇒ Llena el contenido con todo el contenido posible
+  - **`Auto fit`** ⇒ Encaja las columnas disponibles en un espacio disponible
+
+- [Design Responsibe](https://www.canva.com/design/DAEQblSFlg0/fee3yNTklUUEH9TZdYL9aA/watch?utm_content=DAEQblSFlg0&amp;utm_campaign=designshare&amp;utm_medium=link&amp;utm_source=sharebutton)
+
+- [MY DEVICE](https://www.mydevice.io)
 
 
 ## Continúa con el Curso de Diseño Web con CSS Grid y Flexbox
 
-
-
+- [CSS a otro nivl](https://static.platzi.com/media/public/uploads/sliides-curso-de-css-grid-layout_5d392acf-26ce-4cf6-9fde-262064f0e019.pdf)
