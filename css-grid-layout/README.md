@@ -710,20 +710,99 @@ Si deseamos tener un espacio interno podemos usar la propiedad gap
 
 ![](https://i.ibb.co/cQxNZ3x/www1.webp)
 
+- [Alineamiento](https://www.canva.com/design/DAEPfCLFLTM/wthWMlp0-8TWRlSbb_hhlg/watch?utm_content=DAEPfCLFLTM&amp;utm_campaign=designshare&amp;utm_medium=link&amp;utm_source=sharebutton)
+
 ## Alineamiento en el elemento contenedor + Quiz
+
+**`space-around:`** Deja espacio entre cada item, pero los espacios de las orillas izquierda y derecha son menores que los del centro.
+**`space-between:`** Solo hay espacio en la parte central y las orillas no tienen ningún espacio.
+**`space-evenly:`** Los espacios son iguales en todos lados (en el centro y en las orillas).
 
 - [Alineamiento](https://www.canva.com/design/DAEPfCLFLTM/wthWMlp0-8TWRlSbb_hhlg/watch?utm_content=DAEPfCLFLTM&amp;utm_campaign=designshare&amp;utm_medium=link&amp;utm_source=sharebutton)
 
+- [place-content](https://developer.mozilla.org/en-US/docs/Web/CSS/place-content)
+
 ## Generación automática de tracks + Quíz
 
+**Track ⇒** Union de dos o más celdas dentro de una grid.
+
+- No todas las grillas tendrán items exactamente contados
+  - No contaras con filas y columnas exactas por que los datos pueden ser dinámicos
+- Para ello está la grid implícita
+  - Te crea filas o columnas si las necesitas con anchos sin tamaño
+- Para que se valla ordenando según lleguen nuevos elementos se debe usar esta propiedad
+  - Don especificaremos el tamaño donde agregarlo
+
+```css
+.container {
+	grid-auto-columns: 60px;
+}
+```
+
+También podemos cambiar el orden visual de los elementos hijos
+
+```css
+.container {
+		grid-auto-flow: row | column | row dense | column dense;
+}
+```
+Debido a que existen casos que nunca sabremos cuantos elementos exactamente tendrá nuestra grilla entonces podemos generarla automáticamente con grillas implícitas.
+
+**grid-auto-flow:** row | column, dependiendo del valor que sea asignado los elementos que no ocupen la anchura (column) o altura (row) máxima del grid pasarán a la siguiente columna o fila respectivamente.
+
+- [Generación automática de tracks](https://www.canva.com/design/DAEPfzybVv4/CpeBRCEEO0stZ8Ivj1Ovfg/view?utm_content=DAEPfzybVv4&amp;utm_campaign=designshare&amp;utm_medium=link&amp;utm_source=sharebutton)
 ## Funciones: repeat(), minmax() y fit-content() + Quíz
 
-7. Propiedades y valores para los elementos hijos
-¡Manos al código! Fase de construcción de la grid principal de nuestro proyecto
-Ubicación + Reto
-Alineamiento en los elementos hijos + Quiz
-¡Manos al código! Fase de ubicación y alineamiento
-Continuando con la fase de ubicación y alineamiento
-8. Lo que podemos lograr adicionalmente con CSS Grid
-Responsive y CSS Grid
-Continúa con el Curso de Diseño Web con CSS Grid y Flexbox
+La función CSS **`repeat()`** representa un fragmento repetido de la lista de la pista, permitiendo un gran número de columnas o renglones que exhiben un patrón recurrente para ser escrito de una forma más compacta.
+
+En función Css **`minmax()`** el min representa el tamaño mínimo que va a tener cada uno de los elementos de la grid y el max nos indica el valor máximo de los elementos de la grid. Esto nos sirve para que el contenido se vea bien en determinados tamaños.
+
+Con la función de **`auto-fit()`** ADAPTA las columnas DISPONIBLES ACTUALMENTE en el espacio expandiéndolas para que ocupen cualquier espacio disponible. El navegador hace eso después de LLENAR ese espacio adicional con columnas adicionales (como con el autocompletar) y luego colapsar las vacías.
+
+Con la función de **`auto-fill()`** LLENA la fila con tantas columnas como pueda caber. Por lo tanto, crea columnas implícitas cada vez que cabe una nueva columna, porque está tratando de LLENAR la fila con tantas columnas como sea posible. Las columnas recién agregadas pueden estar vacías, pero seguirán ocupando un espacio designado en la fila.
+
+Estas funciones con perfectas para el responsive design.
+
+La función **`fit-content()`** organiza un contenido en especifico el cual lo reserva y el resto seria auto.
+
+- [Finciones | repeat(), minmasx(), fit-content()](https://www.canva.com/design/DAEPgUjpekM/vSqGiNbCVGEsz-X1Wu2uxw/view?utm_content=DAEPgUjpekM&amp;utm_campaign=designshare&amp;utm_medium=link&amp;utm_source=sharebutton)
+
+# 7. Propiedades y valores para los elementos hijos
+
+## ¡Manos al código! Fase de construcción de la grid principal de nuestro proyecto
+
+
+- [ColorSpace](https://mycolor.space)
+
+- [Inicio de Proyecto](https://www.canva.com/design/DAEPgUjpekM/vSqGiNbCVGEsz-X1Wu2uxw/view?utm_content=DAEPgUjpekM&amp;utm_campaign=designshare&amp;utm_medium=link&amp;utm_source=sharebutton)
+
+- [Proyecto](https://www.canva.com/design/DAEPhfyIeP0/eeIEaOeZkFHP3osqh69P3g/view?utm_content=DAEPhfyIeP0&amp;utm_campaign=designshare&amp;utm_medium=link&amp;utm_source=sharebutton)
+
+- [CSS 2020](https://github.com/platzi/CSS2020#16-iniciemos-nuestro-proyecto-fase-de-creatividad-e-identificación-de-elementos)
+
+## Ubicación + Reto
+
+
+- [](https://www.canva.com/design/DAEPg4rXU0g/Dsqsl-wmfJYpnJD--BUNsQ/view?utm_content=DAEPg4rXU0g&amp;utm_campaign=designshare&amp;utm_medium=link&amp;utm_source=sharebutton)
+## Alineamiento en los elementos hijos + Quiz
+
+
+
+## ¡Manos al código! Fase de ubicación y alineamiento
+
+
+
+## Continuando con la fase de ubicación y alineamiento
+
+
+
+# 8. Lo que podemos lograr adicionalmente con CSS Grid
+
+## Responsive y CSS Grid
+
+
+
+## Continúa con el Curso de Diseño Web con CSS Grid y Flexbox
+
+
+
