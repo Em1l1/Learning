@@ -25,14 +25,22 @@
 
 ### Bienvenida al curso y qué es ECMAScript
 
+- [ECMA-262](https://www.ecma-international.org/publications-and-standards/standards/ecma-262/)
+
 ## 2. ¿Qué se implementó en ES6?
 
 ### Default Params y Concatenación
 
+- [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)
 
+- [Specifying JavaScript](https://tc39.es)
 
 ### LET y CONST, Multilínea, Spread Operator y Desestructuración
 
+- `Var`: tiene un Scope de función
+- `Let` y `Const`: tienen un Scope de bloque
+
+- [La diferencia entre let y var en Javascript](https://platzi.com/blog/la-diferencia-entre-let-y-var/)
 
 
 ### Arrow Functions, Promesas y Parámetros en objetos
