@@ -79,3 +79,90 @@ console.log(a);
 // Crear nuevo objeto
 let name = 'Victor'
 let age = 26
+
+// es5
+obj = {name: name, age: age}
+
+// es6
+obj2 = { name, age}
+console.log(obj2)
+
+// arrow function
+const names = [
+  {name: 'Victor', age: 26},
+  {name: 'Yessica', age: 20}
+]
+
+let listOfNames = names.map(function (item) {
+  console.log(item.name);
+})
+
+let listOfNames2 = names.map(item => console.log(item.name))
+
+const listOfNames3 = (name, age, country) => {
+  ...
+}
+
+const listOfNames4 = name => {
+  ...
+}
+
+const square = num => num * num;
+
+// Promesas
+const helloPromise = () => {
+  return new Promise((resolve, rejec) => {
+    if (true) {
+      resolve('HEY!');
+    } else {
+      reject('Ups!!');
+    }
+  })
+}
+
+helloPromise()
+.then(response => console.log(response))
+.then(() => console.log('hola'))
+.catch(error => console.log(error));
+
+// class
+
+class calculator {
+  constructor() {
+    this.valueA = 0;
+    this.valueB = 0;
+  }
+  sum(valueA, valueB) {
+    this.valueA = valueA;
+    this.valueB = valueB;
+    return this.valueA + this.valueB;
+  }
+}
+
+const calc = new calculator();
+console.log(calc.sum(2, 2));
+
+// module
+// import const hello = () => 'hello';
+import { hello } from './module'
+
+hello();
+
+// generator
+function* helloWorld() {
+  if (true) {
+    yield 'Hello, ';
+  }
+  if (true) {
+    yield 'World';
+  }
+};
+
+const generatorHello = helloWorld();
+console.log(generatorHello.next().value);
+console.log(generatorHello.next().value);
+console.log(generatorHello.next().value);
+
+
+// es7
+

@@ -45,15 +45,58 @@
 
 ### Arrow Functions, Promesas y Parámetros en objetos
 
+- [Difference between regular functions and arrow functions in JavaScript](https://www.tutorialspoint.com/difference-between-regular-functions-and-arrow-functions-in-javascript)
 
+```js
+composicion - newPromise()
+resolve() - comportamiento al cumplir la promesa
+reject() - comportamiento al fallar la promesa
+.then (⇒) - obtener el valor del resolve
+.error(⇒) - obtener el valor del reject()
+```
 
 ### Clases, Módulos y Generadores
 
+```js
+/ module
+// import const hello = () => 'hello';
+import { hello } from './module'
 
+hello();
 
+// generator
+function* helloWorld() {
+  if (true) {
+    yield 'Hello, ';
+  }
+  if (true) {
+    yield 'World';
+  }
+};
+
+const generatorHello = helloWorld();
+console.log(generatorHello.next().value);
+console.log(generatorHello.next().value);
+console.log(generatorHello.next().value);
+```
 ## 3. ¿Qué se implementó en ES7?
 
 ### ¿Qué se implementó en ES7?
+
+```js
+let numbers = [1,2,3,4,7,8];
+
+if (numbers.includes(7)) {
+  console.log('Si se encuentra el valor 7');
+} else {
+  console.log('No se encuentra.')
+}
+
+let base = 4;
+let exponent = 3;
+let result = base ** exponent;
+console.log(result)
+```
 
 ## 4. ¿Qué se implementó en ES8?
 
