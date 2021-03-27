@@ -571,7 +571,15 @@ La versión paga te permite publicar todos los prototipos y diseños que hagas. 
 
   ## Diseño de interfaces
 
+**Modelos que puedes crear con Adobe XD :**
 
+![](https://i.ibb.co/cYDBzGd/web-gatos.webp)
+
+![](https://i.ibb.co/xsJ3Mtz/web-example.webp)
+
+- [Colormind](http://colormind.io)
+- [Color Hunt](https://colorhunt.co)
+- [fontpair](https://www.fontpair.co)
 
   ## Maquetación de la NavBar
 
