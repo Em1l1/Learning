@@ -47,7 +47,7 @@
   - [Testing con el Navegador](#Testing-con-el-Navegador)
   - [Cómo crear tu cuenta en Github](#Cómo-crear-tu-cuenta-en-Github)
   - [Subiendo nuestro proyecto a Internet con Github](#Subiendo-nuestro-proyecto-a-Internet-con-Github)
-- [6. Conclusión](#6.-Conclusión)
+- [6. Conclusión](#6-Conclusión)
   - [Conclusiones](#Conclusiones)
 - [7. Bonus](#7-Bonus)
   - [Librería vs Framework](#Librería-vs-Framework)
@@ -77,13 +77,16 @@ Estamos felices de que quieras fortalecer tus destrezas como desarrollador Front
 
 Antes de comenzar con las primeras clases quiero hacerte algunas recomendaciones de algunos conocimientos previos o paralelos que podrías repasar para aprovechar mucho mejor los ejercicios prácticos que nuestro profesor Raúl “Rulótico” González realiza a lo largo de todos los módulos del curso.
 
-Curso de desarrollo web online:
+**Curso de desarrollo web online:**
+
 Este curso te explicará de manera detallada todas las bases conceptuales para entender el proceso y uso de HTML.
 
-Curso de Responsive Design:
+**Curso de Responsive Design:**
+
 Este curso te permitirá entender los procesos detrás de las buenas prácticas para hacer tu producto digital responsivo.
 
-Curso de CSS Grid Layout:
+**Curso de CSS Grid Layout:**
+
 Nuestro profesor usa el framework Bootstrap en varias clases de este curso. Aunque es una gran forma de resolver la maquetación de las Grids o grillas de tu página web, es importante que comprendas el origen de este proceso.
 
 ¿Quieres comenzar las clases de nuestro curso de HTML y CSS sin ver estos cursos? Claro que puedes hacerlo, varios estudiantes lo han hecho y han logrado llegar hasta el final. Estas recomendaciones están especialmente diseñadas para aquellos que están comenzando en el maravilloso mundo de la programación frontend.
@@ -312,27 +315,259 @@ En CSS utilizamos atributos para definir los estilos de nuestros elementos, pode
 ```
 
 Juego para familiarizarse con los [selectores CSS](https://flukeout.github.io/)
+
   ## ¿Cómo funciona JavaScript?
 
+JavaScript es un lenguaje de programación que nos permite realizar actividades complejas en nuestras páginas web: almacenar valores en variables o realizar operaciones.
 
+Para incluir JavaScript en nuestro HTML debemos utilizar la etiqueta `script:`
+
+```js
+<html>
+    <head>
+        <script src=""script.js"">
+        </script>
+    </head>
+</html>
+```
 
   ## Hola mundo y estructura del proyecto
 
+- Crear una carpeta por cada elemento:
+
+  - `css`
+    - `archivo.css`
+  - `js`
+    - `index.js`
+  - `img`
+    - imagenes
 
 
   ## Listado de las etiquetas más usadas
 
+En esta clase veremos algunas de las etiquetas más utilizadas y para qué sirven. Esta lista te será muy útil en el proceso de realización de nuestro proyecto.
 
+```html
+<!doctype html>
+```
+
+Define que el documento está bajo el estándar de HTML.
+
+```html
+<head>
+```
+
+Representa una colección de metadatos acerca del documento, incluyendo enlaces a, o definiciones de, scripts y hojas de estilo.
+
+```html
+<title>
+```
+
+Define el título del documento, el cual se muestra en la barra de título del navegador o en las pestañas de página. Solamente puede contener texto y cualquier otra etiqueta contenida no será interpretada.
+
+```html
+<base>
+```
+
+Define la URL base para las URLs relativas en la página.
+
+```html
+<link>
+```
+
+Usada para enlazar JavaScript y CSS externos con el documento HTML actual.
+
+```html
+<meta>
+```
+
+Define los metadatos que no pueden ser definidos usando otro elemento HTML.
+
+```html
+<style>
+```
+
+Etiqueta de estilo usada para escribir CSS en línea.
+
+```html
+<body>
+```
+
+Representa el contenido principal de un documento HTML. Solo hay un elemento <body> en un documento.
+
+```html
+<section>
+```
+
+Define una sección en un documento.
+
+```html
+<nav>
+```
+
+Define una sección que solamente contiene enlaces de navegación
+
+```html
+<article>
+```
+
+Define contenido autónomo que podría existir independientemente del resto del contenido.
+
+```html
+<aside>
+```
+
+Define algunos contenidos vagamente relacionados con el resto del contenido de la página. Si es removido, el contenido restante seguirá teniendo sentido
+
+```html
+<h1>, <h2>, <h3>, <h4>, <h5>, <h6>
+```
+
+Los elemento de cabecera implementan seis niveles de cabeceras de documentos; `<h1>` es la de mayor jerarquía y `<h6>` es la de menor importancia. Un elemento de cabecera describe brevemente el tema de la sección que introduce
+
+```html
+<header>
+```
+
+Usualmente contiene un logotipo, el título del sitio Web y una tabla de navegación de contenidos.
+
+```html
+<footer>
+```
+
+Define el pie de una página o sección. Usualmente contiene un mensaje de derechos de autoría, algunos enlaces a información legal o direcciones para dar información de retroalimentación.
+
+```html
+<address>
+```
+
+Define una sección que contiene información de contacto.
+
+```html
+<main>
+```
+
+Define el contenido principal o importante en el documento. Solamente existe un elemento <main> en el documento.
+
+```html
+<form>
+```
+
+Representa un formulario, con atributos de controles que puede ser enviado a un servidor para procesamiento.
+
+```html
+<img>
+```
+
+Representa una imagen.
+
+```html
+<iframe>
+```
+
+Representa un contexto anidado de navegación, es decir, un documento HTML embebido.
+
+```html
+<a>
+```
+
+Representa un hiperenlace, enlazando a otro recurso.
+
+```html
+<em>
+```
+
+Representa un texto enfatizado, como un acento de intensidad.
+
+```html
+<strong>
+```
+
+Representa un texto especialmente importante .
+
+```html
+<small>
+```
+
+
+El elemento p (párrafo) es el apropiado para distribuir el texto en párrafos.
+
+```html
+<p></p>
+```
+
+Representa un comentario aparte, es decir, textos secundarios como un descargo de responsabilidad o una nota de derechos de autoría, que no son esenciales para la comprensión del documento.
+
+- [Lista de Elementos HTML5](https://developer.mozilla.org/es/docs/conflicting/Web/HTML/Element)
 
 # 3. Construcción de un producto digital
 
   ## Paper wireframe
 
+Un documento esquemático para un perfil personal creado usando Balsamiq.
 
+Un wireframe para un sitio web, también conocido como un esquema de página o plano de pantalla, es una guía visual que representa el esqueleto o estructura visual de un sitio web.
+
+  - El wireframe esquematiza el diseño de página u ordenamiento del contenido del sitio web, incluyendo elementos de la interfaz y sistemas de navegación, y cómo funcionan en conjunto.
+  - Usualmente este esquema carece de estilo tipográfico, color o aplicaciones gráficas, ya que su principal objetivo reside en la funcionalidad, comportamiento y jerarquía de contenidos.
+  - En otras palabras, se enfoca en “qué hace la pantalla, no cómo se ve”.
+  - Los esquemas pueden ser dibujados con lápiz y papel o esquemas en una pizarra, o pueden ser producidos con medios de diseño de aplicaciones de software libre o comerciales.
+
+Los wireframes se enfocan en 5:
+
+  - Los tipos de información que será mostrada
+  - La cantidad de las funciones disponibles
+  - Las prioridades relativas de la información y las funciones
+  - Las reglas para mostrar ciertos tipos de información
+  - El efecto de los distintos escenarios en la pantalla
+
+El wireframe del sitio web conecta la estructura conceptual, o arquitectura de la información, con la superficie, o diseño visual del sitio web.2 Los wireframes ayudan a establecer funcionalidad, y las relaciones entre las diferentes plantillas de pantallas de un sitio web. Un proceso iterativo de creación de wireframes es una forma efectiva de hacer prototipos de páginas rápidos, mientras se mide la practicidad de un concepto de diseño. Típicamente, la esquematización comienza entre “diagramas de flujo de estructuras de trabajo de alto nivel o mapas de sitio y diseños de pantallas.”3 Dentro del proceso de construcción de un sitio web, el dibujo de un wireframe es donde el concepto se vuelve tangible.
+
+**¿Qué es y para qué sirve una landing page?**
+
+Una landing page es una página web preliminar o pagina de aterrizaje donde queremos destacar algo en especial, ya sea un producto, o alguna novedad o promoción de un producto. Se utilizan para todo lo que es SEM (search engine marketing), más conocido como los anuncios de Google Adwords.
+
+**¿Qué es el footer de una página web?**
+
+El footer es la parte inferior de una estructura web en la que generalmente se incluyen links de navegación, enlaces de interés, copyright o botones a las redes sociales del site. El footer suele estar claramente diferenciada de alguna forma del resto de la página web.
+
+![Paper wireframe](https://i.ibb.co/VL3RyBG/brand.webp)
+
+  - **Sitio**
+
+![](https://i.ibb.co/n18V85h/Brand-cats.webp)
 
   ## ¿Cómo instalar XD?
 
+Ya que tienes los conceptos básicos sobre la creación de un producto digital, vamos a comenzar con el proceso de diseño visual y la definición de la estructura. Para esto vamos a instalar el software XD de Adobe, con este podremos crear nuestras propias interfaces.
 
+1. Entra a: https://www.adobe.com/es/products/xd.html
+
+2. Da click en el botón de descarga
+
+![](https://i.ibb.co/LRbYZnm/adobe.webp)
+
+3. Inicia sesión con Facebook o Google.
+
+![](https://i.ibb.co/99GPQpp/adobe1.webp)
+
+4. Después de haber iniciado sesión en tu computadora se instalará Adobe Creative Cloud. Este software te permite gestionar los programas de Adobe.
+
+5. Da click en “Open Creative Cloud Desktop App".
+
+![](https://i.ibb.co/nnzCYvS/adobe2.webp)
+
+6. Al instalar Adobe Creative Cloud verás esta ventana donde se pueden gestionar todos los programas de Adobe.
+
+![](https://i.ibb.co/2MG8gQn/adobe3.webp)
+
+7. Para nuestro curso solo debemos seleccionar la descarga de Adobe XD. Al finalizar el proceso de descarga, estás listo para usar Adobe XD.
+
+![](https://i.ibb.co/3cm7jFF/adobe4.webp)
+
+Por último quiero recordarte que Adobe XD tiene una versión gratuita y una versión paga.
+
+La versión paga te permite publicar todos los prototipos y diseños que hagas. Si te quedas con la versión gratuita podrás diseñar todo lo que haremos en el curso, pero la publicación de los diseños solo podrás hacerla una vez.
 
   ## Diseño de interfaces
 
