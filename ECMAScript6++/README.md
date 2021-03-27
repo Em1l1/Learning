@@ -102,16 +102,38 @@ console.log(result)
 
 ## ¿Qué se implementó en ES8?
 
+ES8
+
+- [async / await](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/await)
+
+- Object.entries: convertir un objeto a un matriz donde los propiedades de objeto clave, valor se transformarán en un arreglo [clave,valor](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Object/entries)
+
+- Object.values: :devuelve los valores de un objeto convertidos en un arreglo.
+https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Object/values
+
+- “texto”.padStart() | “texto”.padEnd()
+https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/padStart
+https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/padEnd
+
 ## Async Await
+
+- [Las promesas y async await lógicamente no son iguales](https://platzi.com/tutoriales/1789-asincronismo-js/5063-las-promesas-y-async-await-logicamente-no-son-iguales-y-te-explico-el-porque/)
 
 ## 5. Actualidad y próximos pasos de ECMAScript
 
 ### ¿Qué se implementó en ES9?
 
+- [Promise.prototype.finally()](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Promise/finally)
 
 ### ¿Qué se implementó en ES10?
 
+- **`Array.prototype.flat(nivel_de_profundidad):`** un nuevo método que nos permite aplanar arreglos.
+- **`Array.prototype.flatMap()`** lo mismo que flat con el beneficio de que primero manipular la data para luego poder aplanar.
+- **`String.prototype.trimStart() | String.prototype.trimEnd()`** permite quitar los espacios al inicio o al final dependiendo de la funciona.
+- **`try/catch`**: ahora puedes utilizarlo sin necesidad de especificaro como catch(error) sino directamente usarlo en el scope del catch.
+- **`Object.fromEntries()`** lo inverso a Object.entries(), es decir podemos convertir un objeto en una matriz clave/valor con Object.entries(), y hace lo inverso es decir de una matriz clave/valor a un objeto con Object.fromEntries().
+- **`Symbol.prototype.description:`** permite regresar el descripcion opcional del [Symbol](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Symbol/description)
 
 ### TC39 y Cierre del curso
 
-
+- [Specifying JavaScript](https://tc39.es)
