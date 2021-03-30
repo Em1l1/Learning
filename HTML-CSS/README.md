@@ -61,14 +61,18 @@
 En este curso vamos a aprender a diseñar y programar productos digitales, vamos a utilizar Adobe XD como herramienta de diseño y Paypal para soportar pagos en línea. En esta ocasión nos acompaña Rulótico González, diseñador y programador al mismo tiempo en SABLE STUDIO.
 
   ### Frontend ---- Backend
-Frontend: la parte visual e interactiva de un sitio o un web app para el usuario.
-Backend: funciones básicas; CRUD - Create, Read, Update, Delete
+
+**Frontend:** la parte visual e interactiva de un sitio o un web app para el usuario.
+
+**Backend:** funciones básicas; CRUD - Create, Read, Update, Delete
 funcionalidad, bases de datos, host. Podemos decir el motor. Conexiones entre back y front.
 
   ### HTML - CSS - JS
 
 **HTML:** Hyper Text Markup Language - Estructura del sitio - Partes, etiquetas, etc.
+
 **CSS:** Cascading Style Sheet - Estilo del sitio, colores, tamaños, espaciados, animaciones.
+
 **JS:** JavaScript - Interacción dinámica con el usuario, como manejo de variables de datos de usuario, modificación de DOM (o elementos en la estructura HTML), animaciones complejas, manipulación de APIs, etc.
 
   ## ¿Qué conocimientos me recomiendan para tomar este curso?
@@ -121,17 +125,17 @@ Para la instalación de Atom seguiremos los siguiente pasos:
 
 1. Ingresa a https://atom.io/
 
-![](img/atom.jpg "Editor de texto")
+![](https://i.ibb.co/tm3myv8/atom.jpg "Editor de texto")
 
 2. Descarga e instala la versión de ATOM de acuerdo a tu sistema operativo.
 
 3. Esta es la primera sección que vas a ver cuando abras ATOM, da click en el botón Install a package.
 
-![](img/package.webp)
+![](https://i.ibb.co/z2qXDQ2/package.webp)
 
 4. En la sección Install a package busca: emmet y agrégalo a tu editor de texto. Esta herramienta nos ayudará a escribir código de manera más rápida.
 
-![](img/emmet.jpg)
+![](https://i.ibb.co/Pt3htr2/emmet.jpg)
 
 5. Te recomiendo que no instales otros paquetes, por ahora. Pues algunos pueden generar conflicto si no tienes claridad sobre su función.
 
@@ -158,7 +162,7 @@ La **Comunicación Síncrona** es comunicación en tiempo real, por ejemplo, en 
 
   **Estructura Basica html5**
 
-![](img/html.jpg "Estructura Basica HTML5")
+![](https://i.ibb.co/0cfh2fZ/html.jpg "Estructura Basica HTML5")
 
 ```html
 <html>
@@ -583,32 +587,134 @@ La versión paga te permite publicar todos los prototipos y diseños que hagas. 
 
   ## Maquetación de la NavBar
 
+Que hay un método secreto nunca antes visto para simplificar código (o al menos yo no sabía).
+Que es mas fácil maquetar cuando ya tenemos el diseño hecho, porque no le inventamos.
+Se ve mas pro (personalmente) el código con un letrero hecho en ascii generator.
+Repaso de HTML y CSS.
+Aprovechar el UI kit y los assets.
 
+Comentario
+
+```html
+<!-- Aquí empieza el navbar -->
+```
+
+Es buena practica cuando se está en un equipo de programadores!!!.
+
+```html  
+<!-- start nav bar -->
+  <nav>
+    <div class="brand_image">
+      <img src="" alt="">
+    </div>
+    <div class="nav_options">
+      <ul>
+        <li><a href="#"></a>Faqs</li>
+        <li><a href="#"></a>Producto y description</li>
+      </ul>
+    </div>
+  </nav>
+  <!-- finish nav bar -->
+```
 
   ## Maquetación de main_section y agregando estilos CSS
+
+Vamos a trabajar la primera parte de nuestra página web.
+
+En el diseño podemos ver que utilizamos la imagen curve.png por debajo de los productos, para esto debemos añadir la imagen en nuestro CSS en vez de en el HTML, así podremos posicionarla utilizando la propiedad 
+
+```css
+background-image: url(""../images/curve.png"");
+```
+
+Padding
+
+![](https://i.ibb.co/ry064RR/padding.webp)
 
 
 
   ## Maquetación de tarjetas de producto
 
+Vamos a utilizar el atributo `margin-top` de CSS para darle espacio a nuestros elementos de producto, entre más grande sea el valor que configuremos en este atributo, más grande será el espaciado entre estos elementos y los de arriba, además, podemos utilizar valores negativos `(margin-top: -50px)` para disminuir este espaciado y conseguir el efecto que diseñamos.
 
+También vamos a añadir sombras a nuestros elementos utilizando el atributo `box-shadow: 0 0 2px black;` de CSS. Si quieres configurar el color y dirección de estas sombras, puedes hacer click derecho en tus elementos, seleccionar ““Inspector de Elementos”” y configurar las sombras como mas te gusten, recuerda copiar y pegar tus modificaciones porque, por defecto, no se guardan cuando refresques la página.
 
   ## Fuentes personalizadas y variables de CSS
 
+Las Variables de CSS nos permiten centralizar los valores repetitivos por todo nuestro CSS, vamos a utilizar estas funcionalidades para ahorrarnos mucho si queremos cambiar el valor de algún color o tamaño de nuestra página.
 
+También vamos a utilizar fuentes personalizadas, para esto debemos ir a [Google Fonts](https://fonts.google.com) y elegir la que mejor se acomode a nuestro diseño, en este caso es la fuente Open Sans.
 
+```css
+Sintaxis de variables
+
+	:root{
+		—green-1: green;
+		—green-2: #454345;
+		—width-1: 100px;
+		—width-2: 200px;
+	 }
+	body {
+		background: var(—green-1);
+```
+
+- [Uso de propiedades personalizadas (variables) en CSS](https://developer.mozilla.org/es/docs/Web/CSS/Using_CSS_custom_properties)
+- [Everything you need to know about CSS Variables](https://www.freecodecamp.org/news/everything-you-need-to-know-about-css-variables-c74d922ea855/)
+- [Evita usar @import para cargar CSS](https://www.googleessimple.com/wiki/pagespeed/evita-usar-import/)
   ## Categorizando etiquetas según nuestra estructura en HTML
 
+Para estructurar nuestro proyecto, necesitamos ordenar nuestra definición de etiquetas con CSS. La conexión entre nuestra estructura HTML y CSS da como resultado una página web. A continuación veremos las reglas de nomenclatura que dan orden a nuestra definición de CSS.
 
+Para darle nombre a los estilos podemos utilizar diferentes métodos, aunque es recomendable seguir estos pasos:
+
+- No utilizar palabras en español: la mayoría de los lenguajes no aceptan ñ o tildes, es por eso que evitamos esta característica.
+
+- Para los espacios utilizamos guión medio o guión bajo, recuerda usar solo uno de los dos caracteres.
+
+- Describir el nombre de manera general a particular, por ejemplo: home_bar
+
+También podemos definir las siguientes etiquetas, las cuales nos permiten crear secciones dentro de HTML y evitamos un concepto llamado divismo.
+
+- `<section>` Lo usamos para dividir secciones
+- `<footer>` Define el footer ya sea de toda la página o solo de un componente.
+- `<iframe>` Nos ayuda a incrustar otra página en nuestro html
+- `<video>` Nos ayuda a incrustar video dentro de nuestra web
+
+Ahora que ya sabemos esto continuaremos en las próximas clases construyendo con HTML y CSS.
 
   ## Reto 2: Maquetar el home del producto digital
 
+Ya vimos juntos el proceso de maquetación de la sección principal, ahora es el momento de ponerte a prueba, te reto a que continues construyendo este fantástico sitio.
 
+Aquí encontrarás todo lo que necesitas para resolver este reto: https://xd.adobe.com/spec/2c9c033b-9245-42a1-495d-4ed75543bc3f-5aad/screen/7fbda2b3-9f60-4357-9fdc-99b738bb98e9/Home/
+
+
+![](https://i.ibb.co/XsG4SLp/reto2.webp)
+
+En esta imagen tienes dos secciones, te recomiendo dividirlas y maquetarlas una por una, no intentes hacer las dos al mismo tiempo.
+
+![](https://i.ibb.co/cr4GphK/reto2-1.webp)
+
+Utiliza las etiquetas correctas: podemos notar que usaremos `img`, `h3` y `p`
+
+![](https://i.ibb.co/8D8b8Yn/reto2-2.webp)
+
+Esta sección parece más compleja, te recomiendo primero realizar la estructura base.
+
+Cuando logres realizar los dos pasos anteriores incluye algo de contenido, comienza por la imagen o el texto.
+
+![](https://i.ibb.co/syMW3nH/reto2-3.webp)
+
+La imagen es un reto que tienes que resolver. Este componente es diferente pues no tiene márgenes.
+
+![](https://i.ibb.co/rMv8ZKY/reto2-4.webp)
+
+- [Animate.css](https://animate.style)
 
   ## Reglas responsive
 
 
-
+- [Responsive Web Design Is…](https://responsivedesign.is)
   ## Animaciones y transiciones
 
 

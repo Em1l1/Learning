@@ -1,29 +1,124 @@
-/*  */
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+
+/* Variables  */
+
+:root {
+  --green-color: #7ACC2D;
+  --white-color: white;
+  --black-color: #313337;
+  
+  /* Font-size */
+  --normal: 12px;
+
+  /* Espaciado  */
+  --space: 10px;
+
+  /* box-shadow */
+  --box: 0px 0 2px #e6e5e9;
+
+}
+
+/* Variables */
+
 html,body {
   padding: 0px;
   margin: 0px;
-  font-size: 12px;
-  font-family: Helvetica;
+  font-size: var();
+  font-family: 'Open Sans', sans-serif;
 }
 
 nav {
-  display:flex; 
-  background-color: green;
-  padding: 10px;
-  color: white;
-  justify-content:  space-between;
+  display: flex;
+  background-color: var(--green-color);
+  padding: var(--space);
+  color: var(--white-color);
+  justify-content: space-between;
+  align-items: center;
 }
 
 nav ul {
-  display: flex;  
-} 
+  display: flex;
+}
 
-nav  li {
-  padding-right: 10px;
+nav li {
+  padding-left: 20px;
   list-style: none;
 }
 
 nav li a {
-  color: white;
+  color: var(--black-color);
   text-decoration: none;
+}
+
+nav li a:hover {
+  color: var(--white-color);
+}
+
+/* Main Section */
+.main_section {
+  padding: 15%;
+  text-align: center;
+}
+
+.products {
+  background-image: url("../img/curve.png");
+  height: 50px;
+  background-size: cover;
+  background-position: center top;
+  padding: 10%;
+  display: flex;
+}
+
+.product {
+  padding: var(--space);
+  margin-top: -240px;
+}
+
+.product .content {
+  background-color: var(--white-color);
+  padding: var(--space);
+  box-shadow: var(--box);
+  /* 0 0 1px #c1bcbc; */
+}
+
+.img_content {
+  text-align: center;
+}
+
+.main_button {
+  background-color: var(--green-color);
+  width: 100%;
+  padding: var(--space);
+  font-size: 12px;
+  color: var(--white-color);
+  border: 0;
+  cursor: pointer;
+  border-radius: 8px;
+}
+.main_button {
+  background-color: #5e9e22;
+}
+
+/* section */
+.main__section-card{
+  display: flex;
+  padding: 5% 10%;
+  justify-content: space-between;
+}
+
+.main__card {
+  padding: var(--space);
+  margin-top: -2240px;
+}
+
+.card__info .card {
+  background-color: var(--white-color);
+  padding: var(--space);
+  box-shadow: var(--box);
+  /* 0 0 1px #c1bcbc; */
+}
+
+.img_info {
+  text-align: center;
 }
