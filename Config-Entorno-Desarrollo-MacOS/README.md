@@ -254,9 +254,29 @@ Y con GitHub puedes alojar todo ese código y sus cambios en un servidor en la n
 
 - [Generating a new SSH key and adding it to the ssh-agent](https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 
-![](https://asciinema.org/connect/f78f0327-beea-47f1-a2ed-a649621639b7)
+[![asciicast](https://asciinema.org/a/ylyZbN7KkSkYBOv1p3jDce4Ui.svg)](https://asciinema.org/a/ylyZbN7KkSkYBOv1p3jDce4Ui)
+
 ### Subiendo nuestro primer repositorio
 
+- Crear el proyecto en el repositorio local.
+- Crear carpeta desde terminal.
+  
+```bash
+$ mkdir mi-primer-proyecto-en-github          # Crear carpeta
+
+$ touch index.html                            #  Crear un archivo
+
+$ git init                                     # inicializar git en repositorio local
+
+$ git add .                       # agregar los archivos en stein
+
+$ git commit -m "Mensaje obrigatorio, que cambios haz realizado" # Al realizar el commit es obligatorio escribir un mensaje.
+
+$ git remote add origin <pegamos-el-link>     # Inicializar nuestro proyecto remoto
+
+$ git push origin <nombre-de-la-rama> # Guardar y enviar los cambios a nuestro repositorio local...
+```
 
 ### ¿Qué es lo que sigue
 
+Disfruuta del aprendizaje, y nunca pares de aprender.
