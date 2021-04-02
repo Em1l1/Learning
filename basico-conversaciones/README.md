@@ -484,14 +484,304 @@ It’s ten fifty six pm
 ## 3. Module 3
 
 ### Vocabulary: Parts of the house and furniture
+
+Listen to different parts of the house and furniture:
+
+- Bedroom
+  + Closet
+  + Mirror
+  + TV
+  + Picture
+  + Lamp
+  + Pillows
+  + Bed
+  + Night table
+  + Dresser
+  + Carpet
+
+- Living Room
+  + Books
+  + Fireplace
+  + Curtains
+  + Armchair
+  + Table
+  + Sofa
+  + Cushions
+
+- Bathroom
+  * Cabinet
+  * Toilet
+  * Sink
+  * Towels
+  * Shower
+  * Bathtub
+
+- Kitchen
+  + Refrigerator
+  + Cupboards
+  + Microwave
+  + Stove
+  + Oven
+
 ### Complete the sentences
+
+Complete the text with the right preposition, there is/there are / in / on:
+
+In my house we have three bedrooms, one kitchen, two bathrooms and one living room. _____ my bedroom there ____ a bed, a carpet and a desk. _____ the living room there _____ a sofa, some cushions and a lamp. ______ the kitchen there ______ some cupboards, a stove and a microwave _____ the refrigerator.
+
+Task: Draw your own house and write sentences using the vocabulary and structures studied.
+
+In my house we have three bedrooms, one kitchen, two bathrooms and one living room. **IN** my bedroom there **IS** a bed, a carpet and a desk. **IN** the living room there **IS** a sofa, some cushions and a lamp. **IN** the kitchen there **ARE** some cupboards, a stove and a microwave on the refrigerator.
+
+
 ### Grammar: There is and there are
+
+In this class we will talk about objects that are in a specific place. For that we use the expressions there is and there are
+
+There is is used for singular nouns, and there are for plural nouns.
+
+Exercise:
+
+- There _____ a bed in the bedroom. (affirmative)
+- There _____ some drawers in the living room. (negative)
+- ________ is a stove in the kitchen. (affirmative)
+- _________ three armchairs in the living room. (negative)
+- There ______ two cupboards above the sink. (affirmative)
+
+Answers:
+
+- There is a bed in the bedroom.
+- There aren’t some drawers in the living room.
+- There is a stove in the kitchen.
+- There aren’t three armchairs in the living room.
+- There are two cupboards above the sink.
+
+Positions objetcs:
+
+![](https://i.ibb.co/SfFf1kL/positions.webp)
+
+![](https://i.ibb.co/WGtmHwJ/positions1.webp)
+
 ### Vocabulary: Prepositions of place
+
+To name the position in which an object is located you use prepositions of place. Let’s take a look at them:
+
+![](https://i.ibb.co/rcvCtZ5/ps.webp)
+
+Now complete the sentences according to the image:
+
+Example: The dog is in the house
+
+The cat is ______ top of the head of Maria.
+
+![](https://i.ibb.co/B4MXf0v/ps1.jpg)
+
+Luciana and Lina are _______ the bridge.
+
+![](https://i.ibb.co/fQDRgZB/ps2.jpg)
+
+Manuel is ______ the pillar.
+
+![](https://i.ibb.co/QNT1W6P/p3.jpg)
+
+The bike is ________ of the house.
+
+![](https://i.ibb.co/hZjYTh3/ps4.jpg)
+
+he bridge is _______ Luciana and Lina.
+
+![](https://i.ibb.co/fQDRgZB/ps2.jpg)
+
+I am _______ the airplane.
+
+![](https://i.ibb.co/T4WvJ4M/ps6.jpg)
+
+Rosa is ________ the rocks.
+
+![](https://i.ibb.co/3mTzthM/ps7.jpg)
+
+The phone is ____________ the computer
+
+![](https://i.ibb.co/6FVx92r/ps8.jpg)
+
+**Complete the sentences according to the image:**
+
+- The cat is **on** top of the head of Maria.
+- Luciana and Lina are **under** the bridge.
+- Manuel is **behind** the pillar.
+- The bike **is in front** of the house.
+- The bridge is **above** Luciana and Lina.
+- I am **in** the airplane (if I’m inside) or I am **under** the airplane (If I am the viewer/photographer).
+- Rosa is **between** the rocks.
+- The phone is **next to** the computer.
 ### Conversation: There is - There are
+
+Read the conversation and find examples of expressions with there is and there are.
+
+![](https://i.ibb.co/mN3WYr5/my.webp)
+
 ### Vocabulary: Places in the city
+
+Read out loud the places in the city:
+
+![](https://i.ibb.co/5hM8JL0/place.jpg)
+
+Now record your voice using your mobile phone and play the recording to listen to yourself.
+
+What other **places of the city** do you know?
+
+  - **bakery:** this is where you can buy bread and cakes.
+  - **bookstore / book shop:** you can buy books and magazines here.
+  - **bus station**: to travel by bus you go to the bus station.
+  - **butcher:** where you buy meat.
+  - **church:** A religious place of Christian worship.
+  - **gas station:** where motor vehicles are refueled with gas or petrol, serviced, and sometimes repaired.
+  - **gym:** place where you can do exercises to keep fit.
+  - **hotel:** a place that provides lodging and usually meals and other services for travelers.
+  - **greengrocer:** where you can buy fruit and vegetables.
+grocery store: where you can buy foodstuffs and various household supplies.
+  - **laundromat, launderette:** a self-service laundry, a place where you can wash your clothes in coin-operated machines.
+  - **mall:** a large, often enclosed shopping complex containing various stores, businesses, and restaurants.
+  - **museum:** a place where objects of historical, artistic, or scientific interest are exhibited, preserved, or studied.
+  - **motel:** an establishment which provides lodging for motorists in rooms usually having direct access to an open parking area.
+  - **parking lot:** where you can park your car.
+  - **post office:** a place where postage stamps are sold and other postal business is conducted.
+  - **pub:** (British English) a place where you can buy a beer or other types alcoholic drinks.
+  - **park:** a public area kept in its natural state and usually reserved for the enjoyment and recreation of visitor where children can play or you can walk your dog.
+  - **school:** where children learn.
+  - **train station, railway station:** where you can buy a ticket and travel by train
+  - **supermarket:** a large self-service store that sells food, drinks and household items.
+  - **zoo:** a place where live animals are kept, studied, bred, and exhibited to the public.
+
+[Places in the city](https://www.myenglishpages.com/english/vocabulary-lesson-city-palces.php)
+
 ### Pronunciation: Places in the city
+
+**Listen** to different places in the city:
+
+  - Bar
+  - Theater
+  - Shop
+  - Copy place
+  - Pet store
+  - Drug store
+  - Hospital
+  - Restaurant
+
 ### Grammar: Is there? Are there?
+
+Now you know there is and **there are** to express affimative and negative sentences. In this lesson you will learn to ask questions Is there and Are there.
+
+For **singular** nouns, We use **Is there**. Example: Is there a drugstore in this neighborhood?
+For **plural** nouns, we use **Are there**, Example: Are there any restaurants in this street?
+
+Exercises:
+- _______________ a theater in this street.
+- _______________ any good movies in the theater right now.
+- I’m very hungry, but _________________ any food in the refrigerator.
+- _____________ cookies in the cupboard?
+- _____________ a pet store in this area?
+- _____________ any tickets? We really want to go to the concert.
+
+Answers:
+
+- There is a theater in this street.
+- There are not any good movies in the theater right now.
+- I’m very hungry, but there are not any food in the refrigerator.
+- Are there cookies in the cupboard?
+- Is there a pet store in this area?
+  
+![](https://i.ibb.co/tbFhRX9/thereIs.webp)
+
 ### Organize the sentences - Create the sentences
+
+Let’s organize these sentences:
+
+- are / my / there / In / children. / neighborhood / some
+- account? / money / Is / any / there / in the bank
+- there / sugar / I / some / to / the / cake. / Is / need / bake / any?
+- in the sky / many / It’s / there / clouds. / rainy / today, / are
+- are / today. / There / letters / for / some / you
+
+Write affirmative, negative, interrogative, plural or negative sentences with the following words:
+
+- Key _______________________________________________________________________
+
+- Notebook __________________________________________________________________
+
+- Drugstore __________________________________________________________________
+
+- Umbrella ___________________________________________________________________
+
+- Bars _______________________________________________________________________
+
+- Restaurant __________________________________________________________________
+
+- Bedroom ___________________________________________________________________
+
+- Living room _________________________________________________________________
+
+
+  - In my neighborhood there are some children.
+  - Is there any money in the bank account?
+  - I need some sugar to bake the cake. Is there any?
+  - It’s rainy today in the sky there are many clouds.
+  - There are some letters for you today.
+
+
+- Key: There are many keys in this house, which will be of my room?
+- Notebook: Is there any notebook in your night table?
+- Drugstore: In that drugstore there is one girl so charming.
+- Umbrella: My mom have a lot umbrellas, but i didn’t find none. Is there any umbrella in your house?.
+- Bars: there isn’t bar in this city, it’s awesome.
+- Restaurant: There are very good meat in that restaurant, but i prefer eat chicken.
+- Bedroom: There aren’t four bedrooms in that house, only have two.
+Living room: Your living room is fantastic and there are many pictures.
+
 ### Task: Describe your neighborhood
+
+Task: Describe your neighborhood using there is and there are and vocabulary about places in the city
+
+Example:
+
+I am living in a good neighborhood, quiet, far from city and close to a big mountain; however, there are some bars and typical food restaurants, too many people come here to lunch and party too. The most famous restaurant is called “Andres Carne de Res”, there are many options food and party environment, It’s cool.
+
+Near my neighborhood there is a hospital, a mall, an university and obviously many copy centers because of the students. In the mall there is a theater and I like to go continuously with my family, there are many stores too and ice scream shops.
+
+Weekends I like practice mountain bike due to close to my neighborhood there are many routes and ways. It’s amazing and I love it.
+
 ### Useful expressions: This, these, that, those
+
+In this lesson you will learn to talk about things that are close to you or far to you.
+
+For singular nouns we use This/That.
+
+- Use This if it is close you and That if it is far from you
+
+
+For plural nouns we use These/Those.
+
+- Use These if it is close you and Those if it is far from you
+
+
+Examples:
+
+  - This is a chair.
+  - That is a chair.
+  - These are chairs.
+  - Those are chairs.
+
+![](https://i.ibb.co/0y8z7GN/this.webp)
+
 ### End of the Basic English Course: Conversation
+
+We have finished our course! Now make sure you practice a lot what you learn here. Remember learning does not finish here. Follow the following advice to keep improving your English:
+
+Read everything you can get on English
+Take notes of new vocabulary
+Talk to other people in English
+Watch podcasts, TV channels and movies in English (OK you can put have English subtitles)
+Travel abroad
+Don’t get frustrated, keep learning
+
+Good luck and have lots of fun!
