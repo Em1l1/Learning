@@ -15,13 +15,23 @@
     - [Virtual reality: Before the trip routine](#virtual-reality-before-the-trip-routine)
     - [Lets talk about Travel Insurance and heading to the airport](#lets-talk-about-travel-insurance-and-heading-to-the-airport)
   - [2. At the airport & during the flight](#2-at-the-airport--during-the-flight)
-    - [Vocabulary - Module 2](#vocabulary-module-2)
+    - [Vocabulary - Module 2](#vocabulary---module-2)
     - [At the airport](#at-the-airport)
     - [During the flight](#during-the-flight)
+  - [3. When you arrive](#3-when-you-arrive)
     - [Vocabulary Module 3](#vocabulary-module-3)
     - [Virtual reality: Transportation and giving directions](#virtual-reality-transportation-and-giving-directions)
     - [Buying a sim card and asking for directions](#buying-a-sim-card-and-asking-for-directions)
     - [If you are staying at a hotel](#if-you-are-staying-at-a-hotel)
+  - [4. Enjoying your trip](#4-enjoying-your-trip)
+    - [Vocabulary Module 4](#vocabulary-module-4)
+    - [Virtual reality: Making breakfast](#virtual-reality-making-breakfast)
+    - [Ordering food and drinks at a restaurant](#ordering-food-and-drinks-at-a-restaurant)
+    - [Sightseeing or visiting a museum](#sightseeing-or-visiting-a-museum)
+    - [Shopping](#shopping)
+    - [Meeting new people](#meeting-new-people)
+  - [5. Conclusion](#5-conclusion)
+    - [¡Participa en Investigación Científica](#participa-en-investigación-científica)
 
 
 ## 1. What to do before the trip
@@ -221,7 +231,46 @@ Julia: Are you ready to take a cab in the United States?
 
 ### Virtual reality: Making breakfast
 
+[Virtual reality: Making breakfast](https://www.youtube.com/watch?v=nyJurXM3Qxo)
 
+<h3>After watching the class practice reading the dialogues below out loud:</h3>
+
+- Julia: What a lovely apartment, Mary!
+- Mary: Thank you! Guess what? … Breakfast… is not ready. I thought it would be fun to cook together
+- James: I agree. Cooking will be great English practice for us
+- Julia: Well! I’m a mess in the kitchen but the plan sounds like a lot of fun
+  
+- Mary: Are you ready to cook some traditional US breakfast?
+- Julia: Sure! Let’s practice as we cook. What would you like?
+- Mary: I was thinking of sweet waffles and black coffee. Fancy?
+- James: Fancy, what’s that?
+- Julia: Fancy is a way to ask if you like something. Right Mary?
+- James: I see… Hummm, I’m not sure. I don’t like waffles much.
+- Mary: That’s ok. No problem at all. What would you like?
+- Julia: Nothing too complicated. What about eggs and bacon? Coffee as well
+
+- Mary: We can definitely do that. How would you like the eggs?
+- Julia: How? I don’t know how to answer that question actually
+- Mary: I mean, would you like them scrambled, fried…
+- Julia: I know what you mean but I don’t know that vocabulary!
+- Mary: Ok, I’ll show you. These would be scrambled eggs.
+- Julia: scrambled… I see. And the other word you used was…
+- Mary: Fried. And they have something interesting here. The eggs can be over easy or sunny side up
+- James: What?
+- Mary: Over easy are fried on one side, then flipped and cooked briefly on the other.
+- Julia: And the other option?
+- Mary: Sunny side up. That is fried, with the yolk up and not flipped.
+- Julia: Wow that’s new for us. How cool. I would like to try them over easy
+- James: I also want to try them over easy
+- Mary: You’re gonna like’em
+- James: I’m sure we will.
+
+- Julia: Did you say there was someone else coming over?
+- Mary: Oh yes, I completely forgot about David.
+- James: Shall we make eggs and bacon for him as well?
+- Mary: Yes! I think he is vegetarian, so no bacon for him.
+- James: Alright!
+- Julia: Let’s get started.
 
 ### Ordering food and drinks at a restaurant
 
