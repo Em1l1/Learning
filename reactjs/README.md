@@ -142,9 +142,7 @@ Otras herramientas:
   - **Babel:** Traduce Javascript moderno (JSX) a un Javascript que todos los navegadores puedan interpretar.
   - **Eslint:** Lee el código y avisa de errores.
 
-
-- [Getting Started | Reactjs](https://create-react-app.dev/docs/getting-started/)
-
+[Getting Started | Reactjs](https://create-react-app.dev/docs/getting-started/)
 
 ## 2. Fundamentos
 
