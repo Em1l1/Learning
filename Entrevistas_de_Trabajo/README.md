@@ -90,8 +90,6 @@ Example your professional profile
 - [coverletter-example.docx](https://drive.google.com/file/d/1mkTYSc8qYSCaaJeIYLJB02MeD368M0XU/view?usp=sharing)
 
 
-
-
 [resume](https://resume.io)
 
 ### How to prepare for the interview
@@ -99,20 +97,211 @@ Example your professional profile
 - Research about the company (website, social media, news)
 - Review the job description
 - Check the interviewr's profile
+- Anticipate possible questions and practice answering question
+- Write down any questions that you might have for the interviewer
+- Sleep well the night before the interview
+  
 ## 2. Types of Interviews
+
 ### Module 2 vocabulary
+
+**Advantages:** features that make something better than other things, and a condition that is more favorable and could give more possibilities to have a positive experience and success.
+
+**Disadvantages:** the opposite of advantages; a disadvantage is an unfavorable position or condition.
+
+**Face to face Interview:** an interview in which you talk directly to your interviewer in the same place, not by phone or online.
+
+**Online Interview:** an interview in which the interviewer and interviewee connect through an online platform.
+
+**Phone Interview:** an interview which is done over the phone.
+
+**Requirements:** something that is wanted or needed, it could also be a necessary condition.
+
+**Soft solid colors:** a color that has muted chroma, that was greyed, softened, or lightened, which has no patterns; a solid color is having the same color all over.
+
+**Technical Interview:** an interview to test technical abilities and knowledge for a job. Usually if you apply for a job in engineering, science, or IT you may face a technical interview.
+
+[15 frases para entrevistas de trabajo en inglés](https://platzi.com/blog/frases-entrevistas-trabajo-ingles/)
+
 ### Things you should consider in an online or phone interview
+
+![](https://i.ibb.co/5s9RH6W/checklist.webp)
+
+- [SPEEDTEST](https://www.speedtest.net)
+
+  - If is not possible to get a quiet place, please be polite/calm on any disturbing event. Nowadays is pretty normal to get some noise from the outside, and almost everybody understand.
+  - Be honest. I think it doesn’t need any explanation about it.
+  - If you have Bluetooth headphones, it could be better to make sure they are connected, working, and charged.
+  - Warn the people around you about you’re going to have a meeting, so they could be aware on not disturb you.
+  - Make sure that you are in a quiet room where you will not be disturbed by people, pets, etc.
+  - Have a piece of paper and a pen ready so that you are not scrambling to find them later.
+
 ### Face to face interview etiquette
+
+I haven’t had any interview in English. I think that a job interview is not easy for anyone even it’s in Spanish. Thanks for all the tips than we’re learning in Platzi we can be more prepared for this process.
+
+  Other Tips:
+
+  • Make sure you know what type of interview it is.
+  • Prepare your answers to interview questions.
+  • Brush up on your CV.
+  • Dress for success.
+  • Plan your commute.
+
+![](https://i.ibb.co/bPwjf1r/5-Tips-To-Secure-An-In-Perso.jpg)
 ### What to consider in a technical interview
+
+Very good tips. Thank you Caro for to invite to Martha.
+
+  - “Demonstrate your technical and communication skills.”
+  - “Speak about your process.”
+  - “Take a time for write about your process in blogs for example.”
+  - “Show the process in your portfolio.”
+
 ## 3. Common Interview Question and How to answer them
+
 ### Module 3 Vocabulary
+
+**Competencies:** the abilities to perform a task efficiently. Competencies involve skills, abilities and knowledge. They are your qualifications for a job.
+
+**Hard Skills:** learned abilities that are acquired and enhanced through practice, repetition, and education. They are teachable and measurable technical abilities that fit the job position.
+
+**Soft Skills:** they are non-technical skills that relate to how you work and which are not related to a specific job.
+
+**Plain language:** Clear and effective communication with straightforward expression or using only as many words as are necessary.
+
+**Pair Coding or Programming:** an Agile technique originating from extreme programming in which two developers get together and code using the same screen.
+
+**Portfolio:** a portable showcase of your work and talents which represent your skills and achievements.
+
 ### Tell me about yourself - your 1 minute commercial
+
+- [Tell me about yourself](https://drive.google.com/file/d/1Ph6vNiLgmVFD7QdpT3seG9WYTNMIiEcF/view?usp=sharing)
+
+![](https://i.ibb.co/nfT4B44/tell-me.jpg)
+
 ### Talk to me about your past work experiences
+
+- [talk-to-me-about-your-past-work-experiences.docx](https://drive.google.com/file/d/1-h4EivpsMmTeOhmURA2aol2XTbQylkQ9/view?usp=sharing)
+
+Example 
+
+**Person 1:**
+
+I have had experience in Project management and data analyst using Business Intelligence Tools. My latest position was as a technical department deputy chief. I worked managing a team of 12 talented supervisors and 79 electronics technicians. I was to lead and participate in lean process improvement activities.
+I helped to implement a new process to organize different tasks required from the operations department, I achieved reduce a 20% time executing tasks and contributed to improving Product department goals.
+
+**Persona 2:**
+
+I have had experience in writing and designing test cases, software testing and system analysis. My currently position is as a Functional Analyst and it has been a great experience, because I have achieved the automation of software tests in tools such as Silk test, SOAP UI and LOAD UI. I have achieved the Groovy language management in the SOAP UI automation, and I have acquired remote work skills and abilities. My latest position was as a Web Tester and it was a great experience since I had the chance of acquired knowledge in the pivotal tracker tool, for incident reporting and I worked for ITBF services, an excellent company that it allowed me to work for Pfizer client in Colombia. I have also worked as a Tests Analyst; I worked as a test’s leader in the Comcel project and I managed the work distribution, through the test-link tool. The tool that I helped to implement in the company. I worked with amazing people. I have also worked as a Tests Engineer; I worked with fantastic people too. I learned to review application manuals. I have also worked as a Tests Technician; I worked with fantastic people too. This was my first employee in the IT area and great achievement.
+As your Tests Engineer, I would like to contribute with my experience, knowledges and skills to exceed your growth expectations and quality assurance goals in the software.
+
 ### Why do you want to work for this company and why should we hire you?
+
+**Tips**
+
+  - Research the company
+  - Include in your answer skills and competencies that you know the company values
+  - Identify what the company needs
+  - Mention what you like about the company and why you would be a good fit for the role
+  - Focus on the value you will bring to your company with your skills, wxperience and achievements
+  - Give wxamples on how you archeved goals
+
+[Why-should-we-hire-you.doc](https://drive.google.com/file/d/1IKq2yGjr7RSxihp63asXGaxLBihTzGa7/view?usp=sharing)
+
+**Example** 
+
+**Person 1**
+
+I would like to work in Platzi because I am witness of your excellence and its growth. I am compatible with your vision; adaptability to change, make things happen, hard but good personal growth, and of course. Never stop to learn.
+
+With my experience in user Interface Design and User Research Design we could to get memorable products and understand how are learning the students for to perfect the methodology and achievement the goals, 1 million of programmers.
+
+**Person 2**
+
+I admire your company’s results in the technological industry, and I have experience in the services of quality assurance, that they make part of your company deliver software with high quality.
+
+I am goal oriented and I deliver exceptional results, such as improving quality assurance by 80%, and implementing a strategy to lower costs while maintaining quality. I always have oriented to do my job with excellent quality, but with the minimal effort and the effective tools that they provide us the necessary without incur unnecessary costs. For example, in my jobs, I have had the opportunity of the implement free tools that they cover the need of the software tests. I have achieved to implement tools like test-link and SOAPUI. And with the last tool, I have achieved to automate the software tests.
+
+Since I have interacted with people from different countries, I adapt easily and work well with other people. Because I am member of two communities. A student community at Platzi, and I am member of the Scrum Latam Community.
+
+I am sure I would be a good match for this position. I am interested in international companies, and I am committed to creating innovative strategies to achieve company goals in the quality assurance of the software.
+
 ### Talking about your skills and competencies
+
+Competencies are much broader than skills.
+
+Skills are specific to a task. A skill is the ability to solve problems and perform tasks.
+
+**Tips**
+
+  - Use the STAR  methio (Situation, Task, Action and Result) to talk about your skills and how you applied them.
+  - Keep your answer clear and concise
+  - Demostrate how you will benefit the company.
+
+[Talking-about-your-skills.docx](https://drive.google.com/file/d/1VQWl7S0Shl9y3tYj_b5sljrQqbCeVfmZ/view?usp=sharing)
+
+Excellent, I have learned a new concept: STAR method:
+
+- S= Situation
+- T= Taks
+- A= Action
+- R= Result.
+
+![](https://i.ibb.co/2q7p1tt/start.webp)
+
+**Now my skills and competencies:**
+
+Due to my technical skills and attention to detail I have built a good relationship with my coworkers. I’m disposed to help in any moment, I have problem-solving skills and I have a good memory.
+In my first job, I had to answer calls in the data center to keep slots machines online, so this was an excellent experience because I was learning something all day and people acquired trust for me.
+More ahead, when I was working as Logistic Manager my boss in Spain recognized my job with a travel to do a meeting with our CEO and explain the process that I helped to create for planning tasks in the technical department and improve ours results during more than a year in Panama.
+
 ### What are your strengths and weaknesses?
+
+**Strengths:**
+
+I adapt easily to changes and take them as opportunities. For example, we started using Zephyr of Atlassian Software Tools at work recently, so I was between first people to use it effectively. Be flexible, it has helped me to know a new tool for my job and it has done that I am much more organized and much more detail oriented.
+
+**Weakness:**
+
+I was naturally shy and in my current position I have had to participate in trainings of the use software tools our job and that have made me extremely nervous.
+So, I decided to “jump in” and make it. It really helped me a lot and now, although, that follow to made me extremely nervous; I am trying to encourage that are shy in the communities in the that I am, to try different techniques I learned, so they can also participate in these meetings or trainings. For example, I have a meeting on Saturdays, in the that with two of my mates and me lead and practice for improving our skills in English.
+
+![](https://i.ibb.co/4mwFNhC/strengths.webp)
+
+- [strengths-and-weaknesses.docx](https://drive.google.com/file/d/1qQtrRG9xL_RzHjQldHws8LAYMhXkkE8Z/view?usp=sharing)
+
 ## 4. Challenging Interview Question and How to answer them
+
 ### Module 4 vocabulary
+
+**Behavioral questions:** questions that have to do with how you handled past work situations.
+
+**Call someone out:** an expression which has to do with telling someone about something they did or said and asking them for an explanation.
+
+**Job setting / Work setting:** your work environment, the place where you work.
+
+**Role play:** A dramatization in which you perform or act out the part of a person or character in a situation in order to make the topic more clear.
+
+**Situational questions:** questions about hypothetical work situations. They allow the interviewer to know how you would act if they happened.
+
+**Example**
+
+**Person 1**
+
+**Behavioral questions:**
+
+  - Tell me about a stressful situation at work and how you handled it.
+  - Describe a time when you disagreed with your supervisor on how to accomplish something.
+  - Have you ever had to convince your team to do a job they were reluctant to do?
+
+**Situational questions:**
+
+  - What would you do if you made a mistake that no one else noticed?
+  - What would you do if you were asked to perform a task you’ve never done before?
+  - Tell me about a time when you failed. How did you deal with this experience?
+
+
 ### The salary expectation question
 ### Where do you see yourself in 5 years?
 ### Answering situational questions
