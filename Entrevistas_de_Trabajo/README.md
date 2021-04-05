@@ -4,38 +4,37 @@
 
 # Tala de Contenido
 
-- [Tala de Contenido](#tala-de-contenido)
-  - [1. Prepare yourself for the interview](#1-prepare-yourself-for-the-interview)
-    - [How to get the most out of this course](#how-to-get-the-most-out-of-this-course)
-    - [Module 1 Vocabulary](#module-1-vocabulary)
-    - [How to improve your English](#how-to-improve-your-english)
-    - [How to prepare your professional profile](#how-to-prepare-your-professional-profile)
-    - [How to prepare your cover letter and your LinkedIn profile](#how-to-prepare-your-cover-letter-and-your-linkedin-profile)
-    - [How to prepare for the interview](#how-to-prepare-for-the-interview)
-  - [2. Types of Interviews](#2-types-of-interviews)
-    - [Module 2 vocabulary](#module-2-vocabulary)
-    - [Things you should consider in an online or phone interview](#things-you-should-consider-in-an-online-or-phone-interview)
-    - [Face to face interview etiquette](#face-to-face-interview-etiquette)
-    - [What to consider in a technical interview](#what-to-consider-in-a-technical-interview)
-  - [3. Common Interview Question and How to answer them](#3-common-interview-question-and-how-to-answer-them)
-    - [Module 3 Vocabulary](#module-3-vocabulary)
-    - [Tell me about yourself - your 1 minute commercial](#tell-me-about-yourself---your-1-minute-commercial)
-    - [Talk to me about your past work experiences](#talk-to-me-about-your-past-work-experiences)
-    - [Why do you want to work for this company and why should we hire you?](#why-do-you-want-to-work-for-this-company-and-why-should-we-hire-you)
-    - [Talking about your skills and competencies](#talking-about-your-skills-and-competencies)
-    - [What are your strengths and weaknesses?](#what-are-your-strengths-and-weaknesses)
-  - [4. Challenging Interview Question and How to answer them](#4-challenging-interview-question-and-how-to-answer-them)
-    - [Module 4 vocabulary](#module-4-vocabulary)
-    - [The salary expectation question](#the-salary-expectation-question)
-    - [Where do you see yourself in 5 years?](#where-do-you-see-yourself-in-5-years)
-    - [Answering situational questions](#answering-situational-questions)
-  - [5. Best practices and conclusions](#5-best-practices-and-conclusions)
-    - [Common mistakes](#common-mistakes)
-    - [Module 5 vocabulary](#module-5-vocabulary)
-    - [Questions for the interviewer](#questions-for-the-interviewer)
-    - [How to close the job Interview effectively and what to do after the interview](#how-to-close-the-job-interview-effectively-and-what-to-do-after-the-interview)
-  - [6. Conclusion](#6-conclusion)
-    - [How to upload your project in your Platzi profile](#how-to-upload-your-project-in-your-platzi-profile)
+- [1. Prepare yourself for the interview](#1-prepare-yourself-for-the-interview)
+  - [How to get the most out of this course](#how-to-get-the-most-out-of-this-course)
+  - [Module 1 Vocabulary](#module-1-vocabulary)
+  - [How to improve your English](#how-to-improve-your-english)
+  - [How to prepare your professional profile](#how-to-prepare-your-professional-profile)
+  - [How to prepare your cover letter and your LinkedIn profile](#how-to-prepare-your-cover-letter-and-your-linkedin-profile)
+  - [How to prepare for the interview](#how-to-prepare-for-the-interview)
+- [2. Types of Interviews](#2-types-of-interviews)
+  - [Module 2 vocabulary](#module-2-vocabulary)
+  - [Things you should consider in an online or phone interview](#things-you-should-consider-in-an-online-or-phone-interview)
+  - [Face to face interview etiquette](#face-to-face-interview-etiquette)
+  - [What to consider in a technical interview](#what-to-consider-in-a-technical-interview)
+- [3. Common Interview Question and How to answer them](#3-common-interview-question-and-how-to-answer-them)
+  - [Module 3 Vocabulary](#module-3-vocabulary)
+  - [Tell me about yourself - your 1 minute commercial](#tell-me-about-yourself---your-1-minute-commercial)
+  - [Talk to me about your past work experiences](#talk-to-me-about-your-past-work-experiences)
+  - [Why do you want to work for this company and why should we hire you?](#why-do-you-want-to-work-for-this-company-and-why-should-we-hire-you)
+  - [Talking about your skills and competencies](#talking-about-your-skills-and-competencies)
+  - [What are your strengths and weaknesses?](#what-are-your-strengths-and-weaknesses)
+- [4. Challenging Interview Question and How to answer them](#4-challenging-interview-question-and-how-to-answer-them)
+  - [Module 4 vocabulary](#module-4-vocabulary)
+  - [The salary expectation question](#the-salary-expectation-question)
+  - [Where do you see yourself in 5 years?](#where-do-you-see-yourself-in-5-years)
+  - [Answering situational questions](#answering-situational-questions)
+- [5. Best practices and conclusions](#5-best-practices-and-conclusions)
+  - [Common mistakes](#common-mistakes)
+  - [Module 5 vocabulary](#module-5-vocabulary)
+  - [Questions for the interviewer](#questions-for-the-interviewer)
+  - [How to close the job Interview effectively and what to do after the interview](#how-to-close-the-job-interview-effectively-and-what-to-do-after-the-interview)
+- [6. Conclusion](#6-conclusion)
+  - [How to upload your project in your Platzi profile](#how-to-upload-your-project-in-your-platzi-profile)
 
 
 ## 1. Prepare yourself for the interview
@@ -303,12 +302,140 @@ So, I decided to “jump in” and make it. It really helped me a lot and now, a
 
 
 ### The salary expectation question
+
+  - Don't about the salary before you are asked about it.
+  - You could divert the question by saying you need more information about the role requuirements and expectations.
+  - Be aware of your market value and cost of living
+
+
+**Tip**
+
+  - Be ready to especify your required salary range and explain why.
+  - Be prepared to negotiate.
+  - You could say you are open to negotiating depending on the benefits, commissions or bonuses.
+   
+![](https://i.ibb.co/CPxNVLn/salary.png)
+
+**Lectura Recomendada**
+
+- [indeed](https://www.indeed.com/?from=gnav-title-webapp)
+- [salary.com](https://www.salary.com)
+
+- [how-to-answer-the-question-about-your-salary-expectations.docx](https://drive.google.com/file/d/1qU2nm0i1L67EuxepM4ocw2dPljyC0Y8X/view?usp=sharing)
+
+**Example**
+
+**Person 1**
+
+I would like to know more about the requirements of the position in detail.
+I understand that similar positions in this country pay in the range of $A (bottom of the range) and $C (maximum of the range).
+According to my qualifications, experience and professional achievements, I would expect to receive something in the range of $B (mid-point) to $C(maximum of the range).
+
+Note: I always say this and I always have worked so. It always has worked so. Never give up!!!
+
 ### Where do you see yourself in 5 years?
+
+![](https://i.ibb.co/bXnkG07/tips.jpg)
+
+- [where-do-you-see-yourself-in-5-years-.docx](https://drive.google.com/file/d/1ZBmud1tli2VZ3SjFlSDZbsBPLQSxMmxH/view?usp=sharing)
+
+**Example People 1**
+
+I am passionate about quality assurance in the software, I discovered this through my positive professional experience as tests engineer. And I have had the opportunity to work in different projects from different industries like telephony, communications, healthy, publicity.
+This is what motivated me to apply for the International Quality assurance senior engineer position. In five years, I would like to have made high-impact contributions for this company. I want to have contributed with my competencies for improve situations in the development process. I am also interested in developing my skills through your specialized training and mentoring programs, as well as your international events.
+In ten years, I would like to escalate in this company. I want to be a leader with my competencies improved. I am also interested in developing my skills in international environments with international clients.
+
 ### Answering situational questions
+
+![](https://i.ibb.co/ZcMwgXx/answer.jpg)
+
+**Example**
+
+1. What would you do if you had to collaborate with a coworker that is difficult to work with?
+It’s a common situation, and in this case is important to communicate effectively in order to complete the goals.
+
+2. What would you do if you made a big mistake but no one noticed?
+It has happened to me, I had a great mistake in a production database, a soon notification was important to solve as soon as possible. I learned about the importance of attention to details, I improved this skill.
+
+3. What would you do if you were asked to complete a task that you had never done before?
+It’s a good idea to get help, Asking since I understand the problem.
+
+4. If you knew that your boss was completely wrong about something, what would you do?
+I learned from one of my bosses that it’s important to get an honest and respectful opinion, and still know that the person does not change your opinion.
+
+5. What would you do if you were a manager and one of your team members was not reaching goals and expectations?
+In this case, I search for the way to complete the tasks. I like the idea about talk with the person and search for the reasons.
+
+- [examples-of-situational-questions.docx](https://drive.google.com/file/d/1KcGfB_9KvIGBxaMChBiV8v4mb6uOEb4F/view?usp=sharing)
+
 ## 5. Best practices and conclusions
+
 ### Common mistakes
+
+![](https://i.ibb.co/j6dRDL5/common.jpg)
+
+In the past, I mistake in this, no more:
+Not being prepared of the unconscious manner.
+In an interview, a company called me two hours earlier. I didn’t know anything, only I knew about the company that it was going to contract me. Then, I was in an interview without knowing about of the client company, that the interview was going to be with many interviewers and that one of them, she was a native speaker. You imagine my surprise. That was very awful.
+
+With this course, now, before of the interview, I’ll be prepared with all the tips that I learned.
+
 ### Module 5 vocabulary
+
+**Being late:** Not being on time for a scheduled meeting or event.
+
+**Follow up:** to investigate closely in order to have a status or more information as a response to something.
+
+**If applicable:** It expresses that you should consider if something has to do with you, if it is relevant or if it applies.
+
+**Mistake:** an act or judgment that is not right; something that you are wrong about.
+
+**Role:** a purpose or position that a person has in a company, a situation, society, or in a relationship; it is related to a duty or obligation that the person has.
+
+**Write down:** to record something in written form in a piece of paper.
+
 ### Questions for the interviewer
+
+![](https://i.ibb.co/vCWJt2z/questions.jpg)
+
+1. What is the most important challenge for this role?
+2. What has been your best experience working here?
+3. How many people are there in my work team?
+
 ### How to close the job Interview effectively and what to do after the interview
+
+![](https://i.ibb.co/z68rRw0/make.jpg)
+
 ## 6. Conclusion
+
+**You learned**
+
+  - How to prepare for a job interview
+  - The types of interviews
+  - HOw to answer interview questions
+  - Best practices you can apply during interviews
+
+    **What is next**
+
+    - Share your project
+    - Take the test and share your certificate
+    - Watch our Eglish for work courses
+    - Apply for your dream job
+    - Keep practicing
+
 ### How to upload your project in your Platzi profile
+
+Here’s how you can do it:
+
+1. Go to your Platzi profile and select My portfolio
+2. Select upload project to my portfolio
+
+![](https://i.ibb.co/SvFWJd4/portfolio.gif)
+
+3. Then add information about the project: Name, project URL and description. You can also add an image or gif to showcase your project and demonstrate what you are capable of.
+
+4. Share which skills you developed by working on this project and which courses helped you create it.
+
+5. Then click on **add project to my portfolio** and voila!
+
+![](https://i.ibb.co/mz3WHDZ/portfolio1.gif)
