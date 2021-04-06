@@ -1,11 +1,13 @@
 
 .grid {
   display: grid;
-  grid-template-columns: 20% 20% 20%;
-  grid-template-rows: 100px auto 40px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: minmax(20px, auto);
   column-gap: 1em;
   row-gap: 1em;
+  justify-items: start;
 }
+
 .grid div {
   background: #ecf0f1;
   padding: 1em;
