@@ -12,7 +12,7 @@
     - [Clonar el código de GitHub](#clonar-el-código-de-github)
     - [ReactDOM.render](#reactdomrender)
     - [JSX](#jsx)
-    - [Creación y diseño de componentes](#creación-y-diseño-de-componentes)
+  - [3. Creación y diseño de componentes](#3-creación-y-diseño-de-componentes)
     - [¿Qué es un componente?](#qué-es-un-componente)
     - [Qué es y cómo funciona un componente en React.js](#qué-es-y-cómo-funciona-un-componente-en-reactjs)
     - [Nuestro primer componente](#nuestro-primer-componente)
@@ -23,14 +23,14 @@
     - [Manejo de estado](#manejo-de-estado)
     - [Levantamiento del estado](#levantamiento-del-estado)
     - [Listas de componentes](#listas-de-componentes)
-  - [3. React Router](#3-react-router)
+  - [4. React Router](#4-react-router)
     - [Introducción a React Router](#introducción-a-react-router)
     - [División de la aplicación en rutas](#división-de-la-aplicación-en-rutas)
     - [Mejorando la User Interface con un Layout](#mejorando-la-user-interface-con-un-layout)
-  - [4. Component Lifecycle](#4-component-lifecycle)
+  - [5. Component Lifecycle](#5-component-lifecycle)
     - [Introducción del ciclo de vida de un componente](#introducción-del-ciclo-de-vida-de-un-componente)
     - [Práctica del ciclo de vida](#práctica-del-ciclo-de-vida)
-  - [5. Llamadas a un API](#5-llamadas-a-un-api)
+  - [6. Llamadas a un API](#6-llamadas-a-un-api)
     - [Introducción llamadas a un API](#introducción-llamadas-a-un-api)
     - [React.js: Cómo traer datos de un API en React](#reactjs-cómo-traer-datos-de-un-api-en-react)
     - [Solicitando datos (GET)](#solicitando-datos-get)
@@ -39,14 +39,14 @@
     - [Manejando los estados de la petición durante el POST](#manejando-los-estados-de-la-petición-durante-el-post)
     - [Actualizando datos (PUT)](#actualizando-datos-put)
     - [Actualizaciones automáticas](#actualizaciones-automáticas)
-  - [6. Mejorando la UI](#6-mejorando-la-ui)
+  - [7. Mejorando la UI](#7-mejorando-la-ui)
     - [Los detalles de un Badge](#los-detalles-de-un-badge)
     - [UI Components y Container Components](#ui-components-y-container-components)
     - [Portales](#portales)
     - [Modales](#modales)
     - [Hooks](#hooks)
     - [Search filter](#search-filter)
-  - [7. Conclusion](#7-conclusion)
+  - [8. Conclusion](#8-conclusion)
     - [Conclusión](#conclusión)
   
 
@@ -279,15 +279,110 @@ Listo. Ya con esto está realizada la insersión del h1 dentro del div con id �
 
 ### JSX
 
-### Creación y diseño de componentes
+JSX es una extensión de JavaScript creada por Facebook para el uso con la biblioteca React. Sirve de preprocesador (como Sass o Stylus a CSS) y transforma el código generado con React a JavaScript.
+
+JSX tiene su alternativa que es `React.createElement` pero es preferible JSX porque es mucho más legible y expresivo. Ambos tienen el mismo poder y la misma capacidad.
+
+`React.createElement` recibe 3 argumentos:
+
+1. El tipo de elemento que estamos creando
+2. Sus atributos o props
+3. y el children que es el contenido.
+   
+Ejemplo
+
+```js
+React.createElement('a', { href: 'https://platzi.com' }, 'Ir a Platzi');
+```
+
+En JSX se utilizan las llaves para introducir variables o expresiones de Javascript. Lo que sea que esté adentro se va a evaluar y su resultado se mostrará en pantalla.
+
+Las expresiones pueden ser llamadas a otras funciones, cálculos matemáticos, etc. Si las expresiones son false, 0, null, undefined, entre otros, no se verán.
+
+## 3. Creación y diseño de componentes
 
 ### ¿Qué es un componente?
 
+Los componentes en React son **bloques de construcción**.
+Las aplicaciones hechas con React son como figuras de Lego. Junta varias piezas (componentes) y puedes construir un website tan pequeño o tan grande como quieras.
+Los componentes serán barras de búsquedas, enlaces, encabezados, el header, etc.
+
+”Componente” vs “elemento
+Un elemento es a un objeto como un componente es a una clase. Si el elemento fuera una casa, el componente serían los planos para hacer esa casa.
+
+Identificación de componentes
+Para identificarlos debes hacerte las siguientes preguntas:
+
+- ¿Qué elementos se repiten? Estos son los elementos en una lista o los que comparten aspecto visual y su funcionalidad
+- ¿Qué elementos cumplen una función muy específica? Estos sirven para encapsular la lógica y permiten juntar muchos comportamientos y aspectos visuales en un solo lugar.
+
+
+Identificar componentes es una habilidad esencial para poder desarrollar aplicaciones de React.
+
+![](https://i.ibb.co/KmN9Jdr/React-components-blog-image.jpg)
+
+
+**¿Qué es un componente?**
+
+Los componentes en React son bloques de construcción.
+Las aplicaciones hechas con React son como figuras de Lego. Junta varias piezas (componentes) y puedes construir un website tan pequeño o tan grande como quieras.
+Los componentes serán barras de búsquedas, enlaces, encabezados, el header, etc.
+
+**”Componente” vs “elemento**
+
+Un elemento es a un objeto como un componente es a una clase. Si el elemento fuera una casa, el componente serían los planos para hacer esa casa.
+
+**Identificación de componentes**
+
+Para identificarlos debes hacerte las siguientes preguntas:
+
+¿Qué elementos se repiten? Estos son los elementos en una lista o los que comparten aspecto visual y su funcionalidad
+¿Qué elementos cumplen una función muy específica? Estos sirven para encapsular la lógica y permiten juntar muchos comportamientos y aspectos visuales en un solo lugar.
+Identificar componentes es una habilidad esencial para poder desarrollar aplicaciones de React.
+
 ### Qué es y cómo funciona un componente en React.js
+
+En esta clase aprenderás acerca del ciclo de vida de los componentes en React para crear aplicaciones dinámicas. Desde la importancia del montaje cuando los usuarios llegan por primera vez a nuestra aplicación, hasta la actualización y desaparición de los componentes.
+
+![](https://i.ibb.co/LQ6Vyj5/diagrama-ciclo-de-vida.png)
+
+Los componentes en React tienen vida; nacen, crecen y desaparecen .
+
+El ciclo de vida de los componentes tiene 3 fases :
+1. El Montaje es cuando los usuarios llegan a nuestra aplicación, cuando tienen su 1era interacción con él.
+2. La Actualización , es cuando se ejecuta el render, generando el nuevo DOM, es cuando React manda una señal de actualización componentDidUpdate() .
+3. Eliminación de los componentes, al entrar a otra página, varios componentes no estarán en ella, React manda la señal componentWIllUnmount(), seguido de la eliminación del código en el DOM.
+
+- [🤔 Entendiendo los ciclos de vida en React](https://medium.com/@jmz12/entendiendo-los-ciclos-de-vida-8a70abb3b51a)
+
+![](https://i.ibb.co/z56TLn8/ciclo.webp)
 
 ### Nuestro primer componente
 
+- Es una buena práctica que los componentes vivan en su propio archivo y para ello se les crea una carpeta.
+- Todos los componentes requieren por lo menos el método render que define cuál será el resultado que aparecerá en pantalla.
+- El source de las imágenes en React puede contener direcciones en la web o se le puede hacer una referencia directa importándola. Si se importa deben usarse llaves para que sea evaluado.
+  
+Configuracion de auotocompletdoo de codigo JSX, agregar el siguiente al archivo `asettingjson`.
+
+```js
+"emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "emmet.triggerExpansionOnTab": true
+```
+
 ### Cómo aplicar estilos
+
+Para los estilos crearemos una carpeta llamada Styles y allí vivirán todos los archivos de estilos que tienen que ver con los componentes.
+
+Para usar los estilos es necesario importarlos con `import`
+
+React funciona ligeramente diferente y para los atributos de clases no se utiliza class sino `className`
+
+Es posible utilizar Bootstrap con React, sólo debe ser instalado con `npm install bootstrap` y debe ser importado en el `index.js`
+
+Existen estilos que son usados de manera global o en varios componentes, así que deben ser importados en el `index.js`
 
 ### Props
 
@@ -301,14 +396,14 @@ Listo. Ya con esto está realizada la insersión del h1 dentro del div con id �
 
 ### Listas de componentes
 
-## 3. React Router
+## 4. React Router
 ### Introducción a React Router
 ### División de la aplicación en rutas
 ### Mejorando la User Interface con un Layout
-## 4. Component Lifecycle
+## 5. Component Lifecycle
 ### Introducción del ciclo de vida de un componente
 ### Práctica del ciclo de vida
-## 5. Llamadas a un API
+## 6. Llamadas a un API
 ### Introducción llamadas a un API
 ### React.js: Cómo traer datos de un API en React
 ### Solicitando datos (GET)
@@ -317,12 +412,12 @@ Listo. Ya con esto está realizada la insersión del h1 dentro del div con id �
 ### Manejando los estados de la petición durante el POST
 ### Actualizando datos (PUT)
 ### Actualizaciones automáticas
-## 6. Mejorando la UI
+## 7. Mejorando la UI
 ### Los detalles de un Badge
 ### UI Components y Container Components
 ### Portales
 ### Modales
 ### Hooks
 ### Search filter
-## 7. Conclusion
+## 8. Conclusion
 ### Conclusión
