@@ -4,44 +4,49 @@
 
 # Tabla de Contenido
 
-- [Introducción](#Introducción)
-  - [Introducción y presentación](#Introducción-y-presentación)
-  - [Conoce Sistemas de Diseño populares](#Conoce-Sistemas-de-Diseño-populares)
-- [Instalación y flujos de trabajo](#Instalación-y-flujos-de-trabajo)
-  - [Bonus: Personalizando la Terminal](#Bonus-Personalizando-la-Terminal)
-  - [Instalación y flujos de trabajo](#Instalación-y-flujos-de-trabajo)
-  - [Instalación de Node / Express desde 0](#Instalación-de-Node-Express-desde-0)
-  - [Bonus: html, css, js](#Bonus-html-css-js)
-- [Automatización](#utomatización)
-  - [Automatización (Pre procesadores)](#Automatización-Pre-procesadores)
-  - [Continuando con la automatización](#Continuando-con-la-automatización)
-- [Paradigmas](#Paradigmas)
-  - [SMACSS: Arquitectura de CSS escalable y modular](#SMACSS-Arquitectura-de-CSS-escalable-y-modular)
-  - [OCSS: Orientación de objetos en CSS](#OCSS-Orientación-de-objetos-en-CSS)
-  - [BEM](#BEM)
-  - [Bonus: Bootstrap](#Bonus-Bootstrap)
-- [Naming](#Naming)
-  - [Naming](#Naming)
-- [Qué son los tokens](#Qué-son-los-tokens)
-  - [¿Qué son los tokens?](#¿Qué-son-los-tokens?)
-- [Espaciado](#Espaciado)
-  - [Espaciado](#Espaciado)
-- [Grillas](#Grillas)
-  - [Grillas](#Grillas)
-  - [Bonus: Animando en CSS](#Bonus-Animando-en-CSS)
-- [Mi primer componente](#Mi-primer-componente)
-  - [Mi primer componente](#Mi-primer-componente)
-- [Documentación](#Documentación)
-  - [Documentación](#Documentación)
-- [Testing](#Testing)
-  - [Testing](#Testing)
-  - [Bonus: Debug en el navegador](#Bonus-Debug-en-el-navegador)
-- [Deploy y versionamiento](#Deploy-y-versionamiento)
-  - [Cómo empezar en Github](#Cómo-empezar-en-Github)
-  - [Deploy y versionamiento](#Deploy-y-versionamiento)
-- [Design review](#Design-review)
-  - [Design review](#Design-review)
-  - [Cierre](#Cierre)
+- [Sistemas de Diseño para Desarrolladores](#sistemas-de-diseño-para-desarrolladores)
+      - [Rulótico González](#rulótico-gonzález)
+- [Tabla de Contenido](#tabla-de-contenido)
+  - [Introducción](#introducción)
+    - [Introducción y presentación](#introducción-y-presentación)
+    - [Conoce Sistemas de Diseño populares](#conoce-sistemas-de-diseño-populares)
+  - [Instalación y flujos de trabajo](#instalación-y-flujos-de-trabajo)
+    - [Bonus: Personalizando la Terminal](#bonus-personalizando-la-terminal)
+    - [Instalación y flujos de trabajo](#instalación-y-flujos-de-trabajo-1)
+    - [Instalación de Node / Express desde 0](#instalación-de-node--express-desde-0)
+    - [Bonus: html, css, js](#bonus-html-css-js)
+  - [Automatización](#automatización)
+    - [Automatización (Pre procesadores)](#automatización-pre-procesadores)
+      - [¿Qué es gulp?](#qué-es-gulp)
+      - [¿Qué es SCSS?](#qué-es-scss)
+    - [Continuando con la automatización](#continuando-con-la-automatización)
+  - [Paradigmas](#paradigmas)
+    - [SMACSS: Arquitectura de CSS escalable y modular](#smacss-arquitectura-de-css-escalable-y-modular)
+    - [OCSS: Orientación de objetos en CSS](#ocss-orientación-de-objetos-en-css)
+    - [BEM](#bem)
+    - [Bonus: Bootstrap](#bonus-bootstrap)
+  - [Naming](#naming)
+    - [Naming](#naming-1)
+  - [Qué son los tokens](#qué-son-los-tokens)
+    - [¿Qué son los tokens?](#qué-son-los-tokens-1)
+  - [Espaciado](#espaciado)
+    - [Espaciado](#espaciado-1)
+  - [Grillas](#grillas)
+    - [Grillas](#grillas-1)
+    - [Bonus: Animando en CSS](#bonus-animando-en-css)
+  - [Mi primer componente](#mi-primer-componente)
+    - [Mi primer componente](#mi-primer-componente-1)
+  - [Documentación](#documentación)
+    - [Documentación](#documentación-1)
+    - [Testing](#testing)
+    - [Testing](#testing-1)
+    - [Bonus: Debug en el navegador](#bonus-debug-en-el-navegador)
+  - [Deploy y versionamiento](#deploy-y-versionamiento)
+    - [Cómo empezar en Github](#cómo-empezar-en-github)
+    - [Deploy y versionamiento](#deploy-y-versionamiento-1)
+  - [Design review](#design-review)
+    - [Design review](#design-review-1)
+    - [Cierre](#cierre)
 
 ## Introducción
 
@@ -292,24 +297,121 @@ Son clases de lo más geniales, nos permiten modificar el comportamiento o estil
 
 ### Naming
 
+**Modificadores**
+Son clases que modifican el comportamiento o clase de un elemento.
+
+**Utilidades**
+Son clases que nos ayudan a generar ciertas propiedades de uso general.
+
+Naming genera una regla de cómo definir nuevas clases. Debes tener muy en claro cuál será la regla que utilizarás para evitar confusiones y pérdida de tiempo.
+
+BEM va de lo general a lo particular: .house , .house_window
+
+Recomendación: NUNCA utilices nombres en español. Puedes meter la “ñ” y esto no es reconocido por SCSS.
+
+- [Lightning Design System](https://www.lightningdesignsystem.com)
+- [Website Style Guide Resources](http://styleguides.io)
 
 ## Qué son los tokens
+
 ### ¿Qué son los tokens?
+Nuestro objetivo es sistematizar nuestros procesos entonces nuestro sistema tiene que ser un ente configurable. En este sentido, los tokens son configuraciones que afectan a todo nuestro sistema tales como:
+
+Colores
+Tipografía
+Reglas de espaciado
+Brakepoints
+Definiremos nuestros colores basándonos en algún paradigma o en los guidelines y UI kit del producto, para definir estas variables es importante que si trabajamos con un diseñador, este también este presente y pueda verificar la viabilidad de lo que estamos haciendo.
+
+Vamos a crear las reglas necesarias para fundamentar nuestro sistema de columnas y podremos hacer otras extras que nos permitan generar un nuevo sistema de interacción mobile. Para esto crearemos un archivo llamado `brakepoints.scss`
+
 ## Espaciado
 ### Espaciado
+
+Ya que tenemos elementos dentro de nuestro sistema, ahora tenemos que poner a prueba nuestros tokens de espaciado para ello crearemos un organismo para ver cuál es el efecto de nuestras reglas cuando los átomos conviven en un ecosistema de elementos.
+
+El organismo más común de toda plataforma es el formulario que nos ayuda a recopilar información del usuario. Para esto tomaremos elementos como:
+
+  - Label
+  - Input
+  - Alert
+  - Btn
+  - Modals
+
 ## Grillas
-Grillas
-Bonus: Animando en CSS
-- Mi primer componente
-Mi primer componente
-- Documentación
-Documentación
-Testing
-Testing
-Bonus: Debug en el navegador
-- Deploy y versionamiento
-Cómo empezar en Github
-Deploy y versionamiento
-- Design review
-Design review
-Cierre
+
+### Grillas
+
+Llegó el momento que nos pongamos rudos y definamos cómo se va a comportar nuestro sistema. Para esto necesitamos crear un sistema de columnas.
+
+Antes de hacerlo vamos a cuestionar si usaremos un layout al que tengamos que seguir, pues esto es bastante importante para la reglamentación de nuestro grid.
+
+Utilizaremos el sistema de doce columnas como lo hace Bootstrap, basados en un layout.
+Una vez definido tenemos cómo funcionan nuestras columnas, el departamento de diseño tienen que estimar cómo es que sus componentes se van a comportar y para ello este sistema les ayudara cuando estén diseñando.
+
+Una parte importante es que el documento de diseño como programación, siga las mismas reglas.
+
+Dentro de nuestro wrapper, donde definiremos el contenido construiremos los grid, podemos basarnos en librerías de grids que ya existen en internet, solo tenemos que modificar los estilos para que tengan sentido dentro de nuestro sistema.
+
+Hay tres cosas importantes qué definir dentro del grid de nuestro sistema:
+
+
+  1. Nomenclatura de columnas
+  2. Nomenclatura de los brakepoints
+  3. Obtener los tokens de nuestro sistema para esta definición.
+
+- [Una cuadricula simple adaptable a diferentes pantallas, mejorada con Sass](https://webdesign.tutsplus.com/es/tutorials/a-simple-responsive-grid-made-even-better-with-sass--cms-21540)
+- [Normalize.css](https://necolas.github.io/normalize.css/)
+
+### Bonus: Animando en CSS
+
+
+
+- [Animate.css](https://animate.style)
+
+## Mi primer componente
+
+### Mi primer componente
+
+Estamos listos para construir elementos y para que otros puedan construir nuevos componentes respetando el sistema de diseño. Para definir un componente necesitarás tener previamente definidos:
+
+- Tokens
+- Naming
+- Modificadores o Utilities
+
+
+Al construir el componente en cuestión, seguimos las buenas prácticas que venimos aprendiendo. Es importante que tengas documentado el proceso en tu librería y un espacio para definir nuevos componentes.
+
+[7 Tools for Building Your Design System in 2021](https://blog.bitsrc.io/7-tools-for-building-your-design-system-in-2020-452d9c9b3b8e)
+
+## Documentación
+
+### Documentación
+
+
+### Testing
+
+
+### Testing
+
+
+### Bonus: Debug en el navegador
+
+
+## Deploy y versionamiento
+
+### Cómo empezar en Github
+
+
+### Deploy y versionamiento
+
+
+## Design review
+
+### Design review
+
+
+
+### Cierre
+
+
