@@ -380,44 +380,327 @@ Para usar los estilos es necesario importarlos con `import`
 
 React funciona ligeramente diferente y para los atributos de clases no se utiliza class sino `className`
 
-Es posible utilizar Bootstrap con React, sólo debe ser instalado con `npm install bootstrap` y debe ser importado en el `index.js`
+Es posible utilizar Bootstrap con React, sólo debe ser instalado con `npm install bootstrap` o `yarn install bootstrap` luego `yarn add boots`y debe ser importado en el `index.js`
 
 Existen estilos que son usados de manera global o en varios componentes, así que deben ser importados en el `index.js`
 
+- [Get BEM](http://getbem.com/naming/)
+
 ### Props
+
+Los **props** que es la forma corta de properties son argumentos de una función y en este caso serán los atributos de nuestro componente como class, src, etc.
+
+Estos props salen de una variable de la clase que se llama this.props y los valores son asignados directamente en el ReactDOM.render().
+
+example
+
+```js
+class Badge extends React.Component {
+  render() {
+    const {
+	firstName,
+	lastName,
+	avatarUrl,
+	jobTitle,
+	twitter
+    } = this.props;
+    return (
+      <div className="Badge">
+        <div className="Badge__header">
+          <img src={confLogo} alt="Logo de la conferencia" />
+        </div>
+
+        <div className="Badge__section-name">
+          <img
+            className="Badge__avatar"
+            src={avatarUrl}
+            alt="Avatar"
+          />
+          <h1>
+            {firstName} <br /> {lastName}
+          </h1>
+        </div>
+
+        <div className="Badge__section-info">
+          <h3>{jobTitle}</h3>
+          <div>@{twitter}</div>
+        </div>
+
+        <div className="Badge__footer">#platziconf</div>
+      </div>
+    );
+  }
+}
+```
+
+Lo que se conoce como atributos en HTML, se llama propiedades en JSX. Los atributos son los que ayudan a personalizar las etiquetas HMTL mediante cierta información adicional llamada atributo, existen diferentes tipos de atributos, como lo son:
+
+  - Atributos básicos: Se pueden utilizar prácticamente en todas las etiquetas HTML. Los atributos básicos son: id, class, style y title.
+
+  - Atributos para internacionalización: Son utilizados por las paginas que muestran su contenido en varios idiomas. lang, xml:lang y dir.
+
+  - Atributos de eventos: Sólo se utilizan en las paginas web dinamicas en donde su hace uso de JavaScript. Algunos de estos atributos son: onchange, onclick, onfocus, onkeypress.
+
+  - Atributos de focos: Relacionado principalmente con la accecibilidad de los sitios web, estoso son: accesskey, tabindex y onfocus.
 
 ### Nuestra primera página
 
+Las páginas en React son componentes y conseguir distinguirlas nos servirá para saber que es un componente que adentro lleva otros componentes.
+
+  - Al escribir los props no importa el orden en el que lo hagas, únicamente importa el nombre.
+
+  - [Proyecto curso react js.sketch - Google Drive](https://drive.google.com/file/d/1rPcpfiDOh8gk7WM4ain1bNYE7qN0CyM8/view?usp=sharing)
+  
 ### Enlazando eventos
+
+- React dispone de **eventos.** Cada vez que se recibe información en un input se obtiene un evento onChange y se maneja con un método de la clase this.handleChange
+
+- Los elementos button también tienen un evento que es **onClick.**
+
+- Cuando hay un botón dentro de un formulario, este automáticamente será de tipo **submit.** Si no queremos que pase así hay dos maneras de evitarlo: especificando que su valor es de tipo button o manejándolo desde el formulario cuando ocurre el evento onSubmit.
 
 ### Manejo de estado
 
+Hasta esta clase todos los componentes han obtenido su información a través de props que vienen desde afuera (otros componentes) pero hay otra manera en la que los componentes pueden producir su propia información y guardarla para ser consumida o pasada a otros componentes a través de sus props. La clave está en que la información del state a otros componentes pasará en una sola dirección y podrá ser consumida pero no modificada.
+
+- Para guardar la información en el estado se usa una función de la clase component llamada setState a la cual se le debe pasar un objeto con la información que se quiere guardar.
+- Aunque no se ve, la información está siendo guardada en dos sitios. Cada input guarda su propio valor y al tiempo la está guardando en setState, lo cual no es ideal. Para solucionarlo hay que modificar los inputs de un estado de no controlados a controlados.
+
 ### Levantamiento del estado
+
+**Levantar el estado** es una técnica de React que pone el estado en una localización donde se le pueda pasar como props a los componentes. Lo ideal es poner el estado en el lugar más cercano a todos los componentes que quieren compartir esa información.
+
+Algo interesante que le da el nombre a React es su parte de “reactivo” ya que cada vez que hay un cambio en el estado o en los props que recibe un componente se vuelve a renderizar todo el componente y todos sus descendientes.
 
 ### Listas de componentes
 
+- [Sparragus | platzi-badges](https://github.com/Sparragus/platzi-badges)
+
 ## 4. React Router
+
 ### Introducción a React Router
+
+Las aplicaciones que se trabajan en React son llamadas **single page apps.** Esto es posible gracias a **React Router** que es una librería Open Source. 
+
+**Multi Page Apps:** Cada página implica una petición al servidor. La respuesta usualmente tiene todo el contenido de la página.
+
+**Single Page Apps (SPA):** Aplicaciones que cargan una sola página de HTML y cualquier actualización la hacen re-escribiendo el HTML que ya tenían.
+
+**React Router (v4):** Nos da las herramientas para poder hacer SPA fácilmente. Usaremos 4 componentes:
+
+- BrowserRouter: es un componente que debe estar siempre lo más arriba de la aplicación. Todo lo que esté adentro funcionará como una SPA.
+- Route: Cuando hay un match con el path, se hace render del component. El component va a recibir tres props: match, history, location.
+- Switch: Dentro de Switch solamente van elementos de Route. Switch se asegura que solamente un Route se renderize.
+- Link: Toma el lugar del elemento `<a>`, evita que se recargue la página completamente y actualiza la URL.
+
+<h5>React Router tiene 4 componentes principales:</h5>
+
+- Browser Router. Es necesario colocar el componente en la parte superior de la aplicación, lo que esté dentro de este va a servir como una Single Page App y les va a permitir al resto de las herramientas funcionar. Ya que fuera de él NO Funciona.
+- Route. Representa una dirección de Internet, el path es donde va a renderizar el componente y el componente es el componente que va a renderizar, usualmente es un a página.
+- Switch. Componente que nos sirve para representar 1 sola ruta de varias que podemos poner dentro del componente.
+- Link. Toma el lugar del elemento ancla, evita que se recargue completamente la página, actualiza la URL sin recargar la página completa.
+
+  - MPA => Vieja Escuela (Sitios Web Tradicionales)
+
+    - Multi Page Apps: Se hace una petición al servidor cada que se cambia de pagina
+
+  - SPA => Nueva Escuela (Sitios Actuales)
+
+    - Sigle Page Apps: Se pide una sola vez el html y cuando cambia solo se piden los datos necesarios para la actualización
+
 ### División de la aplicación en rutas
+
+Para instalar **React Router** lo hacemos desde la terminal con npm install react-router-dom. Como es importante usar exactamente la misma versión, del package.json en “dependencies” se quita lo que está delante del 4.
+
+  - **Link** internamente tiene un elemento `<a>`b pero va a interceptar el clic para navegar de manera interna sin refrescar toda la página.
+
+Si quieren instalar la versión del profesor pueden ejecutar:
+
+```bash
+# npm
+$ npm install -E react-router-dom@4.3.1
+
+# En caso de exista problemas con dependencias de npm utiliar
+$ yarn add -E react-router-dom
+```
+
+Con el flag -E además le diremos que queremos esa versión en específico así no tenemos que estar retirando el símbolo ^ de nuestro package.json
+
 ### Mejorando la User Interface con un Layout
+
+React.Fragment es la herramienta que te ayudará a renderizar varios componentes y/o elementos sin necesidad de colocar un `div` o cualquier otro elemento de HTML para renderizar sus hijos. Al usar esta característica de React podremos renderizar un código más limpio y legible, ya que `React.Fragment` no se renderiza en el navegador.
+
+El 404 es la ruta que se renderizará cuando ninguna otra coincida con la dirección ingresada.
+
+Otra forma de hacer que todas tus URL’s que no existan sean redirigidas a tu componente de 404 sería de la siguiente forma:
+
+
+```js
+import { Redirect, Route } from "react-router-dom";
+
+<Route path="/404" component={MiComponente404} />
+<Redirect from="*" to="/404" />
+```
+
+Como podemos observar llamamos a nuestro componente 404 y luego utilizamos `Redirect`, el cual es un componente de React Router para hacer redirecciones; en este caso hacemos que todas las URL’s que no correspondan a alguna que hayamos declarado, sean redirigidas a `MiComponente404`.
+
+- [Proyecto-curso-reactjs.pdf](https://drive.google.com/file/d/1auOlH--UYoDDbowA2VdV2TsxWaqDktbQ/view?usp=sharing)
+
 ## 5. Component Lifecycle
+
 ### Introducción del ciclo de vida de un componente
+
+Cuando React renderiza los componentes decimos que entran en escena, cuando su estado cambia o recibe unos props diferentes se actualizan y cuando cambiamos de página se dice que se desmontan.
+
+**Montaje:**
+
+  - Representa el momento donde se inserta el código del componente en el DOM.
+  - Se llaman tres métodos: _constructor, render, componentDidMount._
+
+**Actualización:**
+
+  - Ocurre cuando los props o el estado del componente cambian.
+  - Se llaman dos métodos: _render, componentDidUpdate._
+
+**Desmontaje:**
+
+  - Nos da la oportunidad de hacer limpieza de nuestro componente.
+  - Se llama un método: _componentWillUnmount_.
+
+  ![](https://i.ibb.co/8DRPf4B/diagrama-ciclo-de-vida.png)
+
 ### Práctica del ciclo de vida
+
+**Constructor(props)**{
+	/*Este método se ejecuta cuando se instancia un componente. Nos permite definir el estado inicial del 		componente, hacer bind de métodos y definir propiedades internas en las que podemos guardar muchos datos diferente*/
+}
+
+**componentWillMonunt()**{
+	/*Este método se ejecuta cuando el componente se está por renderizar. En este punto es posible modificar el estado del componente sin causar una actualización (y por lo tanto no renderizar dos veces el componente).*/
+}
+
+**render()**{
+	/*En este momento de la fase de montado se van a tomar las propiedades, el estado y el contexto y se va a generar la UI inicial de este componente*/
+}
+
+**componentDidMount()** {
+	/*Este último método de la fase de montado se ejecuta una vez el componente se renderizó en el navegador y nos permite interactuar con el DOM o las otras APIs del navegador (geolocation, navigator, notificaciones, etc.).*/
+}
+
+**componentWillReceiveProps(nextProps)**{
+	/*Este método se ejecuta inmediatamente después que el componente reciba nuevas propiedades. En este punto es posible actualizar el estado para que refleje el cambio de propiedades, ya sea reiniciando su valor inicial o cambiándolo por uno nuevo.*/
+}
+
+**shouldComponentUpdate(nextProps, nextState)**{
+	/*Este método (el cual debe ser puro) se ejecuta antes de empezar a actualizar un componente, cuando llegan las nuevas propiedades (nextProps) y el nuevo estado (nextState). Acá es posible validar que estos datos sean diferentes de los anteriores `(this.props y this.state)` y devolver true o false dependiendo de si queremos volver a renderizar o no el componente.*/
+}
+
+**componentWillUpdate(nextProps, nextState)**{
+	/*Una vez el método anterior devolvió true se ejecuta este método, acá es posible realizar cualquier tipo de preparación antes de que se actualice de la UI*/
+  }
+
+![](https://i.ibb.co/26CFnb4/react-prac.webp)
+
+
+- [Ciclo de vida de un componente de React.js](https://platzi.com/blog/ciclo-de-vida-de-un-componente-de-reactjs/)
+
 ## 6. Llamadas a un API
+
 ### Introducción llamadas a un API
+
+Las llamadas a una API siguen un patrón similar siempre que las hacemos, cada llamada consta de tres estados:
+
+![](https://i.ibb.co/MRnzpCc/tres.webp)
+
+  - **Loading:** cuando la petición se envía y estamos esperando.
+  - **Error:** se debe dejar un mensaje para el usuario para arreglar el error o volver a intentarlo.
+  - **Data:** los datos nos pueden llegar de dos formas, o en error o con los datos requeridos.
+
+Para proveer una buena experiencia de usuario (UX) es necesario proveer un indicador de dicho proceso. Así el usuario no se va a sentir perdido.
+
+Una llamada a una API tiene tres estados
+
+Una promesa
+
+1. Loading
+
+    =>
+
+  1. Error
+  
+    ||
+
+
+    2. Data
+    
+    1. Without data {}
+
+    ||
+
+    2. With data {…}
+
+  - Es vital indicar que se está cargando para que el usuario tenga paz
+  - Si no hay data es vital hacer un CTA para introducir data
+
+
+- [slides-curso-reactjs-platzi.pptx](https://drive.google.com/file/d/1tIQKJFijbkC1ZsHiY5GjnMf2ar1uS-Du/view?usp=sharing)
+
 ### React.js: Cómo traer datos de un API en React
+
+Una llamada a una **API** es un proceso asíncrono, es decir que lo comenzamos pero no sabemos cuándo acabará. Por lo mismo la función a escribir debe ser asíncrona.
+La llamada se hará usando fetch que es una función de JavaScript que al pasarle una dirección de internet, hará una petición **GET** y lo que sea que exista ahí será devuelto.
+
+- [dvtng | react-loading-skeleton](https://github.com/dvtng/react-loading-skeleton)
+
 ### Solicitando datos (GET)
+
+![](https://i.ibb.co/NTVpdS1/api.jpg "Peticion de una api")
+
 ### Mejorando la Experiencia de Usuario durante una petición
+
+- [storyset](https://storyset.com/search?q=503%20Error%20Service%20Unavailable)
+
+- [react-loading-skeleton](https://www.npmjs.com/package/react-loading-skeleton)
+
 ### Enviando datos (POST)
+
+MD5 es una pequeña librería a la cual se le da un texto y ella regresa un `hash`.
+
+Podremos hacer pruebas para cifrar nuestros textos a md5 en el siguiente sitio [MD5 Online](https://www.md5online.org/md5-encrypt.html)
+
+Hola Platzi = d3bfb9302fb1007c0f996b41cba2818c
+
 ### Manejando los estados de la petición durante el POST
+
+
 ### Actualizando datos (PUT)
+
+
 ### Actualizaciones automáticas
+
+
 ## 7. Mejorando la UI
+
 ### Los detalles de un Badge
+
+
 ### UI Components y Container Components
+
+
 ### Portales
+
+
 ### Modales
+
+
 ### Hooks
+
+
 ### Search filter
+
+
 ## 8. Conclusion
+
 ### Conclusión
+
+
