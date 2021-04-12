@@ -670,11 +670,241 @@ Podremos hacer pruebas para cifrar nuestros textos a md5 en el siguiente sitio [
 
 Hola Platzi = d3bfb9302fb1007c0f996b41cba2818c
 
+- Para solucionar el problema del reto final simplemente importamos el componente Gravatar en BadgesList.js
+
+```js
+import Gravatar from './Gravatar'
+````
+
+Y cambiamos la etiqueta img por el componente Gravatar
+
+```js
+class BadgesListItem extends React.Component {
+  render() {
+    return (
+      <div className="BadgesListItem">
+        <Gravatar
+          className="BadgesListItem__avatar"
+          email={this.props.badge.email}
+          alt={`${this.props.badge.firstName} ${this.props.badge.lastName}`}
+          />
+...
+export default BadgesList;
+```
+
 ### Manejando los estados de la petición durante el POST
+
+De la misma manera en la que se manejan los estados cuando se solicitan datos, deben ser manejados cuando los datos son enviados.
+
+Existe un tiempo entre que se da clic y los datos son enviados. Ese tiempo de espera es necesario visualizarlo. Igual hay que mostrar mensajes de error cuando no funcionan las cosas.
 
 
 ### Actualizando datos (PUT)
 
+Para incorpor fontawesome basicamente hice lo siguiente:
+
+Si te estas preguntando ¿Por qué en la página de Badge Edit no podemos sencillamente recibir los datos desde la lista, sino que tenemos que volverlos a pedir al servidor?, lo cual en la práctica es ineficiente. Existen muchas soluciones, alguna que pueden ser complicadas como pasar con propiedades y state de componentes de orden superior, u otras poco elegantes como pasar por query string en la dirección.
+
+Para lo anterior les aconsejo revisar el curso de Redux que potencia un montón el desarrollo en React y permite manejar de manera centralizada el state de toda la app. Ej.: al dar clic en un elemento de la lista este manda a actualizar el state de la app y la página de edit automáticamente carga lo que se encuentre en el state evitando tener que llamar al servidor.
+
+- Instalación:
+
+```bash
+$ npm i --save @fortawesome/fontawesome-svg-core
+$ npm i --save @fortawesome/free-solid-svg-icons
+$ npm i --save @fortawesome/react-fontawesome
+```
+
+- Importación:
+
+```js
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+```
+
+- Implementación:
+
+```js
+<FontAwesomeIcon icon={faUser} />
+```
+
+Podrá encontrar más información en la documentación que proporcioné, espero que le haya servido 😄
+
+<h3>Actualizando datos (PUT)</h3>
+
+- Nos queda un tipo de formulario por hacer que es el de editar los datos, este es muy parecido al de BadgeNew pero vamos a creare una nueva pagina que se va a llamar “badgeEdit”, si vamos a “App.js” podemos notar que no esta la rutra en nuestro BrowserRouter
+Para ello vamos a app.js y agregamos justo debajo de BadgeNew nuestro BadgeEdit
+
+```js
+  <Route exact path="/badges/edit" component={BadgeEdit}/>
+```
+
+- Pero hay un detalle en esto y es que debemos agregarle lo siguiente;
+
+```js
+  <Route exact path="/badges/:badgeId/edit" component={BadgeEdit}/>
+```
+
+- Para ello vamos a trabajar con badges en especifico por lo que dben tener un id y aca en esta línea estamos declarando “:badgeId” como una variable que nos definira el Id de un badge al momento de editarlo, va a ser un valor que si va a estar definido en la Url pero va a ser genérico, puede ser el 1 el 2 el 3, eso no importa mucho.
+
+- Cuando eso ocurra queremos presentar el componenete BadgeEdit. Procedemos a declarar el import y luego como el new y el edit se parecen, usaremos el new como pnto de partida para crear nuestro BadgeEdit, pero lo que haremos sera cambiar las referencias a BadgeNew por BadgeEdit por lo que lo haremos tanto en las clases para el constructor como en nuestras className para los estilos y por ultimo en el export y por ultimo en este paso, copiamos el archivo css de BadgeNew y le colocamos el nombre de BadgeEdit para trabajarlos de manera separada y obviamente reemplazamos los nombres de las clases en ccs para dejar nuestro punto de partida realizado.
+
+- Nuestro siguiente paso sera que en la lista de badges cada uno de los badges que allí aparecen nos lleven a esa pagina por lo que para ello vamos a badgesList y en badgeslist donde hacemos el map para renderizar la lista de componentes;
+
+
+```js
+    return (
+      <div className="BadgesList">
+        <ul className="list-unstyled">
+          {this.props.badges.map(badge => {
+            return (
+              <li key={badge.id}>
+                <Link to={`/badges/${badge.id/edit}`}>
+                <BadgesListItem badge={badge} />
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    );
+  }
+}
+```
+Crearemos un Link en nuestro código de los badges en el cual vamos a colocar dentro los elementos del maping para que cuando les demos cick a cada uno de los badges estos pasen a la pagina BadgeEdit para hacer las modificaciones, pero luego de esto vamos a tener un pequeño problema y es que nuestros badges se verán color azul y serán un hypertexto, por lo que vamos a aplicar una clase de bootStrap para arreglar esto
+
+```js
+   return (
+     <div className="BadgesList">
+       <ul className="list-unstyled">
+         {this.props.badges.map(badge => {
+           return (
+             <li key={badge.id}>
+               <Link className="text-reset text-decoration-none" to={`/badges/${badge.id}/edit`}>
+               <BadgesListItem badge={badge} />
+               </Link>
+             </li>
+           );
+         })}
+       </ul>
+     </div>
+   );
+```
+
+- Listo con esto todo arreglado, ahora llegados a este punto, cuando lleguemos al edit, necesitamos pedir información de el badge que vamos a editar por lo que haremos una llamada de datos a datos que ya existen;
+
+```js
+ state = {
+    loading:true,
+    error: null,
+
+    form: {
+        firstName: '',
+        lastName: '',
+        email: '',
+        jobTitle: '',
+        twitter: '',
+    }};
+```
+
+- Lo primero que vamos a hacer sera cargfar nuestro loading state a true porque necesitaremos cargar los datos existente y siguiente es crear el método componentDidMount que indicara que cuando este ocurra, comenzaremos a cargar los datos;
+
+```js
+    componentDidMount(){
+        this.fetchData()
+    }
+```
+
+- Y definiremos la función declarada dentro de el mismo;
+
+```js
+ fetchData =async () =>{
+        this.setState({ loading:true, error:null})
+
+        try{    
+            const data = await api.badges.read()
+        } catch(error){
+
+        }
+    }
+```
+
+- Explicando por partes aca iniciaremos con nuestra función asíncrona como en otras ocasiones, nuestro setState inicial con nuestro loading verdadero y nuestro error nulo, para luego pasar a nuestro TryCatch, “try” con la constante de data que esperara la carga de datod de la api.badges y usaremos el método read que esto lo que hará sera tomar el ID del badge que nos interesa.
+Luego de eso usaremos uno de los props que ReactRouter le pasa a sus componentes que es this.props.match, cada una de esas variables que insertamos en el path que declaramos en la ruta lo podemos acceder dentro del objeto params y dijimos que se iba a llamar badgeId
+De manera que;
+
+```js
+ fetchData =async () =>{
+        this.setState({ loading:true, error:null})
+
+        try{    
+            const data = await api.badges.read(
+                this.props.match.params.badgeId
+            )
+        } 
+    }
+```
+
+- Luego de esto;
+
+```js
+  fetchData =async () =>{
+        this.setState({ loading:true, error:null})
+
+        try{    
+            const data = await api.badges.read(
+                this.props.match.params.badgeId
+            )
+            this.setState({ loading: false, form: data })
+        } catch(error){
+            this.setState({ loading:false, error: error })
+        }
+    }
+```
+
+- Aca básicamente hacemos lo mismo de siempre que es en cxaso de que todo vaya bien, vamos a guardar la información en data porque es lo que buscamos a l hacer este edit por lo que el form se guardara en los datos como especificamos mas abajo y luego de esto vamos a crear nuestro Catch para que en caso de que haya un error este mismo quedara guardado en error, para asi tener nuestro errorState de esta función.
+
+- Que sigue? Probar que esto funciona y si efectivamente realiza el match y vemos nuestro código, luego editamos un poco la pagina porque nuestro titulo nos dice New attendant pero aca lo que haremos sera un edit por lo que debemos colocar el `<h1>` en el sitio correspondiente en cada uno de los lugares tabto en `badgeNew` como en `badgeEdit` por lo que eliminaremos el `<h1>` de nuestro badgeForm.
+
+- Ahora en badgeEdit nuestra api no creara sino que lo que hará sera editar la data que estaremos solicitando por lo que nos dirigiremos a nuestro código y editaremos la parte en la que esta nuestro hadleSubmiot y este ya no sera créate sino update.
+
+```js
+  handleSubmit = async e =>{
+        e.preventDefault();
+        this.setState({ loading: true, error: null })   
+
+        try{
+            await api.badges.update(this.state.form);
+            this.setState({loading: false});
+
+            this.props.history.push('/badges')
+
+        } catch(error){
+            this.setState({loading: false, error: error});
+        }
+    };
+```
+
+- Update recibe un badgeId y la información que queremos actualizar asi que el badge id aprendimos a obtenerlo de this.props.params asi que en update ese es el primer argumento y el segundo va a ser y como sacamos el id de this.props.params.badgeId este va a ser nuestro primer argumento en update por lo que quedaría asi;
+
+```js
+handleSubmit = async e =>{
+        e.preventDefault();
+        this.setState({ loading: true, error: null })   
+
+        try{
+            await api.badges.update( this.props.match.params.badgeId, this.state.form);
+            this.setState({loading: false});
+
+            this.props.history.push('/badges')
+
+        } catch(error){
+            this.setState({loading: false, error: error});
+        }
+    };
+```
+
+- Luego de esto realizaremos el cambio y por el código ya escrito de nuestro método de history, cuando acabe volveremos a la lista de badges a ver si se actualizo la información. Nuestro put fue exitoso.
 
 ### Actualizaciones automáticas
 
