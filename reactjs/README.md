@@ -995,7 +995,34 @@ document.getElementById("modal")
 
 La técnica de usar componentes genéricos para crear uno nuevo especializado se llama composición y es una herramienta que todo buen programador debe saber utilizar.
 
+El concepto de relación entre los portales y propiedades css cómo z-index está mal. Siempre se necesita que el elemento del modal tenga un z-index mayor. En la clase no se ve, porque bootstrap ya lo trae implementado.
+
+- [Documentation | React Portals](https://reactjs.org/docs/portals.html)
+
 ### Hooks
+
+Las funciones no tienen un estado propio que manejar como ciclos de vida a los que deben suscribirse, mientras tanto las clases sí cuentan con ello.
+
+React tiene un feature llamado **Hooks** que permite que las funciones también tengan features que solamente tienen las clases.
+
+**Hooks:** Permiten a los componentes funcionales tener características que solo las clases tienen:
+
+  - **useState:** Para manejo de estado.
+  - **useEffect:** Para suscribir el componente a su ciclo de vida.
+  - **useReducer:** Ejecutar un efecto basado en una acción.
+  - **Custom Hooks:** Usamos los hooks fundamentales para crear nuevos hooks custom. Estos hooks irán en su propia función y su nombre comenzará con la palabra use. Otra de sus características es que no pueden ser ejecutados condicionalmente `(if)`.
+
+**`useState`** regresa un arreglo de dos argumentos.
+
+- [React.js Hooks en menos de 20 minutos](https://www.youtube.com/watch?v=ISGCTngdp8c)
+
+Revisando la documentación oficial de React me parece importante las siguientes notas:
+
+Normalmente, las variables “desaparecen” cuando se sale de la función, pero las variables de estado son conservadas por React
+
+El único argumento para el Hook `useState()` es el estado inicial. Al contrario que en las clases, el estado no tiene porque ser un objeto. Podemos usar números o strings si es todo lo que necesitamos
+
+El estado solamente se crea la primera vez que nuestro componente se renderiza. Durante los siguientes renderizados, useState nos da el estado actual.
 
 
 ### Search filter
