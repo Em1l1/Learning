@@ -1027,9 +1027,10 @@ El estado solamente se crea la primera vez que nuestro componente se renderiza. 
 
 ### Search filter
 
+En esta clase usaremos ReactHooks, la lista en si en código esta dentro de BadgesList, el problema que tenemos para hacerlo allí es que los hooks solo sirven dentro e componentes funcionales asi que en esta caso tenemos una clase.
 
 ## 8. Conclusion
 
 ### Conclusión
 
-
+Nunca pares de aprender
