@@ -908,20 +908,92 @@ handleSubmit = async e =>{
 
 ### Actualizaciones automáticas
 
+**Polling** consiste en que cada cierto tiempo que es definido por nosotros se buscan los datos y se actualizan automáticamente. Esto se hará constantemente hasta que el usuario se vaya de la página.
+
+Estuvo buena esta clase, el setInterval se puede usar en cualquier servicio en el que se muestren datos en tiempo real:
+
+  - Mensajería
+  - Gráficos
+  - Datos
+
+No sé si se use esta misma herramienta en facebook para actualizar la pagina cuando ya paso un tiempo, pero podría ser un buen introductorio al tema.
 
 ## 7. Mejorando la UI
 
 ### Los detalles de un Badge
 
+CRUD es el acrónimo de “Crear, Leer, Actualizar y Borrar” (del original en inglés: Create, Read, Update and Delete) Adicional todas las operaciones de tipo CRUD son aplicadas a la base de datos, es decir, creamos elementos de la base de dato, leemos y actualizamos. En el curso estamos haciendo uso de verbos HTTP para lograr las peticiones con la arquitectura restApi.
+
+**`class field declarations`**
+
+- Sigue siendo como una opción mas de sintaxis de azúcar para ahorrar escribir tanto código redundante. También puedes declarar métodos declarando el nombre de la propiedad asignandole arrow functions. Esto evita que tenga que hacer binds en el constructor. El único detalle que veo es que no podrias ser capaz de recibir los props en casi de usarlos.
 
 ### UI Components y Container Components
 
+En la programación es bueno separar las tareas en diferentes funciones y en React sucede lo mismo. Cuando un componente hace demasiado, probablemente es mejor dividirlo en dos.
+
+Esta técnica de componentes presentacionales y componentes container es común, útil y hace parte de las buenas prácticas.
+
+Existe un enfoque interesante de React: **Ese donde hay dos tipos de componentes**
+
+Los primeros tontos, superficiales, solo se enfocan en el look and feel
+
+Los segundos más inteligentes, racionales, solo se enfocan en la lógica
+
+**En la práctica:**
+
+  1. Los componentes presentacionales casi nunca tienen estados y se hacen en base a funciones, importan los estilos y contienen las clases
+
+  2. Los componentes inteligentes contienen el estado y los metodos que dan logica a la App y lo transfieren a otros componentes a través de Props
+
+Me parece recomendable contenedor el segundo tipo de componentes a través de un React.Fragment
+Asi mismo el contenedor del primero dependera de lo que sea (div, section, figure, article, header, aside)
 
 ### Portales
 
+Hay momentos en los que queremos renderizar un modal, un tooltip, etc. Esto puede volverse algo complicado ya sea por la presencia de un _z-index_ o un _overflow hidden_.
+
+En estos casos lo ideal será renderizar en un nodo completamente aparte y para esto React tiene una herramienta llamada Portales que funcionan parecido a ReactDOM.render; se les dice qué se desea renderizar y dónde, con la diferencia de que ese dónde puede ser fuera de la aplicación.
+
+**¿Qué es, para qué es y como podemos usar un portal modal?**
+
+Un portal es un contenido HTML que está fuera del contenedor (el `div id="app"`) de tu aplicación principal
+
+Nos resulta especialmente relevante para crear Modales sin complicaciones extremas en el diseño ya que el nodo se encuentra a la misma altura que el de la App
+
+¿Cómo lo implemementamos?
+
+Crea el contenedor de tu modal en tu archivo index.html
+
+```js
+<div id="modal"> </div>
+```
+
+En el componente donde lo vayas a utilizar importa el ReactDOM ya que a través de su método createPortal() invocaremos el contenedor externo que acabamos de crear
+
+Crea el Portal al componente a través de ReactDOM.createPortal()
+
+Pasa por parametro Qué renderizara y donde lo hará
+
+```js
+ReactDOM.createPortal(
+<h1> El titulo más bonito del mundo </h1> ,
+document.getElementById("modal")
+)
+```
+
+Supongo que si quieres importar un modal habrás creado en otra parte el componente Modal
+
+```js
+ReactDOM.createPortal(
+<Modal /> ,
+document.getElementById("modal")
+)
+```
 
 ### Modales
 
+La técnica de usar componentes genéricos para crear uno nuevo especializado se llama composición y es una herramienta que todo buen programador debe saber utilizar.
 
 ### Hooks
 
