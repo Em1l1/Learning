@@ -159,14 +159,21 @@ National Museum of Anthropology (enormous, famous place in Mexico city, Home of 
 
 **Describing People**
 
-Example
+**Example 1**
 
 1. I don’t like driving. The streets are full of **rude/impatient** drivers.
 2. Everyone likes Anna. She is so **friendly.**
 3. You will do great in the test. You are very **intelligent**.
 4. Don’t be so **pesimist**, you will be fine.
-5. You don’t need to be** rude/mean**. You can tell me that in a nice way.
+5. You don’t need to be **rude/mean**. You can tell me that in a nice way.
 
+**Example 2**
+
+My neightbours are really rude and pessimistic, they don’t respect to anyone, and I prefer not to say anything more about them… I’ll go to other apartament in the next month, is better to be in a possitive place with optimistic people who help you improve to be better every day.
+
+**Example 3**
+
+There are different kind of people in my neighborhood . Ones are really charming and helpful , when I needed something they help me kindly with a big smile , others are mean , they are rude and noisy because all the time are making parties without thinking that everybody has to work on Mondays.
 
 - [describing-people-worksheet.docx](https://drive.google.com/file/d/1dLKeAdiEXxIZNNADN9igftsrjy-gRNEi/view?usp=sharing)
 
