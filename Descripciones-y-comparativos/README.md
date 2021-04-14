@@ -175,27 +175,123 @@ My neightbours are really rude and pessimistic, they don’t respect to anyone, 
 
 There are different kind of people in my neighborhood . Ones are really charming and helpful , when I needed something they help me kindly with a big smile , others are mean , they are rude and noisy because all the time are making parties without thinking that everybody has to work on Mondays.
 
+
+**Activity**
+
+1. I don't like driving. The streets are full of **impatient** drivers.
+2. Every likes Anna. She is so **friendly**.
+3. You will do great in the test. You are very **intelligent**.
+4. Don't be so **pessimistic**, you will be fine.
+5. You don't need to be **rude**. You can tell me that in a nice way.
+
 - [describing-people-worksheet.docx](https://drive.google.com/file/d/1dLKeAdiEXxIZNNADN9igftsrjy-gRNEi/view?usp=sharing)
 
 ## People - guessing game
 
+**Example** 
 
+**Person 1**
+
+The person I’m thinking of is a man. He is rich, intelligent, is controversial. He have three famous companies about technology.
+
+**Person 2**
+
+The person I am thinking of is a woman. She has long red hair. She is short tempered and has the ability to control minds and the reality. She is a fictional character of several movies and a tv series. Any guesses?
+
+**Person 3**
+
+The person i am thinking of is not exactly a person. He has a body and was created by an iron superhero. On his forehead he has a stone with a lot of power and it is yellow. He can fly and we could say that he is connected to the internet. He is very strong.
 
 # 5. Describing a picture
 
 ## How to describe a picture
 
+![](https://i.ibb.co/YDSJPdc/There-is-There-are.webp)
 
+**Picture 1**
+
+![](https://i.ibb.co/JQmn5MR/platzi.webp)
+
+There is a man giving a conference in an auditorium, he is wearing black t-shirt, white jacket and jeans. Behind him, there is a big screen with a slide showing his name. Next to him, there are white and larges letters forming the word Platzi.
+
+**Picture 2**
+
+![](https://i.ibb.co/N7YGbs9/light.webp)
+
+**Description:**
+There is a man with a black jacket walking on the sidewalk. There are traffic lights and a yellow taxi in de middle. In the backgorund of the picture there are several buildings. It’s a big city.
+
+**Picture 3**
+
+![](https://i.ibb.co/096TMkX/lindsay.jpg)
+
+There are three women inside a black car with brown seats. The woman on the right is wearing a white blouse and she’s driving the car. The woman on the left is wearing a black sweater. The woman in the middle is blonde and she’s wearing a black dress. They look very happy.
+
+**Picture 4**
+
+![](https://i.ibb.co/zfTGhnt/shu-Japan.jpg)
+
+**In general**
+- There is temple.
+- There are trees.
+- There is a fallwater.
+
+**Where?**
+
+- There is a temple on the left.
+- There is a fallwater on the back.
+- There are trees around it.
+
+**Detailed Information**
+
+- There is an orange temple.
+- There are bushy trees.
+- There is a big waterfall.
+
+**Putting all togheter**
+
+There is a temple color orange on the right, there several bushy trees around it and a big waterfall on the back. ***I would like to be there.***
 
 # 6. Describe and compare
 
 ## Comparing two elements
 
+**There are some examples.**
+**The first one is better than the second.**
 
+![](https://i.ibb.co/wLwbYTB/comparative.webp)
+
+![](https://i.ibb.co/51NHYg6/Types-of-Adjectives.jpg)
+
+**Comparative adjectives more examples!!**
+
+![](https://i.ibb.co/wSmBX0y/adjetives.jpg)
+
+
+**Practice**
+
+1. The Marvel movies are more interesting than economic books
+2. The spanish is more difficuld than english
+3. Lenovo is more popular than apple
+4. In bogota the bicycle is fastter than car
+5. The vegetarian hamburger is healthier than salad.
+
+![](https://i.ibb.co/RgbTVbM/irregular.webp)
 
 ## Comparing three elements
 
+![](https://i.ibb.co/pv6Y8SB/compare.jpg)
 
+- Caviar is **tastier** than **both**, rice and beans.
+- A plane is **larger** than **both**, a car and a motorcycle.
+- My house is **bigger** than a tent, but not **as big** as a mansion.
+- Those shoes are **cheaper** than these boots, but not **as cheap as** these sandals.
+- Stonehenge is **uncannier** than the pyramids of Egypt, but not **as uncanny as** the Nazca symbols.
+- The Antarctica is **colder** than **both**, Norway and Finland.
+- The Colossal Titan is **taller** than **both**, the Beast Titan and the Jaw Titan.
+- A highway is **wider** than **both**, a street and an avenue.
+- Xplor is **more incredible** than Xelha, but not **as incredible as** Xcaret.
+- Japan is **more diverse** in activites than Armenia but not **as diverse as** USA.
 
 ## Describing with idioms
 
