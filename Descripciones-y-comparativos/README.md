@@ -295,9 +295,36 @@ There is a temple color orange on the right, there several bushy trees around it
 
 ## Describing with idioms
 
+![](https://i.ibb.co/BwNHxf1/idioms.webp)
 
+![](https://i.ibb.co/DtcvN3Z/idioms.jpg)
+
+1. As famous as Michael Jackson.
+2. As fun as Franco Escamilla.
+3. You are as smart as a rock.
+4. This course have been as amazing as a concert.
+5. It’s is as exciting as a rocket launch.
+6. Elon Musk is as cool as Hank Scorpio.
+7. My phone is as hot as the sun.
+8. She is as beautiful as the Sunset.
+9. As loyal as a dog.
+10. As powerful as the RTX 3090.s famous as Michael Jackson.
+11. As fun as Franco Escamilla.
+12. You are as smart as a rock.
+13. This course have been as amazing as a concert.
+15. It’s is as exciting as a rocket launch.
+16. Elon Musk is as cool as Hank Scorpio.
+17. My phone is as hot as the sun.
+18. She is as beautiful as the Sunset.
+19. As loyal as a dog.
+20. As powerful as the RTX 3090.
 
 # 7. Conclusion
 
 ## Review and next steps
 
+Great course 😃 Let me tell you that this course has been so interesting for me because push me to think and interact with all the examples and challenges that you put in each class, I really enjoy it.
+
+I hope I can see you in the mentoring 😉
+
+This was a really good course really love it, because here we practice a lot and have interactive class, i think this course was a big upgrade in Platzi’s english school.
