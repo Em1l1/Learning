@@ -1,11 +1,8 @@
-# Manejo de Ansiedad con Terapify
-### Evelina Esther
+<h1>Manejo de Ansiedad con Terapify</h1>
+<h3>Evelina Esther</h3>
 
-# Tabla de Contendio
+<h1>Tabla de Contendio</h1>
 
-- [Manejo de Ansiedad con Terapify](#manejo-de-ansiedad-con-terapify)
-    - [Evelina Esther](#evelina-esther)
-- [Tabla de Contendio](#tabla-de-contendio)
 - [1. Bienvenida](#1-bienvenida)
   - [¡Bienvenido al Curso de Manejo de Ansiedad con Terapify!](#bienvenido-al-curso-de-manejo-de-ansiedad-con-terapify)
   - [¿Qué harías si no experimentaras ansiedad?](#qué-harías-si-no-experimentaras-ansiedad)
@@ -35,6 +32,13 @@
   - [Día 21. Desenmascarando la ansiedad](#día-21-desenmascarando-la-ansiedad)
 - [5. Vive momento a momento](#5-vive-momento-a-momento)
   - [Día 22. STOP](#día-22-stop)
+  - [Día 23. Afrontando lo desagradable y doloroso](#día-23-afrontando-lo-desagradable-y-doloroso)
+  - [Día 24. Reconociendo lo agradable en mi vida](#día-24-reconociendo-lo-agradable-en-mi-vida)
+  - [Día 25. Sentir que no eres suficiente](#día-25-sentir-que-no-eres-suficiente)
+  - [Día 27. La incertidumbre](#día-27-la-incertidumbre)
+  - [Día 28. Viviendo con intencionalidad](#día-28-viviendo-con-intencionalidad)
+  - [Día 29. Manteniendo la motivación](#día-29-manteniendo-la-motivación)
+  - [Día 30. La ansiedad no controla mi vida](#día-30-la-ansiedad-no-controla-mi-vida)
 - [6. Conclusión](#6-conclusión)
   - [Conclusión](#conclusión)
 
@@ -615,14 +619,33 @@ Tratando de controlar el futuro dejas de vivir en el presente y no ves las millo
 Plantarse en el momento presente, es le mejor manera para afrontar la incertidumbre.
 ## Día 28. Viviendo con intencionalidad
 
+Todo lo que sucede es para algo: aprender. No tomemos esos sucesos de manera personal, solo pasan porque deben pasar para aprender algo de ello. Respiremos antes de reaccionar, con la intención de ser mejor cada día ✨.
 
+Ejercicios de atención intencionada en un lapso de 12 minutos, a la semana 8 el cerebro tendrá cambios estructurales.
+
+Esto parece ser una buena opción para ir generando hábitos poco a poco. Tener la intención y con ello actuando un poco a la vez después de un tiempo notaremos nuestro avance.
 
 ## Día 29. Manteniendo la motivación
 
+La motivación para seguir el cuidado propio, surge del interior.
 
+Para poder contrarrestar todos los síntomas necesitamos intensión, curiosidad, enfocarte en el momento presente.
+
+
+- [Psicólogo Online - Ayuda Psicológica en Línea | Terapify](https://www.terapify.com)
 
 ## Día 30. La ansiedad no controla mi vida
+
+- **Fuerza cognitiva:** es la capacidad y creencia de que hay recursos para salir adelante, sentirse bien, tener un estado psicológico estable.
+- **La felicidad:** saber que se puede afrontar y vivir la vida independientemente de lo que pueda pasar, por que existen los recursos para solucionarlo.
+
+> La FELICIDAD es un profundo sentimiento de satisfacción personal.
 
 # 6. Conclusión
 
 ## Conclusión
+
+- La ansiedad es el sistema de alarma del cerebro avisando de un peligro
+- La ansiedad se mantiene en los pensamientos y en los “malos” hábitos
+
+> Nunca pares de Aprender
