@@ -34,7 +34,9 @@
   - [Día 20. Nuevos hábitos para manejar la ansiedad](#día-20-nuevos-hábitos-para-manejar-la-ansiedad)
   - [Día 21. Desenmascarando la ansiedad](#día-21-desenmascarando-la-ansiedad)
 - [5. Vive momento a momento](#5-vive-momento-a-momento)
+  - [Día 22. STOP](#día-22-stop)
 - [6. Conclusión](#6-conclusión)
+  - [Conclusión](#conclusión)
 
 ---
 
@@ -478,15 +480,149 @@ Siempre se explorar.
 
 # 5. Vive momento a momento
 
-Día 22. STOP
-Día 23. Afrontando lo desagradable y doloroso
-Día 24. Reconociendo lo agradable en mi vida
-Día 25. Sentir que no eres suficiente
-Día 26. La ansiedad provocada por las relaciones interpersonales
-Día 27. La incertidumbre
-Día 28. Viviendo con intencionalidad
-Día 29. Manteniendo la motivación
-Día 30. La ansiedad no controla mi vida
+## Día 22. STOP
+
+- Date cuenta en dónde estás ahora, cómo estás y procede.
+
+- Hacer pequeñas pausas nos permite ver como vamos y significa que al detenernos podemos identificar si nuestra mente está en el pasado o en el futuro…
+
+- Hay que regresar a este momento presente.
+
+- Anclarte al presente con tu atemción, la respiración.
+
+Siempre vamos a estar expuestos a tener ansiedad es normal, lo importantes es afrontarla.
+
+Parar y preguntarse: 
+
+  - **¿Dónde estoy?** 
+  - **¿Cómo estoy?** 
+ 
+y continuar en el presente.
+
+Dirijo mi atención a mi cuerpo y me permite volver al ahora.
+Toso es cuestión de practica para entrenar la mente , que como dice la profesora es una ***VAGABUNDA*** que le encanta estar en el pasado o en el futuro pero no aquí y ahora que es donde respira.
+
+La mente es dispersa, vive en el pasado o en el futuro, debemos hacer pausas, vivir en el presente:
+
+- Con atención plena en las sensaciones del cuerpo.
+- Meditando haciendo pausas activas.
+
+## Día 23. Afrontando lo desagradable y doloroso
+
+Existe una lucha constante para tener la FELICIDAD
+La VIDA se compone de eventos de alegría y otros con dolor.
+
+Las sensaciones de Ansiedad se pueden aprender a manejar y regular
+
+Me doy cuenta de lo que pienso y siento
+Hacemos cosas por conductas empujadas por la emoción que estamos sintiendo. Cuando baja la intensidad de la emoción, con una mente clara puedes DECIDIR y tomar el mejorcamino para Tí.
+
+Afrontar todo lo que nos da la vida, desde el sol hasta la lluvia, es como las estaciones, todo es cambiante en el mundo y lo importante es la actitud que uno asume independiente de lo que pase afuera.
+
+Recomiendo a quien desee profundizar en este tema el libro: 
+> “Las estaciones de la vida” de Jim Rohn , muy bueno me ayudó mucho a entender con amor que todo tiene un tiempo y un ciclo perfecto, lo importante es como uno va aprendiendo a lidiar más con su estado emocional interno.
+
+- [Eventos-Desagradables.pdf](https://drive.google.com/file/d/1NBohJmCyrI4uUXYIsmq30X_R08Zsj7nI/view?usp=sharing)
+
+## Día 24. Reconociendo lo agradable en mi vida
+
+**En qué momento?**
+
+Cómo pasa la Vida tan ráído?
+Nos hemos olvidado de los momentos agradables?
+
+Deteneros y explorar de lo que ha sido agradable
+Lo extraordinario es respirar
+
+Pequeños detalles agradables, el aroma del café…
+El 47% de nuestra mente, los pensamientos no están aquí.
+
+Entrenar tu mene e identificar los pequeños eventos que son agradables y te hacen sentir bien.
+
+Algunas veces te pierdes de ver lo agradable.
+El RETO es descubrir lo agradable y bello de los pequeños momentos…el aire, su caricia, las nubes, una flor, etc
+
+![](https://i.ibb.co/y5Zgp2k/happend.jpg)
+
+- [Where Are Emotions Felt in the Body? This Infographic Will Tell You](https://greatist.com/connect/emotional-body-maps-infographic#infographic)
+
+- [eventos-agradables.pdf](https://drive.google.com/file/d/1DMcmkBNlDAnWGSSMkIZyso_YwZNCJXlb/view?usp=sharing)
+
+## Día 25. Sentir que no eres suficiente
+
+- **MOTIVACIÓN.** Haz lo que amas y hazlo con frecuencia
+- **INICIATIVA.** Si no te gusta algo, cámbialo.
+- **RIESGO.** Si no te gusta tu trabajo, renuncia.
+- **PRIORIZA.** Si no tienes suficiente tiempo, deja de ver televisión.
+- **COHERENCIA.** Si estás buscando el amor de tu vida, detente. Te estará esperando cuando empieces a hacer las cosas que amas.
+- **ACTUA.** Deja de analizar demasiado, la vida es simple.
+- **SIENTE.** Todas las emociones son hermosas.
+- **DISFRUTA.** Cuando comas aprecia hasta el último bocado.
+- **ACEPTA.** Abre tu mente, brazos, y corazón a nuevas cosas y gente, estamos unidos en nuestras diferencias.
+- **COMUNICA**. Pregúntale a la próxima persona que veas cuál es su pasión, comparte tu sueño inspirador con ella.
+- **EXPERIMENTA.** Viaja frecuentemente porque perdiéndote te encontrarás a ti mismo.
+- **PRUEBA.** Algunas oportunidades sólo llegan una vez, aprovéchalas.
+- **CONSTRUYE.** La vida es acerca de la gente que conoces y las cosas que creas con ellas, así que sal y comienza a crear.
+- **APROVECHA.** La vida es corta, vive tu sueño y comparte tu pasión.
+
+- Síndrome del Impostor y Ansiedad Generalizada. Siendo cada vez más fuerte y consciente de que la perfección no existe, que los errores y fallas son aprendizajes para la vida y que como seres humanos nos rompemos y merecemos pausar. Valemos mucho y hemos hecho mucho, así sea un 0.01% 💪🏻
+
+## Día 26. La ansiedad provocada por las relaciones interpersonales
+
+- La ansiedad nos detona cuando no podemos comunicarnos con el otro
+Se provoca un bucle.
+- Expresar lo que sentimos nos provoca ansiedad, lo que no nos permite hablar claramente.
+
+**Explicación:**
+
+- El cerebro tiene una cantidad máxima de energía que destrubuir
+- Sí tenemos mucha ansiedad, todos los recursos se van a ir a la parte del cerebro donde funciona(parte derecha), dejando sin suficientes recursos a otras zonas como las del habla(parte derecha).
+
+**Importante:**
+
+> No podemos controlar cosas externas a nosotros pero si podemos controlar como reaccionamos
+
+**¿Qué nos ayuda a crear Relaciones Significativas?:**
+
+
+- Ser empático
+- Manejar la ansiedad
+- Identificcar las necesidades del otro
+- Ir un poco más allá de lo que estamos sintiendo
+- Darnos cuenta de lo que estamos experiemntando
+
+Emplea justo la energía que corresponde al problema. No tomes un fusil para matar una mariposa. Me gusto esa Frase la comparto…!!!
+
+Debemos tener una comunicación efectiva siempre y compartir los sentimientos nunca reprimirlos…!!!
+
+- [conversaciones-dificiles.pdf](https://drive.google.com/file/d/1xmvraQlHX3f3VexTM0z_rU68q_v0cpQt/view?usp=sharing)
+
+## Día 27. La incertidumbre
+
+- Pensar que estamos perdiendo el control de nustras vidas puede detonar la ansiedad, el antídoto es plantarte en el momento presente con curiosidad
+
+- Estando tan ocupado tratando de controlar el futuro dejas de vivir en el presente, lo que no te permite ver posibilidades y oportunidades
+
+La incertidumbre son millones de posibilidades y estando tan ocupados tratando de controlar el futuro dejamos de vivir en el presente.
+
+
+El Antídoto ante toda incertidumbre es plantarte en el presente con curiosidad mediante todas las técnicas de enfoque ya vistas.
+
+Tratando de controlar el futuro dejas de vivir en el presente y no ves las millones de posibilidades y oportunidades.
+
+**¿Cuáles son las oportunidades que no has visto en tu vida?**
+
+Plantarse en el momento presente, es le mejor manera para afrontar la incertidumbre.
+## Día 28. Viviendo con intencionalidad
+
+
+
+## Día 29. Manteniendo la motivación
+
+
+
+## Día 30. La ansiedad no controla mi vida
 
 # 6. Conclusión
-Conclusión
+
+## Conclusión
