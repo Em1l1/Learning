@@ -654,21 +654,21 @@ $ mysql-Workbench
 sudo mysql -u root -p
 ```
 
-```Mysql
+```sql
 mysql> use mysql
 mysql> SELECT User, Host, plugin FROM mysql.user;
 ```
 
   - Debemos cambiar el plugin de auth_socket a mysql_native_password.
 
-```mysql
+```sql
 mysql> UPDATE user SET plugin='mysql_native_password' WHERE User='root';
 mysql> FLUSH PRIVILEGES;
 ```
 
   - Revisamos los cambios:
 
-```mysql
+```sql
 mysql> SELECT User, Host, plugin FROM mysql.user;
 ```
 
@@ -776,31 +776,166 @@ DESCRIBE people; -- ver la estructura de la tabla
 
 ## CREATE VIEW y DDL ALTER
 
+Las vista se usan como una capa de seguridad dentro de las organizaciones. por ejemplo: una tabla trabajador tiene todos los datos de una persona (numero de identificación, numero telefonico, dirección, y otros datos que pueden ser sensibles), el administrador de la base de datos lo que hace es crear vistas solo con los datos que son relevantes para consultas en las distintas areas de la empresas sin exponer información de mas.
 
+Ejercicio
+
+```sql
+DELETE FROM people; -- Elimina la información dentro de la tabla.
+ALTER TABLE people AUTO_INCREMENT = 1 ; -- Reinicia el autoincrement a 1
+INSERT INTO people (last_name, first_name, address, city)VALUES('Vázquez', 'Israel','Calle Famosa Num 1','México'),
+('Hernández','Mónica','Reforma 222','México'),
+('Alanis','Edgar','Central 1', 'Monterrey'); -- Insertar datos a la tabla
+
+CREATE OR REPLACE VIEW platzi_people AS -- Crear vista
+SELECT * FROM people;
+
+select * from platzi_people; -- consultar vista
+
+ALTER TABLE people ADD COLUMN date_of_birth DATETIME NULL AFTER city; -- Agregar columna
+DESCRIBE people;
+ALTER TABLE people DROP COLUMN date_of_birth; -- Eliminar columna
+DESCRIBE people;
+```
+
+Si tienes un error al querer hacer una sentencia UPDATE o DELETE ejecuta
+
+```sql
+SET SQL_SAFE_UPDATES=0;
+```
+
+Una vista es una consulta presentada mediante la estructura de una tabla (filas y columnas) y en ellas solo se almacena la definición, mas no los datos. Una vista esta especificada a través de una consulta, es decir, un SELECT.
+
+
+- [MySQL What is DDL, DML and DCL?](https://www.w3schools.in/mysql/ddl-dml-dcl/)
 
 ## DDL drop
 
+Está puede ser la sentencia ¡más peligrosa! (????), sobre todo cuando somos principiantes. Básicamente borra o desaparece de nuestra base de datos algún elemento.
 
+Es recomendable hacer respaldos antes de cualquier cambio en el código de la base de datos, me he salvado de fallos masivos gracias a tener esa consideración siempre.
+
+> Tu que sabes de tomar riesgos si nunca usaste Drop!!
 
 ## DML
 
+**DML** trata del contenido de la base de datos. Son las siglas de Data Manipulation Language y sus comandos son:
 
+- **Insert:** Inserta o agrega nuevos registros a la tabla.
+- **Update:** Actualiza o modifica los datos que ya existen.
+- **Delete:** Esta sentencia es riesgosa porque puede borrar el contenido de una tabla.
+- **Select:** Trae información de la base de datos.
+
+#### DDL -> Data Definition Language
+
+Ayuda a crear la estructura de una BD.
+
+**Create**
+
+  * Database
+  * Table
+  * View
+  - Alter
+  - Drop
+
+#### DML -> Data Manipulation Language
+
+Ayuda a la manipulacion del contenido
+
+  - Insert
+  - Update
+  - Delete
+  - Select
+
+**DML: Data Manipulation Language**
+Por su traducción lenguaje de manipulación de datos nos proporciona comandos para llevar acabo tareas de consulta o manipulación de datos
+Comandos DML:
+
+- **Select (Seleccionar):** Este comando nos permite consultar los datos almacenados en una tabla de la base de datos. Select cuenta con los siguientes subcomandos:
+
+- **ALL:** Indica que queremos seleccionar todos los valores.
+- **DISTINCT:** Indica que queremos seleccionar sólo los valores distintos
+- **FROM:** Indica la tabla (o tablas) desde la que queremos recuperar los datos.
+- **WHERE:** Especifica una condición que debe cumplirse para que los datos sean devueltos por la consulta. Admite los operadores lógicos AND y OR.
+- **GROUP BY:** Especifica la agrupación que se da a los datos.
+- **ORDER BY:** Presenta el resultado ordenado por las columnas indicadas.
+- **Insert (Insertar):** Este comando agrega uno o más registros a una (y sólo una) tabla en una base de datos relacional.
+- **Update (Actualizar):** Este comando es utilizado para modificar los valores de un conjunto de registros existentes en una tabla.
+- **Delete (Borrar):** Este comando borra uno o más registros existentes en una tabla. 😃
+
+```sql
+Insert INTO people (last_name, first_name, address, city) 
+VALUES ('Hernandez', 'Laura', 'Calle 21', 'Monterrey');
+.
+UPDATE people 
+SET 
+    last_name = 'Chavez',
+    city = 'Merida'
+WHERE
+    person_id = 1;
+.
+DELETE FROM people 
+WHERE
+    person_id = 1;
+.
+SELECT 
+    first_name, last_name
+FROM
+    people;
+
+```
 
 ## ¿Qué tan standard es SQL?
 
-
+La utilidad más grande de SQL fue unificar la forma en la que pensamos y hacemos preguntas a un repositorio de datos. Ahora que nacen nuevas bases de datos igualmente siguen tomando elementos de SQL.
 
 ## Creando Platziblog: tablas independientes
 
+- Una buena práctica es comenzar creando las entidades que no tienen una llave foránea.
+- Generalmente en los nombres de bases de datos se evita usar eñes o acentos para evitar problemas en los manejadores de las bases de datos.
 
+Example de diagrama de base de dato
+
+![](https://i.ibb.co/wMC3rDg/mysql.webp)
+
+![](https://i.ibb.co/kJkgKP6/diag.webp)
 
 ## Creando Platziblog: tablas dependientes
 
+El comando “cascade” sirve para que cada que se haga un update en la tabla principal, se refleje también en la tabla en la que estamos creando la relación.
+
+**Las Foreing Key options son las siguientes:**
+
+- **`On update:`** Significa qué pasará con las relaciones cuando una de estas sea modificada en sus campos relacionados, Por ejemplo, pueden utilizarse los valores:
+- `cascade:` Si el id de un usuario pasa de 11 a 12, entonces la relacion se actualizará y el post buscará el id nuevo en lugar de quedarse sin usuario.
+- `restrict:` _Si el id de un usuario pasa de 11 a 12, no lo permitirá hasta que no sean actualizados antes todos los post relacionados.
+set null Si el id de un usuario pasa de 11 a 12, entonces los post solo no estará relacionados con nada.
+no action: Si el id de un usuario pasa de 11 a 12, no se hará nada. Solo se romperá la relación.
+On delete
+- `cascade:` Si un usuario es eliminado entonces se borrarán todos los post relacionados.
+restrict: No se podrá eliminar un usuario hasta que sean eliminados todos su post relacionados.
+- `set null:` Si un usuario es eliminado, entonces los post solo no estará relacionados con nada.
+- `no action:` Si un usuario es eliminado, no se hará nada. Solo se romperá la relación.
+
+**Crear tablas en orden:**
+
+  - categorias
+  - etiquetas
+  - usuarios
+  - posts
+
+
+**ACTIONS:**
+- `NO ACTION:` No hacer nada al borrar alguna de las partes de la relación
+- `SET NULL:` El campo de llave foranea se setea en NULO (NULL), esto solo si el campo tiene permitido los NULOS
+- `CASCADE:` Se hace efecto cascada, si la dependencia se borra entonces se borra también se borra el registro que es dependiente Ejemplo: Al borrar un Usuario se borrarían todos los POSTS en caso de seleccionar CASCADE
+- `RESTRICT:` En caso de intentar borrar la dependencia y existen registros dependientes, no se permite el borrado, Ejemplo: Si se intenta borrar un usuario y este tiene posts, entonces no se permite el borrado del usuario
 
 
 ## Creando Platziblog: tablas transitivas
 
-
+- Las tablas transitivas sirven como puente para unir dos tablas. No tienen contenido semántico.
+- **Reverse Engineer** nos reproduce el esquema del cual nos basamos para crear nuestras tablas. Es útil cuando llegas a un nuevo trabajo y quieres entender cuál fue la mentalidad que tuvieron al momento de crear las bases de datos.
 
 # 5. Consultas a una base de datos
 ## ¿Por qué las consultas son tan importantes?
