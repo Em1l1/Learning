@@ -338,9 +338,41 @@ Es una interfaz gráfica que nos permite manejar entornos virtuales y sus respec
 Está pensado más para la rama del Data Science y es una herramienta útil para esta, sin embargo para otras ramas de la programación podría no ser muy útil
 
 # 3. Alternativa a los ciclos: comprehensions
+
 ## Listas y diccionarios anidados
+
+![](https://i.ibb.co/1KXb43T/lis-dic.webp)
+
+![](https://i.ibb.co/bKHXys7/resultado.webp)
+
 ## List comprehensions
+
+![](https://i.ibb.co/nqXqd7v/list.png)
+
+- [5.1.3. List Comprehensions](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions)
+
+- [All About Python List Comprehension](https://towardsdatascience.com/all-about-python-list-comprehension-14dd979ec0d1)
+
+**List comprehensions**
+
+![](https://i.ibb.co/j8h9dgL/List-comprehensions.webp)
+
+![](https://i.ibb.co/gMjfBJB/List-comprehensions2.webp)
+
 ## Dictionary comprehensions
+
+```python
+import math
+
+def run():
+    square ={i: math.sqrt(i) for i in range(1, 1001)}
+    print(square)
+if __name__ == '__main__':
+    run()
+```
+
+![](https://i.ibb.co/kgt5jZn/math.jpg)
+
 # 4. Conceptos avanzados de funciones
 ## Funciones anónimas: lambda
 ## High order functions: filter, map y reduce
