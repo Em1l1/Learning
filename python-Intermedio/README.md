@@ -526,8 +526,7 @@ Debugging:
 
   Además podemos generar breakpoints, que son puntos en los que el programa se detendrá para ayudarnos a depurar el código
 
-  Nota:
-
+  **Nota:**
 Existen herramientas de debugging propias de python como el módulo pdb o los breakpoints (a partir de python 3.7)
 
 ## Manejo de excepciones
@@ -560,7 +559,7 @@ Algo que aparece casi al final de la lectura recomendada en el documentación de
 
 Try except le puedes poner: “Debes ingresar un número entero”, porque ValueError también aparece cuando se ingresa un número con decimales.
 
-````py
+```py
  def run():
     divisors = lambda num: [x for x in range(1, num + 1) if num % x == 0]
 
@@ -575,7 +574,7 @@ Try except le puedes poner: “Debes ingresar un número entero”, porque Value
 
 if __name__ == '__main__':
     run()
-  ```
+```
 
 - [8.2. Exceptions](https://docs.python.org/3/tutorial/errors.html#exceptions)
 
@@ -622,14 +621,75 @@ if __name__ == '__main__':
 
 ## ¿Cómo trabajar con archivos?
 
+Modos de Apertura
 
+- `r` -> Solo lectura
+- `r+` -> Lectura y escritura
+- `w` -> Solo escritura. Sobre escribe el archivo si existe. Crea el archivo si no existe
+- `w+` -> Escritura y lectura. Sobre escribe el archivo si existe. Crea el archivo si no existe
+- `a` -> Añadido (agregar contenido). Crea el archivo si éste no existe
+- `a+` -> Añadido (agregar contenido) y lectura. Crea el archivo si éste no existe.
+
+Existen varias extensiones de archivos con los que podemos interactuar con python (js,csv,py,css,json,xml)
+Para abrir un archivo seguimos las siguiente estructura
+
+```py
+with open(<ruta>, <modo_apertura>) as <nombre>
+```
+- with Es un manejador contextual, nos ayuda a controlar el flujo del archivo (sirve para que el archivo no se dañe cuando existe algún cierre inesperado)
+
+- open(ruta,modo_apertura): es una función que necesita de dos parámetros
+
+ruta: es donde se encuentra nuestro archivo en nuestro equipo
+
+- modo_de_apertura: como vamos a abrir el archivo, los modificadores son:
+- r → modo de lectura
+- w → modo de escritura (sobreescribe el archivo)
+- a → modo append (añade información al final del archivo)
+
+`as <nombre>` nos ayuda a darle una abreviatura o un nombre a los datos que acabamos de leer
+
+![](https://i.ibb.co/hf9x2hQ/archivos.webp)
 
 ## Trabajando con archivos de texto en Python
 
+`encoding = "utf-8"` Sirve para que Python pueda soportar caracteres del idioma español, como la “ñ” y letras con tilde.
+
+`TIP` Cuando coloca as `“f”` realmente lo que esta haciendo es una convencion es una forma de tener buenas practicas al momento de trabajar con archivos en python.
+
+- [csv — CSV File Reading and Writing](https://docs.python.org/3/library/csv.html)
 
 # 7. Conclusión
 
 ## Reto final: Juego del Ahorcado o Hangman Game
 
+Mejora el Jueg
+
+- Agrega un sistema de puntos.
+- Dibuja al "ahorcado" en cada jugada con `codigo ASCII`
+- Mejora la interfaz
+
+✔ Esto les servirá para remover acentos a la hora de comparar el input con la letra:
+
+```py
+
+def normalize(s): # It removes the accents of a string
+  replacements = (
+      ("á", "a"),
+      ("é", "e"),
+      ("í", "i"),
+      ("ó", "o"),
+      ("ú", "u"),
+    )
+  for a, b in replacements:
+    s = s.replace(a, b).replace(a.upper(), b.upper())
+  return s
+```
+
+- [python-cli-hangman](https://github.com/JoseNoriegaa/python-cli-hangman/blob/master/main.py)
+
+- [course_python_intermediate](https://github.com/anthonymanotoa/course_python_intermediate)
 
 ## Continúa tu camino profesional con Python
+
+!Nunca pares de Aprender!
