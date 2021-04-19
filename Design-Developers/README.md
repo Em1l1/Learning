@@ -388,23 +388,140 @@ Al construir el componente en cuestión, seguimos las buenas prácticas que veni
 
 ### Documentación
 
+Hay que tener en cuenta que somos parte de un proceso, un proceso que empieza desde la idea de resolver un problema, se crea una herramienta y se le da al usuario. Es súper importante documentar cada elemento del sistema para que el siguiente en la construcción de esta gran fabrica de elementos le pueda ser más fácil y eficiente la construcción. También te permite anticiparte a los momentos que puede tener el que se dedique a conectar este componente y brindarle las herramientas necesarias es nuestro trabajo. Algunos puntos importantes que tienes que definir en tu documentación dentro del sistema ## Titulo El nombre del componente que viene desde el diseño del componente ## Descripción La descripción de por qué estamos haciendo este componente y que resuelve ## Implementación Descripción sobre cómo puedes implementar este componente en tu proyecto ## Estados Estados que tiene con los modificadores o utilidades y si pudiera no funcionar en otros contextos o reglas que no se hayan definido. ## Bitacora Donde defines que cambios a tenido el componente durante la vida del sistema
+
+## Testing
 
 ### Testing
 
+Es muy importante definir la manera en que calificarás el éxito, cómo tendremos la capacidad de evaluar lo que diseñamos y construimos vs el usuario.
 
-### Testing
+Para eso crearemos indicadores dentro del sistema que nos permitan tener esa respuesta y demuestre ante el equipo las desiciones que tomamos.
 
+  - Evaluemos el código vs Diseño
+  - Evaluemos el comportamiento
+  - Evaluemos el mobile
+
+Para hacer estas pruebas yo recomiendo que lo puedas tener dentro de una plataforma tipo KANBAN Al final del día tu puedes definir tu lista de Testing, ésta ve de forma general la evaluación de un componente pero en tu proyecto dependiendo del producto que estas desarrollando tal vez requiera más o menos.
+
+**Lo que no se mide no se puede mejorar.**
+
+Por eso es importante establecer qué metas o milestones tiene que cumplir el proyecto.
+
+**Debes hacer pruebas de:**
+
+- **Comportamiento:** esto es algo que se llega a partir de la transición del diseño a la programación.
+- **Mobile** version: Mobile first siempre es el camino que debería tomar un diseñador al crear una pantalla.
+- **Bitácora:** Nos dice porqué tomamos ciertas decisiones y porqué no.
+- **Redifinir:** ¿Lo que estamos haciendo tiene sentido? ¿Le está sirviendo al usuario?
+
+El tramo del trabajo de un design system puede ser largo pero hará que se tenga una efectividad del 100% y más.
 
 ### Bonus: Debug en el navegador
 
+El inspector de elementos es una herramienta muy completa
 
 ## Deploy y versionamiento
 
 ### Cómo empezar en Github
 
+<h3>Creamos un proyecto en GitHub</h3>
+
+Ya creada tu cuenta dentro de Github, vamos a utilizar el ícono de “+” que está en el top navbar (barra superior) de la plataforma justo a un lado de tu foto.
+
+![](https://i.ibb.co/dWpLPrJ/git.jpg)
+
+Si te das cuenta bajo tu cuenta se generará un path, o sea una / para que viva ahi tu proyecto con una url, ponle como quieras.
+
+![](https://i.ibb.co/JdJfkwq/git1.jpg)
+
+Te cuento un poco qué pasa en esta pantalla:
+
+<h3>Nombre y descripción</h3>
+
+En esta sección escribiremos el nombre de nuestro proyecto y su descripción, trata que sea claro el nombre.
+
+<h3>Público o privado</h3>
+
+Esto es una decisión que debes de tomar, depende de que sea el proyecto , tal vez no quieres que nadie lo vea.
+
+![](https://i.ibb.co/zR1VHQ6/gi2.jpg)
+
+<h3>Readme y licencia</h3>
+
+En esta sección hacemos varias cosas configurables por nuestro proyectos, el primero que es README nos permite hacer un doc dentro de nuestro proyecto con el cual vamos a dejar descripción y a veces hasta documentación.
+
+El siguiente que es .gitignore, básicamente le decimos a GitHub que hay cosas que tendría que ignorar de nuestro proyecto para no estar subiendo todo lo que ponemos en el, esto sucede generalmente cuando usamos algún instalador de librerías como npm que justo nuestro proyecto utiliza, escogeremos Node y ya sabe que archivos ignorar.
+
+Por último están las licencias, yo suelo usar la de MIT, pero te recomiendo leer el link que viene en el iconito de i para saber más sobre otras opciones.
+
+![](https://i.ibb.co/R35DwZK/git3.jpg)
+
+Ahora que ya tenemos creado nuestro proyecto vamos a seguir los siguiente pasos:
+
+  - Vamos a presionar el botón verde llamado “clone”. Esto para que nos de una url que vamos a usar dentro de iterm, espero ya super pimpeada.
+
+![](https://i.ibb.co/Vqmfhb1/git4.jpg)
+
+Dentro de iterm vamos a copiar esa url, les advierto que necesitamos que ya tengan instalado GitHub y su cuenta config, de no ser así les va a pedir un mail y su contraseña, de su cuenta de Github.
+
+Antes de correr la función que clona nuestro proyecto, asegúrate de estar en la carpeta donde guardarás tu sistema de diseño.
+
+![](https://i.ibb.co/3zLFwx6/term.jpg)
+
+Ahora si es hora de clonar:
+
+![](https://i.ibb.co/wcVzbM5/term1.jpg)
+
+Cuando clonen su proyecto ahora tendrán un proyecto conectado a GitHub, les recomienden tomen el curso de GitHub de Platzi para entender mejor este proceso. Recuerden entrar en la carpeta de su proyecto:
+
+![](https://i.ibb.co/fNq9jj9/term2.jpg)
+
+Ya que estamos en nuestra carpeta es aquí donde podemos instalar nuestro proyecto de express, les recomiendo den un paso atrás antes de correr el comando de express.
+
+![](https://i.ibb.co/w74H7Zk/term3.jpg)
+
+Justo así.
+
+Ahora vamos crear un proyecto de express, si se dan cuenta justo lo voy a hacer sobre la carpeta que ya tenia creada con lo cual me va a preguntar si estoy seguro ya que la carpeta no está vacía.
+
+![](https://i.ibb.co/xFpn528/term4.jpg)
+
+Ves te dije, no tengas miedo, dile YES, presionando la “y” de tu teclado y “enter”.
+
+Se ha creado el proyecto, regresemos dentro de la carpeta.
+
+![](https://i.ibb.co/R0JsTbj/term5.jpg)
+
+Y ahora veremos que esta todas las carpetas de express.
+
+![](https://i.ibb.co/JxbcrZm/term6.jpg)
+
+Para subir los cambios, ahora tienes que hacer tres comandos:
+
+  - git add .
+  - git commit -m “Mi actualización”
+  - git push origin master
+
+![](https://i.ibb.co/RT0vGyJ/term7.jpg)
+
+Esto nos va a servir cuando hagamos deploy en Heroku, pero no se preocupen nos vemos en las siguientes clases y recuerden mas vale componente en mano que cientos volando.
 
 ### Deploy y versionamiento
 
+Nuestro sistema también tienen niveles de producción y hasta ahora hemos trabajo en test, es momento de crear un pipeline de producción para que sea publico a todo mundo y se pueda utilizar de manera frecuente.
+
+Vamos a utilizar Heroku para desarrollar este pipeline y también aprenderemos a hacer una bitácora de actualizaciones del sistema pues es importante informar al equipo del cambio.
+
+Para ello vamos a definir en nuestro sistema una nueva ruta en la cual vamos a ir poniendo cuales son las nuevas actualizaciones, recuerda que el sistema servirá para que más equipo puedan construir es por ello que tratas de ser sumemente claro.
+
+La función `/Whats_new` Nos ayudará a que la gente pueda ver las actualizaciones.
+
+Consejos:
+
+  - Trata de ser conciso.
+  - informa de las clases que tuvieron algún cambio y conflictos que tu visualizas que pudiera haber.
+  - Incluye hyperlinks.
 
 ## Design review
 
