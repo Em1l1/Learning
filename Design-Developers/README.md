@@ -523,12 +523,40 @@ Consejos:
   - informa de las clases que tuvieron algún cambio y conflictos que tu visualizas que pudiera haber.
   - Incluye hyperlinks.
 
+- [HEROKU](https://www.heroku.com)
+
 ## Design review
 
 ### Design review
 
+Los más importante del sistema es que todos los equipos que participan en la creación de software estén alineados.
+Es por esto que también tienes que evaluar cuales son los puntos buenos o malos de tu sistema y saber si necesitas una reestructura o mejorar ciertos procesos, siempre es bueno tener en mente hacia a donde vas y que quieres lograr con el sistema, pues sin un objetivo claro todos estaremos trabajando sin un objetivo común.
 
+Algunos puntos muy importante para cuidar el trabajo en equipo son:
+
+  - Ten juntas semanales donde hables del sistema.
+  - Pregunta a otros departamentos si les facilita la construcción del producto.
+  - De no ser así media que cosas puedes hacer.
+  - No generes deuda técnica, los cambios y parches rápidos al final del día te vendrán a tirar el sistema.
+  - Ten un roadmap del sistema. Siempre trata de ser sistemático y trabaja para los demás. Todo el equipo te lo agradecerá.
+  - Siempre asegura que lo que imaginas se diseñe y que lo que diseñas se construya.
+  - Hay que tener la menos de “Deuda” posible.
+
+Los procesos deben de estar definidos, si no están definidos caes en un caos y desastre.
+
+- Tú puedes hacer tus propios procesos.
+
+- Mide el nivel de éxito del design system semanalmente. Comprueba que lo que hiciste funciona.
+
+- Lo importante es analizar qué estás haciendo y por qué lo estás haciendo.
+
+- Deuda : Cuando alguien como el CEO, el Marketing, etc te pide que hagas cambios grandes y rápidos. Sucede entonces que no puedes hacer toda la documentación requerida y va a llevar problemas a todas las partes del equipo. Por cada cambio que hagas rápido vas a tener 10 problemas más 👎🏻. Por eso tienes que ser muy estricto y muy duro en seguir el proceso.
+
+El objetivo es la construcción.
+
+Así es el diseño es más que interfaces bonitas, son los procesos de creación del software. Añadiendo un poco más , a algunos desarrolladores nos gusta más el diseño de la estructura no siempre porque creamos aplicaciones web, sino porque debemos de pensar bien en los procesos de negocio y como resolvemos utilizando nuestra ingeniería. Todo lo relacionado a dev ops, como manejas contenedores, usando shell para llamar a scripts, proveer al servidor de manera constante , etc es una gran abstracción y una de las metas finales del diseño.
 
 ### Cierre
 
+Ya tienes todos los elementos para crear, estructurar e implementar tus sistemas de diseño desde cero. Aprende a utilizarlo como herramienta de diálogo para trabajar con otros equipos y fundamentar tus perspectivas desde otro lugar en la mesa de negociación.
 
