@@ -385,18 +385,203 @@ En esta clase el profesor Ricardo Celis nos explica cómo crear un circuito bás
 
 La electricidad es un conjunto de fenómenos producidos por el movimiento e interacción entre las cargas eléctricas positivas y negativas de los cuerpos físicos. Tiene diferentes campos de aplicación como la eléctrica, este campo se encarga de estudiar todo lo que ocurre desde el enchufe de tu casa hasta la represa de energía o esa fuente de energía que ocurre en tu país; electrónica, campo usado en el IoT o Internet of Things y la computación donde la lógica nos ayuda a controlar los circuitos.
 
-
 # 5. Resistencia: concepto y teoría
 
 ## Resistencias
 
+Este es uno de los componentes más importantes en un circuito eléctrico. Acá una representación típica de una resistencia:
+
+![](https://i.ibb.co/KXkhyMR/r1.png)
+
+Tiene diferentes bandas, son cuatro: 1ra, 2ra1, 3ra y 4ra banda. Las nombraremos como A, B, C y D. En la vida real se vería así:
+
+![](https://i.ibb.co/9cX71fs/r1-2.png)
+
+La primera banda es de color verde, le segunda azul, la tercera negra y luego la cuarta que está más separada de color dorado.
+
+<h3>¿Para que sirven sus colores?</h3>
+
+No importa en donde estés, la tabla de códigos de colores no fallará.
+
+![](https://i.ibb.co/0FzvthW/r2.png)
+
+Nuestra resistencia tiene: verde, azul, negro y dorado
+
+<h3>Lectura de los colores</h3>
+
+En la tabla leeremos de izquierda a derecha, esto dará los siguientes resultados:
+
+  - Verde: 5
+  - Azul: 6
+  - Negro: x10^0 = 1
+  - Dorada: x5% de tolerancia
+
+Resultado total: `56*10^0 = 56 Ohm (Más o menos, el 5% de tolerancia indica que puede ser más o menos el resultado de las 4 franjas, por lo menos un 5% de diferencia. Te puede marcar 55 o 57 Ohms y estará bien)`
+
+**Medición**
+
+Primeramente colocaremos nuestro multímetro en el signo de omega. Puede que esté agrupado con otros signos, usa el botón SELECT para iterar en estas opciones hasta tener la opción de medir Ohm.
+
+![](https://i.ibb.co/PZZYc6d/rm.png)
+
+No importa como midamos la resistencia, ella no tiene polaridad.
+
+![](https://i.ibb.co/bNtQLzB/rm1.png)
+
+Ahora medimos y nos da como resultado algo aproximado a 56 Ohms, eso está correcto, nos dio 55.4 Ohms.
+
+![](https://i.ibb.co/znKbqRM/rm2.png)
+
+¡COOL! Ahora sabemos como medir resistencias.
+
+<h3>Colores de la Resistencia</h3>
+
+![](https://i.ibb.co/7C8GyM3/rm3.gif)
+
 ## Potenciometros
+
+Sigamos hablando de las resistencias. No son otra cosa que una resistencia para variar el valor. Tenemos las resistencias típicas que ya vimos antes. Vamos a ver un potenciómetro.
+
+![](https://i.ibb.co/Z6fKcfW/p.png)
+
+Estos potenciómetros tienen una leyenda, en este caso dice: B10K y el otro B50K, estos son los valores máximos de resistividad que tienen. Tienen tres terminales, cada una tiene una función particular, la primera y ultima terminal te da 50k de resistividad si el potenciómetro es de 50KiloOhms o 10k de resistividad si es de 10kiloOhms. La terminal del medio te da el valor que estás cambiando en tu resistividad.
+
+**¿Cómo funcionan?**
+
+Si lo destapamos veremos una pequeña punta que hace contacto con la tira de resistencia que tiene abajo.
+
+![](https://i.ibb.co/ZBJ91tV/p1.png)
+
+Si la tira de resistencia es de 10k, en la mitad mide 5k y el inicio daría B.
+
+**Medición**
+
+Seguimos con el multímetro puesto en Ohm para medir resistencia y procedemos a colocar los terminales del tester. Lo haremos en la primera terminal y en la tercera.
+
+![](https://i.ibb.co/X5NHnk9/p2.png)
+
+Si te das cuenta, el multímetro medirá 9.66, casi 10k por que ese es el rango que soporta este potenciómetro. Si giramos la perilla no habrá ningún cambio por que en las terminales 1 y 3 siempre va a mostrar la capacidad máxima que tiene el potenciómetro. La que varía su resistividad es la del medio. Para medir lo que queremos, que es la resistividad cambiante, lo debemos de hacer de la siguiente manera.
+
+![](https://i.ibb.co/hW1zBjV/p3.png)
+
+Giramos la perilla para observar como cambia el valor.
+
+![](https://i.ibb.co/f8nv57Q/p4.png)
+
+![](https://i.ibb.co/Xy17hbF/p5.png)
+
+Conforme se va girando la perilla la resistividad va cambiando. Este es un aparato que tiene un sin fin de aplicaciones. Por ejemplo se puede usar para regular la intensidad de iluminación de un bombillo. Existen muchos tipos de potenciómetros:
+
+![](https://i.ibb.co/VDxjk5D/p6.png)
+
+Se pueden usar en muchos lugares. En mi equipo de música se encuentra uno que no tiene un final en la perilla, sirve para regular el volumen. Se ocupan en los joystick de los videojuegos, mide el punto o coordenada de la ubicación del joystick.
+
+![](https://i.ibb.co/zQW3018/p7.png)
+
+Según lo mueves en su eje el potenciómetro gira provocando que la resistividad cambie, pasando esos datos a un procesador que los interprete para saber su posición. Por eso los controles para jugar te dan la capacidad de moverte en un videojuego caminando, trotando o hasta corriendo.
+
+**Otro ejemplo sería el siguiente potenciómetro:**
+
+![](https://i.ibb.co/NCpdPzn/p8.png)
+
+Sirve para regular alguna función de un aparato usando valores prefijados, se ocupaban antes cuando no había un microprocesador que leyera el potenciómetro, simplemente el fabricante diseñaba un circuito para que trabajara con esos valores fijos.
+
+Potenciómetro lineal:
+
+![](https://i.ibb.co/jhnX4Bd/p9.png)
 
 ## Fotoresistencias
 
+Mide el movimiento transversal. Se aplica en consolas de audio. Los slider se crean con este tipo de potenciómetros.
+
+Las fotorresistencias son resistencias que reaccionarán a la luz que reciben. Mayor luz menor valor resistivo. Varían conforme la luz cambia porque tienen un semiconductor adentro.
+
+Sin resistencias que van a reaccionar a la luz que están recibiendo. A mayor luz una fotoresistencia va a tener un menor valor resistivo.
+
+**¿Por qué pasa esto?**
+
+Las fotoresistencias varían conforme la luz cambia por que el componente que tienen adentro es un semiconductor, se altera si recibe luz y se convierte en un material capaz de conducir la energía eléctrica. Funcionará de manera diferentes con muchos rango dependiente de cuanto material semiconductor tenga.
+Esta es una fotoresistencia:
+
+![](https://i.ibb.co/x1yNNFK/f.png)
+
+Vamos a analizar los valores que nos arroja cuando la sometemos a luz y cuando no lo hacemos. Vamos a proceder a usar nuestro multímetro para medir los valores, no nos debemos preocupar por la polaridad ya que no tiene.
+
+**Medición**
+
+Si lo medimos con luz nos arroja aproximadamente 0.734 KiloOhms.
+
+![](https://i.ibb.co/p3GYHDT/f1.png)
+
+Ahora probemos con una linterna de teléfono.
+
+![](https://i.ibb.co/n0Nj7pJ/f2.png)
+
+Claramente podemos ver que bajó aún más su resistividad y por ende aumentar su conductividad. Ahora ¿Qué pasa si lo tapamos para evitar que la luz llegue a el?
+
+![](https://i.ibb.co/J2G2Dqb/f3.png)
+
+Recibimos un valor alto de resistencia. Tenemos que esta resistencia varió de de 0.700 a 47KiloOhms, todo dependiendo de la luz que le llegara al fotoresistor. Cuando conectamos un componente de esto a un arduino, por ejemplo, podemos hacer cosas increíbles, como un sistema de luz automático que active las luces de la casa cuando anochezca o un sistema de emergencia para cuando se corte la electricidad de la casa y prendan unas automáticamente. ¿Y qué si te digo que esto se puede conectar a Internet? Es maravilloso, podemos hasta lograr mandar un tweet cuando se prenda la luz de la casa, suena loco pero es posible. Todo esto con un componente básico como un fotoresistor.
+
 ## Demostrando el uso de una fotoresistencia
+
+<h3>Diagrama del Circuito</h3>
+
+![](https://i.ibb.co/MCgnVPc/fd.jpg)
+
+Vamos a hacer una práctica básica para usar una fotoresistencia. Vamos a usar el circuito que usamos varias clases atrás.
+
+![](https://i.ibb.co/StwDkkG/fd1.png)
+
+Puedes ver que la resistencia pequeña se quitó, también quitaremos el botón y luego conectaremos la fotoresistencia, tendremos en cuenta que la resistividad mínima de este componente es suficiente para que nuestro led no muera. Quedará así.
+
+![](https://i.ibb.co/GFqnC10/fd2.png)
+
+Veremos que el led cambiará de brillo dependiendo de la luz que reciba. Si le colocamos la mano al resistor mira lo que sucede.
+
+![](https://i.ibb.co/BZkK3wv/fd3.png)
+
+Baja el brillo considerablemente por que el resistor aumenta su resistividad. Ahora si lo soltamos sucede lo contrario.
+
+![](https://i.ibb.co/7znRp8q/fd4.png)
+
+Vimos como se refleja directamente en nuestro led la variabilidad de nuestro fotoresistor según le llegue la luz.
 
 ## Controlando el brillo de nuestro led con un potenciómetro
 
+Reutilizaremos el circuito que usamos en la clase anterior y usaremos un potenciómetro para experimentar acá. Vamos a eliminar el fotoresistor para empezar a usar el potenciómetro.
+
+![](https://i.ibb.co/znYsP5y/fr1.png)
+
+Ahora conectaremos nuestro potenciómetro a la protoboard.
+
+![](https://i.ibb.co/8b6w96n/fr2.png)
+
+Luego de que ya esté fijo y veamos que sus conexiones se hicieron bien procederemos con el experimento.
+
+**Cosas a tomar en cuenta**
+
+Recordemos que la primera terminal del potenciómetro va a ser donde vamos a iniciar la resistividad, en el medio tendremos el valor cambiante y por último tendremos la patita que nos dará el máximo de resistividad.
+
+**Armando el circuito**
+
+Procederemos a conectar el positivo a la primera terminal del potenciómetro. Luego conectaremos la salida que será la del medio, nos dará el valor cambiante y lo conectaremos a nuestra terminal positivo del led. Por ultimo conectaremos el negativo del circuito a la salida del led. Quedará así:
+
+![](https://i.ibb.co/sw6ftMV/fr3.png)
+
+**Prueba**
+
+Tenemos el potenciómetro en su valor máximo de resistencia, el led se verá de esta forma:
+
+![](https://i.ibb.co/Gn6vL5M/fr4.png)
+
+Si lo giramos para que reduzca su resistividad pasará esto:
+
+![](https://i.ibb.co/P9fsff0/fr5.png)
+
+Acá llegamos al máximo de conductividad, no se muere el led por que la batería no es lo suficientemente potente para quemarlo. Para saber el rango de alimentación que un led tiene, tomemos en cuenta que el fabricando nos dará una hoja de datos que nos dirá todo sobre el componente. No ahondamos en este tema por que ya hay otros cursos que hablan sobre la investigación de cada componente.
+
 ## Cierre del curso
+
+Nunca pares de Aprender 🎉 🎉 🎉 🎉 🎉 🎉
 
