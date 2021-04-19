@@ -1,0 +1,28 @@
+# En listamos los contenedores que se estan ejecutando
+
+	docker-compose ps
+
+
+	# Cerramos django.
+
+	docker rm -f crife_django_1
+
+
+	# Inicializamos django nuevamente
+
+	docker-compose run --rm --service-ports django
+
+# Migrations
+
+	# create new migration
+
+	docker-compose run --rm django python manage.py makemigrations
+
+	# Migrate
+
+	docker-compose run --rm django python manage.py migrate
+
+	
+	# Shell 
+
+	 docker-compose run --rm django python manage.py shell_plus
