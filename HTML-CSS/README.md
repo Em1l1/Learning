@@ -1,56 +1,58 @@
-# HTML Y CSS
+<h1>HTML Y CSS</h1>
 
-### 
+<h3>Rulótico González</h3>
 
-# Tabla de Contenido
+<h1>Tabla de Contenido</h1>
 
-- [1. Internet](#1-Internet)
-  - [¡Bienvenido al Curso!](#¡Bienvenido-al-Curso!)
-  - [¿Qué conocimientos me recomiendan para tomar este curso?](#¿Qué-conocimientos-me-recomiendan-para-tomar-este-curso?)
-  - [¿Cómo se construye la tecnología web?](#¿Cómo-se-construye-la-tecnología-web?)
-  - [¿Cómo instalar ATOM?](#¿Cómo-instalar-ATOM?)
-  - [Comprendamos Internet](#Comprendamos-Internet)
-- [2. Los básicos del web](#2-Los-básicos-del-web)
-  - [¿Cómo funciona HTML?](#¿Cómo-funciona-HTML?)
-  - [Etiquetas y sus atributos](#Etiquetas-y-sus-atributos)
-  - [Reto 1: crea tu fiesta de gifs](#Reto-1-crea-tu-fiesta-de-gifs)
-  - [¿Cómo funciona CSS?](#¿Cómo-funciona-CSS?)
-  - [¿Cómo funciona JavaScript?](#¿Cómo-funciona-JavaScript?)
-  - [Hola mundo y estructura del proyecto](#Hola-mundo-y-estructura-del-proyecto)
-  - [Listado de las etiquetas más usadas](#Listado-de-las-etiquetas-más-usadas)
-- [3. Construcción de un producto digital](#3-Construcción-de-un-producto-digital)
-  - [Paper wireframe](#Paper-wireframe)
-  - [¿Cómo instalar XD?](#¿Cómo-instalar-XD?)
-  - [Diseño de interfaces](#Diseño-de-interfaces)
-  - [Maquetación de la NavBar](#Maquetación-de-la-NavBar)
-  - [Maquetación de main_section y agregando estilos CSS](#Maquetación-de-main-section-y-agregando-estilos-CSS)
-  - [Maquetación de tarjetas de producto](#Maquetación-de-tarjetas-de-producto)
-  - [Fuentes personalizadas y variables de CSS](#Fuentes-personalizadas-y-variables-de-CSS)
-  - [Categorizando etiquetas según nuestra estructura en HTML](#Categorizando-etiquetas-según-nuestra-estructura-en-HTML)
-  - [Reto 2: Maquetar el home del producto digital](#Reto-2-Maquetar-el-home-del-producto-digital)
-  - [Reglas responsive](#Reglas-responsive)
-  - [Animaciones y transiciones](#Animaciones-y-transiciones)
-- [4. Integrando otras herramientas](#4-Integrando-otras-herramientas)
-  - [Atributos especiales de las etiquetas para mejorar el funcionamiento de nuestros formularios](#Atributos-especiales-de-las-etiquetas-para-mejorar-el-funcionamiento-de-nuestros-formularios)
-  - [Librería vs Framework](#Librería-vs-Framework)
-  - [Sistema de Grillas](#Sistema-de-Grillas)
-  - [Completando el Sistema de Grillas](#Completando-el-Sistema-de-Grillas)
-  - [Reto 3: implementación del sistema de grillas](#Reto-3-implementación-del-sistema-de-grillas)
-  - [Maquetación del formulario](#Maquetación-del-formulario)
-  - [Creación de formulario: inputs](#Creación-de-formulario-inputs)
-  - [Creación de formulario: botones](#Creación-de-formulario-botones)
-  - [¿Cómo crear tu cuenta en Paypal?](#¿Cómo-crear-tu-cuenta-en-Paypal?)
-  - [Configuración del botón de pago con Paypal](#Configuración-del-botón-de-pago-con-Paypal)
-  - [Autofill del formulario de PayPal](#Autofill-del-formulario-de-PayPal)
-  - [Maquetación de pantalla de éxito y error](#Maquetación-de-pantalla-de-éxito-y-error)
-- [5. Deploy](#5-Deploy)
-  - [Testing con el Navegador](#Testing-con-el-Navegador)
-  - [Cómo crear tu cuenta en Github](#Cómo-crear-tu-cuenta-en-Github)
-  - [Subiendo nuestro proyecto a Internet con Github](#Subiendo-nuestro-proyecto-a-Internet-con-Github)
-- [6. Conclusión](#6-Conclusión)
-  - [Conclusiones](#Conclusiones)
-- [7. Bonus](#7-Bonus)
-  - [Librería vs Framework](#Librería-vs-Framework)
+- [1. Internet](#1-internet)
+  - [¡Bienvenido al Curso!](#bienvenido-al-curso)
+    - [Frontend ---- Backend](#frontend------backend)
+    - [HTML - CSS - JS](#html---css---js)
+  - [¿Qué conocimientos me recomiendan para tomar este curso?](#qué-conocimientos-me-recomiendan-para-tomar-este-curso)
+  - [¿Cómo se construye la tecnología web?](#cómo-se-construye-la-tecnología-web)
+  - [¿Cómo instalar ATOM?](#cómo-instalar-atom)
+  - [Comprendamos Internet](#comprendamos-internet)
+- [2. Los básicos del web](#2-los-básicos-del-web)
+  - [¿Cómo funciona HTML?](#cómo-funciona-html)
+  - [Etiquetas y sus atributos](#etiquetas-y-sus-atributos)
+  - [Reto 1: crea tu fiesta de gifs](#reto-1-crea-tu-fiesta-de-gifs)
+  - [¿Cómo funciona CSS?](#cómo-funciona-css)
+  - [¿Cómo funciona JavaScript?](#cómo-funciona-javascript)
+  - [Hola mundo y estructura del proyecto](#hola-mundo-y-estructura-del-proyecto)
+  - [Listado de las etiquetas más usadas](#listado-de-las-etiquetas-más-usadas)
+- [3. Construcción de un producto digital](#3-construcción-de-un-producto-digital)
+  - [Paper wireframe](#paper-wireframe)
+  - [¿Cómo instalar XD?](#cómo-instalar-xd)
+  - [Diseño de interfaces](#diseño-de-interfaces)
+  - [Maquetación de la NavBar](#maquetación-de-la-navbar)
+  - [Maquetación de main_section y agregando estilos CSS](#maquetación-de-main_section-y-agregando-estilos-css)
+  - [Maquetación de tarjetas de producto](#maquetación-de-tarjetas-de-producto)
+  - [Fuentes personalizadas y variables de CSS](#fuentes-personalizadas-y-variables-de-css)
+  - [Categorizando etiquetas según nuestra estructura en HTML](#categorizando-etiquetas-según-nuestra-estructura-en-html)
+  - [Reto 2: Maquetar el home del producto digital](#reto-2-maquetar-el-home-del-producto-digital)
+  - [Reglas responsive](#reglas-responsive)
+  - [Animaciones y transiciones](#animaciones-y-transiciones)
+- [4. Integrando otras herramientas](#4-integrando-otras-herramientas)
+  - [Atributos especiales de las etiquetas para mejorar el funcionamiento de nuestros formularios](#atributos-especiales-de-las-etiquetas-para-mejorar-el-funcionamiento-de-nuestros-formularios)
+  - [Librería vs Framework](#librería-vs-framework)
+  - [Sistema de Grillas](#sistema-de-grillas)
+  - [Completando el Sistema de Grillas](#completando-el-sistema-de-grillas)
+  - [Reto 3: implementación del sistema de grillas](#reto-3-implementación-del-sistema-de-grillas)
+  - [Maquetación del formulario](#maquetación-del-formulario)
+  - [Creación de formulario: inputs](#creación-de-formulario-inputs)
+  - [Creación de formulario: botones](#creación-de-formulario-botones)
+  - [¿Cómo crear tu cuenta en Paypal?](#cómo-crear-tu-cuenta-en-paypal)
+  - [Configuración del botón de pago con Paypal](#configuración-del-botón-de-pago-con-paypal)
+  - [Autofill del formulario de PayPal](#autofill-del-formulario-de-paypal)
+  - [Maquetación de pantalla de éxito y error](#maquetación-de-pantalla-de-éxito-y-error)
+- [5. Deploy](#5-deploy)
+  - [Testing con el Navegador](#testing-con-el-navegador)
+  - [Cómo crear tu cuenta en Github](#cómo-crear-tu-cuenta-en-github)
+  - [Subiendo nuestro proyecto a Internet con Github](#subiendo-nuestro-proyecto-a-internet-con-github)
+- [6. Conclusión](#6-conclusión)
+  - [Conclusiones](#conclusiones)
+- [7. Bonus](#7-bonus)
+  - [Librería vs Framework](#librería-vs-framework-1)
 
 ---
 
@@ -1001,19 +1003,77 @@ Comparte el resultado de tu reto en la sección de discusiones.
 
   ## Maquetación del formulario
 
-
+Para reutilizarlo puedes copiar y pegar la estructura HTML y los estilos CSS y listos. Pero obviamente no es lo más optimo. Cómo reutilizar las secciones de tus aplicaciones depende mucho de las herramientas que estés usando. A mí me gusta mucho React.js, y si lo conoces sabrás que por naturaleza cada componente es reutilizable desde el principio.
 
   ## Creación de formulario: inputs
 
+Para que el elemento label se asocie con el input el atributo for debe coincidir con el atributo id del input no con el name
 
+- [Atributos](https://developer.mozilla.org/es/docs/Web/HTML/Elemento/label#Atributos)
+
+```html
+<label for="name">Nombre</label>
+<input type="text" id="name">
+```
 
   ## Creación de formulario: botones
 
+Botón submit fuera del form, en otro row, pero se linkea con un ID en el form y el atributo form=“nombreDeId” en el input.
 
+```html
+<form id="createForm" action="">
+<input type="submit" value="Continuar con el pago" name="submit" form="createForm" class="pago_boton">
+```
+
+![](https://i.ibb.co/pwHH758/formulario.jpg)
 
   ## ¿Cómo crear tu cuenta en Paypal?
 
+Importante:
 
+Crea tu cuenta con tu nombre real, no utilices apodos ni palabras que no correspondan al nombre que aparece en tu identificación, esta recomendación te la hago porque si necesitas sacar dinero de una cuenta que no tiene tu nombre como se muestra en tu ID, no podrás obtener o transferir este dinero a tu cuenta bancaria
+
+Ahora estás listo para crear tu cuenta de PayPal. Es un proceso sencillo, solo sigue estos pasos:
+
+1. Entra a este link https://www.paypal.com/
+
+2. Da click en “sign up” o en “abrir cuenta”
+
+![](https://i.ibb.co/k8Mm3Hk/pypal.webp)
+
+3. Define el tipo de cuenta quieres crear
+
+![](https://i.ibb.co/Kjx7t3S/pypal1.jpg)
+
+La diferencia más notoria entre la cuenta de negocios y la personal es que la cuenta de negocios está especializada en recibir pagos, entonces seleccionaremos la opción de Paypal para negocios.
+
+Cada país tiene diferentes configuraciones y lo más probable es que de una u otra manera te pidan confirmar tu identidad, ya sea con tu pasaporte o el ID de tu país, pasando estos procesos no tendrás problemas en vender en todo el mundo y comprar con tu cuenta. Este proceso se puede dar al inicio de creación de cuenta o cuando quieras transferir dinero a una cuenta personal.
+
+4. Después de seleccionar el tipo de cuenta que necesitas, ingresa tus datos (recuerda el tip que te di al inicio de la lectura)
+
+![](https://i.ibb.co/NN8Xt7C/pypal2.jpg)
+
+5. Completando los datos que te solicita Paypal ya tendrás una cuenta, sin embargo te preguntará algunas cosas de configuración como :
+
+- Dirección
+
+![](https://i.ibb.co/Kz6ptCY/pypal3.jpg)
+
+El uso que le darás a tu cuenta de Paypal:
+
+![](https://i.ibb.co/PzhSSbG/pypal4.jpg)
+
+- Tarjeta de crédito que quieras agregar (Este paso lo puedes omitir)
+
+![](https://i.ibb.co/6tvGKFW/pypal5.jpg)
+
+6. Por último confirma tu cuenta con el mail que te mandarán a tu cuenta de correo.
+
+![](https://i.ibb.co/GcVXHPy/pypal6.jpg)
+
+Después de seguir estos pasos tendrás tu cuenta en Paypal. Podrás empezar a comprar y vender con diferentes métodos de pago.
+
+Si tienes algún problema con la creación de tu cuenta en Paypal deja tus comentarios al finalizar esta clase y entre todos te ayudaremos.
 
   ## Configuración del botón de pago con Paypal
 
