@@ -1077,29 +1077,97 @@ Si tienes algún problema con la creación de tu cuenta en Paypal deja tus comen
 
   ## Configuración del botón de pago con Paypal
 
+El botón de pago es una herramienta de PayPal que ayuda a configurar la cantidad y el método de pago para que nuestro usuarios paguen por nuestros productos o servicios de forma fácil y rápida.
 
+Cuando configuremos nuestro botón, vamos a copiar la URL que generamos con PayPal y la vamos a pegar en el atributo `action` de nuestro formulario, además debemos añadir el atributo `method=""POST""` para que nuestro formulario funcione correctamente.
+
+- [Websites using PayPal Button](https://trends.builtwith.com/websitelist/PayPal-Button)
+- [The Sad State of Payment Buttons](https://uxplanet.org/the-sad-state-of-payment-buttons-4d5cef3b9578)
+- [Less is more: reducing thousands of PayPal buttons into a single iframe, using zoid](https://bluepnume.medium.com/less-is-more-reducing-thousands-of-paypal-buttons-into-a-single-iframe-using-xcomponent-d902d71d8875)
+- [Let’s button up your business](https://www.paypal.com/us/webapps/mpp/logos-buttons)
+- [PayPal Donate Vs. PayPal.me Option: The Beginners Guide to Medium #6](https://writingcooperative.com/paypal-donations-vs-paypal-me-option-the-beginners-guide-to-medium-6-a2d35a9c8fe1)
 
   ## Autofill del formulario de PayPal
 
+Que bueno que has llegado hasta aquí. En esta clase aprenderemos algunas cosas extras pero muy importantes sobre PAYPAL y el formulario que acabamos de hacer, lo más importante ahora es que seguro tienes dudas y una de ellas puede ser ¿qué pasa con las variables que envías por el formulario?¿cómo las recibe Paypal en su sistema y para qué nos sirve?
 
+Vamos por pasos:
+
+**Variables**
+
+Las variables que nosotros enviamos en el código tal como name, phone e email Paypal las recibe para poder completar su formulario por ejemplo cuando nosotros no enviamos ninguna variable en el POST del formulario, la pantalla de Paypal será:
+
+![](https://i.ibb.co/JmFBQBk/pypal-1-1.jpg)
+
+Al recibir data del formulario de PayPal cambia la pantalla por algo como esto:
+
+![](https://i.ibb.co/pbcbXR9/pypal1-2.jpg)
+
+Esto sucede porque las variables que enviamos por el formulario, después viajan por el URL y llegan a PayPal, son las mismas variables que utiliza para llenar su formulario y así el usuario no tiene que ingresar 2 veces la misma información.
+
+Tu código debe tener estas variables para que la opción de autollenado funcione
+
+![](https://i.ibb.co/pdF8qV6/pypal-1-3.jpg)
+
+Con esto puedes notar que tienes muchas opciones para tu formulario lo importante es que sigas el mismo formato que tiene paypal para pasar las variables.
+
+Te dejo también un ejemplo más amplio de variables para los forms:
+
+![](https://i.ibb.co/zFF5nCT/pypal-1-4.jpg)
+
+Toda la documentación de la función de autollenado la encuentras en este enlace:
+https://developer.paypal.com/docs/classic/paypal-payments-standard/integration-guide/formbasics/#auto-fill-forms-with-html-variables
+
+Y las variables que pueden enviar para el auto llenado del formulario son :
+https://developer.paypal.com/docs/classic/paypal-payments-standard/integration-guide/Appx_websitestandard_htmlvariables/#paypal-checkout-page-variables
 
   ## Maquetación de pantalla de éxito y error
 
+**Imagen de Exito**
 
+![](https://i.ibb.co/hc01WgS/exit.jpg)
+
+**Imagen de Error.**
+
+![](https://i.ibb.co/drtxn3w/exit-1.jpg)
 
 # 5. Deploy
 
   ## Testing con el Navegador
 
-
+  - `Inspector:` control + shift + i
+  - `element:` inspecciona el html en la parte superior inspecciona el css en la parte inferior
+  - `console:` inspecciona el código javascript
+  - `sources:` explora carpetas y archivos donde esta alojada nuestra web
+  - `network:` testea la velocidad de carga de los elementos de nuestra meyerweb
 
   ## Cómo crear tu cuenta en Github
 
+Sigue estos pasos para crear tu cuenta de Github.
 
+1. Entra a https://github.com/ y da click el botón signup
+
+![](https://i.ibb.co/C7wjF37/git.webp)
+
+2. Completa la información de registro
+
+3. Después vas a seleccionar el tipo de cuenta que quieres, en este caso vamos a seleccionar la cuenta gratuita sin check de ninguna opción.
+
+![](https://i.ibb.co/rGdnk8r/git1.webp)
+
+4. Por último debes diligenciar una encuesta para finalizar el proceso.
+
+![](https://i.ibb.co/ChvvdLT/git2.webp)
+
+5. Ahora que ya tienes una cuenta podrías crear un repositorio, pero en la próxima clase vamos a crear uno con un software que nos facilitará esto.
+
+![](https://i.ibb.co/fHMNX73/git3.webp)
 
   ## Subiendo nuestro proyecto a Internet con Github
 
+Para subir nuestro proyecto a internet vamos a utilizar Github Pages, una herramienta que se conecta con nuestros repositorios de Github.
 
+Antes de utilizar esta herramienta vamos a descargar Github Desktop, una herramienta que nos facilita la comunicación con la plataforma de Github. Vamos a utilizarla para subir nuestro proyecto a Github y, más adelante, subirla a internet con Github Pages.
 
 # 6. Conclusión
 
