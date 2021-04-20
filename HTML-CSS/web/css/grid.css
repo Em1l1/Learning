@@ -1,0 +1,72 @@
+.grid-container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1000px;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-rows: repeat(3, 200px);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    "product-img-1 product-img-1 product-1 product-1"
+    "product-2 product-2 product-img-2 product-img-2"
+    "product-img-3 product-img-3 product-3 product-3";
+  margin: 80px auto;
+}
+
+.product-img-1 {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-area: product-img-1;
+}
+
+.text-info {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  grid-area: product-1;
+}
+
+/* .row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+} */
+
+/* .col-1{
+  width: 8.3333333333%;
+}
+
+.col-2{
+  width: 16.6666666666%;
+}
+.col-3{
+  width: 24.999999999%;
+}
+.col-4{
+  width: 33.333333332%;
+}
+.col-5{
+  width: 41.666666665%;
+}
+.col-6{
+  width: 49.999999998%;
+}
+.col-7{
+  width: 58.333333331%;
+}
+.col-8{
+  width: 66.666666664%;
+}
+.col-9{
+  width: 74.999999997%;
+}
+.col-10{
+  width: 83.33333333%;
+}
+.col-11{
+  width: 91.666666663%;
+}
+.col-12{
+  width: 100%;
+} */

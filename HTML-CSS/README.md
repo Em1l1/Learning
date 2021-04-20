@@ -713,33 +713,291 @@ La imagen es un reto que tienes que resolver. Este componente es diferente pues 
 
   ## Reglas responsive
 
+**Responsive Design** consiste en crear estilos que se adapten a cualquier tamaño y posición de nuestros dispositivos electrónicos. Para esto, la mayoría de elementos organizados horizontalmente deben pasar a organizarse verticalmente.
+
+La forma de añadir código CSS que se ejecute para tamaños de pantalla específicos es la siguiente:
+
+```css
+@media (max-width: 600px) { /* 600px es solo un ejemplo */
+        /* Todos nuestros estilos responsive */
+}
+```
 
 - [Responsive Web Design Is…](https://responsivedesign.is)
+
   ## Animaciones y transiciones
 
+Las animaciones nos permiten cambiar los estilos de nuestros elementos durante un tiempo. Para esto debemos configurar nuestra animación con algunos estilos iniciales y finales para aplicarla a alguno de nuestros selectores de CSS:
 
+```css
+@keyframe fadeIn {
+        from {
+                opacity: 0;
+        }
+        to {
+                opacity: 1;
+        }
+}
+
+.fadeIn {
+        animation-name: fadeIn;
+        animation-duration: 4s;
+        animation-fill-mode: 4s;
+}
+```
+
+No olvides repetir los atributos de animación o transiciones utilizando el prefijo -webkit-:
+
+```css
+.fadeIn {
+        animation-name: fadeIn;
+        -webkit-animation-name: fadeIn;
+        animation-duration: 4s;
+        -webkit-animation-duration: 4s;
+        animation-fill-mode: 4s;
+        -webkit-animation-fill-mode: 4s;
+}
+```
+
+**[Normalize.css](http://necolas.github.io/normalize.css/)**
+
+<h4>Animaciones</h4>
+
+Las animaciones CSS3 permiten animar la transición entre un estilo y otro, y constan de dos componentes:
+
+  1. Un estilo que describe la animación CSS
+  2. Un conjunto de fotogramas que indican su estado inicial y final.
+  
+  <h4>Animaciones CSS vs JavaScript</h4>
+
+Las animaciones CSS tienen tres ventajas sobre las animación basadas en scripts:
+
+1. Son muy fáciles de usar para animaciones sencillas, puedes hacerlo incluso sin tener conocimientos de Javascript.
+2. La animación se muestra correctamente, incluso en equipos poco potentes. Animaciones simples realizadas en Javascript pueden verse mal (a menos que estén muy bien hechas). El motor de renderizado puede usar técnicas de optimización como el “frame-skipping” u otras técnicas para que la ejecución de la animación se vea tan suave como sea posible.
+3. Al ser el navegador quien controle la secuencia de la animación, permitimos que optimice el rendimiento y eficiencia de la misma, por ejemplo, reduciendo la frecuencia de actualización de la animación ejecutándola en pestañas que no estén visibles.
+
+<h4>Propiedades de “animation”</h4>
+
+Las subpropiedades de animation son:
+
+`animation-delay`
+
+Tiempo de retardo entre el momento en que el elemento se carga y el comienzo de la secuencia de la animación.
+
+`animation-direction:`
+
+Indica si la animación debe retroceder hasta el fotograma de inicio al finalizar la secuencia o si debe comenzar desde el principio al llegar al final.
+
+`animation-duration`
+
+La propiedad CSS `animation-duration` indica la cantidad de tiempo que la animación tarda en completar un ciclo (duración).
+
+`animation-iteration-count:`
+
+El número de veces que se repite. Podemos indicar infinite para repetir la animación indefinidamente.
+
+`animation-name:`
+
+La propiedad CSS `animation-name` especifica una lista de animaciones que se deben aplicar al elemento seleccionado. Cada nombre indica un @keyframes esta regla define los valores de las propiedades de la secuencia de animación.
+
+`@keyframes:`
+
+La regla arroba `@keyframes` permite controlar los pasos intermedios en una secuencia de animación CSS mediante el establecimiento de keyframes (o puntos de trayectoria) a lo largo de la secuencia de animación que debe ser alcanzado por determinados puntos durante la animación.
+
+`animation-play:`
+
+La propiedad CSS `animation-play-state` determina si una animación está en ejecución o en pausa. Puede ser consultada para determinar si la animación se está ejecutando. Además, su valor se puede establecer para pausar y reanudar una animación.
+
+`animation-timing-function:`
+
+La propiedad CSS `animation-timing-function` especifica cómo una animación CSS debe avanzar sobre la duración de cada ciclo. Los posibles valores son una o varias.
+
+`animation-fill-mode`
+
+Especifica qué valores tendrán las propiedades después de finalizar la animación (los de antes de ejecutarla, los del último fotograma de la animación o ambos).
+
+- [CSS Tools: Reset CSS](https://meyerweb.com/eric/tools/css/reset/)
 
 # 4. Integrando otras herramientas
 
   ## Atributos especiales de las etiquetas para mejorar el funcionamiento de nuestros formularios
 
+Los formularios de nuestras páginas web se componen principalmente de labels para indicarle a los usuarios qué datos van a llenar, los inputs son los espacios donde pueden llenar estos datos y los botones son para enviar el formulario (o cualquier otra cosa, por ejemplo hacer reset).
 
+¿Te has preguntado por qué usamos labels y no cualquier otra etiqueta? ¿Que tienen de especial los labels?
+
+Los labels no son como otras etiquetas que solo guardan y muestran el texto con los diferentes estilos que definamos en el CSS. Los labels están especialmente preparados y optimizados para que nuestros formularios funcionen correctamente.
+
+<h4>Atributos para asociar labels a sus respectivos inputs</h4>
+
+Seguramente has llenado miles de formularios desde tu computadora sin problemas. Pero la probabilidad de que tengas un mal rato cuando te encuentras con un formulario desde tu celular es muy alta. Por ser dispositivos mucho más pequeños es mucho más difícil atinarle al input correcto para empezar a escribir los datos que nos pide el formulario.
+
+De hecho, suele pasar que, debido a todos estos problemas, terminamos abandonando esa página web y nos olvidamos de ella para siempre. Nuestra tarea es evitar este tipo de problemas a toda costa.
+
+Solucionar esto es muy fácil. Vamos a crear la funcionalidad de que, al tocar el label que corresponde a cada input, la página reaccione como si hubiéramos hecho click directamente en el input.
+
+Hay dos formas de hacerlo:
+
+**Primera forma:** Podemos encerrar nuestros inputs dentro de sus respectivos labels:
+
+```html
+<label>
+Nombre:
+<input type=”text” />
+</label>
+
+<label>
+Edad:
+<input type=”number” />
+</label>
+```
+
+**Segunda forma:** Sólo debemos añadir un par de atributos a los elementos de nuestro formulario:
+
+  - Añadimos el atributo id en la etiqueta input y le damos un valor, recuerda que el valor de nuestros IDs deben ser únicos e irrepetibles para evitar problemas en nuestra página web.
+
+  - Añadimos el atributo for en la etiqueta label con el valor del id del input que queremos enlazar.
+
+```html
+<label for=”nombre”>Nombre:</label>
+<input type=”text” id=”nombre” />
+
+<label for=”edad”>Edad:</label>
+<input type=”number” id=”edad” />
+```
+
+<h4>Atributos para enviar los datos de nuestros formularios</h4>
+
+El objetivo de los formularios es enviar y almacenar los datos de nuestros usuarios en algún sitio, ¿verdad?
+
+La forma de hacerlo es mucho más fácil de lo que crees. Solo debemos añadir algunos atributos en la etiqueta `<form>` y en los `inputs` y `botones` de nuestro formulario.
+
+  - `Action:` Este atributo de la etiqueta `<form>` nos permite establecer el lugar o URL donde los datos de los usuarios deben ser enviados una vez ellos terminen de llenar el formulario.
+  - `Name:` Este atributo de las etiquetas `<input>` nos permite que los datos que los usuarios hayan escrito se envíen correctamente cuando han terminado de llenar el formulario. El valor de esta etiqueta debe indicar el nombre con el cual queremos almacenar o interactuar con esta información en el futuro.
+  - `Type:` El atributo `type=”submit”` le permite a los usuarios indicar que han terminado de llenar el formulario y lo pueden enviar para almacenar la información. También podemos usar este atributo en inputs para que estos pasen a tener el rol de botón de envío del formulario.
+  
+
+```html
+<form action=”URL_DONDE_QUIERO_ENVIAR_LO_DATOS”>
+  <label for=”nombre”>Nombre:</label>
+  <input type=”text” id=”nombre” name=”user_name” />
+
+  <label for=“edad“>Edad:</label>
+  <input type=”number” id=”edad” name=”user_age” />
+
+  <button type=”submit”>Enviar mis datos</button>
+</form>
+```
+
+Si pruebas este mismo formulario vas a ver que, al enviarlo, la página se dirige a la URL que indicaste en el atributo action de la etiqueta form. Pero es no es todo, fijate bien en la URL y veras que los datos de tus usuarios están escondidos por ahí:
+
+```js
+?user_name=JUAN&user_age=123
+```
+
+Si tienes este mismo resultado significa que has tenido éxito!
+
+Recuerda que si quieres almacenar estos datos en algún lugar como una base de datos puedes aprender un poco de Backend, APIs REST, CRUD y hacer todas las configuraciones necesarias.
+
+Si tienes alguna duda puedes dejarla en los comentarios.
 
   ## Librería vs Framework
 
+En esta clase vamos a aprender qué son los frameworks y librerías, entenderás cómo el uso de estos dos elementos de programación te ayudarán a encontrar soluciones.
 
+Cada lenguaje de programación tiene sus propios frameworks y librerías, por ejemplo, JavaScript tiene frameworks como Angular.js y librerías como React.js para simplificar problemas de visualización de contenido. ¡Las librerías y frameworks existen para optimizar tu tiempo!
+
+Los **`Frameworks`** son un marco o base de trabajo basados en una metodología para hacer nuestro trabajo mas rápido. En cambio, las Librerías son un conjunto de rutinas y funciones que tienen un objetivo.
+
+Por ejemplo, [`Bootstrap`](https://getbootstrap.com) es un framework que nos ayuda a crear estilos para nuestras páginas y nos permite extender o modificar el trabajo que ya hizo por nosotros. También existen muy buenas alternativas como [`Foundation`](https://get.foundation/frameworks-docs.html) que utilizan otras metodologías pero también nos ayudan a crear páginas web más rápido. Ten en cuenta que muchos productos digitales utilizan estos frameworks y puede ser más difícil destacarnos con diseños originales.
+
+Normalmente, si necesito algo rapido pos utilizo este tipo de herramientas, sino, hago todo yo mismo a mano 💪.
+
+<h5>FRAMEWORK</h5>
+
+Como su nombre lo dice es un marco o entorno de trabajo que a su vez contiene librerías y otras herramientas que nos dan un amplio margen de resolución de problemas, pero no sólo eso, sino que otro de sus objetivos es el de unificar todos los componentes de un proyecto.
+
+Ahora si buscas algo más técnico podemos decir que un framework es un conjunto de herramientas que nos facilitan el desarrollo de software; para poder lograrlo incluyen implementos como estos:
+
+  - APIs.
+  - Librerías.
+  - Herramientas de depuración.
+  - Edición.
+  - Prototipado.
+  - Programas de soporte.
+
+<h5>LIBRERÍAS</h5>
+
+Una librería es una sección de código que resuelve o brinda soporte para detalles específicos en nuestros programas o proyecto.
+
+Ahora de forma más particular encontramos que las librerías son un conjunto de elementos, por ejemplo: funciones, clases, tipos predefinidos, constantes, variables globales y macros, etc.
 
   ## Sistema de Grillas
 
+Los sistemas de grillas nos ayudan a configurar el espacio y tamaño de nuestros elementos. En este caso, vamos a separar nuestra grilla en 12 posibles tamaños, así que debemos realizar la operación 100/12 y multiplicar el resultado por cada posible tamaño de nuestra grilla.
 
+```css
+.col-1 {
+        width: 8.3333333333%;
+}
+.col-2 {
+        width: 16.6666666666%;
+}
+.col-3 {
+        width: 24.9999999999%;
+}
+...
+```
+
+Si en CSS a la la clase `.row` le cambiamos el display de `flex` a `grid` basta con indicar que quieres 6 columnas en tu grilla y que sean de una fracción `grid-template-columns: repeat(6, 1fr)` para lograr el mismo resultado que el profesor:
+
+```css
+.row {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+```
+
+También es importante mencionar que es de mucha ayuda entender como es que Rulótico diseñó la grilla desde cero ya que así es la metodologia de Bootstrap de las 12 columnas y entendiendo ésta manera de hacer la grilla se comprende con más facilidad y mayor rapidez Bootstrap.
+De mi parte prefiero utilizar CSS Grid ya que es una especificación directa para layout, en el curso de “CSS Grid” Leonidas enseña a usar la grilla de CSS, está muy bueno el curso y no es largo.
 
   ## Completando el Sistema de Grillas
 
+```css
+.col-1,.col-2,.col-3,.col-4,.col-5,.col-6,.col-7,.col-8,.col-9,.col-10,.col-11,.col-12
+```
 
+Para evitar copiar todo el código de manera repetida, podemos utilizar este selector de atributos:
+
+```css
+[class*="col-"] { /* selecciona los atributos class cuyos valores tenga una subcadena col-*/
+  padding: 10px;
+}
+```
 
   ## Reto 3: implementación del sistema de grillas
 
+¡Bienvenido al tercer reto!
 
+En esta ocasión aprendiste cómo funciona un sistema de columnas, con este conocimiento vamos a maquetar la sección de productos.
+
+Aquí encontrarás los recursos necesarios para resolver este reto: https://xd.adobe.com/spec/2c9c033b-9245-42a1-495d-4ed75543bc3f-5aad/screen/92d69c70-3e3d-4c6e-ae7d-5b4fe57f8293/Home-3/
+
+![](https://i.ibb.co/B4ckhqf/r1.webp)
+
+Como puedes notar, cada producto está dentro de un contenedor y esto permite que no llegue al borde de los extremos, ahora usa los números de columnas para distribuir los elementos de forma indicada.
+
+![](https://i.ibb.co/jLTztCq/r2.webp)
+
+Por ejemplo por aquí podemos ver una columna 4 y una de 8 , recuerda que siempre tienes que lograr las doce columnas. 8+4=12
+
+Y cuando está al revés, invertimos los números, primero la columna de 8 y luego la columna de 4.
+
+![](https://i.ibb.co/NWQjj0v/r3.webp)
+
+¡Ahora ya sabes maquetar con columnas!
+
+Comparte el resultado de tu reto en la sección de discusiones.
 
   ## Maquetación del formulario
 
