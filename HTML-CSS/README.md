@@ -1169,15 +1169,31 @@ Para subir nuestro proyecto a internet vamos a utilizar Github Pages, una herram
 
 Antes de utilizar esta herramienta vamos a descargar Github Desktop, una herramienta que nos facilita la comunicación con la plataforma de Github. Vamos a utilizarla para subir nuestro proyecto a Github y, más adelante, subirla a internet con Github Pages.
 
+- [cristinafsanz | melies-hugo](https://github.com/cristinafsanz/melies-hugo)
+- [Ilusionismo con Github Pages](https://www.youtube.com/watch?v=VBKQIiTl8Bc)
+
 # 6. Conclusión
 
   ## Conclusiones
 
+¡Felicitaciones por terminar el Curso Profesional de Desarrollo Web!
 
+Ahora sabes cómo planear, diseñar y programar productos digitales, todos estos conocimientos van a ser muy útiles para continuar con tu carrera profesional.
+
+> “Cambia el mundo del internet, tú estás haciendo los productos del futuro.”
 
 # 7. Bonus
 
   ## Librería vs Framework
 
+Framework:
 
+  - Contiene librerías y herramientas que ayudan a construir más rápido.
+  - Garantiza la calidad debido a metodología de trabajo y estructura, bien definidas.
+
+- Librería: fragmento de código que ayuda a resolver un problema específico, con un propósito concreto.
+
+**Su importancia:**
+
+- En programación suelen haber problemas similares constantemente y un framework o librería puede que ya lo hayan resuelto.
 
