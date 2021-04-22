@@ -230,97 +230,244 @@ echo -e "Opcion: $opcion\nNombre: $nombre"
 
 con el \n se hace salto de linea, con el \t se hace un tab y hay muchos otros como el \r
 
-```vim
- 31
- 30 # Programa para enviar los tipos de operadores
- 29 # Autor: Victor Juarez - @victorianojuarez
- 28
- 27 numA=10
- 26 numB=4
- 25
- 24 echo "Operadores Aritmeticos"
- 23 echo "Numeros A=$numA y B=$numB"
- 22 echo "Sumar A + B =" $(( numA + numB ))
- 21 echo "Resta A - B =" $(( numA - numB ))
- 20 echo "Multiplicacion A * B =" $(( numA * numB ))
- 19 echo "Division A / B =" $(( numA / numB ))
- 18 echo "Residuo  A % B =" $(( numA % numB ))
- 17
- 16 echo -e "\nOperadores Relaciones"
- 15 echo "Numeros: A=$numA y B=numB"
- 14 echo "A < B =" $(( numA < numB ))
- 13 echo "A > B =" $(( numA > numB ))
- 12 echo "A <= B =" $(( numA <= numB ))
- 11 echo "A >= B =" $(( numA >= numB ))
- 10 echo "A == B =" $(( numA == numB ))
-  9 echo "A != B =" $(( numA != numB ))
-  8
-  7
-  6 echo -e "\nOperadores de Asignacion"
-  5 echo "Numero: A=$numA y B=numB"
-  4 echo "Sumar A += B" $(( numA += numB ))
-  3 echo "Restar A -= B" $(( numA -= numB ))
-  2 echo "Multiplicacion A *= B" $(( numA *= numB ))
-  1 echo "Dividur A /= B" $(( numA /= numB ))
-33  echo "Residuo A %= B" $(( numA %= numB ))
-```
-
   ## Tipos de Operadores
 
+```vim
+# Programa para enviar los tipos de operadores
+# Autor: Victor Juarez - @victorianojuarez
 
+numA=10
+numB=4
+echo "Operadores Aritmeticos"
+echo "Numeros A=$numA y B=$numB"
+echo "Sumar A + B =" $(( numA + numB ))
+echo "Resta A - B =" $(( numA - numB ))
+echo "Multiplicacion A * B =" $(( numA * numB ))
+echo "Division A / B =" $(( numA / numB ))
+echo "Residuo  A % B =" $(( numA % numB ))
+
+  echo -e "\nOperadores Relaciones"
+echo "Numeros: A=$numA y B=numB"
+echo "A < B =" $(( numA < numB ))
+echo "A > B =" $(( numA > numB ))
+echo "A <= B =" $(( numA <= numB ))
+echo "A >= B =" $(( numA >= numB ))
+echo "A == B =" $(( numA == numB ))
+echo "A != B =" $(( numA != numB ))
+
+   echo -e "\nOperadores de Asignacion"
+
+echo "Numero: A=$numA y B=numB"
+echo "Sumar A += B" $(( numA += numB ))
+echo "Restar A -= B" $(( numA -= numB ))
+echo "Multiplicacion A *= B" $(( numA *= numB ))
+echo "Dividur A /= B" $(( numA /= numB ))
+echo "Residuo A %= B" $(( numA %= numB ))
+```
 
   ## Script con Argumentos
 
+Hay algunos identificadores para cuando ejecutamos un script con argumentos
 
+**`$0:`** Se refiere al nombre del Script, Nombre del Script
+**`$1 al ${10}`:** Se refiere al número de argumento. Si es más de uno lo colocamos dentro de llaves. El numero de argumento. Si es mas de un dígito se pone entre llaves.
+**`$#:`** Es útil para conocer el número de argumentos enviados. Contador de argumentos
+**`$*:`** Con este podemos conocer todos los argumentos enviados. Refiere a todos los argumentos
+
+```bash
+# ! /bin/bash
+# Programa para ejemplificar el paso de argumentos
+# Autor: Marco Toscano Freire - @martosfre
+
+nombreCurso=$1
+horarioCurso=$2
+
+echo "El nombre del curso es: $nombreCurso dictado en el horario de $horarioCurso"
+echo "El número de parámetros enviados es: $#"
+echo "Los parámetros enviados son: $*"
+```
+
+Al ejecutar el archivo agregar los parametros:
+
+```sh
+./argumentos.sh "Curso de Prgamacion Bash" "20:00 23:00"
+```
+
+![](https://i.ibb.co/pwY78rZ/argumentos-Bash.gif)
 
   ## Sustitución de Comandos en variables
 
+Para la sustitución de comandos es importante tener en cuenta que el resultado servirá para realizar otras tareas de otras sentencias de nuestro programa.
 
+Las dos maneras de hacerlo:
 
+Usando el backtick caracter. `(`)`
+Usando el signo de dólar con el formato `$(comando)`
+
+cuando se definen las variables no debe haber espacios alrededor del signo igual
+
+asi funciona:
+
+```sh
+ubicacionActual=`pwd`
+infoKernel=$(uname -a)
+```
+
+asi no:
+
+```sh
+ubicacionActual = `pwd`
+infoKernel = $(uname -a)
+```
   ## Debug en Script
 
+Para realizar debugging en un script tenemos dos opciones en el comando de bash:
 
+`-v:` Utilizado para ver el resultado detallado de nuestro script, evaluado línea por línea.
+
+
+```bash
+➜  ShellCourse git:(DevOps) ✗ bash -v 6-substitucionComand.sh
+#!/bin/bash
+# Programa para revisar como ejecutar comandos dentro de un programa y almacenar una variable para us posterior utilizarcion
+# Autor: Victor Juarez
+
+ubicacionActual=`pwd`
+infoKernel=$(uname -a)
+
+echo "La ubicacion actual es la siguiente: $ubicacionActual"
+La ubicacion actual es la siguiente: /home/game/Documents/Learning_platzi/DevOps/bash-shell/ShellCourse
+echo "Informacion del Kernel: $infoKernel"
+Informacion del Kernel: Linux chess 5.8.0-33-generic #36-Ubuntu SMP Wed Dec 9 09:14:40 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
+```
+
+`-x:` Utilizado para desplegar la información de los comandos que son usados, capturando el comando y su salida.
+
+
+```sh
+➜  ShellCourse git:(DevOps) ✗ bash -x 6-substitucionComand.sh
+++ pwd
++ ubicacionActual=/home/game/Documents/Learning_platzi/DevOps/bash-shell/ShellCourse
+++ uname -a
++ infoKernel='Linux chess 5.8.0-33-generic #36-Ubuntu SMP Wed Dec 9 09:14:40 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux'
++ echo 'La ubicacion actual es la siguiente: /home/game/Documents/Learning_platzi/DevOps/bash-shell/ShellCourse'
+La ubicacion actual es la siguiente: /home/game/Documents/Learning_platzi/DevOps/bash-shell/ShellCourse
++ echo 'Informacion del Kernel: Linux chess 5.8.0-33-generic #36-Ubuntu SMP Wed Dec 9 09:14:40 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux'
+Informacion del Kernel: Linux chess 5.8.0-33-generic #36-Ubuntu SMP Wed Dec 9 09:14:40 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
+```
 
   ## Reto 1
 
+Desarrollar un programa llamado `utilityHost.sh`, dentro de él vamos a declarar dos variables una llamada option, otra llamada result, vamos a inicializarles e imprimir sus valores.
+
+#  3. Script Interactivos
+
+## Capturar información usuario
+
+Para poder capturar información tenemos dos formas dentro de un programa Bash.
+
+  - Utilizando en conjunto con el comando `echo`
+  - Utilizando directamente el comando `read`
+
+Unas de las opciones más utilizadas para Read
+
+- `p:` Permite ingresar una frase o prompt antes de pedir el dato.
+- `s:` Modo Sigiloso. No muestra ningún caracter en la terminal, util para contraseñas o información sensible.
+- `n [num]:` Permite leer como máximo n caracteres.
+- `r:` Toma el botón de retroceso o backspace como un caracter y no borra ningun otro caracter previamente escrito.
+
+- `Script interactivos:` Es un script retroalimentado por el usuario
+- `echo -n:` Imprimir información sin el caracter “\n” al final, es decir sin el salto de línea
+- El comando `“read”` es para leer o capturar información del standard input
+- La variable `“$REPLY”` es donde se almacenará esa información del standard input
+
+Script con `read`
+
+```sh
+nombre=""
+read -p "Introduce tu nombre: " nombre
+echo $nombre
+```
+
+## Expresiones Regulares
+
+Cuando se solicita ingresar información través de un programa por parte del usuario que está utilizando el programa, independientemente el lenguaje que esté realizado; es importante considerar la validación de la información no solo en su tamaño sino también en los tipos de datos, formatos soportados lo cual nos permite asegurar la calidad de la información que recibimos, almacenamos y procesamos.
+
+Dentro de este contexto en la programación bash para cumplir con este objetivo se utiliza expresiones regulares, las cuales son básicamente cadenas de caracteres que definen un patrón de búsqueda que se valida frente a una información específica para asegurar que cumple la validación definida.
+
+Se necesita conocer ciertos criterios utilizados en las expresiones regulares que son los siguientes:
+
+  - ^.- Caracter que representa el inicio de la expresión regular.
+  - $.- Caracter que representa el final de la expresión regular.
+  - *.- Caracter que representa cero o más ocurrencias de la expresión
+  - +.- Caracter que representa una o más ocurrencias de la expresión.
+  - {n}.- Representa n veces de una expresión.
+  - [ ] .- Representa un conjunto de caracteres, por ejemplo: [a-z] representa las letras del abecedario de la a a la z.
+
+Tomando en cuenta estos criterios se realizará un programa que valida la siguiente información:
+Número de Identificación de un tamaño de 10 números. Ejemplo: 1717836520
+País de Origen denotado por dos letras en un rango específico. Ejemplo: EC, CO, US
+Fecha de Nacimiento en el formato yyyyMMDD. Ejemplo: 20181222
+
+Primero se definirá las expresiones regulares y se solicitará la información del usuario:
+
+![](https://i.ibb.co/vV9cGg7/bash.webp)
+
+Luego se validará cada expresión regular comenzando con la identificación, para lo cual para cada validación se utilizará la sentencia condicional if y para comparar la expresión se debe utilizar el siguiente formato especial `if [[ $variable =~ $expresionRegular ]]` como se muestra a continuación.
+
+![](https://i.ibb.co/7GxPCdt/bash1.webp)
+
+Se realizará la ejecución de la aplicación con los dos escenarios el correcto y el incorrecto como se muestra a continuación:
+
+![](https://i.ibb.co/KN99SGY/bash2.webp)
+
+Finalmente el código fuente lo pueden encontrar en el repositorio de GitHub en el branch 7.ValidarInformacion
+
+## Validar información
 
 
-3. Script Interactivos
-Capturar información usuario
-Expresiones Regulares
-Validar información
-Paso de parámetros y opciones
-Descargar información de Internet
-Reto 2
-4. Condicionales
-Sentencias If/Else
-If Anidados
-Expresiones Condicionales
-Sentencias Case
-Reto 3
-5. Iteración
-Arreglos
-Sentencia for loop
-Sentencia while loop
-Loop Anidados
-Break y continue
-Menú de Opciones
-Reto 4
-6. Archivos
-Archivos y Directorios
-Escribir dentro de archivos
-Leer Archivos
-Operaciones Archivos
-Reto 5
-7. Empaquetamiento
-Empaquetamiento TAR, GZIP y PBZIP 2
-Respaldo Empaquetado con clave
-Transferir información red
-Reto 6
-8. Funciones
-Crear funciones y Paso de Argumentos
-Funciones de instalar y desinstalar postgres
-Funciones sacar y restaurar respaldos en postgres
-Reto 7
-9. Cierre del curso
-Cierre
+
+## Paso de parámetros y opciones
+
+
+
+## Descargar información de Internet
+
+
+
+## Reto 2
+
+
+
+#  4. Condicionales
+## Sentencias If/Else
+## If Anidados
+## Expresiones Condicionales
+## Sentencias Case
+## Reto 3
+#  5. Iteración
+## Arreglos
+## Sentencia for loop
+## Sentencia while loop
+## Loop Anidados
+## Break y continue
+## Menú de Opciones
+## Reto 4
+#  6. Archivos
+## Archivos y Directorios
+## Escribir dentro de archivos
+## Leer Archivos
+## Operaciones Archivos
+## Reto 5
+#  7. Empaquetamiento
+## Empaquetamiento TAR, GZIP y PBZIP 2
+## Respaldo Empaquetado con clave
+## Transferir información red
+## Reto 6
+#  8. Funciones
+## Crear funciones y Paso de Argumentos
+## Funciones de instalar y desinstalar postgres
+## Funciones sacar y restaurar respaldos en postgres
+## Reto 7
+#  9. Cierre del curso
+# Cierre
