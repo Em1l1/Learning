@@ -36,6 +36,8 @@
   - [CREATE VIEW y DDL ALTER](#create-view-y-ddl-alter)
   - [DDL drop](#ddl-drop)
   - [DML](#dml)
+      - [DDL -> Data Definition Language](#ddl---data-definition-language)
+      - [DML -> Data Manipulation Language](#dml---data-manipulation-language)
   - [¿Qué tan standard es SQL?](#qué-tan-standard-es-sql)
   - [Creando Platziblog: tablas independientes](#creando-platziblog-tablas-independientes)
   - [Creando Platziblog: tablas dependientes](#creando-platziblog-tablas-dependientes)
@@ -43,6 +45,7 @@
 - [5. Consultas a una base de datos](#5-consultas-a-una-base-de-datos)
   - [¿Por qué las consultas son tan importantes?](#por-qué-las-consultas-son-tan-importantes)
   - [Estructura básica de un Query](#estructura-básica-de-un-query)
+    - [Atajos con el teclado](#atajos-con-el-teclado)
   - [SELECT](#select)
   - [FROM](#from)
   - [Utilizando la sentencia FROM](#utilizando-la-sentencia-from)
@@ -937,20 +940,111 @@ restrict: No se podrá eliminar un usuario hasta que sean eliminados todos su po
 - Las tablas transitivas sirven como puente para unir dos tablas. No tienen contenido semántico.
 - **Reverse Engineer** nos reproduce el esquema del cual nos basamos para crear nuestras tablas. Es útil cuando llegas a un nuevo trabajo y quieres entender cuál fue la mentalidad que tuvieron al momento de crear las bases de datos.
 
+
+![](https://i.ibb.co/KN3km0Y/diag.webp)
+
+![](https://i.ibb.co/brN6kxM/blog.webp)
+
 # 5. Consultas a una base de datos
+
 ## ¿Por qué las consultas son tan importantes?
+
+Las consultas o queries a una base de datos son una parte fundamental ya que esto podría salvar un negocio o empresa.
+Alrededor de las consultas a las bases de datos se han creado varias especialidades como ETL o transformación de datos, business intelligence e incluso machine learning.
+
+Las consultas en una base de datos juegan un papel muy fundamental, puesto que facilitan de manera considerable los procesos en cualquier empresa.
+ETL
+
+La palabra ETL correspondería al acrónimo de:
+
+  - **Extract** (Extraer)
+  - **Transform** (Transformar)
+  - **Load** (Cargar)
+ 
+ETL hace parte del proceso de integración de datos, mas aun es un componente muy importante que completa el resultado final en la relación de aplicaciones y sistemas.
+
+- Las empresas tienen gran necesidad de informacion correcta y oportuna.
+- Son una parte fundamental al tratar con bases de datos.
+- Se puede aprender a hacer consultas, mejorando nuestra habilidad en ello a lo largo del tiempo.
+
 ## Estructura básica de un Query
+
+Los queries son la forma en la que estructuramos las preguntas que se harán a la base de datos. Transforma preguntas en sintaxis.
+
+El query tiene básicamente 2 partes: `SELECT y FROM` y puede aparecer una tercera como `WHERE`.
+
+La estrellita o asterisco `(*)` quiere decir que vamos a seleccionar todo sin filtrar campos.
+
+```sql
+SELECT *
+FROM platziblog.posts
+where fecha_publicacion > 2024;
+```
+
+Una consulta normalmente viene con 3 elementos básicos, los cuales son:
+  - `SELECT` nombre_atributos
+  - `FROM` nombre_entidad
+  - `WHERE` nombre_atributo operador`(<, >, =, etc)` valor_atributo
+
+### Atajos con el teclado ue nos pueden ayudar a la escritura y ejecución del código SQL
+
+`Ctrl + T`; nos abre una nueva pestaña de Query para escribir código SQL.
+
+![](https://i.ibb.co/tmC7HJj/1.jpg)
+
+`Ctrl + Shift + Enter`; nos ayuda a ejecutar todo el código SQL que se allá escrito en el editor.
+
+![](https://i.ibb.co/48f5GVd/2.jpg)
+
+`Ctrl + Enter`; nos ayuda ejecutar el código SQL donde el cursor este ubicado.
+
+![](https://i.ibb.co/48f5GVd/2.jpg)
+
+
 ## SELECT
+
+
+
 ## FROM
+
+
+
 ## Utilizando la sentencia FROM
+
+
+
 ## WHERE
+
+
+
 ## Utilizando la sentencia WHERE nulo y no nulo
+
+
+
 ## GROUP BY
+
+
+
 ## ORDER BY y HAVING
+
+
+
 ## El interminable agujero de conejo (Nested queries)
+
+
+
 ## ¿Cómo convertir una pregunta en un query SQL?
+
+
+
 ## Preguntándole a la base de datos
+
+
+
 ## Consultando PlatziBlog
+
+
+
 # 6. Introducción a la bases de datos NO relacionales
 ## ¿Qué son y cuáles son los tipos de bases de datos no relacionales?
 ## Servicios administrados y jerarquía de datos
