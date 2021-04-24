@@ -21,7 +21,7 @@
 - [3. Utilizar Capacitores para filtrar, generar carga](#3-utilizar-capacitores-para-filtrar-generar-carga)
   - [Tipos de capacitores y sus aplicaciones](#tipos-de-capacitores-y-sus-aplicaciones)
   - [Capacitores a detalle](#capacitores-a-detalle)
-  - [Cálculo de capacitanci](#cálculo-de-capacitanci)
+  - [Cálculo de capacitancio](#cálculo-de-capacitancio)
 - [4. Uso de Diodos y bobinas](#4-uso-de-diodos-y-bobinas)
   - [Qué son los diodos](#qué-son-los-diodos)
   - [Qué son las bobinas](#qué-son-las-bobinas)
@@ -169,27 +169,129 @@ Por otro lado, si R2 es mucho más pequeño que R1, el voltaje de salida será m
 ![](https://i.ibb.co/hZmG6sF/5.jpg)
 
 # 3. Utilizar Capacitores para filtrar, generar carga
+
 ## Tipos de capacitores y sus aplicaciones
+
+Existen tres elementos básicos encontrados en la mayoría de circuitos, y son:
+
+  - Resistor
+  - Inductor
+  - Capacitor
+   
+El capacitor, o también conocido como condensador, permite almacenar una carga eléctrica dada y sirven para recuperarnos de las caídas de tensión manteniendo un voltaje estable en nuestros circuitos.
+
+La unidad de medida que usan es el faradio, el cual se define como la capacidad de un capacitor entre cuyas placas existe una diferencia de potencial eléctrico de 1 voltio (1V) cuando está cargado de una cantidad de electricidad igual a un culombio (1C).
+
+Tipos de capacitores:
+
+  - **Capacitor Electrolítico.** Es de los más comunes y se mide en microfaradios.
+  - **Capacitor Cerámico.** Almacenan una menor carga y se miden en picofaradios.
+  - **Super Capacitores.** Se usa en circuitos de alto consumo como en los sistemas de sonido profesionales de un coche. Se miden en faradios.
+
+Unidades de los faradios:
+
+![](https://i.ibb.co/sF9wMcD/simbolos.jpg)
+
+> La diferencia entre una batería y un Capacitor, es que la batería puede almacenar la energía por mucho tiempo, en cambio el capacitor se descarga en cuestión de segundos o milisegundos, según sea la carga que puede almacenar.
+
 ## Capacitores a detalle
-## Cálculo de capacitanci
+
+Los capacitores electrolíticos necesitan que el flujo de corriente lleve una dirección, es decir tiene polaridad. En cambio, los capacitores cerámicos no la tienen.
+
+Toma esto siempre en consideración ya que si conectas mal un capacitor puede dañarte el circuito entero. Otro aspecto a considerar es que con el tiempo los capacitores mueren, es importante verificar el “endurance” en su data sheet.
+
+- [data-sheet-capacitor.pdf](https://drive.google.com/file/d/1VTGKZ-RhjCqQP0D_PaqytXDjTzmHoFJM/view?usp=sharing)
+
+> RoHS quiere decir Restriction of Hazardous Substances y es una marca de conformidad de estándares Europeos. Básicamente, si tus componentes tienen esta marca, se supone que están libres de plomo y mercurio, principalmente
+
+Un capacitor electrolítico se puede estallar por dos razones
+1. Por exceder el voltaje aplicado que recomienda el fabricante.
+2. Por inversión de la polaridad de la tensión aplicada al mismo.
+
+## Cálculo de capacitancio
+
+Un capacitor de gran tamaño puede almacenar más carga que un capacitor de menor tamaño.
+
+Sobre la base de estas observaciones se puede predecir que la capacidad de un condensador será directamente proporcional al área de las placas e inversamente proporcional a su separación.
+
+La relación exacta puede determinarse considerando la intensidad del campo eléctrico entre las placas del condensador.
+
+La intensidad del campo eléctrico entre las placas del condensador cargado que aparece en la figura puede determinarse con base en la ecuación
+
+![](https://i.ibb.co/BK3YSZF/1.jpg)
+
+![](https://i.ibb.co/HqdXnss/2.jpg)
+
+
 # 4. Uso de Diodos y bobinas
+
 ## Qué son los diodos
+
+Los diodos son un filtro que nos sirve para mantener nuestras señales limpias ya que solo permite el flujo de corriente en una dirección.
+
 ## Qué son las bobinas
+
+
+
 ## Uso práctico de un relevador
+
+
+
 ## ¿Qué es el electromagnetismo?
+
+
+
 # 5. Entender las Señales eléctricas
+
 ## Tipos de señales eléctricas
+
+
+
 ## Definiendo una frecuencia
+
+
+
 ## Práctica: Creando un flash
+
+
+
 # 6. Entender qué es un transistor
+
 ## ¿Qué es un transistor?
+
+
 # 7. Aplica todos tus conocimientos juntos
+
 ## Proyecto final ¿qué haremos?
+
+
+
 ## Proyecto final: Chasis y componentes
+
+
+
 ## Proyecto final: Esquemático y data sheets
+
+
+
 ## Proyecto final: Circuitos básicos del sistema
+
+
+
 ## Proyecto final: Conexión de componentes
+
+
+
 ## Proyecto final: Terminando las conexiones y ensamble
+
+
+
 ## Proyecto final: Demo y desafío con fotoresistencias
+
+
+
 ## Cierre del curso y ¿qué sigue?
+
+
+
 
