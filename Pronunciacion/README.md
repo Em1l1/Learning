@@ -1,4 +1,4 @@
-<h1>Inglés Básico: Pronunciación</h1>
+**<h1>Inglés Básico: Pronunciación</h1>
 
 <h3>Emma Carvajal</h3>
 
@@ -411,22 +411,92 @@ k
 - choice/tʃɔɪs/ decide /dɪˈsaɪd/
 - arch/aːrtʃ/ portico/ˈpɔːr.t̬ɪ.koʊ/
 
+1. **/dʒ/**
 
+
+- Juice /dʒuːs/
+- Enjoyable /ɪnˈdʒɔɪ.jə.bəl/
+- Dangerous /ˈdeɪn.dʒə.rəs/
+
+2. **/∫/**
+
+
+- Cushion /ˈkʊ.ʃən/
+- attention /əˈten.ʃən/
+- share /ʃeə/
+
+3. **/t∫/**
+
+
+- Mature /məˈtʃʊə/
+- Chai /tʃeə/
+- Church /tʃɜːtʃ
 ## Airflows
 
+![](https://i.ibb.co/P5YpX5q/airflows.webp)
 
+H: 
+- honey /ˈhʌn.i/ 
+- hope /hoʊp/ 
+- horse /hɔːrs/
 
+F: 
+
+- fork /fɔːrk/ 
+- fox /fɑːks/ 
+- feet /fiːt/
+
+V: 
+- violin / 
+- Vaseline /ˌvaɪəˈlɪn/ 
+- vegetable /ˈvedʒ.tə.bəl/
+ 
+S: 
+- snake /
+- sneɪk/ 
+- saxophone /ˈsæk.sə.foʊn/ 
+- swing /swɪŋ/
+ 
+Z: 
+- zebra /ˈziː.brə/ 
+- zero /ˈzɪr.oʊ/ 
+- zucchini /zuːˈkiː.ni/
 
 ## Almost a vowel
 
+**Common ‘j’ /ʤ/ spellings**
 
+a. jump /ʤʌmp/
 
+b. juice /ʤus/
 
+c. eject /ɪ 'ʤɛct/
+
+**Common* /w/ *spellings**
+
+a. win /win/
+
+b. sweet /swit/
+
+c. rewind /ri 'wɑɪnd/
+
+![](https://i.ibb.co/NLQdfKf/j.webp)
+
+![](https://i.ibb.co/ZTd89gm/w.webp)
 
 # 5. Final
 
 ## Th phoneme
 
+![](https://i.ibb.co/KGf7922/th.webp)
+
+- [Cambridge Dictionary](https://dictionary.cambridge.org/us)
 
 ## Congratulations!
 
+- [personal-brand-course-recap.pdf](https://drive.google.com/file/d/1sCw1d5fcRy3uv1XqMKAgcHfdL-v-M0br/view?usp=sharing)
+- [personal-brand-course-recap.audio](https://drive.google.com/file/d/19THfuJ6HtPfSThIi_8zpr70WJB1To-OM/view?usp=sharing)
+- [strategies-to-learn-online.pdf](https://drive.google.com/file/d/1mGoRlZMVizNWHqEV1BTt8ryBEcRhsJaU/view?usp=sharing)
+- [strategies-to-learn-online.audio](https://drive.google.com/file/d/12h2qeeN1V4HfsLF8gdbcpkGrGyyu7brj/view?usp=sharing)
+- [basic-programming-course-recap.pdf](https://drive.google.com/file/d/1o6cuBmeYRYsUp5KAcWch7FctiJTiMKfD/view?usp=sharing)
+- [basic-programming-course-recap.audio](https://drive.google.com/file/d/1ghX2e_BXpcB6tPui18acVUYRXrhy5orZ/view?usp=sharing)
