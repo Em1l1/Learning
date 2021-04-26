@@ -24,12 +24,17 @@
   - [Cálculo de capacitancio](#cálculo-de-capacitancio)
 - [4. Uso de Diodos y bobinas](#4-uso-de-diodos-y-bobinas)
   - [Qué son los diodos](#qué-son-los-diodos)
+    - [Símbolo de diodo](#símbolo-de-diodo)
   - [Qué son las bobinas](#qué-son-las-bobinas)
   - [Uso práctico de un relevador](#uso-práctico-de-un-relevador)
   - [¿Qué es el electromagnetismo?](#qué-es-el-electromagnetismo)
+    - [Los origenes:](#los-origenes)
 - [5. Entender las Señales eléctricas](#5-entender-las-señales-eléctricas)
   - [Tipos de señales eléctricas](#tipos-de-señales-eléctricas)
+    - [Edison y Tesla](#edison-y-tesla)
   - [Definiendo una frecuencia](#definiendo-una-frecuencia)
+    - [SEÑALES ELÉCTRICAS](#señales-eléctricas)
+    - [FRECUENCIA DE LA ONDA ELÉCTRICA:](#frecuencia-de-la-onda-eléctrica)
   - [Práctica: Creando un flash](#práctica-creando-un-flash)
 - [6. Entender qué es un transistor](#6-entender-qué-es-un-transistor)
   - [¿Qué es un transistor?](#qué-es-un-transistor)
@@ -208,6 +213,8 @@ Un capacitor electrolítico se puede estallar por dos razones
 1. Por exceder el voltaje aplicado que recomienda el fabricante.
 2. Por inversión de la polaridad de la tensión aplicada al mismo.
 
+- [QUÉ ES UN CAPACITOR O CONDENSADOR](http://www.asifunciona.com/electrotecnia/ke_capacitor/ke_capacitor_2.htm)
+
 ## Cálculo de capacitancio
 
 Un capacitor de gran tamaño puede almacenar más carga que un capacitor de menor tamaño.
@@ -229,27 +236,102 @@ La intensidad del campo eléctrico entre las placas del condensador cargado que 
 
 Los diodos son un filtro que nos sirve para mantener nuestras señales limpias ya que solo permite el flujo de corriente en una dirección.
 
+- [Entrevista a Holonyak, Inventor del LED Sub. Español - YouTube](https://www.youtube.com/watch?v=qjZqLM61pP0)
+
+![](https://i.ibb.co/3hdsQvW/diodos.png)
+
+Un rectificador de onda completa que menciona en el video para pasar de la corriente alterna a directa, aunque aún después de esto faltan más pasos y componentes para electrónicos para tener una salida constante y continua de volts.
+
+### Símbolo de diodo
+
+![](https://i.ibb.co/cYcwZQq/diodo.webp)
+
 ## Qué son las bobinas
 
+Son muy comunes en circuitos que requieren transformaciones de voltaje o componentes que generan un campo electromagnético.
 
+Una bobina se compone por dos elementos:
+
+Un núcleo metálico.
+Vueltas de hilo de cobre alrededor del núcleo.
+Estás vueltas generan el campo electromagnético que sirve para transformar un voltaje alto a un voltaje bajo de cierto valor.
+
+Otro uso es en los relés. Un relé sirve para abrir o cerrar el paso de corriente de un camino hacia otro. Puedes pensar que es cómo la palanca que sirve para cambiar la dirección de las vías de un tren.
+
+- [Limitando la corriente para evitar quemar un led en Fundamentos de Desarrollo de Hardware con Arduino](https://platzi.com/clases/1252-fundamentos-arduino/10580-limitando-la-corriente-para-evitar-quemar-un-led/)
 
 ## Uso práctico de un relevador
 
-
+![](https://i.ibb.co/zbs7wQ9/relevador1.png)
 
 ## ¿Qué es el electromagnetismo?
 
+Cuando te adentras en el mundo de la creación de circuitos eléctricos es importante que conozcas un concepto fundamental. El electromagnetismo.
 
+La enciclopedia británica define al electromagnetismo como la ciencia de la carga y de todos los campos y fuerzas asociados a esta. La electricidad y el magnetismo son las dos claves para entenderlo.
+
+En palabras más simples el electromagnetismo es una rama de la física que estudia los fenómenos de las relaciones entre la electricidad y el magnetismo. Es decir, el campo magnético que es creado por la corriente eléctrica y el efecto de un campo magnético sobre una corriente eléctrica.
+
+Cada campo tiene sus propias ecuaciones y se produce de formas diferentes: las fuerzas eléctricas son producidas por cargas eléctricas tanto en reposo como en movimiento. Por su parte, las fuerzas magnéticas, son producidas por cargas en movimientos y actúan únicamente con cargas en movimiento.
+
+### Los origenes:
+
+Los primeros estudiosos de la electricidad creían que la electricidad y el magnetismo eran dos fuerzas sin relación. Sin embargo fue en 1865 cuando James Clerk Maxwell con la publicación de la Teoría Dinámica del campo electromagnético https://royalsocietypublishing.org/doi/pdf/10.1098/rstl.1865.0008 , plantó las bases teóricas para las principales ecuaciones que definen el estudio del electromagnetismo. Este trabajo estuvo basado en los primeros estudios de Michael Faraday.
+
+En la Teoría Dinámica del campo electromagnético, Maxwell predijo la existencia de las ondas electromagnéticas propagándose a la velocidad de la luz y además concluyó que la luz era una onda electromagnética. Piénsalo así, el trabajo de Maxwell es considerado de igual impacto al de científicos como Albert einstein o Isaac Newton.
+
+La semilla de Maxwell permitió el desarrollo de un sin número de aparatos eléctricos que como humanidad hemos usado para mejorar en nuestra vida diaria, desde la brújula, hasta el timbre de tu casa, así es, si presionas un timbre, la corriente eléctrica crea un campo magnético que atrae un timbre que toca la campana o los relés, que son electroimanes especiales que funcionan como interruptores eléctricos automáticos. Los puedes encontrar en televisores, computadores, carros y hasta ascensores.
+
+Observa tu vida diaria y cuéntame ¿en qué otros artefactos ves que usamos el electromagnetismo?
 
 # 5. Entender las Señales eléctricas
 
 ## Tipos de señales eléctricas
 
+Tenemos dos tipos de señales:
 
+  - **Señal digital.** Es representada con una onda cuadrada que va de cero a su voltaje máximo positivo y de vuelta a cero. Nunca da valores negativos, la corriente se mantiene constante.
+
+  - **Señal analógica.** Es representada por una onda senoidal que va de cero a su máximo positivo y de ahí a su minino negativo pasando por el cero. Repitiendo este ciclo.
+
+### Edison y Tesla
+
+  - **Corriente continua:** como vemos es un flujo continuo de corriente.
+
+  - **Corriente Alterna:** alterna entre positivo y negativo el flujo de corriente.
+
+Nuestras casas les llega corriente alterna y es convertida y se trabaja con corriente continua. Por ejemplo en cargadores, lamparas, etc…
+
+voltaje negativo y positivo se refiere a la dirección en que circula la corriente, imagina que tienes un cable y que la corriente eléctrica cirucla de izquiera a derecha, entonces decimos que en esa dirección el voltaje es (+) y si la corriente circulara en dirección contraria entonces el voltaje es negativo(-)
+
+En la corriente diecta no existe voltaje negativo, porque la corriente siempre circula en la misma dirección
+
+En cambio en la corriente alterna (se llama alterna porque cambia constantemente la dirección de la corriente), por ejemplo en un foco cualquiera de tu casa, en realidad la corriente va de un lado para otro, solo que lo hace tantas veces en 1 segundo que el ojo no alcanza a percibir esos cambios de dirección. En este caso si existen voltajes positivo y negativo.
 
 ## Definiendo una frecuencia
 
+La frecuencia es las veces que se repite un evento en un tiempo determinado. En este caso las veces que se repite el ciclo de nuestra onda.
 
+- [esquema-relay.pdf](https://drive.google.com/file/d/1o8DE-vaxPpVplQWXzKBiiRUNMvCYC5Z1/view?usp=sharing)
+
+  - **Periodo:** representa cada que tanto se completa un flujo en una señal eléctrica.
+  - **Frecuencia:** Las veces que un evento se repite en un periodo de tiempo dado.
+  - **Hertz:** Unidad de medida que mide la fercuencia.
+
+### SEÑALES ELÉCTRICAS
+
+  - **Digital:** Tenemos 1 o 0, pasa o no pasa corriente. (Corriente Continua)
+  - **Análoga:** Tenemos una corriente positiva, 0 y negativa. (Corriente Alterna)
+
+### FRECUENCIA DE LA ONDA ELÉCTRICA:
+
+El tiempo en cumplir un flujo entero en una señal eléctrica.
+
+Ejemplo:
+
+0 → + → 0 → - → 0 (4 segundos)
+
+Un ciclo por segundo se mide en Hertz
 
 ## Práctica: Creando un flash
 
