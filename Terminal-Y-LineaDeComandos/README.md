@@ -428,16 +428,126 @@ Ayuda a anidar operaciones.
 
 ## Crontab: Una herramienta para automatizar tareas desde la terminal
 
+Una de las herramientas más potentes de los sistemas UNIX, que nos permite programar la ejecución de diferentes scripts. Con crontab podemos agendar todo lo que necesitemos para facilitar nuestro trabajo y automatizar tareas.
+`contrab -l` despliega el crontab que tenemos instalado. Cada una de las primeras 5 columnas que tenemos al correr este comando especifica en qué momento exacto queremos que se ejecute la tarea que vamos a definir en la sexta columna.
 
+```bash
+0   16  *   *   *    $Home/src/cronjobs/daily.sh
+0   *   *   *   *    $Home/src/cronjobs/hourly.sh
+*   *   *   *   *    $Home/src/cronjobs/minutely.sh
+```
+
+Columna 1: minuto 0-59
+Columna 2: hora 0-23
+Columna 3: día del mes 1-31
+Columna 4: mes 1-12
+Columna 5: día de la semana 0-7 (donde 0 y 7 equivalen a domingo)
+Columna 6: script o comando que queremos que se ejecute
+
+  - `1` Se ejecuta en el minuto 1
+  - `1,10,18` Se ejecuta en el minuto 1, 10 y 18
+  - `*/5` Se ejecuta cada 5 minutos
+  - `1-10` Se ejecuta los primeros 10 minutos de cada hora
+  - `*` Se ejecuta cada minuto
+
+`crontab -e:` edita las tareas que tengo agendadas. Con la letra i podemos escribir.
+
+Recuerda que el crontab se ejecuta si y solo si la computadora está encendida."
+
+crontab permite programar la ejecución de scripts.
+
+- `-l` muestra la lista de crontab
+- `-e` editar la tabla crontab. Con esto se pueden agregar más scripts
+
+**Ejemplo**
+
+Ejecuta `script.sh`
+
+```bash
+0 3 * * 1 script.sh
+```
+
+1. En el minuto cero
+2. a las 3 am
+3. todos los días del mes
+4. todos los meses
+5. solo si es lunes
+6. script y ejecutar.
+
+![](https://i.ibb.co/THfDMXg/contrab.jpg)
 
 ## Links
 
+Hay un problema muy común: a veces nos estamos quedando sin disco duro y no sabemos qué es lo que nos está quitando tanto espacio. Con el comando du (disk usage) vamos a saber, a partir del lugar donde estemos, cuánto espacio en disco ocupa cada nodo.
+Para ahorrar disco duro podemos crear links simbólicos o alias, con `ln -s`.
 
+`du` muestra la cantidad de espacio usado por los archivos en un directorio.
+
+  - `-h` muestra el output de una manera que se pueda leer mejor.
+  - `-d [numero]` nivel de profundidad. Cuántos niveles baja de carpeta.
+Links
+
+```bash
+ln -s [ruta del directorio] [alias]
+``` 
+Crea un alias que apunta a un directorio.
+
+`-s link simbolico`. Si se usa este parámetro con rm solo se elimina el acceso directo.
+
+```bash
+ls -s C:/carpeta alias_file 
+cd alias_file
+```
+
+La terminal está interpretando `cd C:/carpeta`.
 
 ## Usuarios y Permisos
 
+En esta clase vamos a entender los diferentes permisos que puede tener cada tipo de usuario dentro de una computadora. La administración de usuarios y permisos cambia mucho entre diferentes sistemas operativos, pero lo que veremos en clase es igual para todos.
 
+whoami: te dice cuál es el usuario que está operando en ese momento.
+
+Tipos de permisos:
+
+  - `r–`: permiso de lectura
+  - `rw-`: permiso de lectura y escritura
+  - `rwx`: permiso de lectura, escritura y ejecución
+   
+Los permisos tiene valores numéricos: r = 4, w = 2, x = 1. Entonces para otorgar permisos debemos darle un número que sea la suma de cada una de estas tres letras.
+
+Recuerda que cuando haces ls -l, cuando aparezca el listado, podrás ver al comienzo de cada línea cuáles son los permisos. En primer lugar aparecen los permisos del owner (tú), después los del grupo, y finalmente los de todo el mundo.
+
+Permisos -> numero_de_representacióm
+- `— ->` 0
+- `–x ->` 1
+- `-w- ->` 2
+- `-wx ->` 3
+- `r-- ->` 4
+- `r-x ->` 5
+- `rw- ->` 6
+- `rwx ->` 7
+- `r:` permiso de lectura
+- `w:` permiso de escritura
+- `x:` permiso de ejecucion
+
+```bash
+Los permisos se pueden separar de la siguiente manera:
+
+F/---/---/---
+-: dir/link/file
+---: permisos del owner (yo)
+---: permisos del gropo
+---: permisos de todo el mundo
+```
+
+![](https://i.ibb.co/p004k3g/permision.jpg)
+
+![](https://i.ibb.co/XZDDfyf/permision1.jpg)
+
+Retos:
+¿Cuáles son los usuarios que alguna vez han sido dados de alta en tu sistema?
+Crea un usuario para ejecutar todas tus pruebas de código.
 
 ## Qué sigue después de aprender a usar la terminal
 
-
+Si crees que debería existir una herramienta que automatice u optimice algún proceso dentro de tu computadora, probablemente lo puedes hacer desde la terminal. El siguiente paso es unir todos estos conceptos con bash scripting, un lenguaje de programación que permite unir todas las power tools con condicionales e iteradores para conseguir resultados mucho más potentes.
