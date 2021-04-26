@@ -4,58 +4,61 @@
 
 # Tabla de Contenido
 
-- [1. Bienvenida e Introducción](#1-Bienvenida-e-Introducción)
-  - [Introducción y Bienvenida al curso](#Introducción-y-Bienvenida-al-curso)
-  - [Componentes de Linux, Tipos de Shell y Comandos de información](#Componentes-de-Linux-Tipos-de-Shell-y-Comandos-de-información)
-  - [Bash scripting](#Bash-scripting)
-  - [Crear nuestro primer Script](#Crear-nuestro-primer-Script)
-  - [Ejecutar nuestro script con un nombre único](#Ejecutar-nuestro-script-con-un-nombre-único)
-- [2. Programación Shell Básica](#2-Programación-Shell-Básica)
-  - [Declaración de Variables y Alcance en Bash Shell](#Declaración-de-Variables-y-Alcance-en-Bash-Shell)
-  - [Tipos de Operadores](#Tipos-de-Operadores)
-  - [Script con Argumentos](#Script-con-Argumentos)
-  - [Sustitución de Comandos en variables](#Sustitución-de-Comandos-en-variables)
-  - [Debug en Script](#Debug-en-Script)
-  - [Reto 1](#Reto-1)
-- [3. Script Interactivos](#3-Script-Interactivos)
-  - [Capturar información usuario](#Capturar-información-usuario)
-  - [Expresiones Regulares](#Expresiones-Regulares)
-  - [Validar información](#Validar-información)
-  - [Paso de parámetros y opciones](#Paso-de-parámetros-y-opciones)
-  - [Descargar información de Internet](#Descargar-información-de-Internet)
-  - [Reto 2](#Reto-2)
-- [4. Condicionales](#4-Condicionales)
-  - [Sentencias If/Else](#Sentencias-If-Else)
-  - [If Anidados](#If-Anidados)
-  - [Expresiones Condicionales](#Expresiones-Condicionales)
-  - [Sentencias Case](#Sentencias-Case)
-  - [Reto 3](#Reto-3)
-- [5. Iteración](#5-Iteración)
-  - [Arreglos](#Arreglos)
-  - [Sentencia for loop](#Sentencia-for-loop)
-  - [Sentencia while loop](#Sentencia-while-loop)
-  - [Loop Anidados](#Loop-Anidados)
-  - [Break y continue](#Break-y-continue)
-  - [Menú de Opciones](#Menú-de-Opciones)
-  - [Reto 4](#Reto-4)
-- [6. Archivos](#6-Archivos)
-  - [Archivos y Directorios](#Archivos-y-Directorios)
-  - [Escribir dentro de archivos](#Escribir-dentro-de-archivos)
-  - [Leer Archivos](#Leer-Archivos)
-  - [Operaciones Archivos](#Operaciones-Archivos)
-  - [Reto 5](#Reto-5)
-- [7. Empaquetamiento](#7-Empaquetamiento)
-  - [Empaquetamiento TAR, GZIP y PBZIP 2](#Empaquetamiento-TAR-GZIP-y-PBZIP-2)
-  - [Respaldo Empaquetado con clave](#Respaldo-Empaquetado-con-clave)
-  - [Transferir información red](#Transferir-información-red)
-  - [Reto 6](#Reto-6)
-- [8. Funciones](#8-Funciones)
-  - [Crear funciones y Paso de Argumentos](#Crear-funciones-y-Paso-de-Argumentos)
-  - [Funciones de instalar y desinstalar postgres](#Funciones-de-instalar-y-desinstalar-postgres)
-  - [Funciones sacar y restaurar respaldos en postgres](#Funciones-sacar-y-restaurar-respaldos-en-postgres)
-  - [Reto 7](#Reto-7)
-- [9. Cierre del curso](#9-Cierre-del-curso)
-  - [Cierre](#Cierre)
+- [Programación en Bash Shell](#programación-en-bash-shell)
+    - [Marco Antonio Toscano Freire](#marco-antonio-toscano-freire)
+- [Tabla de Contenido](#tabla-de-contenido)
+- [1. Bienvenida e Introducción](#1-bienvenida-e-introducción)
+  - [Introducción y Bienvenida al curso](#introducción-y-bienvenida-al-curso)
+  - [Componentes de Linux, Tipos de Shell y Comandos de información](#componentes-de-linux-tipos-de-shell-y-comandos-de-información)
+  - [Bash scripting](#bash-scripting)
+  - [Crear nuestro primer Script](#crear-nuestro-primer-script)
+  - [Ejecutar nuestro script con un nombre único](#ejecutar-nuestro-script-con-un-nombre-único)
+- [2. Programación Shell Básica](#2-programación-shell-básica)
+  - [Declaración de Variables y Alcance en Bash Shell](#declaración-de-variables-y-alcance-en-bash-shell)
+  - [Tipos de Operadores](#tipos-de-operadores)
+  - [Script con Argumentos](#script-con-argumentos)
+  - [Sustitución de Comandos en variables](#sustitución-de-comandos-en-variables)
+  - [Debug en Script](#debug-en-script)
+  - [Reto 1](#reto-1)
+- [3. Script Interactivos](#3-script-interactivos)
+  - [Capturar información usuario](#capturar-información-usuario)
+  - [Expresiones Regulares](#expresiones-regulares)
+  - [Validar información](#validar-información)
+  - [Paso de parámetros y opciones](#paso-de-parámetros-y-opciones)
+  - [Descargar información de Internet](#descargar-información-de-internet)
+  - [Reto 2](#reto-2)
+- [4. Condicionales](#4-condicionales)
+  - [Sentencias If/Else](#sentencias-ifelse)
+  - [If Anidados](#if-anidados)
+  - [Expresiones Condicionales](#expresiones-condicionales)
+  - [Sentencias Case](#sentencias-case)
+  - [Reto 3](#reto-3)
+- [5. Iteración](#5-iteración)
+  - [Arreglos](#arreglos)
+  - [Sentencia for loop](#sentencia-for-loop)
+  - [Sentencia while loop](#sentencia-while-loop)
+  - [Loop Anidados](#loop-anidados)
+  - [Break y continue](#break-y-continue)
+  - [Menú de Opciones](#menú-de-opciones)
+  - [Reto 4](#reto-4)
+- [6. Archivos](#6-archivos)
+  - [Archivos y Directorios](#archivos-y-directorios)
+  - [Escribir dentro de archivos](#escribir-dentro-de-archivos)
+  - [Leer Archivos](#leer-archivos)
+  - [Operaciones Archivos](#operaciones-archivos)
+  - [Reto 5](#reto-5)
+- [7. Empaquetamiento](#7-empaquetamiento)
+  - [Empaquetamiento TAR, GZIP y PBZIP 2](#empaquetamiento-tar-gzip-y-pbzip-2)
+  - [Respaldo Empaquetado con clave](#respaldo-empaquetado-con-clave)
+  - [Transferir información red](#transferir-información-red)
+  - [Reto 6](#reto-6)
+- [8. Funciones](#8-funciones)
+  - [Crear funciones y Paso de Argumentos](#crear-funciones-y-paso-de-argumentos)
+  - [Funciones de instalar y desinstalar postgres](#funciones-de-instalar-y-desinstalar-postgres)
+  - [Funciones sacar y restaurar respaldos en postgres](#funciones-sacar-y-restaurar-respaldos-en-postgres)
+  - [Reto 7](#reto-7)
+- [9. Cierre del curso](#9-cierre-del-curso)
+- [Cierre](#cierre)
 
 ***
 
@@ -425,11 +428,23 @@ Finalmente el código fuente lo pueden encontrar en el repositorio de GitHub en 
 
 ## Validar información
 
+Para el proceso de validación de información tenemos dos maneras de hacerlo:
 
+- Para validar tamaños se utiliza el siguiente comando: `read -n <numero_caracteres>`
+- Para validar el tipo de datos se utilizan las expresiones regulares
+
+`read -s` -> Oculta la información entrante por propio usuario.
+
+`read -n[1,2,3,4…]` -> Mantiene la linea de ejecución, la misma linea en la que estamos hasta que llegue al numero de carácteres definido.
+
+`read -p` -> Indica que hay que dejar la informacion ingresada en la variable siguiente.
+
+`read -n:` Acepta una cantidad de caracteres específica en el standard input
+`read -s:` Esconde los caracteres al momento de ingresar el standard input
 
 ## Paso de parámetros y opciones
 
-
+- [](https://likegeeks.com/es/scripting-de-bash-parametros-y-opciones/)
 
 ## Descargar información de Internet
 
