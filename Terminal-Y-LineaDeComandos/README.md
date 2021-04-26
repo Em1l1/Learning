@@ -13,8 +13,16 @@
   - [Variables y entorno](#variables-y-entorno)
   - [Streams](#streams)
   - [Procesos desde la terminal](#procesos-desde-la-terminal)
+    - [Ejecutar en 2do plano (background)](#ejecutar-en-2do-plano-background)
+    - [Ejecutar varios procesos](#ejecutar-varios-procesos)
+    - [Mostrar cantidad de procesos](#mostrar-cantidad-de-procesos)
+    - [Tiempo de prendida de la computadora](#tiempo-de-prendida-de-la-computadora)
   - [Power Tools: Comandos poderosos de búsqueda](#power-tools-comandos-poderosos-de-búsqueda)
+    - [Buscar cadenas de caracteres](#buscar-cadenas-de-caracteres)
+    - [Buscar archivos](#buscar-archivos)
+    - [Fecha actual](#fecha-actual)
   - [Power Tools: curl, zip y tar](#power-tools-curl-zip-y-tar)
+    - [Emular un navegador](#emular-un-navegador)
   - [Pipe](#pipe)
   - [Crontab: Una herramienta para automatizar tareas desde la terminal](#crontab-una-herramienta-para-automatizar-tareas-desde-la-terminal)
   - [Links](#links)
@@ -244,19 +252,179 @@ El error y el output aparecen en el mismo archivo
 
 ## Procesos desde la terminal
 
+Cada vez que ejecutamos algo en nuestra computadora es un proceso que está registrado de alguna forma. El orden en que esto se ejecuta y la cercanía del procesador son muy importantes para las prioridades que se le va a dar a dicho proceso.
 
+En esta clase vas a aprender a revisar, manipular y matar los procesos que corren dentro de tu computadora.
+
+```bash
+top
+```
+
+Ver todos los procesos que están corriendo en la computadora de manera interactiva. Es decir, la lista de procesos se va actualizando.
+
+```bash
+ps -wA
+```
+
+Muestra todos los procesos que se están ejecutando y desde donde vienen. Este comando no es interactivo.
+
+Matar procesos
+
+```bash
+kill -9 [proceso id]
+```
+
+Mata un proceso.
+
+### Ejecutar en 2do plano (background)
+
+`&` espacio y amberson para dejar un proceso en background. Esto quiere decir que el usuario va a seguir teniendo el control de la terminal.
+
+```bash
+$ npm start &
+output: [1] 23954 (Id del proceso)
+```
+
+### Ejecutar varios procesos
+`;` con un punto y coma puedo separar procesos para que se ejecuten en una misma linea. El segundo proceso se ejecuta cuando termine el anterior.
+
+```shell
+$ ls; echo "hola"
+```
+
+### Mostrar cantidad de procesos
+
+```shell
+ps -wA | wc -l
+```
+
+- Muestra la cantidad de procesos que se están ejecutando actualmente.
+
+### Tiempo de prendida de la computadora
+
+```shell
+uptime
+```
+
+- Muestra cuánto tiempo lleva prendida la computadora
+- Cuántos usuarios se han logueado
+- La carga promedio
+
+**Para ver los procesos podemos utilizar:**
+  - top
+  - ps
+  - pstree
 
 ## Power Tools: Comandos poderosos de búsqueda
 
+Hay muchas herramientas que pueden hacer cosas muy diferentes dentro de la terminal, y cada una de estas tiene también un montón de opciones. En esta clase vamos a ver algunas de las más poderosas:
 
+`grep:` nos ayuda a encontrar cadenas de caracteres dentro de todos los archivos de la ruta que le demos, con expresiones regulares.
+`find:` busca, dentro del directorio que le digamos
+
+### Buscar cadenas de caracteres
+
+```shell
+grep -r [ruta] -e [expresion]
+```
+
+nos ayuda a encontrar cadenas de caracteres dentro de todos los archivos de la ruta que le demos, con expresiones regulares.
+
+`-r`: que sea recursivo
+`-n`: numero de linea donde se encuentra la palabra en el archivo
+`-e`: expresion regular
+`-i`: no importa si es mayuscula o minuscula
+
+### Buscar archivos
+
+`find [ruta] -name [nombre]` busca en base al nombre y la metadata dentro del directorio que le digamos.
+
+`-name`: el nombre del archivo (*.js devuelve todos los archivos que terminan con .js)
+`-type`: el tipo
+
+### Fecha actual
+
+```shell
+date
+```
+
+Muestra la fecha actual.
+
+Tiempo del procesador
+```shell
+time
+```
+
+Muestra tiempo del procesador
+
+Tiempo de ejecución de un proceso
+
+```shell
+date; [proceso]; date
+```
+
+Con este comando se puede evaluar cuánto se demora en ejecutar un proceso
+
+![](https://i.ibb.co/K6brkXM/power-Tools.webp)
 
 ## Power Tools: curl, zip y tar
 
+Ya sabemos cómo buscar rápidamente desde la terminal, ahora vamos a continuar con tres comandos muy útiles que nos ayudan a trabajar en conjunto.
 
+  - `curl:` emula un navegador. No es un browser como tal, hay uno para terminal pero este solo emula los requests (peticiones) y los trae.
+  - `zip:` agrega o reemplaza las entradas de un archivo zip de la lista, que puede incluir el nombre especial para comprimir la entrada.
+  - `tar:` es un comando similar a zip, junta varios archivos en uno solo sin comprimirlos. Después se le dicta un algoritmo de compresión, que es zip.
 
+- [lista-de-comandos-mas-usados.pdf](https://drive.google.com/file/d/1-xJmv041jQmF2M97Kqa_8fdIXrwngd0i/view?usp=sharing)
+
+### Emular un navegador
+
+```shell
+curl [url] emula un navegador.
+```
+
+- `[nombre]` descarga el archivo con el nombre que le has dado.
+- `-o [nombre]` igual que el anterior
+Comprimir archivos
+
+Agrega o reemplaza las entradas de un archivo zip de la lista, que puede incluir el nombre especial para comprimir la entrada.
+
+```shell
+zip [nombre.zip] [archivo a comprimir]
+```
+
+descomprime un .zip
+
+```bash
+upzip [archivo]
+``` 
+
+`-vl` no descomprime sino que ve lo que hay adentro
+tar es un comando similar a zip, junta varios archivos en uno solo sin comprimirlos. Después se le dicta un algoritmo de compresión, que es zip.
+
+Junta y comprime
+
+```shell
+tar cfz [archivo.tar.gz] # *csv archivos a descomprimir
+```
+
+Descomprime
+
+```shell
+tar xfz [archivo .tar.gz]
+``` 
+ 
 ## Pipe
 
+Este operador se llama pipe y se escribe con la barra vertical |.
+Ayuda a anidar operaciones.
 
+- `Pipe:` Nos permite concatenar comandos
+- `ls -l | wc -l:` cuantas lineas tiene este
+- `cat [peliculas.csv] | wc -l:` nos indica cuantas lineas tiene este archivo.
+- `cat [peliculas.csv] | wc -l | grep [Thriller] wc -l :` nos indica cuantas lineas tiene del parametro que estamos buscando.
+- `cat movies.dat | grep Thriller | awk -F"::" '{printf("%s\n", $3)}’`: nos imprime las categorias que contenga Thriller
+- `cat movies.dat | grep Thriller | awk -F"::" ‘{printf("%s\n", $3)}’ | grep -v Comedy` : `grep -v` evitamos que no nos imprima el parametro que le mandamos.
 
 ## Crontab: Una herramienta para automatizar tareas desde la terminal
 
