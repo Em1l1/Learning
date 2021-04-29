@@ -335,33 +335,68 @@ Un ciclo por segundo se mide en Hertz
 
 ## Práctica: Creando un flash
 
+![](https://i.ibb.co/FWPbsG7/Relay.jpg)
 
+- [esquema-relay.pdf](https://drive.google.com/file/d/1o8DE-vaxPpVplQWXzKBiiRUNMvCYC5Z1/view?usp=sharing)
 
 # 6. Entender qué es un transistor
 
 ## ¿Qué es un transistor?
 
+El transistor es un dispositivo electrónico semiconductor utilizado para entregar una señal de salida en respuesta a una señal de entrada. Cumple funciones de amplificador, oscilador, conmutador o rectificador. El término «transistor» es la contracción en inglés de transfer resistor («resistor de transferencia»).
+
+Actualmente se encuentra prácticamente en todos los aparatos electrónicos de uso diario tales como radios, televisores, reproductores de audio y vídeo, relojes de cuarzo, computadoras, lámparas fluorescentes, tomógrafos, teléfonos celulares, aunque casi siempre dentro de los llamados circuitos integrados.
+
+![](https://i.ibb.co/fqm1DKT/transistor.jpg)
 
 # 7. Aplica todos tus conocimientos juntos
 
 ## Proyecto final ¿qué haremos?
 
+El proyecto final consiste en construir un pequeño automata que detecte un obstáculo al chocar con él y de reversa.
 
+- chip el cinco cinco cinco
 
 ## Proyecto final: Chasis y componentes
 
+En esta clase te comparto la lista de componentes a utilizar y tips para que desarrolles el mejor chasis para este y futuros proyectos.
 
+  - 1 Regulador de 5v LM7805
+  - 1 Resistencia de 100k Ohms, 1 de 50k y un potenciómetro de 100k
+  - 1 Capacitor electrolítico de 47uF, 1 Capacitor cerámico de 0.01uF
+  - 1 Relevador de 2 polos y 2 tiros (8 pines, 5 volts)
+  - 2 Botones o limit switches
+  - 1 interruptor de encendido
+  - 2 motor de 5 a 9 volts con motorreductores (en caso de que consigas uno de mayor voltaje igual lo adaptamos)
+  
+1.  Chasis para hasta 4 motores open source, de thingverse:
 
+![](https://i.ibb.co/5RW6cYM/caja.jpg)
+
+2. Chasis imprimible en 3D: https://www.thingiverse.com/thing:1843364 (también lo puedes hacer en madera como triplay)
+
+![](https://i.ibb.co/vVC6qFC/caja1.jpg)
+
+3. Arduino Car: https://www.thingiverse.com/thing:2450012
+
+![](https://i.ibb.co/gZGLMKf/caj2.jpg)
 ## Proyecto final: Esquemático y data sheets
 
-
+![](https://i.ibb.co/vY5RsVd/reto1.png)
 
 ## Proyecto final: Circuitos básicos del sistema
 
+En esta clase el profesor Ricardo Celis te enseña como usar un circuito integrado muy popular llamado Timer 555 que forma parte del proyecto final del curso.
 
+En este video vemos desde como fluye la corriente en un circuito electrónico hasta cómo saber el orden de los pines de un circuito integrado y mucho más.
+
+Ya aprendiste lo básico para leer un diagrama electrónico con componentes muy usados como: potenciometros, resistencias y pulsadores. ¿Qué esperas? aprende más en el Curso de Fundamentos de Circuitos Electrónicos disponible para ti.
 
 ## Proyecto final: Conexión de componentes
 
+![](https://i.ibb.co/Gp26X8H/conexion.jpg)
+
+![](https://i.ibb.co/rQ67vZF/conexion1.jpg)
 
 
 ## Proyecto final: Terminando las conexiones y ensamble
