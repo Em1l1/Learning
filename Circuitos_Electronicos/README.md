@@ -45,6 +45,7 @@
   - [Proyecto final: Circuitos básicos del sistema](#proyecto-final-circuitos-básicos-del-sistema)
   - [Proyecto final: Conexión de componentes](#proyecto-final-conexión-de-componentes)
   - [Proyecto final: Terminando las conexiones y ensamble](#proyecto-final-terminando-las-conexiones-y-ensamble)
+    - [¿Qué haremos aquí?](#qué-haremos-aquí)
   - [Proyecto final: Demo y desafío con fotoresistencias](#proyecto-final-demo-y-desafío-con-fotoresistencias)
   - [Cierre del curso y ¿qué sigue?](#cierre-del-curso-y-qué-sigue)
   
@@ -398,17 +399,34 @@ Ya aprendiste lo básico para leer un diagrama electrónico con componentes muy 
 
 ![](https://i.ibb.co/rQ67vZF/conexion1.jpg)
 
+- [IM555.pdf](https://drive.google.com/file/d/127cTBXzkMS_8yImMxgVJ1pcSfLtkP7zC/view?usp=sharing)
 
 ## Proyecto final: Terminando las conexiones y ensamble
 
+### ¿Qué haremos aquí?
+
+En este curso vamos a desarrollar un proyecto súper simple en el cual utilizaremos un timer 555 para generar pulsos una vez nuestros limit switches se activan y detectan algún obstáculo, este pulso generado por el 555 se encargará de cambiar el sentido de giro de nuestros motores utilizando nuestro relavador de 2 polos y 2 tiros con 8 terminales (puedes ver este componente como 2 relevadores en 1 y te dejo una imágen de cómo está conectado internamente a continuación.
+
+![](https://i.ibb.co/g70XMMC/1.png)
+
+Lo primero que necesitas tener claro es la fuente de alimentación que utilizarás, él relevador que te solicité se activa con 5 volts y ese es un buen voltaje para trabajar el 555 también, aquí encuentras el diagrama o esquemático a seguir:
+
+![](https://i.ibb.co/XVH4mYD/2.jpg)
+
+Una vez termines de ensamblar los componentes móntalos en el chasis que hayas elegido y comienza a probar, lo más probable es que la conecciones del motor te quedarán invertidas (lo sabrás por que el carro no avanzará hacia una dirección con los dos llantas al mismo tiempo que es lo que necesitamos) y aquí viene otro aprendizaje, en motores de corriente directa como el que tienes en tus manos sólo necesitas invertir la polaridad del componente (sí el cable que tengas en el polo negativo del motor lo mandas al positivo y viceversa) una vez hagas esto verás cómo tu motor comienza a girar en dirección opuesta, ¿por qué?
+
+Por que los motores de corriente directa no tienen una polaridad predefinida y el flujo de la corriente es la que le define el sentido de giro.
+
+![](https://i.ibb.co/jhBhKVF/3.png)
+
+Con esto listo, ya sólo queda que nos compartas tus pruebas, graba tú circuito en funcionamiento, prégúntame cualquier duda y sobre todo no te rindas en ningún momento
+a continuación puedes ver un video de mi circuito en funcionamiento así como fotos de referencia de cómo me quedó.
 
 
 ## Proyecto final: Demo y desafío con fotoresistencias
 
-
+![](https://i.ibb.co/LR4CndM/proyecto-Final.jpg)
 
 ## Cierre del curso y ¿qué sigue?
 
-
-
-
+No pares de Aprender
