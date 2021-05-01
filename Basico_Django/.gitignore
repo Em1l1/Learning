@@ -1,5 +1,16 @@
 # virtualizado
 .env
+bin/
+lib/python3.8/site-packages/
+lib64/
+
+# platzigram
+platzigram/.env/
+bin/
+lib/python3.8/site-packages/
+share/python-wheels/
+lib64/
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -110,3 +121,4 @@ venv.bak/
 # Django
 db.sqlite3
 media/
+
