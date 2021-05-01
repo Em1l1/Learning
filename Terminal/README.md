@@ -436,14 +436,140 @@ Podemos hacer configuraciones mas avanzadas, por ejemplo, podemos asignar varios
 
 ## Variables de entorno
 
+Las variables de entorno permiten pasar información de forma simple, de una aplicación a otra.
 
+La termina tiene una configuración con diferentes valores, que se pueden acceder con las variables de entorno. Estas son muy importantes para la configuración general del sistema 🚒.
+
+Podemos guardar alias para que se queden de manera permanente con esto 😉.
+`ln -s <ruta> <Nombre>` Esto para hacer link simbólicos, que son un tipo de archivo que hacen referencia a otro lugar, básicamente es un acceso directo desde terminal 📁.
+
+`printenv` nos muestra todas las variables de entorno que tenemos configuradas 📔.
+
+`echo $<variables>` esto nos sirve para imprimir una variable en particular.
+
+Algunas variables son:
+
+- `HOME` es nuestro HOME de usuario 😆.
+- `PATH` tiene todas las rutas donde se encuentran los binarios en los que se ejecuta nuestro sistema. 🛣️ Hay varios manejadores de paquetes para binarios, pero no todas las veces se agregan a PATH, y se deben agregar a mano.
+- 
+En HOME, existe un archivo que se llama .bashrc que es donde está nuestra configuración de Bash. Lo podemos abrir con VS Code para modificarlo. En este archivo podemos crear alias.
+
+- `alias <nombre>="comando" `para crear un alias útil 👀.
+- `code <archivo>` para abrir un archivo de texto en VS Code desde la terminal.
+
+Para modificar o crear una variable de entorno, se hace, por ejemplo `PLATZI_MESSAGE='Hola amigos"`.
+
+Para agregar una ruta a la variable PATH ponemos en `.bashrc` `PATH=$PATH:<ruta>`, guardamos, cargamos bash en la terminal, y listo 😄.
+Es muuuy importante tener cuidado con los alias, nunca hay que nombrar un alias como un comando ya existente 😟.
 
 
 ## Comandos de búsqueda
 
+Es una de las partes mas interesantes de la terminal, ya que nos permite buscar archivos de manera eficiente y específica 💫.
 
+`which <programa>` Busca en todas las rutas del PATH para encontrar donde está alojado algún archivo binario 🔢.
+
+```bash
+find <ruta inicial> -name <archivo>
+``` 
+Nos permite encontrar un archivo a partir de una ruta inicial, y dentro de todas las carpetas que surjan de ese inicio 🌲.
+
+Algo muy cool es que podemos usar wildcards para hacer mas eficiente la búsqueda 🔍.
+
+```bash
+find <ruta inicial> -type <tipo> -name <nombre> 
+```
+podemos especificar el tipo de archivo, d → directorio, f → documento.
+
+```bash
+find <ruta inicial> -size <tamaño><unidad>
+```
+ podemos buscar tamaños mayores a un determinado tamaño, por ejemplo, de 20M (megas).
+
+Solución al reto: 
+
+```bash
+find ./ -name *.txt -type f -size 1M > mis_archivos_texto.txt | echo "archivos guardadados exitosamente"
+```
+
+- [Bash VS Zsh: Differences and Comparison](https://linuxhint.com/differences_between_bash_zsh/)
 
 ## Su majestad: grep
+
+El comando grep nos permite encontrar texto que contenga un patrón dentro de uno o varios archivos de manera rápida.
+
+```bash
+# Buscar la palabra the en el archivo movies.csv
+➜  Terminal git:(IoT) ✗ grep -i the movies.csv | less
+
+# Contar el numero de veces que aparece the
+➜  Terminal git:(IoT) ✗ grep -c the movies.csv
+1013
+
+# ommite los maysuscula
+➜  Terminal git:(IoT) ✗ grep -ci the movies.csv
+2912
+
+# Busca todas las peliculas que no tienen towers
+➜  Terminal git:(IoT) ✗ grep -vi towers movies.csv
+
+# Guardamos la busqueda en un archivo .txt
+➜  Terminal git:(IoT) ✗ grep -vi towers movies.csv > sintowers.txt
+```
+
+`grep` es un comando con muchas utilidades, la verdad es que tiene muchos casos de uso, aquí te dejo algunos que a mí me han sido de utilidad:
+
+Buscar algún paquete en específico que tengas instalado:
+
+```bash
+dpkg --get-selections | grep nombreDelPaquete
+dpkg --get-selections te dirá todos tus paquetes instalados
+```
+
+`grep` filtrará esa lista con el paquete que te interesa
+Filtrar algún archivo en específico después de un `ls`:
+
+```bash
+ls -al | grep myFile.txt
+```
+
+`ls` te dará la lista de todos tus archivos
+`grep` filtrará todos y te mostrará únicamente el que deseas
+Buscar algún contenido en específico dentro de algún archivo:
+
+```bash
+cat unArchivoLargo.txt | grep "La línea que busco"
+```
+
+`cat` Te listará todo el contenido de ese archivo
+`grep` te filtrará únicamente lo que quieres ver
+
+Buscar una línea en específico en diferentes archivos por medio de un patrón:
+```bash
+grep "string" archivo_*
+```
+`grep` buscará la palabra "string" en todos los archivos que comienzen por "archivo_" y te los mostrará.
+
+Buscar usando expresiones regulares (te recomiendo aprender expresiones regulares, son MUY poderosas 👀):
+Imagina que tienes un archivo llamado `test.txt` y adentro contiene la siguiente frase:
+
+> Imagina que quieres buscar algo
+
+Entonces, podemos usar grep así:
+
+```bash
+grep "Imagina .* algo" test.txt
+``` 
+
+`grep` buscará alguna coincidencia, la expresion `.*` indica que ahí dentro puede haber una o más letras, cualquier que sea, así que podrías leerla como: `Imagina (cualquier cosa) algo.`
+Esto encontrará justo la frase que quieres:
+
+> Imagina que quieres buscar algo
+
+Hay muchos más casos de uso para grep, te dejo este blog que habla de algunos cuantos casos de uso más 👀👇:
+
+[15 Practical Grep Command Examples In Linux / UNIX](https://www.thegeekstuff.com/2009/03/15-practical-unix-grep-command-examples/)
+
 
 # 3. Utilidades de la terminal
 
