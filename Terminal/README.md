@@ -786,15 +786,32 @@ Con esto podremos ver como nuestro proceso de Google Chrome sigue corriendo en e
 
 ## Editores de texto en la terminal
 
+Pero, aunque prácticamente es cierto, cada editor es bueno para hacer ciertas actividades, claro, hay algunos que se destaca más que otros en sus actividades.
 
+Por ejemplo, `nano`, aunque es muy simple, te ayuda con tareas simple, a mí en lo personal me encanta usar nano (sí soy un psicópata… 👀 jaja), pero lo uso para tareas simples, por ejemplo, crear un archivo de notas, modificar líneas de algún archivo (por ejemplo, modificar variables de entorno, etc).
+
+Por otro lado, `vim` es un editor de texto muy poderoso, una de las ventajas de vim es que puedes llegar a convertirlo en todo un editor de código super liviano. He conocido chicos que tienen Vim casi como si fuera un Visual Studio Code, le instalaron algunos temas y listo.
+
+`Vi` resulta ser muy liviano y perfecto para computadoras de bajos recursos, sin embargo, por lo que tengo entendido, su curva de aprendizaje es un poco lenta.
+
+![](https://i.ibb.co/rxySQwN/editor.webp)
+
+Cada editor responde a una necesidad diferente, cada quién sabrá cuál usar en X momento .
+
+- [GNU nano](https://www.nano-editor.org/)
+- [Vim documentation : vim online](https://www.vim.org/docs.php)
+- [GNU Emacs documentation - GNU Project](https://www.gnu.org/software/emacs/documentation.html)
+- [Vim Syntax Highlighting – Linux Hint](https://linuxhint.com/vim_syntax_highlighting/)
 
 
 ## Personalizar la terminal de comandos
 
 
 
-
+- [Terminal en Big Sur, más bonita que nunca](https://platzi.com/blog/terminal-en-big-sur-mas-bonita-que-nunca/)
 
 # 4. Despedida
 
 ## Nunca pares de hackear
+
+Usar la terminal supe por qué muchos programadores aman Linux y siempre recomiendan usarlo cuando programas, y no, no es porque sean “purishtash de la programashión”, sino porque realmente te hace la vida más fácil, cuando aprendes a usar un manejador de paquetes, cuando aprendes a automatizar procesos, todo ello hace que programar sea mucho más fácil, porque usar la terminal hace que la vida de un desarrollador sea más fácil ☝
