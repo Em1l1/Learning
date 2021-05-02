@@ -1,42 +1,43 @@
-# 🎙️🥸 POO y Algoritmos con Python 🌋⌨️
-#### David Aroesti
+<h1> 🎙️🥸 POO y Algoritmos con Python 🌋⌨️</h1>
+<h3>David Aroesti</h3>
 
 [![](img/python.jpg "Curso POO y Algoritmos con Python")](https://platzi.com/clases/poo-python/)
 
 
-# Tabla de contenido
+<h1>Tabla de contenido</h1>
  
-- [1. Programación Orientada a Objetos](#1.-Programación-Orientada-a-Objetos)
-    - [Introducción al curso](#Introducción-al-curso)
-    - [Programación Orientada a Objetos](#Programación-Orientada-a-Objetos)
-    - [Tipos de datos abstractos y clases, Instancias](#Tipos-de-datos-abstractos-y-clases-Instancias)
-    - [Decomposición](#Decomposición)
-    - [Abstracción](#Abstracción)
-    - [Funciones: base de los decoradores](#Funciones-base-de-los-decoradores)
-    - [Setters, getters y decorador property](#Setters-getters-y-decorador-property)
-    - [Encapsulación, getters and setters](#Encapsulación-getters-and-setters)
-    - [Herencia](#Herencia)
-    - [Polimorfismo](#Polimorfismo)
-- [2. Complejidad algorítmica](#2.-Complejidad-algorítmica)
-    - [Introducción a la complejidad algorítmica](#Introducción-a-la-complejidad-algorítmica)
-    - [Conteo abstracto de operación](#Conteo-abstracto-de-operación)
-    - [Notación asintótica](#Notación-asintótica)
-    - [Clases de complejidad algorítmica](#Clases-de-complejidad-algorítmica)
-- [3. Algoritmos de búsqueda y ordenación](#3.-Algoritmos-de-búsqueda-y-ordenación)
-    - [Búsqueda lineal](#Búsqueda-lineal)
-    - [Búsqueda binaria](#Búsqueda-binaria)
-    - [Ordenamiento de burbuja](#Ordenamiento-de-burbuja)
-    - [Ordenamiento por inserción](#Ordenamiento-por-inserción)
-    - [Ordenamiento por mezcla](#Ordenamiento-por-mezcla)
-- [4. Ambientes virtuales](#4.-Ambientes-virtuales)
-    - [Ambientes virtuales](#Ambientes-virtuales)
-- [5. Graficado](#5.-Graficado)
-    - [¿Por qué graficar?](#¿Por-qué-graficar?)
-    - [Graficado simple](#Graficado-simple)
-- [6. Algoritmos de optimización](#6.-Algoritmos-de-optimización)
-    - [Introducción a la optimización](#Introducción-a-la-optimización)
-    - [El problema del morral](#El-problema-del-morral)
-    - [Conclusiones](#Conclusiones)
+- [1. Programación Orientada a Objetos](#1-programación-orientada-a-objetos)
+  - [Introducción al curso](#introducción-al-curso)
+  - [Programación Orientada a Objetos](#programación-orientada-a-objetos)
+  - [Tipos de datos abstractos y clases, Instancias](#tipos-de-datos-abstractos-y-clases-instancias)
+  - [Instancias](#instancias)
+  - [Decomposición](#decomposición)
+  - [Abstracción](#abstracción)
+  - [Funciones: base de los decoradores](#funciones-base-de-los-decoradores)
+  - [Setters, getters y decorador property](#setters-getters-y-decorador-property)
+  - [Encapsulación, getters and setters](#encapsulación-getters-and-setters)
+  - [Herencia](#herencia)
+  - [Polimorfismo](#polimorfismo)
+- [2. Complejidad algorítmica](#2-complejidad-algorítmica)
+  - [Introducción a la complejidad algorítmica](#introducción-a-la-complejidad-algorítmica)
+  - [Conteo abstracto de operación](#conteo-abstracto-de-operación)
+  - [Notación asintótica](#notación-asintótica)
+  - [Clases de complejidad algorítmica](#clases-de-complejidad-algorítmica)
+- [3. Algoritmos de búsqueda y ordenación](#3-algoritmos-de-búsqueda-y-ordenación)
+  - [Búsqueda lineal](#búsqueda-lineal)
+  - [Búsqueda binaria](#búsqueda-binaria)
+  - [Ordenamiento de burbuja](#ordenamiento-de-burbuja)
+  - [Ordenamiento por inserción](#ordenamiento-por-inserción)
+  - [Ordenamiento por mezcla](#ordenamiento-por-mezcla)
+- [4. Ambientes virtuales](#4-ambientes-virtuales)
+  - [Ambientes virtuales](#ambientes-virtuales)
+- [5. Graficado](#5-graficado)
+- [¿Por qué graficar?](#por-qué-graficar)
+- [Graficado simple](#graficado-simple)
+- [6. Algoritmos de optimización](#6-algoritmos-de-optimización)
+  - [Introducción a la optimización](#introducción-a-la-optimización)
+  - [El problema del morral](#el-problema-del-morral)
+  - [Conclusiones](#conclusiones)
 
 # 1. Programación Orientada a Objetos
 
@@ -253,12 +254,427 @@ class Persona:
 * Puede tener atributos privados. Por convenci&oacute; comienzan con ```_```
 
 ## Decomposición
+
+La decomposición es un concepto simple pero poderoso que implica:
+
+  - Dividir un problema en problemas más pequeños.
+  - Las clases permiten crear mayores abstracciones en forma de componentes.
+  - Cada clase se encarga de una parte del problema y el programa se vuelve más fácil de mantener.
+  
+Para realizar un ejemplo de decomposición modelaremos un automóvil.
+
+```py
+# Creamos la clase Automóvil.
+class Automovil:
+
+    # El constructor creara todas las características de la instancia.
+    def __init__(self, modelo, marca, color):
+        self.modelo = modelo
+        self.marca = marca
+        self.color = color
+        self._estado = 'en_reposo'
+        self._motor = Motor(cilindros=4) # Hacemos referencia a la clase Motor.
+
+
+    # La clase automóvil tiene el método de acelerar.
+    def acelerar(self, tipo='despacio'):
+        if tipo == 'rapida':
+            # De la clase Motor ejecuta el método inyecta_gasolina.
+            self._motor.inyecta_gasolina(10)
+        else:
+            self._motor.inyecta_gasolina(3)
+
+        self._estado = 'en_movimiento'
+
+
+    def frenar(self):
+        self._motor.inyecta_gasolina(0)
+        self._estado = 'en_reposo'
+
+
+# Creamos la clase Motor
+class Motor:
+
+    # Con el constructor definimos sus características.
+    def __init__(self, cilindros, tipo='gasolina'):
+        self.cilindros = cilindros
+        self.tipo = tipo
+        self._temperatura = 0
+
+
+    # La clase motor tiene el método de inyecta_gasolina.
+    def inyecta_gasolina(self, cantidad):
+        pass
+```
+
+Copiar datos con xclip desde terminal
+
+```bash
+# cCopia
+xclip -sel clip file_name
+
+tail -n 30 logfile.log | xclip -sel clip
+
+pandoc -t html file.md | xclip -sel clip
+
+# Pegar
+cltr + v = pegar
+```
+
+- [xclip](https://conpilar.es/como-copiar-pegar-la-salida-del-comando-usando-xclip-en-linux/)
 ## Abstracción
+
+La abstracción es:
+
+- Enfocarnos en la información relevante.
+- Separar la información central de los detalles secundarios.
+- Podemos utilizar variables y métodos (privados o públicos).
+
+```py
+# Creamos la clase Lavadora
+class Lavadora:
+
+    def __init__(self):
+        pass
+
+    # Tiene un método publico lavar que referencia a otros métodos
+    def lavar(self, temperatura='caliente'):
+        self._llenar_tanque_de_agua(temperatura)
+        self._anadir_jabon()
+        self._lavar()
+        self._centrifugar()
+
+
+    # Los métodos privados de la clase no son relevantes
+    # para el uso desde afuera de la clase y por
+    # convención se inicia con _
+
+    def _llenar_tanque_de_agua(self, temperatura):
+        print(f'Llenando el tanque con agua {temperatura}')
+
+
+    def _anadir_jabon(self):
+        print('Añadiendo jabón')
+
+
+    def _lavar(self):
+        print('Lavando la ropa')
+
+
+    def _centrifugar(self):
+        print('Centrifugando la ropa')
+
+
+if __name__ == '__main__':
+    lavadora = Lavadora()
+    lavadora.lavar() # Ejecutamos el método publico de nuestra instancia.
+```
+
+![](https://i.ibb.co/BP6vzSF/flor.jpg)
+
+Podemos observar su color, percibir el olor que emite, somos capaces de observar el número de pétalos.
+
+En cambio, desconocemos cómo es que se genera el número exacto de pétalos que tendrá la flor, lo mismo con el color y el olor desconocemos el proceso preciso que sigue la flor para ser lo que es.
+(Claro, si no eres experto en flores ಠ_ಠ )
+
 ## Funciones: base de los decoradores
+
+El concepto de decorador en Python es algo que podríamos ubicar en un nivel “intermedio” en el manejo del lenguaje, por lo que es buena idea que tengas una base sólida del lenguaje, sobre todo en cuanto a funciones, al momento de profundizar e implementarlos.
+
+Los decoradores son una forma sencilla de llamar funciones de orden mayor, es decir, funciones que toman otra función cómo parámetro y/o retornan otra función como resultado. De esta forma un decorador añade capacidades a una función sin modificarla.
+
+Un ejemplo de esto son las llantas de un automóvil si les colocas cadenas para la nieve: aún puede andar y además extiende su funcionalidad para conducirse en otros terrenos.
+
+### Recordando sobre funciones
+
+Antes de abordar el tema de decoradores haremos un pequeño repaso por las funciones, las cuales retornan un valor ante la entrada de un argumento.
+
+Analicemos este sencillo ejemplo donde una función que multiplica un número que se eleva a la tercer potencia:
+
+```py
+def elevar_cubo(numero):
+	return numero * numero * numero
+Si damos como argumento el número 3, entonces tendremos como salida el número 27 al ejecutar la función:
+
+>>> elevar_cubo(3)
+27
+```
+
+### Funciones cómo objetos de primera-clase
+
+Otro concepto importante a tener en cuenta es que en Python las funciones son objetos de primera-clase, es decir, que pueden ser pasados y utilizados cómo argumentos al igual que cualquier otro objeto (strings, enteros, flotantes, listas, etc.).
+
+Veamos un ejemplo donde definimos 3 diferentes funciones que utilizaremos de manera conjunta:
+
+```py
+def presentarse(nombre):
+	return f"Me llamo {nombre}"
+
+def estudiemos_juntos(nombre):
+	return f"¡Hey {nombre}, aprendamos Python!"
+
+def consume_funciones(funcion_entrante):
+	return funcion_entrante("David")
+```
+
+Las primeras dos funciones son obvias en su resultado, donde nos mostrarán un mensaje con el valor de la variable nombre. La tercer función puede ser más compleja de predecir ya que toma una función cómo entrada y veamos que pasa cuando colocamos una función cómo atributo:
+
+```py
+>>> consume_funciones(presentarse)
+'Me llamo David'
+
+>>> consume_funciones(estudiemos_juntos)
+'¡Hey David, aprendamos Python!'
+```
+
+Pongamos atención en cómo la función `consume_funciones()` se escribe con paréntesis para ser ejecutada, mientras que la función presentarse y `estudiemos_juntos` para solo hacer referencia a estas.
+
+### Funciones anidadas
+
+Al igual que los condicionales y bucles también puedes colocar funciones dentro de otra función.
+
+Toma un minuto para analizar el siguiente código e inferir cual será el resultado de salida:
+
+```py
+def funcion_mayor():
+	print("Esta es una función mayor y su mensaje de salida.")
+
+	def librerias():
+		print("Algunas librerías de Python son: Scikit-learn, NumPy y TensorFlow.")
+
+	def frameworks():
+		print("Algunos frameworks de Python son: Django, Dash y Flask.")
+
+	frameworks()
+	librerias()
+```
+
+Si llamamos a la función `funcion_mayor` tendremos la siguiente salida:
+
+```py
+>>> funcion_mayor()
+Esta es una función mayor y su mensaje de salida.
+Algunos frameworks de Python son: Django, Dash y Flask.
+Algunas librerías de Python son: Scikit-learn, NumPy y TensorFlow.
+```
+
+Debemos considerar que las funciones anidadas dentro de funcion_mayor no se ejecutan sino hasta que se llama esta primera, siendo muestra del scope o alcance de las funciones y si las llamamos obtendremos un error.
+
+En la siguiente lectura entraremos al concepto de decoradores, setters y getters , pues al entender mejor las funciones será más fácil asimilar su uso en la implementación del encapsulamiento.
+
 ## Setters, getters y decorador property
+
+En este punto estamos comenzando a utilizar conceptos en Python que comienzan a ser más avanzados, por lo que es normal que puedan parecerte complejos o difíciles de asimilar, así que te animo a que los repases un par de veces.
+
+Puedes tener la tranquilidad de que si bien, al inicio no los implementas en su totalidad, podrás seguir avanzando en el curso y poco a poco incorporarlos a tus proyectos donde lo más importante es que sepas que cuentas con estas herramientas.
+
+Entendiendo el concepto de decorador
+Antes de comenzar me gustaría que analices el siguiente código:
+
+```py
+def funcion_decoradora(funcion):
+	def wrapper():
+		print("Este es el último mensaje...")
+		funcion()
+		print("Este es el primer mensaje ;)")
+	return wrapper()
+
+def zumbido():
+	print("Buzzzzzz")
+```
+
+`zumbido = funcion_decoradora(zumbido)`
+¿Qué pasará si llamamos a la `función zumbido()`? si logras determinar el resultado de salida o entenderlo con detalle, entonces podemos seguir adelante.
+
+Lo que sucede es lo siguiente:
+
+```py
+>>> zumbido()
+Este es el último mensaje...
+Buzzzzzz
+Este es el primer mensaje ;)
+```
+
+Si no diste con el resultado no te preocupes, solo hay que analizarlo con detalle y el truco está en la línea `zumbido = funcion_decoradora(zumbido)`. Sucede que la `función wrapper() recibió la la función zumbido()` cómo parámetro y coloca su salida entre los otros dos prints.
+
+Todo lo que sucede se conoce en programación como metaprogramación (metaprogramming), ya que una parte del programa trata de modificar a otra durante el tiempo de compilación. En tanto un decorador básicamente toma una función, le añade alguna funcionalidad y la retorna.
+
+Mejorando la sintaxis
+Definitivamente la forma en que decoramos la función es complejo, pero afortunadamente Python lo tiene en cuenta y podemos utilizar decoradores con el símbolo @. Volviendo al mismo ejemplo de `funcion_decoradora()`, podemos simplificarlo así:
+
+```py
+@funcion_decoradora
+def zumbido():
+	print("Buzzzzzz")
+```
+
+En solo tres líneas de código tenemos el mismo resultado que escribir `zumbido = funcion_decoradora(zumbido)`
+
+### ¿Qué son getters y setters?
+
+A diferencia de otros lenguajes de programación, en Python los getters y setters tienen el objetivo de asegurar el encapsulamiento de datos. Cómo habrás visto, si declaramos una variable privada en Python al colocar un guión bajo al inicio de esta `(_)` y normalmente son utilizados para: añadir lógica de validación al momento de obtener y definir un valor y, para evitar el acceso directo al campo de una clase.
+
+La realidad es que en Python no existen variables netamente privadas, pues aunque se declaren con un guión bajo podemos seguir accediendo a estas. En Programación Orientada a Objetos esto es peligroso, pues podemos alterar el método de alguna clase y tener efectos colaterales que afecten la lógica de nuestra aplicación.
+
+### Clases sin getters y setters
+
+Veamos un ejemplo con una clase que almacena un dato de distancia recorrida en millas `(mi)` y lo convierte a kilómetros `(km)`:
+
+```py
+class Millas:
+	def __init__(self, distancia = 0):
+		self.distancia = distancia
+
+	def convertir_a_kilometros(self):
+		return (self.distancia * 1.609344)
+```
+
+Ahora creemos un objeto que haga referencia a un viaje:
+
+```py
+# Creamos un nuevo objeto
+avion = Millas()
+
+# Indicamos la distancia
+avion.distancia = 200
+
+# Obtenemos el atributo distancia
+>>> print(avion.distancia)
+200
+
+# Obtenemos el método convertir_a_kilometros
+>>> print(avion.convertir_a_kilometros())
+321.8688
+```
+
+### Utilizando getters y setters
+
+
+Incluyamos un par de métodos para obtener la distancia y otro para que no acepte valores inferiores a cero, pues no tendría sentido que un vehículo recorra una distancia negativa. Estos son métodos getters y setters:
+
+```py
+class Millas:
+	def __init__(self, distancia = 0):
+		self.distancia = distancia
+
+	def convertir_a_kilometros(self):
+		return (self.distancia * 1.609344)
+
+	# Método getter
+	def obtener_distancia(self):
+		return self._distancia
+
+	# Método setter
+	def definir_distancia(self, valor):
+		if valor < 0:
+			raise ValueError("No es posible convertir distancias menores a 0.")
+		self._distancia = valor
+```
+
+El método getter obtendrá el valor de la distancia que y el método setter se encargará de añadir una restricción. También debemos notar cómo distancia fue reemplazado por `_distancia`, denotando que es una variable privada.
+
+Si probamos nuestro código funcionará, la desventaja es que cualquier aplicación que hayamos creado con una base similar deberá ser actualizado. Esto no es nada escalable si tenemos cientos o miles de líneas de código.
+
+`Función property()`
+Esta función está incluida en Python, en particular crea y retorna la propiedad de un objeto. La propiedad de un objeto posee los métodos `getter(), setter() y del()`.
+
+En tanto la función tiene cuatro atributos: `property(fget, fset, fdel, fdoc) `:
+
+- `fget :` trae el valor de un atributo.
+- `fset :` define el valor de un atributo.
+- `fdel :` elimina el valor de un atributo.
+- `fdoc :` crea un docstring por atributo.
+
+Veamos un ejemplo del mismo caso implementando la función property() :
+
+```py
+class Millas:
+	def __init__(self):
+		self._distancia = 0
+
+	# Función para obtener el valor de _distancia
+	def obtener_distancia(self):
+		print("Llamada al método getter")
+		return self._distancia
+
+	# Función para definir el valor de _distancia
+	def definir_distancia(self, recorrido):
+		print("Llamada al método setter")
+		self._distancia = recorrido
+
+	# Función para eliminar el atributo _distancia
+	def eliminar_distancia(self):
+		del self._distancia
+
+	distancia = property(obtener_distancia, definir_distancia, eliminar_distancia)
+
+# Creamos un nuevo objeto 
+avion = Millas()
+
+# Indicamos la distancia
+avion.distancia = 200
+
+# Obtenemos su atributo distancia
+>>> print(avion.distancia)
+Llamada al método getter
+Llamada al método setter
+200
+```
+
+Aunque en este ejemplo hay una sola llamada a `print`, tenemos tres líneas como salida pues esta llama a los primeros dos métodos. Por lo que la propiedad distancia es una propiedad de objeto que ayuda a mantener el acceso de forma privada.
+
+### Decorador @property
+Este decorador es uno de varios con los que ya cuenta Python, el cual nos permite utilizar `getters` y `setters` para hacer más fácil la implementación de la programación orientada a objetos en Python cambiando los métodos o atributos de las clases de forma que no modifiquemos el código.
+
+Pero mejor veamos un ejemplo en acción:
+
+```py
+class Millas:
+	def __init__(self):
+		self._distancia = 0
+
+	# Función para obtener el valor de _distancia
+	# Usando el decorador property
+	@property
+	def obtener_distancia(self):
+		print("Llamada al método getter")
+		return self._distancia
+
+	# Función para definir el valor de _distancia
+	@obtener_distancia.setter
+	def definir_distancia(self, valor):
+		if valor < 0:
+			raise ValueError("No es posible convertir distancias menores a 0.")
+		print("Llamada al método setter")
+		self._distancia = valor
+
+# Creamos un nuevo objeto 
+avion = Millas()
+
+# Indicamos la distancia
+avion.distancia = 200
+
+# Obtenemos su atributo distancia
+>>> print(avion.distancia)
+Llamada al método getter
+Llamada al método setter
+200
+```
+
+De esta manera usamos el decorador `@property` para utilizar getters y setters de una forma más prolija e incluimos una nueva funcionalidad a nuestro método `definir_distancia()` , al mismo tiempo protegemos el acceso a nuestras variables privadas y cumplimos con el principio de encapsulación.
+
 ## Encapsulación, getters and setters
+
+
+
 ## Herencia
+
+
+
 ## Polimorfismo
+
+
+
 # 2. Complejidad algorítmica
 ## Introducción a la complejidad algorítmica
 ## Conteo abstracto de operación
