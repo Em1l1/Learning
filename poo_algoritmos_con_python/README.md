@@ -14,8 +14,16 @@
   - [Decomposición](#decomposición)
   - [Abstracción](#abstracción)
   - [Funciones: base de los decoradores](#funciones-base-de-los-decoradores)
+    - [Recordando sobre funciones](#recordando-sobre-funciones)
+    - [Funciones cómo objetos de primera-clase](#funciones-cómo-objetos-de-primera-clase)
+    - [Funciones anidadas](#funciones-anidadas)
   - [Setters, getters y decorador property](#setters-getters-y-decorador-property)
+    - [¿Qué son getters y setters?](#qué-son-getters-y-setters)
+    - [Clases sin getters y setters](#clases-sin-getters-y-setters)
+    - [Utilizando getters y setters](#utilizando-getters-y-setters)
+    - [Decorador @property](#decorador-property)
   - [Encapsulación, getters and setters](#encapsulación-getters-and-setters)
+    - [@property](#property)
   - [Herencia](#herencia)
   - [Polimorfismo](#polimorfismo)
 - [2. Complejidad algorítmica](#2-complejidad-algorítmica)
@@ -665,33 +673,218 @@ De esta manera usamos el decorador `@property` para utilizar getters y setters d
 
 ## Encapsulación, getters and setters
 
+![](https://i.ibb.co/3CSCc0b/decorator-comic-1.png)
 
+**Un Decorator:** Usar ropa es un ejemplo del uso de decoradores en la vida real. Cuando tienes frío, te envuelves en un suéter. Si todavía tienes frío con un suéter, puedes usar una chaqueta en la parte superior. Si está lloviendo, puedes ponerte un impermeable. Todas estas prendas “amplían” tu comportamiento básico, pero no son parte de ti, y pueden quitarse fácilmente cuando no las necesites.
+
+![](https://i.ibb.co/BTxDyGQ/decoratorconcept.png)
+
+Un Decorator en código: No es más que un objeto que agrega nuevas funcionalidades al objeto original.
+
+### @property
+
+En Python, @property es uno de estos decorators. Es una función integrada a Python y devuelve un objeto de tipo property con los metodos Getters y Setters.
+
+- [Decorator](https://refactoring.guru/design-patterns/decorator)
+- [Python @property decorator](https://www.programiz.com/python-programming/property)
+
+En la definición de la clase el atributo region es privado y está inicializado en None. Al ser privado no debería poder accederse a su valor desde fuera de la clase directamente, sino que debería hacerse** mediante un método** que retorne su valor. De la misma manera no debería poder modificarse su valor desde fuera, así que es necesario un método para eso.
+
+El decorador @property le otorga funcionalidades al método region. En ese momento region puede ser:
+
+  - `getter:` un método que retorne el valor del atributo privado.
+
+  - `setter:` un método que asigne un valor al atributo
+
+Entonces ahora puedo hacer @region.metodo, en este caso @region.setter y definir una método que me permita controlar que valor va a ser asignado a ese atributo. Si el valor no es el correcto entonces** se lanza una excepción** con raise ValueError indicando el error.
 
 ## Herencia
 
+![](https://i.ibb.co/rwvQP5N/herencia.jpg)
 
-
+- Permite modelar una jerarquía de clases.
+- Permite compartir comportamiento común en la jerarquía.
+- Al padre se le conoce como superclase y al hijo como subclase.
 ## Polimorfismo
 
+Python permite la herencia multiple.
 
+Si las clases tienen un método con el mismo nombre y número de parámetros, gana (por así decirlo) el método de la clase que está más a la izquierda en cuanto a su implementación.
 
+El Polimorfismo es la base que nos permite crear verdaderas clases abstractas e interfaces
+
+> Es la capacidad que tiene un objeto de presentar diferentes comportamientos al momento de realizar una acción, el polimorfismo se presenta cuando se aplica el principio de Herencia.
+
+![](https://i.ibb.co/VwMFh5z/poli.jpg)
+
+![](https://i.ibb.co/HnH5YZv/poly.png)
 # 2. Complejidad algorítmica
+
 ## Introducción a la complejidad algorítmica
+
+La complejidad algorítmica nos permite comparar la eficiencia de 2 algoritmos, esto a su vez va a predecir el tiempo que va a tomar resolver un problema. No solamente podemos analizar la complejidad desde la perspectiva temporal, también la podemos hacer desde la espacial, como por ejemplo cuanto espacio en memoria necesitamos.
+
+La complejidad algorítmica temporal la podemos definir como `T(n)` el cual determinara el tiempo que demora en resolver nuestro algoritmo.
+
+Aproximaciones
+
+- Cronometrar el tiempo en el que corre un algoritmo
+- Contar los pasos con una medida abstracta de operación
+- Contar los pasos conforme nos aproximamos al infinito
+
+
+### ¿Como podríamos aplicar nuestra función `T(n)`?
+
+Cronometrar el tiempo en el que corre un algoritmo. Sin embargo no es una buena forma de medir los algoritmos, ya que no se puede predecir cuanto demorara a medida que crece nuestros pasos.
+
+Contar los pasos con una medida abstracta de operación. Nos puede acercar a una medición ideal, sin embargo varia mucho de algoritmo en algoritmo y a medida que crece nuestro dataset existen muchos términos que llegan a ser irrelevantes.
+
+Contar los pasos conforme nos aproximamos al infinito pero con una medida asintótica.
+
+![](https://i.ibb.co/xq9tMMh/complejidad.webp)
+
+pra gragficar con brokeh instalar los modulos con 
+
+```bash
+$ pip install brokeh
+```
+
 ## Conteo abstracto de operación
+
+Contamos todas las operaciones que realiza el código para tratar de determinar su complejidad.
+
+- Todas las operaciones que no dependan del tamaño del input (expresiones simples, condicionales, bucles determinados, etc), tendrán un número determinado de pasos (constante)
+- Los loops que dependan del tamaño del input tendrán un crecimiento lineal con respecto al input (a*x)
+- Los loos anidados crecen de manera polinomial (sea n la cantidad de loops anidados → a*x^n) [`9-abstraccion-de-operaciones.py`](poo-orientado-objetos/9-abstraccion-de-operaciones.py)
+
 ## Notación asintótica
+
+  - `Un loop` => crecimiento lineal.
+  - `Un loop dentro de otro` => crecimiento cuadratico
+  - `Llamadas recursivas` => crecimiento exponecncial.
+
+Notacion asintótica
+
+Big O notation.
+
+Crecimiento asintótico
+
+No importan las variaciones pequeñas.
+
+El enfoque se centra en lo que pasa conforme el tamaño del problema se acerca al infinito
+
+Mejor de los casos, promedio, peor de los casos.
+
+Nada más importa el término de mayor tamaño.
+
+Ejemplos:
+
+```py
+def f(n)
+    for i in range(n):
+        print(i)
+
+    for i in range(n):
+        print(i)
+
+O(n) + O(n) = O(n+n) = O(2n) = O(n) //Crecimiento lineal
+```
+```py
+def f(n)
+    for i in range(n):
+        print(i)
+
+    for i in range(n * n):
+        print(i)
+
+O(n) + O(n*n) = O(n+n) = O(n + n^2) = O(n^2) //Crecimiento exponencial
+```
+
+```py
+def f(n)
+    for i in range(n):
+        for j in range(n):
+            print(i,j)
+
+O(n) O(n) = O(nn) = O(n^2) //Crecimiento exponencial
+```
+```py
+def fibonacci(n):
+    if n == 0 or n ==1:
+        return 1
+
+     return fibonacci(n - 1) + fibonacci(n - 2)
+
+O(2**n) //tiene varias llamadas recursivas y eso hace al algoritmo con un crecimiento exponencial
+```
+
+![](https://i.ibb.co/YQZJmGm/bigo.png)
+
+Big O notation is a mathematical notation that describes the limiting behavior of a function when the argument tends towards a particular value or infinity.
+
+- [Notación Big O: Guía para Principiantes](https://medium.com/@charlie_fuentes/notacion-big-0-para-principiantes-f9cbb4b6bec8)
 ## Clases de complejidad algorítmica
+
+Clases de complejidad algorítmica
+Existen distintos tipos de complejidad algorítmica:
+
+- `O(1) Constante:` no importa la cantidad de input que reciba, siempre demorara el mismo tiempo.
+- `O(n) Lineal:` la complejidad crecerá de forma proporcional a medida que crezca el input.
+- `O(log n) Logarítmica:` nuestra función crecerá de forma logarítmica con respecto al input. Esto significa que en un inicio crecerá rápido, pero luego se estabilizara.
+- `O(n log n) Log lineal:` crecerá de forma logarítmica pero junto con una constante.
+- `O(n²) Polinomial:` crecen de forma cuadrática. No son recomendables a menos que el input de datos en pequeño.
+- `O(2^n) Exponencial:` crecerá de forma exponencial, por lo que la carga es muy alta. Para nada recomendable en ningún caso, solo para análisis conceptual.
+- `O(n!) Factorial:` crece de forma factorial, por lo que al igual que el exponencial su carga es muy alta, por lo que jamas utilizar algoritmos de este tipo.
+
+![](https://i.ibb.co/QYKfBdj/BigO.jpg)
+
+![](https://i.ibb.co/pWFXzV2/BigO1.jpg)
 # 3. Algoritmos de búsqueda y ordenación
+
 ## Búsqueda lineal
+
+
+
 ## Búsqueda binaria
+
+
+
 ## Ordenamiento de burbuja
+
+
+
 ## Ordenamiento por inserción
+
+
+
 ## Ordenamiento por mezcla
+
+
+
 # 4. Ambientes virtuales
+
 ## Ambientes virtuales
+
+
+
 # 5. Graficado
+
 # ¿Por qué graficar?
+
+
+
 # Graficado simple
+
+
+
 # 6. Algoritmos de optimización
+
 ## Introducción a la optimización
+
+
+
 ## El problema del morral
+
+
 ## Conclusiones
+
