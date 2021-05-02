@@ -27,6 +27,7 @@
   - [Comprimiendo archivos](#comprimiendo-archivos)
   - [Manejo de procesos](#manejo-de-procesos)
   - [Procesos en foreground y background](#procesos-en-foreground-y-background)
+    - [Otras formas de enviar al background](#otras-formas-de-enviar-al-background)
   - [Editores de texto en la terminal](#editores-de-texto-en-la-terminal)
   - [Personalizar la terminal de comandos](#personalizar-la-terminal-de-comandos)
 - [4. Despedida](#4-despedida)
@@ -575,23 +576,213 @@ Hay muchos más casos de uso para grep, te dejo este blog que habla de algunos c
 
 ## Utilidades de red
 
+```bash
+	ifconfig
+```
 
+Este comando nos muestra la informacion de nuestra red, el nombre de nuestra tarjeta de red, la mascara de red, la IP, la direccion de transmision.
+
+```bash
+ping pagianweb.com
+```
+
+Esto nos dice si una pagina esta activa, nos responde con los paquetes que capture y el tiempo que tarda en detectarlos.
+
+```bash
+curl paginaweb
+```
+
+Esto nos trae un archivo de manera de texto a través de la red. podemos obtener su html.
+
+```bash
+wget paginaweb
+```
+
+Esto quiere decir “trae de internet” es como CURL pero esto lo descarga de forma directa a nuestra computadora. Esto nos da el texto con un mejor formato.
+
+```bash
+traceroute paginaweb
+```
+
+Cuando visitamos un sitio o una dirección IP, este comando nos muestra a todas los puntos donde nos vamos a ir conectando.
+
+En el caso de arch y derivados para instalar es 
+
+```bash
+pacman -S net-tools traceroute
+```
+
+```bash
+netstat -i
+```
+
+Nos muestra nuestros dispositivos de red de forma mas amigable y nos ayuda a saber que todo esta trabajando bien.
 
 
 ## Comprimiendo archivos
 
+Es esencial saber comprimir y descomprimir archivos para gestionar de forma eficiente nuestra información en el computador. Puedes usar algunos de los siguientes comandos tar, gzip, bzip, zip, unzip y rar.
 
+```bash
+tar -cvf nombreComprimido.tar CarpetaAComprimir
+```
 
+Este comando lo que hace es indicar que queremos comprimir un archivo en formato TAR, primero le damos la opción de 
 
+- `-c`para decirle que vamos a comprimir 
+- `v` para decirle que queremos ver el proceso en la terminal 
+- `f` para decirle que queremos comprimir un File
+
+Si agregamos la opción “-z” y al nombre del archivo ya comprimido agregamos un “.gz” al final, esto nos convertirá al archivo en un GZIP que es muy eficiente para archivos de texto plano.
+
+```bash
+➜  Terminal git:(IoT) ✗ tar -cvzf file-html.tar.gz index.html output.txt index1.html dev hola test
+```
+
+Si quieren ver el contenido de un archivo tar sin necesidad de descomprimirlo, puedes ejecutar:
+
+```bash
+tar tvf archivo.tar
+```
+
+Este comando ya nos ayudaría a descomprimir el archivo, solo cambiamos la bandera “-c” por “-x”.
+
+archivo `tar`
+
+```bash
+tar -xvf nombreComprimido.tar
+```
+
+archivos `tar.gz`
+
+```bash
+tar -xzvf nombreComprimido.tar.gz
+```
+
+ste comando nos ayuda a comprimir los archivos en formato .zip (Para comprimir en RAR lo hacemos igual, solo cambiamos ZIP por RAR)
+
+```bash
+zip -r nombreComprimido.zip carpetaAcomprimir
+```
+
+Con este comando descomprime los archivos comprimidos en Zip. (CON RAR ES IGUAL, SE USA UNRAR).
+
+```bash
+unzip nombreComprimido.zip
+```
 ## Manejo de procesos
 
+El comando top nos permite conocer los procesos de ejecución del sistema en tiempo real.
 
+Programas para gestionar procesos:
+- `ps`
+- `top` 
 
+Detener procesos
+
+```bash
+kill -9 nombre
+```
+
+Puedes deterner los procesos usando el `nombre` o el `id`
+
+```bash
+killall -nombre-del-proceso
+```
+
+Esto no tiene nada que ver con el curso pero es importatne para space vim
+
+```bash
+cd /Users/johannesblaschke/.cache/vimfiles/repos/github.com/iamcco/markdown-preview.nvim/app
+npm install
+```
+
+Corregir dependencias de `npm`
 
 ## Procesos en foreground y background
 
+Como viste en la clase de procesos podemos correr de manera asíncrona comandos, y si estos no se completan quedarán activos dentro de los procesos de la terminal.
+
+Cuando un proceso está en ejecución sin que sea mostrado en la terminal se dice que se está ejecutando en el background. Si se muestra la ejecución del comando dentro de la terminal se dice que está en el foreground. En esta clase aprenderás a cómo mover los procesos del background al foreground a tu voluntad, incluso a cómo suspenderlos.
+
+¿Te acuerdas del truco que aprendimos para tener un editor de texto supersencillo en la terminal? Lo usaremos en esta ocasión. Imagina que queremos una nota desde la terminal y para eso usamos:
+
+```bash
+cat > mi_nota.txt
+```
+
+Nuestra terminal se verá de la siguiente manera, con el prompt esperando a que ingresemos texto.
+
+![](https://i.ibb.co/DKHbr4T/1.webp)
+
+Podemos escribir algo y después terminar el input del texto con CTRL+D, pero en esta ocasión no haremos eso. Lo que queremos hacer será suspender el proceso, esto lo podemos hacer con CTRL+Z. El resultado que nos mostrará la terminal deberá ser uno donde nos indique la suspensión del comando cat
+
+![](https://i.ibb.co/3dDLcsv/2.webp)
+
+Ahora hemos movido nuestro comando exitosamente al background de la terminal. Para consultar todos los procesos que tenemos en background podemos hacerlo con el comando jobs.
+
+![](https://i.ibb.co/C9XgHQV/3.webp)
+
+A la izquierda aparece el número del trabajo ( ⚠ ️ cuidado que no es lo mismo que el process ID). Si queremos traer la ejecución de nuevo a la terminal, es decir, al foreground; debemos usar el comando fg y especificar qué número de trabajo queremos continuar. Para nuestro caso será el 1.
+
+```bash
+fg 1
+```
+
+En caso de que estés usando ZSH como shell el formato para llamar el trabajo sería con un porcentaje. ZSH tiende a interpretar algunas cosas incluyendo las wildcards de manera diferente.
+
+```bash
+fg %1
+```
+
+Una vez enviado al foreground veremos como se activa la ejecución del comando en la terminal y podremos seguir escribiendo nuestra nota. Recuerda que una vez terminemos de escribir presionamos CTRL+D para terminar el input y guardar.
+
+![](https://i.ibb.co/p4c2d2v/4.webp)
+
+Cuando se guarda nuestra nota nos daremos cuenta de que el proceso por fin termina y si usamos jobs no nos mostrará ningún trabajo en background.
+
+### Otras formas de enviar al background
+
+Existen otras formas de enviar comandos al background. La primera es usando el operador de control & al final de un comando. Este operador nos permite enviar de manera directa un proceso al background una vez ejecutado. Por ejemplo:
+
+```bash
+cat > mi_nota.txt &
+```
+
+![](https://i.ibb.co/k0q5qCQ/5.webp)
+
+La segunda forma es con el comando bg. Este sirve de manera similar que fg solo que en vez de traerlo al foreground este lleva un trabajo al background. Por ejemplo:
+
+```bash
+bg 1
+```
+
+Bien, la pregunta ahora es ¿Cómo usamos bg? Imagina que abrimos algún programa de interfaz gráfica desde la terminal. En mi caso abriré el navegador Google Chrome. Para hacerlo desde la terminal solo ejecuta:
+
+```bash
+google-chrome-stable
+```
+
+Y verás como se ejecuta pero no nos deja hacer ninguna otra tarea ya que la ventana del navegador está abierta:
 
 
+![](https://i.ibb.co/gS76pwc/6.webp)
+
+Para suspender el proceso como ya sabes lo hacemos con CTRL+Z y si revisamos con jobs veremos como el proceso se encuentra en pausa. En este caso la ventana del navegador que se abrió no nos dejará interactuar ni escribir en ella.
+
+![](https://i.ibb.co/1rVzcDy/7.webp)
+
+Como se ve en la imagen el navegador tiene el número de trabajo 1. Para dejar nuestro navegador corriendo y al mismo tiempo seguir trabajando en la terminal tenemos que reactivar este proceso y a la vez mandarlo al background. Para ello ejecutamos:
+
+```bash
+bg 1
+```
+
+Con esto podremos ver como nuestro proceso de Google Chrome sigue corriendo en el background dejando la terminal disponible para nosotros.
+
+![](https://i.ibb.co/fXQcny4/8.webp)
+
+¡Genial! Con esto ya sabes cómo mover procesos dentro de la terminal del foreground al background. Esto es muy útil cuando solo tenemos una terminal y necesitamos ejecutar varios comandos en paralelo. ¡Te espero en la siguiente clase!
 
 ## Editores de texto en la terminal
 
