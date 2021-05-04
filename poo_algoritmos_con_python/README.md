@@ -28,6 +28,7 @@
   - [Polimorfismo](#polimorfismo)
 - [2. Complejidad algorítmica](#2-complejidad-algorítmica)
   - [Introducción a la complejidad algorítmica](#introducción-a-la-complejidad-algorítmica)
+    - [¿Como podríamos aplicar nuestra función `T(n)`?](#como-podríamos-aplicar-nuestra-función-tn)
   - [Conteo abstracto de operación](#conteo-abstracto-de-operación)
   - [Notación asintótica](#notación-asintótica)
   - [Clases de complejidad algorítmica](#clases-de-complejidad-algorítmica)
@@ -843,9 +844,55 @@ Existen distintos tipos de complejidad algorítmica:
 
 ## Búsqueda lineal
 
+La búsqueda lineal es un algoritmo muy sencillo. Consta en buscar si un elemento se encuentra dentro de una lista, array o un sistema ordenado o no ordenado para poder determinar si el elemento se encuentra en el o forma parte de el.
 
+¿Cuál es el peor caso del siguiente código? Si nos fijamos existe un for loop que crece según el tamaño de la lista, por lo cual nuestro Big O es O(n).
+
+
+```py
+import random
+
+def busqueda_lineal(lista, objetivo):
+    match = False
+
+    for elemento in lista: # O(n)
+        if elemento == objetivo:
+            match = True
+            break
+
+    return match
+
+
+if __name__ == '__main__':
+    tamano_de_lista = int(input('De que tamano sera la lista? '))
+    objetivo = int(input('Que numero quieres encontrar? '))
+
+    lista = [random.randint(0, 100) for i in range(tamano_de_lista)]
+
+    encontrado = busqueda_lineal(lista, objetivo)
+    print(lista)
+    print(f'El elemento {objetivo} {"esta" if encontrado else "no esta"} en la lista')
+```
+
+- Una habilidad importante de un computer scientist es reducir cualquier problema a otros que ya sabemos resolver.
+- La búsqueda lineal es sencilla, ya que busca en todos los elementos de manera secuencial.
+- El peor caso es que el elemento se encuentre al final, por lo tanto tenemos `$O(n)$`.
+- Podemos generar un if elsedirectamente en una sola línea de código, para ello la sintaxis es en general `(en un f-string)` 
+
+```bash
+{<operaciones> if <condiciones> else <operaciones>}
+```
 
 ## Búsqueda binaria
+
+La búsqueda binaria toma una estrategia llamada “Divide y conquista”, la cual consiste en dividir el problema en 2 en cada iteración. Este algoritmo asume que la lista se encuentra ordenada, por lo que es necesario realizar este paso primero.
+
+La búsqueda binaria es uno de los mejores algoritmos que se tienen hoy en día para búsqueda, ya que reduce significativamente el numero de pasos, y así disminuyendo nuestro Big O.
+
+![](https://i.ibb.co/8m93tR3/binary-and-linear-search-animations.gif)
+
+Para ver de forma practica haremos una búsqueda binaria a través de código. Lo primero que tenemos que realizar es ordenar nuestra lista antes de ejecutar la búsqueda.
+
 
 
 
