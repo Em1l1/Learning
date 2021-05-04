@@ -1,12 +1,9 @@
-# Programación en Bash Shell
+<h1>Programación en Bash Shell</h1>
 
-### Marco Antonio Toscano Freire
+<h3>Marco Antonio Toscano Freire</h3>
 
-# Tabla de Contenido
+<h1>Tabla de Contenido</h1>
 
-- [Programación en Bash Shell](#programación-en-bash-shell)
-    - [Marco Antonio Toscano Freire](#marco-antonio-toscano-freire)
-- [Tabla de Contenido](#tabla-de-contenido)
 - [1. Bienvenida e Introducción](#1-bienvenida-e-introducción)
   - [Introducción y Bienvenida al curso](#introducción-y-bienvenida-al-curso)
   - [Componentes de Linux, Tipos de Shell y Comandos de información](#componentes-de-linux-tipos-de-shell-y-comandos-de-información)
