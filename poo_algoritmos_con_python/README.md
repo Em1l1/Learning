@@ -1101,16 +1101,69 @@ Es importante que podamos traducir los datos que nos arrojan nuestro programa en
 
 # Graficado simple
 
+Graficado simple
 
+La librería Bokeh permite construir gráficas complejas de manera rápida y con comandos simples, también nos permite exportar a varios formatos como html, notebooks, imágenes, etc. Bokeh se puede utilizar en el servidor con Flask y Django.
+
+![](https://i.ibb.co/YRTfMYf/graficas.jpg)
+
+![](https://i.ibb.co/wzvK13v/bokeh-plot.png)
+
+- [Bokeh 1.4.0 documentation](http://docs.bokeh.org/en/latest/index.html)
+- [Instalar Bokeh](https://docs.bokeh.org/en/latest/docs/installation.html)
+- [Galeria](https://docs.bokeh.org/en/latest/docs/gallery.html)
+- [Tutorial Introduction and Setup.ipynb](https://mybinder.org/v2/gh/bokeh/bokeh-notebooks/master?filepath=tutorial%2F00)
+- [Comunidad](https://discourse.bokeh.org/)
 
 # 6. Algoritmos de optimización
 
 ## Introducción a la optimización
 
+El concepto de optimización permite resolver muchos problemas de manera computacional. Cuando pensamos en un algoritmo de optimización debemos definir una función objetivo que debemos maximizar o minimizar, respetando una serie de limitantes que definamos.
 
+- El concepto de optimización permite resolver muchos problemas de manera computacional.
+- Una función objetivo que debemos maximizar o minimizar.
+- Una serie de limitantes que debemos respetar.
 
 ## El problema del morral
+
+![](https://i.ibb.co/bRSbLQ4/morral1.png)
+
+Imagina que eres un ladrón que entra a un museo pero tienes un gran problema, nada mas tienes una mochila pero hay muchísimas cosas mas de las que puedes cargar, por lo cual debes determinar cuales artículos puedes cargar y te entregaran el mayor valor posible.
+
+Para este problema sabemos que no podemos dividir los artículos, por lo que nuestra primera aproximación sera evaluar los artículos.
+
+![](https://i.ibb.co/87Yvmxy/morral.webp)
 
 
 ## Conclusiones
 
+practicar mas recursividad en algoritmos
+
+Conclusiones:
+
+- Los tipos abstractos (clases) permiten crear programas poderosos que modelan al mundo.
+- Podemos medir la eficiencia de diversos algoritmos.
+- Las gráficas nos permiten encontrar patrones rápidamente.
+- Optimización.
+
+  - Pensamiento computacional desarrollando:
+
+    - Decomposición
+    - Abstracción
+    - Reconocimiento de patrones
+    - Diseño de algoritmos
+
+
+Algunos sitios donde encontrar retos:
+
+- https://www.hackerrank.com
+- https://exercism.io/
+- https://www.freecodecamp.org/learn
+- https://www.hackerrank.com
+- https://codewars.com
+- http://codeforces.com/
+- https://coderbyte.com/
+- https://www.codingame.com/
+- https://www.codechef.com/
+- https://www.topcoder.com/challenges/
