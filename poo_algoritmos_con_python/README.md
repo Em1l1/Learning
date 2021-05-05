@@ -40,6 +40,7 @@
   - [Ordenamiento por mezcla](#ordenamiento-por-mezcla)
 - [4. Ambientes virtuales](#4-ambientes-virtuales)
   - [Ambientes virtuales](#ambientes-virtuales)
+  - [comandos de pip:](#comandos-de-pip)
 - [5. Graficado](#5-graficado)
 - [¿Por qué graficar?](#por-qué-graficar)
 - [Graficado simple](#graficado-simple)
@@ -883,6 +884,7 @@ if __name__ == '__main__':
 {<operaciones> if <condiciones> else <operaciones>}
 ```
 
+- [O(log n) types of Algorithms](https://riptutorial.com/algorithm/example/26648/o-log-n--types-of-algorithms)
 ## Búsqueda binaria
 
 La búsqueda binaria toma una estrategia llamada “Divide y conquista”, la cual consiste en dividir el problema en 2 en cada iteración. Este algoritmo asume que la lista se encuentra ordenada, por lo que es necesario realizar este paso primero.
@@ -893,31 +895,208 @@ La búsqueda binaria es uno de los mejores algoritmos que se tienen hoy en día 
 
 Para ver de forma practica haremos una búsqueda binaria a través de código. Lo primero que tenemos que realizar es ordenar nuestra lista antes de ejecutar la búsqueda.
 
-
-
-
 ## Ordenamiento de burbuja
 
+
+[O(log n) types of Algorithms](https://riptutorial.com/algorithm/example/26648/o-log-n--types-of-algorithms)
+
+El primer algoritmo de ordenamiento que veremos es el ordenamiento de burbuja. Es un algoritmo que recorre repetidamente una lista que necesita ordenarse. Compara elementos adyacentes y los intercambia si están en el orden incorrecto. Este procedimiento se repite hasta que no se requiere mas intercambios, lo que indica que la lista se encuentra ordenada.
+
+![](https://i.ibb.co/L6HP0NG/bubble.gif)
 
 
 ## Ordenamiento por inserción
 
+El ordenamiento por inserción es uno de los algoritmos más comunes que estudian
+los Científicos del Cómputo. Es intuitivo y fácil de implementar, pero es muy
+ineficiente para listas de gran tamaño.
 
+Una de las características del ordenamiento por inserción es que ordena en “su
+lugar.” Es decir, no requiere memoria adicional para realizar el ordenamiento
+ya que simplemente modifican los valores en memoria.
+
+La definición es simple:
+
+Una lista es dividida entre una sublista ordenada y otra sublista desordenada.
+Al principio, la sublista ordenada contiene un solo elemento, por lo que por
+definición se encuentra ordenada.
+
+A continuación se evalua el primer elemento dentro la sublista desordenada para
+que podamos insertarlo en el lugar correcto dentro de la lista ordenada.
+
+La inserción se realiza al mover todos los elementos mayores al elemento que
+se está evaluando un lugar a la derecha.
+
+Continua el proceso hasta que la sublista desordenada quede vacia y, por lo
+tanto, la lista se encontrará ordenada.
+
+Veamos un ejemplo:
+
+Imagina que tienes la siguiente lista de números:
+
+7, 3, 2, 9, 8
+
+Primero añadimos 7 a la sublista ordenada:
+
+7, 3, 2, 9, 8
+
+Ahora vemos el primer elemento de la sublista desordenada y lo guardamos en
+una variable para mantener el valor. A esa variable la llamaremos valor_actual.
+Verificamos que 3 es menor que 7, por lo que movemos 7 un lugar a la derecha.
+
+7, 7, 2, 9, 8 (valor_actual=3)
+
+3 es menor que 7, por lo que insertamos el valor en la primera posición.
+
+3, 7, 2, 9, 8
+
+Ahora vemos el número 2. 2 es menor que 7 por lo que lo movemos un espacio a la
+derecha y hacemos lo mismo con 3.
+
+3, 3, 7, 9, 8 (valor_actual=2)
+
+Ahora insertamos 2 en la primera posición.
+
+2, 3, 7, 9, 8
+
+9 es más grande que el valor más grande de nuestra sublista ordenada por lo que
+lo insertamos directamente en su posición.
+
+2, 3, 7, 9, 8
+
+El último valor es 8. 9 es más grande que 8 por lo que lo movemos a la derecha:
+
+2, 3, 7, 9, 9 (valor_actual=8)
+
+8 es más grande que 7, por lo que procedemos a insertar nuestro valor_actual.
+
+2, 3, 7, 8, 9
+
+Ahora la lista se encuentra ordenada y no quedan más elementos en la sublista
+desordenada.
+
+Antes de ver la implementación en Python, trata de implementarlo por ti mismo
+y compártenos tu algoritmo en la sección de comentarios.
+
+Esta es una forma de implementar el algoritmo anterior:
+
+```py
+def ordenamiento_por_insercion(lista):
+
+    for indice in range(1, len(lista)):
+        valor_actual = lista[indice]
+        posicion_actual = indice
+
+        while posicion_actual > 0 and lista[posicion_actual - 1] > valor_actual:
+            lista[posicion_actual] = lista[posicion_actual - 1]
+            posicion_actual -= 1
+
+        lista[posicion_actual] = valor_actual
+```
+
+![](https://i.ibb.co/pxr6QXz/insercion.webp)
+
+- [ORDENAMIENTO BURBUJA](https://visualgo.net/es/sorting)
+
+- [Python - Nivel 31 - Reto 5 - Ordenamiento por inserció](https://www.youtube.com/watch?v=P05_0zUxJTQ)
 
 ## Ordenamiento por mezcla
 
+Ordenamiento por mezcla
+El ordenamiento por mezcla creado por John von Neumann el cual aplica el concepto de “divide y conquista”. Primero divide una lista en partes iguales hasta que quedan sublistas de 1 o 0 elementos. Luego las recombina en forma ordenada.
 
+![](https://i.ibb.co/L51mNFN/mezcla.gif)
 
+- [Merge-sort with Transylvanian-saxon (German) folk dance](https://www.youtube.com/watch?v=XaqR3G_NVoo)
+- [Merge Sort | Algoritmo de ordenamiento por mezcla | Python](https://www.youtube.com/watch?v=FjOwTbOy18M)
+- [Merge Sort](https://www.hackerearth.com/practice/algorithms/sorting/merge-sort/visualize/)
 # 4. Ambientes virtuales
 
 ## Ambientes virtuales
 
+Los ambientes virtuales permiten aislar el ambiente para poder instalar diversas versiones de paquetes. A partir de python 3 se incluye en la librería estándar en el módulo `venv.` Ningún ingeniero profesional de Python trabaja sin ellos.
 
+`Pip` permite descargar paquetes de terceros para utilizar en nuestro programa, también permite compartir nuestros paquetes con terceros y también podemos definir la versión del paquete que necesitamos.
+
+Una practica muy útil es crear un archivo con el nombre de `requirements.txt` y colocar los paquetes que necesitemos uno debajo del otro
+
+```py
+boken
+numpy
+flask
+```
+
+Y luego usas
+
+```bash
+pip install -r requirements.txt
+```
+
+```bash
+ mkdir graficado
+ cd graficado
+ python3.9 -m venv env
+ source env/bin/activate
+ pip install bokeh
+```
+
+comandos de pip:
+--
+
+- `search:` busca un paquete
+
+```bash
+pip search <package>
+```
+
+- `install:` instala un paquete
+
+```bash
+pip install <package>
+```
+
+- `show:` muestra detalles del paquete instalado
+
+```bash
+pip show <package>
+```
+
+- `uninstall:` eliminar un paquete
+
+```bash
+pip uninstall <package>
+```
+
+- `list:` retorna la lista de paquetes en el ambiente actual
+
+```bash
+pip list
+```
+
+- `freeze:` se utiliza para congelar los paquetes y su versión actual.
+
+```bash
+pip freeze
+```
+
+
+- [PyPI · The Python Package Index](https://pypi.org/)
 
 # 5. Graficado
 
 # ¿Por qué graficar?
 
+Es importante que podamos traducir los datos que nos arrojan nuestro programa en un elemento visual, así podemos realizar reconocimientos de patrones, predicción de series, simplifica la interpretación y la conclusión acerca de los datos.
+
+- Reconocimiento de patrones
+- Predicion de una serie
+- Simplifica la interpretacion y las conclusiones acerca de los datos
+- Visualizar grandes cantidades de datos de manera sencilla.
+- Fácil comparativa entre datos
+- Permite tener una primera imagen global, rápida.
+- Facilidad de modificación y filtros de los datos.
+
+![](https://i.ibb.co/9NX9sNd/grafica.png)
 
 
 # Graficado simple
