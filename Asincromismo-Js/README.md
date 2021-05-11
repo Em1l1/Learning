@@ -390,9 +390,100 @@ Por ejemplo, cuando necesitamos que el contenido de una promesa resuelta esté d
 
 ## Resolver problema con Async/Await
 
+Creamos una función async con su estructura `try()catch`. Dentro de `catch()` pedimos que ejecuten tres peticiones. Para acceder a ellas colocamos la palabra reservada await y llamando nuestro fetchData indicamos dentro de sus parámetros la ruta que se debe tomar para acceder a la información que queremos imprimir en cada una de nuestras constantes.
+⠀⠀
+Después imprimimos los resultados. En `catch()` colocamos que código que queremos imprimir en caso de que no se cumpla la petición de `try()` . Ya por último llamamos la `función anotherFunction();` para ejecutarla.
+
+```js
+const fetchData = require('../utils/fetchData');
+const API = 'https://rickandmortyapi.com/api/character/'
+
+const anotherFunction = async (url_api) => {
+  try {
+    const data = await fetchData(url_api);
+    const character = await fetchData(`${url_api}${data.results[0].id}`);
+    const origin = await fetchData(character.origin.url);
+    console.log(data.info.count);
+    console.log(character.name);
+    console.log(origin.dimension);
+  } catch(error) {
+    console.error(error)
+  }
+}
+
+console.log('Before')
+anotherFunction(API)
+console.log('After')
+```
+
+codigo comentado
+
+```js
+// traemos nuestra funcion que llamara a la API
+const fetchData = require('../utils/fechtData');
+// el link de la API
+const API = 'https://rickandmortyapi.com/api/character/';
+
+// nuestra funcion asíncrona, le devemos pasar la api
+const anotherFunction = async (url_api) => {
+  // el TryCatch, para que se maneje de manera sincrónica
+  try {
+    // esperamos que se aga la primera llamada
+    const data = await fetchData(url_api);
+
+    // esperamos que se aga la segunda llamada
+    const character = await fetchData(`${API}${data.results[0].id}`)
+
+    // esperamos que se aga la tercera llamada
+    const origin = await fetchData(character.origin.url);
+
+    // imprimimos las datos de la api
+    console.log(data.info.count);
+    console.log(character.name);
+    console.log(origin.dimension);
+
+  } catch (error) {
+    // si hay algun error lo mostramos
+    console.error(error);
+  }
+}
+
+console.log('before');
+// mandamos a llamar nuestra api
+anotherFunction(API);
+console.log('After');
+```
 
 # 3. Comprender las diferencias entre las estructuras asíncronas
 
 ## Callbacks Vs Promesas Vs Async/Await
 
+- [ventajas-y-desventajas.pdf](https://drive.google.com/file/d/1mDrK2zeTak93w1Iz50TuSnEKmUYt15Uk/view?usp=sharing)
+
 ## Conclusiones
+
+
+Ventajas y Desventajas
+
+Callbacks
+  - V = Es simple una función que recibe otra función
+  - V = Son universales
+  - D = Composición tosca
+  - D = Callbacks Hell
+  - D = Flujo poco intuitivo
+  - D = Debemos pensar que estamos haciendo código para humanos y debe ser facil de leer
+  - D = if FecthData, if FecthData, if FecthData y se vuelve tedioso y no se maneja excepciones
+
+Promise
+  - V = Fácilmente enlazable then y return, then y return y asi
+  - V = Es poderoso // es muy recomendado para desarrolladores
+  - D = NO maneja excepciones si no maneja un catch al final y seremos propensos a errores
+  - D = Requiere un polyfile para ser transpilados y ser interpretados en todos los navegadores //Babbel
+
+Async Await
+  - V = El tradicional try - catch y manejar las excepciones de manera mas fluida
+  - V = Mas fáciles de leer que sucedera que va a suceder
+  - D = Ese poder que podemos decir es decir si queremos algo debemos esperar que algo suceda
+  - D = Requiere un polyfile para ser transpilados y ser interpretados en todos los navegadores //Babbel
+
+Nunca pares de Aprender
