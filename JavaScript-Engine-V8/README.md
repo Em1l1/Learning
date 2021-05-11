@@ -140,14 +140,140 @@ Si en la interpretación del AST ve mucho código que se repite y que se puede o
 
 ## Ejemplo de Objeto global y hoisting
 
+Hoisting
+
+- Si llamamos una variable antes de ser declarada, el compiler crea la variable en la memory heap y la inicializa como undefined
+- En el caso de las funciones es distinto, primero mandamos a llamar a las funciones antes de ejecutarlas.
+- El hoisting a veces funciona pero no tenemos control de las variables que se van a cambiar
+- Si llamamos a una constante (const) antes de inicializar retorna un error de tipo: Uncaught ReferenceError, que corresponde a variables que son referenciadas pero no pudieron ser capturadas
+
+```js
+console.log(nombre);
+apellido();
+
+var nombre = "Diego";
+
+function apellido(){
+	console.log("De Grada");
+}
+```
+
+Como el motor de JavaScript lo interpreta:
+
+```js
+var nombre = undefined;
+function apellido(){
+	console.log("De Grada");
+}
+
+console.log(nombre);
+apellido();
+nombre = "Diego";
+```
+
+Si te preguntas cuál pone más arriba, ¿Las variables o las funciones?
+La respuesta es las variables. Probemos esto:
+
+```js
+var nombre;
+function nombre(){}
+typeof nombre; // Output: "function"
+```
+
+¿Y si ponemos primero la función y luego la variable?
+
+```js
+function nombre(){}
+var nombre;
+
+typeof nombre; // Output: "function"
+```
+
+Pero, si declaras una variable y le asignas un valor en la misma linea el resultado es diferente:
+
+```js
+var nombre = "Platzi";
+function nombre(){}
+
+typeof nombre; // Output: "string"
+```
+
+Esto es porque JavaScript hace hoisting solo de la declaración de la variable. JavaScript trata la declaración y asignación en una sola linea como dos pasos, por lo que si escribimos:
+
+```js
+var nombre = "Platzi";
+```
+El motor lo interpreta así:
 
 
+```js
+var nombre = undefined;
+nombre = "Plazi";
+```
+
+Así que cuando escribimos:
+
+```js
+var nombre = "Platzi";
+function nombre(){}
+
+typeof nombre; // Output: "string"
+```
+
+Como lo interpreta el motor de JavaScript es así:
+
+```js
+var nombre = undefined;
+function nombre(){}
+
+nombre = "Platzi";
+
+typeof nombre; // Output: "string"
+```
+
+Es decir que “se deja atrás” la asignación.
+Obviamente ningún desarrollador debería de escribir código así de confuso, esto es solo para saber como funciona JavaScript y su engine, ese conocimiento te hace un mejor desarrollador y te destaca de entre otros.
+
+[Esprima](https://esprima.org/)
+
+
+[AST explorer](https://astexplorer.net/)
+
+
+[Hoisting - MDN Web Docs Glossary: Definitions of Web-related terms | MDN](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting)
+
+
+[Parsers y el Abstract Syntax Tree en Curso Profesional de JavaScript](https://platzi.com/clases/1642-javascript-profesional/22166-parsers-y-el-abstract-syntax-tree/)
+
+
+[Parse - MDN Web Docs Glossary: Definitions of Web-related terms | MDN](https://developer.mozilla.org/en-US/docs/Glossary/Parse)
 
 # 3. Código de Ejecución
+
 ## Memory Heap
+
+
+
 ## Call Stack
+
+
+
 ## Garbage Collection
+
+
+
 ## Stack overflow
+
+
+
 ## JavaScript Runtime
+
+
+
 ## Asincronía
+
+
+
 ## Recapitulación
+
+
