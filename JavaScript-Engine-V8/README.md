@@ -17,6 +17,7 @@
   - [Ejemplo de Objeto global y hoisting](#ejemplo-de-objeto-global-y-hoisting)
 - [3. Código de Ejecución](#3-código-de-ejecución)
   - [Memory Heap](#memory-heap)
+  - [Memory Heap](#memory-heap-1)
   - [Call Stack](#call-stack)
   - [Garbage Collection](#garbage-collection)
   - [Stack overflow](#stack-overflow)
@@ -252,15 +253,67 @@ Obviamente ningún desarrollador debería de escribir código así de confuso, e
 
 ## Memory Heap
 
+Los objetos en JS (objetos, arrays, funciones y básicamente todo lo que no sea un valor primitivo) se almacenan en la parte de memoria que de llama Memory Heap. Los valores primitivos son almacenados en el Call Stack, dentro del Scope (Contexto de Ejecución de la función que tenga acceso a esa variable). Acceder al Call Stack es mucho más rápido que al Heap. Además, en el Call Stack también se guardan las referencias, “como si fueran valores primitivos”. Cuando se asigna una variable a otra y esta apunta a un objeto, se copia la referencia, como si fuera un valor primitivo. 
 
+Si el objeto tiene atributos como un número por ejemplo, este se guarda en la posición de memoria reservada para ese objeto. Los objetos también pueden tener más objetos dentro. En ese caso, dentro de la posición de memoria de ese objeto se va a guardar una referencia a otra posición de memoria.
+
+Memory Heap
+--
+
+- Donde se almacena los valores de las variables y las funciones
+- Se destina un espacio en memoria para las variables.
+- La información en el memory heap, No se guarda de manera lineal
+
+- [Esprima](https://esprima.org/)
+- [AST explorer](https://astexplorer.net/)
+- [Hoisting - MDN Web Docs Glossary: Definitions of Web-related terms | MDN](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting)
+- [Parsers y el Abstract Syntax Tree en Curso Profesional de JavaScript](https://platzi.com/clases/1642-javascript-profesional/2166-parsers-y-el-abstract-syntax-tree/)
 
 ## Call Stack
 
 
+El Call Stack es un mecanismo para que un intérprete realice un seguimiento de su lugar en un script que llama a múltiples funciones: qué función se está ejecutando actualmente y qué funciones se invocan desde esa función, etc.
+
+Cuando un script llama a una función, el intérprete la agrega a la pila de llamadas y luego comienza a llevar a cabo la función. Cualquier función llamada por esa función se agrega a la pila de llamadas más arriba y se ejecuta donde se alcanzan sus llamadas. Cuando finaliza la función actual, el intérprete la quita de la pila y reanuda la ejecución donde la dejó en la última lista de códigos. Si la pila ocupa más espacio del que le había asignado, se produce un error de “desbordamiento de pila”.
+
+- Como se mandan a llamar las variables y las funciones
+- Las tareas en el callstack se apilan de abajo hacia arriba.
+- Se llaman de la última que mandamos a llamar hacia abajo
+- En la base de la pila reposa el Global Object
+- Si una función llama a otra, la pone encima de la pila.
+- Se ejecuta una tarea a la vez (sincronía)
+- Una vez que se van ejecutando las tareas se van retirando de la pila
+- Al ejecutar todas las tareas se retira el Global object.
+
+![](https://i.ibb.co/cksHN5j/call-stack.gif)
+
+`Call Stack` es un mecanismo para que un intérprete (como el intérprete de JavaScript en un navegador web) realice un seguimiento de su lugar en un script que llama a múltiples funciones : qué función se está ejecutando actualmente y qué funciones se invocan desde esa función, etc. .
+
+- Cuando un script llama a una función, el intérprete la agrega a la pila de llamadas y luego comienza a llevar a cabo la función.
+
+- Cualquier función llamada por esa función se agrega a la pila de llamadas más arriba y se ejecuta donde se alcanzan sus llamadas.
+
+- Cuando finaliza la función actual, el intérprete la quita de la pila y reanuda la ejecución donde la dejó en la última lista de códigos.
+
+- Si la pila ocupa más espacio del que le había asignado, se produce un error de “desbordamiento de pila”.
+
+By: https://mzl.la/33S28jQ
+
+[Estructura de datos Stack: “LIFO”](https://www.tutorialspoint.com/data_structures_algorithms/stack_algorithm.htm)
 
 ## Garbage Collection
 
+En lenguajes de alto nivel como Java y JavaScript, los programadores no necesitan asignar o liberar memoria explícitamente. La memoria JavaScript se asigna cuando se crean cosas (objetos, cadenas, etc.) y se libera automáticamente cuando ya no se usan. Este proceso se llama Garbage Collection.
 
+❤️
+![](https://i.ibb.co/WBtkHgB/garbage.gif)
+
+El Garbage Collection: Durante el proceso de ejecución de javascript en nuestro navegador, habrá un algorimo que estará pendiente del estado del memory heap cuyo trabajo sera buscar y eliminar datos no necesarios y asi liberarar espacio para la memoria, esto es muy util para que una variable pueda ser renombrada con una dato mucho mas nuevo. El garbage collection es muy importante debido a que con ella podemos recolectar o almacenar datos que el navegador no usa pero que a futuro podamos usarlo para nuestro fin.
+
+- `Garbage collecction` es el proceso de rastrear los “desechos” y limpiar la memoria(Mark and Sweep) para evitar un overstack.
+- `Mark and sweep` es el proceso en el que marca(mark) los espacios de memoria no utilizados en el heap y los elimina(sweep).
+
+[Garbage Collection JavaScript](https://dev.to/abhilashiam/garbage-collection-in-javascript-126a)
 
 ## Stack overflow
 
