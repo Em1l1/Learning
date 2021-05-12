@@ -317,16 +317,108 @@ El Garbage Collection: Durante el proceso de ejecución de javascript en nuestro
 
 ## Stack overflow
 
+El stack overflow se genera cuando el call stack se llena completamente (pila de tareas). Esto pasa cuando se genera o se trabaja con bucles infinitos, recurcividad y funciones. Entonces este entra en stack overflow, tenemos que tener cuidado de ocacionar estos stack!!!
 
+![](https://i.ibb.co/58MTQNf/stack.jpg)
+
+Chrome nos manda un mensaje: “OYE, TRANQUILO VIEJO!”
+
+![](https://i.ibb.co/RhvKxm4/stack.gif)
+
+Tenemos nuestro Call Stack donde tenemos nuestra lista de tareas, empezando por el Global Object, se va agregando a la pila todo el código nuestro. Puede pasar que tengamos alguna función que haga que desbordemos esa pila del Call Stack, a esto se le llama Stack overflow, y se crasheará el navegador. En versiones anteriores de Chrome se cerraba por completo el navegador, ahora detectan ese desbordamiento y lo bloquean para evitar que se bloqueé todo el navegador.
+
+```js
+function overflow() {
+	overflow();
+}
+
+overflow(); // Uncaught RangeError: Maximum call stack size exceeded
+```
 
 ## JavaScript Runtime
 
+![](https://i.ibb.co/dpy5LDn/runtime.png)
 
+Que bueno saber como funciona todo lo de JavaScript en los navegadores, ya entiendo mejor todo lo que pasa detras de lo que hacemos.
+
+![](https://i.ibb.co/XFTbPYY/runtime.gif)
+
+```js
+console.log("taco 1");
+console.log("taco 2");
+console.log("torta");
+console.log("taco 3");
+```
+
+JavaScript es síncrono. Aunque con el event loop podemos simular procesos multi-hilo
+
+JavaScript es síncrono, hace una tarea a la vez. Esto hace que se vea lento o que el tiempo de espera sea bastante lento.
+
+Ya que tengamos la variable podemos agregarla al CallStack y con esto ya le podemos dar interacción con los elementos del navegador.
+
+Un ejemplo de esto es que si nos entran 4 tareas, una de 1 segundo, una de 2 segundos, una de 10 segundos y otra de 3 segundos. Quiere decir que se irán haciendo con forma de pila pero se tendrán que esperar la ultima a que termine totalmente de hacer la tarea larga, ya que solo puede hacer una tarea al mismo tiempo.
+
+- [JavaScript — Cómo funciona el Runtime Environment — JRE](https://mauriciogc.medium.com/javascript-c%C3%B3mo-funciona-el-runtime-environment-jre-8ebceafdc938)
+- [Tacos al Pastor](https://www.mexicoenmicocina.com/receta-tacos-al-pastor/)
+- [Runtime](http://latentflip.com/loupe/)
+- [conceptos runtime](https://medium.com/@olinations/the-javascript-runtime-environment-d58fa2e60dd0)
 
 ## Asincronía
 
+Por default corre una tarea a la vez – Sincronismo
+Ahora veremos que es el asincronismo
+Memory Heap: Espacio donde se guardan funciones y variables
+Call Stack: Donde se apilan todas las tareas que tenemos que hacer con Javascript
+Web API´s (Ofrecidas por el navegador para manipular lo siguiente)
 
+  - `Dom(document)`
+  - `AJAX(XMLHttpRequest)`
+  - `Timeout(setTimeout)`
+  - `Call Back Queue:` El orden en que se van a ejecutar a funciones
+Al momento de usar asincronismo sacamos funciones del Call Back Queue que no serán ejecutadas por javascript y serán ejecutadas por el navegador despues
+Ejemplo
+
+```js
+console.log('taco 1')
+console.log('taco 2')
+console.log('taco 3')
+setTimeout(()=>{
+    console.log('torta 1')
+},1000)
+console.log('taco 4')
+setTimeout(()=>{
+    console.log('torta 2')
+},500)
+setTimeout(()=>{
+    console.log('torta 3')
+},0)
+```
+
+Cuando hablamos del asincronismo hablamos del siguiente proceso →
+
+En el JS runtime enviroment se comienza a ejecutar nuestro codigo haciendo uso del Memory Heap y el Call Stack.
+Pero haciendo uso del Timer una de nuastras Web API’s (API’s del V8 de chrome). Podemos “delegar” codigo que el browser va a ir preparando simultaneamente pero sin ejecutarse todavia. Los resultados de este codigo solo entraran en escena cuando sea autorizado por el Event Loop.
+
+El codigo delegado debe ser guardado bajo el method setTimeout(), este lo pasara por la API Timer. Que organizara el codigo en un `Callback Queue`
+
+El orden en que se van a ejecutar estas acciones se ubica en el `Callback Queue`.
+
+Este codigo “delegado”, listo para ejectutarse segun el `Callback Queue` solo se ejecutara cuando las tareas en el Call Stack esten hechas.
+
+El event loop se encarga de verificar iterativamente si el Call Stack esta vacio, para luego permitir la ejecucion de las acciones en el `Callback Queue`
+
+Taquería DeGranda presenta a:
+
+- call stack : el taquero (órdenes rápidas)
+- web APIs : la cocina
+- callback queue : las órdenes preparadas
+- event loop : el mesero
+
+a que quedó súper claro el JS Runtime y cómo funciona el asincronismo!? 🤪
+
+[Web APIs | MDN](https://developer.mozilla.org/en-US/docs/Web/API)
 
 ## Recapitulación
 
-
+El funcionamiento del motor V8 de JavaScript y muchos temas que tienen relación con el mismo.
+Me parecieron claras las explicaciones del profe. El ejemplo de los tacos es muy sencillo y práctico para entender este tema.
