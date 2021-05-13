@@ -45,7 +45,7 @@
 - [5. Consultas a una base de datos](#5-consultas-a-una-base-de-datos)
   - [¿Por qué las consultas son tan importantes?](#por-qué-las-consultas-son-tan-importantes)
   - [Estructura básica de un Query](#estructura-básica-de-un-query)
-    - [Atajos con el teclado](#atajos-con-el-teclado)
+    - [Atajos con el teclado ue nos pueden ayudar a la escritura y ejecución del código SQL](#atajos-con-el-teclado-ue-nos-pueden-ayudar-a-la-escritura-y-ejecución-del-código-sql)
   - [SELECT](#select)
   - [FROM](#from)
   - [Utilizando la sentencia FROM](#utilizando-la-sentencia-from)
@@ -1003,23 +1003,124 @@ Una consulta normalmente viene con 3 elementos básicos, los cuales son:
 
 ## SELECT
 
+`SELECT` se encarga de proyectar o mostrar datos.
 
+- El nombre de las columnas o campos que estamos consultando puede ser cambiado utilizando AS después del nombre del campo y poniendo el nuevo que queremos tener:
+
+```sql
+SELECT titulo AS encabezado
+FROM posts;
+```
+
+- Existe una función de SELECT para poder contar la cantidad de registros. Esa información (un número) será el resultado del query:
+
+```sql
+SELECT COUNT(*)
+FROM posts;
+```
+
+![](https://i.ibb.co/cF1Q27G/SQL-torpedo.jpg)
 
 ## FROM
 
+`FROM` indica de dónde se deben traer los datos y puede ayudar a hacer sentencias y filtros complejos cuando se quieren unir tablas. La sentencia compañera que nos ayuda con este proceso es `JOIN`.
+
+Los diagramas de Venn son círculos que se tocan en algún punto para ver dónde está la intersección de conjuntos. Ayudan mucho para poder formular la sentencia JOIN de la manera adecuada dependiendo del query que se quiere hacer.
+
+![](https://i.ibb.co/1LcM3kD/join.webp)
+
+![](https://i.ibb.co/PZkgkY6/sqljoin.jpg)
+
+![](https://i.ibb.co/kgNvsM8/join1.jpg)
+
+![](https://i.ibb.co/YcYJDZM/join2.jpg)
+
+Ejercicios de consultas para practicar sin la necesidad de ingresar los datos por si mismos [😉](https://josejuansanchez.org/bd/ejercicios-consultas-sql/index.html)
 
 
 ## Utilizando la sentencia FROM
 
+Forma de ejercutar nuestra codigo en la base de datos.
 
+```sql
+-- mysql-workbench
+SELECT	*
+FROM	platziblog.usuarios 
+	LEFT JOIN platziblog.posts ON platziblog.usuarios.id = platziblog.posts.usuario_id
+    WHERE	platziblog.posts.usuario_id IS NULL;
+```
+
+```sql
+use platziblog;
+
+-- todos los usuarios tengan o no  un post relacionado
+ select*
+ from usuarios as u
+ left join posts as p
+ on u.id = p.usuario_id;
+ 
+-- todos los usuarios que no han hecho post
+ select*
+ from usuarios as u
+ left join posts as p
+ on u.id = p.usuario_id
+ where p.usuario_id IS NULL;
+
+-- todos los post esten o no asociados con un usuario
+ select*
+ from usuarios as u
+ right join posts as p
+ on u.id = p.usuario_id;
+ 
+ -- los post que no estan asociados con un usuario
+ select*
+ from usuarios as u
+ right join posts as p
+ on u.id = p.usuario_id
+ where u.id is null;
+ 
+ -- todos los usuarios que sí hayan hecho posts, con su respectivo post
+  select*
+ from usuarios as u
+ inner join posts as p
+ on u.id = p.usuario_id;
+ 
+ -- conjunto universo UNION
+  select*
+ from usuarios as u
+ left join posts as p
+ on u.id = p.usuario_id
+ UNION
+  select*
+ from usuarios as u
+ right join posts as p
+ on u.id = p.usuario_id;
+ 
+ -- los usuarios que no hayan hecho un post, junto con los post que no tiene usuario
+   select*
+ from usuarios as u
+ left join posts as p
+ on u.id = p.usuario_id
+ where p.usuario_id is NULL
+ UNION
+  select*
+ from usuarios as u
+ right join posts as p
+ on u.id = p.usuario_id
+ where p.usuario_id is NULL;
+```
 
 ## WHERE
 
+``WHERE`` es la sentencia que nos ayuda a filtrar tuplas o registros dependiendo de las características que elegimos.
 
+La propiedad `LIKE` nos ayuda a traer registros de los cuales conocemos sólo una parte de la información.
+
+La propiedad `BETWEEN` nos sirve para arrojar registros que estén en el medio de dos. Por ejemplo los registros con id entre 20 y 30.
 
 ## Utilizando la sentencia WHERE nulo y no nulo
 
-
+El valor nulo en una tabla generalmente es su valor por defecto cuando nadie le asignó algo diferente. La sintaxis para hacer búsquedas de datos nulos es IS NULL. La sintaxis para buscar datos que no son nulos es IS NOT NULL
 
 ## GROUP BY
 
