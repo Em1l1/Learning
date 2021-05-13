@@ -583,11 +583,10 @@ Como elegir:
 
 Nunca pares de Aprender !!!!!
 
-![](https://i.ibb.co/0fKjXqk/creatividad.png)
 
 # 6. Mentoría Expert
 
 ## Diseño para programadores
 
-
+![](https://i.ibb.co/0fKjXqk/creatividad.png)
 
