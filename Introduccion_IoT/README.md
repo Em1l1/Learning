@@ -197,15 +197,15 @@ Depende de la acción que necesitemos realizar. Puede ser una bombilla, una sire
 
 **Clasificación**
 
-Alimentación
+  - Alimentación
 
-AC (corriente alterna) / DC (corriente directa) => IoT
+  - AC (corriente alterna) / DC (corriente directa) => IoT
 
 **Tipo**
 
-Inductivo (electromagnetismo)
-Rotativo (motores)
-Sonido/luz (generadores de sonido y luz)
+  - Inductivo (electromagnetismo)
+  - Rotativo (motores)
+  - Sonido/luz (generadores de sonido y luz)
 
 Para escoger tus actuadores piensa en el verbo a ejecutar (girar, brillar, sonar, cerrar, etc).
 
@@ -213,31 +213,180 @@ Para escoger tus actuadores piensa en el verbo a ejecutar (girar, brillar, sonar
 
 ## Voltaje y corriente necesarios para el funcionamiento de un actuador
 
+Para medir el **voltaje**, hazlo en paralelo a tu fuente. Y empieza desde el voltaje más pequeño, gradualmente.
 
+Para medir la **corriente**, hazlo en serie. Debes romper el circuito y luego unir tu multímetro al circuito.
+
+Recuerda que si no hay referencia (datasheet), realizamos la prueba de alimentación de nuestro actuador.
+
+> Los marranitos se llaman “adaptadores de voltaje”
+
+- [voltaje-y-corriente-necesarios-para-el-funcionamiento-de-un-actuador.pdf](https://drive.google.com/file/d/1uzG_7cBfLPUVqZdmhD54yDT7PeGvAaDw/view?usp=sharing)
 
 ## Tipos de controladores y sus características
 
+Los PLC´s por lo general se usan en la industria, ya que el coste es algo elevado, un promedio de 500USD mas/menos. hay PLC´s escalables, quiere decir que puedes aumentar las entradas y salidas, ponerle módulos de comunicación rs232, rs485, tarjetas para comunicación ethernet, puedes crear una red conectando varios PLC´s, una red `Ethernet TC/IP, Profinet, RS-link`, dependiendo de la marca, los más comerciales, creo, son siemens, Allen-Bradley, Mitsubishi, omron, aunque hay muchos más.
 
+Con un `PLC` (Programmable Logic Controller) podemos programar todas las tareas que realiza la máquina.
+
+Características:
+
+  - Robusto
+  - SCL
+  - Usado en grandes máquinas y procesos"
+
+Los `RTU` (Remote Terminal Unit):
+
+  - Cuentan con microcontroladores
+  - Son conectados directamente con los PLC de control
+
+El concepto maestro - esclavo habla de esta interacción entre un PLC y un RTU. Entonces los RTU son nuestros esclavos que son controlados por un PLC maestro.
+
+`SBC` (Single Board Computer) es un computador que está en una board pequeña con características limitadas pero poderosas.
+
+  - Cuenta con I/O listas para conexión
+  - Memoria
+  - Procesador
+  - Comunicaciones
+
+- [tipos-de-controladores-y-sus-caracteristicas.pdf](https://drive.google.com/file/d/1QfKzVO68uyIbjI1iaJXyLcy9FttEbVwk/view?usp=sharing)
+- [Raspberry Pi — Teach, Learn, and Make with Raspberry Pi](https://www.raspberrypi.org/)
+- [electronica.asi](https://www.facebook.com/electronica.asi/)
 
 ## Los super poderes de la Pi
 
+- Es importante que nuestra Raspberry Pi tenga un disipador.
+- Ten cuidado con la estática, manipúlala desde la parte plástica.
+- Tiene varias entradas para nuestro periféricos más comunes.
 
+Tips:
+
+  - Compra una Raspberry Pi de 16 GB de memoria.
+  - Revisa muy bien los puertos.
+  - Agrega un base de acrílico.
+
+- [Raspberry Pi — Teach, Learn, and Make with Raspberry Pi](https://www.raspberrypi.org/)
+- [Raspberry Pi 3 Model B - Raspberry Pi](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/)
+- [Raspberry Pi GPIO Pinout](https://pinout.xyz/)
 
 ## Instalación del sistema operativo
 
+Vamos a instalar el sistema operativo (SO) de nuestra Raspberry Pi, por favor sigue estos pasos para asegurar su correcto funcionamiento.
+
+Nota: Algunos proveedores te permiten comprar tu Pi con una SD pre-instalada, si este es el caso solo debes insertar la SD en el puerto alojado a un extremo de la Pi (apóyate de la imagen), luego debes conectarle un monitor HDMI, mouse, teclado y por último conectarla a energía. Ahí podrás saltar al paso 6 para continuar con el setup.
+
+Si compraste tu SD (Clase 10) y tu Pi por aparte, vamos a hacer lo siguiente:
+
+1. Descargar el NOOBS.zip desde la siguiente página, clic en Download ZIP: https://www.raspberrypi.org/downloads/noobs/
+
+
+![](https://i.ibb.co/Syj1r3t/1pi.jpg)
+
+2. Descomprime la carpeta en una nueva carpeta, donde puedas ver todos los archivos que este contiene
+
+3. Formatear tu SD en formato FAT32, vamos a ver la manera recomendada para cada formato:
+
+  - Windows: Te recomiendo usar la herramienta sdcard.org, que descargas, instalas, das permisos y abres con la SD dentro, le das un nombre ‘BOOT’ y click en Format.
+
+  - Mac OS: Esta herramienta sdcard.org, también está disponible para este SO, así que la descargas, instalas y abres con la SD dentro, le das un nombre ‘BOOT’ y click en Format.
+
+  - Linux: Las instrucciones detalladas fueron desarrolladas por Norman Dunbar y puedes consultarlas en el siguiente link: http://qdosmsq.dunbar-it.co.uk/blog/2013/06/noobs-for-raspberry-pi
+
+4. Ya con la SD limpia y lista en su formato, podemos copiar los contenidos de la carpeta del paso 2 dentro de la SD, recuerda que debes copiar el contenido (todos los archivos) y no la carpeta. Todos los archivos deben estar en la raíz de la SD.
+
+5. Cuando termine de copiar, podremos expulsar correctamente la SD de nuestro computador e insertarla en la Pi, recuerda hacer esto con la Pi sin energía, totalmente apagada y desconectada de la fuente principal, luego de insertarla podremos prender/conectar la fuente de energía de nuevo.
+
+6. Al iniciar nuestra Pi nos encontraremos con la siguiente pantalla, aquí contamos con todas estas opciones:
+
+  - Raspbian: SO basado en Debian y optimizado para el hardware de la Pi
+
+  - LibreELEC: Basado en Kodi, optimizado para el stream de vídeo
+
+  - OSMC: Basado en Linux y Kodi, te permite estar conectado y ser tu media center
+
+  - Recalbox: Te permite jugar varios tipos videojuegos y plataformas en tu Pi
+
+  - Lakka: Distribución de bajo peso para correr todos los juegos que quieras, es una retro consola muy poderosa
+
+  - RISC OS: Es un SO britanico, diseñado para procesadores ARM
+
+  - Screenly OSE: Liviano e ideal para planeación
+
+  - Windows 10 IoT Core: Windows en tus manos
+
+  - TLXOS: Es un SO Australiano, diseñado, tiene licencia de pago luego de 30 días de periodo de prueba
+
+Cada uno tiene un objetivo y puedes escoger el que necesites, pero para nuestro proyecto seleccionaremos Raspbian , luego damos click en Install (i) y esperamos un buen rato.
+
+![](https://i.ibb.co/0tPspqM/2pi.jpg)
+
+7. Cuando termine la instalación te pedirá que la reinicies y le darás OK, luego iniciará el sistema operativo.
+
+8. Cuando inicie veremos el escritorio de la Pi, se abrirá una pestaña de configuración, que completamos con la información de tu localización y tipo de teclado.
+
+Ahora contamos con nuestra Pi lista para trabajar. En la siguiente clase vamos a configurar la BIOS de nuestra Pi.
 
 
 ## Configuración inicial de la Pi, comandos útiles de la consola de Linux
 
+| Comando |	Función |       |
+| -------| :------: | ----- |
+| sudo |  shutdown -h now	| Apaga |
+| sudo |  reboot -h now	| Reinicia |
+| sudo |  raspi-config	| Abre la configuración |
+| ls | 	Muestra una lista del directorio donde estoy |
+| cd | 	Cambiar de directorio |
+| cd .. | 	Cambiar de directorio (ir al anterior) |
+| cat | 	Muestra lo que hay adentro del archivo |
+| nano | 	Abre un director de texto directamente en la consola |
 
+- [Essencial-command-pi.pdf](https://drive.google.com/file/d/16ZbPJXhTZWeea7A-s7hEWMXPV1EABOQq/view?usp=sharing)
 
 ## Conecta tu Pi a internet
 
+| Comando |	Función |
+|-------|-------|
+| Sudo apt-get update	| Actualiza los paquetes y versiones |
+| Sudo apt-get upgrade |	Instala los nuevas nuevas versiones de los paquetes.|
 
+```bash
+sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
+
+sudo nano /etc/wpa_supplicant/wpa_supplicant.config
+
+# dentro del editor creamos el siguiente scrip
+
+network ={
+ssid = "nombre de la red"
+psk = "clave de acceso"
+key_mgmt = WPA-PSK
+}
+```
 
 ## Conexión por SSH
 
+```bash
+sudo raspbeyrypi-config
+# Configurar ssh
+# yes activade / enable
+# local tzdata
+# hostname =>  raspberrypi
+# password 
+# finalizar 
+sudo reboot now
+```
 
+Conectase a la ip
+
+```bash
+hostname
+
+# direccion ip
+iconfig
+
+# conecion ssh
+ssh pi@192.168.10.52
+```
 
 ## Arduino o Raspberry Pi ¿Cuál escoger?
 
