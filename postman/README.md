@@ -8,7 +8,11 @@
 
 ## Introducción al curso
 
+Este curso sera una introducción al uso de postman y las implicaciones para el protocolo http mediante la implementación REST como es conocido el conjunto de principios de diseño que permite a HTTP abrazar su máxima potencia mediante la creación de interfaces, que pueden utilizarse desde casi cualquier dispositivo o sistema operativo, en pocas palabras REST es una forma sencilla de organizar interacciones entre sistemas independientes.
+.
+La alternativa es la construcción de convenciones relativamente complejas por encima de HTTP. A menudo, esto toma la forma de nuevos enteros lenguajes basados en XML. El ejemplo más ilustre es SOAP. Tienes que aprender un conjunto completamente nuevo de convenciones, pero nunca usas HTTP a su máxima potencia.
 
+- [GitHub - platzi/postman-course](https://github.com/platzi/postman-course)
 
 ## Estudiando el protocolo HTTP, verbos y status
 
