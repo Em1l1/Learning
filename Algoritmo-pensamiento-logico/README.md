@@ -27,6 +27,11 @@
     - [Variables](#variables)
     - [Tipos de datos](#tipos-de-datos)
   - [Identifica las variables según los requerimientos de negocio](#identifica-las-variables-según-los-requerimientos-de-negocio)
+    - [Cajero electrónico](#cajero-electrónico)
+    - [Usar un chat](#usar-un-chat)
+    - [Pagar con tarjeta de crédito](#pagar-con-tarjeta-de-crédito)
+    - [Lavar la ropa](#lavar-la-ropa)
+    - [Hablar por teléfono](#hablar-por-teléfono)
   - [Strings (texto) y concatenación](#strings-texto-y-concatenación)
   - [Números y operaciones matemáticas básicas](#números-y-operaciones-matemáticas-básicas)
   - [Operaciones matemáticas compuestas: paréntesis y orden de evaluación](#operaciones-matemáticas-compuestas-paréntesis-y-orden-de-evaluación)
@@ -34,6 +39,11 @@
   - [Arrays y funciones sobre arrays](#arrays-y-funciones-sobre-arrays)
   - [¿Cómo diseñar algoritmos con diagramas de flujo?](#cómo-diseñar-algoritmos-con-diagramas-de-flujo)
   - [Define el tipo de dato según los requerimientos de negocio](#define-el-tipo-de-dato-según-los-requerimientos-de-negocio)
+    - [Ejercicio 1: Directorio telefónico](#ejercicio-1-directorio-telefónico)
+    - [Ejercicio 2: Generando facturas](#ejercicio-2-generando-facturas)
+    - [Ejercicio 3: Control de paso vehicular](#ejercicio-3-control-de-paso-vehicular)
+    - [Ejercicio 4: Agenda personal](#ejercicio-4-agenda-personal)
+    - [Ejercicio 5: Sistema de parqueadero](#ejercicio-5-sistema-de-parqueadero)
 - [3. Estructuras de control](#3-estructuras-de-control)
   - [If y Else: condicionales y comparaciones para proteger tus algoritmos](#if-y-else-condicionales-y-comparaciones-para-proteger-tus-algoritmos)
   - [Switch y Case: condicionales en forma de casos](#switch-y-case-condicionales-en-forma-de-casos)
@@ -378,8 +388,67 @@ Las tablas de verdad nos permiten analizar expresiones matemáticas y determinar
 
 ## ¿Cómo diseñar algoritmos con diagramas de flujo?
 
+![](https://i.postimg.cc/Cxj3NXt0/Diagram.webp)
+- [Flowchart Maker & Online Diagram Software](http://draw.io/)
 
 ## Define el tipo de dato según los requerimientos de negocio
+
+Es momento de aplicar lo aprendido y que identifiques cuántas variables y qué tipo de datos necesitarás para cada uno de los siguientes casos.
+
+### Ejercicio 1: Directorio telefónico
+
+Necesitas almacenar tus contactos en una aplicación, para cada uno necesitas: nombre, número telefónico y correo electrónico.
+
+### Ejercicio 2: Generando facturas
+
+En tu negocio necesitas emitir facturas que indiquen el nombre del cliente, número de identificación, teléfono, dirección, nombre del producto o servicio, cantidad, valor unitario, valor total por cada producto y valor total a pagar.
+
+### Ejercicio 3: Control de paso vehicular
+
+En la carretera necesitas controlar el paso de vehículos por una zona determinada. La condición es el pago del servicio; si este se realizó puede pasar, en caso contrario no podrá continuar.
+
+### Ejercicio 4: Agenda personal
+
+Debes controlar tus compromisos de cada día, para esto realiza una agenda digital que permita mostrar tus espacios de tiempo disponibles y al seleccionar un espacio disponible se solicita nombre, correo electrónico y motivo del agendamiento.
+
+### Ejercicio 5: Sistema de parqueadero
+
+En un parqueadero de bicicletas debes validar si un espacio está vacío, en caso que sea verdadero debes permitir parquear tu bicicleta y almacenar la fecha y hora en la cual fue parqueada para así generar el cobro por minutos. Al finalizar el uso del espacio, debes tomar la fecha y hora nuevamente para calcular cuánto pagarás, teniendo en cuenta que cada minuto que estuvo parqueada costó $1.
+
+Directorio telefónico:
+--
+  - nombre: String
+  - Número telefónico: String (sí, string, es más fácil guardarlos en una cadena, además de l “+” del código de país)
+  - Correo electrónico.: String
+
+Generando facturas
+--
+  - nombre del cliente: String
+  - número de identificación: String
+  - Teléfono: String
+  - dirección: String
+  - nombre del producto o servicio: String
+  - cantidad: Integer
+  - Valor unitario: Float
+  - valor total por cada producto: Float
+  - valor total a pagar: Float
+
+Control de paso vehicular
+--
+  - pago del servicio: Lógico/Booleano
+  
+Agenda personal
+--
+  - nombre: String
+  - correo electrónico: String
+  - motivo del agendamiento: String … Aunque en una base de datos sería Text 🤔 (just chilling jaja)
+
+Sistema de parqueadero:
+--
+  - Espacio vacio: Lógico/Boolean
+  - fecha y hora: String
+  - Tiempo parqueada: Integer
+  - Tarifa por minuto: Integer
 
 # 3. Estructuras de control
 
