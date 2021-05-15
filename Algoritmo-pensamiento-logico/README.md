@@ -11,11 +11,21 @@
     - [¿Qué pasa dentro de una computadora?](#qué-pasa-dentro-de-una-computadora)
     - [¿Cómo representamos las letras?](#cómo-representamos-las-letras)
     - [¿Cómo representamos las imágenes?](#cómo-representamos-las-imágenes)
+    - [¿Cómo representamos esto en software?](#cómo-representamos-esto-en-software)
   - [¿Qué es el sistema binario?](#qué-es-el-sistema-binario)
+    - [Suma](#suma)
+    - [Resta](#resta)
+    - [Acarreo](#acarreo)
+    - [Multiplicación y división](#multiplicación-y-división)
   - [Metodología para construir un algoritmo: requerimientos y proceso mental](#metodología-para-construir-un-algoritmo-requerimientos-y-proceso-mental)
 - [2. Tipos de datos y operadores lógicos](#2-tipos-de-datos-y-operadores-lógicos)
   - [¿Qué son Bits y Bytes?](#qué-son-bits-y-bytes)
+    - [¿Qué es un bit?](#qué-es-un-bit)
+    - [¿Qué son bytes?](#qué-son-bytes)
   - [¿Qué son variables, constantes y tipos de datos?](#qué-son-variables-constantes-y-tipos-de-datos)
+    - [Constantes](#constantes)
+    - [Variables](#variables)
+    - [Tipos de datos](#tipos-de-datos)
   - [Identifica las variables según los requerimientos de negocio](#identifica-las-variables-según-los-requerimientos-de-negocio)
   - [Strings (texto) y concatenación](#strings-texto-y-concatenación)
   - [Números y operaciones matemáticas básicas](#números-y-operaciones-matemáticas-básicas)
@@ -188,23 +198,183 @@ Bueno, aquí va el de las quesadillas:
 
 ## ¿Qué son Bits y Bytes?
 
+En el día a día solemos referirnos a la velocidad de internet, tamaños de archivos, capacidad de dispositivos de almacenamiento, dispositivos móviles y muchos elementos tecnológicos que están dados en términos de bits, bytes, gigabytes, megabytes, etc. Pero, ¿sabemos en realidad a qué estamos haciendo referencia?
+
+Estos términos hacen referencia a medidas de almacenamiento de datos y parten inicialmente de un “bit”, que es la unidad de información más pequeña de una computadora que puede tener solo un estado: 1 o 0. De ahí en adelante seguimos hablando de bits, pero, en mayor medida, con mayor capacidad y mayor magnitud.
+
+### ¿Qué es un bit?
+
+En la clase de sistema binario estudiamos sobre verdaderos y falsos, cuando hay carga y cuando no hay carga, y aprendimos que esto lo representamos con 1 y 0.
+
+En realidad, el término “bit” es el acrónimo de “binary digit”, que hace referencia a los dígitos binarios que le indican a nuestro ordenador que hay o no carga de corriente. Sin embargo, este es solo el punto de partida porque desde aquí, pero en cargas mayores, empezamos a expresar otras medidas más grandes e incluso más comunes.
+
+### ¿Qué son bytes?
+
+La definición de bytes concluye que un byte son el conjunto de 8 bits y que a su vez representan el valor de una letra. Sin embargo su valor y significado va más allá de eso, porque de estos 8 bits, 7 son de información y uno adicional es de control.
+
+De esta manera, cuando hablamos de velocidad de internet, por ejemplo, podemos referirnos a 200 kilobits, pero hablar de 200 kilobytes será más adecuado porque esta última cantidad es 8 veces mayor a los primeros 200 kilobits.
+
+![](https://i.ibb.co/r5DwpbS/bite1.jpg)
+
+> Un bit permite representar verdadero y falso, 1 y 0 respectivamente. En cambio un byte equivale a 8 bits, esto nos permite representar letras, números, símbolos.
+
+![](https://i.ibb.co/xCgWMTs/bit.webp)
+
+![](https://i.ibb.co/1fnR5wh/bit-byte.webp)
+
+
+
 ## ¿Qué son variables, constantes y tipos de datos?
+
+Una variable es aquella que puede cambiar su valor, en cambio una constante es donde persiste el valor. Las variables pueden tener valores numéricos, textos o lógicos.
+
+### Constantes
+
+Una constante es un valor que no puede ser alterado durante la ejecución de un programa. Las constantes se definen en el código de un programa o aplicación y es el único sitio donde pueden ser modificadas.
+
+Por ejemplo, si queremos que el tamaño de todos los botones de una aplicación sea 50, bastaría con definir una constante TamanoBoton y asignarle el valor 50. Así, cada vez que quisiéramos crear un botón nuevo, le asignaríamos como valor de tamaño nuestra constante TamanoBoton. En caso de que quisiéramos modificar el tamaño de todos los botones una vez escrito todos el programa, simplemente tendríamos que modificar el valor de TamanoBoton.
+
+### Variables
+
+Una variable es similar a una constante, salvo que su contenido se puede modificar durante la ejecución de un programa o aplicación. Esto nos permite utilizar valores que introduce el usuario para modificar la ejecución del programa.
+
+Por ejemplo, podríamos definir una variable NombreUsuario, en la que se almacenará el dato que corresponde con el nombre de un usuario que ha introducido al iniciar una aplicación. Este valor se mantendrá hasta que otro usuario inicie la aplicación de nuevo e introduzca su nombre.
+
+### Tipos de datos
+
+![](https://i.ibb.co/8dXr4D4/tipos-de-datos.jpg)
+
+- Entero: `5, 2, 4, 5, 3`
+- Decimales: `3.2 , 6,5`
+- Cadenas: `“Hola”, “hey”, “si”`
+- Lógica: `“True” , “False”`
+
 
 ## Identifica las variables según los requerimientos de negocio
 
+Es momento de identificar qué variables necesitarás para resolver las siguientes situaciones.
+
+### Cajero electrónico
+
+Qué variables necesito para llevar a cabo el funcionamiento de un cajero automático en el cual solo realizaré la acción de sacar dinero en efectivo.
+
+### Usar un chat
+
+Qué variables debo tener en cuenta para hablar con un amigo a través de una aplicación de mensajería instantánea, teniendo en cuenta que solo le puedo enviar mensajes si está conectado a la aplicación.
+
+### Pagar con tarjeta de crédito
+
+Estás en la caja de un supermercado y necesitas realizar el pago de tus productos usando una tarjeta de crédito porque es el único medio de pago que reciben. ¿Qué variables necesitas?
+
+### Lavar la ropa
+
+Necesitas lavar tu ropa, pero debes tener en cuenta los diferentes factores que necesitarás para llevar a cabo esta tarea. ¿Tienes lavadora? ¿Lo harás a mano? ¿Qué necesitas?
+
+### Hablar por teléfono
+
+Es momento de llamar a un amigo por teléfono, debes tener en cuenta varios puntos importantes: ¿Tienes teléfono? ¿Está tu amigo disponible? ¿Qué necesitas para realizar esta llamada?
+
+![](https://i.ibb.co/HXsNds4/Cajero-Automatico.jpg)
+
 ## Strings (texto) y concatenación
+
+Conociendo strings:
+
+Bien, si lo traducimos a español sería algo como “cadena”, sin embargo, su verdadero nombre o traducción es “cadena de caracteres”. Si le damos un poco de interpretación a esta traducción podemos deducir que se trata de un carácter ligado a otro y así de forma consecutiva, ¡Sí!, son caracteres singulares que están pegados los unos a los otros y en conjunto forman una cadena, de ahí su nombre string.
+
+Para entenderlo mejor, un caracter no es más que un simple símbolo o una simple letra, es decir, la letra “b” sería un carácter.
+
+En algunos lenguajes como C++ no existe como tal un tipo de dato String, ahí lo más que existe son caracteres, es decir, en C solo puedes guardar un caracter.
+
+Esto lleva a que en C, por ejemplo, usemos trucos como declarar un arreglo (es una especie de variable que puede guardar muchos valores dentro) de caracteres para formar un string, que repito, es básicamente una cadena de caracteres.
+
+Es por eso que se les suele llamar strings en el ámbito de programación en general 😄
+
+ C, el tipo de dato más pequeño es el char, y, ¿qué significa “char”?
+
+¡Exacto! Char es caracter, por ende la única diferencia es la manera en que lo utilizamos, ya sea al imprimirlo si le decimos que es de tipo número nos imprimirá el valor de dicho número, pero si le decimos que lo interprete como caracter entonces veremos en pantalla el caracter que pertenece a ese numero.
+
+```c
+#include<stdio.h>
+
+intmain(){
+	unsignedchar caracter = 72;
+	printf("%d", caracter); // 72
+	printf("%c", caracter); // H
+	return0;
+}
+```
 
 ## Números y operaciones matemáticas básicas
 
+Existen los siguiente tipos de datos
+
+  - `Int`
+  - `Float`
+  - `Short`
+  - `Long`
+  
+Los enteros son los que no tienen decimales como por ejemplo el 3, 5, 10, 12.
+Los float son lo contrario estos mas bien si tienen un numero decimal como por ejemplo 2.4, 5.3…
+
+Los short y los longs se basan en el tamaña que pueden almacenar
+  - Short - Manejan 2 bytes
+  - Long - Manejan 8 bytes
+
+Operadores para operaciones matemáticas
+
+  - (+) Para realizar sumas
+  - (-) Para realizar restas
+  - (*) Para realizar multiplicaciones
+  - (/) Para realizar divisiones
+  
+Debemos tener cuidado con el tipo de dato y las operaciones por que podemos obtener resultados distintos. Debemos hacer una correcta conversión.
+
+![](https://i.ibb.co/CBsKZS1/Valores-de-las-tipos-de-datos.webp)
+
+![](https://i.ibb.co/myc2Nv2/mate.webp)
 
 ## Operaciones matemáticas compuestas: paréntesis y orden de evaluación
 
+La inmensa mayoría de lenguajes de programación obedecen la jerarquía de opearicones matemáticas, también se les llama orden de precedencia, les dejo esta imagen donde se explica cuál es la precedencia más importante que se suele resolver primero 😄 Recordemos que todo lo que está entre paréntesis será lo que se resuelva primero.
+
+![](https://i.ibb.co/1zCMWz2/jerarquia-de-operaciones.jpg)
+
+Utilizar la técnica pemdas ( Con sus siglas en ingles) Donde nos explica perfecto el orden jerárquico para realizar una operación matemática compuesta.
+
+  - Parenthesis
+  - Exponents
+  - Multiplication, Division
+  - Addition, subtraction
+
+![](https://i.ibb.co/XbRjK60/pemdas.jpg)
 
 ## True y false: booleanos y tablas de la verdad
 
+Pero lo más importante es, no tienes que aprenderte todas las tablas de memoria, de hecho, no te sirve de nada apredertelas de memoria, tienes que aprender a cómo funcionan para que tu puedas generar tus porpias tablas, esa es la manera en la que realmente puedes sacarle provecho a las tabals de verdad porque, más adelante, empezarás a tener comparaciones, de 3, 4, 5 o muchos más valores, comprenderlas es la mejor manera de asegurar que sabes dominarlas 😄
+
+![](https://i.ibb.co/p4xBRd1/tablas-de-verdad.webp)
+
+Las tablas de verdad nos permiten analizar expresiones matemáticas y determinar su valor de verdad, es decir si nuestro razonamiento es válido o no.
+
+- [Qué son tablas de verdad y compuertas lógicas | PlatziLive - YouTube](https://www.youtube.com/watch?v=Pfyuv5ZnNNw)
 
 ## Arrays y funciones sobre arrays
 
+✨ Los vectores(arrays) permite guardar un conjunto de datos. Para acceder a cada elemento del vector se utiliza el índice, podemos tener vectores mutables e inmutables dependiendo del lenguaje de programación.
+
+![](https://i.ibb.co/9hFQGgY/array.gif)
+
+ `Mutabilidad`
+
+  - Que puede cambiar su tamaño, cantidad de elementos
+
+ `Inmutabilidad`
+
+  - No puede cambiar su tamaño, cantidad de elementos.
+
+
+- [Qué es un arreglo en programación | Curso de Fundamentos de C# con .NetCore - YouTube](https://youtu.be/ySVfms45Qkg)
 
 ## ¿Cómo diseñar algoritmos con diagramas de flujo?
 
