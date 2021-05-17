@@ -441,22 +441,76 @@ Para el proceso de validación de información tenemos dos maneras de hacerlo:
 
 ## Paso de parámetros y opciones
 
-- [](https://likegeeks.com/es/scripting-de-bash-parametros-y-opciones/)
+```bash
+#  Parametros y opcionesecho "Programa Opciones"
+echo "Opción 1 enviada: $1"
+echo "Opción 2 enviada: $2"
+echo "Opciones enviadas: $*"
+echo -e "\n"
+echo "Recuperar los valores"
+while [ -n "$1" ]
+do
+case "$1" in
+-a) echo "-a opcion utilizada.";;
+-b) echo "-b opcion utilizada.";;
+-c) echo "-c opcion utilizada.";;
+*) echo "$! no es una opcion.";;
+esac
+shift
+done
+```
+
+
+- [Scripting de Bash en Linux Parte 3 – Parámetros y opciones](https://likegeeks.com/es/scripting-de-bash-parametros-y-opciones/)
 
 ## Descargar información de Internet
 
+- Para archivos pequeños ~> `wget`
+- Para comunicarse con un servicio (por ejemplo, una API Restful) ~> `curl`
+- Para archivos de tamaño considerable ~> `aria2`
 
+`aria2` es genial porque soporta multiples protocolos como BitTorrent y FTP, además de soportar descargas en paralelo.
 
 ## Reto 2
 
-
+Solicitar la información de cada uno de ustedes como nombres, apellidos, edad, dirección y números telefónicos; y posterior imprima toda la información.
 
 #  4. Condicionales
+
 ## Sentencias If/Else
+
+OPERADORES RELACIONALES
+- `-eq:` is equal to // Igual a
+- `-ne:` is not equal to // No es igual a
+- `-gt:` is greater than // Mayor a
+- `-ge:` is greater than or equal to // Mayor o igual a
+- `-lt:` is less than // Menor a
+- `-le:` is less than or equal to // Menor o igual a
+
 ## If Anidados
+
+Doble parentesis (( )) o corchetes simples [ ] cumplen la misma funciòn, sin embargo corchetes simples parece ser la màs utilizada, supongo que por su simplicidad.
+
 ## Expresiones Condicionales
+
+Las expresiones condicionales ya las hemos visto en clases anteriores, pero en qué corresponde y cómo se forman las veremos en esta clase. Estás son las siguientes
+
+  - Utilizada en decisión, iteración.
+  - Formada por una o más condiciones
+  - Condiciones con tipos de datos diferentes
+  - Utiliza los operadores relacionales y condicionales
+  - [What is the difference between test](http://mywiki.wooledge.org/BashFAQ/031) 
+
+
+
 ## Sentencias Case
+
+
+
 ## Reto 3
+
+
+
 #  5. Iteración
 ## Arreglos
 ## Sentencia for loop
