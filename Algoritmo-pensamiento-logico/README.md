@@ -44,20 +44,40 @@
     - [Ejercicio 3: Control de paso vehicular](#ejercicio-3-control-de-paso-vehicular)
     - [Ejercicio 4: Agenda personal](#ejercicio-4-agenda-personal)
     - [Ejercicio 5: Sistema de parqueadero](#ejercicio-5-sistema-de-parqueadero)
+  - [Directorio telefónico:](#directorio-telefónico)
+  - [Generando facturas](#generando-facturas)
+  - [Control de paso vehicular](#control-de-paso-vehicular)
+  - [Agenda personal](#agenda-personal)
+  - [Sistema de parqueadero:](#sistema-de-parqueadero)
 - [3. Estructuras de control](#3-estructuras-de-control)
   - [If y Else: condicionales y comparaciones para proteger tus algoritmos](#if-y-else-condicionales-y-comparaciones-para-proteger-tus-algoritmos)
+  - [`if/else:`](#ifelse)
   - [Switch y Case: condicionales en forma de casos](#switch-y-case-condicionales-en-forma-de-casos)
+  - [Algo curioso, ¿qué pasa si seme olvida el break?](#algo-curioso-qué-pasa-si-seme-olvida-el-break)
   - [Excepciones y errores: Throw y Try Catch](#excepciones-y-errores-throw-y-try-catch)
   - [¿Qué es un ciclo? While, For y Do While](#qué-es-un-ciclo-while-for-y-do-while)
   - [Diagrama de flujo con condicionales](#diagrama-de-flujo-con-condicionales)
   - [Diagrama de flujo con ciclos](#diagrama-de-flujo-con-ciclos)
   - [Tutorial de algoritmos de programación](#tutorial-de-algoritmos-de-programación)
   - [Diseña algoritmos para resolver problemas de tu vida diaria](#diseña-algoritmos-para-resolver-problemas-de-tu-vida-diaria)
+    - [Desplazamiento entre dos puntos](#desplazamiento-entre-dos-puntos)
+    - [Pedir comida a domicilio](#pedir-comida-a-domicilio)
+    - [Hacer mercado](#hacer-mercado)
+    - [Poner a cargar tu celular](#poner-a-cargar-tu-celular)
+    - [Cocinar arroz](#cocinar-arroz)
 - [4. Encapsula tu código en funciones](#4-encapsula-tu-código-en-funciones)
   - [¿Qué es una función?](#qué-es-una-función)
   - [Modularización de código](#modularización-de-código)
   - [Flujo de funciones para encapsular algoritmos](#flujo-de-funciones-para-encapsular-algoritmos)
+    - [Venta de](#venta-de)
+    - [Pagar en una tienda](#pagar-en-una-tienda)
+    - [Envío de correos](#envío-de-correos)
+    - [Toma de pedidos](#toma-de-pedidos)
+    - [Locker para bicicletas](#locker-para-bicicletas)
   - [Nomenclaturas de programación: camelCase, PascalCase, snake_case](#nomenclaturas-de-programación-camelcase-pascalcase-snake_case)
+    - [camelCase o CamelCase](#camelcase-o-camelcase)
+    - [PascalCase](#pascalcase)
+    - [snake_case](#snake_case)
   - [¿Qué es recursividad? Funciones que se llaman a sí mismas](#qué-es-recursividad-funciones-que-se-llaman-a-sí-mismas)
   - [Convierte algoritmos con ciclos a funciones recursivas](#convierte-algoritmos-con-ciclos-a-funciones-recursivas)
   - [¿Cómo desarrollar tu lógica de programación?](#cómo-desarrollar-tu-lógica-de-programación)
@@ -454,51 +474,562 @@ Sistema de parqueadero:
 
 ## If y Else: condicionales y comparaciones para proteger tus algoritmos
 
+Herramientas sobre las cuales se construye un algoritmo. Nos ayudan a construir el flujo de nuestras tareas.
+
+`if/else:`
+--
+Si se cumple determinada condición se ejecuta acción/código anidada en el if, si no es así se ejecutará la anidada en el else. Esta es muy usada para valida información.
+
+
+![](https://i.postimg.cc/Pf4wb1Q5/ifelse.webp)
+
+`If-Else` es una estructura de control, que nos permite determinar que acciones tomar dada o no cierta condición.
+
+![](https://i.postimg.cc/j2Gv4Nyc/ifElse.webp)
 
 ## Switch y Case: condicionales en forma de casos
 
+El switch/case es una estructura un poco… controversial… Algunos la aman, otros la odian, pero lo importante es saber cuándo es que tenemos que usar esta estructura, ya que si realmente soluciona el problema sin que afecte nuestra legibilidad entonces está bien usado 😄
+
+El switch/case viene a arreglar uno de los problemas que podemos llegar a tener con el if cuando evaluamos muchos casos… el if hell:
+
+![](https://i.postimg.cc/y8tjq2xd/hell.jpg)
+
+Como pueden ver, el código empieza a ser menos legible y más hacia la derecha, por eso el switch/case es importante 😄
+
+Algo curioso, ¿qué pasa si seme olvida el break?
+--
+
+Descuida, tu computadora no va a explotar ni nada por el estilo, lo único que pasará es que cuando termine de ejecutar un caso, si no se encuentra ningún break; entonces también ejecutará el siguiente caso y así hasta que encuentre un break; o hasta que se acabe el switch/case 😄
+
+ > witch y Case es una estructura de control, que nos permite evaluar múltiples casos que puede llegar a cumplir una variable y realizar una acción en esa situaciones.
+
+```py
+switch (variable){
+	caso 1: // intrucciones
+		break;
+	caso 2: // intrucciones
+		break;
+	caso 3: // intrucciones
+		break;
+	deafult: // instrucciones
+}
+```
 
 ## Excepciones y errores: Throw y Try Catch
 
+Al momento de capturar errores o cuando vayas a realizar excepciones en tu código.
+
+`Excepciones`: Son eventos anormales que ocurren durante la ejecución (no funciona como un `else`).
+
+`throw :` Es una herramienta que podemos invocar en cualquier punto nos permite capturar si funciona o no lo que se ejecutó**.**
+
+`try ... catch` Intenta hacer X pero si falla haz Y.
+
+`finally` Sucede después del try y catch.
+
+Estas estructuras son solo para errores de ejecución, no de lógica.
+
+El funcionamiento de un try…catch que esta clásica imagen, lo explica todo por sí sola y es una excelente filosofía de vida:
+
+![](https://i.postimg.cc/bvLvSfnY/try.webp)
+
+> ✨ Una excepción es un error que ocurre en tiempo de ejecución, es decir cuando esta funcionando.
 
 ## ¿Qué es un ciclo? While, For y Do While
 
+- `For :` Cuando sabes (o puedes saber) las veces repetirás el ciclo: “5 veces”, “la cantidad de elementos que tiene un arreglo”.
+
+- `While :` Cuando no sabes las veces que se repetirá un ciclo: “reintentar conectarme a una base de datos si falló al hacerlo”
+
+- `Do While :` Cuando no sabes las veces que se repetirá un ciclo y necesitas que se realice por lo menos una vez: “Conectarme a la base de datos, si falló, repetir hasta que me pueda conectar”
+
+El ciclo for también es conocido como un ciclo cuyo final es definido porque siempre sabes cuándo es que el ciclo va a terminar, es decir, tu le pasas un valor, un parámetro, etc. Y el ciclo siempre va a saber cuando tiene que terminar, es muy útil para recorrer arreglos en algunos casos, les dejo un ejemplo de un ciclo for:
+
+```js
+for(x = 0; x < 100; x++) {
+	Caminar un paso
+}
+```
+Este por ejemplo, me permitirá caminar cien pasos!
+
+Los ciclos while y do…while son conocidos como ciclos interminados porque en muchas ocasiones no sabes cuándo van a acabar, es decir, el ciclo puede terminar en la primera iteración o puede terminar después de 1000 iteraciones, este es un ejemplo de ellos:
+
+```js
+x = Escribe un número! Si quieres salir escribe 0
+
+while (x != 0) {
+	Has escrito el número x!
+}
+```
+
+En este caso, podemos ver que se le pide a un usuario que escriba un número y eso se guarda en la variable “x”, y hasta que el usuario no escriba “0” el ciclo no va a parar, por eso es indeterminado, no sabes cuándo el usuario escribirá 0
+
+Para el do…while tengo un ejemplo muy bueno en donde podemos generar números de series aleatorios únicos en nuestra base de datos que no se repitan;
+
+```py
+do {
+	Genera un número de serie
+	Busca si ya existe en la base de datos
+} while (existe en la base de datos)
+```
+
+De primeras, sabemos que el do…while se va a ejecutar por lo menos una vez, en esa primera vez hago la generación de ese número de serie y luego hago la búsqueda en la base de datos para ver si ya existe, si ya existe entonces volvemos a repetir el ciclo y generamos otro número de serie, y así hasta que encontremos uno que no exista, pero por lo menos se generó una vez 😄
+
+> Los ciclos o bucles, estos nos permiten repetir una o varias instrucciones cuantas veces lo necesitemos. Los mas comunes son: `For`, `While` y `Do While`.
 
 ## Diagrama de flujo con condicionales
 
+Tabla que representa muchas de las simbologías que se pueden usar en un diagrama de flujo 
+
+![](https://i.postimg.cc/h43f0mGL/simbolos-diagrama-de-flujo.webp)
+
+Proceso para realizar el encendido de una lampara, utilizando solo If.
+
+![](https://i.postimg.cc/NfHm9Dx9/lamp.webp)
+
+![](https://i.postimg.cc/Z5z3rNff/lamp1.webp)
+
+- [Creately](https://app.creately.com/diagram/KdJJSQTzgN4/edit)
 
 ## Diagrama de flujo con ciclos
 
+Mostrando los 50 primeros números pares utilizando el ciclo For.
+
+![](https://i.postimg.cc/PJW4ZkGx/50.jpg)
+
+![](https://i.postimg.cc/QxBNXx3h/for.webp)
 
 ## Tutorial de algoritmos de programación
 
+> ✨ Encontrando más motivación para aprender y mejorar habilidades de programación.
+
+![](https://i.postimg.cc/RhpDqBwH/Ciclos-pokemon.jpg)
 
 ## Diseña algoritmos para resolver problemas de tu vida diaria
+
+Los algoritmos nos permiten hacer todo de la manera más optimizada, rápida y tomar decisiones ante diferentes situaciones de nuestra vida. Diseña un algoritmo para cada situación planteada en los siguientes ejercicios. Ten en cuenta las variables, las decisiones y las condiciones que harán de tu algoritmo la mejor solución:
+
+### Desplazamiento entre dos puntos
+
+Realiza un algoritmo que te permita ir de tu casa al supermercado más lejano en tu ciudad, ten en cuenta en qué vehículo irás, si hay semáforos, tiempo de ruta y cuál sería la más óptima para llegar en cuanto a tiempo y recursos.
+
+[![dos-puntos.webp](https://i.postimg.cc/0QBr9VVy/dos-puntos.webp)](https://postimg.cc/wyD9VQKC)
+
+### Pedir comida a domicilio
+
+Realiza un algoritmo para pedir comida a domicilio, ten en cuenta que debes buscar primero el medio de contacto hacia el lugar donde deseas ordenar.
+
+[![comida-adomicilio.webp](https://i.postimg.cc/GhkYj1MP/comida-adomicilio.webp)](https://postimg.cc/fJRJw1Qk)
+
+### Hacer mercado
+
+Realiza un algoritmo para ir a realizar el mercado que falta en tu casa, ten en cuenta primero determinar qué elementos te faltan, qué debes hacer paso a paso para llegar al supermercado, seleccionarlos, pagar y volver.
+
+[![mercado.webp](https://i.postimg.cc/9f4QJdm3/mercado.webp)](https://postimg.cc/WDvV4JqS)
+
+### Poner a cargar tu celular
+
+Realiza un algoritmo para cargar tu celular, ten en cuenta si estás cerca de la energía, si tienes el cargador cerca y si tu celular necesita carga o no.
+
+[![cargar-celular.webp](https://i.postimg.cc/TwJM91DM/cargar-celular.webp)](https://postimg.cc/62qm69cY)
+
+### Cocinar arroz
+
+Realiza un algoritmo para cocinar arroz, ten en cuenta la receta, los ingredientes, tiempo de cocción, uso de los elementos en la cocina y demás factores que implican preparar esta comida.
+
+[![arroz.webp](https://i.postimg.cc/v8KXKMLp/arroz.webp)](https://postimg.cc/vDWW1JKz)
 
 # 4. Encapsula tu código en funciones
 
 ## ¿Qué es una función?
 
+Yo sé que es difícil entender este tema sin ningún ejemplo gráfico, aquí les pongo un ejemplo:
+
+Imaginemos a la declaración de la función como la creación de una plantilla de código que podrás usar después, declarar una función no es más que simplemente escribir que va a hacer:
+
+```js
+function decirHola() {
+    imprime "Hola!!"
+}
+```
+
+Listo, ya tenemos la función declarada, sin embargo, ese código por sí solo no hace nada, tenemos que decirle que haga algo, ¿cómo lo hacemos? ¡Mandándola a llamar!, para mandar a llamarla simplemente escribimos su nombre con un par de paréntesis:
+
+```js
+decirHola()
+```
+
+¡Listo!, la mandamos a llamar, esto va a imprimir “Hola!!”, ahora, ¿que pasaría si la mandamos a llamar dos veces?
+
+```js
+decirHola()
+decirHola()
+```
+
+Si dijiste que va a imprimir dos veces “Hola!!” estás en lo correcto! Usando funciones podemos empezar a escribir código una sola vez y usarlo cuantas veces lo necesitemos, por eso se dice que las funciones nos permiten reutilizar código, el tema de las funciones es más amplio ya que también podemos retornar valores, por ejemplo:
+
+```js
+function suma() {
+    retorna 1 + 1;
+}
+
+variable x = suma()
+
+```
+
+En este caso, podemos ver que la función se está mandando a llamar justo al lado de una varaible, recuerda que al usar variables es como tener cajitas o canastas, cualquier cosa que devuelva suma() se va a guardar ahí dentro de esa “x”, sin embargo, aquí la palabra clave es ese “retorna” que está dentro de la declaración función, porque eso es lo que especifica que se tiene que devolver algo, en este caso, una suma, por tanto podemos intuir que “x” va a contener el valor del resultado de 1 + 1 😄
+
+También podemos pasar parámetros:
+
+```js
+function suma(x, y) {
+    retorna x + y;
+}
+
+variable x = suma(2, 1)
+```
+
+Y seguramente ya estás intuyendo que “x” equivale a 2 y “y” equivale a 1 y así es, los argumentos se pasan dependiendo de la posición en la que los parámetros fueron escritos, es decir, si el primer argumento es “2” entonces ese valor le correponde a “x”, si el segundo algumento es “1” entonces ese valor le corresponde a “y” y así sucesivamente 😄
+
+> Una función nos permite crear un conjunto de líneas de código que realizen una tarea en concreto, y puede retornar o no un valor.
+>>
+> `Parámetros:` Es el valor que recibirá la función dentro de sus paréntesis y se opera dentro de su bloque de código
+>>
+> `Argumentos:` Son los valores asignados que serán enviados a los parámetros
 
 ## Modularización de código
 
+La modularización permite subdividir una aplicación en partes más pequeñas (llamadas módulos)
+
+☑️ Necesitas tener tu código modularizado te ayudara a armar estructuras en tu Código y tendrás mayor optimización de tu aplicación.
+
+☑️ Deja que cada bloque haga una tarea particular.
+
+☑️ La modularización permitirá que nuestro código sea escalable
+
+☑️ Reutiliza y dinamiza, Nos permite reutilizar valores que podemos utilizar en
+
+diferentes contextos.
+
+☑️ A nivel de funciones y archivos (también podemos modularizar archivos)
+
+Ejemplo :
+
+¿Se acuerdan de estos antiguos estéreos llamados “estéreo modular”?
+
+Ahí está la base de la modularización, estos estéreos eran llamados así porque permitían tener todo por separado, tenías la bocina por un lado, el reproductor por otro lado, etc. Todo estaba bien organizado y cada cosa cumplía una función específica. Lo mismo se aplica a la programación y a los algoritmos, hacer que cada función cumpla con una cosa específica 😄
+
+[![modular.jpg](https://i.postimg.cc/FsFKqdNK/modular.jpg)](https://postimg.cc/py7x5d9N)
 
 ## Flujo de funciones para encapsular algoritmos
 
+Ahora que ya has aprendido cómo se crean las funciones, te reto a resolver los siguientes ejercicios donde encontrarás requerimientos muy puntuales para que los conviertas en algoritmos y los pases a funciones que realicen la actividad.
+
+¡Déjame tus resultados en los comentarios! Estaré encantada de ver tu crecimiento.
+
+### Venta de 
+
+En una empresa de viajes se requiere realizar la venta de tiquetes teniendo en cuenta las siguientes consideraciones:
+
+Cada tiquete incluye ciudad de origen, ciudad de destino, fecha, hora, cantidad de puestos y datos del pasajero.
+
+Cada autobús o avión tiene una capacidad máxima de pasajeros, debo avisar cuando se hayan llenado los cupos.
+
+Debes asignar los puestos de cada medio de transporte conforme al orden de compra.
+
+### Pagar en una tienda
+
+En una tienda de ropa se necesita registrar el precio de cada prenda seleccionada y almacenarlo en una única cuenta de cobro por cliente.
+
+  - Cada cuenta de cobro debe indicar:
+  - Nombre del cliente
+  - Cantidad de prendas
+  - Tipo de prenda
+  - Valor unitario
+  - Valor total (valor unitario de la prenda multiplicado por la cantidad escogida)
+
+Valor total a pagar
+
+### Envío de correos
+
+Debes crear un sistema que permita enviar correos electrónicos masivamente, necesita recibir la lista de destinatarios, el asunto y cuerpo del mensaje; al finalizar el envío, debe mostrar un mensaje de confirmación si todo se ejecutó correctamente.
+
+### Toma de pedidos
+
+Se desea automatizar la toma de pedidos en un restaurante. El pedido debe llegar a la cocina indicando la información de la mesa a la que se le tomó el pedido, el nombre del cliente, los productos que solicitó, la cantidad y la fecha y hora. Cada pedido debe ser despachado en el orden en que fue tomado.
+
+### Locker para bicicletas
+
+En un sistema de locker donde puedes guardar tu bicicleta de manera segura, debes crear un sistema que registre el nombre del usuario, el número de casillero donde se guardó la bicicleta, la fecha y hora de entrada, la fecha y hora de salida y el valor por día de almacenamiento o por horas; al final, debe mostrar el monto a pagar por el tiempo que estuvo guardada en el casillero y notificar la liberación de este espacio.
 
 ## Nomenclaturas de programación: camelCase, PascalCase, snake_case
 
+Las nomenclaturas son formas de llamar a elementos, sentencias o acciones más específicas. En programación tenemos diferentes formas que a veces son aplicadas como “reglas” sobre las cuales llevamos uniformidad en el código y un estándar de trabajo especialmente dentro de equipos de desarrollo de software.
+
+### camelCase o CamelCase
+
+Es una práctica de escritura que consiste en la unión de dos o más palabras sin espacios entre ellas, pero las diferencian una letra mayúscula inicial a partir de la segunda palabra, por ejemplo: miNombreEs.
+
+Este nombre está dado porque forman con las letras mayúsculas iniciales la estructura de un camello que sube cuando hay un inicio de palabra y baja durante su definición.
+
+### PascalCase
+
+Es similar a camelCase con una variación bastante simple: desde la primera letra de la frase se inicia con mayúscula cada palabra, sin embargo se mantiene la práctica de no tener espacios entre palabras y cada palabra siempre empieza con su primera letra mayúscula. Por ejemplo: MiNombreEs.
+
+### snake_case
+
+La nomenclatura “serpiente” es definida de esta forma porque siempre la usamos sobre el piso, esto quiere decir que las letras siempre las minúsculas y las diferentes palabras que compongan el nombre o la definición que se desea dar están separadas por un guion bajo de esta forma: mi_nombre_es.
+
+1. 🐫 `camelCase:` Camel Case se suele usar mucho en lenguajes como JavaScript, al declarar nombres de variables o funciones
+2. 🗿 `PascalCase:` Esta nomenclatura en más común verla en nombres de clases (concepto que aprenderás en algún futuro 👀)
+3. 🐍 `snake_case:` (en lo personal mi favorita porque es más legible) Esta nomenclatura es muy común encontrarla en lenguajes como… ¿adivinas cuál? 👀 Así es, Python, raro sería que Python no usara Snake Case jaja, aunque a mi también me gusta usarla en PHP 😄
+
+- [Case Styles: Camel, Pascal, Snake, and Kebab Case](https://betterprogramming.pub/string-case-styles-camel-pascal-snake-and-kebab-case-981407998841)
 
 ## ¿Qué es recursividad? Funciones que se llaman a sí mismas
 
+Para ponerlos en contexto, puedes decirle que camine y que se apague y eso lo podemos hacer mediante código, en este caso, para declarar una función en Karel lo hacemos con la palabra define-nueva-instruccion, para este caso le puse de nombre: caminar, la función hará que el robotito camine solamente si frente-libre, es decir, va a caminar hasta que se tope con un muro, como podemos ver, en el mundo hay un muro que detendrá a Karel:
+
+[![karel.gif](https://i.postimg.cc/4x1ffXP3/karel.gif)](https://postimg.cc/VJdQ4Q3y)
+
+Entonces, puedes ver cómo dentro de la función `caminar` justamente dentro de la condición `si` se manda a llamar de nuevo a la función `caminar`, es decir, se está mandando a llamar así misma, y por cada llamada se ejecuta el código, puedes ver qué parte del código se va ejecutando en este gif.
+
+Coo logras apreciar, eso es recursividad, cuando una función se manda a llamar a si misma, y la recursividad acaba cuando la condición deja de cumplirse, en este caso puedes ver que cuando la condición es falsa está la instrucción `apagate` que es básicamente el fin del programa 😄
+
+> la recursividad, vemos como una imagen se llama a sí mismo dentro de la imagen. Lo mismo aplicaría en las funciones cuando la misma función se llama así misma
+
+[![recursividad.gif](https://i.postimg.cc/7LfZmp1Y/recursividad.gif)](https://postimg.cc/gwbp0tBf)
 
 ## Convierte algoritmos con ciclos a funciones recursivas
 
+Ya conoces cómo operan las funciones recursivas, no olvides tener en cuenta una condición bajo la cual podrás detener o permitir el flujo sobre el cual se va a ejecutar ella misma.
+
+A continuación te dejo ejercicios para que conviertas tus algoritmos en funciones recursivas:
+
+### Ejercicio 1
+
+Escribe una función recursiva para un timer que cada 5 minutos se agregue 10 minutos más a su cuenta total.
+
+```js
+let ss = 0;
+let hh = 0;
+let mm = 0;
+let time = 0;
+function timer(){
+    if(ss === 60){
+        mm += 1;
+        ss = 0;
+    }
+    if(mm === 60){
+        hh += 1;
+        mm = 0;
+    }
+    console.log(`Tiempo actual: ${hh}:${mm}:${ss}`);
+    ss += 1;
+    time += 1;
+    if(time === 300 ){
+        mm += 10;
+        time = 0
+        console.log(`Hora actualizada`)
+    }
+    setTimeout(timer,1000); 
+}
+```
+
+### Ejercicio 2
+
+Escribe una función recursiva para encontrar el número mayor de un array.
+
+```js
+const miArray = [];
+let max = 0;
+let min;
+    
+function llenar(){
+    for (let i = 0; i < 10; i++)
+    miArray.push(Math.floor(Math.random() * (101 - 1)) + 1);
+    console.log(miArray);
+}
+
+function numeroMayor(i=0){
+    if(miArray==""){
+        llenar();
+        let max=0;
+        min = miArray[0];
+    }
+    
+    if(max < miArray[i]){
+        max = miArray[i];
+    }
+    if(min > miArray[i]){
+        min = miArray[i];
+    }
+    if(i === miArray.length){
+        console.log(`El numero mayor de este array es: ${max}`)
+        console.log(`El numero menor de este array es: ${min}`)
+        return;
+    }else{
+        i++;
+        numeroMayor(i);
+    }
+
+}
+```
+
+### Ejercicio 3
+
+Escribe una función recursiva para convertir de minúscula a mayúscula el primer y último carácter de un string.
+
+```js
+let text = "que funcion tan curiosa";
+let first, last, text2;
+function mayus(i=0){
+    if(i == 0){
+        first = text[i].toUpperCase();
+    }
+    if ( i == text.length-1){
+        last = text[i].toUpperCase();
+        text2 = first+text.slice(1,text.length-1)+last;
+        console.log(`Cadena modificada: ${text2}`);
+        return;
+    }
+    i++;
+    mayus(i);
+}
+```
+
+### Ejercicio 4
+
+Escribe una función recursiva para escribir la serie Fibonacci hasta su décima iteración.
+
+```js
+let aux = 0;
+let aux2 = 1;
+let serie;
+function Fibonacci(i=2){
+  if(aux == 0 && aux2 == 1 ){
+    console.log(aux);
+    console.log(aux2);
+  }
+  serie = aux + aux2;
+  aux = aux2;
+  aux2 = serie;
+  console.log(serie);
+  if(i<9){
+    i++;
+    Fibonacci(i);
+  }else{
+    return;
+  }
+}
+```
+
+### Ejercicio 5
+
+Escribe una función recursiva para generar un password aleatorio con 20 caracteres combinando letras-números-símbolos-números-letras-día-new-año.
+
+```js
+const caracteres = [
+    ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"],
+    ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],
+    ["0","1","2","3","4","5","6","7","8","9"],
+    ["!","#","$","&","/","(",")","*","+","-",".","_",","]
+]
+let pass="";
+function ramdom(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
+function newPassword(cont=0){
+    let i = ramdom(0,caracteres.length)
+    let character = caracteres[i][ramdom(0,caracteres[i].length)]
+    pass += character;
+    cont++;
+    if(cont === 20){
+        console.log(`Su nueva contraseña es: ${pass}`);
+        return
+    }
+    newPassword(cont);
+}
+```
 
 ## ¿Cómo desarrollar tu lógica de programación?
 
+> Programar es un arte más complejo que solo seguir instrucciones
+
+Muchas personas piensan que aprender programación es tan simple como seguir una receta para preparar platillos de cocina, pero no se trata de seguir instrucciones y listo. ¡Es mucho más! ¡Creaste una nueva aplicación!
+
+En la programación es muy raro que uno haga esto, luego aquello y ya está todo funcionando. En esta carrera es necesario inspirarnos, ser muy creativos y desarrollar ideas para encontrar una solución funcional.
+
+Al trabajar en la resolución de un algoritmo desconocido será muy complicado encontrar una solución a la primera sin antes analizar el problema, lo que te llevará a inventar ese código que dará la solución al algoritmo que antes era desconocido para ti… pero ya no lo es más.
+
+En este punto tal vez piensas que eso va a ser imposible para ti. Respira profundo, eso no pasa de la noche a la mañana. La lógica de programación es una habilidad que puedes desarrollar y entrenar.
+
+### ¿Cómo se desarrolla la lógica de programación?
+
+Puedes realizar juegos mentales, acertijos, resolver puzzles… hasta aprender matemáticas, sí, las matemáticas que no te gustaron en la secundaria (o el tan odiado -por algunos- libro de Álgebra de Baldor) son herramientas que te ayudarán con esta tarea.
+
+Creo que apenas mencioné matemáticas te dejo de gustar la idea. Pero siempre hay formas más amigables como lo es resolver puzzles ¿No sabes cuáles o dónde encontrarlas? Si tienes un celular en la tienda de aplicación de tu teléfono, te aseguro que encontrarás muchísimas opciones.
+
+En lo personal yo te sugeriría que buscarás algún Sudoku, pero si los números no son lo tuyo, te sugiero que pruebes Nonogram. Esta aplicación tiene varios tableros de rompecabezas y en ellos lo que tienes que hacer es colorear las celdas correctas de una cuadrícula, de acuerdo con los números a los lados de la misma, todo esto con el fin de revelar una imagen oculta.
+
+¿Conoces más aplicaciones? ¿Cuál es tu favorita? Compártela en los comentarios de esta clase para que podamos conocer más y quizás descubrir nuestro siguiente juego de lógica favorito.
+
+Si tienes algún otro método con el que disfrutes de desarrollar esta habilidad llamada lógica, también compártelo en los comentarios, nos encantaría saber cómo lo haces tú.
+
+> El método que utilicé para desarrollar mi lógica, simplemente fue realizar todos los ejercicios propuestos de algoritmos que encontré dando soluciones alternas. La practica desde mi punto de vista es indispensable.
+
+- [omegaUp](https://omegaup.com/problem/collection/problemLevelBasicKarel/)
 
 ## Resolviendo acertijos
+
+Tu lógica de programación también se puede entrenar con acertijos, así que te dejaré cinco acertijos clásicos para que pienses un poco en ellos y te diviertas resolviéndolos antes de pasar a la siguiente clase donde verás cómo traducir tus algoritmos a diferentes lenguajes de programación.
+
+¡No olvides resolver cada acertijo antes de ver su solución!
+
+Acertijos
+1. El camino del monje
+Un monje parte al amanecer de su monasterio hasta la cima de una montaña, donde llega tras un camino de varias horas. Se queda a descansar, dormir y sale por la mañana de la montaña a la misma hora para regresar a su monasterio.
+
+Es posible que no tardara lo mismo en ir que en volver y da igual que su velocidad no fuera constante o cuándo/cuántas veces pare a descansar: el monje pasó por algún punto del camino exactamente a la misma hora, pero con un día de diferencia. ¿Por qué?
+
+2. La sucesión más difícil
+¿Qué número sigue en esta sucesión numérica: 1 - 2 - 4 - 5 - 8 - 1000…
+
+3. La puerta infernal
+Estás encerrada o encerrado en una habitación con dos puertas vigiladas por dos centinelas. Una lleva a la libertad, pero la otra a la muerte segura. Puedes elegir una puerta y antes puedes hacer una pregunta a uno de los centinelas. Hay un problema: uno de ellos siempre dice la verdad, pero el otro siempre miente. ¿Qué pregunta harías para salvar tu vida?
+
+4. Los sombreros
+En una mesa hay tres sombreros negros y dos blancos. Tres personas se ponen un sombrero al azar sin mirar el color y se colocan en fila india (es una fiesta un poco rara). El tercero ve el color de los dos que tiene delante y se le pregunta si sabría decir cuál es el color de su sombrero. Contesta que no. El segundo solo puede ver el sombrero del primero. Se le hace la misma pregunta y contesta que no. El primero no ve ningún sombrero, pero sabe perfectamente de qué color es el suyo. ¿Qué lógica siguió?
+
+5. Las manzanas
+Tienes una frutería y te han repartido tres cajas: una tiene solo manzanas; otra solo naranjas; la tercera, manzanas y naranjas. Cada caja tiene una etiqueta: “manzanas”, “naranjas” y “manzanas y naranjas”. Ninguna de las cajas tiene la etiqueta que le corresponde. ¿Cómo puedes saber la fruta que contiene cada una de las cajas sacando una sola pieza de una sola de ellas?
+
+Soluciones
+1. El camino del monje
+Imaginemos que se trata de dos monjes que salen a la misma hora de puntos opuestos: si siguen el mismo camino, en algún momento se tendrán que cruzar.
+
+2. La sucesión más difícil
+–> 1001 <-- Es el siguiente número que en castellano se escribe sin e.
+
+3. La puerta infernal
+“¿Qué diría el otro centinela si le pregunto cuál es la puerta segura?”.
+
+Si mi centinela miente y el otro dice la verdad, mi centinela me dirá cuál es la puerta que lleva a la muerte. Si mi centinela dice la verdad y el otro miente, también me dirá cuál es esa puerta, ya que es la que el otro me diría. Solo hay que escoger la opuesta a la que me contesten.
+
+4. Los sombreros
+Si el último no sabe de qué color es su sombrero, eso significa que los otros dos no son blancos, porque si no, sabría que el suyo es negro. Así que hay uno blanco o los dos son negros.
+
+El segundo ha deducido esto mismo al oír lo que dice el primero, así que si no sabe de qué color es su sombrero es porque el primero es negro. Si el del primero fuera blanco, sabría que el suyo es negro porque los dos no pueden ser blancos.
+
+Por tanto, el primero sabe que su sombrero es negro.
+
+5. Las manzanas
+Has de coger una pieza de la caja que dice “manzanas y naranjas”. Como todas están mal etiquetadas, incluida esta, no necesitas saber más.
+
+Si es una manzana, esta es la caja de las manzanas. Las naranjas están en la etiquetada como “manzanas” y la caja que queda, la de “naranjas”, contiene naranjas y manzanas.
+
+Si es una naranja, tienes la caja de las naranjas. La etiquetada como “naranjas” contiene manzanas. Y la que tiene la etiqueta “manzanas” guarda naranjas y manzanas.
 
 # 5. Traduce tus algoritmos a lenguajes de programación
 
