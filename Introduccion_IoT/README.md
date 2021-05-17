@@ -27,11 +27,15 @@
   - [Conecta tu Pi a internet](#conecta-tu-pi-a-internet)
   - [Conexión por SSH](#conexión-por-ssh)
   - [Arduino o Raspberry Pi ¿Cuál escoger?](#arduino-o-raspberry-pi-cuál-escoger)
+  - [La raspberry es un computador completo:](#la-raspberry-es-un-computador-completo)
+  - [Con respecto a las salidas:](#con-respecto-a-las-salidas)
   - [Tipos de comunicaciones básicas entre dispositivos](#tipos-de-comunicaciones-básicas-entre-dispositivos)
 - [3. Proyecto del Curso](#3-proyecto-del-curso)
   - [Contexto del problema ¿Cómo lo solucionamos?](#contexto-del-problema-cómo-lo-solucionamos)
   - [Materiales que necesitas](#materiales-que-necesitas)
+  - [Resumen de Materiales](#resumen-de-materiales)
   - [Planeemos el circuito y conectemos sensores](#planeemos-el-circuito-y-conectemos-sensores)
+  - [Conexión de placa Wemos](#conexión-de-placa-wemos)
   - [Escribamos el código](#escribamos-el-código)
   - [Subir código y asegurar comunicaciones](#subir-código-y-asegurar-comunicaciones)
   - [Archivos para preparar Bot.py y Upgrade.sh](#archivos-para-preparar-botpy-y-upgradesh)
@@ -390,22 +394,131 @@ ssh pi@192.168.10.52
 
 ## Arduino o Raspberry Pi ¿Cuál escoger?
 
+Los Microcontroladores poseen entradas y salidas pero no tanta capacidad de procesamiento. Lo que se hace normalmente es que tengan acceso a internet para usar su capacidad de conectividad y no tanto su memoria.
 
+Por otro lado, la `Raspberry Pi` tiene más capacidad de procesamiento y memoria. Su funcionamiento es más complejo. Depende de tu proyecto puedes usar arquitecturas maestro - esclavo o solamente tu Raspberry Pi.
+
+La raspberry es un computador completo:
+--
+puede tener diferentes sistemas operacionales (linux en distintas versiones, windows 10 iot, unix, chromiun y android)
+
+- Memoria RAM tiene entre 512MB y 1 GB
+
+- Almacenamiento depebde de la micro SD 32GB, 64GB…
+
+- tiene de por si comunicaciones como wifi, bluetooth, ethernet y serial.
+
+- puede manejar directamente teclado, mouse, sonido y pantalla.
+
+- puede manejar cualquier dispositivo usb.
+
+- puede ser programable en cualquier lenguaje: c++, java, python…
+
+- Los sensores de entrada deben ser digitales one_wire, I2C, SPI o serial.
+
+- Los sensores de entrada no pueden ser analogos
+
+Con respecto a las salidas:
+--
+El manejo de PWM no es tan preciso, el manejo de servomotores es limitado.
+De otro lado, los arduinos
+
+- Son microcontroladores sin sistema operativo
+- Tienen muy poca memoria maximo 512kB
+- “El almacenamiento es con EEPROM” de maximo 8kB
+- se programan en assembler o una version de C++
+- tienen entradas analogas
+- el manejo de PWM en varias salidas es muy aceptable
+
+
+En conclusion: depende del proyecto, depende de los sensores a utilizar, de los dispositivos a controlar y la forma de comunicacion.
+
+La opcion maestro-esclavo me parece que en muchos casos es la mejor.
 
 ## Tipos de comunicaciones básicas entre dispositivos
 
+- Wifi
+- Bluetooth/BLE
+- I2C: SDA/SLC
+- SPI: SCLK, MOSI (Master Output Slave Input), MISO, SSTE
+- USB/Serial
+- Ethernet
+- UART
+- CAN
 
+> El I2c permite conectar multiples sensores con solo dos puertos siempre y cuando sean compatibles con este protocolo.
 
+![](https://i.ibb.co/S64sPGd/protocolos.png)
+
+- [tipos-de-comunicaciones-basicas-entre-dispositivos.pdf](https://drive.google.com/file/d/1jJkWA93Oldxpy_PlIkcO-j4FW-tRShZC/view?usp=sharing)
 
 # 3. Proyecto del Curso
+
 ## Contexto del problema ¿Cómo lo solucionamos?
+
+Vas a crear un medidor de calidad de aire, temperatura y además ¡usarás un bot para que te informe por Twitter!
+
+Nuestro objetivo es evidenciar la situación de la contaminación.
+Vamos a actuar haciendo un Tweet.
+
+> Proyecto de este curso es un “Medidor de calidad de aire, temperatura y humedad”, que a través de un bot manda tweets de cada lectura.
+
+- [contexto-del-problema-como-lo-solucionamos.pdf](https://drive.google.com/file/d/1eDbOVS_LQSAVZbggaf97MegW1RjrT7qn/view?usp=sharing)
+
 ## Materiales que necesitas
+
+- ESP8266/Wemos D1/NodeMCU Raspberry Pi
+- Sensores
+- Adaptadores de energía
+- Material de encapsulado(puede ser acrílico) y herramientas de proyecto
+
+Resumen de Materiales
+--
+  - ESP8266/Wemos D1/NodeMCU
+  - Raspberry Pi
+  - Sensores
+    - dht22
+    - mq135
+  - Adaptadores de energía
+  - Material de encapsulado(puede ser acrílico)
+  - herramientas de proyecto
+
 ## Planeemos el circuito y conectemos sensores
+
+Ten presente que la Pi es el maestro y los Wemos son nuestros esclavos(en donde nuestros periféricos estarán conectados y enviarán la información a la Pi).
+
+Conexión de placa Wemos
+--
+
+[![Wemos-Done.jpg](https://i.postimg.cc/6Qg6z4km/Wemos-Done.jpg)](https://postimg.cc/xkGS18Tv)
+
+Conexión de placa Node
+--
+
+[![Node-Done-Schematic.jpg](https://i.postimg.cc/MGMqcKnb/Node-Done-Schematic.jpg)](https://postimg.cc/HJgfRm4V)
+
 ## Escribamos el código
+
+
+
+- [Arduino - Software](https://www.arduino.cc/en/Main/Software)
+
 ## Subir código y asegurar comunicaciones
+
+
+
 ## Archivos para preparar Bot.py y Upgrade.sh
+
+
+
 ## Trámite de ingreso a la API de Twitter y configuración de Tweetpy
+
+
+
 ## ¡Probemos!
+
+
+
 
 # 4. Cierre
 ## Conclusiones
