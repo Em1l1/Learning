@@ -1122,17 +1122,54 @@ La propiedad `BETWEEN` nos sirve para arrojar registros que estén en el medio d
 
 El valor nulo en una tabla generalmente es su valor por defecto cuando nadie le asignó algo diferente. La sintaxis para hacer búsquedas de datos nulos es IS NULL. La sintaxis para buscar datos que no son nulos es IS NOT NULL
 
+NULL no corresponde a ningún valor en particular, sino a una “ausencia” de valor, por lo tanto un NOT NULL correspondería a que no hay una aparente ausencia, es decir, existe un valor así sea un 0. NULL no es igual a nada por lo que en SQL no se le puede asociar con el operador igual que, en vez de esto se le atribuye en un WHERE con un IS NULL. Para valores NOT NULL, también se aplica la misma sintaxis. Para agregar un criterio adicional con WHERE, se usa AND.
+
+- [gneratedata](https://www.generatedata.com)
+
 ## GROUP BY
 
+`GROUP BY` tiene que ver con agrupación. Indica a la base de datos qué criterios debe tener en cuenta para agrupar.
 
+[![group-by.jpg](https://i.postimg.cc/L52Z18Gb/group-by.jpg)](https://postimg.cc/8JX58NpR)
 
 ## ORDER BY y HAVING
 
+La sentencia ORDER BY` tiene que ver con el ordenamiento de los datos dependiendo d`e los criterios que quieras usar.
 
+- `ASC` sirve para ordenar de forma ascendente.
+- `DESC` sirve para ordenar de forma descendente.
+- `LIMIT` se usa para limitar la cantidad de resultados que arroja el query.
+- `HAVING` tiene una similitud muy grande con `WHERE`, sin embargo el uso de ellos depende del orden. Cuando se quiere seleccionar tuplas agrupadas únicamente se puede hacer con `HAVING`.
+
+`ORDER BY :` va a ordenar la consulta en el orden que ti lo determines , puedes utilizar como herramientas
+
+- `<>**` para determinar que los datos serán discriminados de mayor o menor a que
+- `ASC` para indicar si el orden según la discriminación sera ascendente
+- `DESC` para indicar si el orden según la discriminación sera descendente
+- `LIMIT` esta herramienta apoyada con ASC o DESC nos indicara segun el valor que le asignemos, que datos nos datos nos arrojara dentro de esas especificaciones
+- `HAVING` en este caso lo utilizamos para seleccionar las tuplas asignadas
+
+```sql
+SELECT MONTHNAME(fecha_publicacion) AS post_month, estatus, COUNT(*) AS post_quantity
+FROM platziblog.posts
+GROUP BY estatus, post_month
+HAVING post_quantity > 1
+ORDER BY post_month
+;
+```
 
 ## El interminable agujero de conejo (Nested queries)
 
+Los `Nested queries` significan que dentro de un query podemos hacer otro query. Esto sirve para hacer join de tablas, estando una en memoria. También teniendo un query como condicional del otro.
 
+Este proceso puede ser tan profundo como quieras, teniendo infinitos queries anidados.
+Se le conoce como un producto cartesiano ya que se multiplican todos los registros de una tabla con todos los del nuevo query. Esto provoca que el query sea difícil de procesar por lo pesado que puede resultar.
+
+- Las consultas anidadas son la mejor opción cuando los valores dependen de otras tablas, y estas no se encuentran relacionadas entre si.
+
+- Las consultas anidadas son la mejor opción para casos de INSERT, DELETE, UPDATE, cuya condición dependa del esenario explicado en el punto anterior
+
+- Los JOINS son la mejor opción para casos de SELECT
 
 ## ¿Cómo convertir una pregunta en un query SQL?
 
