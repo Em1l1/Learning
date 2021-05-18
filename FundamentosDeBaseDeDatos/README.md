@@ -59,7 +59,10 @@
   - [Consultando PlatziBlog](#consultando-platziblog)
 - [6. Introducción a la bases de datos NO relacionales](#6-introducción-a-la-bases-de-datos-no-relacionales)
   - [¿Qué son y cuáles son los tipos de bases de datos no relacionales?](#qué-son-y-cuáles-son-los-tipos-de-bases-de-datos-no-relacionales)
+  - [Tipos de bases de datos no relacionales:](#tipos-de-bases-de-datos-no-relacionales)
   - [Servicios administrados y jerarquía de datos](#servicios-administrados-y-jerarquía-de-datos)
+  - [Jerarquía de datos:](#jerarquía-de-datos)
+  - [Estructura de una base de datos No relacional basada en documentos](#estructura-de-una-base-de-datos-no-relacional-basada-en-documentos)
 - [7. Manejo de modelos de datos en bases de datos no relacionales](#7-manejo-de-modelos-de-datos-en-bases-de-datos-no-relacionales)
   - [Top level collection con Firebase](#top-level-collection-con-firebase)
   - [Creando y borrando documentos en Firestore](#creando-y-borrando-documentos-en-firestore)
@@ -1173,26 +1176,108 @@ Se le conoce como un producto cartesiano ya que se multiplican todos los registr
 
 ## ¿Cómo convertir una pregunta en un query SQL?
 
+De pregunta a Query
 
+- `SELECT:` Lo que quieres mostrar
+- `FROM:` De dónde voy a tomar los datos
+- `WHERE:` Los filtros de los datos que quieres mostrar
+- `GROUP BY:` Los rubros por los que me interesa agrupar la información
+- `ORDER BY:` El orden en que quiero presentar mi información
+- `HAVING:` Los filtros que quiero que mis datos agrupados tengan
+
+A la hora de traducir preguntas que surgen de nosotros mismos u otras personas que necesitan ver en una base de datos, es necesario tener en cuenta todas las sentencias básicas de un query asi como también las sentencias adicionales. Lo primero que debemos tener en cuenta son los atributos que nos piden mostrar en la consulta, luego la tabla de la que viene, seguido del respectivo filtro en WHERE o HAVING, dependiendo si la consulta es mas compleja y nos piden mostrar la informacion de manera agrupada y/o ordenada.
+
+[![query.jpg](https://i.postimg.cc/pdGH8WyL/query.jpg)](https://postimg.cc/R3Hyxzck)
+
+```sql
+SELECT u.nickname, p.titulo FROM usuarios u inner join posts p ON u.id=p.usuario_id where u.email="edgar@com" ORDER BY p.fecha_publicacion;
+```
 
 ## Preguntándole a la base de datos
 
-
+- `GROUP_CONCAT` toma el resultado del query y lo pone como campo separado por comas.
 
 ## Consultando PlatziBlog
 
+Puedes usar una abreviación para evitar escribir lo mismo cada vez.
+Ejemplo:
 
+```sql
+FROM categorias AS c
+```
 
 # 6. Introducción a la bases de datos NO relacionales
+
 ## ¿Qué son y cuáles son los tipos de bases de datos no relacionales?
+
+Respecto a las bases de datos no relacionales, no existe un solo tipo aunque se engloben en una sola categoría.
+
+Tipos de bases de datos no relacionales:
+--
+- `Clave - valor:` Son ideales para almacenar y extraer datos con una clave única. Manejan los diccionarios de manera excepcional. Ejemplos: `DynamoDB, Cassandra.`
+
+- `Basadas en documentos:` Son una implementación de clave valor que varía en la forma semiestructurada en que se trata la información. Ideal para almacenar datos JSON y XML. Ejemplos: `MongoDB, Firestore`.
+
+- `Basadas en grafos:` Basadas en teoría de grafos, sirven para entidades que se encuentran interconectadas por múltiples relaciones. Ideales para almacenar relaciones complejas. Ejemplos: `neo4j, TITAN.`
+
+- `En memoria:` Pueden ser de estructura variada, pero su ventaja radica en la velocidad, ya que al vivir en memoria la extracción de datos es casi inmediata. Ejemplos:` Memcached, Redis.`
+
+
+- `Optimizadas para búsquedas:` Pueden ser de diversas estructuras, su ventaja radica en que se pueden hacer queries y búsquedas complejas de manera sencilla. Ejemplos:` BigQuery, Elasticsearch.`
+
+[![base-de-datos.jpg](https://i.postimg.cc/PrmrJVvV/base-de-datos.jpg)](https://postimg.cc/w7jdbVVD)
+
+- [¿Qué son las bases de datos no relacionales? Ventajas de NoSQL](https://agustinducca.com/blog/que-son-las-bases-de-datos-no-relacionales-ventajas-de-nosql/)
+
 ## Servicios administrados y jerarquía de datos
+
+Firebase (Firestore). Es una plataforma muy utilizada para el desarrollo de aplicaciones web y aplicaciones móviles. Como usa un conjunto de herramientas multiplataforma es compatible con grandes plataformas, como IOS, Android, aplicaciones web, Unity y C++. Es muy recomendable para desarrollos.
+
+`Firebase` es un servicio de Google donde puedes tercerizar muchos elementos en la nube.
+
+Jerarquía de datos:
+--
+  1. Base de datos : Contiene toda la información que se quiere guardar.
+  2. Colección : Es igual a las tablas en las bases de datos relacionales. Son objetos que agrupan (Documentos) la información que se desea guardar.
+  3. Documento : Es la información que se quiere guardar. Se guarda en un formato muy parecido al formato JSON (es un lenguaje que se utiliza para comunicarse con diferentes lenguajes o aplicaciones). Los documentos dentro de ellos contienen datos.
+
+Estructura de una base de datos No relacional basada en documentos
+--
+[![firestore.jpg](https://i.postimg.cc/Gtb8m0hR/firestore.jpg)](https://postimg.cc/qhZM153D)
+
+
 # 7. Manejo de modelos de datos en bases de datos no relacionales
+
 ## Top level collection con Firebase
+
+
+
+
 ## Creando y borrando documentos en Firestore
+
+
+
+
 ## Colecciones vs subcolecciones
+
+
+
+
 ## Recreando Platziblog
+
+
+
+
 ## Construyendo Platziblog en Firestore
+
+
+
+
 ## Proyecto final: transformando tu proyecto en una db no relacional
+
+
+
+
 # 8. Bases de datos en la vida real
 ## Bases de datos en la vida real
 ## Big Data
