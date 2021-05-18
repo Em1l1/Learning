@@ -80,7 +80,13 @@
     - [snake_case](#snake_case)
   - [¿Qué es recursividad? Funciones que se llaman a sí mismas](#qué-es-recursividad-funciones-que-se-llaman-a-sí-mismas)
   - [Convierte algoritmos con ciclos a funciones recursivas](#convierte-algoritmos-con-ciclos-a-funciones-recursivas)
+    - [Ejercicio 1](#ejercicio-1)
+    - [Ejercicio 2](#ejercicio-2)
+    - [Ejercicio 3](#ejercicio-3)
+    - [Ejercicio 4](#ejercicio-4)
+    - [Ejercicio 5](#ejercicio-5)
   - [¿Cómo desarrollar tu lógica de programación?](#cómo-desarrollar-tu-lógica-de-programación)
+    - [¿Cómo se desarrolla la lógica de programación?](#cómo-se-desarrolla-la-lógica-de-programación)
   - [Resolviendo acertijos](#resolviendo-acertijos)
 - [5. Traduce tus algoritmos a lenguajes de programación](#5-traduce-tus-algoritmos-a-lenguajes-de-programación)
   - [Diferencias entre lenguajes de programación](#diferencias-entre-lenguajes-de-programación)
@@ -1035,35 +1041,563 @@ Si es una naranja, tienes la caja de las naranjas. La etiquetada como “naranja
 
 ## Diferencias entre lenguajes de programación
 
+La lógica es esencial porque nos permite analizar todas las posibilidades que tenemos, y ver cual es la mejor opción para llegar a nuestro objetivo. El lenguaje de programación nos permitirá representar la opción encontrada.
+
+- `Tipado:` El tipado es que debemos definir cada variable que definamos, en otros ya se define automáticamente.
+
+- `Identacion:` Debe llevar unos espacios a su lado izquierdo para que funcione correctamente y identificar en que bloque va específicamente.
+
+- `Corchetes:` Este esta en la mayoría de los lenguajes, en aquellos que si es cuando empezaremos una línea de código.
+
+🐘 PHP
+--
+
+Es un lenguaje muy flexible
+Sus variables se declaran con un signo de dólar $
+Es similar a JavaScript en algunos aspectos
+Es un lenguaje con tipado opcional (pero recomendado)
+Es un lenguaje con indentación opcional (pero recomendado)
+Tiene una documentación completa, pero de lo más completa que hay (y en español 👀)
+Hace uso de paréntesis y corchetes para definir su gramática (sintáxis)
+No está muerto, solo andaba de parranda 😉
+El punto y coma es obligatorio
+
+Ejemplo:
+```php
+// Con tipado
+function suma(int $a, int $b): int {
+    return $a + $b;
+}
+
+echo suma();
+
+// Sin tipado
+function suma($a, $b) {
+    return $a + $b;
+}
+
+echo suma(1, 2);
+```
+
+♨ JavaScript
+--
+NO ES JAVA
+Es un lenguaje muy flexible
+Sus variables se declaran con las palabras let y constantes con const.
+Es similar a PHP en algunos aspectos
+Es un lenguaje sin tipado (a no ser que uses TypeScript)
+Es un lenguaje con indentación opcional (pero recomendado)
+Tiene una gran y enorme comunidad y existen un montón de cosas que puedes hacer con él (React, Vue, Angular, Svelte, WebPack, Babel, etc…)
+Hace uso de paréntesis y corchetes para definir su gramática (sintáxis)
+El punto y coma es opcional (la mayoría del tiempo)
+
+Ejemplo:
+
+```js
+// Forma clásica
+function suma(a, b) {
+    return a + b;
+}
+
+console.log( suma() );
+
+// Arrow Functions
+const suma = (a, b) => {
+    return a + b;
+}
+
+console.log( suma(1, 2) );
+```
+🐍 Python
+
+Es un lenguaje muy usado en el Data Science
+Sus variables se declaran únicamente poniendo el nombre y un operador de asignación
+Es un lenguaje con tipado opcional (pero recomendado), para usarlo hay que importar la librería de tipado de Python
+Es un lenguaje con indentación obligatoria
+NO siempre hace uso de paréntesis ni corchetes para definir su gramática (sintáxis)
+Los bloques de código se suelen separar por un doble enter
+El punto y coma NO se debe usar nunca
+Es un delito federal escribir en alguna otra nomenclatura que no sea snake_case (no es un delito pero no lo hagas)
+
+Ejemplo:
+--
+```py
+// Con tipado
+def suma(a: int, b: int) -> int:
+    return a + b
+
+
+print( str( suma(1, 2) ) )
+
+// Sin tipado
+def suma(a, b):
+    return a + b
+
+
+print( str( suma(1, 2) ) )
+```
 
 ## Cómo escribir código en cualquier lenguaje de programación
 
+Para programar profesionalmente en cualquier lenguaje de programación debemos seguir 3 sencillos pasos:
+
+1. Descarga e instala tu lenguaje de programación
+--
+Dependiendo del lenguaje de programación que escojas, será necesario que realices cierta preparación de tu entorno o simplemente utilices herramientas que instalan todo lo necesario para que este funcione.
+
+Para trabajar con JavaScript, dependiendo del entorno en el cual lo vayas a ejecutar será preciso que descargues e instales Node.js, sin embargo podrías ejecutar código directamente en el navegador y no necesitarás nada más. En cualquier caso, este lenguaje de programación no necesita descargarse como tal.
+
+En el caso de PHP y Python necesitamos descargarlos y luego configurar el entorno a través de la terminal (o de aplicaciones que agregan una interfaz gráfica) para que se conecten con las demás partes de nuestro servidor local.
+
+Lenguajes como Java o C requieren de la descarga de instalación de todo su entorno que puede venir acompañado de herramientas complementarias para su correcto funcionamiento y ejecución.
+
+2. Escribe tus algoritmos con un editor de código
+--
+Los editores de código o IDE (Entorno de desarrollo integrado) es el espacio en el cual escribimos nuestros algoritmos traducidos a código, podemos utilizarlos como aplicaciones instaladas en nuestra computadora y conectada con todos los servicios que requerimos para ejecutar nuestro código.
+
+Sin embargo, también existen opciones más “lite” que funcionan online y están listas para ser usadas, algunas de las mejores opciones que he encontrado en internet (y además gratuitos) son:
+
+- `CodePen:` Permite escribir aplicaciones usando HTML, CSS y JavaScript, tiene opciones PRO con las cuales puedes expandir un poco más tus aplicaciones.
+
+- `CodeSandbox:` Permite escribir aplicaciones sobre templates en tecnologías como JavaScript, React, Vue, Angular, Node, TypeScript, Next.js
+
+- `PHP Tester:` Te permite escribir y ejecutar código escrito en PHP con el fin de probarlo de una manera fácil y rápida si no tienes un entorno configurado para este lenguaje.
+
+- `Paiza:` Es una herramienta que te permite escribir y ejecutar en línea código de más de 20 lenguajes de programación.
+
+- `JSfiddle:` Te permite combinar código de HTML con JavaScript, Vue, React, TypeScript y otros.
+
+- `Repl.it:` Es una herramienta que te permite crear código en lenguajes como C, PHP, Python, Java, C y otros sin necesidad de configurar el entorno pues estará preparado para hacerlo de manera inmediata.
+
+3. Ejecutar tus programas desde la terminal
+A través de tu terminal (o también conocida como consola de comandos) podrás ejecutar las instrucciones necesarias para cada lenguaje y poder visualizar los resultados de tu código de acuerdo a las herramientas que utilices.
+
+Algunos te permitirán interactuar con tu código a través de la terminal en lugar de usar una interfaz gráfica obligatoriamente, en otros solo podrás ejecutar, pero deberás visualizar a través de otros medios.
+
+En cualquier caso, a través de la terminal (a menos que uses una aplicación que juegue el papel de GUI) podrás materializar la ejecución de tus aplicaciones.
+
+Vamos a usar `REPL.IT` (temporalmente)
+--
+En los cursos de Prework para Mac y Prework para Windows aprenderemos a configurar un grandioso entorno de desarrollo para nuestra computadora con editores de código, terminal y otras herramientas más.
+
+Inmediatamente termines este curso debes continuar tu ruta de aprendizaje y tomar estos otros cursos para configurar tu setup de programación como toda una desarrolladora profesional.
+
+Mientras tanto, vamos a utilizar `Repl.it`, una plataforma online que nos permite simular un entorno de desarrollo casi completo (con editor y terminal) sin necesidad de instalar nada (por ahora).
+
+Para usar `Repl.it` es necesario que realices el proceso de registro y selecciones el botón New Repl, en este punto tienes la opción de importar un código existente desde tu GitHub (debes enlazar tu cuenta de GitHub para utilizar esta opción) o puedes crear un documento en blanco solo seleccionando el lenguaje que utilizarás y dando un nombre.
+
+Tienes la opción de hacerle upgrade a tu cuenta y hacer privados tus scripts escritos en esta herramienta, de lo contrario serán públicos por defecto.
+
+Con estos simples pasos, ya estás lista para escribir tu código en el editor de texto que se abrirá y podrás ejecutarlo solo haciendo clic en el botón de “Run” indicado por una pequeña flecha en la parte superior.
 
 ## Cómo programar en JavaScript, Python y PHP
 
+Cómo programar en JavaScript, Python y PHP
+Este grupo de lenguajes han mantenido su popularidad con el tiempo, algunos por el impacto que generan en los procesos de aprendizaje, otros porque han sido implementados por grandes exponentes de la industria de la tecnología.
+
+En esta lectura aprenderás cómo implementar en cada uno de estos lenguajes los elementos básicos que utilizarás en tu día a día como desarrolladora de software.
+
+Variables
+--
+En todos los lenguajes, las variables almacenan temporalmente un valor y pueden presentarse de diferentes tipos, sin embargo, su alcance y definición cambian entre un lenguaje y otro enfocándose en la necesidad de tu aplicación y la lógica que estés deseando implementar.
+
+En `JavaScript` encontrarás que `var`, `let` y `const` serán la manera en la cual puedes definir variables y van a permitirte almacenar algo, pero su uso difiere y se verá extendido o limitado de acuerdo a la que uses, por ejemplo:
+
+Si defines una variable usando `“var”` tendrás un alcance global, esto quiere decir que el valor de esa variable podrá ser accedido, alterado o bloqueado por procesos dentro del documento donde lo hayas definido.
+
+`“let”` tiene un alcance más corto y solo estará disponible dentro del bloque de código donde fue definido, de esta manera puedes tener otra variable fuera de ese alcance incluso con el mismo nombre y valor pero no se cruzarán ni generarán conflicto alguno.
+
+Con el uso de `“const”` hay un punto interesante porque estamos haciendo referencia a un valor que será de sólo lectura, es decir, que esta variable no podrá ser reasignada. Por lo tanto, debemos hacer un uso adecuado correspondiente a su naturaleza.
+
+Para el caso de `PHP`, se define una variable usando el signo `$` seguido del nombre que le des. Además, no es obligatorio definir variables antes de inicializarlas para poder usarlas (aunque ésta sea una buena práctica), por ejemplo:
+
+En lugar de escribir:
+
+```php
+$saludo;
+
+$saludo = “Hola, soy un saludo”;
+```
+Puedes escribir:
+
+```php
+$saludo = “Hola, soy un saludo”;
+
+$numero = 8;
+
+$nombre = “Juanito”;
+```
+La definición de variables en `Python` es igualmente muy simple y útil pues no es requerido indicar el tipo de variable o algún símbolo antes de definirla, simplemente tienes que indicar el nombre y en seguida asignarle un valor si así lo deseas, por ejemplo:
+
+```py
+saludo = “Hola, yo también soy un saludo en Python”
+
+nombre = “Mi nombre es Juanito”
+```
+Funciones
+--
+Para definir funciones hay una similitud muy marcada entre JavaScript y PHP porque su estructura base es simplemente escribir la palabra reservada `“function”` seguido por el nombre de la función y paréntesis que bien pueden estar vacíos si no recibe ningún valor o incluir los parámetros separados por comas.
+
+Sin embargo, en PHP puedes definir el alcance de la `función`; si será `pública`, `privada` o `estática`, pero si no se lo indicas explícitamente, de manera automática se creará pública.
+
+Con Python esta definición es distinta, pues solo utiliza “def”, seguido por el nombre de la función y los parámetros que recibe, al igual que los lenguajes anteriormente mencionados. Adicionalmente, un bloque de código no empieza por las típicas llaves, sino por dos puntos `( : )` que indican que debajo empiezan sus instrucciones a ejecutar.
+
+Estructuras de control
+--
+Cómo ya has visto, cada lenguaje tiene su propia forma de escribir las cosas. No obstante, las estructuras de control son un punto en común. A pesar de que las instrucciones empiecen con llaves, con dos puntos o que las líneas de código terminen en punto y coma o no, la forma del contenido en las estructuras de control no cambia su lógica, suceden de la misma forma y ofrecen el mismo servicio en los tres lenguajes.
+
+El condicional `“if”` en todos los casos evalúa una condición basada en operadores lógicos de comparación. Los ciclos también siguen con este mismo patrón porque incluso su definición cumple con la misma estructura y respetan la forma en la cual funciona. Es esta la magia de saber programación primero que un lenguaje específico.
+
+El proceso de debugging
+--
+El muy conocido debugging o depuración es una actividad que realizamos cuando estamos probando un código en un punto muy específico del cual necesitamos ver un resultado o una salida en consola para conocer específicamente qué puede estar pasando en un punto crítico de nuestra aplicación.
+
+Para realizar esta inspección, utilizamos normalmente alguna instrucción que nos muestre algo que definamos y dependiendo del lenguaje que utilicemos contamos diferentes herramientas.
+
+En `JavaScript` existe el muy popular `console.log()` que dentro de sus paréntesis recibe el valor que va a mostrar justo cuando la ejecución de la aplicación llegue a donde está ubicado y mostrará este valor en consola. Sin embargo, no es el único método pues también se puede utilizar debugger para detener la ejecución de la aplicación justo en el punto donde lo hayamos ubicado.
+
+```js
+console.log(“Quiero ver esto en consola”)
+```
+Con PHP hay varias formas y la que utilices dependerá del contexto en el cual quieres ver este mensaje o valor de referencia para la depuración además del tipo de dato que devolverá.
+
+Se puede hacer uso de `“echo”` que es la forma más clásica de mostrar cadenas de texto en PHP. Sin embargo, no será útil si deseas mostrar valores de tipo objeto o algo más complejo, en este caso puedes usar `var_dump` para conocer el tipo de dato que devuelves o `print_r` para imprimir lo que sea que traiga.
+
+```php
+echo “Quiero ver esto cuando el código pase por aquí”;
+
+var_dump($soyunavariable);
+
+print_r([“Hola”]);
+```
+Python, por supuesto, también ofrece herramientas para hacer esta actividad de depuración, como es el uso de la librería pdb, con la cual se pueden crear `breakpoints` sobre los cuales hacer pausas en la ejecución y probar esas fracciones de manera fácil y controlada.
+
+Puedes igualmente usar el clásico `“retorno de mensajes”`, pero también tienes una herramienta que lo puede hacer por ti.
+
+Métodos de arrays
+--
+Con todo lo que has aprendido, ya puedes entender que la programación es la base y los lenguajes solo son caminos sintácticos que pueden ayudarte en ciertos proyectos o necesidades muy específicas.
+
+Los arrays son secuencias de valores contenidas en un mismo espacio y además comparten su mismo tipo, pero, además de ello, pueden ordenarse, medirse, accederse y realizar muchas acciones más.
+
+En todos los lenguajes lo puedes hacer pero variará la sintaxis que debas usar para lograrlo, algunos métodos de arrays que encontrarás:
+
+  - `Upper` para pasar a mayúsculas uno o varios valores de un array.
+  - `Lower` para pasar a minúsculas uno o varios valores de un array.
+  - `Sort` para ordenar los valores.
+  - `Length` para conocer la cantidad de posiciones del array.
+
+Ejemplo de UpperCase en JavaScript para pasar a mayúsculas toda una oración:
+
+```js
+const cadenaMinuscula = 'espero que tengas un gran dia';
+
+cadenaMinuscula.toUpperCase() //ESPERO QUE TENGAS UN GRAN DIA
+```
+Ejemplo de tolower en C para pasar a minúsculas toda una palabra:
+
+```c
+cadena = 'MARIA';
+
+resultado = tolower(cadena); // maria
+```
+Ejemplo de sort en PHP:
+
+```php
+$frutas = array("limón", "piña", "naranja", "fresa");
+
+sort($frutas); // fresa, limón, naranja, piña
+```
+Ejemplo de length en Python:
+
+```py
+frase = “Quiero saber cuántos caracteres tengo”
+
+len(frase) //37
+```
+Además, podrás encontrar muchas más en la documentación oficial del lenguaje que uses además de su implementación y sintaxis adecuada.
 
 ## Introducción al ejercicio en JavaScript
+
+Para entender mucho mejor la función que desarrollaremos en JavaScript es importante tener en cuenta dos puntos: la lógica a implementar y el flujo de la ejecución.
+
+El reto es escribir una función en JavaScript que `muestre cuál es el segundo número más grande (en valor)` dentro de un array de números.
+
+Lo primero que debemos hacer ante un ejercicio de lógica es planear bien cómo lo vamos a ordenar, de esta forma nuestra solución en código será eficaz y no solo efectiva.
+
+Comprendamos el ejercicio
+--
+Empecemos graficando el problema:
+
+Empecemos con un array de ejemplo:
+```js
+[3, 7, 4, 8, 9]
+```
+Si lo organizamos en orden descendente, quedaría de la siguiente forma:
+```js
+[9,8,7,4,3]
+```
+Aquí podemos ver que el número más grande, el de mayor valor, es el 9. Pero el enunciado nos pide el segundo número de mayor valor, así que en realidad estamos buscando, en este caso, el número 8.
+
+Recuerda que estás creando la lógica de una función que puede recibir un array de cualquier longitud (que puede variar la cantidad de lugares que tendrá el array) y con el orden de números aleatorio, así que debemos implementarlo para que, sea cual sean sus características, lo podamos procesar.
+
+Paso a paso para resolver el ejercicio
+--
+Teniendo claro lo anterior, pasamos a ir paso a paso por la resolución del ejercicio:
+
+  1. Capturamos en una variable el valor de la posición 0 del array. No necesitamos conocer su valor, solo será nuestro punto de partida como referencia, no implica que tenga un valor fundamental.
+  2. Capturamos una segunda variable donde guardaremos el valor que estamos buscando, así que le llamaremos “second” y lo inicializamos en cero porque este valor va a cambiar mucho.
+  3. Creamos un ciclo for con el cual pasaremos por cada posición del array para encontrar el valor que estamos buscando.
+  4. Ahora tenemos un primer condicional que pregunta si nuestra posición actual del array es mayor al valor de nuestra variable first. Aquí hay un punto interesante porque en la primera iteración del ciclo estaremos evaluando en ambos casos la posición 0 del array, pero después de esa ya empezará a variar (porque va por cada posición), a pesar de esto siempre preguntaremos si es mayor a first.
+  5. Si la condición es verdadera, entonces nuestra variable resultado que hemos llamado “second” guardará este valor porque para este punto de la iteración el valor de la posición actual del array es mayor a la del número de referencia first.
+  6. Pero nuestra iteración no termina allí, tenemos una segunda condición que pregunta: si el valor de la posición actual del array es mayor al valor de second y además es menor que first entonces el segundo valor más grande del array es el que tenemos en nuestra posición actual del array.
+
+Ejercicio graficado
+--
+Si esta explicación aún no es totalmente clara para ti, hagamos este ejemplo gráficamente:
+
+[![numbers.webp](https://i.postimg.cc/zG3N2X7s/numbers.webp)](https://postimg.cc/cvqPrWVh)
+
+Al finalizar todas las iteraciones, la variable second quedó con el valor 4, justo el número que estábamos buscando en nuestro algoritmo.
+
+Otras soluciones
+--
+Hay una ruta aparentemente más fácil para solucionar nuestro ejercicio.
+
+Podríamos ordenar nuestro array:
+```js
+[5,4,3,1]
+```
+Y luego tomar su segundo valor de la siguiente manera:
+```js
+numbers[1] = 4
+```
+En este caso, para este array en específico, la solución funciona correctamente. Sin embargo, debemos evaluar otros casos de uso, por ejemplo, si el array tiene números repetidos.
+
+Si tomamos el siguiente array con números repetidos:
+```js
+[1,3,2,1,4,4]
+```
+Lo ordenamos:
+```js
+[4,4,3,2,1,1]
+```
+Y buscamos la segunda posición del array:
+```js
+numbers[1]
+```
+El valor que obtendremos es un 4. ¡Eso es incorrecto! Recuerda que nuestro ejercicio consiste en encontrar el segundo valor más grande dentro de un array de números, por lo que el valor que buscábamos era un 3, no el 4. Este algoritmo no funciona correctamente si tenemos números repetidos en nuestro array.
+
+No te preocupes si habías pensado en esta solución inicialmente. Haber pensado diferente (“fuera de la caja”) ayudará muchísimo a que tu cerebro encuentre las mejores soluciones ante cada nuevo problema que te encuentres. Solo recuerda tener en cuenta diferentes posibles casos de uso para probar tus algoritmos. 😉
+
+Implementación en JavaScript
+--
+Te espero en la siguiente clase donde resolveremos este ejercicio usando el lenguaje de programación JavaScript.
 
 
 ## Programando en JavaScript
 
+Interesante como podemos optimizar el código cuando conocemos las funciones que tiene el lenguaje de programación.
+
+```js
+function secondLargestNumber(numbers){
+  numbers.sort();
+  numbers.reverse();
+  return numbers[1];
+}
+
+let nums = [8, 4, 6, 10, 9, 11, 20];
+console.log(secondLargestNumber(nums));
+```
+
+  1. `Razona:` trata de entender qué hace cada línea, si no puedes apoyate de un diagrama de flujo, pero trata de entender bien qué sucede.
+  2. `Debuguea:` Recuerda que usar las instrucciones para imprimir en pantalla te pueden ayudar ver cómo los programas se comportan en cierto punto.
+  3. `Busca la documentación:` Recuerda siempre buscar documentación, léela y mira cómo funciona cada cosa que usas
+
+Por ejemplo, en este caso, ¿por qué me imprimer 8? No lo sé, pero puedo usar debugging:
+
+```js
+function secondLargestNumber(numbers) {
+  console.log(numbers);
+  numbers.sort();
+  console.log(numbers);
+  numbers.reverse();
+  console.log(numbers);
+  return numbers[1];
+}
+```
+
+Aquí puedes ver cómo use debugging para ver qué valores contenía mi elemento `numbers` después de cada acción.
+
+Después de esto me doy cuenta de que contiene estos valores, el primer par de corchetes es a como mis valores llegan, el segundo par es después del método sort y el tercer par es después del método reverse:
+
+[![console-log.webp](https://i.postimg.cc/15sYJmsy/console-log.webp)](https://postimg.cc/CdrNKVR2)
+
+Uhmm interesante, ¿por qué el método sort me está ordenando los valores de esa manera? 🤔 ¡No tiene ningún sentido! ¡Vamos a buscar la documentación! (hay varias páginas donde puedes documentarte, yo te dejo esta, aunque en archivos de la clase hay otra):
+
+
+https://www.w3schools.com/jsref/jsref_sort.asp
+
+Leyendo veo el método sort() ordena todo como si fueran strings, y en un string, “4” es mayor que “20”, ¿Por qué? porque estamos comparando strings, no números. De hecho un string podría decirse que compara el primer caracter, por lo que 4 es mayor que 2.
+
+Ahora, si miro más abajo veo que ellos ya me proponen un algoritmo donde puedo ordenar los números directamente de forma descendiente, ya ni si quiera necesito el método `reverse!` Así que puedo usarlo, este algoritmo tiene su explicación, pero por ahora quédate con que te va a ordenar los números de mayor a menor:
+
+```js
+function secondLargestNumber(numbers) {
+
+    numbers.sort( function(a, b){
+        return b-a
+    } );
+
+    return numbers[1];
+  
+}
+
+let nums = [8, 4, 6, 10, 9, 11, 20];
+console.log(secondLargestNumber(nums))
+```
+
+
+
+- [Array.prototype.sort() - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
 
 ## Introducción al ejercicio en Python
 
+Para entender cómo funciona a nivel básico el lenguaje Python realizaremos un ejercicio. Vamos a recibir una cadena de texto e invertir las letras minúsculas a mayúsculas y las letras mayúsculas pasarlas a minúsculas.
+
+Para resolver este reto, usaremos una estructura de control y un condicional de la siguiente forma:
+
+  1. Recibimos la cadena de texto que transformaremos.
+  2. Recorremos cada letra de la cadena de texto con un ciclo for.
+  3. Por cada iteración preguntaremos si la letra actual es mayúscula, si esto es verdadero, entonces nuestra variable result la escribirá en minúscula.
+  4. Si la condición anterior es falsa, entonces entenderemos que la letra actual es minúscula y en result la escribiremos en mayúscula.
+  5. Al final mostraremos todas las letras concatenadas en result. Sabemos que se ha concatenado porque usamos `“+=”` que va uniendo cada letra de cada iteración hasta mostrar el resultado al finalizar todas las iteraciones.
+
+Ahora veamos esta lógica de manera gráfica:
+
+[![python.webp](https://i.postimg.cc/kMvyMLt4/python.webp)](https://postimg.cc/XXX5QHLS)
+
+Al finalizar todas las iteraciones, la variable result tendrá todas las letras concatenadas con la misma palabra y sus letras invertidas, en este caso, “Hola” se convertirá en “hOLA”.
+
+Acompáñame a la siguiente clase donde veremos este ejercicio en código del lenguaje Python.
 
 ## Programando en Python
 
+Genial, veo que la sintaxis es muy diferente a otros lenguajes de programación.
+
+```py
+def swap_text(s):
+  result = ""
+  for letter in s:
+    if letter == letter.upper():
+      result += letter.lower()
+    else:
+      result += letter.upper()
+  print(result)
+
+swap_text("hola TODOS")
+```
 
 ## Introducción al ejercicio en PHP
 
+En la siguiente clase encontrarás un ejemplo práctico en PHP en el cual pediremos recomendaciones de lugares de Colombia de acuerdo con su clima, ubicación o atractivo turístico.
+
+Para entender este reto en términos prácticos, realizaremos las siguientes acciones:
+
+1. Definimos un arreglo asociativo que tendrá una estructura `“llave” => “valor”` donde almacenaremos las condiciones climáticas de cada región definida. Por ejemplo:
+`$weather = array(“Bogotá” => “Cold”, “Montería” => “hot”, “Medellín” => “mild”);`
+2. Realizaremos el paso anterior en dos ocasiones más para definir un array de ubicación y turismo.
+3. Con una estructura `switch` recibiremos la condición y de acuerdo a este valor buscaremos en un array para obtener la respuesta que buscamos.
+4. Si preguntamos por el clima y que sea frío, buscaremos el valor `“cold”` dentro del array `$weather.`
+5. Si preguntamos por la ubicación y que sea al norte, buscaremos el valor `“north”` dentro del array `$ubication`.
+6. Si preguntamos por el turismo y que sea mar, buscaremos el valor “sea” dentro del array `$tourism`.
+
+Ahora veamos este ejercicio gráficamente:
+
+[![php.webp](https://i.postimg.cc/mkY6NSjS/php.webp)](https://postimg.cc/QKMbj1RB)
+
+Ahora veamos este ejercicio gráficamente:
 
 ## Programando en PHP
+
+En PHP se pueden hacer muuuuuchas cosas con los arrays, pero en serio, MUCHAS, en PHP puedes declarar arrays usando corchetes [] o usando la función array() que es mucho más elegante.
+
+En PHP puedes declarar los arreglos en múltiples líneas, y además puedes usar una cosa llamada “tariling commas”, que es básicamente dejar una coma al final del último valor del array, por ejemplo:
+
+```php
+$weather = array(
+    "Bogota" => "cold",
+    "Monteria" => "hot",
+    "Medellín" => "mild", // <- Este es el trailing comma
+);
+```
+Puede ser de ucha utilidad en casos específicos, y de hecho en frameworks como Laravel las vas a encontrar mucho.
+
+Por cierto, este tipo de array en PHP se llaman “arreglos asociativos”, también los conocen como “arreglos complejos” (aunque no tienen NADA de complejo) y en otros lenguajes de programación se conocen como “mapas”.
+
+Ahora, como te digo, en PHP puedes hacer demasiadoas cosas con los arreglos, te dejo la documentación completa y en español de los arreglos den PHP, vale la pena darle una leída 👀
+
+https://www.php.net/manual/es/language.types.array.php
 
 
 ## Cómo programar en Java y Lenguaje C
 
+En las clases anteriores estudiamos la sintaxis de lenguajes de programación con tipado dinámico como JavaScript, Python y PHP, lenguajes donde no es obligatorio definir explícitamente de qué tipo son nuestras variables y funciones.
+
+Java es un lenguaje de programación orientado a objetos y además es una plataforma informática sobre la cual realizamos aplicaciones de escritorio (aquellas que podemos instalar directamente en nuestro sistema operativo), cuando descargas Java también obtienes su JRE (Java Runtime Environment), que está compuesto por una máquina virtual, clases del núcleo de la plataforma Java y bibliotecas de la plataforma Java de soporte.
+
+El lenguaje de programación C es estructurado, no depende del hardware y permite un desarrollo de aplicaciones de manera rápida. Cuenta con una gran cantidad de tipos de datos, operadores y variables que puedes utilizar para llevar a cabo todas las instrucciones que necesites.
+
+Con estas características claras para cada uno de los lenguajes, podemos definir otros conceptos que se ven fuertemente marcados en estos lenguajes de programación.
+
+Significado y uso de las clases
+--
+Algo que encontrarás durante su implementación es el concepto de clases, que también aplica a otros lenguajes, pero aquí es fundamental pues será preciso “envolver” nuestro código en secciones que enmarcan todo lo que se está llevando a ejecución y compartan una lógica de negocio orientada a algo en común. Por ejemplo:
+
+```java
+class NombreDeLaClase{
+    //contenido con métodos
+}
+```
+
+Funciones y métodos
+--
+Otro concepto que encontrarás serán los métodos que suelen confundirse y tratarse igual a las funciones, sin embargo cabe aclarar que si bien ambos se estructuran y forman igual, están definidos en contextos diferentes: las funciones las puedes definir fuera de las clases de una manera más “libre” pero los métodos siempre van dentro de una clase y hacen parte de ella de manera estricta.
+
+Alcance de los métodos y sus diferencias
+--
+También verás un prefijo interesante durante la definición de una función que puede ser: `public`, `private`, `protected`.
+
+Cuando lo encuentres sabrás que hace referencia a la visibilidad que ese método tendrá dentro y fuera de su clase y además el alcance de uso que pueda llegar a tener.
+
+Esto significa que si defines un `método público`, podrá ser llamado y accedido desde otras clases que lo requieran, pero si es privado, solo podrá implementarse dentro de la misma clase donde ha sido definido y no será visible ni accesible desde afuera.
+
+Adicionalmente, la estructura de un método en Java incluye el tipo de dato que va a devolver el método que se está definiendo, por lo tanto, la estructura completa sería la siguiente:
+
+```java
+[visibilidad del método] tipoQueDevuelve nombreDelMetodo([parámetros]){
+    // Contenido del método
+}
+```
+
+> ✨ Java y C son lenguajes de programación tipados, requieren que definamos el tipo de dato de las variables de manera estricta.
 
 ## Introducción al ejercicio en Java
+
+El siguiente ejercicio recibirá una cadena de texto string y a partir de la posición de cada letra sacaremos un substring o texto que está intrínseco en la cadena principal.
+
+Por ejemplo: “lasfloresazules”, sacaremos sólo el texto “flores”.
+
+Para llevar a cabo este ejercicio realizaremos los siguientes pasos:
+
+  1. Recibir el texto en string.
+  2. Indicar posición de la letra con la cual empieza nuestro subtexto, en nuestro caso “f”.
+  3. Indicar posición de la letra con la cual termina nuestro subtexto, en nuestro caso “s”.
+  4. Mostrar el subtexto.
+
+[![java.jpg](https://i.postimg.cc/1Xg74MG3/java.jpg)](https://postimg.cc/wRpQGX4C)
+
+Para sacar el subtexto “flores”, seleccionaremos la posición inicial 3 donde está ubicada la letra f y la posición final 8 donde está ubicada la letra s, hemos delimitado este rango de posiciones que contiene las letras de la palabra que buscamos.
 
 
 ## Programando en Java
