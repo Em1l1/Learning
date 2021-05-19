@@ -90,20 +90,45 @@
   - [Resolviendo acertijos](#resolviendo-acertijos)
 - [5. Traduce tus algoritmos a lenguajes de programación](#5-traduce-tus-algoritmos-a-lenguajes-de-programación)
   - [Diferencias entre lenguajes de programación](#diferencias-entre-lenguajes-de-programación)
+  - [🐘 PHP](#-php)
+  - [♨ JavaScript](#-javascript)
+  - [Ejemplo:](#ejemplo)
   - [Cómo escribir código en cualquier lenguaje de programación](#cómo-escribir-código-en-cualquier-lenguaje-de-programación)
+  - [1. Descarga e instala tu lenguaje de programación](#1-descarga-e-instala-tu-lenguaje-de-programación)
+  - [2. Escribe tus algoritmos con un editor de código](#2-escribe-tus-algoritmos-con-un-editor-de-código)
+  - [Vamos a usar `REPL.IT` (temporalmente)](#vamos-a-usar-replit-temporalmente)
   - [Cómo programar en JavaScript, Python y PHP](#cómo-programar-en-javascript-python-y-php)
+  - [Variables](#variables-1)
+  - [Funciones](#funciones)
+  - [Estructuras de control](#estructuras-de-control)
+  - [El proceso de debugging](#el-proceso-de-debugging)
+  - [Métodos de arrays](#métodos-de-arrays)
   - [Introducción al ejercicio en JavaScript](#introducción-al-ejercicio-en-javascript)
+  - [Comprendamos el ejercicio](#comprendamos-el-ejercicio)
+  - [Paso a paso para resolver el ejercicio](#paso-a-paso-para-resolver-el-ejercicio)
+  - [Ejercicio graficado](#ejercicio-graficado)
+  - [Otras soluciones](#otras-soluciones)
+  - [Implementación en JavaScript](#implementación-en-javascript)
   - [Programando en JavaScript](#programando-en-javascript)
   - [Introducción al ejercicio en Python](#introducción-al-ejercicio-en-python)
   - [Programando en Python](#programando-en-python)
   - [Introducción al ejercicio en PHP](#introducción-al-ejercicio-en-php)
   - [Programando en PHP](#programando-en-php)
   - [Cómo programar en Java y Lenguaje C](#cómo-programar-en-java-y-lenguaje-c)
+  - [Significado y uso de las clases](#significado-y-uso-de-las-clases)
+  - [Funciones y métodos](#funciones-y-métodos)
+  - [Alcance de los métodos y sus diferencias](#alcance-de-los-métodos-y-sus-diferencias)
   - [Introducción al ejercicio en Java](#introducción-al-ejercicio-en-java)
   - [Programando en Java](#programando-en-java)
+  - [Funciones dentro de clases](#funciones-dentro-de-clases)
   - [Introducción al ejercicio en C](#introducción-al-ejercicio-en-c)
   - [Programando en Lenguaje C](#programando-en-lenguaje-c)
   - [Traduce diagramas de flujo a código en lenguajes de programación](#traduce-diagramas-de-flujo-a-código-en-lenguajes-de-programación)
+  - [Encender una vela](#encender-una-vela)
+  - [Cuenta regresiva](#cuenta-regresiva)
+  - [Entrar a una tienda](#entrar-a-una-tienda)
+  - [Realizar la compra de zapatos](#realizar-la-compra-de-zapatos)
+  - [Validar si una persona es mayor de edad](#validar-si-una-persona-es-mayor-de-edad)
 - [6. Conclusiones](#6-conclusiones)
   - [Próximos pasos para aprender programación](#próximos-pasos-para-aprender-programación)
 
@@ -1602,15 +1627,185 @@ Para sacar el subtexto “flores”, seleccionaremos la posición inicial 3 dond
 
 ## Programando en Java
 
+Java el lenguaje de programación inicial de varios programadores y desarrolladores.
+
+```java
+public class Main {
+	public static void showSubString(String text, int start, int end){
+    	System.out.println(text.substring(start, end));
+    }
+
+  public static void main(String[] args) {
+    String text = "Lasfloresazules";
+    showSubString(text, 3, 7);
+  }
+}
+```
+
+Funciones dentro de clases
+--
+En la jerga de la programación orientada a objetos, las funciones dentro de las clases se denominan funciones-miembro o métodos, y las variables dentro de clases, variables-miembro o propiedades. El sentido es el mismo que en la programación tradicional (la nomenclatura es más una cuestión de gustos), si bien referirnos a “propiedades” y “métodos” supone estar utilizando la programación orientada a objetos y que nos referimos a miembros de una clase. En C++ esta aclaración puede ser importante, porque es un lenguaje que podríamos llamar “híbrido”; en ciertas partes puede utilizarse con técnicas de programación tradicional, y en otras con técnicas de POO.
 
 ## Introducción al ejercicio en C
 
+Para el próximo ejercicio crearemos una función que recibe cuatro valores, los almacena en un array y lo recorre para conocer cuál es el valor mayor.
+
+Para llevar a cabo esta lógica realizaremos los siguientes pasos:
+
+  1. Crear un array con los cuatro valores recibidos por parámetro.
+  2. Definir una variable máxima con el valor inicial de la primera posición del array.
+  3. Recorrer el array valor por valor.
+  4. Preguntar si el valor de la variable máxima es menor que la posición actual del array.
+  5. Si la condición anterior es verdadera, asignaremos el valor de la posición actual del array a la variable máxima.
+
+Ahora veamos esta lógica de manera gráfica:
+
+[![c.webp](https://i.postimg.cc/hvtG7Wbx/c.webp)](https://postimg.cc/njNx6WWc)
+
+Es momento de que veamos este ejercicio funcionando en lenguaje C. Acompáñame a la siguiente clase.
 
 ## Programando en Lenguaje C
 
+C es el lenguaje de programación en el cual se inspiraron otros.
+
+```c
+#include <stdio.h>
+
+int max_of_four(int num1, int num2, int num3, int num4)
+{
+  int array[4] = {num1, num2, num3, num4};
+  int max = array[0];
+  for (int i = 0; i < 4; i++) {
+	  if (max < array[i]){ 
+		  max = array[i];
+    }
+  }
+  return max;
+}
+
+int main() {
+	int num1, num2, num3, num4;
+	int res = max_of_four(10 ,29 ,83 ,46);
+	printf("%d", res);
+
+  return 0;
+}
+```
+
+La primera línea que vemos en el documento de la profesora #include `<stdio.h>` es un archivo de cabecera que incluye las funciones, constantes y macros desde la librería `stdio.h`. Quiere decir que importa una librería con funciones que pueden ser útiles mientras estémos programando.
+
+`stdio.h` significa `“standard input-output header”` (o cabecera estándar de entrada y salida). Esta librería también permite leer o enviar información de los periféricos estándar, los cuales son el monitor, el teclado, el disco duro, el mouse, etc.)
+
+En la primera línea dentro de la función main() se declaran las variables `num1`, `num2`, `num3` y `num4` de tipo int que nunca se usan.
 
 ## Traduce diagramas de flujo a código en lenguajes de programación
+
+Ya estás lista para interpretar diagramas de flujo y llevarlos a código. Te recomiendo que primero lo leas, lo interpretes e identifiques qué elementos necesitas para hacer que funcione como una aplicación. Recuerda que todos los procesos de nuestra vida diaria los podemos llevar a cabo en código y esta será tu oportunidad para demostrarlo.
+
+Usa tu creatividad y traduce a tu lenguaje de programación favorito los siguientes diagramas, puedes imprimir en consola las entradas y salidas hasta crear una interfaz para cada situación. ¡Todo es posible! Compárteme tus resultados en los comentarios.
+
+Encender una vela
+--
+En el siguiente diagrama verás el flujo del proceso para encender una vela,
+
+[![vela.jpg](https://i.postimg.cc/9XTdVsLM/vela.jpg)](https://postimg.cc/V5frWZQQ)
+
+Cuenta regresiva
+--
+
+[![cuenta.jpg](https://i.postimg.cc/R0NtYY3v/cuenta.jpg)](https://postimg.cc/mcWhz8Nn)
+
+Entrar a una tienda
+--
+
+[![tienda.jpg](https://i.postimg.cc/qRK3JCXY/tienda.jpg)](https://postimg.cc/R6MFGhYQ)
+
+Realizar la compra de zapatos
+--
+
+[![zapato.jpg](https://i.postimg.cc/fyKky73H/zapato.jpg)](https://postimg.cc/XBrnDCkF)
+
+Validar si una persona es mayor de edad
+--
+
+[![mayor-de-edad.jpg](https://i.postimg.cc/FKLR3Xdk/mayor-de-edad.jpg)](https://postimg.cc/JyRMCgQR)
+
+
+Cuenta regresiva en PHP
+
+```php
+$cantidadSegundos = 300;
+
+do {
+    echo $cantidadSegundos . "\n";
+    $cantidadSegundos -= 1;
+} while($cantidadSegundos > 0);
+```
+
+Entrar a una tienda en Python
+
+```py
+puerta_cerrada = True;
+
+if puerta_cerrada:
+    abrir_puerta();
+
+entrar_a_la_tienda();
+```
+
+Realizar la compra de zapatos en JavaScript
+
+```js
+entrarATienda()
+
+do {
+
+    eligeUnZapatoQueGuste()
+
+}while(noHayaDeNuestraTalla());
+
+comprarZapato();
+```
+
+Validar si una persona es mayor de edad en C
+
+```c
+#include<stdio.h>
+
+intmain(){
+
+    int edad = 15;
+
+    if (edad >= 18) {
+        printf("Sí es mayor de edad");
+    }
+    else {
+        printf("Aún es menor de edad");
+    }
+
+    return0;
+}
+```
+
+Validar si una persona es mayor con Java
+
+```java
+classMain {
+  publicstaticvoidmain(String[] args) {
+  
+  int edad=0;
+
+    if(edad>=18){
+      System.out.println(" Si es mayor de edad");
+      }else {
+      System.out.println("Aún es menor de edad");
+    }
+  }
+}
+```
 
 # 6. Conclusiones
 
 ## Próximos pasos para aprender programación 
+
+Excelente curso ❤️ Me encantó mucho, espero haber ayudado a alguien con mis aportes y no se desanimen! Es solo el inicio, la programación tiene mucho más que aprender, pero recuerda que únicamente la práctica constante te llevará a ser un mejor programador, ¡ánimos! 😄
