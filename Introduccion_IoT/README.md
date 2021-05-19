@@ -36,14 +36,15 @@
   - [Resumen de Materiales](#resumen-de-materiales)
   - [Planeemos el circuito y conectemos sensores](#planeemos-el-circuito-y-conectemos-sensores)
   - [Conexión de placa Wemos](#conexión-de-placa-wemos)
+  - [Conexión de placa Node](#conexión-de-placa-node)
   - [Escribamos el código](#escribamos-el-código)
   - [Subir código y asegurar comunicaciones](#subir-código-y-asegurar-comunicaciones)
+  - [Inicie Arduino y abra la ventana de Preferencias.](#inicie-arduino-y-abra-la-ventana-de-preferencias)
   - [Archivos para preparar Bot.py y Upgrade.sh](#archivos-para-preparar-botpy-y-upgradesh)
   - [Trámite de ingreso a la API de Twitter y configuración de Tweetpy](#trámite-de-ingreso-a-la-api-de-twitter-y-configuración-de-tweetpy)
   - [¡Probemos!](#probemos)
 - [4. Cierre](#4-cierre)
   - [Conclusiones](#conclusiones)
-  - [Resuelve tus dudas sobre IoT en esta Expert Session](#resuelve-tus-dudas-sobre-iot-en-esta-expert-session)
   - [Glosario de términos del curso](#glosario-de-términos-del-curso)
 
 # 1. Introducción al IoT
@@ -499,29 +500,136 @@ Conexión de placa Node
 
 ## Escribamos el código
 
-
+La librería DHT viene preparada para entregar el dato de temperatura en Grados Fahrenheit, el siguiente código lo hace:
+```c
+f = dht.readTemperature(true);
+```
+si no se envian parámetros, como lo comentó la profe se entregan datos en grados centígrados.
 
 - [Arduino - Software](https://www.arduino.cc/en/Main/Software)
 
 ## Subir código y asegurar comunicaciones
 
+Debes de ir el IDE de Arduino a tools -> Board -> Boards Manager y ahí buscar 8266, se te agregan las placas que usamos en el curso y además la librería. Si no te funciona por ese lado ve a Sketch -> Include Library -> Manege Libraries y buscar `“ESP8266WiFi.h”` y las librerías que te hagan falta.
 
+Inicie Arduino y abra la ventana de Preferencias.
+--
+Ingrese https://arduino.esp8266.com/stable/package_esp8266com_index.jsonen el campo URL de Board Manager adicional. Puede agregar varias URL, separándolas con comas.
+
+Instale en Herramientas>Administrador de librerias> ESP8266, tambien DHT libreria.
+
+Abra Boards Manager desde Herramientas> Menú de placa e instale la plataforma esp8266 generic(y no olvide seleccionar su placa WeMos desde Herramientas> Menú de placa después de la instalación).
 
 ## Archivos para preparar Bot.py y Upgrade.sh
 
+En la clase anterior encontraste un archivo llamado Code.zip que incluye una carpeta llamada /Code/, la cual contiene dos códigos importantes:
 
+1. `Bot .py:` Este es el script de nuestro bot que revisaremos en la siguiente clase, lo estudiaremos línea por línea para entender nuestras conexiones y el manejo de nuestra API, el texto que enviamos y cómo adquirimos la información de los dos esclavos.
+
+2. `Python Upgrade .sh:` En este script encontrarás lo necesario para actualizar tu versión de Python a 3.7.2, se demora un buen tiempo porque debe ejecutar todos los test de la versión
+
+Esta carpeta contiene 1 archivo adicional que contiene las sentencias de nuestras llaves a la API de Twitter. Solo necesitas copiar y pegar una vez en la creación de nuestro bot con Tweepy, esto lo verás en la clase Trámite de ingreso a la API de Twitter y configuración de Tweetpy.
 
 ## Trámite de ingreso a la API de Twitter y configuración de Tweetpy
 
+```bash
+nano .profile
+# pegamos laskeys de twiteter nos genero
+cat .profil
 
+# Instalar paquetes
+pip install tweepy
+sudo apt-get install python-requests
+
+# Comprobamos que tenemos las dependencias
+cd Code/
+ls
+python3
+sh Python\ Upgrade.sh
+nano bot.py
+```
 
 ## ¡Probemos!
 
+Comandos importantes:
+
+```bash
+chmod +x bot.py
+./bot.py
+```
+
+Línea de código agregada al inicio del `bot.py`
 
 
+```bash
+#!/usr/bin/env python3
+
+Comandos importantes:
+sudo crontab -e
+
+Líneas de código agregadas al crontab:
+SHELL = “/bin/bash”
+
+53 22 * * * source /home/pi/.profile && /usr/bin/python3 /home/pi/bot.py
+```
+
+- [crontab.guru - the cron schedule expression editor](https://crontab.guru/)
+- [marcoschwartz | aREST](https://github.com/marcoschwartz/aREST)
 
 # 4. Cierre
+
 ## Conclusiones
-## Resuelve tus dudas sobre IoT en esta Expert Session
+
+En este curso aprendiste desde qué es el internet de las cosas a nivel micro hasta una implementación de un sensor de aire que se comunica por Twitter.
+
+Te recomiendo muchísimo un libro: https://enchantedobjects.com/#/enchanted-objects/
+
+Ahora es tu turno de crear proyectos asombrosos ¡Experimenta y crea ese proyecto con IoT que siempre quisiste hacer!
+
 ## Glosario de términos del curso
+
+**`Torque:`** Momento de fuerza o capacidad de aplicar una fuerza a un punto rígido o cuerpo pesado.
+
+**`RPM:`** Revoluciones por minuto, número de vueltas por minuto que puede dar un motor.
+
+**`Voltaje:`** Cantidad de voltios que necesita un dispositivo para funcionar. Diferencia de potencial es la presión necesaria para provocar el flujo de corriente o electrones, se mide en Voltios (V).
+
+**`Corriente:`** Cantidad de electricidad, es el flujo de electrones en un material conductor, se mide en amperios (A).
+
+**`Amperaje:`** Valor de la corriente en algún dispositivo.
+
+**`Resistencia:`** Oposición al flujo eléctrico en un conductor.
+
+**`PLC:`** Programmable Logic Controller, dispositivo electrónico o computadora digital de tipo industrial para automatización de procesos en la industria.
+
+**`RTU:`** Remote Terminal Unit, dispositivo basado en microprocesador, obtiene señales independientes y envía la misma a salas de control o PLC.
+
+**`SBC:`** Single Board Computer, es una computadora completa en un solo circuito, tiene un microprocesador, RAM, I/O, conexión a pantalla, puertos USB y todo lo demás necesario para ser un computador funcional.
+
+**`I/O:`** Inputs/Outputs, también conocido como E/S Entradas/Salidas, son los puertos usados para actuar o adquirir información en boards de desarrollo de hardware.
+
+**`PCB:`** Printed Circuit Board, o Placa de circuito impreso, es una superficie diseñada y construida con caminos, pistas o buses de algún material conductor que permite comunicar dispositivos y minimizar el espacio de uso de los controladores en diseños específicos. Se pueden construir manualmente o tercerizar su desarrollo.
+
+**`SoC:`** System on a Chip, desarrollo de controladores/procesadores que integren todo lo necesario para construir y acceder a un sistema completo en su board.
+
+**`Bus de datos:`** Es un sistema que se encarga de transferir datos entre componentes digitales.
+
+**`BIOS:`** Basic Input/Output System, es un software que es capaz de localizar y reconocer todos los dispositivos necesarios y conectados a un computador para el inicio de su sistema operativo.
+
+**`WiFi:`** Tecnología de comunicación inalámbrica que permite conectar dispositivos a internet.
+
+**`Bluetooth:`** Es una especificación en redes inalámbricas que permite transmisión de voz y datos entre diferentes dispositivos, mediante la radiofrecuencia segura de 2.4 GHz.
+
+**`I2C:`** Es un puerto y protocolo de comunicación serial que define la trama de datos y conexiones físicas para transferir con dos conexiones, SDA y SCL.
+
+**`SDA:`** Serial Data, puerto del protocolo de comunicación I2C.
+
+**`SCL:`** Serial Clock, puerto del protocolo de comunicación I2C.
+
+**`SPI:`** Serial Peripheral Interface, es un estandar de comunicaciones entre circuitos integrados. Cuenta con los puertos SCLK (Clock), MOSI (Master Output, Slave Input), MISO (Master Input, Slave Output), SS/Select (Selection).
+
+**`RX:`** Receptor de señal.
+
+**`TX:`** Transmisor de señal.
+
 

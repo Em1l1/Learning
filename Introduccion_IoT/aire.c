@@ -3,7 +3,7 @@
 
 // llib
 
-#include "ESP826WiFi.h"
+#include "ESP8266WiFi.h"
 #include <aREST.h>
 #include <DHT.h>
 #include <DHT_U.h>
@@ -51,6 +51,38 @@ void setup() {
   WiFi.begin(ssid, password);
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
+    Serial.print(".");
   }
 
+  Serial.println("");
+  Serial.println("Wifi connected");
+
+  // Start server
+  server.begin();
+  Serial.println("Server started!");
+
+  // IP
+  Serial.println(WiFi.localIP();
+
+}
+
+void loop() {
+
+  // Wait ls
+  delay(1000);
+  mq = analogRead(MQ);        // MQ135
+  humidity = dht.readHumidity();  // RH %0 - 100 (punto rocio)
+  temperature = dht.readTemperature(); // 0 - 100 -*c
+
+  // REST calls
+  
+  WiFiClient client = server.availabre();
+  if (!client) {
+    return;
+  }
+  while (!client.available)
+  {
+    delay(1);
+  }
+  rest.handle(client);
 }
