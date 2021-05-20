@@ -1415,6 +1415,8 @@ El DW puede verse como una bodega donde están almacenados todos los datos neces
 
 [![Data-Warehouse.jpg](https://i.postimg.cc/7Yg2TmPm/Data-Warehouse.jpg)](https://postimg.cc/crLHp7nn)
 
+- [¿Que es un Data Warehouse?](https://www.webyempresas.com/que-es-un-data-warehouse/)
+
 ## Data mining
 
 El **Data Mining** se dedica a minar datos, a extraerlos de donde sea que estén (archivos muertos, base de datos actual, etc…) y hacer sentido de ellos para darles un uso.
@@ -1464,20 +1466,51 @@ Tiene dos casos de uso particulares:
   - Clasificación
   - Predicción
 
+> Lo mejor para definir un BigQuery: "Es un SQL con esteroides"
 
 ## Data Science
 
+Data Science es aplicar todas las técnicas de procesamiento de datos. En su manera más pura tiene que ver con gente con un background de estadísticas y ciencias duras.
 
+Data Science: Es aplicar todo lo que hemos visto, tecnicas de ETL, Data Mining, Business Intelligence. Aunque esta mas dirigida a personas con background de estadisticas, hoy en dia tambien participan personas con el perfil de Data Engineering. Al hacer Data Science estamos aplicando todo lo visto en los temas anteriores, no solo a nivel tecnico sino que desarrollamos la experiencia y conocimientos sobre las distintas tecnologias, en que parte del desarrollo de nuestro proyecto tenemos que utilizarlas, etc. Con lo cual el Data Science juega el papel de manager dentro de un equipo de profesionales de datos.
+
+La ciencia de datos es un campo interdisciplinario que involucra métodos científicos, procesos y sistemas para extraer conocimiento o un mejor entendimiento de datos en sus diferentes formas.
+
+[![data.webp](https://i.postimg.cc/JzsSq6tC/data.webp)](https://postimg.cc/hXqC4092)
+
+`Data Science`, es un científico de datos que toma todos la información de una compañía y usando todas las técnicas conocidas, lograr obtener información para la toma de decisiones.
 
 ## ¿Por qué aprender bases de datos hoy?
 
+¡Has concluido el curso! Ahora tienes potentes herramientas y posibilidades para ingresar en este apasionante campo.
 
+Llevaste diagramas a bases de datos, exploraste un poco el mundo de las bases de datos no relacionales, hicimos un proyecto en firestore y transformamos Platzi blog de una base de datos relacional en una base de datos de documentos.
+
+Dentro de las posibilidades que tienes hoy en día puedes hacer: Machine learning, ETL, Data Warehouse, Data mining, entre otros.
+
+Recuerda practicar mucho con el proyecto. Te invito a que tomes el examen y verifiques tus conocimientos. ¡Exitos!
+
+- [Bases de Datos: Qué es, Tipos y Usos | Platzi]- [https://platzi.com/base-de-datos/]
+- [Data Science | Platzi](https://platzi.com/datos/)
+- [Inteligencia Artificial y Machine Learning | Platzi](https://platzi.com/ai/)
+- [Inteligencia Artificial y Machine Learning | Platzi](https://platzi.com/ai/)
+- [Firebase para desarrollos móviles y más](https://platzi.com/firebase/)
 
 # 9. Bonus
 
 ## Bases de datos relacionales vs no relacionales
 
-
+Las bases de datos relacionales han estado entre nosotros durante un largo tiempo y han sido usadas por grandes como Google, Amazon, entre otros. Aún son usadas por bancos, aseguradoras, etc.
+Las bases de datos no relacionales surgen cuando las grandes empresas sintieron necesidad de guardar y extraer grandes cantidades de datos en muy cortos periodos de tiempo, como YouTube.
 
 ## Elegir una base de datos
 
+Has aprendido todo lo necesario para comenzar a trabajar con bases de datos relacionales y no-relacionales. Ahora es probable que al momento de iniciar con un proyecto te enfrentes a la pregunta ¿qué tipo de base de datos debo elegir?.
+
+El teorema CAP te ayuda a tomar en cuenta 3 factores clave:
+
+- Consistencia.
+- Disponibilidad.
+- Tolerancia a la partición.
+
+En este [blogpost](https://platzi.com/blog/que-es-el-teorema-cap-y-como-elegir-la-base-de-datos-para-tu-proyecto/) podrás conocer más detalles para tomar la mejor decisión.
