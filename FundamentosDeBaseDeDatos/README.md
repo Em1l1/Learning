@@ -66,10 +66,15 @@
 - [7. Manejo de modelos de datos en bases de datos no relacionales](#7-manejo-de-modelos-de-datos-en-bases-de-datos-no-relacionales)
   - [Top level collection con Firebase](#top-level-collection-con-firebase)
   - [Creando y borrando documentos en Firestore](#creando-y-borrando-documentos-en-firestore)
+  - [Tipos de datos en Firestore:](#tipos-de-datos-en-firestore)
   - [Colecciones vs subcolecciones](#colecciones-vs-subcolecciones)
   - [Recreando Platziblog](#recreando-platziblog)
   - [Construyendo Platziblog en Firestore](#construyendo-platziblog-en-firestore)
   - [Proyecto final: transformando tu proyecto en una db no relacional](#proyecto-final-transformando-tu-proyecto-en-una-db-no-relacional)
+  - [¿Cómo saber cuál escoger?](#cómo-saber-cuál-escoger)
+  - [Regla 1. Piensa en la vista de tu aplicación](#regla-1-piensa-en-la-vista-de-tu-aplicación)
+  - [Regla 2. La colección tiene vida propia](#regla-2-la-colección-tiene-vida-propia)
+  - [Regla 3. Piensa a futuro](#regla-3-piensa-a-futuro)
 - [8. Bases de datos en la vida real](#8-bases-de-datos-en-la-vida-real)
   - [Bases de datos en la vida real](#bases-de-datos-en-la-vida-real)
   - [Big Data](#big-data)
@@ -1250,44 +1255,229 @@ Estructura de una base de datos No relacional basada en documentos
 
 ## Top level collection con Firebase
 
+El modelo de bases de datos no relacionales es un poco más cercano al mundo real en su comportamiento.
 
+- Las `top level collections` son las colecciones que se tienen de inmediato o entrada en el proyecto.
+- `Firebase` es un servicio que tiene múltiples opciones y está pensado principalmente para aplicaciones móviles y web.
 
+En el menú del vídeo aparece Database, se actualizó y ahora es Cloud Firestore.
+
+[![cloud-firebase.jpg](https://i.postimg.cc/NMSxdvbq/cloud-firebase.jpg)](https://postimg.cc/JD3Jhg9P)
+
+- [Firebase](https://firebase.google.com/)
 
 ## Creando y borrando documentos en Firestore
 
+Tipos de datos en Firestore:
+--
+**`String:`** Cualquier tipo de valor alfanumérico
 
+**`Number:`** Soporta enteros y flotantes.
+
+**`Boolenan:`** Los clásicos valores True y False
+
+**`Map:`** Permite agregar un documento dentro de otro.
+
+**`Array:`** Permite agregar un conjunto de datos (soporte multi type) sin nombre e identificador.
+
+**`Null:`** Indica que no se ha definido un valor.
+
+**`Timestamp:`** Permite almacenar fechas (guarda el año, mes, día y hora).
+
+**`Geopoint:`** Guarda una localización geográfica (coordenadas latitud-longitud).
+
+**`Reference:`** Permite referencia un documento (relaciona dos documentos, no importa su colección).
 
 
 ## Colecciones vs subcolecciones
 
+La particularidad de las top level collections es que existen en el primer nivel de manera intrínseca. Las subcolecciones ya no vivirán al inicio de la base de datos.
 
+Si tienes una entidad separada que vas a referenciar desde muchos lugares es recomendado usar un top level collection. Por el otro lado si se necesita hacer algo intrínseco al documento es aconsejable usar subcolecciones.
 
+Un top level collection se utilizaria para relaciones de tipo “agregacion”. Mientras que una sub collection se utilizaria para relaciones tipo “composicion”.
+
+Por ejemplo:
+
+Tenemos Estudiantes, Cursos y Notas. Los estudiantes tiene cursos y los cursos tiene estudiantes. Si se elimina un curso los estudiantes no deben ser eliminados. Lo mismo si se elimina un estudiante los cursos no deben ser elimiandos. Esto es una relacion de agregacion. Aqui se usaria top level collection para estudiantes y cursos.
+
+Los estudiantes tienen notas y las notas pertenecen a un estudiante. Si se elimina un estudiante, tiene sentido eliminar las notas. Esto es una relacion de composicion. Aqui se usarian las subcollections. El estudiante tendría una subcollection de notas.
+
+l uso de sub-colecciones es mas recomendado para cuando requieres de acceder a esa información o esos documentos cuando accedes al documento padre y no requieres de referenciar desde otro documento padre
+
+Cuando se requiere de listar de forma independiente esa colección es mejor usar de colección de Top Level y hacer reference dentro de los documentos que la requieren
 
 ## Recreando Platziblog
 
+Firestore, es una base de datos basada en documentos, pensada en lo siguiente:
 
+Mantener el estado de tu aplicación.
+En como se verán reflejados los datos en el frontend para el usuario.
+Podemos hacer consultas sencillas en base a las top level collecttion. Ahora si queremos hacer consultas mas complejas podríamos usar big query, que es un data wharehouse.
 
+1. Tener una base de datos normalizada, es tener una solución mas general y preparada para el crecimiento de una aplicación. Por ejemplo en la app de blogs aunque para los requisitos actuales de la aplicacion este mejor tener a usuarios como una subcoleccion de posts, a futuro esto no va a ser necesariamente cierto, y sera un dolor de cabeza realizar ese cambio pues implicaria realizar migraciones de datos.
+
+2. Por lo general si una aplicación crece en algún punto va a necesitar reportes, lo cual conlleva a consultas complejas para las cuales esta mejor preparada una base de datos SQL.
+
+> `Firestore` es un producto de Firebase. `Firebase` es un servicio de Google que tiene muchos productos: Notificaciones, Almacenamiento, Analytics, y en este caso estamos usando Bases de datos.
 
 ## Construyendo Platziblog en Firestore
 
-
+Emplear colecciones de nivel cero para entidades fuertes, que mas adelante se empleen para realizar busquedas exhaustivas.
+Emplear subcolecciones para entidades débiles, que solo permitan plasmar información relacionada, pero que dicha data no sea una fuente de consulta primaria para nuestra aplicación.
 
 
 ## Proyecto final: transformando tu proyecto en una db no relacional
 
+Dentro de las bases de datos relacionales tenemos diferentes niveles de datos. En primer lugar tenemos las Bases de Datos o Esquemas como repositorios donde vivirán los datos que nos interesa guardar. Dentro del esquema existen las Tablas que provienen del concepto de entidades; y a su vez dentro de las tablas tenemos las tuplas o renglones.
 
+Cuando trabajamos con bases de datos basadas en documentos como Firestore, aún existe la figura de la base de datos, sin embargo cambiaremos las tablas en favor de las colecciones y las tuplas en lugar de los documentos.
 
+Recuerda:
+
+Tabla -> Colección
+
+Tupla -> Documento
+
+Dentro de las Colecciones existen 2 grandes tipos. Las Top level collection o colecciones de nivel superior y las subcollections o subcolecciones. Estas últimas viven únicamente dentro de un documento padre.
+
+¿Cómo saber cuál escoger?
+--
+Para determinar si tu colección debe ser top level o subcolección no hay una regla escrita en piedra y más bien tiene que ver con el caso de uso en particular y con la experiencia que hayas ganado como desarrollador.
+
+Lo cierto es que no hay una sola forma de estructurar nuestra DB basada en documentos, y por tanto no existe una respuesta correcta, sin embargo a continuación te ofrezco un par de reglas guía que puedes utilizar para transformar tu proyecto que ya trabajaste en bases de datos relacionales en un proyecto no relacional.
+
+Regla 1. Piensa en la vista de tu aplicación
+--
+La primera pista que te puedo dar es que pienses en un inicio en la manera en que los datos serán extraídos. En el caso de una aplicación, la mejor forma de pensarlo es en términos de las vistas que vas a mostrar a un momento determinado en la aplicación.
+
+Es decir, al armar la estructura en la base de datos que sea un espejo o que al menos contenga todos los datos necesarios para llenar las necesidades que tiene nuestra parte visual en la aplicación.
+
+En el caso de Platziblog por ejemplo si tienes una vista de un blog post individual, generalmente conviene mostrar además de los datos inherentes al post como el contenido, datos adicionales como las etiquetas que tiene o por ejemplo el autor (o autores si es colaborativo), en este caso tal vez convenga guardar estas dos “entidades” (autores y etiquetas) como subcolecciones de cada documento blog post.
+
+Regla 2. La colección tiene vida propia
+--
+Esta regla se refiere a que la excepción a la regla 1 es cuando tenemos un caso en que la “entidad” que tiene necesidad de vivir y modificarse constantemente de manera independiente a las otras colecciones. Por ejemplo en Platziblog podemos en el ejemplo anterior hacer una excepción a autores porque nos conviene tenerlas como top level collection en el sentido que se añadan, borren, cambien o listen los usuarios sin depender del blog post.
+
+Experimenta aplicando estas dos reglas a un proyecto que ya conozcas en una base de datos relacional y trata de convertirla en un proyecto de Firestore y comentanos los retos a los que te enfrentaste.
+
+Regla 3. Piensa a futuro
+--
+Es importante igual pensar a futuro al momento de estructurar tu base de datos relacional, porque puede que una estructura pueda solucionarte el problema actual, pero si de repente necesitas hacer modificaciones a tu base de datos y tu estructura no se adapta, la consulta de datos se hará más difícil.
+
+Un ejemplo podría ser que, por ahora guardes los usuarios por posts, pero si más a futuro quisieras mostrar una lista de usuarios que hacen posts, entonces sería más difícil con esa estructura.
+
+Y también compartir algo importante del Curso de Firebase para la Web: Siempre trata de tener la menor cantidad de subcolecciones posibles y prioriza usar las relaciones
+
+1. Excel to CSV: https://www.youtube.com/watch?v=zRB9psFdKGo
+
+2. Firebase - reading data from realtime database (en los primeros 5 minutos del video explica como crear las colecciones y documentos): https://www.youtube.com/watch?v=eCfJMseN0-8&t=250s
 
 # 8. Bases de datos en la vida real
+
 ## Bases de datos en la vida real
+
+Hoy en dia, se utilizan diversos tipos de bases de datos segun el problema que se quiera resolver:
+  - Las bases de datos relacionales, durante mucho tiempo, fueron utilizadas para resolver todo tipo de situaciones, pero al aumentar enormemente el numero de datos a manejar, se volveron `ineficientes` en muchos casos.
+  - `Firestore` o `MongoDB` nos permiten obtener los datos actuales de la aplicacion de manera simple. Sin embargo, no nos permite hacer, por ejemplo, queries muy complejos.
+  - En una misma disciplina, es probable que haya que utilizar mas de un tipo de bases de datos.
+
 ## Big Data
+
+Big Data es un concepto que nace de la necesidad de manejar grandes cantidades de datos. La tendencia comenzó con compañías como YouTube al tener la necesidad de guardar y consultar mucha información de manera rápida.
+
+Es un gran movimiento que consiste en el uso de diferentes tipos de bases de datos.
+
+- **Volumen.** Las organizaciones recopilan datos de diversas fuentes, incluyendo transacciones comerciales, medios sociales e información de sensores o que se transmite de una máquina a otra. En el pasado, almacenarlos habría sido un problema – pero nuevas tecnologías (como Hadoop) han aligerado la tarea.
+
+- **Velocidad.** Los datos se transmiten a una velocidad sin precedentes y se deben distribuir de manera oportuna. Etiquetas FID, sensores y la medición inteligente crean la necesidad de distribuir torrentes de datos casi en tiempo real.
+
+- **Variedad.** Los datos vienen en toda clase de formatos – desde datos numéricos estructurados en bases de datos tradicionales hasta documentos de texto no estructurados, correo electrónico, video, audio, datos de teletipo bursátil y transacciones financieras.
+
+Los datos de la actualidad provienen de múltiples fuentes, lo que hace difícil vincular, empatar, depurar y transformar datos entre diferentes sistemas. Sin embargo, es necesario conectar y correlacionar relaciones, jerarquías y múltiples vínculos de datos o sus datos se pueden salir de control en un segundo.
+
+Esto de la Big Data, se está volviendo mi tema favorito…
+
+[![big.jpg](https://i.postimg.cc/HL7rtnWT/big.jpg)](https://postimg.cc/wtgxq6sr)
+
 ## Data warehouse
+
+Data Warehouse trata de guardar cantidades masivas de datos para la posteridad. Allí se guarda todo lo que no está viviendo en la aplicación pero es necesario tenerlo.
+Debe servir para guardar datos por un largo periodo de tiempo y estos datos se deben poder usar para poder encontrar cuestiones interesantes para el negocio.
+
+La información ingresada al Data Warehouse debe pasar por el proceso ETL (Extract, Transform and Load). Este proceso que se explica con más detalle en otro artículo. Como se comenta más arriba la información ingresada al Data Warehouse debe ser integrada y limpia, objetivo que se logra a través del proceso ETL.
+
+[![datawrehouse.webp](https://i.postimg.cc/262W36zm/datawrehouse.webp)](https://postimg.cc/YGL0stGy)
+
+En primer lugar, DW no es un producto que pueda ser comprado en el mercado, sino más bien un concepto que debe ser construido. DW es una combinación de conceptos y tecnología que cambian significativamente la manera en que es entregada la información a la gente de negocios. El objetivo principal es satisfacer los requerimientos de información internos de la empresa para una mejor gestión, con eficiencia y facilidad de acceso.
+
+El DW puede verse como una bodega donde están almacenados todos los datos necesarios para realizar las funciones de gestión de la empresa, de manera que puedan utilizarse fácilmente según se necesiten.
+
+[![Data-Warehouse.jpg](https://i.postimg.cc/7Yg2TmPm/Data-Warehouse.jpg)](https://postimg.cc/crLHp7nn)
+
 ## Data mining
+
+El **Data Mining** se dedica a minar datos, a extraerlos de donde sea que estén (archivos muertos, base de datos actual, etc…) y hacer sentido de ellos para darles un uso.
+
+Data Mining: Se utiliza para minar datos, se basa en extraer datos de donde sea que estén, organizarlos y que puedan ser utilizables.
+El datamining (minería de datos), es el conjunto de técnicas y tecnologías que permiten explorar grandes bases de datos, de manera automática o semiautomática, con el objetivo de encontrar patrones repetitivos, tendencias o reglas que expliquen el comportamiento de los datos en un determinado contexto.
+
 ## ETL
+
+ETL son las siglas de Extract, Transform, Load (extraer, transformar y cargar). Se trata de tomar datos de archivos muertos y convertirlos en algo que sea de utilidad para el negocio.
+También ayuda a tomar los datos vivos de la aplicación, transformarlos y guardarlos en un data warehouse periódicamente.
+
+> ETL(Extract, Transform and Load)
+
+[![etl.jpg](https://i.postimg.cc/FKhgKwjy/etl.jpg)](https://postimg.cc/jDkJgg32)
+
+ETL son las siglas de Extract, Transform, Load (extraer, transformar y cargar). Se trata de tomar datos de archivos muertos y convertirlos en algo que sea de utilidad para el negocio.
+También ayuda a tomar los datos vivos de la aplicación, transformarlos y guardarlos en un data warehouse periódicamente.
+
 ## Business intelligence
+
+**Business Intelligence** es una parte muy importante de las carreras de datos ya que es el punto final del manejo de estos. Su razón de ser es tener la información lista, clara y que tenga todos los elementos para tomar decisiones en una empresa.
+Es necesario tener una buena sensibilidad por entender el negocio, sus necesidades y la información que puede llevar a tomar decisiones en el momento adecuado al momento de realizar business intelligence.
+
+En definitiva, una solución BI completa permite:
+--
+
+- Observar ¿qué está ocurriendo?
+- Comprender ¿por qué ocurre?
+- Predecir ¿qué ocurriría?
+- Colaborar ¿qué debería hacer el equipo?
+- Decidir ¿qué camino se debe seguir?
+- Fuente: https://www.sinnexus.com/business_intelligence/
+
+> Business intelligence: Tener todos los datos (actuales e históricos) de manera clara y oportuna, para que sean útiles para el momento de tomar decisiones de negocios basados en esos datos.
+
+Business Intelligence y Big Data. “La Inteligencia de Negocio (BI) es un término genérico que incluye las aplicaciones, la infraestructura y las herramientas, y las mejores prácticas que permiten el acceso y el análisis de la información para mejorar y optimizar las decisiones y rendimiento.”
+
 ## Machine Learning
+
+**Machine Learning** tiene significados que varían. Es una serie de técnicas que involucran la inteligencia artificial y la detección de patrones.
+**Machine learning** para datos tiene un gran campo de acción y es un paso más allá del business intelligence.
+Nos ayuda a hacer modelos que encuentran patrones fortuitos encontrando correlaciones inesperadas.
+
+Tiene dos casos de uso particulares:
+
+  - Clasificación
+  - Predicción
+
+
 ## Data Science
+
+
+
 ## ¿Por qué aprender bases de datos hoy?
+
+
+
 # 9. Bonus
+
 ## Bases de datos relacionales vs no relacionales
+
+
+
 ## Elegir una base de datos
+
