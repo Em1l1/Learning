@@ -1,0 +1,22 @@
+{
+  "name": "npm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Victor Juarez <mytacam78@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "json-server": "^0.15.0",
+    "moment": "^2.29.1",
+    "webpack": "^5.37.1"
+  },
+  "devDependencies": {
+    "date-fns": "^2.21.3",
+    "eslint": "^7.26.0",
+    "eslit": "^6.0.0"
+  }
+}
