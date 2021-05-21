@@ -12,6 +12,12 @@
   - [Setup del proyecto](#setup-del-proyecto)
 - [3. Creando la página principal](#3-creando-la-página-principal)
   - [Arquitectura del header en HTML](#arquitectura-del-header-en-html)
+  - [Etiquetas semánticas HTML](#etiquetas-semánticas-html)
+  - [¿Porqué es importante el buen uso de las etiquetas semánticas dentro de HTML?](#porqué-es-importante-el-buen-uso-de-las-etiquetas-semánticas-dentro-de-html)
+  - [¿Cómo hacer uso correcto de la semántica HTML?](#cómo-hacer-uso-correcto-de-la-semántica-html)
+  - [CCS](#ccs)
+  - [DevTools](#devtools)
+  - [Semántica](#semántica)
   - [Estilos en el header](#estilos-en-el-header)
   - [Agregando íconos](#agregando-íconos)
   - [Agregando imágenes al header](#agregando-imágenes-al-header)
@@ -28,9 +34,16 @@
   - [Trabajando la sección de post](#trabajando-la-sección-de-post)
   - [Grid Container](#grid-container)
 - [5. Creando página de Blog](#5-creando-página-de-blog)
+  - [Crear la pantalla de blog](#crear-la-pantalla-de-blog)
+  - [Agregando estilos a la página de blog](#agregando-estilos-a-la-página-de-blog)
 - [6. Creando página de perfil](#6-creando-página-de-perfil)
+  - [Sección de contacto](#sección-de-contacto)
+  - [Maquetando perfil HTML](#maquetando-perfil-html)
+  - [Manejando estilos en la página de perfil](#manejando-estilos-en-la-página-de-perfil)
 - [7. Blog responsivo](#7-blog-responsivo)
+  - [Media Queries](#media-queries)
 - [8. Cierre](#8-cierre)
+  - [Cierre del curso](#cierre-del-curso)
 
 ---
 
@@ -86,19 +99,80 @@ Luego crearemos dos carpetas:
 
 ## Arquitectura del header en HTML
 
+Recuerden que la semántica al momento de crear nuestro sitio web es súper importante más adelante con fines de SEO.
 
+[![ceo.gif](https://i.postimg.cc/LXdZYvcz/ceo.gif)](https://postimg.cc/gwD01ykJ)
+
+
+Etiquetas semánticas HTML
+--
+Semántica se refiere a todo aquello que tiene que ver con el significado de una palabra u expresión. En HTML, existen etiquetas con significado semántico, etiquetas que por si mismas brindan un poco de información sobre que tipo de contenido hay dentro de ellas.
+
+El correcto etiquetado del contenido, con los tags que brindan una descripción de lo que hay entre la etiqueta de apertura y la etiqueta de cierre, permite dar información rápida sobre el contenido de cada etiqueta semántica, mediante el nombre de la propia etiqueta.
+
+¿Porqué es importante el buen uso de las etiquetas semánticas dentro de HTML?
+--
+🔶Permite una mejor legibilidad del contenido de un documento HTML, tanto para el desarrollador, como para un indexador de contenido.
+🔶Al mejorar la legibilidad para los motores de búsqueda mejorará su posicionamiento.
+🔶Permite el desarrollo de contenido escalable.
+🔶Contenido ordenado y estructurado.
+
+¿Cómo hacer uso correcto de la semántica HTML?
+--
+Selecciona la etiqueta que describa el significado del contenido que deseas marcar, gracias a que existe una gran variedad de etiquetas para poder usar, esto no será muy complicado.
+
+Etiquetas no semánticas `<div>` y `<span>` No describen nada sobre su contenido.
+
+Etiquetas semánticas `<table>` y `<p>` Describen claramente su contenido.
+
+Algunas etiquetas semánticas: 
+- `p:` Define un parrafo.
+- `form:` Define un formulario.
+- `table:` Define una tabla.
+- `style:` Define estilos para el documento.
+- `header:` Define la típica sección de encabezado que normalmente contiene el logo y el menu de navegación .
+- `nav:` Elemento que contiene los lincks de navegación.
+- `section:` Define una sección en concreto del documento.
+- `footer:` Define el píe de página de un documento o seccón.
+- `main:` Define el contenido principal de un documento.
+- `aside:` Define contenido relacionado con el contenido principal, pero que no forma parte de manera relevante para él.
+
+CCS
+--
+No es un lenguaje de programación, es un lenguaje que me permite dar estilos a lo que maquetamos en HTML.
+
+Usamos selectores de etiquetas solo por la palabra, selectores de clase mediante `.nombredeClase`, y por `ID` mediante #nombreId
+
+DevTools
+--
+Es una serie de herramientas que facilitan el proceso de desarrollo. Podemos ver en tiempo real que estamos haciendo con CSS,JS, podemos ver peticiones, imágenes y demás. Incluso podemos hacer debuggin para hallar problemas al momento de renderizarse.
+
+Semántica
+--
+se refiere a todo aquello que tiene que ver con el significado de una palabra u expresión. En HTML, existen etiquetas con significado semántico, etiquetas que por si mismas brindan un poco de información sobre que tipo de contenido hay dentro de ellas. El correcto etiquetado del contenido, con los tags que brindan una descripción de lo que hay entre la etiqueta de apertura y la etiqueta de cierre, permite dar información rápida sobre el contenido de cada etiqueta semántica, mediante el nombre de la propia etiqueta.
 
 ## Estilos en el header
 
+Arquitectura BEM (Bloques, Elementos y Modificadores) y sus beneficios:
+💡Se enfoca en la reutilización de código , es decir, permite tener un mejor entendimiento sobre la estructura de nuestro proyecto.
 
+  - Permite especificidad : Puedes usar un selector único para cada regla, es decir, te permite permite hacer menos repeticiones.
+  - Hay mayor independencia : Cada bloque se puede mover a cualquier parte del documento, sin afectar el estilo.
+  - Mayor simplicidad : El entendimiento en la lectura del código y la lógica es simple, de esta forma al momento de crear las clases tienes un mejor control absoluto hacia dónde haces referencia dentro la estructura de tu proyecto.
+
+- [preprocesadores](https://platzi.com/clases/1665-preprocesadores/22297-introduccion-a-bem/)
 
 ## Agregando íconos
 
+[fontawesome](https://youtu.be/w7OSE1-8F8s)
 
+- [Free vector icons - SVG, PSD, PNG, EPS & Icon Font - Thousands of free icons](https://www.flaticon.com/)
+- [GitHub - degranda/Platzi-blog: Proyecto terminado del curso Practico de HTML y CSS, clase por clase.](https://github.com/degranda/Platzi-blog)
+- [Social media Icon Pack | Circular | 16 .SVG Icons](https://www.flaticon.com/packs/social-media-86)
 
 ## Agregando imágenes al header
 
-
+[![blogs.jpg](https://i.postimg.cc/gkh3r2HQ/blogs.jpg)](https://postimg.cc/KRZ1HFVD)
 
 ## Manejo de Grid para posicionar contenedores
 
