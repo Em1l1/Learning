@@ -32,6 +32,7 @@ matchUrlToRoute()
 ```
 
 Actualizar la URL en la barra de navegación
+
 Para esto utilizaremos el método de HTML pushState. (windows.history.pushState).
 
 ```js
@@ -90,7 +91,7 @@ window.history.go(n);
 Nos permite movernos n páginas
 --
 
-Por ejemplo, si n=-1 nos iremos una página atrás. Por otro lado, si `n=1`, iremos una página hacia adelante. Y si `n=0`, se recargará la página actual.
+Por ejemplo, si `n=-1` nos iremos una página atrás. Por otro lado, si `n=1`, iremos una página hacia adelante. Y si `n=0`, se recargará la página actual.
 
 ```js
 window.history.length;
@@ -121,9 +122,9 @@ Nos da el estado actual de nuestro historial
 
 Fuente: https://developer.mozilla.org/es/docs/DOM/Manipulando_el_historial_del_navegador
 
-El método pushState()
+El método `pushState()`
 --
-pushState()toma tres parámetros: un objeto estado, un título (el cual es normalmente ignorado) y (opcionalmente) una URL. Vamos a examinar cada uno de estos tres parametros en más detalle:
+`pushState()` toma tres parámetros: un objeto estado, un título (el cual es normalmente ignorado) y (opcionalmente) una URL. Vamos a examinar cada uno de estos tres parametros en más detalle:
 
 Object estado
 --
@@ -231,16 +232,98 @@ const routes = [
 
 ## Creación de la función loadInitialRoute
 
+- [Get URL and URL Parts in JavaScript](https://css-tricks.com/snippets/javascript/get-url-and-url-parts-in-javascript/)
+- [Spread syntax (...)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
+- [The Location Object](https://www.w3schools.com/jsref/obj_location.asp)
 
 ## Haciendo match entre la URL y una ruta
 
+```js
+_matchUrlToRoute(urlSegs){
+    const matchedRoute = this.routes.find(route => {
+        
+        const routePathSegs = route.path.split('/').slice(1)
+
+        if (routePathSegs.length !== urlSegs.length){
+            return false;
+        }
+
+        return routePathSegs
+            .every((routePathSeg, i) => routePathSeg === urlSegs[i]);
+    });
+
+    return matchedRoute;
+}
+```
 
 ## Creando la función load routes
 
+```js
+ loadRoute(...urlSegs){
+
+    const matchedRoute = this._matchUrlToRoute(urlSegs);
+
+    const url = `/${urlSegs.join('/')}`;
+    history.pushState({},'this works', url);
+
+    const routerOutElm = document.querySelectorAll('[data-router]')[0];
+    routerOutElm.innerHTML = matchedRoute.template;
+
+ }
+ ```
+
+Configuramos nuestro html
+
+```html
+<html>
+  <head>
+    <title>Cliente de nuestro SPA Router</title>
+  </head>
+
+  <body>
+    <header>
+      <ul>
+        <li><button onclick="route.laodRoute('')">home</button></li>
+        <li><button onclick="route.laodRoute('contacto')">Contacto</button></li>
+        <li><button onclick="route.laodRoute('about')">About me</button></li>
+      </ul>
+    </header>
+<!-- Agregamos data-router al div -->
+    <div data-router>
+    </div>
+  </body>
+</html>
+```
 
 ## Actualizando nuestro index.html para agregar la nueva funcionalidad de routing
 
+Agregamos a nuestro `index.html` los archivos `.js`
+
+```html
+<html>
+  <head>
+    <title>Cliente de nuestro SPA Router</title>
+  </head>
+
+  <body>
+    <header>
+      <ul>
+        <li><button onclick="router.laodRoute('')">home</button></li>
+        <li><button onclick="router.laodRoute('contact')">Contacto</button></li>
+        <li><button onclick="router.laodRoute('about')">About me</button></li>
+      </ul>
+    </header>
+
+    <div data-router></div>
+  <script src="../router.js"></script>
+  <script src="../routes.js"></script>
+  <script src="../index.js"></script>
+  </body>
+</html>
+```
+
 # 4. Cierre del curso y conclusiones
 
-
 ## Cierre del curso y conclusiones
+
+Nunca pares de Aprender!
