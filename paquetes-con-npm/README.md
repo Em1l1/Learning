@@ -211,32 +211,343 @@ Al momento que instalamos el primer paquete se nos creara una carpeta `node_modu
 node_modules
 ```
 
-
 - [package.json](https://docs.npmjs.com/cli/v7/configuring-npm/package-json)
 
 ## Actualizar y eliminar paquetes
 
+### Actualizar paquetes
+
+Revisar que paquetes disponen de nuevas versiones
+
+```bash
+npm outdate
+```
+Para ver un output más detallado
+
+```bash
+npm outdate --dd
+```
+Actualizar los paquetes que no están en la ultima versión
+
+```bash
+npm update
+```
+Actualizar un paquete especifico
+
+```bash
+npm install json-server@latest
+```
+### Eliminar paquetes
+
+Eliminar un paquete de node_modules y del archivo `package.json`
+
+```bash
+npm uninstall json-server
+```
+Desinstalar un paquete de todo node_modules pero no del archivo `package.json`
+
+```bash
+npm uninstall webpack --no-save
+```
+
+<img src="https://i.ibb.co/vHwdtNs/npmjs.jpg" alt="npmjs" border="0">
+
+- [npm - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=eg2.vscode-npm-script)
 
 ## Package lock y el uso los símbolos ^ y ~
 
+<img src="https://i.ibb.co/DwkD6gV/wheelbarrel-no-tilde-caret-white-bg.webp" alt="wheelbarrel-no-tilde-caret-white-bg" border="0">
+
+Símbolos, también tenemos:
+
+```js
+< : Versión menor a la indicada.
+<= : Versión menor o igual a la indicada.
+> : Versión mayor a la indicada.
+>= : Versión mayor o igual a la indicada.
+Los cuales se utilizan así:
+
+"dependencies": {
+    "json-server": ">0.15.1",
+    "moment": ">=2.26.0",
+    "date-fns": "<2.14.0",
+     "react": "<=16.12.0"
+}
+```
+
+`^ =` Si mantenemos el caret dentro de la configuración de nuestro package estamos garantizando que cuando realicemos una actualización o tengamos un cambio que podamos realizar, vamos a hacer actualización de los cambios menores y de los parches o bug fixes.
+Para quedarnos en una sola versión eliminamos el caret.
+
+`~ =` Establece que vamos a recibir actualizaciones o cambios solamente de los cambios que son parches o bug fixes.
+
+Nombre en español de los símbolos utilizados
+
+  - `^` Acento circunflejo
+  - `~` Virgulilla
 
 ## Ejecutar tareas
 
+Los scripts NPM: Son comandos que podemos establecer para poder ejecutar desde la consola. Estos nos van a dar una serie de salidas según sea el caso.
+
+Podemos crear la cantidad de scripts que necesitemos. Estos scripts van a poder correr de forma nativa dentro de nuestra terminal.
+
+Crear tres scripts.
+
+```js
+"dev": "webpack-dev-server --mode development",
+"build": "webpack --mode production",
+"start": "serve ./dist -s -l 8080"
+```
+
+- `dev:` Modo desarrollo.
+- `build:` Compila todo y me crea un directorio dist.
+- `start:` Toma el directorio dist y lanzo un servidor en modo producción.
+
+### Los scripts
+
+Los scripts npm son comandos que npm ejecutará cuando se le llame con los argumentos adecuados. El poder y la sensación de esto es NO instalar los paquetes npm de manera global contaminando su entorno.
+
+La diferencia entre las secuencias de comandos pre-reconocidas y personalizadas se basa en la palabra de run entre las etiquetas, las secuencias de comandos custom deberán run entre npm y el nombre de la secuencia de comandos
+
+En función de esto, podemos diferenciar y crear diferentes tareas o scripts para ejecutar con npm.
+
+Dado el siguiente ejemplo en el archivo package.json :
+
+```js
+{
+  "name": "MyApp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha --recursive ./tests/",
+    "test:watch": "npm run test -- -w",
+    "start": "nodemon --inspect ./app.js",
+    "build": "rm -rf ./dist/ && gulp build"
+  }
+}
+```
+Podemos ver diferentes tareas a ejecutar:
+
+- `npm test` bien ya que es un script pre-reconocido
+- `npm run test` bien y`a que es una forma válida de ejecutar un script npm
+npm run test:watch también funcionaría, y se llama prueba de ejecución de npm dentro de sí mismo
+- `npm run build` Antes de ejecutar gulp build elimine la carpeta dist que se encuentra en el directorio (suponiendo que esté en Linux o que se reconozca el comando `rm` )
 
 ## Solución de problemas
 
+Cuando estés trabajando con proyectos que están usando NPM te vas a topar con una gran cantidad de posibles errores que vas a tener. Estos errores pueden ser desde la configuración, pueden ser desde el sistema operativo, espacios, no haber configurado correctamente tu GitHub, no haber establecido bien los datos del package, haber dejado un typo u algún elemento extraño dentro de esta configuración así como una serie de errores que pueden generarse, que no están ligados directamente a NPM.
+
+- Para poder activar la opción de verbose (es decir que nos muestre mayor información de lo que esta haciendo el comando)
+
+```bash
+npm run [comando] --dd
+```
+
+- Cuando npm nos lance algún error es recomendable ir al archivo de logs que nos muestra
+
+<img src="https://i.ibb.co/D45phVC/nodeerror.webp" alt="nodeerror" border="0">
+
+En caso de que nuestros archivos de node_module no estén bien instalados o tengamos una versión anterior lo que podemos hacer es lo siguiente:
+
+```bash
+npm cache clear --force
+```
+Para verificar que verdaderamente se borro podemos usar
+
+```bash
+npm cache verify
+```
+
+Uno de los errores que podemos tener es tener algún valor corrupto en node_module, o tambien que la instalación no este completa de los paquetes que hemos instalado, para ello podemos eliminar el paquete con el siguiente comando:
+
+```bash
+rm -rf node_modules  #este comando eliminar la carpeta 
+```
+
+Otra alternativa para eliminar de forma segura una carpeta es instalando el siguiente paquete:
+
+```bash
+sudo npm install -g rimraf
+```
+
+Ahora podemos ejecutar el siguiente comando para eliminar node_module
+
+```bash
+rimraf node_modules 
+```
+
+Ahora podemos volver a instalar nuestro paquetes
+
+```bash
+npm install
+```
+
 
 ## Seguridad
+
+> Recomendable primero intentar solucionar con npm audit fix y lo que no se solucione lo actualizamos de a uno.
+
+Podemos revisar las vulnerabilidades de nuestro proyecto con:
+
+```bash
+npm audit
+```
+
+En caso de tener vulverabilidades, se recomienda usar el comando:
+
+```bash
+npm audit fix
+```
+
+Y en caso de que esto no lo solucione, podemos ir actualizandolos de uno en uno.
+
+---
+
+La importancia de la seguridad en nuestro poryecto es por nuestra parte. No debe de incluir ningun software malisioso.
+
+Cuando descargamos algo tenemos que analizar lo que contiene, NPM nos ayuda con una herramienta para hacer esto. Con el ya visto:
+
+```bash
+npm installl
+```
+
+Nos marcara y actualizara todos los paquetes para verificar que todo este instalado correctamente. Pero tenemos otro comando para poder auditar nuestro proyecto con:
+
+```bash
+npm audit
+```
+
+Donde podremos ver las vulnerabilidades que tendremos en nuestros paquetes.
+
+Podemos generar un documento JSON con las informacion de esta auditoria mas detallada con:
+
+```bash
+npm audit --json
+```
+
+Para poder instalar o darle un update a una dependecia que tiene un problema critico podemos utilizar
+
+```bash
+npm update Paquete --depth 2
+```
+
+Donde actualizara los paquetes para solucionar estas vulnerabilidades. Para poder solucionar TODOS LOS DETALLES sera con:
+
+```bash
+npm audit fix
+```
+
+Esto solucionara las mayoria de las vulnerabilidades.
+
+> Find and fix security vulnerabilites [Develop Fast. Stay Secure.](https://snyk.io/)
 
 # 4. Publicar un paquete
 
 ## Crear un paquete para NPM
 
+Ejecutar el comando para saber donde estoy ubicado
 
+```bash
+pwd
+mkdir random-messages
+cd random-messages/
+git init
+npm init
+```
+
+Se crea el archivo `index.js` en la carpeta src
+
+```js
+// Se declara el arreglo
+const messages = [
+    "David",
+    "Diana",
+    "Ana Maria",
+    "Isabela",
+    "Antonio",
+    "Norma"
+]
+
+//Crear función para enviar aleatoriamente  los nombres del arreglo
+const randomMsg = () => {
+    const message = messages[Math.floor(Math.random()*messages.length)]
+    console.log(message)
+}
+
+// Exportar como un módulo
+
+module.exports = { randomMsg }
+```
+
+Se debe crear una carpeta bin donde se crea el archivo `global.js` (Configuración que se necesita)
+
+```js
+#!/usr/bin/env node
+// se va ejecutar dentro de bash
+
+//Variable que llama la funcion que exportamos
+let random = require('../src/index.js')
+
+//Ejecuto la funcion
+random.randomMsg()
+```
+
+Modifico el `package.json` y coloco la configuración de bin que necesito
+
+```json
+  "license": "MIT",
+  "bin": {
+    "random-msg": "./bin/global.js"
+  },
+  "preferGlobal": true
+```
 ## Publicar un paquete en NPM
 
+**Publicar paquete**
+
+```bash
+- npm link
+```
+
+Nos crea una referencia a este paquete en la carpeta global (`.npm-global`), hacia los servidores de npm de forma natural.
+
+```bash
+- random-msg
+```
+
+ejecutamos nuestro paquete, que este se encuentra de forma global
+
+```bash
+- npm install -g /mnt/c/Users/USUARIO/Documents/Projects/random-messages
+```
+
+Nos ayudara a instalar las actualizaciones que hagamos en el proyecto hasta npm
+
+```bash
+- npm adduser
+```
+
+Hacer login en la terminal para conectarme a npm
+
+```bash
+- npm publish
+```
+
+Nos permite leer la configuración del `package.json` y con ello establecer las configuración a npmjs
+
+Solución al error “403 Forbidden - PUT http://registry.npmjs.org/random-messages - You do not have permission to publish “random-messages”. Are you logged in as the correct user?”
+
+En el archivo `package.json` cambiar el atributo `name` a un nombre original, puesto que el profe ya subió su repositorio con el nombre de `random-messages`, por lo que no podemos tener nosotros un proyecto del mismo nombre en NPM 😉
+
+- [Packages and modules | npm Documentation](https://docs.npmjs.com/packages-and-modules/)
+- [npm | build amazing things](https://www.npmjs.com/)
 
 ## Paquetes privados
 
+
+
+- [funny-commit - npm](https://www.npmjs.com/package/funny-commit)
+- [Curso de Unit Testing con Jest en React](https://platzi.com/cursos/jest/)
 
 ## Cierre del curso

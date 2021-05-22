@@ -1,0 +1,20 @@
+{
+  "name": "name-random-messages-game",
+  "version": "1.0.0",
+  "description": "I don't know to write for the fist commit",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "javascript",
+    "node",
+    "npm"
+  ],
+  "author": "Victor Juarez <mytacam78@gmail.com>",
+  "license": "MIT",
+  "bin": {
+    "random-msg": "./bin/global.js"
+  },
+  "preferGlobal": true
+}

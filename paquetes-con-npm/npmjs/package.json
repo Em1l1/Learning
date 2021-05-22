@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "date-fns": "^2.21.3",
-    "eslint": "^7.26.0",
+    "eslint": "^7.27.0",
     "eslit": "^6.0.0"
   }
 }
