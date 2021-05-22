@@ -545,7 +545,91 @@ En el archivo `package.json` cambiar el atributo `name` a un nombre original, pu
 
 ## Paquetes privados
 
+[README.md](https://gist.github.com/gndx/1b2c8482049c6d3b521dffcf33337558)
 
+
+Para poder enviar el comando:
+
+```bash
+npm version patch/minor/major
+```
+
+Deben primero dejar limpio el working directory de git, es decir deben hacer un commit de los cambios que se realizaron o revertir cambios.
+
+Este error puede ocurrir cuando se añade en el `package.json` el repositorio de git, como se modifica el archivo es necesario hacerle commit antes de enviar el version patch.
+
+---
+
+Ya quedó disponible el paquete en el repositorio para que cualquier persona lo utilice. Pero se debe cumplir un estándar.
+
+Contar con un `README.md` Preferiblemente en inglés.
+Cambiar la descripcion del `package.json` 
+
+```json
+"description": "I don't know what to write for the first commit."
+```
+
+Colocar las pruebas para la revion del paquete. 
+
+```jsco
+"test": "echo \"Error: no test specified\" && exit 1". 
+```
+
+Colocar más pruebas y se recomienda este curso https://platzi.com/cursos/jest/.
+Adicionar mi repositorio a GitHub
+
+git remote add origin https://github.com/DavidBaezDbz/Estudio/tree/master/GestionDeDependenciasYPaquetesConNPM/random-messages
+
+Podría ser necesario inicializar el repositorio
+```bash
+git init
+```
+Volver a ejecutar npm init y aparecerá en el repositorio.
+
+```json
+"repository": {
+    "type": "git",
+    "url": "git+https://github.com/DavidBaezDbz/Estudio/tree/master/GestionDeDependenciasYPaquetesConNPM/random-messages.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DavidBaezDbz/Estudio/tree/master/GestionDeDependenciasYPaquetesConNPM/random-messages/issues"
+  },
+  "homepage": "https://github.com/DavidBaezDbz/Estudio/tree/master/GestionDeDependenciasYPaquetesConNPM/random-messages#readme"
+```
+
+Se va a modificar la version https://docs.npmjs.com/cli/version
+
+Cambio mayor 
+
+```bash
+npm version major
+```
+
+Cambio menor 
+
+```bash
+npm version minor
+```
+
+Parche a nuestro paquete 
+
+```bash
+npm version patch
+```
+
+Como nuestro cambio es solo un parche en el paquete se ejecuta 
+
+```bash
+npm version patch
+```
+
+Se debe volver a publicar el paquete 
+
+```bash
+npm publish
+```
+
+Acuérdense que hay un repositorio para empresas en NPM y poder colaborar remotamente. Hay que revisar por qué ya NPM es parte de GitHub.
 
 - [funny-commit - npm](https://www.npmjs.com/package/funny-commit)
 - [Curso de Unit Testing con Jest en React](https://platzi.com/cursos/jest/)

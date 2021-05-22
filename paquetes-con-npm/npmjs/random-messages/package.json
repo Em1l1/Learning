@@ -1,6 +1,6 @@
 {
   "name": "name-random-messages-game",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "I don't know to write for the fist commit",
   "main": "src/index.js",
   "scripts": {
@@ -14,7 +14,15 @@
   "author": "Victor Juarez <mytacam78@gmail.com>",
   "license": "MIT",
   "bin": {
-    "random-msg": "./bin/global.js"
+    "random-msg": "bin/global.js"
   },
-  "preferGlobal": true
+  "preferGlobal": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/V-Juarez/Learning.git#Backend-JS"
+  },
+  "bugs": {
+    "url": "https://github.com/V-Juarez/Learning/issues"
+  },
+  "homepage": "https://github.com/V-Juarez/Learning/tree/Backend-JS#readme"
 }
