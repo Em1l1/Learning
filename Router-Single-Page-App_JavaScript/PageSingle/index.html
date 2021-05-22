@@ -6,14 +6,15 @@
   <body>
     <header>
       <ul>
-        <li><button>home</button></li>
-        <li><button>Contacto</button></li>
-        <li><button>About me</button></li>
+        <li><button onclick="router.laodRoute('')">home</button></li>
+        <li><button onclick="router.laodRoute('contact')">Contacto</button></li>
+        <li><button onclick="router.laodRoute('about')">About me</button></li>
       </ul>
     </header>
 
-    <div>
-      <h1>Hola Estudiante estas en el home</h1>
-    </div>
+    <div data-router></div>
+  <script src="../router.js"></script>
+  <script src="../routes.js"></script>
+  <script src="../index.js"></script>
   </body>
 </html>
