@@ -176,15 +176,26 @@ Arquitectura BEM (Bloques, Elementos y Modificadores) y sus beneficios:
 
 ## Manejo de Grid para posicionar contenedores
 
-
+[![blogs.jpg](https://i.postimg.cc/gkh3r2HQ/blogs.jpg)](https://postimg.cc/KRZ1HFVD)
 
 ## Manejo de imágenes de Background
 
+``` CSS
+.home-main {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  height: 100%;
+  background-image: url('../assets/img/Cover.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+```
 
 
 ## Agregando fuentes
 
-
+- [FontsGoogleq](https://fonts.google.com/)
 
 ## Terminando el Home
 
