@@ -24,6 +24,11 @@
   - [Declaración de variables](#declaración-de-variables)
   - [Declaración avanzada de variables](#declaración-avanzada-de-variables)
   - [Declaración de constantes](#declaración-de-constantes)
+      - [Existen diferentes tipos de constantes:](#existen-diferentes-tipos-de-constantes)
+      - [constantes literales](#constantes-literales)
+      - [Constantes definidas](#constantes-definidas)
+      - [constantes enumeradas](#constantes-enumeradas)
+      - [constantes declaradas](#constantes-declaradas)
   - [Preprocessor directives: Define](#preprocessor-directives-define)
 - [5. Conclusiones](#5-conclusiones)
   - [Conclusiones](#conclusiones)
@@ -202,14 +207,131 @@ Al Void también se la conoce como palabra reservada de no atribución, la cuál
 
 ## Tipo de dato char
 
+**char:** nos permite almacenar un caracter, que internamente está constituido como un rango de valores (como los números enteros) con tamaño de 1 byte.
+char -128 a 127
+unsigned char 0 a 255
 
+- [C - string](https://www.tutorialspoint.com/cprogramming/c_strings.htm)
 
 
 # 4. Variables en el lenguaje C
+
 ## Declaración de variables
+
+Los placeholders (%d) o marcadores de posición son etiquetas que le indican al compilador, lo que debe imprimir en el lugar donde se encuentra la etiqueta
+
+Existen varios placeholders que podemos usar en C, para imprimir variables de diferentes tipos, incluso en un formato particular (Ej. imprimir un dato float con una cantidad definida de decimales). Comparto una tabla que contiene los placeholders más importantes. 
+
+[![placeholders.jpg](https://i.postimg.cc/9M7MQtSd/placeholders.jpg)](https://postimg.cc/xJ9YsH98)
+
+[![funciones-printf.jpg](https://i.postimg.cc/DZ1KJCcc/funciones-printf.jpg)](https://postimg.cc/TL2sBJFy)
+
 ## Declaración avanzada de variables
+
+Una variable es un espacio de memoria reservado (en RAM), cuyo tamaño depende del tipo de dato que se quiere almacenar. A dicho espacio reservado podemos asignarle un nombre, para referirnos mucho más fácil a la dirección de memoria donde se encuentra, o al valor que almacena. Los datos contenidos en una variable, al estar cargados en la memoria RAM, desaparecerán una vez el computador se apague.
+
+Debido a que C es un lenguaje fuertemente tipado, es necesario declarar el tipo de datos que va a contener una variable desde el momento de la declaración. La sintaxis (forma correcta de escribir en un lenguaje) para declarar una variable en C es la siguiente
+
+```c
+char letra;
+```
+
+donde char representa el tipo de datos (caracter), letra es el nombre que le asignamos a la variable, y el ; representa el final de la instrucción. En este ejemplo, hemos reservado 1 byte para almacenar nuestros datos, sin embargo, no se le ha asignado ningún valor aún. Si quisiéramos declarar una variable e inmediatamente guardar un dato en ella podríamos hacerlo usando la sintaxis:
+
+```c
+char letra='a';
+```
+
+a será el valor que almacena la variable, y se encuentra entre comillas sencillas para indicar que es un caracter.
+
+Finalmente cabe aclarar que podemos asignar cualquier nombre a una variable, teniendo en cuenta estas restricciones:
+
+No debe empezar por un número
+No debe ser igual a una palabra reservada del sistema, es decir, palabras definidas previamente por el lenguaje para ejecutar acciones especiales
+Deben ser significativos, es decir, que describan claramente lo que están almacenando. Ej. Para almacenar la cantidad de estudiantes de un curso, podriamos llamar a la variable alumnos
+
+No hay diferencia en si. Solo usas `float` o `double` para declarar tus variables decimales.
+  - `float` admite hasta 6 decimales.
+  - `double` admite hasta 14 decimales.
+
+> Una variable es el nombre que le damos a un espacio en memoria para poder almacenar información de un tipo especifico y esto va a determinar el tamaño y estructura del espacio que estamos reservando en memoria.
+
+- [Desbordamiento de búfer en C](https://parzibyte.me/blog/2018/11/18/desbordamiento-de-bufer-en-c/)
+
 ## Declaración de constantes
+
+Concepto de constante es bastante explícito para nosotros los humanos, en la clase no queda muy claro como C interpreta una constante
+
+Como su nombre lo indica, una constante es un valor que no va a cambiar durante toda la ejecución del programa. Al igual que una variable, una constante reserva una cantidad de memoria (que dependen del tipo de dato que almacena), y le asigna un valor, el cual será considerado en adelante como una variable de sólo lectura. Es decir, solo podremos acceder a esa posición de memoria a recuperar el valor que contiene , pero no tenemos la posibilidad de modificar dicho valor
+
+De hecho, si intentamos reasignar un valor definido previamente en una constante, el compilador nos arrojará un error.
+
+Si ingresas %c te imprime el valor en cáracter del código ASCII de tu número 😃
+
+```c
+#include <stdio.h>
+
+const char letra = 77;
+
+int main()
+{
+  printf("Hola, %d tiene un valor de %c en codigo ASCII", letra);
+}
+
+>>> Hola, 77 tiene un valor de p en codigo ASCII
+```
+
+#### Existen diferentes tipos de constantes:
+
+#### constantes literales
+
+**Ejemplo de constantes literales enteras**
+
+123
+1024L // entero long
+4352U // entero unsigned
+0xFF3A // hexadecimal
+
+**Ejemplos de constantes literales reales**
+
+82.347
+2.5E4
+5.432E-3
+
+**Ejemplos de constantes literales caracter**
+
+'A'
+'b'
+'c'
+
+**Ejemplos de constantes literales de cadena**
+
+"Esta es una cadena"
+
+#### Constantes definidas
+
+```c
+define PI 3.141516
+define MAX 48
+```
+#### constantes enumeradas
+
+```c
+enum Color favorit_color { Red, Orage, Yellow, Green, Blue, Purple}
+```
+
+#### constantes declaradas
+
+```c
+const int MONTH = 12;
+const char CAR = '@';
+const char STRING[] = "Programming in C" 
+```
+
 ## Preprocessor directives: Define
+
+
+
 
 # 5. Conclusiones
 ## Conclusiones
