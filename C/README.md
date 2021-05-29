@@ -331,7 +331,47 @@ const char STRING[] = "Programming in C"
 ## Preprocessor directives: Define
 
 
+Una directiva de preprocesador es una instrucción que recibe el compilador y le indica que hay ciertas acciones a realizar antes de iniciar a compilar el programa. Se insertan al principio de cada programa, y se identifican por estar precedidas por el caracter `# (Hastag)`
 
+Una de las más conocidas es la directiva `include`, que le dice al compilador que debe incluir una librearía (código previamente escrito, con alguna funcionalidad extra que puede ser usada de manera general en muchos programas) y hacerla parte del código actual.
+
+Otras directivas de prerpocesador son `#ifdef`, `#ifndef`, `#else`, `#elif` y `#endif` las cuales sirven como condiciones para evitar errores, al definir varias veces las mismas variables.
+
+También se puede usar define para reemplazar nombres de funciones.
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+#define PIZZACOST 1.5
+#define p printf
+
+const char NEWLINE = '\n';
+
+int main (int argc, const char* argv[])
+{
+    float costPizza;
+    float numberOfSlices = 3;
+
+    costPizza = PIZZACOST * numberOfSlices;
+
+    p("%.2f", costPizza);
+    p("%c", NEWLINE);
+
+    return 0;
+}
+```
+
+> Directivas. Una instrucción que recibe el compilador y le 
+indica que hay ciertas acciones a realizar antes de iniciar a compilar el programa. 
+
+Poner nada más “n” decimales poner:
+
+Entre el signo % y el tipo de variable se pone un punto y el número de decimales que quieres por ejemplo: `%.2f`
+Con eso si el valor era `4.5000000` ahora solo mostrará `4.50`
 
 # 5. Conclusiones
+
 ## Conclusiones
+
+Nunca pared de Aprender!
