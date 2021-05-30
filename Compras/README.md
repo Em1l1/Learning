@@ -212,26 +212,208 @@ Ripe
 
 ## What are quantifiers for?
 
+**Countable nouns:** Can be counted and for these nouns we use many, for 
+
+**example:**
+
+How many apples are there? One, two, three, four, …, twenty apples.
+**Uncountable nouns:** Can’t be counted and for these nouns we use much, 
+
+**for example:**
+
+How much sugar do you want in your coffee? I want two teaspoons please
+Quantifiers: We use quantifiers to talk about uncontable nouns, for example:
+A can of tuna, a jar of juice, a loaf of bread, a pack of cigarretes, a bar chocolate, a bottle water, a carton of milk, etc.
+
+**Quantifiers**
+- How much?
+- How many?
+
+**How many bottles of beer are there?**
+There are 8 bottles of beer
+**How many brownies are on the table?**
+There are 4 brownies on the table
+
+**Uncountable Nouns**
+**How much cheese is in the pizza?**
+**How much homework do they have?**
+
+**How much money do you have?**
+
+- I have 20 dollars
+
+**How much coffee would you like?**
+
+- I would like a cup of coffee
+
+**Quantifiers**
+- A can
+- A jar
+- A loaf
+- A pack
+- A bar
+- A bottle
+- A carton
+
+1. I gave her a bottle of perfume for Chistmas
+2. There is a carton of oat milk next to the coffee pot.
+3. She received a box of donuts for her birthday
+4. We need a dozen eggs to bake the cake
+5. Tom has prepared half a dozen muffins
+6. Will a kilo of potatoes be enough?
+
+[![quantifiers.jpg](https://i.postimg.cc/Hk1T1qhH/quantifiers.jpg)](https://postimg.cc/7f9FgW4Q)
 
 ## Practice: What are quantifiers for?
 
+Complete the sentences using the correct quantifiers. Share your answers in a comment so we can check your work!
 
+[![egss.jpg](https://i.postimg.cc/RZVF65vm/egss.jpg)](https://postimg.cc/rK3c3HdZ)
+
+1. We have _________________ eggs.
+a dozen
+half a dozen
+
+[![soda.jpg](https://i.postimg.cc/NG6fdfMY/soda.jpg)](https://postimg.cc/mhrsD4C6)
+
+2. The soda is in _________________.
+a can
+a bottle
+
+[![tea.jpg](https://i.postimg.cc/4N4Zw6qb/tea.jpg)](https://postimg.cc/xqZW1z0c)
+
+3. She is drinking _______________ of tea.
+a cup
+a carton
+
+[![bread.jpg](https://i.postimg.cc/N0mWQFZj/bread.jpg)](https://postimg.cc/rdyhJV8B)
+
+4. The ____________ of bread is on the table.
+pack
+loaf
+
+[![milk.jpg](https://i.postimg.cc/4ymPNFnQ/milk.jpg)](https://postimg.cc/JHCZpxNs)
+
+5. The ___________ of milk is on the table.
+bar
+jar
+
+**Answers**...
+
+1.  We have half a dozen eggs
+2.  The soda is in a bottle
+3.  She is drinking a cup of tea
+4.  The loaf of bread is on the table
+5.  The jar of milk is on the table
 
 ## How much does it cost?
 
+In English, we divide prices at the decimal point
+- $6.00 =Six dollars
+- $6.50= six dollars and fifty cents
 
+- $4.80 They cost four dollars and eighty cents per kilo
+- 1.50 They cost one euro and fifty cents each
+- Pizza + pasta + salad = 21.35 twenty one pounds and thirty five cents
+
+It cost forty-two dollars and thirty-seven cents
+
+**Shopping list**
+
+$2.00 … 5 apples (countable)
+$2.50 … 500gr. Cheese (uncountable)
+$4.99 … A loaf of bread (quantifier)
+$12.55 … 800gr. Chicken (uncountable)
+$10.99 … 1 bag shrimp (quantifiers)
+$5.35 … A pack of sausages (quantifiers)
+$1.00 … Frozen carrots (???)
+$2.99 … Half of dozen eggs (quantifiers)
+
+***
+
+=
+$42.37 … Total cost is forty-two dollars and thirty-seven cents
 
 ## Practice: How much does it cost?
 
+Create your own shopping list using supermarket vocabulary, quantifiers and prices! Include the total cost of all the items in your shopping list at the end. Don’t forget to share it as a comment, so we can check your work.
 
+[![list.jpg](https://i.postimg.cc/gjqnyWMK/list.jpg)](https://postimg.cc/K3jGFdhK)
+
+What do I need form the supermarket?
+
+**Produce**
+A kilo of potatoes  $2.00
+A kilo of guava     $3.50
+A pound of tomatoes $2.75
+
+**Dairy Products**
+One yogurt          $1.50
+A carton of milk    $4.25
+
+**Snacks**
+A pack of crackers  $3.05  
+
+**Canned products**
+Two cans of sardines  $5.00 x2
+A can of beans        $4.50
+
+Total:         $31.55
+
+[![list1.jpg](https://i.postimg.cc/Pf24knfD/list1.jpg)](https://postimg.cc/vDx9WjV8)
 
 ## Buying at the supermarket
 
+**Useful questions**
 
+- Where are the **shopping carts**?
+- Where can I find (**any specific item that you need**)?
+- Do you have any (**item that you are not sure if you can find in the supermarket**)?
+- Can you give me a hand? (**if you have a doubt or you need assistance**)
+- How much is this (**any product with an unknown price**)?
+- What time do you open/close?
+
+**Where can I find the tollet paper?**
+- You can find it in aisle four
+
+**How much is this jar of jam**
+- It´s $5.99
 
 ## Practice: Buying at the supermarket
 
+Congratulations on reaching the end of this module! Now, let’s practice!
 
+Listen to the dialogues between a customer and a supermarket assistant, then fill in the blanks using the questions seen in class. Share your answers in a comment so we can check your work!
+
+**Dialogue 1**
+**Customer:** Hi! Uhm, ___________________________?
+**Assistant:** Of course. How can I help you?
+**Customer:** _______________________ the pasta?
+**Assistant:** It’s in aisle 5.
+**Customer:** Oh, thank you!
+
+**Dialogue 1**
+**Customer:** Hi! Uhm, Can you give me a hand?
+**Assistant:** Of course. How can I help you?
+**Customer:** Thanks, where can I find the pasta?
+**Assistant:** It’s in aisle 5.
+**Customer:** Oh, thank you
+
+***
+
+**Dialogue 2**
+**Customer:** Excuse me, ________________________ can of beans?
+**Assistant:** It’s normally $6.50, but we have a special discount on canned products, so it will be $4.99.
+**Customer:** That’s great, t
+
+**Dialogue 2**
+**Customer:** Excuse me, how much is a can of beans?
+**Assistant:** It’s normally $6.50, but we have a special discount on canned products, so it will be $4.99.
+**Customer:** That’s great, thanks
+**Assistant:** Can I help you with anything else?
+**Customer:** Oh yes, where are the shopping cars?
+**Assistant:** They are at the entrance.
+**Customer:** Thank you.
 
 # 3. In a clothing store
 ## Get to know new words for clothes
