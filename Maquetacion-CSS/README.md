@@ -290,11 +290,25 @@ agregar un hover para mejorar el diseño: `style buttom`
 
 ## Trabajando la sección de post
 
+Otra forma de hacer esta sección es haciendo uso del display grid, ya que de esto iría el curso.
+En resumen, para lograr el mismo resultado debemos modificar un poco el html y hacer el uso de:
 
-
+```css
+display: grid;
+grid-template-columns: repeat(auto-fill, 300px);
+grid-gap: 10px;
+```
 
 ## Grid Container
 
+Mantener alineados y centrados, para un monitor grande/
+
+``` CSS
+.grid-container {
+  max-width: 980px;
+  margin: auto;
+}
+```
 
 
 # 5. Creando página de Blog
