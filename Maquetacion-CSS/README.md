@@ -195,11 +195,19 @@ Arquitectura BEM (Bloques, Elementos y Modificadores) y sus beneficios:
 
 ## Agregando fuentes
 
-- [FontsGoogleq](https://fonts.google.com/)
+- [FontsGoogle](https://fonts.google.com/)
 
 ## Terminando el Home
 
+del elemento`<button>` con el elemento `<a>`, y quise validarlos en WHATWG y en W3C , que son dos grandes herramientas para poder validar el markup de los html y seguir buenas practicas, y en ambas me mostro un ERROR : El elemento a no debe aparecer como descendiente de un elemento button.
+Con esto quisiera aclarar dos cosas: El elemento `<a>` representa un hipervinculo hacia una pagina de destino o hacia una sección dentro de la pagina agregando el atributo HREF. Mientras que `<button>` es un poco mas especifico para acciones como validar o resetear un formulario o mostrar un modal, etc.
 
+Pueden probarlo ustedes mismos! Dejo los link de los Markup Validation Service
+
+https://validator.w3.org/
+https://html5.validator.nu/
+
+Finalmente quisiera decir que siempre es bueno averiguar mas allá de los videos, tutoriales, y otros recursos en general que encuentres en internet, eso es lo que al final te hace un developer diferente al resto!
 
 # 4. Creando página de Blogs
 
@@ -209,21 +217,79 @@ Arquitectura BEM (Bloques, Elementos y Modificadores) y sus beneficios:
 
 ## Manejo de clases
 
+Metodología BEM
+Son una serie de normas que buscan tener nuestro código CSS bien organizado. Existen muchas metodologías, pero BEM es de las más populares. Cubre la necesidad de tener proyectos complejos bien estructurados para evitar confusiones o redundancia.
 
+BEM es una abreviación de las palabras “Block”, “Element” y “Modifier” (Bloque, elemento y modificador en español), esto es por la forma en la que trataremos cada elemento de nuestra página web.
+Bloque: Es un elemento que existe por si mismo, es completamente independiente. En el proyecto de este clase, el bloque bien podría ser la sección de Noticias.
+Elemento: Son las partes que componen el bloque; cuadros de texto, imagenes, títulos, botones, etc.
+Modificadores: Son las distintas versiones de un elemento; el mejor ejemplo es cuando tienes el mismo boton en varios bloques, pero con colores distintos.
+
+Frecuentemente las clases se llaman con el siguiente formato: 
+
+```html
+class="bloque__elemento--modificador"
+```
+
+siendo el modificador opcional.
+
+Las metodologías nos permite reciclar código y conocerlas también nos va a nos facilitará integrarnos a un equipo de trabajo.
+
+Puedes encontrar más información sobre [BEM](http://getbem.com/)
+**Con ayuda de las abreviaturas de Emmet**
+
+1er Section: `section>(div>h3+div>img)+(div>h2+p+a)`
+2do Section: `section>div>h3+(article.post-container>img+p*2+a)*6`
 
 ## Estilos en blogs html
 
+```css
+Grid-template-column: 2fr 1fr;
+```
 
+Y efectivamente expone en el navegador sus dos columnas. Pero en:
+
+```css
+Grid-template-rows: 2fr;
+```
+
+¿Porque la rejilla queda con 4 celdas? No debería poner dos filas en el comando `Grid-template-rows`:
+
+`grid-columns: 1,` se generan las cuatro rejillas debido al grid auto, como solamente hay dos columnas este por defecto brinca a la siguente línea generando otro `“grid-template-columns”` en la parte de abajo.
+
+Lo que se puede hacer igual es escribir `grid-row: 2` y este genera el mismo efecto de las cuatro rejillas pero creo que se entiende mejor 😄
 
 ## Agregando imagen
 
+Agregar clase a body `home-body`:
+```css
+.home-body {
+    margin: 0;
+    padding: 0;
+    position: initial;
+    font-family: 'Roboto mono', monospace;
+}
+```
 
+- [GitHub - degranda/Platzi-blog: Proyecto terminado del curso Practico de HTML y CSS, clase por clase](https://github.com/degranda/Platzi-blog)
 
 ## Estilos del botón
 
+agregar un hover para mejorar el diseño: `style buttom`
+```css
+.blogs-button:hover {
+	border: 1px solid white;
+	color: white;
+	background-color: #48CFAD;
+}
+```
 
+- Información acerca de web componentes, podemos crear nuestros propios elementos e [insertarlos dinámicamente en nuestros proyectos](https://www.webcomponents.org/)
+
+- [HTML to CSS autocompletion](https://marketplace.visualstudio.com/items?itemName=solnurkarim.html-to-css-autocompletion)
 
 ## Trabajando la sección de post
+
 
 
 
