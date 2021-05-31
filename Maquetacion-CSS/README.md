@@ -315,32 +315,168 @@ Mantener alineados y centrados, para un monitor grande/
 
 ## Crear la pantalla de blog
 
+El procedimiento iterativo que hemos hecho y que tiene como principio Degranda es:
 
+  1. identificar o maquetar mentalmente
+  2. estructurar
+  3. agregar clases
+  4. implementar estilos
+
+Una vez terminado… repetir hasta finalizar nuestro proyecto.
+Me parece una muy buena guía para comenzar una maquetación. ✅✅✅
 
 ## Agregando estilos a la página de blog
 
+> Tip: Con emmet se puede colocar lorem5 enter y te da el texto simulado con 5 palabras. y asi es mas facil colocar un parrafo con lorem20 por ejemplo.
+
+Justificar el texto
+
+``` CSS
+.blogpost-main-container article p{
+  text-align: justify;
+}
+```
 
 
 # 6. Creando página de perfil
 
 ## Sección de contacto
 
+``` CSS
+/* contacto */
+.contact-main-container {
+  width: 100%;
+  min-height: 250px;
+  background-color: #e6e9ed;
+  text-align: center;
+  padding-bottom: 50px;
+}
+.contact-main-container div {
+  display: inline-block;
+  width: 49.5%;
+  height: 100%;
+}
 
+.contact-main-container div a {
+  border-bottom: 1px solid black;
+  padding-bottom: 5px;
+}
+
+.contact-main-container .contact-left, .contact-right {
+  text-align: initial;
+  margin-top: 85px;
+}
+
+.contact-main-container img {
+  width: 100px;
+}
+```
 
 ## Maquetando perfil HTML
 
+``` HTML
+    <section class="profile-main-container">
+      <div class="grid-container">
+        <div>
+          <img src="" alt="">
+        </div>
+        <div>
+          <h2></h2>
+          <p></p>
+        </div>
+      </div>
+    </section>
+    <section class="profile-main-proyects">
+      <div class="grid-container">
+        <h3></h3>
+        <div class="proyects-main-container">
+          <article class="proyect-container">
+            <h4> </h4>
+            <p></p>
+          </article>
+        </div>
+      </div>
+    </section>
+```
 
 
 ## Manejando estilos en la página de perfil
 
+``` CSS
+* Profile */
+.profile-main-container {
+  padding: 70px 40px;
+  background-color: #e6e9ed;
+  margin-bottom: 50px;
+}
+.profile-main-container img {
+  width: 320px;
+  margin-right: 30px;
+}
+.profile-main-container .profile-container {
+  display: flex;
+}
+.profile-main-proyects {
+  padding: 0 50px 40px;
+}
+.profile-main-proyects h3 {
+  border-bottom: 1px solid #cdd2da;
+  padding: 35px;
+  text-align: center;
+}
+.proyects-main-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.proyect-container {
+  padding: 0 10px;
+}
+```
 
 
 # 7. Blog responsivo
 
 ## Media Queries
 
+``` CSS
+@media (max-width: 900px) {
+  .blogs-main-new {
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr
+  }
+
+  .blogs-news-img-container {
+    grid-row: 2;
+  }
+
+  .blogs-news-info-container {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .blogs-posts-container .post-container {
+    max-width: 45%;
+  }
+
+  .proyects-main-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr;
+  }
+
+  .profile-main-container .profile-container {
+    display: block;
+  }
+}
+@media (max-width: 600px) {
+  .blogs-posts-container .post-container {
+    max-width: 95%;
+  }
+}
+```
 
 
 # 8. Cierre
 
 ## Cierre del curso
+
+Nunca pares de Aprende!
