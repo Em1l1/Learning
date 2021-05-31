@@ -1,8 +1,8 @@
-# Diseño Web con CSS Grid y Flexbox
+<h1>Diseño Web con CSS Grid y Flexbox</h1>
 
-### Estefany Aguilar
+<h3>Estefany Aguilar</h3>
 
-# Tabla de Contenido
+<h1>Tabla de Contenido</h1>
 
 - [1. Descubre qué ha cambiado en nuestro medio](#1-Descubre-qué-ha-cambiado-en-nuestro-medio)
   - [Todo sobre el diseño de páginas web acaba de cambiar](#Todo-sobre-el-diseño-de-páginas-web-acaba-de-cambiar)
@@ -42,11 +42,11 @@
 
 ---
 
-## 1. Descubre qué ha cambiado en nuestro medio
+# 1. Descubre qué ha cambiado en nuestro medio
 
-### Todo sobre el diseño de páginas web acaba de cambiar
+## Todo sobre el diseño de páginas web acaba de cambiar
 
-## 2. Conceptos que forman parte del diseño en CSS
+# 2. Conceptos que forman parte del diseño en CSS
 
 La importancia de recordar las herramientas existentes
 Flujo normal del documento: Display block, inline e inline-block
