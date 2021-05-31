@@ -696,7 +696,7 @@ Match the shops in the box to the pictures. Discover more types of shops you can
 * Clothing store
 * Butchers
 * Bakery ✔
-* 
+
 **Eduardo:** Good morning
 **Gina:** Hello
 **Eduardo:** I would like a lot of bread, please
@@ -705,3 +705,5 @@ Match the shops in the box to the pictures. Discover more types of shops you can
 **Gina:** Here you got
 **Eduardo:** How much is it?
 **Gina:** That will be five dollars and sixteen cents
+
+Never stop learning!
