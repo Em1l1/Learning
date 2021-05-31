@@ -624,25 +624,84 @@ You’ve reached the end of this module. Congrats! Now, listen to the dialogues 
 **Customer:** Oh really? How much is the black jacket?
 **Assistant:** It’s $45.99 with the discount included.
 **Customer:** I will take it. Do you accept credit cards?
+
 # 4. At the local market
 
 ## Popular shops in the city
 
-
-
+- **Florist** = Floristería
+- **Pharmacy** = Farmacia
+- **Bakery** = Panadería
+- **Bookshop** = Librería
+  - **Library** = Biblioteca
+- **Butchers** = Carnicería
 
 ## Practice: Popular shops in the city
 
+Match the shops in the box to the pictures. Discover more types of shops you can find in a city.
 
+  - Butcher’s
+  - Hair Salon
+  - Pet shop
+  - Shoe shop
+  - Bakery
+  - Pharmacy
 
+<img src="https://i.ibb.co/59Sm6rM/1.jpg" alt="1" border="0">
+
+<img src="https://i.ibb.co/Gc7G5tJ/2.jpg" alt="2" border="0">
+
+**Answer**...
+
+<img src="https://i.ibb.co/0ZSm83L/3.jpg" alt="3" border="0">
 
 ## Words for describing shops
 
+- **Busy:** Place with a lot of movement and energy.
+- **Crowded:** Place with a lot of people, similar to busy.
+- **Second hand:** Here you can buy items that are not new but still in good quality.
+- **Fancy:** Expensive, high quality and elegant clothes.
+- **Local:** Place where you can find items like produce to support local commerce.
 
+  - **Busy** = Ocupado
+  - **Crowded** = LLeno de gente / Atestado
+  - **Second hand** = Segunda mano
+  - **Fancy** = Elegante
+  - **Local**
 
+<img src="https://i.ibb.co/KKnqFCV/words-for-describing-shop.jpg" alt="words-for-describing-shop" border="0">
 
 ## Shopping at the local market
 
+- This conversation is in a Florist, The woman wants to buy flowers to her sister’s birthdays, each docen cost $16.
+- The man wants to buy a loaf of bread, one banana moffin and 2 croissant for cr$5.60. It’s a Bakery.
 
+**Conversation #1**
 
+* Bookshop
+* Pharmacy
+* Florist ✔
 
+**Jess:** Hello how can i help you?
+**Gina:** Hi, i want to buy some flowers to my sister
+**Jess:** Are they for a special occassion?
+**Gina:** Yes, it’s her birthday
+**Jess:** We have some beautiful pink roses
+**Gina:** How much do they cost?
+**Jess:** you can buy a dozen for sixteen dollars
+**Gina:** i will take them
+
+**Conversation #2**
+
+* Clothing store
+* Butchers
+* Bakery ✔
+* 
+**Eduardo:** Good morning
+**Gina:** Hello
+**Eduardo:** I would like a lot of bread, please
+**Gina:** Sure, would you like anything else?
+**Eduardo:** Yes a banana muffin and two croissant
+**Gina:** Here you got
+**Eduardo:** How much is it?
+**Gina:** That will be five dollars and sixteen cents
