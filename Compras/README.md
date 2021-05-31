@@ -416,16 +416,233 @@ Listen to the dialogues between a customer and a supermarket assistant, then fil
 **Customer:** Thank you.
 
 # 3. In a clothing store
+
 ## Get to know new words for clothes
+
+[![1weather.jpg](https://i.postimg.cc/9QK2gtk8/1weather.jpg)](https://postimg.cc/gxV1nRm8)
+
+<img src="https://i.ibb.co/0sGJDfn/2weather.jpg" alt="2weather" border="0">
+
+<img src="https://i.ibb.co/0hTc24Y/fall.jpg" alt="fall" border="0">
+
+<img src="https://i.ibb.co/BzWXx1v/winter.jpg" alt="winter" border="0">
+
+<img src="https://i.ibb.co/61GQDJP/summer.jpg" alt="summer" border="0">
+
+<img src="https://i.ibb.co/r0R8Htf/spring.jpg" alt="spring" border="0">
+
 ## Practice: Get to know new words for clothes
+
+Learn new vocabulary! Look at the pictures and select the season that best fits that item. Share your answers in the comments, so we can check your work.
+
+<img src="https://i.ibb.co/HzcMGXd/sweater.jpg" alt="sweater" border="0">
+
+1. Sweater
+Spring
+Fall
+
+<img src="https://i.ibb.co/CWqf2X6/Swimming-trunks.jpg" alt="Swimming-trunks" border="0">
+
+2. Swimming trunks
+Summer
+Winter
+
+<img src="https://i.ibb.co/Wp0h1hW/Scarf.jpg" alt="Scarf" border="0">
+
+3. Scarf
+Winter and fall
+Spring and summer
+
+<img src="https://i.ibb.co/xfNzPpn/Tank-top.jpg" alt="Tank-top" border="0">
+
+4. Tank top
+Fall
+Summer
+
+<img src="https://i.ibb.co/7G93BZ2/Dress.jpg" alt="Dress" border="0">
+
+5. Dress
+Spring
+Winter
+
+<img src="https://i.ibb.co/5Wbgs26/Boots.jpg" alt="Boots" border="0">
+
+6. Boots
+Summer & spring
+Winter & fall
+
+**Asnwer**...
+
+1. **Sweater:** Fall
+2. **Swimming trunks:** Summer
+3. **Scarf:** Winter and fall
+4. **Tank top:** Summer
+5. **Dress:** Spring
+6. **Boots:** Winter & fall
+
 ## Adjectives for clothes
+
+- **Loose fit** = Ajuste holgado
+- **Tight** = Apretado
+- **Elegant** = Elegante
+- **Comfy/comfortable** = Cómodo
+- **Long** = Largo
+- **Short** = Corto
+
 ## Practice: Adjectives for clothes
+
+Learn new adjectives to describe clothes! Look at the picture, then complete the sentence by selecting the correct option. Share your answers in the comments so we can check your work.
+
+<img src="https://i.ibb.co/PmHfXdS/jeans.jpg" alt="jeans" border="0">
+
+1. Her jeans are ______________.
+Short
+Cool
+
+<img src="https://i.ibb.co/tCpr7NZ/skirt.jpg" alt="skirt" border="0">
+
+2. Her skirt is ________________.
+Long
+Tight
+
+<img src="https://i.ibb.co/r6Y8S2F/suit.jpg" alt="suit" border="0">
+
+3. His outfit is _________________.
+Elegant
+Loose fit
+
+<img src="https://i.ibb.co/pLdxsJJ/tshirt.jpg" alt="tshirt" border="0">
+
+4. He is wearing a __________ T shirt.
+Tight
+Colorful
+
+<img src="https://i.ibb.co/1zFh05s/sweater.jpg" alt="sweater" border="0">
+
+5. Her sweater looks ____________!
+Fancy
+Comfy
+
+**Asnwer**...
+
+1. Her jeans are **cool**.
+2. Her skirt is **long**.
+3. His outfit is **elegant**.
+4. He is wearing a **tight** T-shirt.
+5. Her sweater looks **comfy!**
+
 ## Learn new words for accessories
+
+- **Earrings** = Aretes
+- **Bracelet** = Brasalete
+- **Sunglasses** = Gafas de sol
+- **Purse** = Monedero
+- **Wallet** = Billetera o cartera
+- **Necklace** = Collar
+- **Ring** = Anillo
+- **Tie** = Corbata
+- **Wristwatch** = Reloj de pulsera
+- **Wrist** = Muñeca
+- **Suit** = Traje
+
 ## Practice: Learn new words for accessories
+
+Discover new accessories you can buy at a clothing store! Match the words in the box to the pictures. Don’t forget to share your answers in the comments so we can check your work.
+
+- Necklace
+- Headband
+- Earrings
+- Watch
+- Handbag
+- Belt
+
+<img src="https://i.ibb.co/HqrhG6m/1.jpg" alt="1" border="0">
+
+<img src="https://i.ibb.co/G7cK4t1/2.jpg" alt="2" border="0">
+
+**Answer**...
+
+  1. Handbag
+  2. Earrings
+  3. Necklace
+  4. Headband
+  5. Belt
+  6. Watch
+
 ## Buying clothes
+
+1. I´m looking for… a white t-shirt, a black pants.
+2. Do you have this in size… s (small), m (medium), l (large), or numbers for example when we are talking about shoes sizes.
+3. Where are the changing rooms?
+4. How much is it?
+5. Do you accept credit card?, Do you accept cash?
+
+[![shopping.jpg](https://i.postimg.cc/GhrBZ0M6/shopping.jpg)](https://postimg.cc/G97hyfnj)
+
 ## Practice: Buying clothes
+
+You’ve reached the end of this module. Congrats! Now, listen to the dialogues between a customer and a shop assistant, then fill in the blanks using the expressions and questions seen in class. Don’t forget to share your answers in the comments so we can check your work!
+
+**Dialogue 1**
+**Customer:** Hello!
+**Assistant:** Hi, how can I help you?
+**Customer:** Do you have this coat ________________?
+**Assistant:** Yes, here it is.
+**Customer:** Thanks! _________________________?
+**Assistant:** The changing rooms are in the back.
+**Customer:** Thank you!
+**Assistant:** You’re welcome.
+
+**Answer**...
+
+**Dialogue 1**
+**Customer:** Hello!
+**Assistant:** Hi, how can I help you?
+**Customer:** Do you have this coat in medium size?
+**Assistant:**Yes, here it is.
+**Customer:** Thanks! Where are the changing rooms?
+**Assistant:** The changing rooms are in the back.
+**Customer:** Thank you!
+**Assistant:** You’re welcome.
+
+***
+
+**Dialogue 2**
+**Assistant:** Are you looking for anything in particular?
+**Customer:** Yes, _______________________ a winter jacket.
+**Assistant:** We have a collection of winter jackets on sale!
+**Customer:** Oh really? __________________ the black jacket?
+**Assistant:** It’s $45.99 with the discount included.
+**Customer:** I will take it. __________________________?
+
+**Answer**...
+
+**Dialogue 2**
+**Assistant:** Are you looking for anything in particular?
+**Customer:** Yes, I’m looking for a winter jacket.
+**Assistant:** We have a collection of winter jackets on sale!
+**Customer:** Oh really? How much is the black jacket?
+**Assistant:** It’s $45.99 with the discount included.
+**Customer:** I will take it. Do you accept credit cards?
 # 4. At the local market
+
 ## Popular shops in the city
+
+
+
+
 ## Practice: Popular shops in the city
+
+
+
+
 ## Words for describing shops
+
+
+
+
 ## Shopping at the local market
+
+
+
+
