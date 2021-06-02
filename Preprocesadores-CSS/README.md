@@ -388,18 +388,89 @@ pug nombreArchivo.pug -o rutaSalida/archivoSalida.html -w --pretty
 
 ## Interpolación
 
+En esta clase vemos cómo anidar elementos dentro de otros en PUG y cómo trabajar con textos de múltiples lineas.
+
+> Definicion de Pug: es un motor de plantillas de NodeJS, el cual brinda la posibilidad de preprocesar código HTML de una forma más rápida y amigable. Nos otorga una sintaxis menos compleja y muy poderosa en la que se incluyen nuevas características tales como ciclos, variables, mixins, entre otros.
+
+Existe otra forma de usar una etiqueta dentro de otra etiqueta
+
+```html
+p este es un #[span ejemplo].
+```
+Así se puede usar la notación de punto para manejar las etiquetas y no repetir el | en cada una de las líneas.
+
+<img src="https://i.ibb.co/vZwfCnx/interpolacion.gif" alt="interpolacion" border="0">
 
 ## Variables
 
+Las variables no vienen de forma nativa en HTML pero con PUG podemos usarlas. En ellas almacenamos datos y los reutilizarlos en todo nuestro archivo HTML evitándonos tener que escribir lo mismo una y otra vez.
+
+sintaxis para declarar una variable en pug.
+
+```html
+-var titulo = "Subtítulo Principal"
+-var titulos = ["Título Principal", "Subtitulo 1", "Subtitulo 2", "Subtitulo 3"]
+```
+
+formas de llamar a las variables y los arreglos
+
+<img src="https://i.ibb.co/qxj9dBJ/varialbles.jpg" alt="varialbles" border="0">
+
+Cuando renderizamos las variables, tenemos que colocar un
+igual, el cual debe esta pegado al nombre de la etiqueta. Ejemplo:
+
+``` html
+h1= titulo
+
+// Otra forma
+h2 #{titulo}
+```
 
 ## Condicionales y Loops
 
+Un condicional nos permite evaluar cierta condición y bifurcar entre dos caminos dependiendo de si se cumple o no.
+
+Un loop es un fragmento de código que va a ejecutar de forma repetitiva hasta que cumpla una condición.
+
+**Loop:**
+
+```html
+ul
+  each title in titles
+    li=title
+```
+
+**Condicionales:**
+
+```html
+if user
+  a Hello #{user}
+else
+  a.boton Registry
+```
 
 ## Mixins
 
+Su finalidad es ofrecer una funcionalidad que pueda ser reutilizada en otras clases pero que no está pensada para usarse de forma autónoma. Nos permite crear bloques reusables de código que cambian su resultado dependiendo del parámetro que enviemos.
+
+Con los mixin logramos escribir menos código, produciendo un código más claro, más expresivo y sobre todo más fácil de mantener.
+
+**Declarando Mixin**
+<img src="https://i.ibb.co/9Yxgc1j/1.jpg" alt="1" border="0">
+
+**Llamando Mixin**
+<img src="https://i.ibb.co/djT8sY0/2.jpg" alt="2" border="0">
 
 ## Includes y Extends
 
+Pug funciona como un generador de plantillas, dos de sus principales características para lograrlo son Includes y Extends.
+
+Los **includes** sirven para incluir un archivo de extensión *.pug dentro de otro.
+
+Los **extends** te permiten adicionar bloques de código a una página.
+
+- [pug | Includes](https://pugjs.org/language/includes.html)
+- [pug | Template Inheritance](ttps://pugjs.org/language/inheritance.html)
 
 ## Finalizando ejercicio de Landing Page
 
