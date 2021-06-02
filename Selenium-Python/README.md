@@ -24,7 +24,9 @@
     - [3. Utilizando las nuevas versiones instaladas](#3-utilizando-las-nuevas-versiones-instaladas)
     - [4. Utiliza una versión de Python específica en un entorno virtual](#4-utiliza-una-versión-de-python-específica-en-un-entorno-virtual)
       - [Seleccionemos una versión de Python](#seleccionemos-una-versión-de-python)
+    - [Creando el entorno virtual](#creando-el-entorno-virtual)
   - [¡Hola, mundo!](#hola-mundo)
+    - [Unittest (pytest)](#unittest-pytest)
 - [3. Utilizar comandos básicos](#3-utilizar-comandos-básicos)
   - [Encontrar elementos con find_element](#encontrar-elementos-con-find_element)
   - [Preparar assertions y test suites](#preparar-assertions-y-test-suites)
@@ -366,6 +368,16 @@ Incluso ahora podemos instalar Selenium de una forma aislada con el comando `pip
 Para salir de nuestro entorno solo ejecutamos el comando `pyenv deactivate` y para activarlo de nuevo con `pyenv activate nombre_del_entorno`.
 
 ## ¡Hola, mundo!
+
+### Unittest (pytest)
+
+- **Test Fixture:** Preparaciones para antes y despues de la prueba.
+- **Test Case:** Unidad de codigo a probar.
+- **Test Suite:** Coleccion de Test Cases.
+- **Test Runner:** Orquestador de la ejecucion. 
+- **Test Report:** Resumen de resultado
+
+
 
 [ChromeDriver - WebDriver for Chrome](http://chromedriver.chromium.org/)
 
