@@ -474,16 +474,139 @@ Los **extends** te permiten adicionar bloques de código a una página.
 
 ## Finalizando ejercicio de Landing Page
 
+<img src="https://i.ibb.co/2FHJ2rW/Reto-Platzi-Game-Pug.jpg" alt="Reto-Platzi-Game-Pug" border="0">
+
 # 4. Less
 
 ## Introducción a Less
 
+Less es un preprocesador para CSS que nos permite trabajar hojas de estilo con funcionalidades de un lenguaje de programación.
+
+Si lo quieren ejecutar desde la terminal lo pueden hacer de la siguiente manera:
+
+```bash
+npm install -g less
+
+# Ejecutar  less
+lessc styles.less styles.css
+```
+
+O el navegador: Importarlo al proyecto como cdn
+
+```html
+<link rel="stylesheet/less" type="text/css" href="styles.less" />
+<script src="//cdn.jsdelivr.net/npm/less" ></script>
+```
+
+> El ampersand (&) es un selector en Less que sirve para referenciar la estructura completa hacia arriba, desde donde se utiliza. es un comodín para sustituir el elemento padre (pero no solo el elemento padre, sino el padre con todos sus padres).
+
+- [GitHub - daywalkerhn/platzi-games-less-publico](https://github.com/daywalkerhn/platzi-games-less-publico)
+
+  > Los preprocesadores son una fantastica herramienta para el desarrollo web.
+A nivel profesional, los equipos de trabajo requieren de estas herramientas, debido al ahorro en tiempo que esto implica, la reutilización del código y la modularización de los componentes.
+
+Los preprocesadores son una fantastica herramienta para el desarrollo web.
+A nivel profesional, los equipos de trabajo requieren de estas herramientas, debido al ahorro en tiempo que esto implica, la reutilización del código y la modularización de los componentes.
 
 ## Anidamiento e imports
 
+En Less el carácter “&” tiene la función de la palabra clave “this”, por lo que es posible escribir:
+
+```css
+.class1 {
+    &.class2 {}
+}
+```
+
+Por tanto, el archivo compilado de CSS generará un código como el siguiente:
+
+```css
+.class1.class2 {}
+```
+
+Creamos un archivo nuevo que contentra el estilo del intro, llamado `intros.less`
+
+```css
+.intro {
+    width: 1340px;
+    height: 650px;
+    padding: 10px;
+    margin: 0 auto;
+    position: relative;
+    
+    // Aca se indica que esa clase esta dentro de intro
+    /* .intro__imagen {
+        width: 1320px;
+        position: absolute;
+    } */
+    
+    // Aca el signo & indica que la primera parte tiene la misma clase  en este caso intro
+
+    &__imagen {
+        width: 1320px;
+        position: absolute;
+        img{
+            width: 100%;
+            height: 624px;
+            object-fit: cover;
+        }
+    }
+
+    &__contenido{
+        width: 50%;
+        margin: 0 auto;
+        position:absolute;
+        top:156px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        color: white;
+    }
+    &__categoria{
+        font-family: 'Oswald',sans-serif;
+        text-transform: uppercase;
+    }
+
+    &__titulo{
+        font-family: 'Oswald',sans-serif;
+        text-transform: uppercase;
+        font-size: 50px;
+    }
+
+    &__autor{
+        width: 150px;
+        margin: 0 auto;
+        position: absolute;
+        top: 400px;
+        left:0;
+        right: 0;
+        color: white;
+        img{
+            width: 60px;
+            height: 50px;
+            float: left;
+            padding-right: 10px;
+            border-radius: 10em;
+        }
+        span{
+            display: inline-block;
+        }
+    }
+}
+```
+
+Nuestro archivo `platzigames.less`
+
+```css
+@import "globales.css";
+@import "intros.css";
+```
 
 ## Variables
 
+En las variables almacenamos datos que se puede reutilizar en todas nuestras hojas de estilos. Así evitamos tener que escribir lo mismo una y otra vez cuando se realiza algún cambio, ya que sólo vamos a modificar el valor de la variable y se aplicará a todos los lugares donde sea usada.
+
+Comúnmente almacenamos en variables las guías de estilo de nuestro sitio, como pueden ser los colores y fuentes.
 
 ## Funciones
 

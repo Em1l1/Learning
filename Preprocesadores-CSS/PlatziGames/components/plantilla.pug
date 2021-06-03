@@ -1,25 +1,8 @@
-//- variables 
--var titulo = "Platzi Game"
--var titulos = ["Titulo Principal", "Subtitulo 1", "Subtitulo 2", "Subtitulo 3", "Subtitulo 4", "Subtitulo 5", "Subtitulo 6"]
--var usuario = "David"
-
-//- mixin 
-mixin caja(imagen,titulo,contenido) 
-  .caja 
-    .caja__imagen: img(src="images/"+imagen)
-    .caja_contenido 
-      h3=titulo 
-      span=contenido
-      //- a.boton Leear mas
-
+include configuraciones.pug
 doctype html
 html 
   include head.pug
   body 
-    header 
-      h1 PlatziGames 
-      if usuario 
-        a Hola #{usuario}
-      else
-        a.boton Registro 
+    include header.pug
     block contenidos 
+    include footer.pug

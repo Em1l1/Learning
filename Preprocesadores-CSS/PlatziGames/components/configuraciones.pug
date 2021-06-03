@@ -1,0 +1,19 @@
+//- variables 
+-var titulo = "Platzi Game"
+-var titulos = ["Titulo Principal", "Subtitulo 1", "Subtitulo 2", "Subtitulo 3", "Subtitulo 4", "Subtitulo 5", "Subtitulo 6"]
+-var usuario = "David"
+
+//- enlaces 
+-var enlaces = ["Acerca", "Noticias", "Contacto", "homepage"]
+
+//- mixin 
+mixin caja(imagen,titulo,contenido) 
+  .caja 
+    .caja__imagen: img(src="images/"+imagen)
+    .caja_contenido 
+      h3=titulo 
+      span=contenido
+      //- a.boton Leear mas
+
+//- Homepage
+//- mixin contenido (titulopage,contenidopage)
