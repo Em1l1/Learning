@@ -202,7 +202,7 @@ Una vez instalado ya lo podremos usar con el package.json que dejé arriba. Lo u
 
 Antes de ejecutar este vamos a implementar varios archivos. Estos serán los siguientes:
 
-```html
+```js
 {% file src="../.gitbook/assets/index.html" caption="HTML" %}
 
 {% file src="../.gitbook/assets/index.css" caption="CSS" %}
@@ -224,29 +224,26 @@ Nuestra pequeña aplicación andará en la IP que nos muestre la terminal.
 
 **¿Qué sigue?**
 ‌
-Tenemos un botón que no funciona, lo vamos a poner a funcionar con un media query. Abrimos nuestras etiquetas de script.
+Tenemos un botón que no funciona, lo vamos a poner a funcionar con un `media query.` Abrimos nuestras etiquetas de script.
 
+Tenemos un vídeo que debemos manipular, lo vamos a hacer con `querySelector(""),` a este tenemos que pasarlo un elemento, en este caso será video, es el único elemento video en nuestro `HTML`. Tambien debemos traer nuestro botón con `querySelector`.
 
-Tenemos un vídeo que debemos manipular, lo vamos a hacer con `querySelector(""),` a este tenemos que pasarlo un elemento, en este caso será video, es el único elemento video en nuestro HTML. Tambien debemos traer nuestro botón con `querySelector`.
-
-```js
+``` JS
 const  video = document.querySelector("video");
 const  button = document.querySelector("button");
-‌```
+```
 
 Cuando le demos click a nuestro botón queremos que el vídeo se reproduzca. Lo hacemos de la siguiente manera:
 
-```js
+``` JS
 button.onclick = ()=>  video.play()
-‌```
+```
 
 El `video.play()` se saca de la API que trae el navegador, todos los elementos del DOM traen un API. Para saber cuales son las opciones de esta API podemos ir a MDN a ver toda la documentación. No podemos darle play de una vez a penas se entre en la página, esto pasa por que los navegadores tienen una seguridad que no permite que esto pase, solo se puede dar play si el usuario tiene la libertad de hacerlo.
 
-‌
+Ahora nuestro código no es muy extensible, vamos a lograr esto usando prototipado. Para hacerlo extensible se pueden usar clases, pero en este caso usaremos `protitype`, usaremos el siguiente código para lograrlo.
 
-Ahora nuestro código no es muy extensible, vamos a lograr esto usando prototipado. Para hacerlo extensible se pueden usar clases, pero en este caso usaremos protitype, usaremos el siguiente código para lograrlo.
-
-```js
+``` JS
 const  video = document.querySelector("video");
 
 const  button = document.querySelector("button");
@@ -262,26 +259,22 @@ MediaPlayer.prototype.play = function() {
 const  player = new  MediaPlayer()
 
 button.onclick = () =>  player.play();
-‌```
+```
 
 Explicación:
 
 ‌
-
 Creamos una función llamada mediaPlayer que nos servirá como prototipo.
 
 A mediaPlayer le asignamos una función llamada play usando prototype. Esta función le dará inicio al video.
 
 Luego con el botón se acciona una función llamada player que es una instancia del prototipo mediaPlayer que creamos. La instancia se crea usando la palabra new.
 
-‌
-
 Hagámoslo más reutilizable
 ‌
-
 Para que nuestro código sea más reutilizable debemos hacerlo de esta manera:
 
-```js
+``` JS
 const  video = document.querySelector("video");
 const  button = document.querySelector("button");
 
@@ -295,8 +288,8 @@ MediaPlayer.prototype.play = function() {
 
 const  player = new  MediaPlayer({ el:  video });
 button.onclick = () =>  player.play();
-‌```
-
+```
+‌
 **Explicación:**
 
 A nuestra función madre o prototipo le pasamos una configuración. Esta configuración lo que va a tener es el elemento video original. Le asignamos a this.media el elemento video.
@@ -325,11 +318,7 @@ MediaPlayer.prototype.play = function() {
 };
 ```
 
-https://ia800201.us.archive.org/12/items/BigBuckBunny_328/BigBuckBunny_512kb.mp4
-https://ia800201.us.archive.org/12/items/BigBuckBunny_328/BigBuckBunny_512kb.mp4
-
-
-
+- [BigBuckBunny](https://ia800201.us.archive.org/12/items/BigBuckBunny_328/BigBuckBunny_512kb.mp4)
 
 # 2. Repaso de Conceptos Fundamentales
 
