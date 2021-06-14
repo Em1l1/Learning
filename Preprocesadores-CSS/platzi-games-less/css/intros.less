@@ -4,7 +4,8 @@
   padding: 10px;
   margin: 0 auto;
   position: relative;
-
+  background-color: @color-claro;
+  .sombra-caja;
   &__imagen {
     width: 1320px;
     position: absolute;
@@ -24,17 +25,17 @@
     left: 0;
     right: 0;
     text-align: center;
-    color: #fff;
+    color: @color-claro;
   }
 
   &__categoria {
-    font-family: 'Oswald', sans-serif;
+    font-family: @Fuente2;
     text-transform: uppercase;
+    color: fade(@color-claro, 50%);
   }
 
   &__titulo {
-    font-family: 'Oswald',
-      sans-serif;
+    font-family: @Fuente2;
     text-transform: uppercase;
     font-size: 50px;
   }
@@ -46,7 +47,7 @@
     top: 400px;
     left: 0;
     right: 0;
-    color: #fff;
+    color: @color-claro;
 
     img {
       width: 60px;
@@ -58,6 +59,9 @@
 
     span {
       display: inline-block;
+    }
+    &-titulo {
+    color: fade(@color-claro, 50%);
     }
   }
 

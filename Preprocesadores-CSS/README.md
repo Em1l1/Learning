@@ -608,10 +608,48 @@ En las variables almacenamos datos que se puede reutilizar en todas nuestras hoj
 
 Comúnmente almacenamos en variables las guías de estilo de nuestro sitio, como pueden ser los colores y fuentes.
 
+Las variables funcionan de forma similar a las constantes en los lenguajes de programación, permitiendo definir valores que podrán ser reutilizados en cualquier parte de la hoja de estilo, inclusive en otras hojas de estilo. Sintaxis:
+`@variable: valor;`
+
+```css
+<!-- [> Las variables añadidas en esta clase: <] -->
+
+@color-claro: #FFF;
+@color-primario: #333;
+@color-secundario: #8841da;
+@color-variacion: #012179;
+@Fuente1: 'Lato', sans-serif;
+@Fuente2: 'Oswald', sans-serif;
+
+/* Utilizar las variables: */
+color: @color-claro;
+font-family: @Fuente1;
+```
+
 ## Funciones
 
+La diferencia entre mixins y funciones es que las funciones por general hacen cálculos y regresan un resultado que es usado como valor de alguna propiedad.
+
+Las funciones en Less ya están prediseñadas.
+
+```css
+/* Transparencia  */
+color: fade(@color-claro, 50%);
+
+/* Fuente */
+line-height: @fuente-base + 10%;
+```
+
+- [less](https://lesscss.org/#)
+- [Functions | less](https://lesscss.org/functions/)
+- [calc() | developer mozilla](https://developer.mozilla.org/en-US/docs/Web/CSS/calc())
 
 ## Mixins
+
+Su finalidad es ofrecer una funcionalidad que pueda ser reutilizada en otras clases pero que no está pensada para usarse de forma autónoma. Nos permite crear bloques reusables de código que cambian su resultado dependiendo del parámetro que enviemos.
+
+Con los mixins logramos escribir menos código, produciendo un código más claro, más expresivo y sobre todo más fácil de mantener.
+
 
 
 ## Finalizando ejercicio de página de artículos
