@@ -448,19 +448,161 @@ La función `hasOwnProperty` sirve para verificar si una propiedad es parte del 
 
 ## Parsers y el Abstract Syntax Tree
 
+El JS Engine recibe el código fuente y lo procesa de la siguiente manera:
 
+  - El `parser` descompone y crea tokens que integran el AST.
+  - Se compila a `bytecode` y se ejecuta.
+  - Lo que se pueda se `optimiza a machine` code y se reemplaza el código base.
+
+Un `SyntaxError` es lanzado cuando el motor JavaScript encuentra partes que no forman parte de la sintaxis del lenguaje y esto lo logra gracias a que se tiene un AST generado por el parser.
+
+El parser es del 15% al 20% del proceso de ejecución por lo que hay que usar parser del código justo en el momento que lo necesitamos y no antes de saber si se va a usar o no.
+
+<img src="https://i.ibb.co/7J4ZHQP/parsers.png" alt="parsers" border="0">
+
+<img src="https://i.ibb.co/44nYYFD/Js-Parsers.jpg" alt="Js-Parsers" border="0">
+
+- [Esprima](https://esprima.org)
+- [AST explorer](https://astexplorer.net/)
 
 ## Abstract Syntax Tree en Práctica
 
+- [ESLint - Pluggable JavaScript linter](https://eslint.org/)
+- [AST explorer](https://astexplorer.net/#/gist/16fc27fc420f705455f2b42b6c804aa1/d9cc7988c2c743d7edfbb3c3b1abed866c975ee4)
 
+
+Vamos a usar el AST para crear una regla de eslint, este analizará estéticamente nuestro código a ver si hay que levantar un warning por violar la sintaxis. Muchas de estas reglas ya viene con e eslint, pero podemos agregar nuestras propias reglas. Vamos a usar la herramienta [AST | Explorer](https://astexplorer.net/#/gist/16fc27fc420f705455f2b42b6c804aa1/d9cc7988c2c743d7edfbb3c3b1abed866c975ee4) para experimentar. Usaremos la configuración por defecto, veremos en la parte superior izquierda el código que vamos a ingresar, a la derecha el tree creado, en la parte inferior izquierda las funciones de las reglas y a la derecha de eso la salida de nuestro código.
+
+[leonardomso | 33-js-concepts](https://github.com/leonardomso/33-js-concepts)‌
+
+**Test**
+‌
+
+En el link de AST Explorer ya tenemos un código escrito. Donde el la primera entrada tenemos las tareas que debe cumplir nuestro fixer.
+
+``` JS
+//JavaScript
+const pi = 3.1415;
+const half_pi = 1.57075;
+// variable constantes
+// variables que guarden un numero
+
+// El nombre de la variable tiene que estar en UPPERCASE
+```
+
+
+A la derecha tenemos el árbol completo de todas estas declaraciones y gracias a el podemos manipular, detectar errores o interpretar lo que escribamos. Luego implementamos una función que recibe la declaración de la variable y accedemos a los datos que nos ofrece el AST para lograr cumplir con los requerimientos de nuestro solucionador.
+
+``` JS
+
+export default function(context) {
+  return {
+    VariableDeclaration(node) {
+        // tipo de variable const
+          if (node.kind === "const") {
+          const declaration = node.declarations[0];
+
+          // asegurarnos que el valor es un numero
+          if (typeof declaration.init.value === "number") {
+            if (declaration.id.name !== declaration.id.name.toUpperCase()) {
+              context.report({
+                node: declaration.id,
+                message: "El nombre de la constante debe estar en mayúsculas",
+                fix: function(fixer) {
+                  return fixer.replaceText(declaration.id, declaration.id.name.toUpperCase())
+                }
+              })
+            }
+          }
+        }
+    }
+  };
+};
+```
+
+Con `context.report()` podemos mandar un warning y además podemos solucionar el problema que se haya presentado.
 
 ## Cómo funciona el JavaScript Engine
 
+Una vez tenemos el AST ahora hay que convertirlo a Bytecode.
 
+`Bytecode` es como el código assembler pero en lugar de operar en el procesador opera en la máquina virtual V8 del navegador.
+
+`Machine code` es el más bajo nivel, es código binario que va directo al procesador.
+
+`El profiler` se sitúa en medio del bytecode y el optimizador
+
+Cada máquina virtual tiene sus particularidades, por ejemplo V8 tiene algo llamado Hot Functions.
+
+Cuando una sentencia función es ejecutada muy frecuentemente, V8 la denomina como una hot function y hace una optimización que consiste en convertirla a machine code para no tener que interpretarla de nuevo y agilizar su ejecución.
+
+Cada navegador tiene su implementación de JavaScript Engine:
+
+  - SpiderMonkey - Firefox
+  - Chackra - Edge
+  - JavaScriptCore - Safari
+  - V8 - Chrome
+
+El script se carga como un **flujo de bytes UTF-16**, ya sea para la **red**, la caché o un **trabajador**, y se pasa a un **decodificador de flujo de bytes.**
+
+<img src="https://i.ibb.co/M7LxhnJ/1.gif" alt="1" border="0">
+
+El decodificador de flujo de bytes decodifica los bytes en `tokens`. Los tokens se envían al `analizador`.
+
+<img src="https://i.ibb.co/ZdmTrq8/2.gif" alt="2" border="0">
+
+El analizador genera **nodos **basados en los tokens, y crea un `Abstract Syntax Tree`.
+
+<img src="https://i.ibb.co/cDnNYVq/3.gif" alt="3" border="0">
+
+El intérprete camina a través de la `AST` y genera `byte code`.
+
+<img src="https://i.ibb.co/YW63WWH/4.gif" alt="4" border="0">
+
+El `byte code` y el `feedback type` se envían al optimizing compiler, que genera `código de máquina` altamente optimizado.
+
+<img src="https://i.ibb.co/ckHfbkB/5.gif" alt="5" border="0">
+
+<img src="https://i.ibb.co/r2ZLNcf/JS-13.jpg" alt="JS-13" border="0">
 
 ## Event Loop
 
+El **Event Loop** hace que Javascript parezca ser multihilo a pesar de que corre en un solo proceso.
 
+Javascript se organiza usando las siguientes estructuras de datos:
+
+  - **Stack.** Va apilando de forma organizada las diferentes instrucciones que se llaman. Lleva así un rastro de dónde está el programa, en que punto de ejecución nos encontramos.
+  - **Memory Heap.** De forma desorganizada se guarda información de las variables y del scope.
+Schedule Tasks. Aquí se agregan a la cola, las tareas programadas para su ejecución.
+  - **Task Queue.** Aquí se agregan las tares que ya están listas para pasar al stack y - ser   **ejecutadas.** El stack debe estar vacío para que esto suceda.
+  - **MicroTask Queue.** Aquí se agregan las promesas. Esta Queue es la que tiene mayor prioridad.
+
+El Event Loop es un loop que está ejecutando todo el tiempo y pasa periódicamente revisando las queues y el stack moviendo tareas entre estas dos estructuras.
+
+> Si la vida fuera tan simple como eso, pero obvio puede ser más complicado te presento  las promesas by: Richard B. Kaufman López
+
+Las funciones son empujadas al call stack cuando son invocadas y se sacan cuando devuelven un valor.
+
+<img src="https://i.ibb.co/Yy2ZZM5/1.gif" alt="1" border="0">
+
+`setTimeOut` es proveído por el navegador, la `Web API` se encarga del `callback` que le pasemos.
+
+<img src="https://i.ibb.co/Wv42mFt/2.gif" alt="2" border="0">
+
+Cuando el timer ha terminado (1000ms en este caso), el `callback` se pasa al `callback queue`
+
+<img src="https://i.ibb.co/sJ5FCQx/3.gif" alt="3" border="0">
+
+El `Event Loop` mira hacia el `callback queue` y al call stack. Si el `call stack` está vacío, este empuja el primer elemento de la cola en el stack.
+
+<img src="https://i.ibb.co/FzbKVYJ/4.gif" alt="4" border="0">
+
+El callback es añadido al call stack para luego ser ejecutado. Una vez retorna un valor, este es sacado de call stack.
+
+<img src="https://i.ibb.co/P42Cbt9/5.gif" alt="5" border="0">
+
+- [✨♻️ JavaScript Visualized: Event Loop](https://dev.to/lydiahallie/javascript-visualized-event-loop-3dif)
+- [Philip Roberts: ¿Que diablos es el "event loop" (bucle de eventos) de todos modos? | JSConf EU](https://www.youtube.com/watch?v=8aGhZQkoFbQ)
 
 # 4. Fundamentos Intermedios
 
