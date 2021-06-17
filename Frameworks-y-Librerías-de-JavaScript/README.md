@@ -192,6 +192,79 @@ Los componentes y su ciclo de vida existen en los 3 grandes frameworks (en grand
 
 ## Cómo usar React.js
 
+``` JS
+// RACT
+
+Codigo de Form.js
+
+import React from "react";
+
+export default function Form(props) {
+  const { movie } = props;
+  return (
+    <form>
+      <h3>{movie.name}</h3>
+      <button> - </button>0<button> + </button>
+    </form>
+  );
+}
+
+```
+
+
+Codigo de App.js
+``` JS
+// REACT
+
+import Form from "./Form";
+
+const movies = [
+  {
+    name: "Avengers",
+    available: 5
+  },
+  {
+    name: "Terminator",
+    available: "3"
+  }
+];
+
+export default function App() {
+  return (
+    <div>
+      <h2>Peliculas</h2>
+      {movies.map((movie) => (
+        <Form movie={movie} />
+      ))}
+    </div>
+  );
+}
+```
+
+Agregar esto a los botones del formulario para evitar que se recargue la página:
+```html
+<button type="button"> - </button> 0 <button type="button"> + </button>
+```
+
+¿Cómo evitar que todos los componentes vayan envueltos en etiquetas `<div>` y por ende el DOM se llene de divs innecesarios?
+En vez de envolver todo el componente entre etiquetas `<div>` se puede usar la etiqueta de JSX `<React.Fragment> `(o su “shorthand”… <>):
+
+``` js
+<React.Fragment>
+	<h2>Titulo</h2>
+	<form>...</form>
+</React.Fragment>
+Lo cual sería equivalente a:
+
+<>
+	<h2>Titulo</h2>
+	<form>...</form>
+</>
+```
+¿Cómo hacer que la página no se recargue?
+Se puede asociar una función que se ejecute onclick en cada botón, o como submit del form, cuya primera línea sea event.preventDefault().
+
+[ReactSimple-PlatziIntroFrameworks - CodeSandbox](https://codesandbox.io/s/reactsimple-platziintroframeworks-zqenr?file=/src/App.js)
 
 ## Manejo del estado en React
 
