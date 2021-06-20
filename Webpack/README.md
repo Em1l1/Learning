@@ -14,6 +14,7 @@
   - [Configuración de webpack.config.js](#configuración-de-webpackconfigjs)
 - [3. Loaders y Plugins en Webpack](#3-loaders-y-plugins-en-webpack)
   - [Babel Loader para JavaScript](#babel-loader-para-javascript)
+    - [¿Qué Rayos es Babel?](#qué-rayos-es-babel)
   - [HTML en Webpack](#html-en-webpack)
   - [Loaders para CSS y preprocesadores de CSS](#loaders-para-css-y-preprocesadores-de-css)
   - [Copia de archivos con Webpack](#copia-de-archivos-con-webpack)
@@ -303,15 +304,276 @@ Si queremos añadir el autocompletado para nuestro archivo de webpack, podemos a
 
 # 3. Loaders y Plugins en Webpack
 
-
 ## Babel Loader para JavaScript
 
+### ¿Qué Rayos es Babel?
+
+Es un transcompilador de JavaScript que agarra el código ECMAScript 2015 en adelante y lo transforma en una versión que todos los navegadores anteriores lo puedan usar
+En la pagina de Babel pueden ingresar código moderno se lo transpira a código viejo en tiempo real
+
+Babel te permite hacer que tu código JavaScript sea compatible con todos los navegadores
+Debes agregar a tu proyecto las siguientes dependencias
+
+NPM
+
+```bash
+npm install babel-loader @babel/core @babel/preset-env @babel/plugin-transform-runtime -D
+```
+
+Yarn
+
+```bash
+yarn add babel-loader @babel/core @babel/preset-env @babel/plugin-transform-runtime -D
+```
+
+  - `babel-loader` nos permite usar babel con webpack
+  - `@babel/core` es babel en general
+  - `@babel/preset-env` trae y te permite usar las ultimas características de JavaScript
+  - `@babel/plugin-transform-runtime` te permite trabajar con todo el tema de asincronismo como ser async y await
+
+Debes crear el archivo de configuración de babel el cual tiene como nombre `.babelrc`
+
+```json
+{
+  "presets": [
+    "@babel/preset-env"
+  ],
+  "plugins": [
+    "@babel/plugin-transform-runtime"
+  ]
+}
+```
+
+Para comenzar a utilizar webpack debemos agregar la siguiente configuración en webpack.config.js
+
+```json
+{
+...,
+module: {
+    rules: [
+      {
+        // Test declara que extensión de archivos aplicara el loader
+        test: /\.js$/,
+        // Use es un arreglo u objeto donde dices que loader aplicaras
+        use: {
+          loader: "babel-loader"
+        },
+        // Exclude permite omitir archivos o carpetas especificas
+        exclude: /node_modules/
+      }
+    ]
+  }
+}
+```
+
+RESUMEN: Babel te ayuda a transpilar el código JavaScript, a un resultado el cual todos los navegadores lo puedan entender y ejecutar. Trae “extensiones” o plugins las cuales nos permiten tener características más allá del JavaScript común
+
+- [babel-loader | webpack](https://webpack.js.org/loaders/babel-loader/)
+- [ECMAScript Modules | webpack](https://webpack.js.org/guides/ecma-script-modules/)
+
+
+``` json
+const path = require('path')
+
+module.exports = {
+    mode: 'production', // LE INDICO EL MODO EXPLICITAMENTE
+    entry: './src/index.js', // el punto de entrada de mi aplicación
+    output: { // Esta es la salida de mi bundle
+        path: path.resolve(__dirname, 'public_html/js'),
+        // resolve lo que hace es darnos la ruta absoluta de el S.O hasta nuestro archivo
+        // para no tener conflictos entre Linux, Windows, etc
+        filename: 'main.js', 
+        // EL NOMBRE DEL ARCHIVO FINAL,
+    },
+    resolve: {
+        extensions: ['.js'] // LOS ARCHIVOS QUE WEBPACK VA A LEER
+    },
+    module: {
+        // REGLAS PARA TRABAJAR CON WEBPACK
+        rules : [
+            {
+                test: /\.m?js$/, // LEE LOS ARCHIVOS CON EXTENSION .JS,
+                exclude: /node_modules/, // IGNORA LOS MODULOS DE LA CARPETA
+                use: {
+                    loader: 'babel-loader'
+                }
+            }
+        ]
+    }
+}
+```
 
 ## HTML en Webpack
 
+HtmlWebpackPlugin
+Es un plugin para inyectar javascript, css, favicons, y nos facilita la tarea de enlazar los bundles a nuestro template HTML.
+
+**Instalación**
+
+  - npm
+
+``` bash
+npm i html-webpack-plugin -D
+```
+
+  - yarn
+
+``` bash
+yarn add html-webpack-plugin -D
+```
+Al webpack config queda asi
+
+```js
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+
+module.exports = {
+    mode: 'production', // LE INDICO EL MODO EXPLICITAMENTE
+    entry: './src/index.js', // el punto de entrada de mi aplicación
+    output: { // Esta es la salida de mi bundle
+        path: path.resolve(__dirname, 'dist'),
+        // resolve lo que hace es darnos la ruta absoluta de el S.O hasta nuestro archivo
+        // para no tener conflictos entre Linux, Windows, etc
+        filename: 'main.js', 
+        // EL NOMBRE DEL ARCHIVO FINAL,
+    },
+    resolve: {
+        extensions: ['.js'] // LOS ARCHIVOS QUE WEBPACK VA A LEER
+    },
+    module: {
+        // REGLAS PARA TRABAJAR CON WEBPACK
+        rules : [
+            {
+                test: /\.m?js$/, // LEE LOS ARCHIVOS CON EXTENSION .JS,
+                exclude: /node_modules/, // IGNORA LOS MODULOS DE LA CARPETA
+                use: {
+                    loader: 'babel-loader'
+                }
+            }
+        ]
+    },
+    // SECCION DE PLUGINS
+    plugins: [
+        new HtmlWebpackPlugin({ // CONFIGURACIÓN DEL PLUGIN
+            inject: true, // INYECTA EL BUNDLE AL TEMPLATE HTML
+            template: './public/index.html', // LA RUTA AL TEMPLATE HTML
+            filename: './index.html' // NOMBRE FINAL DEL ARCHIVO
+        })
+    ]
+}
+```
+
+agregamos otro script para ejecutar mas facil nuestros comando
+
+``` json
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production",
+    "dev": "webpack --mode development"
+
+  },
+```
+
+- [HtmlWebpackPlugin](https://webpack.js.org/plugins/html-webpack-plugin/)
 
 ## Loaders para CSS y preprocesadores de CSS
 
+**Loaders**
+
+Fuera de contexto, webpack solamente entiende JavaScript y JSON. Los loaders nos permite procesar archivos de otros tipos para convertirnos en módulos válidos que serán consumidos por nuestras aplicaciones y agregadas como dependencias.
+
+En alto nivel, los loaders poseen 2 configuraciones principales:
+
+  1. `test` - propiedad que identifica cuáles archivos deberán ser transformados
+  2. `use` - propiedad que identifica el loader que será usado para transformar a dichos archivos
+
+**Plugins**
+
+Mientras los loaders transforman ciertos tipos de módulos, los plugins _son utilizados para extender tareas específicas, como la optimización de paquetes, la gestión de activos y la inyección de variables de entorno.
+
+Una vez importado el plugin, podemos desear el personalizarlos a través de opciones.
+
+Un preprocesador CSS es un programa que te permite generar CSS a partir de la syntax única del preprocesador. Existen varios preprocesadores CSS de los cuales escoger, sin embargo, la mayoría de preprocesadores CSS añadirán algunas características que no existen en CSS puro, como variable, mixins, selectores anidados, entre otros. Estas características hacen la estructura de CSS más legible y fácil de mantener.
+
+post procesadores son herramientas que procesan el CSS y lo transforman en una nueva hoja de CSS que le permiten optimizar y automatizar los estilos para los navegadores actuales.
+
+<h4>Apuntes</h4>
+
+Para dar soporte a CSS en webpack debes instalar los siguientes paquetes
+Con npm
+
+```bash
+npm i mini-css-extract-plugin css-loader -D
+npm install stylus stylus-loader -D
+```
+
+Con yarn
+
+```bash
+yarn add mini-css-extract-plugin css-loader -D
+```
+
+  - `css-loader` ⇒ Loader para reconocer CSS
+  - `mini-css-extract-plugin` ⇒ Extrae el CSS en archivos
+
+Para comenzar debemos agregar las configuraciones de webpack
+
+```js
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+module.exports = {
+	...,
+	module: {
+    rules: [
+      {
+        test: /\.(css|styl)$/i,
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+        ]
+      }
+    ]
+  },
+  plugins: [
+		...
+    new MiniCssExtractPlugin(),
+  ]
+}
+```
+
+  - Si deseamos posteriormente podemos agregar herramientas poderosas de CSS como ser:
+    
+    - **pre procesadores**
+      -   Sass
+      -   Less
+      -   Stylus
+
+    - **post** **procesadores**
+      - Post CSS
+
+RESUMEN: Puedes dar soporte a CSS en webpack mediante loaders y plugins, además que puedes dar superpoderes al mismo con las nuevas herramientas conocidas como pre procesadores y post procesadores
+
+- [css-loader | webpack](https://webpack.js.org/loaders/css-loader/)
+- [style-loader | webpack](https://webpack.js.org/loaders/style-loader/)
+- [MiniCssExtractPlugin | webpack](https://webpack.js.org/plugins/mini-css-extract-plugin/)
+- [Live Server - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+
+**Para sass**
+
+```bash
+npm i -D node-sass sass-loader
+```
+
+Añadimos el loader al arreglo de loaders y modificamos un poco la expresion regular
+
+```js
+{
+        test: /\.s?css$/,
+        use: [MiniCssExtractPlugin.loader,
+            "css-loader",
+            "sass-loader"]
+      },
+```
 
 ## Copia de archivos con Webpack
 
