@@ -609,25 +609,61 @@ El callback es añadido al call stack para luego ser ejecutado. Una vez retorna 
 ## Promesas
 
 
+Para crear las promesas usamos la clase Promise. El constructor de Promise recibe un sólo argumento, un callback con dos parámetros, `resolve` y `reject`. resolve es la función a ejecutar cuando se `resuelve` y `reject` cuando se rechaza.
+
+El `async/await` es sólo syntax sugar de una promesa, por debajo es exactamente lo mismo.
+
+La clase Promise tiene algunos métodos estáticos bastante útiles:
+
+  - `Promise.all.` Da error si una de las promesas es rechazada.
+  - `Promise.race.` Regresa sólo la promesa que se resuelva primero.
+
+<img src="https://i.ibb.co/d0Vq68v/promesas.jpg" alt="promesas" border="0">
+
+[API Docs](https://developers.themoviedb.org/3/getting-started/authentication)
 
 ## Getters y setters
 
+Los getters y setters son funciones que podemos usar en un objeto para tener propiedades virtuales. Se usan los keywords `set` y `get` para crear estas propiedades.
 
+Estas propiedades al ser funciones pueden llevar una validación de por medio y ser usadas con el operador de asignación como si fueran una variable más dentro del objeto.
+
+<img src="https://i.ibb.co/nwWN3RT/getter-y-setters.jpg" alt="getter-y-setters" border="0">
 
 # 5. Fundamentos Avanzados
 
 ## Proxy
 
+El proxy sirve para interceptar la lectura de propiedades de un objeto (los get, y set) entre muchas otras funciones. Así, antes de que la llamada llegue al objeto podemos manipularla con una lógica que nosotros definamos.
 
+<img src="https://i.ibb.co/9gRZXBX/proxy.jpg" alt="proxy" border="0">
+
+- [GitHub - hiddentao/fast-levenshtein: Efficient Javascript implementation of Levenshtein algorithm with locale-specific collator support.](https://github.com/hiddentao/fast-levenshtein)
+
+- [Proxy - JavaScript | MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Proxy)
 
 ## Generators
 
+Los generadores son funciones especiales, pueden pausar su ejecución y luego volver al punto donde se quedaron recordando su scope.
 
+Algunas de sus características:
+
+  - Los generadores regresan una función.
+  - Empiezan suspendidos y se tiene que llamar next para que ejecuten.
+  - Regresan un value y un boolean done que define si ya terminaron.
+  - yield es la instrucción que regresa un valor cada vez que llamamos a next y detiene la ejecución del generador.
+
+<img src="https://i.ibb.co/3k3HkR5/geberatirs.jpg" alt="geberatirs" border="0">
 
 # 6. APIs del DOM
 
 ## Fetch - Cómo cancelar peticiones
 
+La peticiones AJAX permitieron en su tiempo hacer peticiones asíncronas al servidor sin tener que detener la carga de la página. Hoy en día se utiliza la función fetch para esto.
+
+Con fetch tenemos algo llamado AbortController que nos permite enviar una señal a una petición en plena ejecución para detenerla.
+
+<img src="https://i.ibb.co/SQKWjh5/fetch.jpg" alt="fetch" border="0">
 
 
 ## IntersectionObserver
