@@ -504,6 +504,8 @@ Con npm
 
 ```bash
 npm i mini-css-extract-plugin css-loader -D
+
+# Stylyu
 npm install stylus stylus-loader -D
 ```
 
