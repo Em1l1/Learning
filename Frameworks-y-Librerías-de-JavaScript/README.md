@@ -346,22 +346,135 @@ VueJS si usa el virtual DOM, aqui se usa HTML al principio y JS cuando creces. O
 
 ## Cómo usar Vue.js
 
+```HTML
+<!-- HTML -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+    <script src="https://unpkg.com/vue@3.0.5/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="root">
+      <h2>Peliculas</h2>
+      <form v-for="movie in movies">
+        <h3>{{movie.name}}</h3>
+        <button
+          type="button"
+          v-on:click="movie.quantity--"
+          v-bind:disabled="movie.quantity <= 0"
+        >
+          -
+        </button>
+        {{movie.quantity}}
+        <button
+          type="button"
+          v-on:click="movie.quantity++"
+          v-bind:disabled="!(movie.quantity < movie.available)"
+        >
+          +
+        </button>
+      </form>
+    </div>
+    <script>
+      const { createApp } = Vue;
+
+      const app = createApp({
+        data() {
+          return {
+            movies: [
+              { name: "Avengers", available: 5, quantity: 0 },
+              { name: "Wonder Woman", available: 15, quantity: 0 }
+            ]
+          };
+        }
+      });
+
+      app.mount("#root");
+    </script>
+  </body>
+</html>
+```
 
 - [VueSimple-PlatziIntroFrameworks - CodeSandbox](https://codesandbox.io/s/vuesimple-platziintroframeworks-uuco0)
 - [https://unpkg.com/vue@3.0.5/dist/vue.global.js](https://unpkg.com/vue@3.0.5/dist/vue.global.js)
 
 ## Qué es Svelte y cómo se construyó
 
+**Rich Harris** creó **SVELTE**
+
+- La principal característica es que no crea intermediarios entre el código que se escribe en SVELTE y el DOM.
+- A diferencia de React, SVELTE no usa el VirtualDOM.
+- SVELTE es Espectacular para desarrollar sitios WEB
+- SVELTE No es tan fuerte en Aplicaciones WEB
+
+**ARQUITECTURA DE SVELTE:**
+  - No hay un recurso oficial que nos explique como funciona SVELTE por dentro.
+  - Dustin Deus: escribió un issue acerca de la Documentación:
+
+
+  1. SVELTE es un Compilador, por tanto, necesita generar un AST(Abstract Syntax Tree), adjunto clase del curso profesional de JavaScript Acerca de ello.
+  2. Para esto necesita 3 Parsers: HTML, CSS, y JavaScript
+  
+**COMBINA ESTOS 3 ARBOLES.**
+  3. Envuelve como un envoltura de chocolate 😄, todos los componentes en FRAGMENTS, Una interfaz API del Navegador.
+  4. Esa interfaz sirve para ENCAPSULAR: Nodos, y pedazos del DOM, esto no afecta la interfaz de la Página.
+  5. Los FRAGMENTS es como un nodo imaginario(No es visible para los usuarios), pero si tiene todos las características de un nodo.(Crear, Actualizar, Borrar)
+
+TheGuardian creo Reactive JS una libreria para desarrollar interfaces con componentes, una persona que trabajaba en este proyecto creo Svelte ya que se le hace que todos los demas son muy complicados y Svelte fuera sencillo. Svelte es espectacular para sitios web pero malo para aplicaciones web, ese no fue su objetivo. Svelt y su desarrollo no cuenta con tantas actualizaciones ya que no cuenta con una empresa.
+
+No hay un recurso oficial que nos explique como funciona SVELTE por dentro. Dustin Deus escribio un issue acerca de la documentacion de Svelte.
+
+Svelte es un compilador que necesita generar un AST. Para esta compilacion necesita 3 parsers, uno para HTML, CSS Y JS. En el momento de renderizado SVELTE envuelve todo el codigo en Fragment que no afecta a la interfaz de la pagina. No se transforman en algo que los usuarios puedan ver, es como un nodo imaginario que no se puede ver pero tiene todas las caracteristicas de un nodo.
+
+- [Svelte 3: Rethinking reactivity](https://svelte.dev/blog/svelte-3-rethinking-reactivity)
+- [Svelte for Sites, React for Apps](https://www.swyx.io/svelte-sites-react-apps/)
+- [React vs. Svelte: The War Between Virtual and Real DOM | by Keshav - Kumaresan | Bits and Pieces](https://blog.bitsrc.io/react-vs-sveltejs-the-war-between-virtual-and-real-dom-59cbebbab9e9)- 
+- [Document the architecture behind Svelte · Issue #1011 · sveltejs/svelte · GitHub](https://github.com/sveltejs/svelte/issues/1011)
 
 ## Cómo usar Svelte
+
+```HTML
+<!-- HTML -->
+<script>
+  const movies = [
+    { name: "Avengers", available: 5, quantity: 0 },
+    { name: "Wonder Woman", available: 15, quantity: 0 }
+  ];
+</script>
+
+{#each movies as movie}
+<form>
+	<h3>{movie.name}</h3>
+	<button type="button" on:click={() => movie.quantity--} disabled={movie.quantity <= 0}>-</button>
+	{movie.quantity}
+	<button type="button" on:click={() => movie.quantity++} disabled={!(movie.quantity < movie.available)}>+</button>
+</form>
+{/each}
+```
+
+**Rollup**
+
+Es un paquete de módulos para JavaScript que compila pequeños fragmentos de código en algo más grande y complejo, como una biblioteca o aplicación. Utiliza el nuevo formato estandarizado para módulos de código incluidos en la revisión ES6 de JavaScript, en lugar de soluciones idiosincrásicas anteriores como CommonJS y AMD. Los módulos ES le permiten combinar libremente y sin problemas las funciones individuales más útiles de sus bibliotecas favoritas. Esto eventualmente será posible de forma nativa en todas partes, pero Rollup te permite hacerlo hoy.
 
 # 3. Estilos con CSS, preprocesadores y CSS-in-JS
 
 ## Qué es CSS-in-JS
 
+CSS-in-JS es una técnica de diseño en la que se usa JavaScript para diseñar componentes. Cuando se analiza este JavaScript, se genera CSS y se adjunta al DOM. Permite abstraer CSS al nivel de componente en sí, usando JavaScript para describir estilos de una manera declarativa y mantenible.
+
+- [El caso de CSS-in-JS | OCTUWEB](https://octuweb.com/css-in-js/)
+- [What actually is CSS-in-JS?. CSS-in-JS refers to a collection of… | by Oleg Isonen | DailyJS | Medium](https://medium.com/dailyjs/what-is-actually-css-in-js-f2f529a2757)
+
 
 ## Componentes en Angular con CSS
 
+
+
+- [CSS in JavaScript with Angular. For many years the frontend css styling… | by Kim T | Creative Technology Concepts & Code | Medium](https://medium.com/creative-technology-concepts-code/css-in-javascript-with-angular-61da79111804)
 
 ## Trabajando con Vue Components
 

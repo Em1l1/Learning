@@ -18,6 +18,7 @@
   - [HTML en Webpack](#html-en-webpack)
   - [Loaders para CSS y preprocesadores de CSS](#loaders-para-css-y-preprocesadores-de-css)
   - [Copia de archivos con Webpack](#copia-de-archivos-con-webpack)
+    - [Resolve o Join path](#resolve-o-join-path)
   - [Loaders de imágenes](#loaders-de-imágenes)
   - [Loaders de fuentes](#loaders-de-fuentes)
   - [Optimización: hashes, compresión y minificación de archivos](#optimización-hashes-compresión-y-minificación-de-archivos)
@@ -579,7 +580,73 @@ Añadimos el loader al arreglo de loaders y modificamos un poco la expresion reg
 
 ## Copia de archivos con Webpack
 
+- Si tienes la necesidad de mover un archivo o directorio a tu proyecto final podemos usar un plugin llamado `“copy-webpack-plugin”`
+- Para instalarlo debemos ejecutar el comando
 
+- NPM
+
+```BASH
+npm i copy-webpack-plugin -D
+```
+
+- YARN
+
+```BASH
+yarn add copy-webpack-plugin -D
+```
+
+- Para poder comenzar a usarlo debemos agregar estas configuraciones a `webpack.config.js`
+
+``` JS
+//JavaScript
+...
+const CopyPlugin = require('copy-webpack-plugin');
+
+module.exports = {
+	...
+  plugins: [
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, "src", "assets/images"),
+          to: "assets/images"
+        }
+      ]
+    }),
+  ]
+}
+```
+
+Es importante las propiedades from y to
+  - `From` ⇒ que recurso (archivo o directorio) deseamos copiar al directorio final
+  - `To` ⇒ en que ruta dentro de la carpeta final terminara los recursos
+
+### Resolve o Join path
+
+Cuando trabajamos en entorno de Node, habrán ocasiones que deberamos describir, mediante una dirección absoluta, el directorio de trabajo. En Node, tenemos una libreía nativa `path` para resolver este caso.
+
+Abrán veces que necesitmeos resolver o unir directorios de trabajos. Donde, con una simple declaración, podriamos caer en un sencillo `copy` & `paste` sin entender sus efectos (que pudiesen ser similares).
+
+Cuando deseen estructurar un directorio de trabajo a partir de una dirección absoluta, sin importar el SO, se utiliza `path.resolve([...paths])` por ello, si queremos utilizar nuestro directorio de trabajo como una referencia, utilizamos `__dirname` y de ahí, resolverá el conjunto de paths que le anexemos:
+
+```js
+/*
+En nuestro ejemplo, resolverá nuestro path en /user/path/to/workdirectory/ + src + assets/images
+quedando algo similar a /users/path/to/js-portfolio/src/assets/images
+*/
+path.resolve(__dirname, 'src', 'assets/images')
+Se tendrá que ser cuidadoso en el proceso de construcción porque cada forma de escribir el path, generará en un path diferente:
+
+path.resolve('/foo/bar', './baz');
+// Returns: '/foo/bar/baz'
+
+path.resolve('/foo/bar', '/tmp/file/');
+// Returns: '/tmp/file'
+
+path.resolve('wwwroot', 'static_files/png/', '../gif/image.gif');
+// If the current working directory is /home/myself/node,
+// this returns '/home/myself/node/wwwroot/static_files/gif/image.gif'
+```
 ## Loaders de imágenes
 
 
