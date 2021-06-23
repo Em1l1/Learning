@@ -472,17 +472,114 @@ CSS-in-JS es una técnica de diseño en la que se usa JavaScript para diseñar c
 
 ## Componentes en Angular con CSS
 
-
-
 - [CSS in JavaScript with Angular. For many years the frontend css styling… | by Kim T | Creative Technology Concepts & Code | Medium](https://medium.com/creative-technology-concepts-code/css-in-javascript-with-angular-61da79111804)
 
 ## Trabajando con Vue Components
 
+```html
+<template>
+  <form v-for="(movie, i) in movies" :key="i">
+    <h3>{{ movie.name }}</h3>
+    <button
+      type="button"
+      v-on:click="movie.quantity--"
+      v-bind:disabled="movie.quantity <= 0"
+    >
+      -
+    </button>
+    {{ movie.quantity }}
+    <button
+      type="button"
+      v-on:click="movie.quantity++"
+      v-bind:disabled="!(movie.quantity < movie.available)"
+    >
+      +
+    </button>
+  </form>
+</template>
+
+<script>
+export default {
+  name: "Form",
+  data() {
+    return {
+      movies: [
+        { name: "Avengers", available: 5, quantity: 0 },
+        { name: "Wonder Woman", available: 15, quantity: 0 },
+      ],
+    };
+  },
+};
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+</style>
+```
+
+
+<img src="https://i.ibb.co/D5zqbMz/19-css-preprocessing.jpg" alt="19-css-preprocessing" border="0">
+
+- [Using Pre-Processors | Vue Loader](https://vue-loader.vuejs.org/guide/pre-processors.html)
+- [My experiements with Vuejs and css-in-js + tsx - DEV Community](https://dev.to/rokuem/my-experiements-with-vuejs-and-css-in-js-tsx-1gkj)
 
 ## Vue Components con Preprocesadores de CSS
 
+<img src="https://i.ibb.co/CQry3dW/20-presprocesadores-css.jpg" alt="20-presprocesadores-css" border="0">
+
+- `Form.vue`
+
+```HTML
+<!-- Form.vue -->
+<style lang="scss" scoped>
+  @import "../styles/_variables.scss";
+  
+  form {
+    background: $color2;
+    border: 1px solid $color0;
+    margin: 0 50px 25px;
+    padding: 10px 25px 25px;
+    font-family: courier;
+    text-align: center;
+    transform: scale(1);
+    transition: 0.3s transform;
+  }
+
+  form:hover {
+    transform: scale(1.2);
+  }
+
+  button {
+    background: $color2;
+    border: 1px solid transparent;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: border-color 0.15s;
+  }
+  button:hover {
+    border-color: $color3;
+  }
+  button[disabled] {
+    opacity: 0.5;
+  }
+  h3 {
+    color: $color3;
+  }
+</style>
+```
+
+- `SCSS`
+
+``` scss
+$color0: #ffcece;
+$color1: rgb(146, 84, 84);
+$color2: rgba(76, 114, 76, 0.5);
+$color3: black;
+```
+
 
 ## Trabajando en React con Styled Components
+
 
 
 ## Estilos dinámicos con Styled Components en React
