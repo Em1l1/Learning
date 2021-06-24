@@ -580,10 +580,80 @@ $color3: black;
 
 ## Trabajando en React con Styled Components
 
+Export `Theme`
 
+```JS
+// Reactjs
+export const Theme = (props) => (
+  <ThemeProvider theme={themes["daredevil"]}>{props.childern}</ThemeProvider>
+);
+```
+
+`Themes` colores
+
+```JS
+// ReactJS
+const themes = {
+  avengers: {
+    bg: "#ceceff",
+    color: "#335",
+    color2: "rgba(5, 5, 100, 0.5)"
+  },
+  terminator: {
+    bg: "#ccffcc",
+    color: "#010",
+    color2: "rgba(50, 100, 50, 0.5)"
+  },
+}
+```
+
+[![21-angular-vue-react.jpg](https://i.postimg.cc/fTV3TKkz/21-angular-vue-react.jpg)](https://postimg.cc/HVCW6bQR)
+
+- [Mejora tus estilos en React con Styled Components](https://platzi.com/blog/estilos-en-react-con-styled-components/)
 
 ## Estilos dinámicos con Styled Components en React
 
+`GlobalStyle.js`
+```JS
+//JavaScript
+import { createGlobalStyle } from "styled-components";
+
+export const GlobalStyle = createGlobalStyle`
+  html,
+  body {
+    background: ${(p) => p.theme.bg}
+  }
+`;
+```
+
+```js
+// export Global a themes
+import { GlobalStyle } from "./GlobalStyle";
+
+export const Theme = (props) => (
+  // <ThemeProvider theme={themes["avenger"]}>
+  <ThemeProvider theme={themes[props.theme.toLowerCase()]}>
+    <GlobalStyle />
+    {props.children}
+  </ThemeProvider>
+);
+```
+
+```js
+// App
+const [theme, setTheme] = React.useState("avengers");
+```
+
+
+```JS
+// Form
+return (
+    <StyledForm onMouseEnter={() => props.updateTheme()}>
+      <h3>{movie.name}</h3>
+```
+
+
+- [ReactStyled-PlatziIntroFrameworks - CodeSandbox](https://codesandbox.io/s/reactstyled-platziintroframeworks-nx7ff)
 
 ## Trabajando en Svelte con Emotion
 
