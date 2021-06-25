@@ -657,18 +657,181 @@ return (
 
 ## Trabajando en Svelte con Emotion
 
+`App.svelt`
+
+``` css
+/* emotions.js */
+
+<style>
+  :global(body) {
+    --bg: #ffe9c5;
+    --color: #e54b00;
+    --color2: #512613;
+
+    background: var(--bg);
+    color: var(--color);
+    margin: 0;
+    font-family: sans-serif;
+  }
+</style>
+```
+
+`Form.svelt`
+
+```html
+<script>
+  import { form, button } from "./styles.js";
+<script>
+{#each movies as movie}
+
+<form class="{form}">
+	<h3>{ movie.name }</h3>
+
+	<button class="{button}" type="button" on:click={() => movie.quantity -= 1} disabled={movie.quantity <= 0}>-</button>
+	{movie.quantity}
+	<button class="{button}" type="button" on:click={() => movie.quantity += 1} disabled={movie.quantity >= movie.available}>+</button>
+</form>
+{/each}
+```
+
+`styles.js`
+```css
+//JavaScript
+import { css } from "@emotion/css";
+
+export const title = css`
+  border-bottom: 1px solid var(--color2);
+  padding-bottom: 10px;
+`;
+
+export const form = css`
+  background: var(--bg);
+  color: var(--color2);
+  border: 1px solid var(--color);
+  margin: 0 50px 25px;
+  padding: 10px 25px 25px;
+  text-align: center;
+  transform: scale(1);
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+`;
+
+export const button = css`
+  background: var(--color);
+  border: 1px solid transparent;
+  padding: 5px 10px;
+  margin: 0 50px;
+  transition: border 0.15s;
+
+  &:hover {
+    border: 1px solid var(--color2);
+    cursor: pointer;
+  }
+
+  &[disabled] {
+    opacity: 0.5;
+  }
+`;
+```
+
+[![emotion-js.jpg](https://i.postimg.cc/yYDf66nG/emotion-js.jpg)](https://postimg.cc/F7QbD4Mb)
 # 4. Cómo escalar sitios o aplicaciones web
 
 ## Tipos de aplicaciones según su router: SPAs vs. SSR
 
+  - `SPA:` **Single Pages Aplication**
+  - `SSR:` **Server Side Rende**    
+
+Antes de las aplicaciones web se utilizaba el SSR viejo, donde se utilizaba algun lenguaje de programacion para backend. Esa forma es rapida SOLAMENTE al principio ya que no le entrega la forma de interactuar con los usuarios. El JS que podia tener solo era para animacions.
+
+Ahora renderizamos todo con JS desde el navegador. La carga inicial es lenta ya que necesita pedir toda la informacion o los scripts, pero ya cargado todo es rapido.
+
+Para trabajar de esta forma se usan dos ROuter, un HASH y un BROWSER. Los Routers son herramientas para manejar las rutas de nuestra aplicacion. Si queremos que nuestra aplicacion solo con un archivo HTML y todo el codigo JS que se necesita, es porque no tenemos control del servidor y necesitamos que toda la aplicacion funcione en el mismo archivo HTML. Gracias a los # sabemos en que parte de la pagina estamos.
+
+El server Side Rendering Relodead en vez de enviar un documento HTML vacio al navegador y descargar todo, podemos desde el backend enviarle una version de la aplicacion en HTML que los usuarios puedan ver, mientras el navegador descarga los archivos de JS y vuelve al navegador.
+
+Para esto se necesita NODEJS.
+
+Los generaodres de sitios estaticos nos permiten hacer el SSR mientras desarrollamos el sitio, pero cuando lo compilamos nos dan paginas estaticas o SPA.
+
+[![CSR-v-SSR-infographic.jpg](https://i.postimg.cc/V6LPVvpK/CSR-v-SSR-infographic.jpg)](https://postimg.cc/yJ5GJ1VR)
+
+> Otro punto importante sobre el SSR es que este es muy importante para SEO 👀. Cuando un robot de búsqueda examina tu página y no encuentra nada de contenido (SPA) estos pueden penalizarte en SEO, algunos crawlers soportan la ejecución de código JavaScript, sí, pero aun así sigue siendo recomendado mandar un HTML con datos ya pintados 😄
+> SPAs y SEO: [Una Single Page Application no es tu mejor opción](https://platzi.com/blog/una-single-page-application-no-es-tu-mejor-opcion/)
+
+- [SPA vs. SSR vs. Generadores de Sitios Estáticos | Platzi](https://platzi.com/blog/spa-vs-ssr-vs-static-site-generators/)
+- [React Server Components revoluciona el Desarrollo Web | Platzi](https://platzi.com/blog/react-server-components/)
+- [Components: Server-Side vs. Client-Side | CSS-Tricks](https://css-tricks.com/components-server-side-vs-client-side/)
 
 ## Frameworks sobre frameworks: Next.js
 
+  - `Next.js` es un framework que usa React.js para las vistas.
+  - `Nuxt.js` es un framework que usa Vue.js para las vistas.
+
+[![next-vs-nuxt.jpg](https://i.postimg.cc/5NfK5Dcm/next-vs-nuxt.jpg)](https://postimg.cc/F1nxNWHf)
 
 ## Organización de archivos en el frontend
 
+herramientas para el manejo del estado que nos ayudan a evitar a tener codigo espaguetti. Esto se le llama Deuda tecnica, por que en el futuro tendremos problemas en el futuro. Nos demoraremos un poco mas pero siempre es bueno tener una buena organizacion.
+
+Se divide entre logico vs interfaz. Es bueno tener una capa de UI y otra una capa de Datos. En react es bueno dividir todo entre componentes contenedores y presentacional.
+
+**File Type First**
+
+Tipo de organizacion donde cada tipo de archivo.Una de componentes, una de contenedores, otra para rutas.
+
+**Feature First**
+
+donde cada componente de nuestra aplicacion es dividir una carpeta para cada elemento que tengamos. Una carpeta de Menu, una carpeta de Form, una carpeta de Button. Esta forma es buena ya que cada carpeta sera independiente y no sera tan difiicil de entender.
+
+**Apps For Apps**
+
+Una carpeta para cada aplicacion.
+
+<img src="https://i.ibb.co/FhTG4C7/deuda-tecnica.jpg" alt="deuda-tecnica" border="0">
+
+- [¿Cuándo crear un Componente? Estructura, Organización y Tipos de Componentes en React](https://platzi.com/blog/estructura-organizacion-y-tipos-de-componentes-en-react/)
 
 ## Retos y análisis para elegir tu próximo stack de desarrollo frontend
+
+Elegir frameworks o librerías de JavaScript para tu próximo proyecto web es una gran responsabilidad. Tus preferencias personales deben ser el último factor a considerar. Lo realmente relevante son el tiempo, presupuesto, requisitos técnicos y el conocimiento + experiencia del equipo de desarrollo con cada tecnología.
+
+### ¿Necesitas un framework o una librería? 📚
+
+Un framework te provee casi todas las herramientas que necesitas para construir un sitio o aplicación web (guía de estilos predefinida, manejo de formularios, facilidad para elegir el tipo de routing o la estrategia de render que necesites…).
+
+Por su parte, las librerías responden a un objetivo más específico y menos general. Una parte importante del desarrollo será elegir qué librerías integrar y realizar la configuración para que funcionen correctamente en conjunto.
+
+También debes considerar que el costo/dificultad de integrar librerías con librerías suele ser muy bajo. Donde realmente aumenta la complejidad es configurando frameworks de JavaScript para trabajar en conjunto con librerías que no fueron específicamente diseñadas para ese framework en particular.
+
+O al menos eso es a lo que estamos acostumbrados.
+
+### Rangos de flexibilidad, integrabilidad y responsabilidad 🚧
+
+**No todos los frameworks son 100% frameworks. Ni todas las librerías son 100% librerías.**
+
+Las herramientas de desarrollo frontend no tienen que ser a fuerza un framework o una librería. Más bien, las conocemos de una u otra forma dependiendo de sus rangos de flexibilidad.
+
+Veámoslo en una gráfica para que quede más claro.
+
+Ubica tus herramientas favoritas de JavaScript en el siguiente plano cartesiano, donde el eje X representa el nivel de integrabilidad y el eje Y representa el nivel de responsabilidad.
+
+<img src="https://i.ibb.co/zSp3nYB/frameworks.jpg" alt="frameworks" border="0">
+<img src="https://i.ibb.co/FmS2NCm/frameworks1.jpg" alt="frameworks1" border="0">
+
+  - ¿Dónde ubicarías a Angular?
+  - ¿Dónde ubicarías a Svelte?
+  - ¿Dónde ubicarías a React?
+  - ¿Dónde ubicarías a Redux?
+  - ¿Dónde ubicarías a Next?
+  - ¿Dónde ubicarías a Vue?
+  - ¿Dónde ubicarías a Vue Router?
+  - ¿Dónde ubicarías a Nuxt?
+
+Al desarrollar ejercicio tendrás mucho más claro en qué casos va a valer la pena integrar tus herramientas favoritas al stack de tu aplicación.
 
 
 ## Cómo especializarte en Frameworks de 
