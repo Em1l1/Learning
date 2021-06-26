@@ -13,20 +13,13 @@ MediaPlayer.prototype._initPlugins = function () {
     get muted() {
       return this.media.muted;
     },
-
     set muted(value) {
-      this.media.muted = value
-      // if (value === true) {
-      // } else {
-      //   this.media.muted = false
-      // }
+      this.media.muted = value;
     },
   };
 
-  // player.muted()
-
   this.plugins.forEach((plugin) => {
-    plugin.run(this);
+    plugin.run(player);
   });
 };
 

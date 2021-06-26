@@ -265,7 +265,7 @@ const  player = new  MediaPlayer()
 button.onclick = () =>  player.play();
 ```
 
-Explicación:
+**Explicación**:
 
 ‌
 Creamos una función llamada mediaPlayer que nos servirá como prototipo.
@@ -665,14 +665,30 @@ Con fetch tenemos algo llamado AbortController que nos permite enviar una señal
 
 <img src="https://i.ibb.co/SQKWjh5/fetch.jpg" alt="fetch" border="0">
 
-
 ## IntersectionObserver
 
+Sirve para observar elementos y si cruzan un umbral que nosotros definimos nos lo va a notificar para tomar acción.
 
+El umbral se define por el porcentaje que tiene intersección con el viewport, con la parte visible de nuestra página.
+
+<img src="https://i.ibb.co/crhvFqX/Ibtersection-Observer.jpg" alt="Ibtersection-Observer" border="0">
 
 ## VisibilityChange
 
+El `visibilityChange` forma parte del API del DOM llamado Page Visibility y nos deja saber si el elemento es visible, pude ser usado para ejecutar una acción cuando cambiamos de pestaña. Así podemos ahorrar batería y mejorar la UX.
 
+Otros casos de uso para utilizar la [API Page Visibility:](https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API)
+ 
+
+  - Un sitio tiene un carrusel de imágenes que no debería avanzar a la siguiente diapositiva a no ser que el usuario esté viendo la página.
+ 
+  - Una aplicación que muestra un panel de información y no se quiere que se actualice la información del servidor cuando la página no está visible.
+ 
+  - Una página quiere detectar cuando se está precargando para poder mantener un recuento preciso de las vistas de página.
+ 
+  - Un sitio desea desactivar los sonidos cuando el dispositivo está en modo de espera (el usuario presiona el botón de encendido para apagar la pantalla).
+
+<img src="https://i.ibb.co/0qz9PPF/Visibilitychange.jpg" alt="Visibilitychange" border="0">
 
 ## Service Workers
 
