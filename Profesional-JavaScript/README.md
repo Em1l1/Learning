@@ -692,14 +692,34 @@ Otros casos de uso para utilizar la [API Page Visibility:](https://developer.moz
 
 ## Service Workers
 
+Sirven para hacer que nuestras aplicaciones `funcionen Offline`.
 
+Muy usados en las `Progressive Web Apps (PWA)` los ServiceWorkers son una capa que vive entre el navegador y el Internet.
+
+Parecido a como lo hacen los proxys van a interceptar peticiones para guardar el resultado en cache y la próxima vez que se haga la petición tomar del cache ese resultado.
+
+Un service worker es un servicio intermedio entre nuestro navegador e internet que actúa a modo de proxy y que intercepta toda la comunicación que se produce entre el dispositivo y la red. De este modo, podremos efectuar otras acciones antes de dejar pasar una petición a internet
+
+- [Recomiendo este articulo sobre Service Workers:](https://developer.mozilla.org/es/docs/Web/API/Service_Worker_API)
 
 # 7. TypeScript
 
 ## Introducción
 
+TypeScript es un superset de JavaScript que añade tipos a nuestras variables ayudando así a la detección de errores de forma temprana y mejorando el autocompletado.
 
+Los navegadores no entienden TypeScript así que lo vamos a transpilar a JavaScript usando Parcel.
 
+> Hola gente de 2021 Hay un problema con la version 1.12.4 de Parcel por lo que si intentas hacerlo tal como sale en el video no te va a funcionar, asi qeu debes instalar la version anterior. Para hacerlo ejecuta los siguientes comandos en tu terminal:
+>
+> ```bash
+> # Desinstalar parcel o no lo instalas
+> npm uninstall parcel-bundler
+> # Instalar parcel en version anterior
+> npm i --save-dev parcel-bundler@1.12.3
+> ```
+
+- [Parcel](https://parceljs.org)
 ## Tipos básicos
 
 
