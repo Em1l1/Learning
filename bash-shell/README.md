@@ -541,7 +541,7 @@ Solicitar que se ingrese un valor del 1 al 5. Según el valor ingresado valor a 
 
 ## Arreglos
 
-
+Los Arreglos son un tipo de variables que puede contener N cantidad de valores ya sean cadenas de texto, numéricos, etc. Estos siempre empiezan desde la posición número 0.
 
 ## Sentencia for loop
 
