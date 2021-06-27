@@ -4,6 +4,28 @@
 
 <h1>Tabla de Contenido</h1>
 
+- [1. Introducción y repaso de API](#1-introducción-y-repaso-de-api)
+  - [Introducción al curso](#introducción-al-curso)
+  - [Estudiando el protocolo HTTP, verbos y status](#estudiando-el-protocolo-http-verbos-y-status)
+  - [Estructuras de las URLs](#estructuras-de-las-urls)
+- [2.](#2)
+  - [Instalación de Postman](#instalación-de-postman)
+  - [Cómo ejecutar la API](#cómo-ejecutar-la-api)
+  - [Llamados a un API con GET: llamado de listas y detalles de objetos](#llamados-a-un-api-con-get-llamado-de-listas-y-detalles-de-objetos)
+  - [Llamados a un API con GET: parámetros en la URL](#llamados-a-un-api-con-get-parámetros-en-la-url)
+  - [Llamados a un API con el método post utilizando JSON](#llamados-a-un-api-con-el-método-post-utilizando-json)
+  - [Llamados a un API con el método post utilizando Form Data](#llamados-a-un-api-con-el-método-post-utilizando-form-data)
+  - [Llamados a un API con el método PUT](#llamados-a-un-api-con-el-método-put)
+  - [Llamados a un API con el método DELETE](#llamados-a-un-api-con-el-método-delete)
+  - [Optimización de environment de postman y configuración de la colección](#optimización-de-environment-de-postman-y-configuración-de-la-colección)
+  - [Agregar ejemplos de responses y descripción de endpoints](#agregar-ejemplos-de-responses-y-descripción-de-endpoints)
+- [3. Automatización de procesos con JavaScript](#3-automatización-de-procesos-con-javascript)
+  - [Guardar el token del login con una prueba automática](#guardar-el-token-del-login-con-una-prueba-automática)
+  - [Creación de Pruebas para endpoints](#creación-de-pruebas-para-endpoints)
+- [4. Puesta en producción](#4-puesta-en-producción)
+  - [Publicar Documentación](#publicar-documentación)
+  - [Cierre del curso](#cierre-del-curso)
+
 # 1. Introducción y repaso de API
 
 ## Introducción al curso
