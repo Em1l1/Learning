@@ -4,6 +4,37 @@
 
 <h1>Tabla de Contenido</h1>
 
+- [1. Antes de empezar](#1-antes-de-empezar)
+  - [¿Cuál es tu sueño con JavaScript?](#cuál-es-tu-sueño-con-javascript)
+  - [Prueba de JavaScript](#prueba-de-javascript)
+  - [Configuración del entorno de desarrollo](#configuración-del-entorno-de-desarrollo)
+- [2. Taller #1: figuras geométricas](#2-taller-1-figuras-geométricas)
+  - [Análisis: cómo calcular figuras geométricas](#análisis-cómo-calcular-figuras-geométricas)
+  - [Cómo integrar JavaScript en HTML](#cómo-integrar-javascript-en-html)
+  - [Calculando figuras geométricas en JavaScript](#calculando-figuras-geométricas-en-javascript)
+  - [Encapsulando código en funciones](#encapsulando-código-en-funciones)
+  - [Interactuando con JavaScript desde HTML](#interactuando-con-javascript-desde-html)
+  - [Reto: matemáticas con JavaScript](#reto-matemáticas-con-javascript)
+- [3. Taller #2: precios y descuentos](#3-taller-2-precios-y-descuentos)
+  - [Análisis: cómo calcular porcentajes y descuentos](#análisis-cómo-calcular-porcentajes-y-descuentos)
+  - [Crea una página web para calcular descuentos](#crea-una-página-web-para-calcular-descuentos)
+  - [Escribiendo HTML desde JavaScript](#escribiendo-html-desde-javascript)
+  - [Reto: funciones más inteligentes](#reto-funciones-más-inteligentes)
+- [4. Taller #3: promedio, moda y mediana](#4-taller-3-promedio-moda-y-mediana)
+  - [Qué es promedio, moda y mediana](#qué-es-promedio-moda-y-mediana)
+  - [Calculando el promedio en JavaScript](#calculando-el-promedio-en-javascript)
+  - [Calculando la mediana en Javascript](#calculando-la-mediana-en-javascript)
+  - [Calculando la moda en Javascript](#calculando-la-moda-en-javascript)
+  - [Reto: calcula otros tipos de promedio](#reto-calcula-otros-tipos-de-promedio)
+- [5. Taller #4: análisis salarial](#5-taller-4-análisis-salarial)
+  - [Análisis: cómo analizar salarios](#análisis-cómo-analizar-salarios)
+  - [Calculando la mediana de salarios](#calculando-la-mediana-de-salarios)
+  - [Calculando el top 10% de salarios](#calculando-el-top-10-de-salarios)
+  - [Reto: simulación de estudio de salarios](#reto-simulación-de-estudio-de-salarios)
+- [6. Próximos pasos](#6-próximos-pasos)
+  - [Deploy con GitHub Pages](#deploy-con-github-pages)
+  - [¿Qué más puedes aprender de JavaScript?](#qué-más-puedes-aprender-de-javascript)
+
 # 1. Antes de empezar
 
 ## ¿Cuál es tu sueño con JavaScript?
@@ -419,18 +450,22 @@ Es una plataforma web de desarrollo colaborativo para alojar proyectos utilizand
 
 comandos útiles:
 Abrir carpeta actual reusando la misma ventana
+
 ```BASH
 code ./ -r
-`
+```
 Agregar todos los cambios al staging área (add)
+
 ```BASH
 git add .
 ```
 Realizar confirmar un cambio en la base de datos de git (commit)
+
 ```BASH
 git commit -m "mensaje del commit"
 ```
 subir cambios a github
+
 ```BASH
 git push
 ```
@@ -452,23 +487,161 @@ Además, aquí puedes ver los atajos de teclado para VSCode:
 - [Protege tu código usando Licencias de Software - YouTube](https://www.youtube.com/watch?v=eWtjgfzpt6Y)
 - [Licensing a repository - GitHub Docs](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/licensing-a-repository)
 - [What you need to know to choose an open source license. · GitHub](https://gist.github.com/nicolasdao/a7adda51f2f185e8d2700e1573d8a633)
-- [https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf)
-- [https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf)
-- [https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf)
 
 # 2. Taller #1: figuras geométricas
 
 ## Análisis: cómo calcular figuras geométricas
 
+**Por que el area de un triangulo es b_a/2?**
+
+Es simple, todo triangulo no equilatero puede ponerse adyacente de la siguiente manera a un triangulo identico al inicial:
+
+<a href="https://ibb.co/tQVgL3M"><img src="https://i.ibb.co/S5FbfJX/1-lesson.gif" alt="1-lesson" border="0"></a>
+
+de manera que calculamos el area de un rectangulo que contiene dos de nuestros triangulos, por lo cual aplicamos la formula del area de un rectangulo, con lo que nos queda 2A = B_A lo que nos lleva a A = b*a/2.
+
+En el caso de un triangulo equilatero, solo tienes que partir el triangulo de la siguiente manera :
+
+<a href="https://ibb.co/JrFV03F"><img src="https://i.ibb.co/GC3yBH3/2-area-triangulo-equilatero.jpg" alt="2-area-triangulo-equilatero" border="0"></a>
+
+con lo que podemos aplicar nuestro truco de poner adyacente el mismo triangulo, con lo que nos queda un rectangulo con un lado = a y otro lado = b/2 de manera que multiplicando A = b*a/2
+
+**Por que el area de un circulo es pi*r^2?**
+
+Mira la siguiente imagen
+
+<a href="https://ibb.co/W2GdBXR"><img src="https://i.ibb.co/KrbQVg8/3-area-circle.jpg" alt="3-area-circle" border="0"></a>
+
+Calcular perímetro y área de las siguientes figuras geométricas
+
+**Cuadrado**
+
+  - Perímetro = Lado +Lado +Lado + Lado , es lo mismo decir que: Lado * 4
+  - área = Lado * Lado, es lo mismo decir que: Lado Elevado al cuadrado 2
+
+**Triángulo**
+
+  - Perímetro = Lado + Lado + Lado;
+  - área = (Base * Altura)/2
+
+**Círculo**
+
+  - diámetro = (radio * 2)
+  - perímetro = diámetro * PI
+  -   área = ( radio ^ 2 ) * PI
+
+> coeficiente que multiplicado 3.1415… veces por su diámetro nos indica la longitud de la circunferencia. Míralo en este video **[¿Que es PI?](https://www.youtube.com/watch?v=EWWvnoQlsas)**
 
 ## Cómo integrar JavaScript en HTML
 
+Vinculoa el archivo.js al html con la etiqueta `<script>`. Eso es lo que la mayoria de desarrolladores hacen, ya que el `archivo.js` es enorme. A veces incluso tienen que hacer una carpeta llena de archivos js, ya que las lineas de código rebasan las 5 mil.
+
+Sin embargo, cuando vas a usar poquito código JavaScript, es cuando se recomienda escribir el código en el archivo html, de la siguiente manera:
+
+```js
+<script>
+  @code
+</script>
+```
 
 ## Calculando figuras geométricas en JavaScript
 
+Encapsula los console 😃
+
+``` JS
+#Abres
+console.group("nombre que desees");
+#Cierras
+console.groupEnd();
+```
+
+Template Strings o Template Literals
+
+se puede incluir variables en el texto usando estas comillas `` y agregando la variable de este manera ${ladoCuadrado}
+
+``` JS
+const ladoCuadrado = 5;
+console.log(`los lados de cuadrado miden ${ladoCuadrado}`)
+```
+
+<a href="https://ibb.co/Mhgw8Ch"><img src="https://i.ibb.co/cvyfbrv/areasfiguras.jpg" alt="areasfiguras" border="0"></a>
+
+- [Turbo Console Log](:https://marketplace.visualstudio.com/items?itemName=ChakrounAnas.turbo-console-log)
 
 ## Encapsulando código en funciones
 
+Codigo 
+
+``` JS
+//Codigo del Cuadrado
+
+console.group("cuadrados");
+
+perimetroCuadrado = (lado) => {
+    return lado * 4;
+}
+perimetroCuadrado();
+
+areaCuadrado = (lado) => {
+    return lado * lado;
+}
+areaCuadrado();
+console.groupEnd();
+
+
+
+//Codigo del Triàngulo
+
+console.group("triangulos");
+
+
+    perimetroTriangulo = (lado1, lado2, base) => {
+        return lado1 + lado2 + base;
+    }
+    perimetroTriangulo();
+    
+
+    areaTriangulo = (base, altura) => {
+        return (base * altura) / 2;
+    }
+
+    console.groupEnd();
+
+
+
+    //Codigo del Cìrculo
+
+console.group("Cìrculos");
+
+// Diàmetro
+diametroCirculo = (radio) => {
+    return radio * 2;
+}
+diametroCirculo();
+
+
+// PI
+const PI = Math.PI;
+console.log ("El PI es: " + PI + "cm");
+
+
+// Circuferencia
+perimetroCirculo = (radio) => {
+    const diametro = diametroCirculo(radio);
+    return diametro * PI;
+}
+perimetroCirculo();
+
+
+// Àrea
+areaCirculo = (radio) => {
+    return (radio * radio) * PI;
+}
+areaCirculo();
+
+
+console.groupEnd();
+```
 
 ## Interactuando con JavaScript desde HTML
 
