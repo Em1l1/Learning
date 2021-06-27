@@ -345,12 +345,146 @@ Los operadores lógicos son:
 
 ## Switch
 
+**Switch** es una estructura de control para agilizar el flujo del programa en opciones múltiples.
+
+Se tiene una condición que se puede cumplir dependiendo de diferentes casos, cada caso nos lleva a un bloque de cumplimiento de la condición y ese bloque nos lleva a continuar el programa.
+
+> Switch es una estructura de control para agilizar el flujo del programa en opciones múltiples. Se obtiene una condición que se puede cumplir dependiendo de diferentes casos, cada caso nos lleva a un bloque de cumplimiento de la condición y ese bloque nos lleva a continuar el programa.
+
+RETO
+```C
+/* C */
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+  string name;
+  char decision;
+
+  cout << "Hola, para iniciar, ingresa tu nombre: " << endl;
+  cin >> name;
+  cout << "Bien, " << name << " haremos un juego, tienes tres opciones" << endl;
+  cout << "Escribe \"a\" para elegir ser un gatito" << endl;
+  cout << "Escribe \"b\" para elegir ser un pandita" << endl;
+  cout << "Escribe \"c\" para elegir ser un perrito" << endl;
+  cin >> decision;
+
+  switch (decision)
+  {
+  case 'a':
+      cout << "Eres un gatito muy tierno, actor de las mejores películas de gatitos" << endl;
+      break;
+  
+  case 'b':
+      cout << "Eres un pandita al que le encantan comer dulces de bambú, tu sueño es tener una isla llena de bambú" << endl;
+      break;
+
+  case 'c':
+      cout << "Eres un perrito con super poderes, defiendes a todos los animalitos de abusos, tu identidad es secreta." << endl;
+      break;
+  
+  default:
+      cout << "Está opción es invalida" << endl;
+      break;
+  }
+  
+  return 0;
+}
+```
+
+Determina que lenguaje de programación debes aprender para realizar aplicaciones.
+
+```C
+/* C */
+
+import 'dart:io';
+
+void main(List<String> arguments){
+  int option;
+
+  print('''
+  Elige una opción para determinar que lenguaje de programación 
+  aprender para el desarrollo:
+  1. Web
+  2. Movil
+  3. Escritorio
+  4. Multiplataforma
+  ''');
+  option = int.parse(stdin.readLineSync());
+
+  switch(option){
+    case 1:
+      print('JavaScript');
+      break;
+    case 2:
+      print('Swift y Kotlin');
+      break;
+    case 3:
+      print('Swift, C#, C y C++');
+      break;
+    case 4:
+      print('Dart');
+      break;
+  }
+}
+```
 
 ## ¿Qué es un iterador? - Ciclo While
+
+Un iterador o loop como se conoce en ingles es una estructura iterativa que permite repetir un bloque de instrucciones. Esta repetición es controlada por una condición booleana (una condición no es mas que algo que puede devolver verdadero o falso).
+
+Un iterador es utilizado por un algoritmo para recorrer elementos almacenados en un contenedor. Dado que los distintos algoritmos necesitan recorrer los contenedores de diversas maneras para realizar distintas operaciones, y los contenedores deben ser accedidos de formas diferentes, existen otros tipos de iteradores (en este caso estamos conociendo como funciona el ciclo while).
+
+**¿Que es un algoritmo?**
+un algoritmo es una secuencia de instrucciones para llegar a una solución.
+
+**While - mientra**
+Es una estructura de control que ejecuta repetidamente un bloque de código siempre y cuando una condición sea verdadera.
+
+```c
+Sintaxis:
+while (/* condition /)
+{
+/ code */
+}
+```
+
+Un **loop** es una estructura iterativa que permite repetir un bloque de instrucciones. Esta repetición es controlada por una condición booleana.
+
+Un iterador es utilizado por un algoritmo para recorrer los elementos almacenados en un contenedor. Dado que los distintos algoritmos necesitan recorrer los contenedores de diversas maneras para realizar diversas operaciones, y los contenedores deben ser accedidos de formas distintas, existen diferentes tipos de iteradores.
+
+**While**
+
+Es una estructura de control en la que la repetición se realizará tantas veces como se indique mientras se cumpla una condición.
+
+reto:
+
+```C
+/* C */
+#include <stdio.h>
+
+int main(){
+  int iterator = 0;
+ 
+  while (iterator < 5){
+    printf("#\n");
+    iterator++;
+  }
+}
+```
 
 
 ## Ciclo For
 
+El ciclo for es una estructura de control que nos permite repetir un bloque de comandos un número de veces específico.
+
+**Este ciclo se compone de tres partes:**
+  1. Inicialización: Se inicializa una variable (generalmente ““i””) al asignarle el valor 0.
+  2. Condición: Se indica la condición necesaria para que termine el ciclo.
+  3. Incremento: También puede ser decremento; este va a indicar los pasos en los que se moverá el ciclo, este número siempre debe ser entero, para ir de uno en uno se utiliza el i++.
 
 ## Ciclo Do-While
 
