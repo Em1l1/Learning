@@ -501,24 +501,72 @@ Las expresiones condicionales ya las hemos visto en clases anteriores, pero en q
   - Utiliza los operadores relacionales y condicionales
   - [What is the difference between test](http://mywiki.wooledge.org/BashFAQ/031) 
 
+**Operador Verdad (TRUE) si:**
+  - `-d` fichero fichero existe y es un directorio
+  - `-e` fichero fichero existe
+  - `-f` fichero fichero existe y es un fichero regular (no un
+directorio, u otro tipo de fichero especial)
+  - `-r` en este caso te permite saber si el archivo tiene permiso de lectura
+  - `-s` con esta opción puedes saber si el tamaño del archivo es mayor que cero. Es decir, que no se trata de un archivo vacío
+  - `-w` te permitirá identificar si el archivo tienen permisos de escritura
+  - `-x` lo mismo que en el caso anterior pero para el caso de permisos de ejecución.
 
+**[]**
+
+es un alias del comando test, nos permite averiguar si un comando existe o un número es igual a otro, se ocupan los operadores: Ver lista de operadores
+
+**[[]]**
+
+es una mejora posterior al comando test, nos permite hacer todo lo mismo que con el comando test y además probar patrones(?)
+
+**(())**
+
+Nos permite hacer comprobaciones aritméticas, da soporte a la mayor parte de los operadores aritméticos
+
+**()**
+
+Nos permite correr un comando en un subshell, retornando el codigo de salida para que se actúe respecto a ello
+comando
+Los comandos por lo general siempre retornan un comando de salida 0 o 1
 
 ## Sentencias Case
 
-
+En la sentencia Case el objetivo principal es validar una expresión simple, puede ser un número, una cadena o un rango de valores
 
 ## Reto 3
 
-
+Solicitar que se ingrese un valor del 1 al 5. Según el valor ingresado valor a validarlo utilizando las condicionales e imprimir según el valor ingresado. Construir expresiones de validaciòn númericas, cadenas y archivos según la opción ingresada.
 
 #  5. Iteración
+
 ## Arreglos
+
+
+
 ## Sentencia for loop
+
+
+
 ## Sentencia while loop
+
+
+
 ## Loop Anidados
+
+
+
 ## Break y continue
+
+
+
 ## Menú de Opciones
+
+
+
 ## Reto 4
+
+
+
 #  6. Archivos
 ## Archivos y Directorios
 ## Escribir dentro de archivos
@@ -535,5 +583,6 @@ Las expresiones condicionales ya las hemos visto en clases anteriores, pero en q
 ## Funciones de instalar y desinstalar postgres
 ## Funciones sacar y restaurar respaldos en postgres
 ## Reto 7
+
 #  9. Cierre del curso
 # Cierre
