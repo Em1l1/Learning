@@ -257,9 +257,20 @@ else{
 **1️. Responde las siguientes preguntas en la sección de comentarios:**
 
 **¿Qué es un ciclo?**
+
+  Un bloque de codigo que se repite n veces
+
 **¿Qué tipos de ciclos existen en JavaScript?**
+
+  for, for of, for in, while, do-while
+
 **¿Qué es un ciclo infinito y por qué es un problema?**
+
+  Es un ciclo que nunca se va a detener, puede causar que nuestro ordenador se apague por exceso consumo de memoria en el navegador
+
 **¿Puedo mezclar ciclos y condicionales?**
+
+  Si se puede
 
 **2️. Replica el comportamiento de los siguientes ciclos for utilizando ciclos `while`:**
 
@@ -272,24 +283,125 @@ for (let i = 10; i >= 2; i--) {
 }
 ```
 
+Ciclos
+
+```JS
+let i = 0;
+while (i < 5) {
+	console.log("El valor de i es: " + i);
+	i++;
+}
+
+i = 10;
+while (i >= 2) {
+	console.log("El valor de i es: " + i);
+	i--;
+}
+```
+
 **3️. Escribe un código en JavaScript que le pregunte a los usuarios cuánto es `2 + 2`. Si responden bien, mostramos un mensaje de felicitaciones, pero si responden mal, volvemos a empezar.**
 
-Pista: puedes usar la función prompt de JavaScript.
+```JS
+ function juego() {
+    let resultado;
+    do {
+      resultado = parseInt(prompt('¿Cuál es el resultado de "2 + 2". R: '));
+    } while ( resultado !== 4 );
+    if (resultado === 4);
+    return console.log('¡Eres un GENIO!');
+  }
+  juego();
+```
+
+Pista: puedes usar la función [prompt](https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt) de JavaScript.
 
 **Listas**
 
 **1️. Responde las siguientes preguntas en la sección de comentarios:**
 
 **- ¿Qué es un array?**
+
+Un array es un tipo de datos objetos, puedes guardar distintos valores como si fuera una lista y se encuentran seguidos en memoria.
+
+```js
+ let lista = ['hola', 'como', 'estas']
+```
+
 **- ¿Qué es un objeto?**
+
+Un objeto es una colección de propiedades. Un objeto te permite guardar datos con claves y valores 
+
+```js
+const objetoCarro = {
+    marca: 'Bugatti',
+    modelo: 'Chiron',
+    precio: '1 USD'
+  }
+```
+
 **- ¿Cuándo es mejor usar objetos o arrays?**
+
+ Depende mucho, pero algo que ahorita se me viene a la cabeza, es mejor utilizar un objeto cuando tienes que guardar datos que son repetitivos como un usuario que siempre va a tener las mismas claves y solo cambian los valores.
+
 **- ¿Puedo mezclar arrays con objetos o incluso objetos con arrays?**
+
+Si se pueden mezclar
 
 **2️. Crea una función que pueda recibir cualquier array como parámetro e imprima su primer elemento.**
 
+```js
+ function array(a) {
+    return console.log(a[0]);
+  }
+```
+
 **3️. Crea una función que pueda recibir cualquier array como parámetro e imprima todos sus elementos uno por uno (no se vale imprimir el array completo).**
 
+```js
+ for (const value of lista) {
+    console.log(value);
+  }
+```
+
 **4️. Crea una función que pueda recibir cualquier objeto como parámetro e imprima todos sus elementos uno por uno (no se vale imprimir el objeto completo)**
+
+```JS
+const unaFuncion = (array) => {
+  console.log(array[0]);
+};
+
+// punto 3
+let frutas = ['Pera', 'Manzana', 'Sandia'];
+const unaFuncion = (array) => {
+  array.forEach((elem) => {
+    console.log(elem);
+  });
+};
+
+unaFuncion(frutas);
+
+// Punto 4
+let persona = {
+  nombre: 'Oscar',
+  apellido: 'Aguilar',
+  edad: 21
+}
+const unaFuncion = (objeto) => {
+  Object.values(objeto).forEach((elem) => {
+    console.log(elem);
+  });
+};
+
+unaFuncion(persona);
+// otra manera
+
+  for (const property in objetoCarro) {
+    if (Object.hasOwnProperty.call(objetoCarro, property)) {
+      const element = objetoCarro[property];
+      console.log(element);
+    }
+  }
+```
 
 ¿Cómo te fue? 🏆
 ¡Felicidades por completar la prueba de JavaScript! Confío en que hayas completado cada paso y hayas pausado para repasar los temas de los ejercicios que se te complicaron.
@@ -299,6 +411,50 @@ Ahora sí, continúa a la siguiente clase, pero recuerda que ya no puedes abando
 ¡Te espero en la siguiente clase para comenzar!
 
 ## Configuración del entorno de desarrollo
+
+Es un software de control de versiones para administrar proyectos en el área de software. Su función principal es: guardar el histórico de los cambios de múltiples archivos o carpetas. Esto lo hace de forma atómica, en una base de datos interna que tiene git. Esta ventaja permite: fusionar cambios, confirmar cambios, crear ramas verificar quién y cuándo se realizaron ciertos cambios.
+
+¿Qué es github?
+Es una plataforma web de desarrollo colaborativo para alojar proyectos utilizando el sistema de control de versiones Git
+
+comandos útiles:
+Abrir carpeta actual reusando la misma ventana
+```BASH
+code ./ -r
+`
+Agregar todos los cambios al staging área (add)
+```BASH
+git add .
+```
+Realizar confirmar un cambio en la base de datos de git (commit)
+```BASH
+git commit -m "mensaje del commit"
+```
+subir cambios a github
+```BASH
+git push
+```
+  - Objetivos de la clase
+  - Crear una cuenta en github
+  - Crear un repositorio en github para el curso
+  - Clonar el proyecto de github en visual studio code
+
+  La extensión de Visual Studio Code para darle colorsitoss diferentes a cada proyecto donde trabajamos se llama Peacock (de John Papa).
+
+Además, aquí puedes ver los atajos de teclado para VSCode:
+
+- [Windows:](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf)
+- [macOS:](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf)
+- [Linux:](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf)
+
+- [Comunidad Platzi · GitHub](https://github.com/platzi/)
+- [juandc (Juan David astro) · GitHub](https://github.com/juandc/)
+- [Protege tu código usando Licencias de Software - YouTube](https://www.youtube.com/watch?v=eWtjgfzpt6Y)
+- [Licensing a repository - GitHub Docs](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/licensing-a-repository)
+- [What you need to know to choose an open source license. · GitHub](https://gist.github.com/nicolasdao/a7adda51f2f185e8d2700e1573d8a633)
+- [https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf)
+- [https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf)
+- [https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf)
 
 # 2. Taller #1: figuras geométricas
 
