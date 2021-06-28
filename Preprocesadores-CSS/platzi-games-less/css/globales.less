@@ -5,9 +5,49 @@
 @Fuente1: 'Lato', sans-serif;
 @Fuente2: 'Oswald', sans-serif;
 @fuente-base: 18px;
+@dark-mode: true;
 
-.sombra-caja(@color-primario) {
+.sombra-caja {
 	box-shadow: 0px 5px 15px 0px fade(@color-primario, 50%);
+}
+
+.Oswald {
+	font-family: @fuente2;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+.fuente(@font-size) {
+	font-size: @font-size;
+	line-height: @font-size + 10%;
+}
+
+.dark() when (@dark-mode = true) {
+	background-color: @color-primario;
+	color: @color-claro;
+  
+	.intro {
+	  	background-color: @color-secundario;
+	}
+  
+	.caja {
+	  span {
+		color: fade(@color-claro, 80%);
+	  }
+	}
+  
+	.caja__contenido {
+	  background-color: @color-secundario;
+	  a {
+		color: fade(@color-claro, 50%);
+	  }
+	}
+  
+	.articulo--principal {
+	  h2 {
+		color: @color-secundario;
+	  }
+	}
 }
 
 *{
@@ -17,11 +57,11 @@ body {
 	margin: 0;
 	font-family: @Fuente1;
 	color: @color-primario;
-	line-height: @fuente-base + 10%;
+	.fuente(@fuente-base);
+	.dark();
 }
 
 h1,h2,h3 {
-	font-family: @Fuente2;
-	text-transform: uppercase;
 	margin: 0;
+	.Oswald();
 }

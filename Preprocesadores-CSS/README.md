@@ -650,9 +650,19 @@ Su finalidad es ofrecer una funcionalidad que pueda ser reutilizada en otras cla
 
 Con los mixins logramos escribir menos código, produciendo un código más claro, más expresivo y sobre todo más fácil de mantener.
 
+Un mixin es cuando tenemos estilo o propiedades que pueden ser utilizadas por diferentes elemenos en distintos partes.
 
+```CSS
+/* CSS */
+//Esto es un mixins por que se utiliza varias veces
+.sombra-caja {
+    box-shadow: 0px 5px 15px 0px fade(@color-primario,50%);
+}
+```
 
 ## Finalizando ejercicio de página de artículos
+
+<img src="https://i.ibb.co/x70ysxS/Platzi-Games.jpg" alt="Platzi-Games" border="0">
 
 # 5. Sass
 
