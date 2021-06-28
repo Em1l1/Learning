@@ -719,14 +719,18 @@ Los navegadores no entienden TypeScript así que lo vamos a transpilar a JavaScr
 > npm i --save-dev parcel-bundler@1.12.3
 > ```
 
+
+
 - [Parcel](https://parceljs.org)
+
 ## Tipos básicos
+<img src="https://i.ibb.co/k55x3Gj/JS-25.jpg" alt="JS-25" border="0">
 
-
+- [Basic Types · TypeScript](https://www.typescriptlang.org/docs/handbook/basic-types.html)
 
 ## Funciones
 
-
+En Typescript podemos ser explícitos con el tipo de los argumentos y el tipo de retorno de una función.
 
 ## Interfaces
 
