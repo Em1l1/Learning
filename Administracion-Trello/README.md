@@ -134,7 +134,7 @@ Existen dos maneras. Una desde Trello y otra desde Slack.
   5. Seleccionar Equipo, canal y las alertas que se requiera.
   6. En el tablero clic en “Invitar” luego en enlace.
   7. Copiar enlace en el canal de Slack y esperar que los miembros se suscriban.
-  
+
 Listo. Se emitirá una alerta según la configuración definida en dicho canal.
 
 ### Desde Slack
@@ -195,34 +195,181 @@ Etapa de planificación para cumplir objetivos y metas con los tiempos adecuados
 
 ## Archivos y enlaces
 
+Puedes arrastrar la imagen o cualquier documento al centro de la tarjeta y se adjuntará de manera mucho más fácil.
+
+**Trello** permite importar imagenes y todo tipo de archivos desde el ordenador, *Drive*, *Box*, *One Drive*, *Dropbox*; includo desde otros tableros de Trello.
+
+Tambien puedes introducir un link externo para que redireccione a esa web.
+Para importar imagenes desde internet tenemos dos formas:
+Copiar la dirección de enlace, que nos redireccionará a esa imagen
+Copiar dirección de imagen, que cargará en portada.
+
+Si subes una fotografia en jpg, png y similares la foto se vuelve portada de esa tarjeta automaticamente, pudiendo eliminarla de portada desde dentro.
+
+- En las tarjetas es posible incorporar imágenes, plazos de entrega, listas de tareas, etiquetas separadas por color y comentarios asociados a cada tarea.
+
+- En palabras simples, el tablero es la página que contiene todas las listas asociadas a un proyecto en específico, que pueden[ ser añadidas o archivadas](**Fuente: https://bit.ly/2JZ3F23**).
+
+  [![Screenshot-3.jpg](https://i.postimg.cc/0j4m2VYP/Screenshot-3.jpg)](https://postimg.cc/H8Qj64vh)
 
 ## Reto 3
+
+Realiza el siguiente reto para poner en práctica tus conocimientos:
+
+- Nombra los tipos de archivo que se pueden integrar.
+
+  Los archivos de adjuntan desde:
+
+  - Ordenador (.jpeg, .doc, .xlsx, etc)
+  - Trello (desde el mismo tablero o desde otros tableros)
+  - Doogle Drive
+  - Dropbox
+
+- Asigna una imagen como portada de una tarjeta.
+
+  [![trello-reto3.jpg](https://i.postimg.cc/LssxXbfZ/trello-reto3.jpg)](https://postimg.cc/zy9C2pxJ)
 
 # 4. Comunicación, notificaciones y seguimiento de conversaciones
 
 ## Comunicación, notificaciones y seguimiento
 
+*La comunicación entre los diferentes miembros del equipo es una de las cosas mas importantes para comenzar con la transformación digital en una empresa. Por eso utilizar esta herramienta para reducir los correos diarios que se envian entre miembros del equipo es muy util para reducir el tiempo que invertimos en ello.*
+
+En las tarjetas nos **comunicaremos** mediante comentarios dentro de las tarjetas.
+Cada comentario notifica a los que estén dentro de esa tarjeta de que es nuevo, para aquellas personas que no estén dentro de esa tarjeta pero querramos que les llegue el comentario necesitamos mencionarlas con **@sunombre.**
+
+Si no eres parte de la tarjeta pero quieres estar siguiendo la tarjeta y ver las notificaciones, podemos entrar en la tarjeta y darle a ***Seguir***, haciendo que nos lleguen todas las notificaciones de esta.
+Podemos hacer esto para tarjeta, lista y tablero.
+
+> Puedes hacer seguimiento de una tarjeta, lista o tablero en particular.
+
+Con notificaciones en tiempo real que agil flujo de informacion esto ayuda a una respuesta mas rapida ante errores o atrasos de tener solucion y equipos con responsabilidad
 
 ## Administración de notificaciones
 
+Las notificaciones ofrecen una alternativa rapida de atender solicitudes del grupo de trabajo, pero lo mas recomendable es usarlas directamente en la herramienta para evitar sobrecarga en la bandeja de entrada.
+
+Los filtros que se me ocurren son:
+
+- Filtrar por leídas y no leídas (al igual que el contenido de este video)
+
+- Filtrar por menciones (igual que twitter)
+
+  > Nunca enviar notificaciones al correo electrónico.
 
 ## Reto 4
+
+Realiza el siguiente reto para poner en práctica tus conocimientos:
+
+- **Describe la forma de agregar un comentario en una tarjeta.**
+
+  ​	Entrar a la tarjeta y en la parte inferior donde esta la caja de comentarios ahi ponerlo.
+
+- **Haz un comentario dirigido a alguien que no forma parte de la tarjeta.**
+
+  ​	Si necesitamos citar a alguien que no este asignado a esta tarjeta se puede hacer con un @usuario, siempre y cuando si este dentro del tablero el usuario.
+
+- **Explica cómo hacer un seguimiento de la actividad de una tarjeta, lista o tablero sin ser miembro.**
+
+  ​	Lista - en los tres puntos y despues en seguir
+  Tablero - Menu - mas… y despues en seguir
+  Tarjeta - Entrar a la tarjeta y despues en Acciones clic en seguir
 
 # 5. Herramientas avanzadas
 
 ## Mover, copiar y compartir tarjetas
 
+Herramienta, para añadir un comentario desde el correo electrónico,
+
+- [Trello | Tableros publicos](https://trello.com/b/mSToXF5L/trello-slack-google-tips-tricks)
+
+Optimizar tiempo es una premisa de la transformación digital, estas opciones de administrar tarjetas (Mover, copiar, compatir) permite, aprovechar recursos ya creados, incluir la tarjeta en una paginca como código HTML y administrar las actividades de un plan de trabajo complejo.
+
+Que interesante el hecho de poder enviar comentarios por coreo a tarjetas especificas, la debilidad que le veo es que uno debiese tener una lista de correos por tarjeta que tiene en cada tablero, quiero verle la utilidad a esto, me parece muy interesante, paro los fines prácticos no los veo claros
 
 ## Definir fechas de vencimiento y activar el calendario
 
+**Las fechas de vencimiento en Trello** nos permiten definir los DeadLines (DL) de nuestras tareas. Aparece
+
+Trello nos recuerda la proximidad del vencimiento con un color:
+**Naranja** si la fecha actual es muy próxima a la colocada,
+**Roja** si se ha pasado de DL,
+**Sin color** si todavía queda tiempo suficiente para que venza.
+
+Para sacarle mayor funcionalidad necesitamos activar el calendario.
+Necesitamos ir a Menú (arriba a la derecha), entrar en **Power-ups**, buscamos ‘Calendario’ se llama *Calendar*.
+
+Aparecerá un calendario y aparecerán los DL que se hayan escrito.
+Podremos crear tarjetas directamente en el Calendario.
+
+Tambien podremos hacer que este calendario se sincronice con tu calendario personal para tener todo unificado.
+
+El cronograma de actividades cuenta con muchas ventajas para la gestión, entre las que cabría destacar:
+
+- Proporciona una base para supervisar y controlar el desarrollo de todas y cada una de las actividades que componen el proyecto.
+- Ayuda a determinar la mejor manera de asignar los recursos, para que se pueda alcanzar la meta del proyecto de manera óptima.
+- Facilita la evaluación de la manera en que cada retraso puede afectar a otras actividades y a los resultados finales.
+- Permite averiguar dónde van a quedar recursos disponibles, de forma que se puede proceder a su reasignación a otras tareas o proyectos.
+- Sirve de base para realizar un seguimiento del progreso del proyecto.
+  Intentar gestionar un proyecto sin apoyarse en una herramienta como el cronograma de actividades es casi como avanzar con los ojos cerrados ya que, sin la visión y claridad que aporta la toma de decisiones pierde objetividad y el nivel de riesgo aumenta considerablemente.
+
+La versión trello gold, la cual podemos conseguir con un link de recomendacín, nos permite hasta 3 power-ups. Les recomiendo usar Drive & Slack como herramientas asociadas a trello.
 
 ## Archivar y restaurar elementos
 
+**Trello** se basa en la **simplificacion** y en la **optimización** del tiempo. En cuanto tenemos demasiadas tarjetas abiertas y/o terminadas se hace pesado buscar, para ello una buena utilidad que tiene Trello es **archivar y restaurar** elementos para sacarlos de vista.
+**Para archivar una tarjeta** solamente tenemos que entrar en el **menú de la tarjeta** y darle a Archivar. Para desarchivarla iremos a *Menú*, *Elementos Archivados* y enviar al tablero, donde volverá al sitio original.
+
+Tambien podremos **archivar un tablero entero**, tenemos la suerte de poder desarchivarlo dentro del Menú de los Tableros.
+
+Archivar y Restaurar Elementos
+
+- Trello Permite Archivar Tarjetas, Listas, tablero
+- Tienes la posibilidad de desarchivar estos elementos
+- Puedes eliminarlos definitivamente (Esta acción no se puede deshacer
+- En cuentas Premiun puedes habilitar permisos para que solo ciertos usuarios puedan hacer ciertas acciones como archivar o eliminar
+
+[![archivar.jpg](https://i.postimg.cc/520Vd1gh/archivar.jpg)](https://postimg.cc/F72q3M2p)
+
+Esta función de **Trello** nos ayuda:
+
+- Tener un tablero más organizado.
+- Mejora el flujo de trabajo cuando se trabaja con clientes.
+- Tienes la opción de ocultar o eliminar tableros pasados (solo si es necesario)
 
 ## Vinculación de tarjetas y tableros
 
+Cuanto mas se complica el **proyecto con cientos de tarjetas**, es muy util usar la vinculación entre *Tarjetas y Tableros*.
+
+Podemos vincular tarjetas entre ellas utilizando el link que se genera cuando compartes la tarjeta, para así explicar el contexto y no llenar de [texto una tarjeta innecesariamente](https://trello.com/c/glfPYhyx)
+
+[![Tableros.jpg](https://i.postimg.cc/yYbHKxdF/Tableros.jpg)](https://postimg.cc/56LGqx80)
+
+Todas las tarjetas y tableros tienen URLs únicas.
 
 ## Reto 5
+
+Realiza el siguiente reto para poner en práctica tus conocimientos:
+
+- **Explica la diferencia entre arrastrar y soltar tarjetas entre distintas listas y utilizar la función “mover” una tarjeta.**
+  - La diferencia entre arrastrar y mover una tarjeta radica en que la primera facilita el trabajo haciendo uso del mouse y la podemos llevar a donde queramos, y mover una tarjeta requiere de realizar el despliegue de los menús de la tarjeta, así como de conocer la ubicación exacta a donde la queremos ubicar finalmente. Se puede jugar más con la primera opción que con la segunda.
+
+-  **Explica las ventajas de copiar una tarjeta en vez de moverla.**
+  - Si tenemos una tarjeta la cual podremos replicar en el resto de las listas, en lugar de estar escribiendo y haciendo las respectivas modificaciones a cada una, lo que hacemos es copiarla y de esta forma no trabajamos en exceso y simplemente hacemos las modificaciones que haya lugar en las nuevas tarjetas, ahorrando tiempo y trabajo.
+
+- **Establece una fecha de vencimiento para una tarjeta específica.**
+
+  - Abrimos la tarjeta usar y dentro de su menú se encuentra la opción “Vencimiento”, damos clic y se despliega otro menú que contiene entre otras cosas un calendario; escogemos la fecha y la hora y creamos un recordatorio que creamos prudente para recordarnos de la fecha en que vence dicha tarea. Guardamos y listo, ésta aparecerá en la tarjeta del listado correspondiente.
+
+- **Cambia las fechas de vencimiento utilizando la vista calendario.**
+
+  - Abrimos el calendario dando clic en su respectivo botón, ahí seleccionamos la tarjeta a cambiar de fecha y la arrastramos a la nueva fecha de vencimiento y la soltamos. Así ha quedado establecida una nueva fecha para la tarjeta.
+
+- **Dentro de una tarjeta, genera un vínculo a otro tablero.**
+
+  - Primero vamos al tablero a que haya que vincular; ya ahí damos clic en el menú superior derecho “mostrar menú”, seleccionamos la opción “más” y en seguida la opción “Enlazar a este tablero”, copiamos el enlace y cerramos el menú. A continuación vamos a otro tablero donde se encuentre la tarjeta en la que vamos a enlazar el tablero anterior y, abrimos la tarjeta de destino; en la sección de “Descripción” damos algunos detalles sobre lo que trata el enlace y pegamos ahí el enlace del otro tablero, guardamos y listo.
+
+  **Nota**: Las instrucciones dadas en este post pueden diferir de las que se dan en el curso ya que la actulización de la aplicación Trello contiene algunas diferencias a la versión que uso el profesor para dar su curso.
 
 # 6. Conectando y extendiendo Trello con otras herramientas
 
@@ -242,4 +389,4 @@ Etapa de planificación para cumplir objetivos y metas con los tiempos adecuados
 ## Reto 6
 
 
-## Conclusiones
+## Conclusionest
