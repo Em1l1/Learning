@@ -41,7 +41,7 @@ let someObject = { type: 'Wildcard' };
  */
 
 // funciones
-function add(a: number, b: number): number {
+/* function add(a: number, b: number): number {
   return a + b;
 }
 
@@ -66,3 +66,45 @@ function fullName(firstName: string, lastName: string = 'Smith'): string {
 
 const richard = fullName('Richard', 'Kafman');
 console.log(richard)
+
+// Interfaces
+enum Color {
+  Rojo = "Rojo",
+  Verde = "Verde",
+}
+
+interface Rectangulo {
+  ancho: number
+  alto: number
+  color: Color;
+}
+
+let rect: Rectangulo = {
+  ancho: 5,
+  alto: 9,
+  color: Color.Rojo,
+}
+
+function area(r: Rectangulo): number {
+  return r.alto * r.ancho;
+}
+
+const areaRect = area(rect);
+console.log(areaRect);
+
+// console.log(rect.toString());
+rect.toString = function() {
+  return this.color ? `un rectangulo ${this.color}` : `un rectangulo`;
+}
+
+console.log(rect.toString());
+ */
+
+// Patrones de Disegn
+// Singleton
+import Singleton from './Singleton';
+
+const a = Singleton.getInstance();
+const b = Singleton.getInstance();
+
+console.log('A es igual a B?', a === b)

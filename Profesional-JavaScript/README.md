@@ -678,14 +678,14 @@ El umbral se define por el porcentaje que tiene intersección con el viewport, c
 El `visibilityChange` forma parte del API del DOM llamado Page Visibility y nos deja saber si el elemento es visible, pude ser usado para ejecutar una acción cuando cambiamos de pestaña. Así podemos ahorrar batería y mejorar la UX.
 
 Otros casos de uso para utilizar la [API Page Visibility:](https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API)
- 
+
 
   - Un sitio tiene un carrusel de imágenes que no debería avanzar a la siguiente diapositiva a no ser que el usuario esté viendo la página.
- 
+
   - Una aplicación que muestra un panel de información y no se quiere que se actualice la información del servidor cuando la página no está visible.
- 
+
   - Una página quiere detectar cuando se está precargando para poder mantener un recuento preciso de las vistas de página.
- 
+
   - Un sitio desea desactivar los sonidos cuando el dispositivo está en modo de espera (el usuario presiona el botón de encendido para apagar la pantalla).
 
 <img src="https://i.ibb.co/0qz9PPF/Visibilitychange.jpg" alt="Visibilitychange" border="0">
@@ -732,13 +732,24 @@ Los navegadores no entienden TypeScript así que lo vamos a transpilar a JavaScr
 
 En Typescript podemos ser explícitos con el tipo de los argumentos y el tipo de retorno de una función.
 
+<img src="https://i.ibb.co/p2WVFkc/JS-26.jpg" alt="JS-26" border="0">
+
+
+
 ## Interfaces
 
+Nos permiten declarar la forma exacta de un objeto, definiendo los tipos de sus propiedades y si son opcionales o no.
 
+<img src="https://i.ibb.co/7ky69Qs/interface.jpg" alt="interface" border="0">
 
 ## Clases
 
+En las clases en TypeScript sí existen las propiedades privadas.
 
+Un error, **regenerator.runtime is not defined.**
+		Lo solucioné borrando el cache del navegador, borrando la carpeta dist y cache y volviendo a lanzar el servidor de parcel.
+
+En javascript pronto existirán oficialmente variables privadas, por ahora está en stage 3 [una fase antes de ser del standard EcmaScript]([https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_class_fields)
 
 ## Convertir el proyecto a TypeScript
 
@@ -748,23 +759,258 @@ En Typescript podemos ser explícitos con el tipo de los argumentos y el tipo de
 
 ## Qué es un patrón de diseño
 
+Un patrón de diseño resulta ser una solución a un problema de diseño. Para que una solución sea considerada un patrón debe poseer ciertas características.
 
+1. Una de ellas es que debe haber comprobado su efectividad resolviendo problemas similares en ocasiones anteriores.
+2. Otra es que debe ser reutilizable, lo que significa que es aplicable a diferentes problemas de diseño en distintas circunstancias
+
+Son soluciones generales ya probadas dentro de un contexto que las limita a problemas frecuentes que nos encontramos en el desarrollo de software.
+
+Son recetas que resuelven problemas que nos enfrentamos frecuentemente en el diseno de software.
+
+Una solucion para un problema dentro de un contexto.
+
+- El contexto es la situacion donde el patron aplica.
+- Esta situacion debe ser recuerrente.
+- Se refiere a la meta que esta tratando de alcanzar dentro del contexto
+- El problema incluye todas las limitaciones que existen dentro de ese contexto.
+- Un diseno generico que alcanza la meta dentro del ccontexto
+
+**Beneficios**
+
+- Los patrones de diseno son una caja de herramientas de soluciones bien probadas a problemas comunes en diseno de software
+- Te proveen un lenguaje comun que permite comunicarse de forma especifica y eficiente
+
+**Critica**
+
+- Los patrones de diseno son una forma de complejidad
+- Son soluciones a las limitaciones de lenguaje de programacion
+- “Cuando todo lo que tienes es un martillo, todo te parece un clavo”
+- HAY QUE EVITARLOS, USALOS CUANDO ES NECESARIO
+
+**Conclusion**
+
+- Siempre busca pensar en terminos de diseno, no de patrones
+- Usa un patron cuando hay una necesidad natural para usarlos
+- Si existe una alternativa mas simple, prefierela
+
+**Paginas**
+https://every-layout.dev/
+https://mediaqueri.es/
 
 ## Categorías de patrones de diseño
 
+**Creacionales**. Proveen diferentes mecanismos para crear objetos.
 
+**Estructurales**. Describen formas de componer objetos para formar nuevas estructuras flexibles y eficientes.
+
+**De Comportamiento**. Gestionan algoritmos y responsabilidades entre objetos.
+
+➡️**Creacionales**
+Proveen diferentes mecanismos para crear objetos.
+
+- Abstract Factory
+
+- Builder
+
+- Factory Method
+
+- Prototype
+
+- Singleton
+
+  
+
+  ➡️**Estructurales**
+  Describen formas de componer objetos para formar nuevas estructuras flexibles y eficientes.
+
+- Adapter
+
+- Bridge
+
+- Composite
+
+- Decorator
+
+- Facade
+
+- Flyweight
+
+- Proxy
+   
+  ➡️**Comportamiento**
+  Gestionan algoritmos y responsabilidades entre objetos.
+
+- Chain of Responsibility
+
+- Command
+
+- Interpreter
+
+- Iterator
+
+- Mediator
+
+- Memento
+
+- Observer
+
+- State
+
+- Strategy
+
+- Template Method
+
+- Visitor
+
+  [Design Patterns](https://refactoring.guru/design-patterns)
 
 ## Patrón Singleton y Casos de Uso
 
+Es un patrón que te asegura que una clase solo tiene una instancia. Esta única instancia puede ser consumida por cualquier otro objeto.
 
+> “Single” en inglés es “sencillo” (o soltero ¬w¬) así que se puede recordar si se asocia con su significado “Singleton” vendría a ser un objeto o instancia “solterona”.
+
+- **UML** (forma gráfica de representación de un sistema basado en Clases).
+
+- Que **“método”** es como se denomina a una función definida dentro de una clase.
+
+- El término **estático** (que significa que la propiedad o el método no pertenece a las instancias, si no a la clase y es único).
+- Qué implica la **visibilidad** (públicos o privados) de los elementos. Cuando algo es público puede ser accedido desde cualquier parte del programa, si es privado sólo la propia clase puede accederlo o usarlo.
+
+<img src="https://i.ibb.co/0Gc93qs/Singleton-UML-class-diagram-svg.png" alt="Singleton-UML-class-diagram-svg" border="0">
+
+PRO TIP: Cuando hacemos un `export`, el mismo se cachea, por lo que cuando lo importamos en otros archivos, siempre devuelve lo mismo.
+
+Mongoose hace uso de esto como alternativa del Patrón de Diseño Singleton.
+
+<img src="https://i.ibb.co/WHF2ZDD/singlenton.jpg" alt="singlenton" border="0">
 
 ## Implementación del patrón Singleton
 
+## Singlenton con TS
 
+Uno de los patrones de diseño de creación más populares es el patrón Singleton que restringe la creación de instancias de una clase a un objeto.
+
+En esta publicación, le mostraré cómo usar el patrón junto con TypeScript.
+
+------
+
+## Es genial con TS
+
+La biblia de los patrones de diseño, a saber, el libro de Gang of Four (GoF), presenta la aplicación de patrones utilizando el lenguaje C ++, un lenguaje estáticamente tipado.
+
+**TypeScript permite implementar el patrón Singleton gracias a las siguientes características:**
+
+- **soporte para modificadores de acceso (privado, protegido, público),**
+- **soporte para métodos estáticos,**
+- **siendo un lenguaje estáticamente escrito.**
+
+------
+
+## Patrón Singleton
+
+En el siguiente ejemplo, *creo la* clase *ActionsBus* que se supone que se instancia solo una vez, ya que debería haber un único punto para enviar una acción. Además, debe ser notificado sobre cada acción en el sistema simplemente suscribiéndose en un lugar.
+
+```typescript
+import { BehaviorSubject } from 'rxjs';
+
+interface Action {
+  type: string;
+}
+
+class ActionsBus {
+  private static instance: ActionsBus;
+  private actionsSubject = new BehaviorSubject<Action>(null);
+
+  get actions$() {
+    return this.actionsSubject.asObservable();
+  }
+
+  private constructor() {
+  }
+
+  static getInstance(): ActionsBus {
+    if (!ActionsBus.instance) {
+      ActionsBus.instance = new ActionsBus();
+    }
+
+    return ActionsBus.instance;
+  }
+
+  dispatch(action: Action) {
+    this.actionsSubject.next(action);
+  }
+}
+```
+
+**Los puntos clave son:**
+
+- ***constructor\* con un modificador de acceso privado, para que no sea accesible fuera del cuerpo de la clase,**
+- ***instancia\* estática archivada que se supone que hace referencia a la instancia única de la clase,**
+- **Método \*getInstance\* estático que se encarga de devolver la instancia de la clase. Además, sigue una estrategia de evaluación perezosa, por lo tanto, debe crear la instancia cuando se llama por primera vez.**
+
+------
+
+## Singleton en acción
+
+Veamos si la clase *ActionsBus* es un singleton, es decir, si solo hay una instancia de la clase.
+
+```js
+//illegal since the constructor is private
+const illegalActionsBus = new ActionsBus();
+
+const firstActionsBus = ActionsBus.getInstance();
+const secondActionsBus = ActionsBus.getInstance();
+
+//both constants reference the same object
+console.log(firstActionsBus === secondActionsBus);
+
+firstActionsBus.actions$.subscribe(console.log);
+secondActionsBus.dispatch({ type: 'Fetch news' })
+
+//console output
+//{type: "Fetch news"}
+```
+
+Es ilegal crear la instancia de clase de forma tradicional fuera del cuerpo de la clase. **Para obtener una referencia a la instancia única de \*ActionsBus\* , debe llamar al método estático \*getInstance\* .** Ambas constantes ( *primer / segundo ActionsBus* ) hacen referencia al mismo objeto, por lo tanto, la comparación lógica produce *verdadero* . Por último, pero no menos importante, si se suscribe a la *acción $* stream con la ayuda de la referencia *firstActionsBus* , recibirá una acción enviada utilizando la referencia *secondActionsBus* . Definitivamente confirma que solo hay una instancia de la clase *ActionsBus* en el sistema.
+
+------
+
+## Conclusiones
+
+Espero que les haya gustado la publicación y hayan aprendido algo nuevo. El patrón Singleton es uno de los patrones más fáciles de entender, por lo tanto, es un buen punto de partida para familiarizarse con los patrones. Recuerdo que cuando me uní al mundo de JavaScript, estaba un poco molesto porque, debido a la falta de tipeo, el conocimiento sobre los patrones de diseño no sería tan útil como en Java o C ++. Afortunadamente, TypeScript al rescate!
+
+Un concepto que creo que es importante y no se ha tratado en el curso que ayuda a entender el ejercicio son los métodos estáticos.
+Estos nos permiten acceder a ellos sin la necesidad de instanciar la clase a la que pertenecen, por eso es que podemos hacer :
+
+```typescript
+Singleton.getInstance();
+```
+
+Sin la necesidad de haber instanciado la clase Singleton, es como un tipo de método público por decirlo así.
+
+>  “Los métodos estáticos son llamados sin instanciar su clase. Son habitualmente utilizados para crear funciones para una aplicación.”
 
 ## ¿Cómo funciona el Patrón Observer?
 
+En esta clase Richard Kaufman, tu profesor en el Curso profesional de JavaScript, nos explica el funcionamiento del patrón observer y como implementarlo.
 
+El patrón observer se compone de un sujeto que ofrece mecanismos de suscripción y desuscripción a múltiples observadores que quieren ser notificados de los cambios en dicho sujeto. Cada observador expone un método de update que es usado por el sujeto para notificar cualquier cambio a todos los suscritos.
+
+Es uno de los patrones más utilizados, algunos ejemplos típicos son:
+
+- Newsletter
+- Sockets
+- Listeners en páginas web
+
+***En definitiva, normalmente, se usará el patrón observador cuando un elemento quiere estar pendiente de otro, sin tener que estar comprobando de forma continua si ha cambiado o no.***
+
+**Observer** es un patrón de diseño de software que define una dependencia del tipo uno a muchos entre objetos, de manera que cuando uno de los objetos cambia su estado, notifica este cambio a todos los dependientes.
+
+> **De comportamiento**: Nos ayuda a resolver problemas relacionados con el comportamiento de la aplicación. Ofrece soluciones respecto a la interacción y responsabilidad entre objetos y clases. Por ejemplo:
+
+> **Observer** (Observador) La definición que provee Wikipedia es bastante entendible y real, dice “Define una dependencia de uno-a-muchos entre objetos, de forma que cuando un objeto cambie de estado se notifique y actualicen automáticamente todos los objetos que dependen de él.”
 
 ## Implementación del patrón Observer
 
@@ -798,4 +1044,4 @@ En Typescript podemos ser explícitos con el tipo de los argumentos y el tipo de
 
 # 10. Conclusiones
 
-## Conclusiones
+## Conclusionesl
