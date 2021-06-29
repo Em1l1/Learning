@@ -668,8 +668,150 @@ Un mixin es cuando tenemos estilo o propiedades que pueden ser utilizadas por di
 
 ## Introducción a Sass
 
+Sass (Syntactically Awesome StyleSheets) es una extensión de CSS que añade características muy potentes y elegantes a este lenguaje de estilos.
+
+Sass es basado en Ruby a diferencia de Less y Stylus que se basan en Javascript.
+
+Sass nos permite usar variables , reglas anidadas , mixins y funciones.
+La razón de que en SASS usemos la extensión ‘.scss’ es porque esta nos permite usar una sintaxis muy parecida a css.
+La otra opción es usar SASS con la extensión ‘.sass’ la única diferencia es que con esta extensión podremos omitir las llaves ‘{}’ y los punto y coma ‘;’ después de cada valor, esta sintaxis interpretará los atributos y valores por medio de la identación.
+
+Para los que están acostumbrados a usar la terminal pueden hacer lo siguiente:
+
+<h1>Instalar sass</h1>
+
+```bash
+npm install -g sass
+```
+
+
+
+<h1>Compilar de sass a css</h1>
+
+
+
+```bash
+sass --watch ejercicio-sass.scss ejercicio-sass.css
+```
+
+![img](https://www.google.com/s2/favicons?domain=https://github.githubassets.com/favicon.ico)[GitHub - daywalkerhn/platzi-games-sass-publico](https://github.com/daywalkerhn/platzi-games-sass-publico)
+
+[GitHub - daywalkerhn/platzi-games-sass-publico](https://github.com/daywalkerhn/platzi-games-sass-publico)
+
+## Introduccion
+
+------
+
+Sass (Syntactically Awesome StyleSheets) es una extensión de CSS que añade características muy potentes y elegantes a este lenguaje de estilos.
+
+Sass es basado en Ruby a diferencia de Less y Stylus que se basan en Javascript.
+
+- Creamos un archivo llamado **ejercicio-sass.scss.** Lo primero que trabajaremos es el anidamiento.
+
+```scss
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: 'Lato',sans-serif;
+}
+
+main {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+.perfil {
+    width: 50%;
+    padding-top: 50px;
+		// el signo & indica que este elemento comienza con el mismo nombre de clase
+		// es equivalente a escribir .perfil__avata
+	 // Todo esta dentro de .pefil por que son estilos de elementos hijos de esa clase
+	// Luego SASS cuando compila lo organiza 
+    &__avatar{
+        display: block;
+        margin: 0 auto;
+        border-radius: 50%;
+    }
+    &__nombre {
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 20px;
+    }
+    &__titulo{
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: 700;
+        font-size: 12px;
+    }
+    &__boton{
+        display: block;
+        width: 100px;
+        height: 40px;
+        margin: 15px auto;
+        padding-top:15px;
+        border-radius: 20px;
+        text-decoration: none;
+        text-transform: uppercase;
+        text-align: center;
+    }
+}
+```
+
+
 
 ## Variables
+
+En las variables almacenamos datos que se puede reutilizar en todas nuestras hojas de estilos. Así evitamos tener que escribir lo mismo una y otra vez cuando se realiza algún cambio, ya que sólo vamos a modificar el valor de la variable y se aplicará a todos los lugares donde sea usada.
+
+Comúnmente almacenamos en variables las guías de estilo de nuestro sitio, como pueden ser los colores y fuentes.
+
+- Variables Less = @
+
+- Variables SASS = $
+
+  ### Variables 
+
+  ```scss
+   // Asi se declaran variables
+  $Fuente1:'Lato',sans-serif;
+  $Fuente2:'Oswald',sans-serif;
+  $color-primario:#333333;
+  $color-claro:#FFFFFF;
+  $color-secundario:#8841DA;
+  $color-variacion:#3F579A;
+  
+  *{
+      box-sizing: border-box;
+  }
+  
+  body{
+      margin: 0;
+      font-family: $Fuente1; // Asi como se usan
+  }
+  ```
+
+  Las variables en SASS empiezan con `$`
+  Por ejemplo `$Fuente1: 'Lato', sans-serif;` y aplicando la variable a un selector:
+
+  ```scss
+  body {
+  	margin: 0;
+  	font-family: $Fuente1;
+  	}
+  ```
+
+  ### Buenas practicas tomadas de esta clase
+
+  - Antes de nombrar a un bloque de código, hay que pensar si ese bloque nos servirá para futuras ocasiones, como en el caso de “Seguidores” en nuestro proyecto de este curso. Si el bloque si nos servirá en futuras ocasiones, entonces no hay que nombrar con la metodología BEM, ya que eso puede romper ciertas partes de código en otros archivos html. Eso nos ayuda con la modularizarían y la reutilización de código.
+  - Las variables deben ir hasta arriba
+  - Los nombres de las variables tienen que ser genéricos, tales como `fuente1, color-primario`, etc. Esto es porque estas variables pueden cambiar. Y teniendo un nombre genérico, no nos vamos a confundir al momento de cambiar una variable.
+  - enlaces útiles
+    - https://sass-lang.com/documentation
+    - https://sass-lang.com/guide
 
 
 ## Imports y Extends
