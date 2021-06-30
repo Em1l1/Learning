@@ -373,20 +373,122 @@ Realiza el siguiente reto para poner en práctica tus conocimientos:
 
 # 6. Conectando y extendiendo Trello con otras herramientas
 
-
 ## Atajos de teclado
 
+[![atajosde-Teclado.jpg](https://i.postimg.cc/FRTWM9XY/atajosde-Teclado.jpg)](https://postimg.cc/mzFyMWD4)
+
+**[Trello | Shortcuts](https://trello.com/shortcuts)**
+
+- Feclas ← → Para moverse entre las listas
+- Fechas ↑↓ Para moverse entre las tarjetas
+- Enter para entrar a la tarjeta
+
+- L --> Labels = Etiquetas
+- M --> Members = Miembros
+- D -->Deadline [Fecha (Vencimiento)]
+- Space bar --> Asignar automáticamente a una tarjeta
+- C --> Archivar
+- S --> Seguir
 
 ## Power-Ups y Google Calendar
 
+Los Power-Ups son extensiones de Trello o aplicaciones externas que aumentan sus funcionalidades.
+Para integrar el **Calendario de Trello** con *Google Calendar*, vamos a opciones del calendario, copiamos el *link proporcionado* y vamos a darle a **Agregar calendarios** en *Google Calendar*, y clickeamos agregar calendario a traves de una URL.
+Tened cuidado con los husos horarios y las actualizaciones entre herramientas, Google actualiza los Feeds una vez al día.
+
+Otra opción para ver los cambios a tiempo real: [Cronofy](https://trello.cronofy.com/)
+
+No olvidemos eliminar la conexión con Google y Trello.
+
+Con esta aplicación podremos ver a tiempo real los cambios en Trello.
 
 ## Integración de Trello con Slack
 
+Una de las herramientas mas utilizadas por los programadores es [Slack](https://slack.com/).
+Tenemos la posibilidad de integrar Slack a nuestro Trello.
+Primero lo buscaremos en los Power-Ups, el límite de Trello es de 1 Power-Up para las cuentas gratuitas, por lo que necesitaremos deshabilitar el Calendario.
+
+- Necesitamos conectar cada canal con cada tablero que queramos sincronizar.
+- SlackBot nos avisará de las cosas creadas en Trello.
+- Podemos vincular equipos enteros en Slack en la configuración de los equipos de Trello.
+
+**¿Cuando utilizar Trello y cuando Slack?**
+
+- Cuando se hable sobre cosas especificas de los proyectos o las tarjetas se recomienda Trello
+
+- Utilizaremos Slack cuando necesitamos comunicaciones mas generales, como convocatorias de reuniones, eventos y similares.
+
+  > **Tip** también podemos acudir a la app de Slack e integrar un Trello Bot para que se notifiquen las acciones que nosotros deseemos dentro de cualquier canal que necesitemos.
+
+  **En que momento manejar la comunicación en Slack o Trello**
+  Cuando se habla de cosas especificas del proyecto se debe tener la comunicación en Trello, pero cuando se revisa temas generales es mejor utilizar Slack.
 
 ## Otras herramientas de gestión de tiempo y tareas
 
+Para los amantes del OpenSource. Aquí algunas Alternativas.
+
+**Para Trello.**
+
+- Wekan
+
+- Taiga
+
+- Kanboard
+
+**Para Slack.**
+
+- Rcoekt.Chat
+- MatterMost
+
+**Gestión de proyectos(Project Management)**
+
+```
+- Trello
+- Asana
+- Wrike
+- Monday
+- Basecamp
+- Todoist
+- Jira
+```
+
+**Gestión de Actividades Diarias**
+
+```
+- Tick Tick
+- Any.do
+- Microsoft to do (antes WunderList)
+```
+
+Las gestión de actividades diarias es mas para el smartphone con recordatorios de actividades del día a día, como hacer compras, ir al banco, pendientes en casa, etc.
 
 ## Reto 6
 
+Realiza el siguiente reto para poner en práctica tus conocimientos:
 
-## Conclusionest
+- **Describe cómo se accede al listado o glosario de atajos de teclado.**
+
+  ​	Desde https://trello.com/shortcuts.
+
+- **Conecta Trello con Google Calendar.**
+
+  ​	En power-ups registrados el de calendar. Obtenemos el enlace y desde Google Calendar, damos de alta un nuevo calendario con el enlace que obtuvimos en trello.
+
+- **Menciona las principales maneras de vincular Trello con Slack.**
+
+  ​	Desde power-ups, vinculamos la cuenta de slack. Y podemos ver los cambios desde el canal. Tambien a traves de un team, podemos vincular y seleccionar las configuraciones.
+
+- **Nombra dos herramientas que sean alternativas a Trello.**
+
+  ​	Monday / Wunderlist
+
+
+## Conclusiones
+
+¡Hola! Felicitaciones por haber llegado hasta aquí.
+
+Si viste el curso completo ahora conoces a detalle la interfaz de Trello, una herramienta para optimizar la productividad cuyo objetivo es dejar de trabajar en exceso y comenzar a trabajar de manera más inteligente.
+
+Recuerda que utilizar esta herramienta en función de tus proyectos y necesidades es lo que verdaderamente te permite evaluar tu progreso en esta área.
+
+¡Muchos éxitos!
