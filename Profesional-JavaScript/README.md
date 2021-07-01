@@ -837,7 +837,7 @@ Proveen diferentes mecanismos para crear objetos.
 - Flyweight
 
 - Proxy
-   
+  
   ➡️**Comportamiento**
   Gestionan algoritmos y responsabilidades entre objetos.
 
@@ -1014,19 +1014,335 @@ Es uno de los patrones más utilizados, algunos ejemplos típicos son:
 
 ## Implementación del patrón Observer
 
+```tsx
+interface Observer {
+    update: (data: any) => void
+}
 
+interface Subject {
+    subscribe: (observer: Observer) => void
+    unsubscribe: (observer: Observer) => void
+}
+
+
+// va a recibir los cambios del precio del BC y les va a informar a sus observadores
+class BitcoinPrice implements Subject {
+    observers: Observer[] = []
+
+    constructor(){
+        const el: HTMLInputElement = document.querySelector("#value")
+        el.addEventListener("input", () => {
+            this.notify(el.value) // cuando cambie el input notificamos al los observadores
+        })
+    }
+
+    subscribe (observer: Observer) {
+        this.observers.push(observer)
+    }
+
+    unsubscribe(observer: Observer) {
+        const index = this.observers.findIndex((obs) => {
+            return obs === observer
+        })
+        this.observers.splice(index, 1)
+    }
+
+    // cuando el precio cambie queremos notificar a los observadores 
+    notify(data: any) {
+        this.observers.forEach(observer => observer.update(data))
+    }
+}
+
+class PriceDisplay implements Observer {
+    private el: HTMLElement
+
+    constructor(){
+        this.el = document.querySelector("#price")
+    }
+
+    // cada vez que el sujeto notifica a este observador modificamos el valor
+    update(data: any) {
+        this.el.innerText = data
+    }
+}
+
+// instancias para suscribirnos al sujeto
+const value = new BitcoinPrice()
+const display = new PriceDisplay()
+
+value.subscribe(display) // display esta suscrito a todos los cambios que notifica el sujeto (input)
+setTimeout(
+    () => value.unsubscribe(display),
+    5000
+)
+```
+
+Básicamente en este patrón todo interactúa entre si, tenemos la clase **Bitcoin Price** que tiene un array **observers**, un constructor con el elemento HTML de donde se tomaran los valores, en el mismo constructor tenemos un evento que activara el método **notify()** en cuando este cambie.
+
+El método **notify** pasara al constructor **PriceDisplay**, quien sera el encargado de actualizar el elemento HTML (el observador).
+
+En el momento que hacemos lo siguiente:
+
+```tsx
+const value = new BitcoinPrice();
+const display = new PriceDisplay();
+value.subscribe(display);
+```
+
+Hacemos que surja la conexión, entre el **input** y el elemento HTML que mostrara la actualización.
+
+[![observerjavascript.jpg](https://i.postimg.cc/hjGWcmrV/observerjavascript.jpg)](https://postimg.cc/McgrYvgG)
+
+
+
+[![observer-sequence.png](https://i.postimg.cc/0Q43vBrq/observer-sequence.png)](https://postimg.cc/47zwbwz8)
 
 ## Casos de Uso del patrón Observer: Redux
 
+https://nodejs.org/api/events.html
 
+Redux es un contenedor predecible del estado de aplicaciones JavaScript.
+
+Te ayuda a escribir aplicaciones que se comportan de manera consistente, corren en distintos ambientes (cliente, servidor y nativo), y son fáciles de probar. Además de eso, provee una gran experiencia de desarrollo, gracias a [edición en vivo combinado con un depurador sobre una línea de tiempo](https://github.com/gaearon/redux-devtools).
+
+Puedes usar Redux combinado con [React](https://facebook.github.io/react/), o cual cualquier otra librería de vistas. Es muy pequeño (2kB) y no tiene dependencias.
+
+## Conceptos básicos
+
+Redux de por si es muy simple.
+
+Imagine que el estado de su aplicación se describe como un simble objeto. Por ejemplo, el estado de una aplicación de tareas (TODO List) puede tener el siguiente aspecto:
+
+```js
+{
+  todos: [{
+    text: 'Comer',
+    completed: true
+  }, {
+    text: 'Hacer ejercicio',
+    completed: false
+  }],
+  visibilityFilter: 'SHOW_COMPLETED'
+}
+```
+
+Este objeto es como un “modelo” excepto que no hay *setters*. Esto es así para que diferentes partes del código no puedan cambiar el estado arbitrariamente, causando errores difíciles de reproducir.
+
+Para cambiar algo en el estado, es necesario enviar una acción. Una acción es un simple objeto en JavaScript (observe cómo no introducimos ninguna magia) que describe lo que sucedió. A continuación mostramos algunos ejemplos de acciones:
+
+```js
+{ type: 'ADD_TODO', text: 'Ir a nadar a la piscina' }
+{ type: 'TOGGLE_TODO', index: 1 }
+{ type: 'SET_VISIBILITY_FILTER', filter: 'SHOW_ALL' }
+```
+
+Hacer valer que cada cambio sea descrito como una acción nos permite tener una claro entendimiento de lo que está pasando en la aplicación. Si algo cambió, sabemos por qué cambió. Las acciones son como migas de pan (el rastro) de lo que ha sucedido. Finalmente, para juntar el estado y las acciones entre si, escribimos una función llamada reductor (reducer). Una vez más, nada de magia sobre él asunto, es sólo una función que toma el estado y la acción como argumentos y devuelve el siguiente estado de la aplicación. Sería difícil escribir tal función para una aplicación grande, por lo que escribimos funciones más pequeñas que gestionan partes del estado:
+
+```js
+function visibilityFilter(state = 'SHOW_ALL', action) {
+  if (action.type === 'SET_VISIBILITY_FILTER') {
+    return action.filter;
+  } else {
+    return state;
+  }
+}
+
+function todos(state = [], action) {
+  switch (action.type) {
+  case 'ADD_TODO':
+    return state.concat([{ text: action.text, completed: false }]);
+  case 'TOGGLE_TODO':
+    return state.map((todo, index) =>
+      action.index === index ?
+        { text: todo.text, completed: !todo.completed } :
+        todo
+   )
+  default:
+    return state;
+  }
+}
+```
+
+Y escribimos otro reductor que gestiona el estado completo de nuestra aplicación llamando a esos dos reductores por sus respectivas *state keys*:
+
+```js
+function todoApp(state = {}, action) {
+  return {
+    todos: todos(state.todos, action),
+    visibilityFilter: visibilityFilter(state.visibilityFilter, action)
+  };
+}
+```
+
+Esto es básicamente toda la idea de Redux. Tenga en cuenta que no hemos utilizado ninguna API de Redux. Ya se incluyen algunas utilidades para facilitar este patrón, pero la idea principal es que usted describe cómo su estado se actualiza con el tiempo en respuesta a los objetos de acción, y el 90% del código que se escribe es simplemente JavaScript, sin uso de Redux en si mismo, sus APIs, o cualquier magia.
 
 ## Patrón Decorator y Casos de Uso
+
+Añade nuevas responsabilidades a un objeto de forma dinámica permitiendo así extender su funcionalidad sin tener que usar subclases.
+
+## Decorator (patrón de diseño)
+
+El [patrón](https://es.wikipedia.org/wiki/Patrón_de_diseño) **Decorator** responde a la necesidad de añadir dinámicamente funcionalidad a un Objeto. Esto nos permite no tener que crear sucesivas clases que hereden de la primera incorporando la nueva funcionalidad, sino otras que la implementan y se asocian a la primera.
+
+## Motivación
+
+Un ejemplo para poder ver la aplicabilidad del patrón decorador podría ser el siguiente:
+
+- Disponemos de una herramienta para crear interfaces gráﬁcas, que permite añadir funcionalidades como bordes o barras de desplazamiento a cualquier componente de la interfaz.
+- Una posible solución sería utilizar la herencia para extender las responsabilidades de la clase. Si optamos por esta solución, estaríamos haciendo un diseño inflexible (estático), ya que el cliente no puede controlar cuándo y cómo decorar el componente con esa propiedad.
+- La solución está en encapsular dentro de otro objeto, llamado Decorador, las nuevas responsabilidades. El decorador redirige las peticiones al componente y, además, puede realizar acciones adicionales antes y después de la redirección. De este modo, se pueden añadir decoradores con cualidades añadidas recursivamente.
+
+[![Decorador-Concreto-F.jpg](https://i.postimg.cc/3xCxwggq/Decorador-Concreto-F.jpg)](https://postimg.cc/Js0L6HY3)
+
+- En este diagrama de clases, podemos ver que la interfaz decorador implementa la interfaz del componente, redirigiendo todos los métodos al componente visual que encapsula.
+- Las subclases decoradoras refinan los métodos del componente, añadiendo responsabilidades.
+- También se puede ver que el cliente no necesita hacer distinción entre los componentes visuales decorados y los sin decorar.
+
+[![Secuencia-F.jpg](https://i.postimg.cc/J72qTXHS/Secuencia-F.jpg)](https://postimg.cc/hhVTvfr0)
+
+## Aplicabilidad
+
+- Añadir responsabilidades a objetos individuales de forma dinámica y transparente
+- Responsabilidades de un objeto pueden ser retiradas
+- Cuando la extensión mediante la herencia no es viable
+- Hay una necesidad de extender la funcionalidad de una clase, pero no hay razones para extenderlo a través de la herencia.
+- Existe la necesidad de extender dinámicamente la funcionalidad de un objeto y quizás quitar la funcionalidad extendida.
+
+## Estructura
+
+[![Decorador-Generico2.jpg](https://i.postimg.cc/zvVsRRVK/Decorador-Generico2.jpg)](https://postimg.cc/D43j90Qw)
+
+## Participantes
+
+- **Componente**
+
+Deﬁne la interfaz para los objetos que pueden tener responsabilidades añadidas.
+
+- **Componente Concreto**
+
+Deﬁne un objeto al cual se le pueden agregar responsabilidades adicionales.
+
+- **Decorador**
+
+Mantiene una referencia al componente asociado. Implementa la interfaz de la superclase Componente delegando en el componente asociado.
+
+- **Decorador Concreto**
+
+Añade responsabilidades al componente.
+
+## Colaboraciones
+
+- El decorador redirige las peticiones al componente asociado.
+- Opcionalmente puede realizar tareas adicionales antes y después de redirigir la petición.
+
+## Consecuencias
+
+- Más flexible que la herencia. Al utilizar este patrón, se pueden añadir y eliminar responsabilidades en tiempo de ejecución. Además, evita la utilización de la herencia con muchas clases y también, en algunos casos, la herencia múltiple.
+- Evita la aparición de clases con muchas responsabilidades en las clases superiores de la jerarquía. Este patrón nos permite ir incorporando de manera incremental responsabilidades.
+- Genera gran cantidad de objetos pequeños. El uso de decoradores da como resultado sistemas formados por muchos objetos pequeños y parecidos.
+- Puede haber problemas con la identidad de los objetos. Un decorador se comporta como un envoltorio transparente. Pero desde el punto de vista de la identidad de objetos, estos no son idénticos, por lo tanto no deberíamos apoyarnos en la identidad cuando estamos usando decoradores.
+
+## Implementación
+
+El patrón **Decorator** soluciona este problema de una manera mucho más sencilla y extensible.
+
+Se crea a partir de *Ventana* la subclase abstracta *VentanaDecorator* y, heredando de ella, *BordeDecorator* y *BotonDeAyudaDecorator*. *VentanaDecorator* encapsula el comportamiento de *Ventana* y utiliza composición recursiva para que sea posible añadir tantas “capas” de Decorators como se desee. Podemos crear tantos Decorators como queramos heredando de *VentanaDecorator*.
+
+SOLID: los 5 principios que te ayudarán a desarrollar software de calidad
+
+S – Single Responsibility Principle (SRP)
+		O – Open/Closed Principle (OCP)
+		L – Liskov Substitution Principle (LSP)
+		I – Interface Segregation Principle (ISP)
+		D – Dependency Inversion Principle (DIP)
 
 
 
 ## Implementación del patrón Decorator
 
+El patrón decorator está diseñado para solucionar problemas donde la jerarquía con subclasificación no puede ser aplicada, o se requiere de un gran impacto en todas las clases de la jerarquía con el fin de poder lograr el comportamiento esperado. Decorator permite al usuario añadir nuevas funcionalidades a un objeto existente sin alterar su estructura, mediante la adición de nuevas clases que envuelven a la anterior dándole funcionamiento extra.
 
+Estructura del patrón Decorator.
+
+En la imagen podemos apreciar los distintos componentes que conforman el patrón de diseño Decorator los cuales se explican a continuación:
+
+- **IComponent:** Interface que define la estructura minina del componente o componentes que pueden ser decorados.
+- **ConcreteComponent:** Implementación de IComponent y define un objeto concreto que puede ser decorado.
+- **ComponentDecorator:** Por lo general es una clase abstracta que define la estructura mínima de un Decorador, el cual mínimamente deben de heredar de IComponent y contener alguna subclase de IComponent al cual decorarán.
+- **ComponentDecoratorImpl:** Representan todos los decoradores concretos que heredan de ComponentDecorator.
+
+Diagrama de secuencia del patrón Decorator.
+
+1. El *Cliente* realiza una operación sobre el *DecoratorA*.
+2. El *DecoratorA* realiza la misma operación sobre *DecoradorB*.
+3. El *decoradorB* realiza una acción sobre *ConcreteComponente*.
+4. El *DecoradorB* ejecuta una operación de decoración.
+5. El *DecoradorA* ejecuta una operación de decoración.
+6. El *Cliente* recibe como resultado un objeto decorado por todos los Decoradores, los cuales encapsularon el *Component* en varias capas.
+
+## EJEMPLO DEL MUNDO REAL
+
+Mediante la implementación del patrón de diseño *Decorator* crearemos una aplicación que nos permite procesar un mensaje en capas, donde cada capa se encargará de procesar un mensaje a diferente nivel. primero convertiremos un Objeto en XML, seguido, lo envolveremos en un mensaje SOAP para después encriptar el mensaje, finalmente obtendremos un mensaje SOAP totalmente encriptado, el cual podrá ser enviado de forma segura a un destinatario. Cada capa de procesamiento será implementada con un decorador, y cada decorador podrá cambiar de posición para obtener un resultado diferente, de la misma manera, podrá ser agregados nuevos decoradores en medio de cualquier paso.
+
+***código antes de comenzar***
+
+**`Index.html`**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decorator</title>
+</head>
+<body>
+    <a href="/ejercicios/">Go back</a>
+
+    <div style="margin-top: 3rem;">
+        <label for="email">Email</label>
+        <input id="email">
+    </div>
+    <script src="/ejercicios/decorator/index.ts"></script>
+</body>
+</html>
+```
+
+**`index.ts`**
+
+```tsx
+class Field{
+    errors : string[]
+    input: HTMLInputElement
+
+    constructor(input:HTMLInputElement){
+        this.input=input
+        this.errors=[]
+
+        let errorMessage = document.createElement('p')
+        errorMessage.className='text-danger'
+        this.input.parentNode.insertBefore(errorMessage,this.input.nextSibling)
+
+        this.input.addEventListener('input',()=>{
+            this.errors=[]
+            this.validate()
+            errorMessage.innerText=this.errors[0]||''
+        })
+    }
+    validate(){}
+}
+
+function RequiredFieldDecorator(field:Field){
+    return field
+}
+
+let field = new Field(document.querySelector('#email'))
+RequiredFieldDecorator(field)
+```
+
+>  WithMemory = Nos va a permitir especificar la cantidad de memoria. Añade nuevas responsabilidades de forma dinámica , permitiendo así extender su funcionalidad sin tener que usar subClases.
+
+> **Decorator** permite al usuario añadir nuevas funcionalidades a un objeto existente sin alterar su estructura, mediante la adición de nuevas clases que envuelven a la anterior dándole funcionamiento extra.
 
 # 9. Proyecto: MediaPlayer
 
