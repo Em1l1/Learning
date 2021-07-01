@@ -1,0 +1,16 @@
+{
+  "name": "@victor_game/mediaplayer_Bunny",
+  "version": "1.0.0",
+  "description": "",
+  "main": "MediaPlayer.js",
+  "scripts": {
+    "build": "tsc src/**/*.ts tsc src/plugins/*.ts src/plugins/**/*.ts  --outDir lib",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Victor Juarez <mytacam78@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.3.5"
+  }
+}

@@ -1348,16 +1348,165 @@ RequiredFieldDecorator(field)
 
 ## Implementación de plugin de Ads: Desplegando en consola
 
+## Array.prototype.pop()
 
+- Idiomas
+- Seguir
+
+El método `**pop()**` elimina el **último** elemento de un array y lo devuelve. Este método cambia la longitud del array.
+
+## Sintaxis
+
+```
+arr.pop()
+```
+
+## Valor devuelto[
+
+El elemento que ha sido eliminado del array; [`undefined`](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/undefined) si el array está vacío.
+
+## Descripción
+
+El método `pop` elimina el último elemento de un array y devuelve su valor al método que lo llamó.
+
+`pop` es intencionadamente genérico; este método puede ser [called](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Function/call) o [applied](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Function/apply) en objectos similares a un array. En objetos que no contengan una propiedad `length`, que refleje su forma en una serie de propiedades numéricas consecutivas en base cero, puede no comportarse de manera significativa.
+
+Si se llama a `pop()` en un array vacío, devuelve [`undefined`](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/undefined).
+
+## Ejemplos
+
+Eliminando el último elemento de un array.
+El siguiente código crea el array `myFish`, que contiene cuatro elementos, a continuación, elimina su último elemento.
+
+```js
+var myFish = ['angel', 'clown', 'mandarin', 'sturgeon'];
+
+var popped = myFish.pop();
+
+console.log(myFish); // ['angel', 'clown', 'mandarin' ] 
+
+console.log(popped); // 'sturgeon'
+```
 
 ## Implementación de plugin de Ads: Desplegando en pantalla
+
+adsContainer:
+
+```html
+this.adsContainer.innerHTML = ` <div class="ads">
+      <a  class="ads__link" href="${this.currentAd.url}" target="_blank">
+        <img class="ads__img" src="${this.currentAd.imageUrl}" />
+        <div class="ads__info">
+          <h5 class="ads__title">${this.currentAd.title}</h5>
+          <p class="ads__body">${this.currentAd.body}</p>
+        </div>
+      </a>
+    </div>`;
+```
+
+Para los que se les ve el Ad debajo del vídeo y no dentro: Deben agregar a los estilos:
+
+```css
+.ads {
+  padding: 4px;
+  padding-right: 8px;
+  background: white;
+  width: 80%;
+
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.ads__link {
+  display: flex;
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.ads__img {
+  width: 80px;
+  min-width: 80px;
+  height: 80px;
+  margin-right: 16px;
+}
+
+.ads__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ads__title {
+  margin: 0;
+}
+.ads__body {
+  margin: 0;
+}
+```
+
+[![ads.jpg](https://i.postimg.cc/Cxyk11Ft/ads.jpg)](https://postimg.cc/Tp9pNT5q)
 
 
 
 ## Publicar en npm
 
+## Publicar en NPM
 
+## Paso 1: npm actualizado
+
+Tener npm instalado y actualizado en tu sistema. Si no está actualizado ejecuta:
+
+```bash
+npm install npm@latest -g
+```
+
+Fuente: https://docs.npmjs.com/getting-started/installing-node
+
+## Paso 2: github
+
+Tener tu proyecto en Github. No obligatorio pero recomendable. Recuerda que solo puedes publicar gratis paquetes públicos. Para paquetes privados deberás sacar la tarjeta de crédito.
+
+## Paso 3: package.json
+
+Tu proyecto debe tener un archivo `package.json` en el directorio raíz. Si no lo tuviera, ejecuta `npm init` desde la consola y sigue los pasos.
+
+## Paso 4: tu cuenta en [npmjs.com](http://npmjs.com/)
+
+Ve a [npmjs.com](https://www.npmjs.com/) y crea una cuenta. Una vez creada tu cuenta no encontrarás ningún botón de subir proyecto, así que no pierdas tiempo buscándolo (como yo).
+
+## Paso 5: publicar el proyecto
+
+Ahora que tienes tu cuenta, ve a tu proyecto en local con la terminal y ejecuta:
+
+```bash
+npm login
+// ingresa tus datos de usuario y contraseña de npmjs.com
+```
+
+Una vez que has iniciado sesión es tan simple como ejecutar:
+
+```bash
+npm publish
+```
+
+## Registrarse en `npm`
+
+```bash
+npm login
+```
+
+Ver si lo estás:
+
+```bash
+npm whoami
+```
+
+Si es la primera vez que te registras necesitarás entrar en tu correo y verificar la cuenta
 
 # 10. Conclusiones
 
-## Conclusionesl
+## Conclusiones
+
+[slides-curso-profesional-de-javascript.pdf](https://static.platzi.com/media/public/uploads/slides-curso-profesional-de-javascript_de31b172-473a-4b2b-9ce2-b60caff696f5.pdf)
