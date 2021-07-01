@@ -282,7 +282,7 @@ El flag `—config` indica donde estará nuestro archivo de configuración
 
 ```bash
 npx webpack --mode production --config webpack.config.js
-``` 
+```
 
 Para poder hacerlo más amigable el comando puedes crear un script en `package.json`
 
@@ -647,11 +647,127 @@ path.resolve('wwwroot', 'static_files/png/', '../gif/image.gif');
 // If the current working directory is /home/myself/node,
 // this returns '/home/myself/node/wwwroot/static_files/gif/image.gif'
 ```
+[CopyWebpackPlugin | webpack](https://webpack.js.org/plugins/copy-webpack-plugin/)
+
 ## Loaders de imágenes
 
+- Puedes usar una forma de importar las imágenes haciendo un import de las mismas y generando una variable
+- No es necesario instalar ninguna dependencia, webpack ya lo tiene incluido debemos agregar la siguiente configuración
+
+```jsx
+module.exports = {
+	...
+  module: {
+    rules: [
+      {
+        test: /\.png/,
+        type: "asset/resource"
+      }
+    ]
+  },
+}
+```
+
+- Para empezar a usar esta configuración debemos importar la imagen de la siguiente forma
+
+```jsx
+import github from '../assets/images/github.png';
+```
+
+- Para incluirlo en el HTML debes hacer lo siguiente
+
+```jsx
+// Ejemplo en Vanilla JS
+const imagen = `<img src=`${github}` />`;
+// Ejemplo en React
+<img src={${github}} />
+
+// Ejercicio de clase
+<a href="https://github.com/gndx">
+	<img src="${github}" />
+</a>a
+```
+
+Implementando la siguiente configuración adicional podemos gestionar el directorio de salida:
+
+```jsx
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'static/images/[hash][ext][query]',
+        },
+      },
+```
 
 ## Loaders de fuentes
 
+- Cuando utilizamos fuentes externas una buena práctica es descargarlas a nuestro proyecto
+  - Debido a que no hara un llamado a otros sitios
+- Por ello es importante usarlo dentro de webpack
+- Para esta tarea instalaras y usaras “file-loader” y “url-loader”
+
+instalación con NPM
+
+```bash
+npm install url-loader file-loader -D
+```
+
+instalación con YARN
+
+```bash
+yarn add url-loader file-loader -D
+```
+
+- Para aplicar esta configuración debes agregar la siguiente información
+
+```jsx
+module.exports = {
+	...
+  module: {
+    rules: [
+			...
+      {
+        test: /\.(woff|woff2)$/,
+        use: {
+          loader: "url-loader",
+          options: {
+            // limit => limite de tamaño
+            limit: 10000,
+            // Mimetype => tipo de dato
+            mimetype: "application/font-woff",
+            // name => nombre de salida
+            name: "[name].[ext]",
+            // outputPath => donde se va a guardar en la carpeta final
+            outputPath: "./assets/fonts/",
+            publicPath: "./assets/fonts/",
+            esModule: false,
+          }
+        }
+      }
+    ]
+  },
+	...
+}
+```
+
+- Es importante que dentro de los estilos agregues @font-face
+
+```jsx
+@font-face {
+	font-family: "Ubuntu";
+	src: url("../assets/fonts/ubuntu-regular.woff2") format('woff2'),
+			 url("../assets/fonts/ubuntu-regular.woff") format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+```
+
+
+
+[google webfonts helper](http://google-webfonts-helper.herokuapp.com/fonts/ubuntu?subsets=cyrillic,latin)
+
+![img](https://www.google.com/s2/favicons?domain=https://webpack.js.org/guides/asset-management/#loading-fonts/favicon.f326220248556af65f41.ico)A[sset Management | webpack](https://webpack.js.org/guides/asset-management/#loading-fonts)
 
 ## Optimización: hashes, compresión y minificación de archivos
 
