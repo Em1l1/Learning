@@ -813,17 +813,148 @@ Comúnmente almacenamos en variables las guías de estilo de nuestro sitio, como
     - https://sass-lang.com/documentation
     - https://sass-lang.com/guide
 
-
 ## Imports y Extends
 
+**Import** nos permite escribir código modular separando en diferentes archivos para después importarlos todos en uno solo y tener una base código mucho más ordenada.
+
+**Extends** sirve para insertar los estilos de un selector en otro.
+
+Tip: al momento de usar *import* no es necesario colocar la extensión del archivo, con solo escribir el nombre funciona:
+
+```css
+@import "components/globales";
+@import "components/perfiles";
+@import "components/estadisticas";
+@import "components/ubicaciones"
+```
+
+En el caso de que aún con el `_` Prepros siga compilando el archivo lo que hay que hacer es añadir el ` _` a la lista de archivos excluidos. en Prepros 5 la ruta es` App menu> Project defaults> Filters> Project Filters`.
+Solo hay que colocar un `_` al final de la lista.
+
+### @extend & @import en Sass
+
+`@extend` funciona para que un elemento herede todas las propiedades y valores de una clase que le tenemos que especificar. Por ejemplo:
+
+```scss
+.class2{
+  @extend .class1;
+}
+```
+
+.
+En el caso del `@import`, lo que hacemos es importar las propiedades de un archivo extension “scss”, aunque OJO, los archivos que van a ser importados deben tener un guion bajo al inicio. Esto le dice al preprocesador que ese archivo no tiene que ser compilado. Un ejemplo de un archivo a ser importado es: `_footer.scss`
+@import se usa de la siguiente manera:
+
+```scss
+@import "./elementos/footer.scss"
+```
+
+Hay que tener en cuenta que no usamos una bandera de `url()` antes de escribir la dirección del archivo a importar y que el archivo en el documento que se compila ya no tiene el guion bajo.
 
 ## Mixins
 
+Su finalidad es ofrecer una funcionalidad que pueda ser reutilizada en otras clases pero que no está pensada para usarse de forma autónoma. Nos permite crear bloques reusables de código que cambian su resultado dependiendo del parámetro que enviemos.
+
+Con los mixin logramos escribir menos código, produciendo un código más claro, más expresivo y sobre todo más fácil de mantener.
+
+color primario en el `box-shadow`, pero lo hace utilizando `@`. A mí me funcionó con el `$`.
+
+```scss
+@mixin caja {
+    border-radius: 20px;
+    box-shadow: 0px 20px 33px 0px rgba($color-primario, 0.5);
+    color: $color-primario;
+    background-color: $color-claro;
+}
+```
+
+Declaracion
+
+```scss
+@mixin caja{
+    color: $fuente1;
+    background-color: #3f579a;
+}
+```
+
+Llamado de mixin
+
+```scss
+@include caja;
+```
 
 ## Funciones
 
+La diferencia entre mixins y funciones es que las funciones por general hacen cálculos y regresan un resultado que es usado como valor de alguna propiedad.
+
+Los **mixins **nos ayudan a reutilizar código en otras partes y evitar hacer código muy repetitivo.
+Las **funciones **hacen un calculo y por lo general reciben un parametro y retornar un valor.
+
+**Declaracion**
+
+```scss
+@function get-opacity($color,$nivel){
+    @return rgba($color,$nivel);
+}
+```
+
+**Llamado**
+
+```scss
+.perfil__minibo{
+    color: get-opacity($color-primario, .20);
+}
+```
 
 ## Condicionales y Loops
+
+Un **condicional** nos permite evaluar cierta condición y bifurcar entre dos caminos dependiendo de si se cumple o no.
+
+Un **loop** es un fragmento de código que va a ejecutar de forma repetitiva hasta que cumpla una condición.
+
+**Sass admite cuatro reglas de control de flujo:**
+
+- **@if and @else:** Controla si se evalúa o no un bloque
+- **@each:** evalúa un bloque para cada elemento de la lista o par en un mapa.
+- **@for:** evalúa un bloque cierto numero de veces
+- **@while:** evalúa un bloque hasta que se cumpla cierta condición.
+
+- [Documentation | Sass](https://sass-lang.com/documentation/at-rules/control)
+
+Declaraondo condicional
+
+```scss
+@each $header, $size in (h1: 30px, h2: 25px, h3: 20px) {
+  #{$header} {
+    font-size: $size;
+    margin: 0;
+  }
+}
+```
+
+Declarando `@mixin titulos`
+
+```scss
+@mixin titulos($fuente) {
+  @if $fuente==$Fuente1 {
+    font-family: $Fuente1;
+  } @else {
+    font-family: $Fuente2;
+    text-transform: uppercase;
+  }
+}
+```
+
+Llamando `@mixin titulos`
+
+```scss
+@include titulos($Fuente1);
+
+// llamando a 
+@include titulos($Fuente2);
+```
+
+
 
 
 ## Finalizando ejercicio de perfil de usuario
