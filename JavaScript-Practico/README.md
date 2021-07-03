@@ -645,12 +645,321 @@ console.groupEnd();
 
 ## Interactuando con JavaScript desde HTML
 
+- h1-h6
+  Representa los títulos que se puede colocar en nuestro documento html
+- header
+  El “header” representa un encabezado o sección del documento. El elemento de encabezado se usa típicamente para agrupar un conjunto de elementos h1 – h6 para marcar el título de una página con su subtítulo o lema. Sin embargo, los elementos de encabezado pueden contener más que solo los encabezados y subtítulos de la sección, por ejemplo, información del historial de versiones o fecha de publicación, menús entre otro.
+- section
+  Representa un documento genérico o una sección de aplicación. En este contexto, una sección es una agrupación temática de contenido, normalmente con un encabezado, posiblemente con un pie de página. Los ejemplos incluyen capítulos de un libro, las distintas páginas con pestañas en un cuadro de diálogo con pestañas o las secciones numeradas de una tesis. La página de inicio de un sitio web se puede dividir en secciones para una introducción, noticias e información de contacto
+- form
+  El elemento form son formularios son elementos que representa una colección de elementos asociados al este mismo, algunos de los cuales pueden representar valores editables que pueden enviarse a un servidor para su procesamiento.
+
+Al crear un botón dentro de un formulario se recarga la página automáticamente debido a que los botones son de tipo submit por defecto. Este tipo de botón envía la información de los formularios.
+
+- input
+  El elemento input, es un elemento de entrada representa un campo de datos escrito, generalmente con un control de formulario para permitir al usuario editar los datos.
+
+```html
+<input
+	class="input"
+	type="number"
+	id="input_respCuadradoPerimetro"
+	name="input_respCuadradoPerimetro"
+	placeholder="Valor del Perímetro"
+/>
+```
+
+Los siguientes atributos se le pueden aplicar
+
+class, es aplicar estilos de css.
+type, define el tipo datos que recibirá.
+id, define un identificador para el elemento html
+name, define un identificador y se puede asociar a un grupo de elementos
+
+- button
+  El elemento botón representa un botón. Si el elemento no está deshabilitado, entonces el agente de usuario debe permitir que el usuario active el botón
+
+```html
+<button
+	class="button"
+	type="button"
+	onclick="fn_calcularCuadradoArea()"
+>
+```
+
+Los siguientes atributos se le pueden aplicar
+
+class, es aplicar estilos de css.
+type, define el tipo de botón. en los formularios por defecto de tipo submit.
+onclick, define la ejecución del evento click. Esto puede ser la llamada de una función javascript
+
+#### Elementos javascript asociado a html
+
+- Para asociar elementos html con javascript se utiliza el método `document.getElementById('id_elemento_html')` y luego lo asignamos a una variable o constante javascript
+
+```javascript
+const  input_cuadradoLado  =  document.getElementById('input_cuadradoLado');
+```
+
+- Para enviar valores de los elementos html hacia javascript, se utiliza `document.getElementById('id_elemento_html').value` . Otra forma es asignar el elemento html y luego obtener el valor
+
+```javascript
+const  input_cuadradoLado  =  document.getElementById('input_cuadradoLado');
+const  cuadradoLado  =  parseFloat(input_cuadradoLado.value);
+```
+
+Ejemplo de obteniendo/enviados valores desde javascript a html
+
+```html
+<!-- Cuadrado -->
+<section class="cuadrado-container">
+	<h2>Calcula el área y perímetro de un cuadrado</h2>
+	<form class="form">
+		<label for="input_cuadradoLado">
+			Escribe cuánto mide cada lado de tu cuadrado:
+		</label>
+		<input
+			class="input"
+			type="number"
+			id="input_cuadradoLado"
+			name="input_cuadradoLado"
+		/>
+		<br />
+		<button
+			class="button"
+			type="button"
+			onclick="fn_calcularCuadradoPerimetro()"
+		>
+			Calcular el perímetro
+		</button>
+
+		<button
+			class="button"
+			type="button"
+			onclick="fn_calcularCuadradoArea()"
+		>
+			Calcular el área
+		</button>
+		<br />
+
+		<label for="input_respCuadradoPerimetro">
+			Respuestas del perímetro del cuadrado:
+		</label>
+		<input
+			class="input"
+			type="number"
+			id="input_respCuadradoPerimetro"
+			name="input_respCuadradoPerimetro"
+			placeholder="Valor del Perímetro"
+		/>
+		<br />
+
+		<label for="input_respCuadradoArea">
+			Respuestas del área del cuadrado:
+		</label>
+		<input
+			class="input"
+			type="number"
+			id="input_respCuadradoArea"
+			name="input_respCuadradoArea"
+			placeholder="Valor del área"
+		/>
+	</form>
+</section>
+
+```
+
+```js
+//===========================
+//      ==Cuadrado==
+//===========================
+
+const input_cuadradoLado = document.getElementById('input_cuadradoLado');
+const input_respCuadradoArea = document.getElementById(
+	'input_respCuadradoArea'
+);
+const input_respCuadradoPerimetro = document.getElementById(
+	'input_respCuadradoPerimetro'
+);
+
+function fn_cuadradoPerimetro(p_cuadradoLado) {
+	return p_cuadradoLado * 4;
+}
+
+function fn_cuadradoArea(p_cuadradoLado) {
+	return p_cuadradoLado * p_cuadradoLado;
+}
+
+function fn_calcularCuadradoPerimetro() {
+	const cuadradoLado = parseFloat(input_cuadradoLado.value);
+	const cuadradoPerimetro = fn_cuadradoPerimetro(cuadradoLado);
+
+	input_respCuadradoPerimetro.value = cuadradoPerimetro;
+
+	console.group('Cuadrado');
+	console.log('Los lados del cuadro mide : ' + cuadradoLado + 'cm');
+	console.log('El perímetro del cuadro mide : ' + cuadradoPerimetro + 'cm');
+}
+
+function fn_calcularCuadradoArea() {
+	const cuadradoLado = parseFloat(input_cuadradoLado.value);
+	const cuadradoArea = fn_cuadradoArea(cuadradoLado);
+
+	input_respCuadradoArea.value = cuadradoArea;
+
+	console.log('El área del cuadro mide : ' + cuadradoArea + 'cm^2');
+	console.groupEnd();
+}
+```
+
+
 
 ## Reto: matemáticas con JavaScript
+
+Durante este taller aprendimos a calcular el área y perímetro de un triángulo conociendo la longitud de sus 3 lados y también su altura.
+
+En este ejercicio debes crear una función para **calcular la altura de un triángulo isósceles**.
+
+- La función debe recibir, como parámetros, la longitud de los 3 lados del triángulo.
+- La función debe validar que la longitud de los 3 lados del triángulo corresponden a un triángulo isósceles.
+- La función debe retornar la altura del triángulo.
+
+> Pista: la función [Math.sqrt](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sqrt) de JavaScript puede ayudarte a calcular raíces cuadradas.
+
+Vamos paso por paso solucionando todos los requerimientos de nuestro ejercicio:
+
+- **La función debe recibir, como parámetros, la longitud de los 3 lados del triángulo.**
+
+```js
+function alturaTriangulo(ladoA, ladoB, ladoBase) {
+    // ...
+}
+```
+
+- **La función debe validar que la longitud de los 3 lados del triángulo corresponden a un triángulo isósceles.**
+
+```js
+function alturaTrianguloIsosceles(ladoA, ladoB, ladoBase) {
+    if (ladoA != ladoB) {
+        console.error("Los lados a y b no son iguales");
+    } else {
+        // ...
+    }
+}
+```
+
+- **La función debe retornar la altura del triángulo.**
+
+Para calcular la altura de un triángulo isósceles vamos a dividir nuestro triángulo en dos. Así tendremos dos triángulos iguales, uno de sus nuevos lados tendrá la misma longitud que la altura del triángulo original y calculando la longitud de este lado habremos calculado también la altura.
+
+<img src="https://i.ibb.co/x6Qh9x9/JS-POO-random-thoughts.jpg" alt="JS-POO-random-thoughts" border="0">
+
+En total vamos a resultar con 3 triángulos, pero como los dos triángulo chiquitos son exactamente iguales, es suficiente si trabajamos con solo 2 triángulos (`trianguloGrande` y `trianguloPequeno`).
+
+<img src="https://i.ibb.co/hBhbQR1/JS-POO-random.jpg" alt="JS-POO-random" border="0">
+
+Creemos estos dos triángulos en JavaScript:
+
+```js
+function alturaTrianguloIsosceles(trianguloGrandeLadoA, trianguloGrandeLadoB, trianguloGrandeLadoBase) {
+    if (trianguloGrandeLadoA != trianguloGrandeLadoB) {
+        console.error("Los lados a y b no son iguales");
+    } else {
+        let trianguloPequenoLadoA; // PENDIENTE
+        const trianguloPequenoLadoB = trianguloGrandeLadoBase / 2;
+        const trianguloPequenoLadoBase = trianguloGrandeLadoA;
+
+        // ...
+
+        const trianguloGrandeAltura = trianguloPequenoLadoA;
+        return trianguloGrandeAltura;
+    }
+}
+```
+
+¡Muy bien! Ahora solo debemos seguir la fórmula para hallar la longitud de un lado del triángulo a partir de dos de sus lados (esto en el mundo de las matemáticas es lo que conocemos como [teorema de Pitágoras](https://www.google.com/search?q=teorema+pitagoras&oq=teorema+pitagoras&ie=UTF-8)): `aˆ2 + bˆ2 = cˆ2`.
+
+<img src="https://i.ibb.co/TRLdDQS/formulajs.jpg" alt="formulajs" border="0">
+
+Pero la fórmula aún no es exactamente lo que necesitamos. No necesitamos encontrar `ladoBase` a partir de `ladoA` y `ladoB`, sino encontrar `ladoA` a partir de `ladoBase` y `ladoB`.
+
+Para esto debemos “despejar” ladoA, es decir, “mover de lado” cualquier número o variable que esté modificando a ladoA en la fórmula.
+
+> Recuerda que lo que en un lado estaba sumando, pasa al otro restando; lo que estaba a un lado restando, pasa al otro sumando; lo que estaba a un lado multiplicando, pasa al otro dividiendo; lo que a un lado estaba dividiendo, pasa al otro multiplicando; lo que estaba a un lado elevando; pasa al otro radicando, y lo que estaba a un lado radicando, pasa al otro lado elevando.
+
+<img src="https://i.ibb.co/3cBmLGP/formulajs1.jpg" alt="formulajs1" border="0">
+
+¡Muy bien! ¡Ya casi terminamos!
+
+Ahora solo nos falta traducir esta fórmula a JavaScript (recuerda la pista que te di, podemos calcular las raíces cuadradas con la función `Math.sqrt` de JavaScript):
+
+```js
+function alturaTrianguloIsosceles(trianguloGrandeLadoA, trianguloGrandeLadoB, trianguloGrandeLadoBase) {
+    if (trianguloGrandeLadoA != trianguloGrandeLadoB) {
+        console.error("Los lados a y b no son iguales");
+    } else {
+        const trianguloPequenoLadoB = trianguloGrandeLadoBase / 2;
+        const trianguloPequenoLadoBase = trianguloGrandeLadoA;
+
+        const trianguloPequenoLadoBCuadrado = trianguloPequenoLadoB * trianguloPequenoLadoB;
+        const trianguloPequenoLadoBaseCuadrado = trianguloPequenoLadoBase * trianguloPequenoLadoBase;
+
+        const trianguloPequenoLadoA = Math.sqrt(trianguloPequenoLadoBaseCuadrado - trianguloPequenoLadoBCuadrado);
+
+        const trianguloGrandeAltura = trianguloPequenoLadoA;
+        return trianguloGrandeAltura;
+    }
+}
+```
+
+__
+
+¡Si llegaste hasta aquí sin hacer trampa, te felicito! Te graduaste casi oficialmente de este primer taller. Ahora tienes mi bendición para pasar a la siguiente clase y empezar el segundo taller.
+
+En este ejercicio debes crear una función para calcular la altura de un triángulo isósceles.
+
+#### Pasos a ejecutar
+
+- La función debe recibir, como parámetros, la longitud de los 3 lados del triángulo.
+- La función debe validar que la longitud de los 3 lados del triángulo corresponden a un triángulo isósceles.
+- La función debe retornar la altura del triángulo.
+
+> Pista: la función Math.sqrt de JavaScript puede ayudarte a calcular raíces cuadradas.
+
+Referencia:
+
+- [Encontrar un lado de un triángulo](https://www.youtube.com/watch?v=7zWtpaz_yl0)
+- [Math.sqrt](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sqrt)
+
+**Lo resolví de esta manera:**
+
+```js
+function formulaAlturaIsosceles (sides, base) {
+    const altura = Math.sqrt(Math.pow(sides, 2) - (Math.pow(base, 2) / 4))
+    return altura
+}
+
+function calcularAlturaIsosceles() {
+  const sides = document.getElementById('sides')
+  const base = document.getElementById('baseIso')
+  
+  const valueSides = parseInt(sides.value)
+  const valueBase = parseInt(base.value)
+
+  if(valueSides > valueBase) {
+    const total = formulaAlturaIsosceles(valueSides, valueBase)
+    alert(`La altura del triángulo isósceles es: ${total}`)
+  } else {
+    alert('No es un triángulo isósceles :(')
+  }
+}
+```
 
 # 3. Taller #2: precios y descuentos
 
 ## Análisis: cómo calcular porcentajes y descuentos
+
+
 
 
 ## Crea una página web para calcular descuentos
