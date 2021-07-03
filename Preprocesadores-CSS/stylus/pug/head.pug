@@ -7,6 +7,14 @@ mixin caja(imagen, category, title, summary)
 			p=summary
 		+estadistica
 
+mixin mediaCaja(category, title, summary)
+	.caja
+		.caja__contenido 
+			span.card__category=category
+			h3=title
+			p=summary
+		+estadistica
+
 mixin estadistica
 	.estadistica--articulos: ul
 		li
@@ -18,6 +26,8 @@ mixin estadistica
 		li
 			i.fas.fa-comment-alt
 			span 12
+
+
 
 doctype html
 html

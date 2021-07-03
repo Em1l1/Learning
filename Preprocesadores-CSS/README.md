@@ -1037,19 +1037,144 @@ Llamando `@mixin titulos`
 
 Es el preprocesador CSS más reciente de los tres. Fue creado por TJ Holowaychuk (ex programador de Node.js) y escrito en JADE y Node.js.
 
-![img](https://www.google.com/s2/favicons?domain=https://github.githubassets.com/favicon.ico)[GitHub - daywalkerhn/platzi-games-stylus-publico](https://github.com/daywalkerhn/platzi-games-stylus-publico)
+## Para los que quieran compilar desde la terminal hacemos lo siguiente:
 
+### Instalar Stylus en la terminal
+
+```bash
+npm install -g stylus
+```
+
+### Compilar de Stylus a Css [deben estar en la carpeta /css]
+
+```bash
+stylus -w ejercicio-stylus.styl
+```
+
+***`-w` hace que espere los cambios para poder compilar automaticamente.***
+
+### Diferencias de Stylus con Less y Sass
+
+- En stylus no son necesarios los punto y coma `;`
+- Tampoco son necesarios las llaves `{}`
+
+### Similitudes de stylus con los otros preprocesadores
+
+- Las anidaciones se hacen igual, con el ampersand `&`
+
+![img](https://www.google.com/s2/favicons?domain=https://github.githubassets.com/favicon.ico)[GitHub - daywalkerhn/platzi-games-stylus-publico](https://github.com/daywalkerhn/platzi-games-stylus-publico)
 
 ## Variables
 
+En las variables almacenamos datos que se puede reutilizar en todas nuestras hojas de estilos. Así evitamos tener que escribir lo mismo una y otra vez cuando se realiza algún cambio, ya que sólo vamos a modificar el valor de la variable y se aplicará a todos los lugares donde sea usada.
+
+Comúnmente almacenamos en variables las guías de estilo de nuestro sitio, como pueden ser los colores y fuentes.
+
+### Variables en Stylus
+
+La principal diferencia de las variables en Stylus con los otros preprocesadores que hemos visto hasta ahora es que en Stylus, las variables se declaran de la manera mas sencilla posible, osea… pelonamente, sin un `$` o un `-var`. Eso es realmente super cool.
+
+**Variables**
+
+```stylus
+Fuente1 = 'Lato', sans-serif
+Fuente2 = 'Oswald', sans-serif
+color-primario = #333333
+color-secundario = #8841da
+color-claro = #FFFFFF
+```
+
+**Codigo clase**
+
+```stylus
+.encabezado--con-filtros 
+	display: flex
+	width 90%
+	margin 0 auto
+	padding: 30px 0
+	h2
+		margin-top: 10px
+		text-transform: uppercase
+		font-weight: 500
+		font-size: 50px
+		font-family: Fuente2
+	.filtros
+		width: 250px;
+		height: 75px
+		padding: 20px
+		margin-left: auto
+		span 
+			text-transform: uppercase
+			font-family: Fuente2 
+		a
+			margin-left: 20px
+			font-size: 25px
+```
 
 ## Mixins
 
+Su finalidad es ofrecer una funcionalidad que pueda ser reutilizada en otras clases pero que no está pensada para usarse de forma autónoma. Nos permite crear bloques reusables de código que cambian su resultado dependiendo del parámetro que enviemos.
+
+Con los mixins logramos escribir menos código, produciendo un código más claro, más expresivo y sobre todo más fácil de mantener.
+
+Forma de crear un Mixing
+
+```stylus
+caja-sombra()
+	background-color: color-claro
+	box-shadow: 0px 20px 33px 0px rgba(0,0,0,0.20)
+```
+
+Forma de llamarlo
+
+```stylus
+caja-sombra()
+```
+
+Lo genial de Stylus es que no es necesario ni " `;` " ni los " `:` ". Personalmente me ayuda a ser más rápido
 
 ## Funciones
 
+La diferencia entre mixins y funciones es que las funciones por general hacen cálculos y regresan un resultado que es usado como valor de alguna propiedad.
+
+>  "Las funciones son usadas para transformar o modificar valores y pasarlos a las propiedades. Son herramientas de transformación, para las propiedades.
+
+>  Mientras que los Mixins aunque tambien pueden hacer esto, su funcion es replicar bloques de codigo para construir de forma procedural.
+
+### Diferencia entre un mixin y una funcion
+
+Estas se suelen confundir seguido. En Stylus incluso mas porque las dos son muy similares de declarar. La principal diferencia es que en un `mixin`, nosotros agregamos los estilos que va a llevar un elemento, tal como una `<section>` o un `<div>`, mientras que una funcion solo devuelve un valor, no una serie de ellos.
+
+Una manera de entenderlo facilmente es que un `mixin` nos da los estilos para hacer un header (por ejemplo), donde nosotros ya declaramos el color, los bordes, el tipo de letra, posicionamiento, etc.
+Por otro lado, la `function` solo nos da **UN** valor que se agrega a una propiedad de un elemento. Las funciones se utilizan para declarar el box shadow de una caja, por ejemplo, en donde hacemos lo siguiente
+
+```stylus
+.caja{
+  box-shadow: function(valor1, valor2, valor3)
+}
+```
+
+Con un mixin, nosotros hacemos esto:
+
+```stylus
+.caja{
+  mixin()
+}
+```
+
+[  Stylus | Documentation ](https://stylus-lang.com/docs/functions.html)
 
 ## Condicionales y Loops
+
+Un **condicional** nos permite evaluar cierta condición y bifurcar entre dos caminos dependiendo de si se cumple o no.
+
+Un **loop** es un fragmento de código que va a ejecutar de forma repetitiva hasta que cumpla una condición.
+
+### Imagen del reto
+
+<img src="https://i.ibb.co/9ZCKLLZ/retostylus.jpg" alt="retostylus" border="0">
+
+
 
 # 7. Desarrollo del proyecto Platzi Games
 
