@@ -956,12 +956,88 @@ Llamando `@mixin titulos`
 
 
 
-
 ## Finalizando ejercicio de perfil de usuario
+
+<img src="https://i.ibb.co/gm3CNb6/reto-sass.jpg" alt="reto-sass" border="0">
+
+## Solucion:
+
+**1.Crear el Mixin**
+
+```scss
+@mixin mode-background ($color) {
+	@if $color == $color-primario {
+			background-color: $color-primario;
+			color: $color-claro;
+			.perfil__nombre{
+				color: $color-secundario;
+				@include titulos($Fuente2);
+			}
+
+			.perfil__titulo{
+				color: $color-variacion;
+				@include titulos($Fuente2);
+			}
+
+			.perfil__boton {
+				color: $color-claro;
+				background-color: $color-variacion;
+			}
+
+	} @else  {
+			background-color: $color-claro;
+			color: $color-primario;
+		.perfil__nombre{
+			color: $color-secundario;
+			@include titulos($Fuente2);
+		}
+
+		.perfil__titulo{
+			color: $color-variacion;
+			@include titulos($Fuente2);
+		}
+
+		.perfil__boton {
+			color: $color-claro;
+			background-color: $color-variacion;
+		}
+	}
+}
+```
+
+**2. Agregar el mixin a _perfiles.scss**
+
+```scss
+.perfil {
+	width: 40%;
+	padding-top: 50px;
+	color: $color-claro;
+	background-color: $color-secundario;
+	@include mode-background ($color-claro);
+	&__avatar {
+		display: block;
+		margin: 0 auto;
+		border-radius: 50em;
+	} ...... //Continua parte del codifo hecho en las clases
+```
+
+**3. Agregar el Mixion en _articulos.scss**
+
+```scss
+.articulos {
+	width: 60%;
+	padding: 50px 0 0 50px;
+	@include mode-background ($color-primario);
+}
+```
 
 # 6. Stylus
 
 ## Introducción a Stylus
+
+Es el preprocesador CSS más reciente de los tres. Fue creado por TJ Holowaychuk (ex programador de Node.js) y escrito en JADE y Node.js.
+
+![img](https://www.google.com/s2/favicons?domain=https://github.githubassets.com/favicon.ico)[GitHub - daywalkerhn/platzi-games-stylus-publico](https://github.com/daywalkerhn/platzi-games-stylus-publico)
 
 
 ## Variables
