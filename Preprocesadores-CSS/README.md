@@ -1180,6 +1180,12 @@ Un **loop** es un fragmento de código que va a ejecutar de forma repetitiva has
 
 ## Introducción al proyecto
 
+Vamos a integrar todas nuestras páginas en un proyecto final llamado **PlatziGames**. Toma en cuenta que vas a requerir tener completado el módulo de Sass ya que lo vamos durante este último módulo.
+
+
+
+![img](https://www.google.com/s2/favicons?domain=https://github.githubassets.com/favicon.ico)[GitHub - daywalkerhn/platzi-games-final](https://github.com/daywalkerhn/platzi-games-final)
+
 
 ## Plantillas modulares con PUG: Header
 
