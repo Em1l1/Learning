@@ -959,16 +959,359 @@ function calcularAlturaIsosceles() {
 
 ## Análisis: cómo calcular porcentajes y descuentos
 
+### ¿Cómo obtener el descuento con solo una multiplicación?
+
+.
+Woow, al ver esta clase me confundí, muchas operaciones. Lo mas importante que tienes que saber es que si hay un 25% de descuento, tu puedes multiplicar el precio original por 0.75 y así vas a obtener el precio después del descuento.
+.
+Esto funciona porque al multiplicar por 0.75, le estamos restando el 25% al valor inicial, sin embargo, necesitamos decirle a JavaScript que haga eso. Eso lo hacemos de la siguiente manera.
+
+```js
+var descuentoPorcentaje = 25; // Medido en %
+var precioInicial = 4827; // Precio antes del descuento
 
 
+var decimal = descuentoPorcentaje / 100; //0.25
+var precioDespuesDescuento = precioInicial * (1 - decimal);
+```
+
+En la variable `descuentoPorcentaje` por cualquier numero que quieras y siempre va a funcionar.
+
+### **Ejemplo practico** 😃
+
+¿Cuánto es el 12% de 333?
+
+Solo debes hacer lo siguiente multiplicas el valor total por el porcentaje que te dieron en termino de decimales.
+
+```
+333 * 0.12 = 39.96
+```
+
+En este caso para la operación el 12% equivale lo mismo que multiplicar por 0.12
+
+Y simplemente restas ese valor de la operación al valor inicial.
+
+```js
+333 - 39.96 = 293.04  
+**293…04** seria el valor si un producto que vale 333 tienen un descuento del 12%. Y asi mismo con cualquier otro valor y porcentajes que te den.
+```
+
+En este taller se creará un programa que realiza descuento a productos a facturar.
+
+## Análisis para realizar programa de porcentajes y descuentos
+
+- Primer paso: definir las fórmulas de los porcentajes y descuentos
+- Segundo paso: implementar la fórmula en JavaScript
+- Tercer paso: crear funciones
+- Cuarto paso: integrar JS con HTML
+
+#### Definiendo fórmulas de porcentajes y descuento
+
+La formula para hacerlo escalable, es decir para cualquier precio y cualquier descuento es:
+
+```javascript
+const _PORCENTAJE_TOTAL_ = 100;
+const _PORCENTAJE_DESCUENTO_ = 15;
+
+let precio_producto = 100;
+let precio_con_descuento = 0;
+
+precio_con_descuento =
+	(precio_producto * (_PORCENTAJE_TOTAL_ - _PORCENTAJE_DESCUENTO_)) / 100;
+
+console.log(`${precio_producto}`);
+console.log(`${precio_con_descuento}`);
+```
+
+<img src="https://i.ibb.co/xq34Xkm/programa-calcular-descuento.jpg" alt="programa-calcular-descuento" border="0">
 
 ## Crea una página web para calcular descuentos
 
+Este es el primer ejercicio
+
+```js
+const originalPrice = 100
+const discount = 15
+
+const priceWithDiscount = originalPrice - (originalPrice*(discount/100))
+
+console.log({
+    originalPrice,
+    discount,
+    priceWithDiscount,
+})
+```
+
+Y este es el segundo de como simplifique el codigo con arrow functions:
+
+```js
+const calculateDiscount = (price, discount) => price - (price*(discount/100))
+console.log(`El precio final a pagar con el descuento es de ${calculateDiscount(100, 15)} dolarucos`)
+```
+
+El resultado de este es: “El precio final a pagar con el descuento es de 85 dolarucos”
+
+Precion con descuento en `function`
+
+```js
+function calcularPrecioConDescuento(precio, descuento) {
+    const porcentajePrecioConDescuento = 100 - descuento;
+    const precioConDescuento = (precio * porcentajePrecioConDescuento) / 100;
+
+    return precioConDescuento;
+
+}
+```
 
 ## Escribiendo HTML desde JavaScript
 
+<img src="https://i.ibb.co/28sDTHD/inner-HTML-vs-inner-Text.jpg" alt="inner-HTML-vs-inner-Text" border="0">
+
+ propiedad `innerText`
+
+innerHTML es una función que se comporta como una propiedad que sirve para enviar u obtener contenido de un elemento html. Pero este lo conservabando el formato html
+
+```html
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id="demo" onclick="myFunction()">
+			Click me to change my HTML content (innerHTML).
+		</p>
+
+		<script>
+			function myFunction() {
+				document.getElementById('demo').innerHTML =
+					'Paragraph changed!';
+			}
+		</script>
+	</body>
+</html>
+ 
+```
+
+Referencia:
+
+- [innerHTML developer.mozilla](https://developer.mozilla.org/es/docs/Web/API/Element/innerHTML)
+- [innerHTML en w3schools](https://www.w3schools.com/jsref/prop_html_innerhtml.asp)
+
+#### innerText innerHTML
+
+Es una función que se comporta como propiedad que sirve para enviar o recuperar contenido en formato texto de un elemento html
+
+```html
+<!DOCTYPE html>
+<html>
+	<body>
+		<p>Click the button get the text content of the button element.</p>
+
+		<button onclick="myFunction()" id="myBtn">Try it</button>
+
+		<p>
+			<strong>Note:</strong> The innerText property is not supported in
+			Internet Explorer 9 and earlier.
+		</p>
+
+		<p id="demo"></p>
+
+		<script>
+			function myFunction() {
+				var x = document.getElementById('myBtn').innerText;
+				document.getElementById('demo').innerHTML = x;
+			}
+		</script>
+	</body>
+</html>
+```
+
+Referencia:
+
+- [innerTEXT en w3school](https://www.w3schools.com/jsref/prop_node_innertext.asp)
+
+#### Diferencia entre innerText vs innerHTML
+
+##### innerHTML
+
+- Obtiene y manda contenido en el formato HTML.
+- Podemos insertar etiquetas HTML.
+- Considera los espacios-
+- Devuelve la etiqueta con una etiqueta de su interior.
+
+##### innerText
+
+- Obtiene y manda el contenido en texto plano.
+- No podemos insertar etiquetas HTML, solo texto.
+- ignora los espacios.
+- Devuelve solamente el texto sin la etiqueta que lo contiene
 
 ## Reto: funciones más inteligentes
+
+Nuestros clientes están muy felices de poder calcular el precio final de sus productos después del descuento, pero la tienda tiene una nueva solicitud para nosotros: **implementar descuentos con cupones**.
+
+Déjame tu solución en los comentarios y luego, sí, evalúa mis 3 propuestas.
+
+## Solución #1: arrays y switch
+
+Analicemos el problema y nuestra propuesta de solución:
+
+- Crearemos un array con cada uno de nuestros cupones.
+- Cambiaremos el input de descuento en HTML por un input de cupones.
+- Usaremos un condicional switch para aplicar cierto porcentaje de descuento en nuestros productos dependiendo del cupón que se haya elegido al presionar el botón del formulario.
+
+Vamos paso a paso:
+
+- **Crear un array de cupones**
+
+```js
+const coupons = [
+    "JuanDC_es_Batman",
+    "pero_no_le_digas_a_nadie",
+    "es_un_secreto",
+];
+```
+
+- **Cambiar el input de descuento por uno de cupones**
+
+Cambiemos los IDs en HTML:
+
+```html
+<label for="InputCoupon">Escribe el cupón de descuento para tu producto:</label>
+<input id="InputCoupon" type="number" />
+```
+
+Y actualicemos nuestras referencias en el código JavaScript:
+
+```js
+const inputCoupon = document.getElementById("InputCoupon");
+const couponValue = inputCoupon.value;
+```
+
+- **Crear una variable descuento y asignarle un valor distinto con un switch**
+
+```js
+function onClickButtonPriceDiscount() {
+  const inputPrice = document.getElementById("InputPrice");
+  const priceValue = inputPrice.value;
+  
+  const inputCoupon = document.getElementById("InputCoupon");
+  const couponValue = inputCoupon.value;
+
+  let descuento;
+
+  switch(couponValue) {
+    case "JuanDC_es_Batman":
+      descuento = 15;
+    break;
+    case "pero_no_le_digas_a_nadie":
+      descuento = 30;
+    break;
+    case "es_un_secreto":
+      descuento = 25;
+    break;
+  }
+
+
+  const precioConDescuento = calcularPrecioConDescuento(priceValue, descuento);
+
+  const resultP = document.getElementById("ResultP");
+  resultP.innerText = "El precio con descuento son: $" + precioConDescuento;
+}
+```
+
+## Solución #2: legibilidad, error first y muerte al switch
+
+**Legibilidad** es la facilidad que ofrece nuestro código para entenderlo sin tropiezos cuando lo leemos. Mejorar la legibilidad es mucho más importante que reducir la cantidad de líneas de código.
+
+Además, **error-first** es un patrón de programación donde atrapamos los errores antes de escribir el resto de la lógica de nuestros programas. Aplicar error-first nos puede ayudar a mejorar la legibilidad de nuestro código (es completamente válido tener otra opinión, no te preocupes, cuéntame en los comentarios).
+
+- **Error first con array.includes**
+
+La función `array.includes()` nos permite validar si un elemento ha sido almacenado en el array. Vamos a usar esta función para ejecutar un error si el cupón de los usuarios es inválido (no fue guardado en el array `coupons`):
+
+```js
+if (!coupons.includes(userCouponValue)) {
+    alert("El cupón " + couponValue + "no es válido");
+}
+```
+
+Ya que estamos usando un condicional `if`, podemos reescribir el resto del condicional `switch`, pero en este caso usaremos condicionales `else if`:
+
+```js
+if (!coupons.includes(couponValue)) {
+   alert("El cupón " + couponValue + "no es válido");
+} else if (couponValue === "JuanDC_es_Batman") {
+   descuento = 15;
+} else if (couponValue === "pero_no_le_digas_a_nadie") {
+   descuento = 30;
+} else if (couponValue === "es_un_secreto") {
+   descuento = 25;
+}
+```
+
+## Solución #3: arrays y condicionales mucho más inteligentes
+
+Ya usamos uno de los muchos métodos de los arrays para aplicar error first. Pero podemos usar algunos más para simplificar aún más nuestro código.
+
+> 💡 Recuerda que mejorar la legibilidad no (necesariamente) significa reducir líneas de código.
+
+- **Array de cupones 2.0: ahora también con los descuentos**
+
+Por ahora tenemos muy separada la lógica de nuestros cupones. Por un lado tenemos la lista de cupones, pero en otro lugar distinto definimos el descuento de cada cupón.
+
+Vamos a cambiar eso convirtiendo nuestro array de strings en un array de objetos (con el nombre y descuento de cada cupón en el mismo lugar):
+
+```js
+const coupons = [
+    {
+        name: "JuanDC_es_Batman",
+        discount: 15,
+    },
+    {
+        name: "pero_no_le_digas_a_nadie",
+        discount: 30,
+    },
+    {
+        name: "es_un_secreto",
+        discount: 25,
+    },
+];
+```
+
+Ahora la función `array.includes` dejó de funcionar, pero podemos reemplazarla por la función `array.find()` para validar si el cupón que escribió el usuario está guardado en la propiedad `name` de alguno de los objetos en la lista de cupones.
+
+Vamos a crear una variable `isUserCouponValueValid` con una función que valide si su parámetro `coupon` es igual a nuestra variable `userCouponValue`. Y esta variable la vamos a enviar como parámetro a nuestra función `array.find()`.
+
+```js
+const isCouponValueValid = function (coupon) {
+    return coupon.name === couponValue;
+};
+
+const userCoupon = coupons.find(isCouponValueValid);
+
+if (!userCoupon) {
+    alert("El cupón " + userCouponValue + "no es válido");
+}
+```
+
+¡Muy bien!
+
+Pero fíjate que ya tenemos nuestro cupón (con nombre y **descuento**) disponible en la nueva variable `userCoupon`.
+
+Podemos aprovechar esta variable para eliminar todos nuestros condicionales `else if` y cambiarlos por un condicional `else` que nos proporcione el porcentaje de descuento automáticamente, sin importar el cupón (válido) que estén usando nuestros usuarios.
+
+```js
+if (!userCoupon) {
+    alert("El cupón " + userCouponValue + "no es válido");
+} else {
+    const descuento = userCoupon.discount;
+    const precioConDescuento = calcularPrecioConDescuento(priceValue, descuento);
+
+    const resultP = document.getElementById("ResultP");
+    resultP.innerText = "El precio con descuento son: $" + precioConDescuento;
+}
+```
+
+De esta forma, no solo logramos reducir las líneas de código de nuestro programa, sino también mejorar su legibilidad.
 
 # 4. Taller #3: promedio, moda y mediana
 
