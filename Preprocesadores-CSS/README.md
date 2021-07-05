@@ -1182,24 +1182,166 @@ Un **loop** es un fragmento de código que va a ejecutar de forma repetitiva has
 
 Vamos a integrar todas nuestras páginas en un proyecto final llamado **PlatziGames**. Toma en cuenta que vas a requerir tener completado el módulo de Sass ya que lo vamos durante este último módulo.
 
-
-
 ![img](https://www.google.com/s2/favicons?domain=https://github.githubassets.com/favicon.ico)[GitHub - daywalkerhn/platzi-games-final](https://github.com/daywalkerhn/platzi-games-final)
-
 
 ## Plantillas modulares con PUG: Header
 
+➡️[Extensión](https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-scss) para Sass que ayuda a autocompletar los nombres de las variables, mixins y funciones
+
+```scss
+.header--principal {
+	display: flex;
+	padding: 0 20px 20px 20px;
+	margin-bottom: 20px;
+	width: 100%;
+	height: 90px;
+	border-bottom: 1px solid #ebebeb;
+}
+.nav--header ul {
+	display: flex;
+	padding-top: 35px;
+	li {
+		list-style: none;
+		margin-right: 50px;
+	}
+	a {
+		color: $color-variacion;
+		@include titulos($Fuente2);
+	}
+}
+
+.header__busqueda {
+	display: flex;
+	margin-left: auto;
+	padding-top: 35px;
+	&:hover {
+		text-decoration: none;
+	}
+	i {
+		font-size: 20px;
+		margin-right: 10px;
+		color: $color-secundario;
+	}
+	span {
+		color: $color-variacion;
+		@include titulos($Fuente2);	
+	}
+}
+```
 
 ## Plantillas modulares con PUG: Footer
 
+compilan Pug desde terminal se debe usar la expresion -o (out) y especificar la carpeta de destino.
+
+```bash
+pug -w --pretty pagina-principal.pug -o ../html
+```
+
+`footers.scss`
+
+```scss
+.footer--principal {
+	display: flex;
+	height: 160px;
+	margin-top: 30px;
+	padding: 0 20px 20px 20px;
+	background-color: $color-primario;
+}
+.nav--footer ul {
+	display: flex;
+	padding-top: 35px;
+	li {
+		list-style: none;
+		margin-right: 50px;
+	}
+	a {
+		color: $color-claro;
+		@include titulos($Fuente2);
+	}
+}
+.nav--social {
+	margin-left: auto;
+	ul {
+		display: flex;
+		padding-top: 35px;
+	}
+	li {
+		list-style: none;
+		margin-right: 50px;
+		color: $color-claro;
+	}
+	a {
+		color: $color-claro;
+		@include titulos($Fuente2);
+	}
+}
+```
 
 ## Grid System con Sass
 
+Grid es una nueva característica de CSS que nos permite trabajar con layouts controlando sus filas y columnas de forma multidimensional. A diferencia de como se hace tradicionalmente con flex de forma unidimensional.
+
+Los valores de *grid-template-columns* y *grid-template-rows* también se pueden poner de esta manera:
+
+```scss
+@include grid-template-columns(grid-repeat(4));
+@include grid-template-rows(grid-repeat(4));
+```
+
+Porque el mixin recibe por parámetro:
+\- el número de veces que se va a repetir el valor que pongas
+\- y el valor (si no pones el segundo parámetro, que es el valor, tomará por defecto *1fr*)
+
+```scss
+@function grid-repeat($repeat, $stuff: 1fr) {
+  $list: ();
+  @for $i from 1 through $repeat {
+    $list: append($list, $stuff, space);
+  }
+  @return $list;
+}
+```
+
+[Browser Compatibility for CSS Grid Layouts with Simple Sass Mixins | CSS-Tricks](https://css-tricks.com/browser-compatibility-css-grid-layouts-simple-sass-mixins/)
+
+las columnas se repitan X cantidad, en lugar de escribir
+
+```scss
+grid-template-column: (1fr grid-repeat(X));
+```
+
+podemos hacer
+
+```scss
+grid-template-column: (repeat(X, 1fr));
+```
 
 ## Mixins para manejo de fuentes responsivas
 
+`mixin`
+
+```scss
+@function calculateRem($size) {
+	$remSize: $size / 16px;
+	@return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+	font-size: $size;
+	font-size: calculateRem($size);
+	line-height: calculateRem($size)*1.5;
+}
+```
+
+
 
 ## Funciones para media queries
+
+Aquí les dejo documentación de como usar queries sin el [mixin de la clase](http://thesassway.com/intermediate/responsive-web-design-in-sass-using-media-queries-in-sass-32)
+
+[@keyframes, @supports @media queries](https://sass-lang.com/documentation/at-rules/css#supports)
+
+
 
 
 ## Finalizando el proyecto
