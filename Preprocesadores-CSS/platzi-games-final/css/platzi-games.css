@@ -496,6 +496,8 @@ main {
   height: 100vh;
 }
 
+/* Media Queries Mixin
+**********************/
 .perfil {
   width: 50%;
   padding-top: 50px;
@@ -591,12 +593,38 @@ main {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
 }
-.estadistica--articulos li {
+.estadistica--articulos ul li {
   list-style: none;
   color: rgba(51, 51, 51, 0.2);
 }
-.estadistica--articulos span {
+.estadistica--articulos ul span {
   margin-left: 10px;
+}
+
+.caja--con-status {
+  margin: 0 auto;
+  position: absolute;
+  bottom: 10px;
+  border-top: none;
+  text-align: center;
+}
+.caja--con-status ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.caja--con-status li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 50px;
+  opacity: 0.8;
+}
+.caja--con-status i {
+  color: #FFF;
+}
+.caja--con-status span {
+  color: #FFF;
 }
 
 .ubicacion--perfil {
@@ -875,13 +903,15 @@ main {
 .caja--grande {
   max-width: 1000px;
   height: 550px;
-  margin-right: 20px h2;
-  margin-right-font-family: "Oswald", sans-serif;
-  margin-right-text-transform: uppercase;
-  margin-right-font-weight: 700;
-  margin-right-font-size: 50px;
-  margin-right-font-size: 3.125rem;
-  margin-right-line-height: 4.6875rem;
+  margin-right: 20px;
+}
+.caja--grande h2 {
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 50px;
+  font-size: 3.125rem;
+  line-height: 4.6875rem;
 }
 .caja--grande .caja--con-fondo__contenido {
   padding-top: 200px;
@@ -961,9 +991,7 @@ main {
 }
 
 .nav--header ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   padding-top: 35px;
 }
 .nav--header ul li {
@@ -976,11 +1004,16 @@ main {
   text-transform: uppercase;
   font-weight: 700;
 }
+@media only screen and (min-width: 992px) {
+  .nav--header ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
 
 .header__busqueda {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   margin-left: auto;
   padding-top: 35px;
 }
@@ -997,6 +1030,13 @@ main {
   font-family: "Oswald", sans-serif;
   text-transform: uppercase;
   font-weight: 700;
+}
+@media only screen and (min-width: 992px) {
+  .header__busqueda {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 .footer--principal {
@@ -1048,15 +1088,27 @@ main {
 }
 
 .contenedor--home {
-  height: 1200px;
-  width: 1300px;
-  margin: 0 auto;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  -ms-grid-rows: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+@media only screen and (min-width: 992px) {
+  .contenedor--home {
+    height: 1200px;
+    width: 1300px;
+    margin: 0 auto;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+  }
 }
 
 .caja--grande {
@@ -1129,4 +1181,68 @@ main {
   -ms-grid-column: 4;
   -ms-grid-column-span: 1;
   grid-column: 4/5;
+}
+
+COLAPSAR.sidebar--listado {
+  max-width: 300px;
+  padding: 20px;
+  color: #333333;
+  -webkit-box-shadow: 0px 20px 33px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 20px 33px 0px rgba(0, 0, 0, 0.2);
+}
+COLAPSAR.sidebar--listado h3 {
+  font-size: 20px;
+  font-size: 1.25rem;
+  line-height: 1.875rem;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+COLAPSAR.sidebar--listado ul {
+  margin: 0;
+  padding: 0;
+}
+COLAPSAR.sidebar--listado li {
+  padding: 10px 0;
+  margin: 10px 0;
+  border-top: 1px solid #ccc;
+  list-style: none;
+}
+COLAPSAR.sidebar--listado a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px 20px;
+  color: #333333;
+}
+COLAPSAR.sidebar--listado__numero {
+  margin-right: 20px;
+  color: rgba(51, 51, 51, 0.5);
+}
+
+.banner--homepage {
+  max-width: 300px;
+  padding: 50px;
+  margin-bottom: 20px;
+  background-color: #8841DA;
+  color: #FFF;
+}
+.banner--homepage h3 {
+  font-size: 20px;
+  font-size: 1.25rem;
+  line-height: 1.875rem;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.banner--homepage .button {
+  padding: 10px;
+  height: 50px;
+  border: 2px solid #FFF;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 1.6875rem;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
 }

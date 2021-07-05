@@ -1343,9 +1343,16 @@ Aquí les dejo documentación de como usar queries sin el [mixin de la clase](ht
 
 
 
-
 ## Finalizando el proyecto
+
+reto responsive m
+
+<img src="https://i.ibb.co/kxTsyZk/pagina-principal-reto.jpg" alt="pagina-principal-reto" border="0">
 
 # 8. Conclusiones y Cierre
 
 ## Conclusiones y Cierre
+
+Hemos aprendido muchísimo, exploramos cada uno de los preprocesadores CSS más populares, sus diferencias y ventajas así como metodologías de estructuración de código y el uso del preprocesador de HTML Pug.
+
+Ahora estás listo para tomar el examen y obtener tu certificado de este largo camino para dominar los preprocesadores.
