@@ -104,7 +104,7 @@ Diseño de programas de software
   - Prueba
   - Mantenimiento
   - Documentación
-  
+
 Un tipo de dato es una clasificación que el programador le da a la información almacenada para avisarle al compilador cómo va a ser interpretada.
 
 Tipos de datos primitivos:
@@ -195,7 +195,7 @@ Los operadores los utilizamos para realizar operaciones aritméticas en nuestras
   - Multiplicación: *
   - División: /
   - Módulo: %
-  
+
 La operación módulo obtiene el resto de la división entre dos números.
 
 ## Operadores de asignación, de incremento y decremento
@@ -264,7 +264,7 @@ Los tipos de dato que vimos en el curso son:
   - `float` - Números decimales. p/e -0.45, 12.5, 3.1416
   - `char` - Caracteres. p/e ‘C’ ‘a’ ‘z’
   - `bool` - Valor lógica binaria. p/e true y false
-  
+
 Estos tipos de dato que representan información pueden ser almacenados en la computadora, para esto utilizamos variables.
 
 Las variables son un espacio reservado en memoria, definido por un tipo de dato y un nombre asignado, en el cual se puede guardar un valor y se puede modificar.
@@ -294,7 +294,7 @@ Que como vimos en el curso, teniendo en cuenta una variable a, son una versión 
   - a *= 3 ------ a = a * 3
   - a /= 3 ------ a = a / 3
   - a %= 3 ------ a = a % 3
-  
+
 Estos operadores nos sirven para abreviar una operación y asignar el valor dentro de la misma variable.
 
 Otros operadores que podemos utilizar son los operadores numéricos, estos son:
@@ -304,7 +304,7 @@ Otros operadores que podemos utilizar son los operadores numéricos, estos son:
   - (*) Multiplicación
   - (/) División
   - (%) Módulo
-  
+
 Estos los conocemos de matemáticas básicas y el único distinto es el operador de módulo.
 Este operador realiza una división, pero en vez de darnos el resultado de la división nos da el residuo de la división.
 
@@ -479,26 +479,149 @@ int main(){
 
 ## Ciclo For
 
-El ciclo for es una estructura de control que nos permite repetir un bloque de comandos un número de veces específico.
+**El ciclo for** es una estructura de control que nos permite repetir un bloque de comandos un número de veces específico.
 
 **Este ciclo se compone de tres partes:**
   1. Inicialización: Se inicializa una variable (generalmente ““i””) al asignarle el valor 0.
+
   2. Condición: Se indica la condición necesaria para que termine el ciclo.
+
   3. Incremento: También puede ser decremento; este va a indicar los pasos en los que se moverá el ciclo, este número siempre debe ser entero, para ir de uno en uno se utiliza el i++.
+
+     
+
+[![cicloFor.jpg](https://i.postimg.cc/s2C1krFw/cicloFor.jpg)](https://postimg.cc/MntWBgpQ)
 
 ## Ciclo Do-While
 
+El **Do - While** es una estructura de control donde la condición de continuación del ciclo se prueba al final del mismo.
+Funciona de manera similar a la estructura while, la diferencia es que esta evalúa **al final**.
+
+Diferencias entre For, While y Do-While:
+
+**For**: Permite repetir un bloque de comandos un número de veces específico, tiene 3 partes: Inicialización, Condición y Cambio de la variable (Incremento o Decremento). Útil para recorrer arreglos.
+
+**While**: Se repiten las instrucciones mientras la condición es verdadera (se detiene hasta que no se cumple, en el caso de que no sea verdad al principio, no entrará al bucle).
+
+**Do**-**While**: Se ejecuta al menos una vez, primero hace el bloque de instrucciones y después evalúa la condición. Útil para hacer un Menú.
 
 ## Arreglos unidimensionales
 
+Un **arreglo** es una serie de elementos, del mismo tipo de dato y son almacenados de manera consecutiva. En programación, la primera posición de los arreglos empieza en "“0"”.
+
+Los arreglos son conjuntos de variables encapsuladas en un solo lugar. Los accedemos usando un indice.
+
+Para crear un aray de 4 elements hacemos:
+`int elementos = [50, 30, 70, 40];`
+
+Si queremos acceder al primer elemento usamos:
+
+```c
+elementos[0];
+```
+
+Y todos los demas elementos tienen el `index 1, 2, 3` … etc.
 
 ## Arreglos bidimensionales
 
+Los **arreglos bidimensionales** son también llamados tablas o **matrices**.
+Tiene dos índices: el primero indica el número de **fila** y el segundo el número de **columna** en que se encuentra el elemento.
+
+Los arreglos bidimensionales son también llamados tablas o matrices.
+Tienen dos índices: el primero indica el número de **fila** y el segundo el número de **columna** en que se encuentra el elemento.
+
+En el ejemplo de la clase (array 4x4) si lo representáramos gráficamente en una tabla, las posiciones quedarían así.
+
+[![array4x4.jpg](https://i.postimg.cc/FRLhvh87/array4x4.jpg)](https://postimg.cc/Q9h2kZX3)
+
+Recuerda que **la posicion de los arreglos empieza en “0”**.
 
 ## Arreglos e iteradores unidimensionales
 
+**¿Por qué utilizar iteradores en arreglos unidimensionales?**
+
+- Para manipular todos los elementos de un arreglo podemos utilizar una estructura repetitiva. La más usual es el ciclo for.
+- Cuando se desea imprimir el contenido del arreglo
+- Cuando se suman todos los elementos
+- También cuando se va a inicializar el arreglo.
 
 ## Arreglos e iteradores bidimensionales
+
+Para poder utilizar el iterador for junto con un arreglo bidimensional es necesario entender el concepto de un for anidado. Esto es un for dentro de un for, la sintaxis es la siguiente:
+
+```c
+for(i=0;i<2;i++){
+        for(j=0;j<1;j++){
+                printf(""%i,matriz[i][j]"");
+        }
+}
+```
+
+En esta estructura al iniciar el for, se recorre vuelta por vuelta ambos fors, iniciando por la primera vuelta del primer for y continuando con todas las vueltas del segundo for. Siguiendo con la siguiente vuelta del primer for y continuando con todas las vueltas del segundo for, y así sucesivamente.
+
+Esto es muy útil para recorrer arreglos bidimensionales.
+
+En C para obtener números aleatorios debemos primero incluir la librería **<time.h>** y esto nos permitirá usar la función **rand()**, como lo hice en la línea 21 del código, pero esta función utiliza siempre el mismo número semilla para genera la misma secuencia de números aleatorios para solucionar esto debemos usar la función **srand(time(0))** solo una vez al principio del programa y el parámetro **time(0)** nos devolverá la hora del sistema, con esto siempre obtendremos un nuevo número semilla para la función **rand()** y a su vez una secuencia de números aleatorios diferente cada vez. De resto:
+
+**challenge accomplished**
+
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main()
+{
+    int nRandom;
+    int sumatoriaf0, sumatoriaf1, sumatoriaf2, sumatoriaf3, sumatoriaf4 = 0;
+    int promediof0, promediof1, promediof2, promediof3, promediof4 = 0;
+    int numeroMe = 6;
+    int numeroMa = 10;
+    srand (time(0));
+
+    printf("Arreglos Bidimencionales + For\n\n\n");
+
+    int arregloB[5][6];
+
+    for(int i = 0; i <= 4; i++){ //for para cargar datos y hacer la sumatoria de las filas
+        for(int j = 0; j <= 4; j++){
+        nRandom = rand () % (numeroMa - numeroMe + 1) + numeroMe;
+        arregloB[i][j] = nRandom;
+        if(i == 0)
+            sumatoriaf0 += arregloB[0][j];
+        else if(i == 1)
+            sumatoriaf1 += arregloB[1][j];
+        else if(i == 2)
+            sumatoriaf2 += arregloB[2][j];
+        else if(i == 3)
+            sumatoriaf3 += arregloB[3][j];
+        else if(i == 4)
+            sumatoriaf4 += arregloB[4][j];
+        }
+    }
+
+    promediof0 = sumatoriaf0 / 5;
+    promediof1 = sumatoriaf1 / 5;
+    promediof2 = sumatoriaf2 / 5;
+    promediof3 = sumatoriaf3 / 5;
+    promediof4 = sumatoriaf4 / 5;
+
+    arregloB[0][5] = promediof0;
+    arregloB[1][5] = promediof1;
+    arregloB[2][5] = promediof2;
+    arregloB[3][5] = promediof3;
+    arregloB[4][5] = promediof4;
+
+    printf("La sumatoria de la fila 1 es: %i\nY el promedio es %i\n\n", sumatoriaf0, promediof0);
+    printf("La sumatoria de la fila 2 es: %i\nY el promedio es %i\n\n", sumatoriaf1, promediof1);
+    printf("La sumatoria de la fila 3 es: %i\nY el promedio es %i\n\n", sumatoriaf2, promediof2);
+    printf("La sumatoria de la fila 4 es: %i\nY el promedio es %i\n\n", sumatoriaf3, promediof3);
+    printf("La sumatoria de la fila 5 es: %i\nY el promedio es %i\n\n", sumatoriaf4, promediof4);
+
+    return 0;
+}
+```
 
 
 ## Cadena de caracteres (string)
