@@ -623,27 +623,283 @@ int main()
 }
 ```
 
-
 ## Cadena de caracteres (string)
 
+Generalmente se dice que es un arreglo de caracteres cuando lo que se almacenó son caracteres y no existe el carácter nulo al final.
+
+Cuando el arreglo de caracteres termina con el carácter nulo se llama cadena de caracteres.
+
+En lenguajes de programacion como C++ o C# un **string** es una cadena de caracteres.
+Un string en esencia es un **arreglo de caracteres**.
+Por lo tanto hay que tener en cuenta que en los lenguajes mas modernos ya no vamos a tener la necesidad de usar “cadenas de carácteres en su lugar usaremos **string**”
+
+**gets** en C, es la funcion que nos permite leer una cadena de caracteres incluyendo espacios.
+
+Para recoger información del stdin del usuario podemos usar **scanf()**, **gets()** y **fgets()**.
+
+el problema de **scanf()** es que solo recoge información hasta que encuentra un espacio.
+
+el problema de **gets()** es que si por ejemplo la información recogida tiene un tamaño 15 espacios en memoria y se guarda por ejemplo en un array de 5 espacios los 10 espacios restante los escribe en la memoria de igual manera y con esto podría reescribir una función importante del sistema haciendo colgar la computadora, para evitar eso se recomiendo usar:
+
+**fgets()** ya que en esta función se le pasa como parámetro la variable donde se va a guardar la información, de donde se va a recibir la información y lo que corrige el problema de la anterior función que es el tamaño máximo de la información que puede recibir, quedando así: **fgets(varaible, 15, stdin);** donde “variable” es la variable donde se va a guardar la información, 15 es el tamaño máximo de la información que puede recoger y stdin es de donde se va recoger la información en este caso stdin es el teclado.
+
+**RETO**
+
+```c
+#include <stdlib.h>
+#include <stdio.h>
+
+int main(){
+    //declared var array
+    char chain[50];
+    int ziseChar;
+    printf("escriba cadena\t");
+    gets(chain);//obtiene todo lo digitado por el teclado hasta presionar enter
+    ziseChar = strlen(chain);
+    printf("\n********************************");
+    printf("\nCadena digitada es:\t");
+    puts(chain);//muestra todos los carecteres contenidos en la variable chain
+    printf("La cadena Invertida es:");
+    for(int i=ziseChar;i>=0;i--){
+        printf("%c",chain[i]);
+    }
+
+    printf("\nlongitud de la Cadena digitada es: %i\n",ziseChar);
+
+}
+```
 
 ## Recapitulación: Control de Flujo
 
-# 4. Funciones
+Recapitular los conceptos de control de flujo que aprendimos en el curso.
 
+**IF**
+Empezamos con condicionales o sentencias condicionales. Estas son instrucciones que evalúan resultados booleanos, esto quiere decir que evalúan una condición que va a tener como resultado algo verdadero o falso. Dependiendo del resultados nosotros podemos usar estas condiciones para controlar el flujo de nuestro programa y los resultados que nosotros queremos que tenga.
+
+La estructura para escribir una condición es la siguiente:
+
+<img src="https://i.ibb.co/1fTfbJD/1.jpg" alt="1" border="0">
+
+Dentro del paréntesis después de la instrucción if, escribimos la operación que va a ser la condición a revisar. Si esta se cumple entra al bloque de cumplimiento de la condición y podemos ejecutar instrucciones. Si no se cumple la condición, el programa continua y no entra al bloque de cumplimiento de la condición.
+
+**Operadores relacionales y lógicos**
+Al utilizar condiciones, para ayudarnos a evaluar las operaciones nosotros podemos utilizar operadores relacionales y operadores lógicos.
+
+Los operadores relacionales son:
+
+- (<) Menor que
+- (- <)= Menor o igual que
+- (>) Mayor que
+- (>)= Mayor o igual que
+- (==) Igual (Utilizado como comparación y NO como asignación)
+- (!=) Diferente/No igual que
+
+Los operadores lógicos son:
+
+- && Y/And
+  Teniendo en cuenta más de una condición, el resultado será verdadero si ambas condiciones son verdaderas.
+- || O/Or
+  Teniendo en cuenta más de una condición, el resultado será verdadero si alguna o ambas condiciones son verdaderas, solo una necesita cumplirse.
+  ! No/Not
+  El resultado es inverso al operando.
+
+**Switch**
+Otra estructura de control de flujo que podemos utilizar es el switch. Esta es una estructura de control que nos permite agilizar el flujo es opciones múltiples.
+
+Su estructura es la siguiente:
+
+<img src="https://i.ibb.co/CnYks8S/2.jpg" alt="2" border="0">
+
+En esta estructura se evalúa una expresión y se evalúa cada caso potencial de resultado con respecto a esa instrucción, o sea, si en la expresión se evalúa una variable de tipo int, en los casos se evalúan valores de tipo int. Si en la expresión se evalúan variables de tipo char, en los casos se evalúan valores de tipo char, por ejemplo:
+
+<img src="https://i.ibb.co/8P04JyQ/3.jpg" alt="3" border="0">
+
+**Loops**
+
+Un loop es una estructura iterativa que permite repetir un bloque de instrucciones. Esta repetición es controlada por una condición booleana.
+
+**Loops - While**
+
+El iterador While es una estructura de control donde el bloque de instrucciones se repetirá siempre que la condición se cumpla.
+
+La sintaxis es la siguiente:
+
+<img src="https://i.ibb.co/ph599F5/4.jpg" alt="4" border="0">
+
+Después de la instrucción while dentro de los paréntesis tenemos la condición, siempre que esta se cumpla el bloque al cumplimiento de la condición se repetirá. Dentro de los corchetes se encuentra el bloque al cumplimiento de la condición, este es una serie de instrucciones que queramos que se repita. Al dejar de cumplirse la condición o no cumplirse en lo absoluto, el flujo del programa seguirá después de los corchetes.
+
+**Loops - For**
+
+El iterador for es una estructura de control que nos permite repetir un bloque de instrucciones un número de veces especifico.
+
+La sintaxis de un for es la siguiente:
+
+<img src="https://i.ibb.co/52kLNHW/5.jpg" alt="5" border="0">
+
+Después de la instrucción for, dentro de los paréntesis la estructura se divide en tres partes: inicialización, condición e incremento.
+
+En la primera sección inicializamos una variable que utilizaremos para medir la cantidad de veces que se repetirá el bloque. En la condición definimos el número de veces que se repetirá, esta es una condición y siempre que se cumpla seguirá repitiendose el bloque, entonces utilizamos una variable de tipo int y revisamos en la condición siempre que ese número sea menor o mayor que alguna variable o número que hayamos definido con anticipación. Finalmente en el incremento, que también puede ser decremento, sucede después del bloque al cumplimiento de la condición y modificamos la variable para eventualmente incumplir la condición y salir del iterador.
+
+**Loops - Do While**
+
+Este iterador es similar al while, con la diferencia de que la condición se prueba al final de la misma, se evalúa al final.
+
+Su sintaxis es la siguiente:
+
+<img src="https://i.ibb.co/ftjjBkH/6.jpg" alt="6" border="0">
+
+De manera similar el while, tenemos una condición y siempre que esta se cumpla un bloque se repetirá. La diferencia se encuentra con la instrucción do, en la que se cumplirá ese bloque antes de checar la condición y se repetirá.
+
+**Arreglos**
+Un arreglo es una serie de elementos del mismo tipo de dato y almacenados de manera consecutiva. Estos pueden tener de una a varias dimensiones, pero durante el curso vimos arreglos unidimensionales y bidimensionales, una y dos dimensiones respectivamente.
+
+De la misma manera que una variable nosotros podemos declarar e inicializar un arreglo unidimensional, también llamados vectores, la sintaxis es la siguiente:
+
+<img src="https://i.ibb.co/2hGX1pH/7.jpg" alt="7" border="0">
+
+Para declarar un arreglo definimos al igual que una variable su tipo de dato y su nombre, seguido de esto dentro de corchetes cuadrados ingresamos el tamaño de nuestro arreglo. Con esto indicamos que va a ser un arreglo y su tamaño.
+
+<img src="https://i.ibb.co/SVy9JZX/8.jpg" alt="8" border="0">
+
+La estructura es similar a declarar una variable con la diferencia de que agregamos valores dentro del contenido del arreglo. Estos valores van dentro de corchetes separados por comas.
+
+Los arreglos bidimensionales también llamados matrices son arreglos de dos dimensiones. Estos tienen dos índices, el primero indica el número de fila y el segundo el número de columna en que se encuentra el elemento.
+
+La sintaxis para declarar e inicializar un arreglo bidimensional es la siguiente:
+
+<img src="https://i.ibb.co/X4WLhk3/9.jpg" alt="9" border="0">
+
+Para declarar dentro de la misma manera que unidimensional definimos el tipo de dato y nombre. Adicionalmente agregamos doble corchetes cuadrados, el primero para indicar el número de filas y el segundo para el número de columnas.
+
+<img src="https://i.ibb.co/khzjnV0/10.jpg" alt="10" border="0">
+
+Para inicializar el arreglo, agregamos de igual manera entre corchetes los valores, separando cada fila en corchetes independientes, separados por comas. Y dentro de estos corchetes agregamos los valores también separados por comas.
+
+**Arreglos e iteradores**
+
+Una par de estructuras comúnmente utilizadas conjuntamente son los arreglos e iteradores. ¿Por qué utilizamos estas estructuras de manera conjunta?:
+
+- Para manipular todos los elementos de un arreglo podemos utilizar una estructura repetitiva. La más usual es el ciclo for.
+- Cuando desea imprimir el contenido del arreglo.
+- Cuando se suman todos los elementos.
+- También cuando se va a inicializar.
+
+Para poder utilizar el iterador for junto con un arreglo bidimensional es necesario entender el concepto de un for anidado. Esto es un for dentro de un for, la sintaxis es la siguiente:
+
+<img src="https://i.ibb.co/NyZjfCj/11.jpg" alt="11" border="0">
+
+En esta estructura al inicial el for, se recorre vuelta por vuelta ambos fors, iniciando por la primera vuelta del primer for y continuando con todas las vueltas del segundo for. Siguiendo con la siguiente vuelta del primer for y continuando con todas las vueltas del segundo for, y así sucesivamente.
+
+Esto es muy útil para recorrer arreglos bidimensionales.
+
+Espero que estas recapitulaciones te sean útiles para repasar conceptos y revisar estructuras, ¡nos vemos en la siguiente clase!
+
+# 4. Funciones
 
 ## Funciones: Divide y vencerás
 
+Las **funciones** son bloques de código que realizan alguna operación. Pueden aceptar datos de **entrada** (parámetros) y devolver un dato de **salida**.
+
+Se pueden utilizar para:
+
+- Encapsulamiento
+- Reusabilidad de código
+- Separar tareas
+- Cambios a futuro
+
+**Ejemplo**
+
+**Reto1** Investigando recorde que, en C puede usar el método `pow()` para sacar potencia:
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int potencia(int base, int exp){
+  int res = pow(base, exp);
+
+  return res;
+}
+
+int main(void){
+  int a = 0; 
+  int b = 0;
+  int op = 0;
+  puts("Potencia");
+
+  printf("Ingresa el numero\n");
+  scanf("%i", &a)
+
+  printf("Ingresa el exponente\n");
+  scanf("%i", &b);
+
+  op = potencia(a, b);
+  printf("El resultado es: %i", op);
+}
+```
 
 ## Variables locales y globales
 
+Las variables globales se declaran fuera de cualquier función y, según donde se declaren, varias funciones pueden tener acceso a ellas.
+
+La única diferencia entre una variable local y una global es su ámbito de acción. **Variable local**: es aquella que sólo es utilizable dentro del código de la función. **Variable global**: es aquella cuyo ámbito es todo el programa, incluso dentro de una función
+
+Ambito de las variables (local y global)
+La recomendación general es definir como variables locales todas las variables que sean de uso exclusivo para realizar las tareas encargadas a cada función. Las variables globales se utilizan para compartir variables entre funciones de forma sencilla.
+
+Realice este diagrama para entender este tema, por favor corrigirme si esta mal.
+
+Las variables **x, y** son globales por lo que las funciones A, B y C pueden hacer uso de ellas.
+La variable **w** que pertenece a la funcion ***A*** y solo funciona dentro de ella.
+La variable **z** pertenece a la funcion ***B*** y solo funciona dentro de ella.
+La variable **v** pertenece a la funcion ***C*** y solo funciona dentro de ella.
+
+<img src="https://i.ibb.co/zSVt6m1/varibles-Globales.jpg" alt="varibles-Globales" border="0">
 
 ## Recapitulación: Funciones
 
+En esta lectura vamos a hablar un poco sobre funciones y cómo utilizarlas.
+
+Las funciones son bloques de código que realizan alguna operación o instrucciones. Estas al igual que en matemáticas pueden aceptar datos de entrada, a estos les llamamos parámetros o argumentos y datos de salida. La función ya creada que hemos estado utilizado hasta ahorita, es la función main(). La estructura sería similar a lo siguiente:
+
+<img src="https://i.ibb.co/cyfBqDF/1-1.jpg" alt="1-1" border="0">
+
+¿Con qué finalidad hacemos estas secciones de código?
+
+- Encapsulamiento
+- Reusabilidad
+- Separar Tareas
+- Cambios a futuro
+
+La sintaxis para escribir una función es la siguiente:
+
+<img src="https://i.ibb.co/0KX4Vqb/2-2.jpg" alt="2-2" border="0">
+
+Primero se escribe el tipo de dato de la salida de datos, luego el nombre por el que se identificará la función y finalmente entre paréntesis los parámetros o entrada de datos.
+
+<img src="https://i.ibb.co/BjgCbnn/3-3.jpg" alt="3-3" border="0">
+
+Y entre paréntesis el bloque de instrucciones. No es necesario que una función tenga una entrada y salida de datos, puede tener una, otra, ambas o ninguna.
+Pero si tiene salida de datos, el dato final necesita ser descrito con el comando return y el dato que vamos a regresar, que tiene que ser el mismo tipo de dato el cual indicamos inicialmente al crear la función. De la misma manera para los parámetros necesitamos declarar las variables dentro de los paréntesis que vayamos a necesitar, cada una es separada por una coma.
+
+De no necesitar un dato de salida nuestra función puede ser de tipo void, esto quiere decir que no regresa ningún dato.
+
+**Variables globales y locales**
+
+Naturalmente al tener secciones de código, o sea funciones, creamos una necesidad de tener variables que puedan ser compartidas entre estas. Para esto creamos variables globales.
+
+Hasta ahora las únicas variables que habíamos creado eran variables locales, esto quiere decir que son creadas dentro de una función y solo pueden ser utilizadas en esta función.
+
+Para crear variables que usemos entre diferentes funciones lo hacemos con la misma sintaxis que hasta ahora hemos hecho, pero lo haremos fuera de cualquier función y lo haremos en la primera sección de nuestro código en la parte superior. Al hacerlo aquí nosotros estamos creando variables globales que podemos utilizar en cualquier función y será compartida.
+
 # 5. Conceptos avanzados
 
-
 ## Recursividad
+
+- En C, las funciones pueden llamarse a sí mismas.
+- Si una expresión en el cuerpo de una función llama a la propia función, se dice que ésta es recursiva.
+- La **recursividad** es el proceso de definir algo en términos de sí mismo y a veces se llama definición circular.
 
 
 ## Apuntadores
