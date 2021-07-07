@@ -1317,34 +1317,606 @@ De esta forma, no solo logramos reducir las líneas de código de nuestro progra
 
 ## Qué es promedio, moda y mediana
 
+**Media o promedio aritmético**: Consiste en sumar cada numero y dividirlo por la cantidad de numero que hay.
+
+- (20 + 30 + 40) = 90 / 3 = 30
+
+Este no es tan optimo ya que si ingresa algo a lo que se le llama “dato atípico” los resultados no serian muy acertados.
+
+**Mediana:** Este consiste en tener un numero de elementos numéricos, lo primero que debes de hacer es ordenarlos en forma ascendente:
+
+- Si el numero de datos que hay en el “arreglo” es impar escogemos el numero de la mitad: Si fueran 15 posiciones escogemos la posición 8
+- Si el numero de datos que hay en el “arreglo” es par escogemos el valor de las dos posiciones del centro y las dividimos en dos: Si fuera 16 escogemos la posición 8 y 9 y la dividimos entre 2
+
+Este proceso es mucho mas optimo que la media ya que los datos atípicos no afectaran demasiado el valor final.
+.
+**Moda:** Este es el dato que mas se repite en un conjunto de datos si tenemos el siguiente arreglo [10,9,8,10,8,10,8,7,9] y vemos que dos números se repiten la misma cantidad de veces, simplemente se ponen los dos [8,10].
+Este tipo de proceso es muy funcional cuando no solo queremos hablar de tipos de datos numéricos, tambien pueden ser cadenas de texto y demás.
+
+ 😃
+
+- **Moda:** “Lo que está a la moda, entonces es lo que más se repite”
+- **Mediana:** “Entre la moda, mediana y media; mediana es la que está en la mitad, por lo tanto es el dato que está en la mitad”
+- **Media:** “Es la que sobra entonces es el promedio”
+
+<img src="https://i.ibb.co/qMKVVqZ/diferencias-entre-moda-media-y-mediana.jpg" alt="diferencias-entre-moda-media-y-mediana" border="0">
 
 ## Calculando el promedio en JavaScript
 
+En esta clase pasamos a código la operación de la media aritmética (promedio). La manera de hacerlo es con un array de números, y con un ciclo `for` vamos sumando cada una de las cantidades que hay en el mencionado array. Al final dividimos la suma con la cantidad de números que hay en el array.
+
+```js
+//Array y variable de suma
+var array = [10, 89, 82, 91, 2, 127, 1982];
+var suma = 0;
+
+// Ciclo for
+for(let i = 0; i < array.length; i++){
+  suma += array[i];
+}
+
+//División para obtener el promedio
+console.log(`El promedio es: ${suma / array.length}`);
+```
+
+#### Método reduce
+
+El ciclo for es la manera “tradicional” de hacer esta operacion, sin embargo, para trabajar con una gran cantidad de numero, lo mejor es utilizar el metodo reduce
+
+```js
+//Array y variable de suma
+var myArray = [12, 45, 27, 98, 27]
+var suma = 0;
+
+//Realización de la suma
+var suma = myArray.reduce(function(suma, valorActual){
+  return suma + valorActual;
+})
+
+//División para obtener el promedio
+console.log(`El promedio es: ${suma / myArray.length}`);
+```
+
+#### Pasarlo a una función
+
+Al final lo que se hizo fue pasar las operaciones a una función, esto con la finalidad de usar cualquier array de números que van a ser pasados como parámetro
+
+```js
+function obtenerPromedio(array){
+  //variable de suma
+  let suma = 0;
+
+  //Realizar la suma con ciclo for
+  for(let i = 0; i < array.length; i++){
+    suma += array[i]
+  }
+
+  //Division para obtener el promedio
+  console.log(`El promedio es: ${suma / array.length}`)
+}
+
+//Llamando a la funcion con cualquier array
+obtenerPromedio([23, 87, 94, 23, 76, 128]);
+```
+
+Array.prototype.reduce()
+El método reduce() ejecuta una función reductora sobre cada elemento de un array, devolviendo como resultado un único valor.
+
+```
+const array1 = [1, 2, 3, 4];
+const reducer = (accumulator, currentValue) => accumulator + currentValue;
+
+// 1 + 2 + 3 + 4
+console.log(array1.reduce(reducer));
+// expected output: 10
+
+// 5 + 1 + 2 + 3 + 4
+console.log(array1.reduce(reducer, 5));
+// expected output: 15
+```
+
+### Descripción
+
+El método reduce() ejecuta callback una vez por cada elemento presente en el array, excluyendo los huecos del mismo, recibe cuatro argumentos:
+
+- `valorAnterior`
+
+- `valorActual`
+
+- `indiceActua`
+
+- `array`
+
+La primera vez que se llama la función, valorAnterior y valorActual pueden tener uno de dos valores. Si se proveyó un valorInicial al llamar a reduce, entonces valorAnterior será igual al valorInicial y valorActual será igual al primer elemento del array. Si no se proveyó un valorInicial, entonces valorAnterior será igual al primer valor en el array y valorActual será el segundo.
+
+Si el array está vacío y no se proveyó un valorInicial lanzará un TypeError (en-US). Si el array tiene un sólo elemento (sin importar la posición) y no se proveyó un valorInicial, o si se proveyó un valorInicial pero el arreglo está vacío, se retornará ese único valor sin llamar a la función.
+
+Suponga que ocurre el siguiente uso de reduce:
+
+```js
+[0,1,2,3,4].reduce(function(valorAnterior, valorActual, indice, vector){
+  return valorAnterior + valorActual;
+});
+
+// Primera llamada
+valorAnterior = 0, valorActual = 1, indice = 1
+
+// Segunda llamada
+valorAnterior = 1, valorActual = 2, indice = 2
+
+// Tercera llamada
+valorAnterior = 3, valorActual = 3, indice = 3
+
+// Cuarta llamada
+valorAnterior = 6, valorActual = 4, indice = 4
+
+// el array sobre el que se llama a reduce siempre es el objeto [0,1,2,3,4]
+
+// Valor Devuelto: 10
+```
+
+Y si proporcionas un valorInicial, el resultado sería como este:
+
+```js
+[0,1,2,3,4].reduce(function(valorAnterior, valorActual, indice, vector){
+  return valorAnterior + valorActual;
+}, 10);
+
+// Primera llamada
+valorAnterior = 10, valorActual = 0, indice = 0
+
+// Segunda llamada
+valorAnterior = 10, valorActual = 1, indice = 1
+
+// Tercera llamada
+valorAnterior = 11, valorActual = 2, indice = 2
+
+// Cuarta llamada
+valorAnterior = 13, valorActual = 3, indice = 3
+
+// Quinta llamada
+valorAnterior = 16, valorActual = 4, indice = 4
+
+// el array sobre el que se llama a reduce siempre es el objeto [0,1,2,3,4]
+
+// Valor Devuelto: 20
+```
+
+<img src="https://i.ibb.co/7JZMkcX/promedio.gif" alt="promedio" border="0">
+<img src="https://i.ibb.co/0MyGtzv/array-methods.jpg" alt="array-methods" border="0">@RUKIkaf1
 
 ## Calculando la mediana en Javascript
 
+El método .sort de los arrays nos permite ordenar listas de letras o números en JavaScript. Pero por defecto tiene algunos problemillas, como que el 1 millón queda ordenado antes que un 2 porque empieza por 1.
+
+En la próxima clase vamos a utilizar el método .sort enviando como argumento una función anónima que le indique a JavaScript cómo ordenar nuestra lista de números (ya no solo por sus primeros números, sino por sus valores reales).
+
+Pero antes te reto a que descubras cómo hacerlo artesanalmente y por tu cuenta. Esta [documentación podrá ayudarte](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort.)
+
+Lo que se hizo en esta clase fue calcular la mediana, sin embargo, no se ordenaron los números antes de empezar a calcularla, eso es un reto para nosotros.
+.
+Lo primero que se hizo fue saber si el array es par o impar, esto con el fin de saber el numero que esta en medio. En caso de que el array sea par, se toman los dos numero de en medio y se les saca su promedio.
+
+```js
+//Array de ejemplo
+var myArray = [129, 87, 98, 23, 98, 76];
+
+//Funcion que parte nos imprime la mediana en la consola
+function getMediana(array){  
+
+  if(array.length % 2 === 0){
+    var firstValue = array[(array.length / 2) - 1];
+    var secondValue = array[array.length / 2];
+    var mediana = (firstValue + secondValue) / 2;
+    console.log(`The median is ${mediana}`)
+  }else{
+    console.log(`The median is ${array[Math.floor(array.length / 2)]}`)
+  }
+}
+
+getMediana(myArray)
+```
 
 ## Calculando la moda en Javascript
 
+reducido 👇
+
+```javascript
+const NUMBERS = [2, 2, 2, 2, 2, 4, 5, 5, 5, 5, 5, 5, 5, 5, 9];
+
+functionmode(arr){
+    return arr.sort((a,b) =>
+          arr.filter(v => v===a).length
+        - arr.filter(v => v===b).length
+    ).pop();
+}
+
+
+console.log(mode(NUMBERS)); //5
+```
+
+Como reducir el codigo: creas un filtro por el cual haces arrays de números iguales
+
+```js
+arr.filter(v => v===a)
+```
+
+y le pones el length para ver cual se repite mas
+
+```js
+arr.filter(v => v===a).length
+```
+
+y con la función compare( que es la función que se utiliza para ordenar en sort())
+
+```js
+// a= primer numero comparado que en este casos sera la
+//cantidad de elementos de los arrays de de elementos
+//iguales
+
+// b= segundo numero comparado en este casos sera la
+//cantidad de elementos de los arrays de de elementos
+//iguales
+
+(a,b) =>{
+	a-b
+}
+```
+
+vemos cual tiene mas repetidos y por ultimo haces un .pop para poner el ultimo numero que es el que mas se repitió
 
 ## Reto: calcula otros tipos de promedio
+
+En las clases prácticas de este taller aprendimos a calcular el promedio (media aritmética), la mediana y la moda con JavaScript. En este reto debes encontrar la fórmula de algún otro tipo de promedio, trabajar con alguno de sus casos de uso útiles y traducirlo a código JavaScript.
+
+Responde las siguientes preguntas en los comentarios:
+
+- ¿Cuál tipo de promedio elegiste para trabajar?
+- ¿Qué casos de uso tiene tu tipo de promedio?
+- ¿Cómo traduces su fórmula a código JavaScript?
+
+Espero tu solución en la sección de aportes.
+
+## Solución al promedio ponderado
+
+Elegí trabajar con la media aritmética ponderada. Este es un promedio muy similar a la media aritmética, pero nos permite definir también el peso, importancia o relevancia de cada elemento en nuestro conjunto de números.
+
+Un caso de uso de la media ponderada es el cálculo de notas académicas cuando cada materia o asignatura otorga diferentes “créditos”.
+
+Esta es su fórmula:
+
+<img src="https://i.ibb.co/KFkTCPJ/random.jpg" alt="random" border="0">
+
+En español: multiplicar cada número del conjunto por su respectivo crédito, sumar todos los resultados y dividirlo entre la suma de todos los créditos.
+
+> Recuerda que no tienen que ser únicamente 3 números, pueden ser lo que desees, esto solo fue un ejemplo.
+
+Ahora sí, vamos paso a paso implementando el promedio ponderado en JavaScript:
+
+- **Definir el conjunto de números junto al peso de cada elemento**
+
+Para esto vamos a crear un array de objetos llamado `notes`. Cada objeto tendrá tres valores: `course` con el nombre de la materia (aunque en realidad no lo utilizaremos 😅), `note` con la nota de la materia y `credit` con los créditos de la materia.
+
+```js
+const notes = [
+    {
+        course: "Educación Física",
+        note: 10,
+        credit: 2,
+    },
+    {
+        course: "Programación",
+        note: 8,
+        credit: 5,
+    },
+    {
+        course: "Finanzas personales",
+        note: 7,
+        credit: 5,
+    },
+];
+```
+
+Ahora vamos paso a paso construyendo nuestra máquina para sacar promedios ponderados.
+
+- **Multiplicar cada número de la lista por su peso**
+
+Vamos a usar de nuevo el método `map` de los arrays. Crearemos un nuevo arreglo de solo números a partir de multiplicar cada nota con sus créditos.
+
+```js
+const notesWithCredit = notes.map(function (noteObject) {
+    return noteObject.note * noteObject.credit;
+});
+```
+
+- **Sumar todos los elementos del arreglo de elementos multiplicados por su peso**
+
+Vamos a usar de nuevo el método `reduce` de los arrays.
+
+Crearemos una nueva variable `notesWithCredit` que tenga como resultado la suma de todos los elementos del arreglo `sumOfNotesWithCredit`. Recuerda que la función `reduce` recibe una función con dos parámetros: el valor acumulado (que para evitar errores debemos inicializar con 0) y el nuevo elemento de los arrays.
+
+```js
+const sumOfNotesWithCredit = notesWithCredit.reduce(
+    function (sum = 0, newVal) {
+        return sum + newVal;
+    }
+);
+```
+
+- **Sumar todos los pesos (créditos)**
+
+Sí, otra vez `map` y `reduce`. Vamos a crear un nuevo arreglo `credits` únicamente con los créditos de cada materia y otra nueva variable `sumOfCredits` que recorra el arreglo `credits` y sume sus elementos.
+
+```js
+const credits = notes.map(function (noteObject) {
+    return noteObject.credit;
+});
+
+const sumOfCredits = credits.reduce(
+    function (sum = 0, newVal) {
+        return sum + newVal;
+    }
+);
+```
+
+- **Hacer la división entre ambas “sumas”**
+
+Lo último que nos falta es dividir nuestra variable `sumOfNotesWithCredit` sobre la variable `sumOfCredits`.
+
+```js
+const promedioPonderadoNotasConCreditos = sumOfNotesWithCredit / sumOfCredits;
+```
+
+En este caso, el promedio ponderado de una nota de 10 con créditos de 2, otra nota de 8 con un crédito de 5 y una última nota de 7 con créditos de 5 nos da como resultado `7.916`.
+
+La media aritmética sin tener en cuenta el peso de cada nota habría sido `8.333`.
+
+------
+
+Espero que este último ejercicio te haya ayudado a interiorizar un poco más el uso de los métodos de los arrays para obtener diferentes resultados con ellos.
+
+#### Ejemplo de solucion
+
+Así hice el cálculo de la media armónica
+
+```js
+<code> const calcularMediaArmonica = (lista1) =>{
+    const listaOrdenada = lista1.sort((a,b)=> a-b);
+    const cantidadTotal = listaOrdenada.length;
+    const valoresInvertidos = listaOrdenada.map((elemento) => 1/elemento);
+    const sumaValoresInvertidos = valoresInvertidos.reduce((acc, cur)=> acc + cur);
+    const mediaArmonica = cantidadTotal/sumaValoresInvertidos
+    console.log(`La Media armónica es ${mediaArmonica}`);
+}
+```
+
+Por si quieran interiorizar más en los métodos de los arrays, les dejo un enlace a la documentación oficial.
+
+- [Array](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array#)
+
+Demás de un sinfín de videos en YouTube.
+
+- [Métodos de los arrays](https://www.youtube.com/results?search_query=metodos+de+arrays+javascript)
 
 # 5. Taller #4: análisis salarial
 
 ## Análisis: cómo analizar salarios
 
+Objecto = | Name | Salary |
+
+| Total | Promedio | Mediana | Analisis |
+| :---: | :------: | :-----: | :------: |
+
+Calcular la mediana de salarios de los siguentes aspectos:
+
+- General
+- Top 10% 
 
 ## Calculando la mediana de salarios
 
+Archivo [salarios.js](https://github.com/juandc/platzi-curso-practico-javascript/blob/main/salarios.js) 👇
+
+```javascript
+const colombia = [];
+colombia.push({
+  name: "Camila",
+  salary: 500,
+});
+colombia.push({
+  name: "Nath",
+  salary: 1500,
+});
+colombia.push({
+  name: "Luisa",
+  salary: 1800,
+});
+colombia.push({
+  name: "Laura",
+  salary: 1000,
+});
+colombia.push({
+  name: "Daniela",
+  salary: 2200,
+});
+colombia.push({
+  name: "Esperancita",
+  salary: 200,
+});
+colombia.push({
+  name: "Carla",
+  salary: 500,
+});
+colombia.push({
+  name: "Antonieta",
+  salary: 1500,
+});
+colombia.push({
+  name: "Alicia",
+  salary: 1300,
+});
+colombia.push({
+  name: "Ana",
+  salary: 2400,
+});
+colombia.push({
+  name: "Julia",
+  salary: 3400,
+});
+colombia.push({
+  name: "Rosa",
+  salary: 400,
+});
+colombia.push({
+  name: "Angélica",
+  salary: 400,
+});
+colombia.push({
+  name: "Tatiana",
+  salary: 400,
+});
+colombia.push({
+  name: "Lorena",
+  salary: 600,
+});
+colombia.push({
+  name: "Carolina",
+  salary: 1600,
+});
+colombia.push({
+  name: "Fernanda",
+  salary: 2600,
+});
+colombia.push({
+  name: "Nora",
+  salary: 1000,
+});
+colombia.push({
+  name: "Gisselle",
+  salary: 2000,
+});
+colombia.push({
+  name: "Bill Gates",
+  salary: 100000000,
+});
+```
 
 ## Calculando el top 10% de salarios
 
+**Ejemplo de calcular el tip 10% de salarios**: cunado estaba recien aprendiendo javascript tomaba los metodos de los arrays y objetos como una herramiento util, los anotaba, y luego decia, bueno si los necesito, reviso mis apuntes y ya…
+Pero ahora veo la importancia de concer los metodos mas importate de memoria. Estos nos ayudan a tener mas opciones al momento de analizar y resolver problemas.
+
+Es como querer clavar un clavo, y ya sabes que tienes el martillo, en cambio si solo lo anotas por ahi, es como si tuvieras que ir a la caja de herramientas a ver cual es la que mas te sirve
+
+dejo mi codigo por si a alguien le sirve
+
+```js
+const sueldosChile = chile.map((persona) => {
+    return persona.sueldo
+})
+
+const sueldosOrdenados = sueldosChile.sort((a, b) => a - b)
+
+function par(numero){
+    return (numero % 2 === 0)
+}
+
+const promedio = (a, b) => {
+    const suma = a + b / 2
+    console.log(`la mediana de sueldos en chile es ${suma}`)
+}
+
+const medianaSueldos = (listaSueldos) => {
+    const mitad = parseInt(listaSueldos.length / 2)
+    if(par(listaSueldos.length)){
+        const personaMitad1 = listaSueldos[mitad - 1]
+        const personaMitad2 = listaSueldos[mitad]
+        promedio(personaMitad1,personaMitad2)
+    }
+    else{
+        const personaMitad = listaSueldos[mitad]
+        console.log(`la mediana de sueldos en chile es ${personaMitad}`)
+    }
+}
+
+const sueldoGeneral = medianaSueldos(sueldosOrdenados)
+
+
+const spliceStart = (sueldosOrdenados.length * 90) / 100
+const spliceCount = sueldosOrdenados.length - spliceStart
+const sueldos10 = sueldosOrdenados.splice(spliceStart, spliceCount)
+const sueldoTop10 = medianaSueldos(sueldos10)
+```
+
+los principales métodos para arrays.
+
+[MAP, FILTER y REDUCE EN JAVASCRIPT](https://www.youtube.com/watch?v=tP8JiVUiyDo)
+
+<img src="https://i.ibb.co/drvrRGz/10.jpg" alt="10" border="0">
 
 ## Reto: simulación de estudio de salarios
+
+En este módulo pusimos en práctica todo lo que aprendimos en los talleres pasados para calcular la mediana de salarios de tu país (aunque por ahora son solo datos ficticios).
+
+Para completar el reto de este último taller solo debes dejar volar tu imaginación y usar todas las herramientas que aprendiste para **expandir tu análisis salarial**.
+
+## ¿Cómo? Como quieras
+
+Puedes calcular la mediana de ingresos no fijos, capacidad de ahorro, capacidad de endeudamiento, recolección de impuestos, diferencia salarial, relación entre formalidad/informalidad y pobreza/riqueza…
+
+El reto es de tema libre. Escoge la pregunta que prefieras, incluso mejor si has vivido una situación parecida alguna vez, resuélvela y muéstranos tu solución en los comentarios.
+
+Para lograrlo solo debes seguir los siguientes pasos:
+
+- Plantea muy detalladamente el problema/análisis/cálculo/hipótesis que quieres resolver.
+- Encuentra las fórmulas necesarias para resolver el dilema que seleccionaste.
+- Define las variables y funciones para resolver tus fórmulas.
+- Presenta los resultados de tu informe en una página web dinámica usando HTML, CSS y JavaScript.
+- Organiza y documenta tu código para que sea más fácil de leer y entender.
+- Publícalo en tu repositorio de GitHub y muéstranos el link en la sección de comentarios.
+
+Te recomiendo que inicies con una pregunta sencilla. Pon un tiempo límite generoso, desarrolla tu proyecto hasta el final y publica tus resultados en la sección de comentarios.
+
+Luego vuelve a empezar con una pregunta más compleja. Y así sucesivamente hasta que tu estudio de salarios sea el proyecto del que más orgullosa te puedas sentir.
+
+> Estoy seguro de que los siguientes Platzi Lives serán una gran fuente de inspiración:
+>
+> - [Qué está pasando en Colombia y por qué hay protestas](https://www.youtube.com/watch?v=1oiTB_4tcx0)
+> - [Qué está pasando en Colombia en el 2021](https://www.youtube.com/watch?v=8LjOG7FSL_Q)
+> - [Por qué hay protestas en Chile](https://www.youtube.com/watch?v=8LjOG7FSL_Q)
+> - [Qué es la Economía Naranja (y qué no)](https://www.youtube.com/watch?v=fs31Woz8f80)
+> - [La economía de un programador](https://www.youtube.com/watch?v=8LjOG7FSL_Q)
+> - [Cuánto ganarán los programadores en el 2020 y 2021](https://www.youtube.com/watch?v=sauDgFSUmsM)
+> - [Los próximos 4 años de la industria Tech en Latinoamérica](https://www.youtube.com/watch?v=UKNv_z5OvCY)
+> - [¿Eres de izquierda o de derecha?](https://www.youtube.com/watch?v=NE0di4Aqa_Q)
+> - [Qué es la Bolsa de Valores](https://www.youtube.com/watch?v=WQFXlJTU1To)
+> - [Cómo prepararte para una recesión económica](https://www.youtube.com/watch?v=JCMYjez93pk)
+> - [Por qué hay crisis económica y en qué invertir](https://www.youtube.com/watch?v=ZrYD4aLqo7w)
+
+## Complementos
+
+Si sigues adelante con la [Escuela de Desarrollo Web](https://platzi.com/web), vas a aprender muchas más herramientas de JavaScript para consultar datos desde el backend y manipular el DOM aún más intensamente.
+
+También puedes complementar tu ruta de aprendizaje con la [Escuela de Data Science](https://platzi.com/datos). Ahí aprenderás a muchísima, muchísima más profundidad cómo limpiar, consultar y presentar informes a partir de un análisis de datos.
+
+Además, en la [Escuela de Finanzas e Inversiones](https://platzi.com/finanzas) puedes iniciar tu educación, planeación y evaluación financiera para todo tipo de proyectos, ya sea con fines personales, emprendedores o incluso inversionistas.
+
+------
+
+Espero ver tus retos en la sección de comentarios. En la próxima clase, como premio a todo tu esfuerzo, publicaremos nuestros proyectos en internet con ayuda de una plataforma llamada GitHub Pages. 💚
 
 # 6. Próximos pasos
 
 ## Deploy con GitHub Pages
 
+### ¿Cómo subir tu repositorio a GitHub pages?
+
+- Paso 1: Haces commit desde la consola hacia GitHub
+- Una vez en GitHub, te vas a settings > pages
+- Le dices a GitHub la rama que quieres publicar y le das al boton de `Save`
+- Compartes el link a todos tus contactos (solo que sin hacer spam)
 
 ## ¿Qué más puedes aprender de JavaScript?
+
+Nunca pares de Aprender! 
+
+<img src="https://i.ibb.co/5YpbcBW/js.jpg" alt="js" border="0">
