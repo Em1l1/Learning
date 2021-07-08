@@ -901,14 +901,299 @@ Para crear variables que usemos entre diferentes funciones lo hacemos con la mis
 - Si una expresión en el cuerpo de una función llama a la propia función, se dice que ésta es recursiva.
 - La **recursividad** es el proceso de definir algo en términos de sí mismo y a veces se llama definición circular.
 
+Un método recursivo es un método que se llama así mismo.
+Una de las tareas clásicas que pueden ser resueltas fácilmente por recursión es el calculo del **factorial** de un numero.
+
+En matemáticas, el termino **factorial** se refiere al producto de todos los enteros positivos que son menores o iguales que un número entero específico no negativo (n). El factorial de n se escribe como **n!**.
+
+Por ejemplo:
+
+```c
+5! = 5 * 4 * 3 * 2 * 1 = 120
+```
+
+A pesar de que ejemplo de arriba es fácil de entender se están omitiendo algunos pasos que nuestro programa realiza para encontrar el factorial del número 5, dichos pasos son los siguientes:
+
+```c
+Factorial(5)
+
+return 5 * Factorial(4)
+
+return 5 * (return 4 * Factorial(3) )
+
+Return 5 * (return 4 * (return 3 * Factorial(2) ) )
+
+Return 5 * (return 4 * (return 3 * (return 2 * Factorial(1) ) ) )
+```
+
+…pero Fact(1) retorna 1, así que rastreamos hacia atrás…
+
+```c
+Return 5 * (return 4 * (return 3 * (return 2 * 1) ) )
+
+Return 5 * (return 4 * (return 3 * (return 2) ) )
+
+Return 5 * (return 4 * (return 3 * 2 ) )
+
+Return 5 * (return 4 * return(6) )
+
+Return 5 * (return 24)
+
+Return 5 * 24
+
+Return 120
+
+120
+```
+
+
+Ahora supongamos que se nos pide encontrar el factorial del número 3, se podría pensar que la tarea a realizar solo seria: 
+
+```c
+Factorial(3) = 3 * Factorial(2) = 3 * 2 * Factorial(1) = 6.
+```
+
+En esta explicación estaríamos omitiendo algunos pasos que realmente el programa hace; por lo que explicación correcta seria:
+
+```c
+Factorial(3) = 3 * Factorial(2)
+  Resolver para Factorial(2):
+2 * Factorial(1)
+Resolver para el Factorial (1) = 1
+Entonces, Factorial(1) = 1
+
+```
+
+
+Entonces rastrearíamos hacia atrás:
+
+```c
+Factorial(2) = 2 * 1 = 2
+Rastrear de nuevo:
+Factorial(3) = 3 * 2 = 6
+```
+
+### Diferencias sutiles entre recursividad e iteración.
+
+Algunas de ellas por ejemplo es que la iteración incluye, una inicialización, una condición y un incremento o decremento. La recursividad por sí misma sólo es un bucle que regresa siempre al caso base (condición), y es ahí cuando viene una segunda diferencia, en una iteración nosotros estamos *obligados* a poner una condición para que sea cumplida, en la recursividad no, la diferencia es que (aparte de que ya está definida [caso base]) si no la ponemos llegará a un bucle infinito, a lo que lleva a una tercera diferencia, la iteración hace que tu CPU cicle una y otra vez, la recursividad puede llegar a crashear totalmente tu computadora. La recursividad es más lenta en ejecución que la iteración, esta se comporta por medio de stacks, la iteración no, aparte las iteraciones hacen más largo tu código que la recursividad.
+
+```c
+1#include<stdio.h>
+  2 
+  3intn_factorial(int a){
+  4if (a > 1){
+  5returna *  n_factorial(a - 1); //aqui se esta llamando a si misma
+  6   } else {
+  7printf("Terminamos\n");//aqui termina el loop porque a = 1
+  8return1;
+  9   }
+ 10 }
+```
+
+Como te puedes dar cuenta, nosotros en el ejemplo tuvimos que introducir una condición, porque de lo contrario entraríamos en un bucle infinito, la condición en este caso comprende todas las líneas que componen a la función **n_factorial**, aunque bien simplemente pudimos haber dejado la función así. Otro asunto es que no tenemos tantas líneas de código como tendríamos si ese bucle lo introducimos dentro de una *main* por ejemplo. Otra diferencia evidente es que recursividad sólo se puede en funciones, no en condicionales.
+
+Con el tema de los stacks, imagina que entra en la función, hace todo el recorrido y lleva ya una información, en este caso que es la que regresa **con return**, cuando llega a la línea donde se llama a sí misma, vuelve a entrar con esa información y sale con otra, a eso me refiero con stacks, así hasta que la condición nos ayude a salir de ese estaqueamiento (xD).
+
+Ahora veamos uno de iteración:
+
+```c
+for (int i = 0; i < 10 ; i++);
+```
+
+En la segunda parte de ese for introducimos una condición que es obligatoria porque de lo contrario nuestro bucle for, no “jalaría”, digamos que ahora entramos en un bucle infinito:
+
+```c
+for (int i = 0; i <= 10; i--);
+```
+
+Ahí haríamos ciclar nuestro CPU una y otra vez entrando en esa iteración hasta que lo paremos con un control + C desde el teclado, ese bloque de iteración va forzosamente dentro de una función no pude ir afuera, no puede pasar eso:
+
+```c
+#include<stdio.h>
+
+for (int i = 0; i > 0; i--) {
+	printf("hola mundo \n");
+}
+
+intmain(){
+	//eso no se puede xD
+}
+```
+
+🤔 La **recursividad** o **recursión** permite que las **funciones** que se **llamen a sí mismas**, **evitando** el uso de **iteradores**.
+
+> La recursividad al ser un tema abstracto pueden no encontrarse aplicaciones de forma inmediata, sino que requieren de un análisis más detallado. En estos casos sus aplicaciones están más orientadas a la ingeniería de datos para encontrar datos específicos o incluso en la inteligencia artificial.
 
 ## Apuntadores
 
+Un **apuntador** es una variable que guarda la dirección de memoria de otra variable.
+
+Las direcciones de memoria se suelen describir como números en hexadecimal. Un **apuntador** es una variable cuyo valor es la dirección de memoria de otra variable. Se dice que un apuntador “apunta” a la variable cuyo valor se almacena a partir de la dirección de memoria que contiene el apuntador.
+
+- El operador de dirección (&) regresa la dirección de una variable.
+- El operador de indirección (*) toma la dirección de una variable y regresa el dato que contiene esa dirección.
+
+Apuntadores o Pointers
+
+```c
+int *p;
+/*
+estamos diciendo: compu dame un espacio en memoria en donde puedo almacenar una direccion de alguna variable de tipo integer
+ */
+
+int a = 5;
+/*
+Aqui decimos: compu crea un espacio en la memoria del tamaño de un integer y almacena el valor 5 en el
+*/ 
+
+p = a;
+/*
+Aqui decimos: compu haz que la direccion donde esta la variable llamada a se almacene en mi variable puntero p
+*/
+
+*p = 10;
+/*
+Aqui lo que decimos es: compu cambia el valor que se encuentra en la direccion que aparece en p y cambialo por el valor 10
+*/
+
+printf( "%i", &a );
+/*
+Aqui lo que decimos es: compu imprime en pantalla la direccion en memoria de mi variable llamada a
+*/
+```
+
+**`Un apuntador es:`** una variable que puede contener números, pero a diferencia de una variable de tipo entero el puntero no puede contener un numero cualquiera solamente puede contener números que correspondan a una dirección de memoria.
+
+En este caso la variable apVal apunta a la dirección de memoria de val, por eso cualquier numero que se asigne a apVal sera imprimido por la variable val.
+
+- Uno de sus usos cuando queremos hacer referencias y crear memoria extra con variables. Es mas común en C.
+
+```c
+float *apVal
+apVal=val
+*apval = 114
+val = 114.
+```
+
+📦 Los **apuntadores** permiten **dar claridad** y **simplicidad** a las **operaciones** a nivel de **memoria**.
 
 ## Struct y manejo de archivos
 
+**Creación y apertura de archivos**
+Parámetros para la función fopen():
+
+- ““rb””: Abre un archivo en modo binario para lectura, el fichero debe existir.
+- ““w””: Abrir un archivo en modo binario para escritura, se crea si no existe o se sobreescribe si existe.
+
+```c
+ 1 #include <stdio.h>
+  2 
+  3 struct PersonalData {
+  4   char first_name[20];
+  5   char last_name[20];
+  6   int age;
+  7 };
+  8 
+  9 int main(){
+ 10   struct PersonalData me;
+ 11 
+ 12   printf("Vamos a leer los datos:\n");
+ 13   printf("Digita tu nombre:\n");
+ 14   gets(me.first_name);
+ 15   printf("Digita tu primer apellido\n");
+ 16   gets(me.last_name);
+ 17   printf("Finalmente digita tu edad\n");
+ 18   scanf("%i", &me.age);
+ 19 
+ 20   printf("Hola %s\n", me.first_name);
+ 21   printf("Tu apellido es %s\n", me.last_name);
+ 22   printf("Tu edad es %i\nAdios (: \n", me.age);
+ 23 }
+```
+
+Se llama Programación Orientada a Objetos, también existen las clases, tienen sutiles diferencias.
+
+```c
+  1 #include <stdio.h>
+  2 
+  3 int main(){
+  4   FILE *archive;
+  5 
+  6   archive = fopen("prueba.dat", "w");
+  7                   
+  8   if (archive != NULL){
+  9     printf("El archivo se ha creado exitosamente\n");
+ 10     fclose(archive);
+ 11   }else{
+ 12     printf("El archivo no se ha creado :(\n");
+ 13   }
+ 14 
+ 15 }
+```
+
+📑 El **manejar archivos** nos permitirá **crear** archivos, **escribir** y **leer** **información** dentro de los mismos.
+
+- El estándar de C contiene varias funciones para la edición de ficheros, éstas están definidas en la cabecera stdio.h y por lo general empiezan con la letra f, haciendo referencia a file.
+
+- Adicionalmente se agrega un tipo FILE, el cual se usará como apuntador a la información del fichero. La secuencia que usaremos para realizar operaciones será la siguiente: _
+
+- Crear un apuntador del tipo FILE *
+  Abrir el archivo utilizando la función fopen y asignándole el resultado de la llamada a nuestro apuntador.
+  Hacer las diversas operaciones (lectura, escritura, etc).
+
+- Cerrar el archivo utilizando la función fclose.
+
+  
+
+  **fopen**
+  Esta función sirve para abrir y crear ficheros en disco.
+  **fclose**
+  Esta función sirve para poder cerrar un fichero que se ha abierto.
 
 ## Escritura y lectura de archivos
 
+modos básicos en que podemos crear, escribir, leer y append información a un texto. Usando funciones como **fprintf, fgets, foef**, etc. Siento que es un poco más sencillo de esta forma
+
+- [Writing files](https://www.youtube.com/watch?v=38I_AUMpKpQ)
+
+- [Reading files](https://www.youtube.com/watch?v=8nIilb2kiSU)
+
+- [Appending files](https://www.youtube.com/watch?v=Hxhbp1WSDJA&t=88s)
+
+La función fwrite te permite escribir o sobre escribir en un archivo de extensión (.dat) o la extensión que requieras, en caso de no existir lo crea con el nombre que le asignes con esta estructura:
+
+```c
+fwrite(Apuntador, tamaño del apuntador, cantidad de archivos, nombre del archivo);
+```
+
+La función fread permite leer el archivo anteriormente creado ingresando una estructura similar a la función de escribir pero cambiando la función a fread.
+
+```c
+fread(Apuntador, tamaño del apuntador, cantidad de archivos, nombre del archivo);
+```
+
+Para las dos siempre debes indicar el nombre del archivo que quieres crear o abrir y su ubicación, en este caso está en la misma carpeta del script por tanto no es necesario indicar una ruta de donde se ubica. Se debe manejar la función fopen y la estructura:
+
+```c
+fopen(“Nombrearchivo.extensión”, “w”);–Escribe
+fopen(“Nombrearchivo.extensión”, “rb”);–Lee
+```
+
+Espero haber ayudado. Saludos!
 
 ## Manejo de librerías
+
+Una librería es código de programación ya escrito; un conjunto de funciones independientes para solucionar problemas concretos.
+
+- [Repositorio de librerías](https://github.com/platzi/estructurada/tree/master/21-Librerias)
+- [Repositorio de ejercicios](https://github.com/platzi/estructurada/tree/master/Ejercicios)
+
+🤔 Las **librerías** permite **hacer** más **fácil** y **rápido** el **desarrollo** de ciertas **funciones** dentro de tu **aplicación**.
+
+> Liberia: Una librería es código de programación ya escrito; un conjunto de funciones independientes para solucionar para solucionar problemas concretos.
+
+Se denomina header file, en español fichero/archivo (de) cabecera, o include file, en español fichero de inclusión, en ciencias de computación, especialmente en el ámbito de los lenguajes de programación C y C++, al archivo, normalmente en forma de código fuente, que el compilador incluye de forma automática al procesar algún otro archivo fuente. Típicamente los programadores especifican la inclusión de los header files por medio de pragmas al comienzo (head o cabecera) de otro archivo fuente.
+
+Un header file contiene, normalmente, una declaración directa de clases, subrutinas, variables u otros identificadores. Aquellos programadores que desean declarar identificadores estándares en más de un archivo fuente pueden colocar esos identificadores en un único header file, que se incluirá cuando el código que contiene sea requerido por otros archivos.
+
+La biblioteca estándar de C y la biblioteca estándar de C++ tradicionalmente declaran sus funciones estándar en header files.
