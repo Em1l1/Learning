@@ -480,14 +480,216 @@ func main() {
 
 ## El poder de los ciclos en Golang: for, for while y for forever
 
+CODIGO:
+
+```go
+package main import "fmt" func main() { 	// for contrario 	for i := 10; i > 0; i-- { 		fmt.Println(i) 	} }
+```
+
+RESULTADO:
+
+```bash
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+```
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+
+	// For condicional
+	for i := 0; i < 11; i++ {
+		fmt.Println(i)
+	}
+
+	fmt.Printf("\n")
+
+	// For while
+	counter := 0
+	for counter < 10 {
+		fmt.Println(counter)
+		counter++
+	}
+
+	// For forever
+	counterForever := 0
+	for {
+		fmt.Println(counterForever)
+		counterForever++
+	}
+}
+```
 
 ## Operadores lógicos y de comparación
 
+Son operadores que nos permiten hacer una comparación de condiciones y en caso de cumplirse como sino ejecutarán un código determinado. Si se cumple es VERDADERO/TRUE y si no se cumple son FALSO/FALSE.
+
+Empecemos con los operadores de comparación:
+
+## Operadores de comparación
+
+Son aquellos que retornan TRUE o FALSE en caso de cumplirse o no una expresión. Son los siguientes:
+
+- *valor1 == valor2*: Retorna TRUE si valor1 y valor2 son exactamente iguales.
+- *valor1 != valor2*: Retorna TRUE si valor1 es diferente de valor2.
+- *valor1 < valor2*: Retorna TRUE si valor1 es menor que valor2
+- *valor1 > valor2*: Retorna TRUE si valor1 es mayor que valor2
+- *valor1 >= valor2*: Retorna TRUE si valor1 es igual o mayor que valor2
+- *valor1 <= valor2*: Retorna TRUE si valor1 es menor o igual que valor2.
+
+## Operadores lógicos
+
+Son aquellos que retorna TRUE o FALSE si cumplen o no una condición utilizando [puertas lógicas](https://platzi.com/clases/1050-programacion-basica/15968-que-son-tablas-de-verdad-y-compuertas-logicas/).
+
+### Operador AND:
+
+Este operador indica que todas las condiciones declaradas deben cumplirse para poderse marcar como TRUE. En Go, se utiliza este símbolo `&&`.
+
+Ejemplo1: `1>0 && 2 >0` Esto retornará TRUE porque tanto la primera como la segunda condición son verdaderas.
+
+Ejemplo2: `2<0 && 1 > 0` Esto retornará FALSE porque una de las condiciones no es verdadera.
+
+### Operador OR:
+
+Este operador indica que al menos una de las condiciones debe cumplirse para marcarse como TRUE. En Go, se representa con el símbolo `||`.
+
+Ejemplo: `2<0 || 1 > 0` Esto retornará TRUE porque la segunda condición se cumple, a pesar que la primera no.
+
+### Operador NOT:
+
+Este operador retornará el opuesto al boleano que está dentro de la variable. Ejemplo:
+
+```Go
+myBool :=  true
+fmt.Println(!myBool) // Esto retornará false
+```
+
+------
+
+Una vez ya estudiado la teoría, en la siguiente clase vamos a ver cómo utilizarlo con más detalles en Go.
 
 ## El condicional if
 
+Reto 1, escribiendo input desde consola
+
+```go
+var number int
+
+	fmt.Println("Write any number")
+	fmt.Scan(&number)
+
+	numberType := number % 2
+
+	if numberType == 0 {
+		fmt.Printf("%d is even", number)
+	} else {
+		fmt.Printf("%d is odd", number)
+	}
+```
+
+Reto 2, ingresando datos desde consola
+
+```go
+defaultUser := "admin"
+	defaultPassword := "12345"
+	var inputUser string
+	var inputPassword string
+
+	fmt.Print("Username: ")
+	fmt.Scanln(&inputUser)
+	fmt.Print("Password: ")
+	fmt.Scanln(&inputPassword)
+
+	if inputUser == defaultUser && inputPassword == defaultPassword {
+		fmt.Print("Success login")
+	} else {
+		fmt.Print("Failed login")
+	}
+```
+
+![img](https://www.google.com/s2/favicons?domain=https://static.platzi.com/media/favicons/platzi_favicon.png)[strconv - The Go Programming Language](https://golang.org/pkg/strconv/)
 
 ## Múltiple condiciones anidadas con Switch
+
+```go
+package main
+
+import "fmt"
+
+func parOImpar(num int) string{
+	switch modulo := num % 2; modulo {
+	case 0:
+		return "Es par"
+	default:
+		return "Es impar"
+	}
+}
+
+func main() {
+	valor1 := 1
+
+	if valor1 == 1 {
+		fmt.Println("Es 1")
+	} else {
+		fmt.Println("No es 1")
+	}
+
+	queEs := parOImpar(24)
+	fmt.Println(queEs)
+
+	value := 50
+	switch {
+	case value > 100:
+		fmt.Println("Es mayor que 100")
+	case value < 0:
+		fmt.Println("Es menor a 0")
+	default:
+		fmt.Println("No condicion")
+	}
+}
+```
+
+### Switch
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+
+	switch modulo := 5 % 2; modulo {
+	case 0:
+		fmt.Println("Es par")
+	default:
+		fmt.Println("Es impar")
+	}
+
+	// Sin condicion
+	value := 200
+	switch {
+	case value > 100:
+		fmt.Println("Es mayor a 100")
+	case value < 0:
+		fmt.Println("Es menor a 0")
+	default:
+		fmt.Println("No condicion")
+	}
+}
+```
+
+
 
 
 ## El uso de los keywords defer, break y continue
