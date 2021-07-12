@@ -1,4 +1,8 @@
-<h1>Webpack</h1>
+<h1>Webpack</h1> 
+
+![Curso de Webpack](https://static.platzi.com/media/achievements/badge-webpack-3e3867f2-5bcf-4a7e-9af2-cf735850a791.png) 
+
+
 
 <h3>Oscar Barajas Tavares</h3>
 
@@ -771,25 +775,358 @@ module.exports = {
 
 ## Optimización: hashes, compresión y minificación de archivos
 
+Los recursos que se guardan en memoria cache suceden cuando el navegador entra a un sitio por primera vez detecta los recursos y los guarda. Por ello la siguiente vez sera mucho más rápido porque estarán en memoria
+
+- La desventaja esta cuando sacamos una nueva versión, porque tendrán un mismo nombre evitando que se descargue los nuevos cambios, por lo tanto, el usuario no recibirá los nuevos cambios
+- Para que no haya conflictos con la cache una vez que tengamos nuestro proyecto en producción es importante darles un hash para cada nueva versión
+
+- Unos de las razones por que utilizamos webpack es porque nos permite optimizar y comprimir nuestro proyecto
+- Debes utilizar los siguientes paquetes
+  - **css-minimizer-webpack-plugin** ⇒ Nos ayuda a comprimir nuestros archivos finales CSS
+  - **terser-webpack-plugin** ⇒ Permite minificar de una mejor forma
+- Instalación
+
+NPM
+
+```jsx
+npm i css-minimizer-webpack-plugin terser-webpack-plugin -D
+```
+
+YARN
+
+```jsx
+yarn add css-minimizer-webpack-plugin terser-webpack-plugin -D
+```
+
+- Una vez instalado el plugin debemos agregar la siguiente configuración
+
+```jsx
+...
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+
+module.exports = {
+	...
+	optimization: {
+    minimize: true,
+    minimizer: [
+      new CssMinimizerPlugin(),
+      new TerserPlugin()
+    ]
+  }
+}
+```
+
+- Cuando nombremos en la configuración de webpack es importante usar `[contenthash]` para evitar problemas con la cache
+
+**CssMinimizerPlugin**
+Es un plugin que nos permite **minificar** y **optimizar** los archivos CSS, por dentro del plugin utiliza una herramienta llamada [cssnano](https://cssnano.co/)
+[Documentación](https://webpack.js.org/plugins/css-minimizer-webpack-plugin/) de CssMinimizer
+**TerserWebpackPlugin**
+Es otro plugin que nos **minifica** nuestro javascript
+[Documentación](https://webpack.js.org/plugins/terser-webpack-plugin/) de TerserPlugin
+
+![img](https://www.google.com/s2/favicons?domain=https://webpack.js.org/plugins/compression-webpack-plugin//favicon.f326220248556af65f41.ico)[CompressionWebpackPlugin | webpack](https://webpack.js.org/plugins/compression-webpack-plugin/)
+
+![img](https://www.google.com/s2/favicons?domain=https://webpack.js.org/plugins/html-minimizer-webpack-plugin//favicon.f326220248556af65f41.ico)[HtmlMinimizerWebpackPlugin | webpack](https://webpack.js.org/plugins/html-minimizer-webpack-plugin/)
+
+![img](https://www.google.com/s2/favicons?domain=https://webpack.js.org/plugins/css-minimizer-webpack-plugin//favicon.f326220248556af65f41.ico)[CssMinimizerWebpackPlugin | webpack](https://webpack.js.org/plugins/css-minimizer-webpack-plugin/)
+
+![img](https://www.google.com/s2/favicons?domain=https://webpack.js.org/configuration/optimization//favicon.f326220248556af65f41.ico)[Optimization | webpack](https://webpack.js.org/configuration/optimization/)
 
 ## Webpack Alias
 
-# 4. Deploy del proyecto
+- Alias ⇒ nos permiten otorgar nombres paths específicos evitando los paths largos
+- Para crear un alias debes agregar la siguiente configuración a webpack
 
+```jsx
+module.exports = {
+	...
+	resolve: {
+		...
+    alias: {
+      '@nombreDeAlias': path.resolve(__dirname, 'src/<directorio>'),
+    },
+	}
+}
+```
+
+- Puedes usarlo en los imports de la siguiente manera
+
+```jsx
+import modulo from "@ejemplo/archivo.js";
+```
+
+### Alias
+
+Una de las mejores configuraciones de Webpack, es poder crear Alias, para los pads que utilizamos e identificar la forma en la que traeremos los elementos dentro de los archivos.
+⠀⠀
+Esta solución es debido a que aveces tenemos que llamar archivos con una ruta de acceso muy larga, esto se volvía unneedled hard.
+⠀⠀
+Vamos a nuestro objeto *module.exports* y en nuestro objeto *resolve* agregamos.
+⠀⠀
+
+```jsx
+resolve: {
+    extensions: [".js"],
+    alias: {
+      '@utils': path.resolve(__dirname, 'src/utils'),
+      '@templates': path.resolve(__dirname, 'src/templates'),
+      '@styles': path.resolve(__dirname, 'src/styles'),
+      '@images': path.resolve(__dirname, 'src/assets/images')
+    }
+  },
+```
+
+⠀⠀
+Ahora podremos trabajar con alias. Esto vuelve más legible nuestro código.
+⠀⠀
+
+```jsx
+import getData from "@utils/getData.js";
+import github from "@images/github.png";
+import twitter from "@images/twitter.png";
+import instagram from "@images/instagram.png";
+```
+
+No olvides comentar que **`alias`** forma parte del objeto **[resolve](https://webpack.js.org/configuration/resolve/#resolve)** el cual nos permite configurar la forma en que webpack resolverá los módulos incorporados.
+En nuestro camino, tenemos dos:
+
+- **resolve.alias** - para crear atajos que optimizan el tiempo de búsqueda e incorporación de módulos (commonJS o ES6)
+- **resolve.extensions** - para darle prioridad en resolución para con las extensiones donde si hay archivos nombrados igualmente, pero con diferentes extensiones, webpack resolverá conforme están listados.
+
+![img](https://www.google.com/s2/favicons?domain=https://webpack.js.org/configuration/resolve/#resolvealias/favicon.f326220248556af65f41.ico)[Resolve | webpack](https://webpack.js.org/configuration/resolve/#resolvealias)
+
+# 4. Deploy del proyecto
 
 ## Variables de entorno
 
+- Es importante considerar las variables de entorno va a ser un espacio seguro donde podemos guardar datos sensibles
+  - Por ejemplo, subir llaves al repositorio no es buena idea cuando tienes un proyecto open source
+- Para instalar debemos correr el comando
+
+NPM
+
+```jsx
+npm install -D dotenv-webpack
+```
+
+YARN
+
+```jsx
+yarn add -D dotenv-webpack
+```
+
+- Posteriormente debemos crear un archivo `.env` donde estarán la clave para acceder a la misma y el valor que contendrán
+
+  ```jsx
+  # Ejemplo
+  API=https://randomuser.me/api/
+  ```
+
+  - Es buena idea tener un archivo de ejemplo donde, el mismo si se pueda subir al repositorio como muestra de que campos van a ir
+
+- Una vez creado el archivo `.env` debemos agregar la siguiente configuración en `webpack.config.js`
+
+```jsx
+...
+const Dotenv = require('dotenv-webpack');
+module.exports = {
+	...
+	plugins: [
+		new Dotenv()
+  ],
+}
+```
+
+- dotenv-webpack ⇒ Leera el archivo `.env` por defecto y lo agregar a nuestro proyecto
+- Para usarlas debes hacer lo siguiente
+
+```jsx
+const nombre = process.env.NOMBRE_VARIABLE;
+```
+
+- Toda la configuración se podrá acceder desde `process.env`
+
+Es importante saber que las variables de entorno (NODE js),
+
+```bash
+.env
+```
+
+por convencion se escriben en Mayuscula y con formato SNAKE_CASE
+
+```bash
+process.env.API_APP
+```
+
+Las variables de **entorno** son variables externas a nuestra aplicación que residen en el sistema operativo o en el contenedor de la aplicación que se está ejecutando. Una variable de entorno es simplemente un nombre asignado a un valor como una variable es cualquier lenguaje de programación.
+Aquí te dejo esta [lectura](https://www.victorvr.com/tutorial/variables-de-entorno-con-nodejs) super genial de **variables de entorno**
+
+![img](https://www.google.com/s2/favicons?domain=https://static.platzi.com/media/favicons/platzi_favicon.png)[https://randomuser.me/api](https://randomuser.me/api)
+
+![img](https://www.google.com/s2/favicons?domain=https://webpack.js.org/guides/environment-variables//favicon.f326220248556af65f41.ico)[Environment Variables | webpack](https://webpack.js.org/guides/environment-variables/)
+
+![img](https://www.google.com/s2/favicons?domain=https://webpack.js.org/plugins/environment-plugin//favicon.f326220248556af65f41.ico)[EnvironmentPlugin | webpack](https://webpack.js.org/plugins/environment-plugin/)
 
 ## Webpack en modo desarrollo
 
+Lectura que habla de los diferentes modos de webpack y que implican ciertas configuraciones
+
+- [webpack 4: mode and optimization](https://medium.com/webpack/webpack-4-mode-and-optimization-5423a6bc597a)
+
+- Creamos un nuevo archivo:
+  **webpack.config.dev.js**
+- Copiamos todo lo de **webpack.config.js** a el archivo que acabamos de crear.
+- Borramos o comentamos el siguiente código, ya que no necesitamos optimizar para el modo de desarrollo (Queremos ver cuando funcionan las cosas).
+
+```js
+    optimization: {
+        minimize: true,
+        minimizer: [
+            new CssMinimizerPlugin(),
+            new TerserPlugin()
+        ]
+    }
+```
+
+También borramos o comentamos por la misma razón:
+
+```js
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin')
+```
+
+- Seguido del atributo output añadimos:
+
+```js
+output: {
+},
+mode: 'development',
+```
+
+- En package.json:
+
+```json
+"dev": "webpack --config webpack.config.dev.js" 
+```
+
+- y ejecutamos **npm run dev**
 
 ## Webpack en modo producción
 
+- Actualmente tenemos el problema de tener varios archivos repetidos los cuales se fueron acumulando por compilaciones anteriores
+
+- Para ello puedes limpiar la carpeta cada vez que hacemos un build, usando
+
+   
+
+  clean-webpack-plugin
+
+  - Cabe recalcar que esta característica es mucho más util para la configuración de producción
+
+- Para instalarlo debes correr el siguiente comando:
+
+NPM
+
+```jsx
+npm install -D clean-webpack-plugin
+```
+
+YARN
+
+```jsx
+yarn add -D clean-webpack-plugin
+```
+
+- Para agregarlo a nuestra configuración de webpack agregamos los siguientes cambios a webpack.config.js
+
+```jsx
+...
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+module.exports = {
+	...
+	plugins: [
+		...
+		new CleanWebpackPlugin()
+	]
+}
+```
 
 ## Webpack Watch
 
+- El modo watch hace que nuestro proyecto se compile de forma automática
+  - Es decir que está atento a cambios
+- Para habilitarlo debemos agregar lo siguiente en la configuración de webpack
+
+```jsx
+module.exports = {
+	...
+	watch: true
+}
+```
+
+- Cada vez que haya un cambio hara un build automático
+- Otra manera es mandar la opción mediante parámetros de consola en `package.json`
+
+```json
+{
+	"scripts": {
+		"dev:watch": "webpack --config webpack.config.dev.js --watch"
+	}
+}
+```
+
+- Vale la pena recordar que si aplicamos en modo producción se tomara más tiempo porque se optimizaran los recursos
+
+  - Por ello en modo desarrollo se salta ese paso y es más rápido la compilación.
+
+  ### Otra Opcion
+
+  La forma más común en la que el `watch` se suele usar dentro de un archivo `package.json` es esta:
+
+  ```json
+  "dev": "webpack --config webpack.config.dev.js",
+  "watch": "npm run dev --watch"
+  ```
+
+  Simplemente se ejecuta el script `dev`, pero con el flag `watch` 👀
 
 ## Deploy a Netlify
+
+creamos un archivo netlify.toml
+
+y dentro de el creamos una configuracion
+
+```js
+[build]
+
+  publish = "dist"
+  command = "npm run build"
+```
+
+
+despues vamos a crear un script que nos ayudara a crear las variables de entorno en nuestro servidor
+
+primero creamos una carpeta que se llame scripts
+y un archivo que se llamara create-env.js
+y dentro de el colocamos el siguiente codigo
+
+```js
+const fs = require('fs');
+
+	fs.writeFileSync('./.env',`API=${process.env.API}\n`)
+```
+
+despues vamos a la pagina de netlify a la seccion de build & deploy
+
+vamos a la sección que dice enviroment, y le damos en edit variables, y alli colocamos las variables que en este caso solo es la variable API y con su valor que es https://randomuser.me/api/
+
+![img](https://www.google.com/s2/favicons?domain=https://www.netlify.com//v3/static/favicon/apple-touch-icon.png)[Netlify: Develop & deploy the best web experiences in record time](https://www.netlify.com/)
+
+![img](https://www.google.com/s2/favicons?domain=https://github.com/fluidicon.png)[GitHub - carloscuesta/gitmoji: An emoji guide for your commit messages. 😜](https://github.com/carloscuesta/gitmoji)
+
+![img](https://www.google.com/s2/favicons?domain=https://github.com/fluidicon.png)[GitHub - carloscuesta/gitmoji-cli: A gitmoji interactive command line tool for using emojis on commits. 💻](https://github.com/carloscuesta/gitmoji-cli)
 
 # 5. Herramientas de desarrollo complementarias
 
