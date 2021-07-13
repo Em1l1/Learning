@@ -27,8 +27,6 @@
 
 Bienvenido al Curso
 
-[
-
 - [https://www.hackerrank.com/domains/c](http://kerrank.com/domains/c)
 
 ## ¿Qué es una función?
@@ -277,6 +275,22 @@ Un **Puntero** es un argumento por referencia. 🐱
 
 Tabla de codificación [ASCII](https://ascii.cl/es/)
 
+```c
+#include <stdio.h>  //input y output teclado, para imprimir pantalla printf
+#include <conio.h>  //entradas y salidas comunicarnos en la consola
+#include <string.h> // cuando se trabaja con cadenas de caracteres
+#include <stdlib.h> // system comunicarnos afuera de c con sistema attoy convertir string a entero  adol convierte a long ran genera numeros enteros aleatorios delay para pausa
+#include <math.h>   // sin cosh floor ceil sqrt
+#include <time.h>   // para fechas o tiempos del sistema
+#include <ctype.h>  //  tipo manejo de caracteres individuales
+#include <signal.h> // señales en programa por ejemplo enventos en el teclado , detectar un espacio en blanco en cadena de caracteres, detectar caracter en minuscúla lower y upper.
+#include <locale.h> // cuestinones locales al software cuando se neccesita que se adapte al lugar que se use
+#include <errno.h>  // para debug errores.
+#include <assert.h> // macro para verificar asumsiones y imprimir que esta pasando.
+```
+
+
+
 ![img](https://www.google.com/s2/favicons?domain=https://cdn.devdocs.io/favicon.ico)[DevDocs — C documentation](https://devdocs.io/c/)
 
 ![img](https://www.google.com/s2/favicons?domain=https://static.platzi.com/media/favicons/platzi_favicon.png)[C Language Reference | Microsoft Docs](https://docs.microsoft.com/en-us/cpp/c-language/c-language-reference?view=vs-2019)
@@ -499,6 +513,103 @@ el tiempo transcurrido total es 19 seg y equivale a 00:00:19
 
 ## Stdlib.h
 
+Para quienes usamos Mac o Linux, las dos funciones `system()` utilizadas no funcionarán. Porque corren solo en Windows. Sí que la primera tiene su versión para sistemas UNIX. Para limpiar la consola, en lugar de `system(cls);` para Windows, deben usar `system("clear");`.
+
+**versión del `Decimal2Binary.c`**
+
+```c
+#include <stdlib.h>
+#include <stdio.h>
+
+int		main(void)
+{
+	long number;
+	int binaryNumber[12];
+	int i;
+	
+	i = 0;
+	printf("Introduzca un valor\n");
+	scanf("%d", &number);
+
+	while (i++ < 12)
+		binaryNumber[i] = 2;
+
+	i = 0;
+	while (number >= 0)
+	{
+		if(i < 12)
+			binaryNumber[i] = number % 2;
+		number = number / 2;
+		if(number == 0)
+			number--;
+		i++;
+	}
+	printf("el número binario es: ");
+	if(i > 12)
+		i = 12;
+	while (i-- > 0)
+		if (binaryNumber[i] != 2)
+			printf("%d", binaryNumber[i]);
+	printf("\n");
+}
+```
+
+**salida**
+
+```shell
+Introduzca un valor
+8
+el número binario es: 1000
+```
+
+Con Whiles
+
+```c
+// 1er paso Dividir el valor entre 2 y almacenar el resto, mod, en un array
+// 2do paso dividir otra vez entre 2 y almacenar el restante
+// Repetir hasta que nuestro número ya no se pueda dividir
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int binaryNumber[12], n, i;
+
+main()
+{
+    //system("cls");
+    //system("color 9F");
+    printf("Ingrese un valor decimal\n");
+    scanf("%d", &n);
+    printf("Usted va a convertir número %d a binario\n", n);
+
+
+    
+    while (n > 0)
+    {
+        binaryNumber[i] = n % 2;
+        n = n / 2;
+        i++;
+    }
+    i = i - 1;
+
+    printf("La conversión de la conversión es: ");
+
+    while (i >= 0)
+    {
+        printf("%d", binaryNumber[i]);
+        i--;
+    }
+
+    return 0;
+}
+```
+
+![img](https://www.google.com/s2/favicons?domain=https://www.tutorialspoint.com/c_standard_library/stdlib_h.htm/favicon.ico)[C Library - - Tutorialspoint](https://www.tutorialspoint.com/c_standard_library/stdlib_h.htm)
+
+![img](https://www.google.com/s2/favicons?domain=https://www.w3schools.com/colors/colors_picker.asp/favicon.ico)[HTML Color Picker](https://www.w3schools.com/colors/colors_picker.asp)
+
 # 4. Cierre
 ## Conclusiones
+
+[Code Wars](https://www.codewars.com/) para practicar.
 
