@@ -263,7 +263,7 @@ Un **Puntero** es un argumento por referencia. 🐱
 ## Principales Bibliotecas de C
 
 - Las funciones declaradas en **stdio.h** pueden clasificarse en dos categorías: funciones de manipulación de ficheros y funciones de manipulación de entradas y salidas. [fuente](https://es.wikipedia.org/wiki/Stdio.h#:~:text=h%2C que significa "standard input,y salida%2C así como la)
-- - Las funciones que pertenecen a **conio.h** declara varias funciones útiles para mejorar el rendimiento de la «entrada y salida por consola» [fuente](https://es.wikipedia.org/wiki/Conio.h#:~:text=a la búsqueda-,conio.,de E%2FS por consola.)
+- Las funciones que pertenecen a **conio.h** declara varias funciones útiles para mejorar el rendimiento de la «entrada y salida por consola» [fuente](https://es.wikipedia.org/wiki/Conio.h#:~:text=a la búsqueda-,conio.,de E%2FS por consola.)
 - Las funciones que pertenecen a **stdlib.h** pueden clasificarse en las siguientes categorías: conversión, memoria, control de procesos, ordenación y búsqueda, matemáticas. [fuente](https://es.wikipedia.org/wiki/Stdlib.h#:~:text=a la búsqueda-,stdlib.,control de procesos y otras.)
 - **string.h** es un archivo de la Biblioteca estándar del lenguaje de programación C que contiene la definición de macros, constantes, funciones y tipos y algunas operaciones de manipulación de memoria.
   [fuente](https://es.wikipedia.org/wiki/String.h)
@@ -277,10 +277,228 @@ Un **Puntero** es un argumento por referencia. 🐱
 
 Tabla de codificación [ASCII](https://ascii.cl/es/)
 
+![img](https://www.google.com/s2/favicons?domain=https://cdn.devdocs.io/favicon.ico)[DevDocs — C documentation](https://devdocs.io/c/)
+
+![img](https://www.google.com/s2/favicons?domain=https://static.platzi.com/media/favicons/platzi_favicon.png)[C Language Reference | Microsoft Docs](https://docs.microsoft.com/en-us/cpp/c-language/c-language-reference?view=vs-2019)
+
 ## Math.h
+
+```c
+#include <stdio.h>
+#include <math.h>
+
+int x;
+float result;
+
+int main()
+{
+  printf("ingrese el valor de x: ");
+  scanf("%d", &x);
+  result = cos(x);
+  printf("El valor ingresado es:%d \n", x);
+  printf("El valor del seno de X es:%f\n", result);
+
+  return 0;
+}
+```
+
+![img](https://www.google.com/s2/favicons?domain=https://www.tutorialspoint.com/c_standard_library/math_h.htm/favicon.ico)[C Library - - Tutorialspoint](https://www.tutorialspoint.com/c_standard_library/math_h.htm)
+
 ## String.h
+
+Otras funciones son:
+
+***strlen***: devuelve la longitud del *string.*
+
+***strcpy***: recibe dos parámetros, el segundo se copia y se guarda dentro del primero.
+
+Cuando no se quiere realizar la operación con el _string _entero se utilizan las funciones con una n en medio del nombre: ***strncat, strncpy, strncmp\***,… Éstas funciones reciben un parámetro más que es la longitud del string con la que se va a operar.
+
+Un ejemplo de esto:
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+char string1[60];
+char string2[60];
+
+int main()
+{
+
+    printf("Type a sentence: \n");
+    gets(string1);
+    printf("Type another sentence: \n");
+    gets(string2);
+
+    strrev(string1);
+    printf("Reversed string: %s \n", string1);
+
+    if ( strcmp(string1, string2) == 0)
+        printf("The strings are equal \n");
+    else
+    {
+        strcat(string1, string2);
+        printf("The strings are different \n");
+        printf("The strings joined: %s \n", string1);
+        
+    }
+
+    printf("%d \n", strlen(string1));
+
+    strcpy(string1, "New string1");
+    printf("%s \n", string1);
+
+    strncpy(string1, "New string 1", 4);
+    string1[4] = '\0';
+    printf("%s \n", string1);
+    
+    return 0;
+}
+```
+
+Hay que tener en cuenta que en los *strings* el último carácter es el carácter nulo (’\0’) y a veces hay que añadirlo manualmente o el código da problemas.
+
+Otras funciones de la libreria String
+`man string`
+
+```sh
+STRING(3)                                                                            Linux Programmer's Manual                                                                            STRING(3)
+
+NAME
+       stpcpy,  strcat,  strchr,  strcmp,  strcoll, strcpy, strcspn, strdup, strfry, strlen, strncat, strncmp, strncpy, strpbrk, strrchr, strsep, strspn, strstr, strtok,
+       strxfrm, - string operations
+
+SYNOPSIS
+       #include <string.h>
+
+       char *stpcpy(char *dest, const char *src);
+              Copy a string from src to dest, returning a pointer to the end of the resulting string at dest.
+
+       char *strcat(char *dest, const char *src);
+              Append the string src to the string dest, returning a pointer dest.
+
+       char *strchr(const char *s, int c);
+              Return a pointer to the first occurrence of the character c in the string s.
+
+       int strcmp(const char *s1, const char *s2);
+              Compare the strings s1 with s2.
+
+       int strcoll(const char *s1, const char *s2);
+              Compare the strings s1 with s2 using the current locale.
+
+       char *strcpy(char *dest, const char *src);
+              Copy the string src to dest, returning a pointer to the start of dest.
+
+       size_t strcspn(const char *s, const char *reject);
+              Calculate the length of the initial segment of the string s which does not contain any of bytes in the string reject,
+
+       char *strdup(const char *s);
+              Return a duplicate of the string s in memory allocated using malloc(3).
+
+
+       char *strfry(char *string);
+              Randomly swap the characters in string.
+
+       size_t strlen(const char *s);
+              Return the length of the string s.
+
+       char *strncat(char *dest, const char *src, size_t n);
+              Append at most n characters from the string src to the string dest, returning a pointer to dest.
+
+       int strncmp(const char *s1, const char *s2, size_t n);
+              Compare at most n bytes of the strings s1 and s2.
+
+       char *strncpy(char *dest, const char *src, size_t n);
+              Copy at most n bytes from string src to dest, returning a pointer to the start of dest.
+
+       char *strpbrk(const char *s, const char *accept);
+              Return a pointer to the first occurrence in the string s of one of the bytes in the string accept.
+
+       char *strrchr(const char *s, int c);
+              Return a pointer to the last occurrence of the character c in the string s.
+
+       char *strsep(char **stringp, const char *delim);
+              Extract the initial token in stringp that is delimited by one of the bytes in delim.
+
+       size_t strspn(const char *s, const char *accept);
+              Calculate the length of the starting segment in the string s that consists entirely of bytes in accept.
+
+       char *strstr(const char *haystack, const char *needle);
+              Find the first occurrence of the substring needle in the string haystack, returning a pointer to the found substring.
+
+       char *strtok(char *s, const char *delim);
+              Extract tokens from the string s that are delimited by one of the bytes in delim.
+
+       size_t strxfrm(char *dest, const char *src, size_t n);
+              Transforms src to the current locale and copies the first n characters to dest.
+
+DESCRIPTION
+       The string functions perform operations on null-terminated strings.  See the individual man pages for descriptions of each function.
+
+SEE ALSO
+       index(3), rindex(3), stpcpy(3), strcasecmp(3), strcat(3), strchr(3), strcmp(3), strcoll(3), strcpy(3), strcspn(3), strdup(3), strfry(3), strlen(3), strncasecmp(3), strncat(3),  strncmp(3),
+       strncpy(3), strpbrk(3), strrchr(3), strsep(3), strspn(3), strstr(3), strtok(3), strxfrm(3)
+
+COLOPHON
+       This  page  is  part  of  release 4.15 of the Linux man-pages project.  A description of the project, information about reporting bugs, and the latest version of this page, can be found at
+       https://www.kernel.org/doc/man-pages/.
+
+                                                                                             2014-01-04                                                                                   STRING(3)
+```
+
+![img](https://www.google.com/s2/favicons?domain=https://www.tutorialspoint.com/c_standard_library/math_h.htm/favicon.ico)[C Library - - Tutorialspoint](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
+
 ## Time.h
+
+El código, no es igual en Linux que en Windows, por lo que tendrán que comentar y descomentar según sea su máquina si quieren probar mi código.
+
+```c
+#include <time.h>
+#include <stdlib.h>
+
+int		main(void)
+{
+	long i;
+	long begin;
+	long end;
+	int hours;
+	int minutes;
+	int seconds;
+	long aux;
+	
+	i = 0;
+	begin = time(NULL);
+	while (i < 600)
+	{
+		system("clear"); // Linux
+		//system("cls"); // Windows
+		printf("contandor %06d\n", i);
+		i++;
+	}
+	end = time(NULL);
+	aux = difftime(end, begin);
+	hours = aux / 3600;
+	minutes = aux / 60;
+	seconds = aux % 60;
+	printf("el tiempo transcurrido total es %d seg y equivale a %02d:%02d:%02d", aux, hours, minutes, seconds);
+	return 0;
+}
+```
+
+**Salida**
+
+```bash
+contandor 000599
+el tiempo transcurrido total es 19 seg y equivale a 00:00:19
+```
+
+![img](https://www.google.com/s2/favicons?domain=https://www.tutorialspoint.com/c_standard_library/time_h.htm/favicon.ico)[C Library - - Tutorialspoint](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
+
+![img](https://www.google.com/s2/favicons?domain=https://www.timeanddate.com//favicon-48x48.png)[timeanddate.com](https://www.timeanddate.com/)
+
 ## Stdlib.h
 
 # 4. Cierre
 ## Conclusiones
+
