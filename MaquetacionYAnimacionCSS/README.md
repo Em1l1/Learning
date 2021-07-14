@@ -50,8 +50,79 @@ De este modo, semánticamente es toda una misma frase, pero visualmente la podem
 
 ## Maquetación del loader
 
+```css
+
+/* animaciones  */
+.loader div {
+  background: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 10px;
+
+  transform: scale(0);
+
+  animation: scaling 2s ease-in-out infinite;
+}
+
+.loader div:nth-child(1) {
+  animation-delay: 0.4s;
+}
+.loader div:nth-child(2) {
+  animation-delay: 0.6s;
+}
+.loader div:nth-child(3) {
+  animation-delay: 0.8s;
+}
+
+@keyframes scaling {
+  0%, 100% {
+    transform: scale(0.2);
+  }
+  40% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+```
+
+
 
 ## Layout con CSS Grid
+
+### **Fuente Lato** 😃
+
+Por aquí les dejo las líneas de código que debemos agregar a nuestro proyecto para las fuentes.
+Import link:
+
+```css
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;700&display=swap" rel="stylesheet"> 
+```
+
+Import Style:
+
+```css
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;700&display=swap');
+</style>
+```
+
+Aplicacion en CSS
+
+```css
+font-family: 'Lato', sans-serif;
+```
+
+
+
+![img](https://www.google.com/s2/favicons?domain=https://www.google.com/images/icons/product/chrome_web_store-32.png)ColorZilla - Chrome Web Storehttps://chrome.google.com/webstore/detail/colorzilla/bhlhnicpbhignbdhedgjhgdocnmhomnp
+
+![img](https://www.google.com/s2/favicons?domain=https://addons.cdn.mozilla.net/favicon.ico?v=2)[ColorZilla – Get this Extension for 🦊 Firefox (en-US)](https://addons.mozilla.org/en-US/firefox/addon/colorzilla/)
+
+![img](https://www.google.com/s2/favicons?domain=https://www.gstatic.com/images/icons/material/apps/fonts/1x/catalog/v5/favicon.svg)[Google Fonts](https://fonts.google.com/)
 
 
 ## Navbar
