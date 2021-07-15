@@ -657,9 +657,96 @@ int	main(void)
 
 ## Expresión continue
 
+Expresion continue: Sirve para volver al principio del bucle en cualquier momento, sin ejecutar las líneas que haya por debajo de la palabra continue. Este ejemplo, en condiciones normales contaría hasta desde `i=0` hasta `i=7`, pero cada vez que se ejecuta el bucle pregunta al usuario si desea incrementar la variable o no.
+
+**Break**: Nos saca del ciclo
+
+**Continue**: Salta unicaménte una iteración, pero el ciclo continua
+
+Continue nos sirve para cuando algo muy especifico que se esta detectando con un if dentro de un ciclo (while, Do while, for), quieres que se salte, es decir que no se ejecute y que siga la siguiente iteración.
+
+Programa que calcula los primeros 100.000 primos (combina un `for`para recorrer los números y un `do while` para encontrar el primer divisor y descartar que es primo. (Utiliza el `continue`para cuando no debe imprimir el número como primo.
+
+```c
+#include <stdlib.h>
+
+int	main(void)
+{
+	int totalPrimosEcontrados;
+	int total = 100000;
+	int numeroEstudiar;
+	int divisor;
+	
+	totalPrimosEcontrados = 0;
+	for (numeroEstudiar = 1; numeroEstudiar <= total; numeroEstudiar++)
+	{
+		divisor = 0;
+		do 
+		{
+			divisor++;
+			if(divisor > 1 && divisor < numeroEstudiar)
+				if (numeroEstudiar % divisor == 0)
+					break;
+		} while (divisor < numeroEstudiar);
+		if (divisor < numeroEstudiar)
+			continue;
+//		else 
+//			printf("[%d] no es primo\n", numeroEstudiar);
+		totalPrimosEcontrados++;
+		printf("[%d] Encontrado número primo\n", numeroEstudiar);
+	}
+	printf("Total primos encontrados del 1 al %d, = %d\n", total, totalPrimosEcontrados);
+	return (0);
+}
+```
+
+**Salida**
+
+<img src="https://i.ibb.co/wRS1T21/for.gif" alt="for" border="0">
+
 ## Expresión goto
+
+Esta instrucción `goto` seguramente sea algo heredado de otros lenguajes más antiguos. El lenguaje **C ** que se basa en un paradigma de programación estructurada.
+Es más avanzado a la programación secuencial porque tiene funciones que rompe la continuidad, por la existencia de return, los bucles con el `continue`, y `break. El`goto` es algo que puede saltar a otro lugar del código que puede ser curioso… no lo he probado pero que tal y si pongo la etiqueta dentro de un bucle y este no tiene inicializadas las condiciones… En fin no quiero romperme la cabeza, solo le pido al compilador que ante semejante aberración chille, llore, berrée o te saque del programa de forma abrupta, a ser posible sin guardar el programa.
+
+La instrucción de salto goto se puede usar en un programa, para transferir incondicionalmente el control del mismo a la primera instrucción después de una etiqueta, o dicho de otra forma, al ejecutar una instrucción goto, el control del programa se transfiere (salta) a la primera instrucción después de una etiqueta. Una etiqueta se define mediante su nombre (identificador) seguido del carácter dos puntos 😃.
+
+> Goto : El iniciador del llamado "Código Spaguetti"
+> aquel código que necesitas a un genio para poder entenderlo.
+>
+> El **go to** está presente en muchos [códigos spaguetti](https://es.wikipedia.org/wiki/Código_espagueti).
+
+```c
+for (size_t i = 0; i < count; i++)
+{
+      for (size_t i = 0; i < count; i++)
+        {
+          for (size_t i = 0; i < count; i++)
+            {
+                if (panic)
+                    goto errorHandler;
+             }
+        }
+}
+errorHandler: //todo el codigo para componer tu desastre
+```
 
 # 5. Cierre
 ## Continúa practicando
+
+Está comprobado que practicar es una de las formas en que podemos reforzar lo aprendido, por este motivo, encontrarás en [nuestro blog](https://platzi.com/blog/) distintos ejercicios para que nunca pares de programar.
+
+Recuerda estar atento porque periódicamente encontrarás nuevos ejercicios y cuéntanos en los comentarios que te han parecido.
+
+## Ejercicios para practicar
+
+- [Primer nivel: salida de mensajes](https://platzi.com/comunidad/retos-de-programacion-en-cualquier-lenguaje-primer-nivel-salida-de-mensajes/)
+- [Segundo nivel: condicionales](https://platzi.com/comunidad/retos-de-programacion-para-cualquier-lenguaje-segundo-nivel-condicionales/)
+- [Tercer nivel: manejo de strings](https://platzi.com/comunidad/retos-de-programacion-para-cualquier-lenguaje-tercer-nivel-strings/)
+- [Cuarto nivel: matemáticas](https://platzi.com/comunidad/retos-de-programacion-en-cualquier-lenguaje-cuarto-nivel-matematicas/)
+- [Quinto nivel: ciclo ‘for’](https://platzi.com/comunidad/retos-de-programacion-en-cualquier-lenguaje-quinto-nivel-ciclo-for/)
+- [Sexto nivel: ciclo ‘while’](https://platzi.com/comunidad/retos-de-programacion-en-cualquier-lenguaje-sexto-nivel-ciclo-while-2/)
+
 ## Cierre y conclusiones
 
+Nunca pares de Aprende
