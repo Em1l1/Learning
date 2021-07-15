@@ -1030,15 +1030,334 @@ done
 - Para crear directorios utilizamos el comando **mkdir** seguido del nombre que queremos colocar.
 - Para crear archivos utilizamos el comando **touch** seguido del nombre que queremos colocar.
 
+**Ejercicio**
+
+```sh
+# ! /bin/bash
+# Programa para crear archivos y directorios
+# Author Diego Beltran histagram @diegodevelops
+
+echo "Archivos Ditrectorios"
+
+if [ $1 = "d" ]; then
+    mkdir -m 755 $2
+    echo "Directorio creado correctamente"
+    ls -la $3
+elif [ $1 = "f" ]; then
+    touch $2
+    echo "Archivo creado correctamente"
+    ls -la $3
+else
+    echo "No existe esa opción: $1"
+fi
+```
+
+Método para crear un archivo sin modificar sus tiempos de acceso (lo que realmente hace `touch`. La creación de un archivo es un side-effect):
+
+```sh
+([ -e $file ] && echo "El archivo ya existe") || (touch $file && echo "El archivo fue creado")
+```
+
+Método para crear un directorio sí y solo sí, el mismo no existe:
+
+```sh
+mkdir -p $dir
+```
+
+**operadores:**
+
+```sh
+-gt mayor
+-lt menor
+-ge mayor o igual
+-le menor o igual
+-eq igual
+-ne distinto
+```
+
+[Condicionales en bash](https://www.atareao.es/tutorial/scripts-en-bash/condicionales-en-bash/#)
+
 ## Escribir dentro de archivos
+
+[<< EOM/EOF](https://superuser.com/questions/1003760/what-does-eof-do)
+
+- **EOM**: End Of Message
+- **EOF**: End Of File
+
+Para escribir en un archivo podemos utilizar `>>` y `>`
+**`>>`**, si no existe el archivo, se creará, si existe, se agregara al final del archivo.
+**`>`**, si no existe el archivo, se creara, si existe, será reemplazado
+
 ## Leer Archivos
+
+[IFS](https://bash.cyberciti.biz/guide/$IFS)
+
+```sh
+#!/bin/bash
+
+# Reading a file
+cat $1
+
+# Saving the read response in a variable
+cat_response=`cat $1`
+echo "$cat_response"
+
+# Reading a file line by line with IFS to read also the blank spaces
+while IFS= read line
+do
+    echo "$line"
+done < $1
+```
+
+
+
 ## Operaciones Archivos
+
+```sh
+#!/bin/bash
+
+# Copy files
+mkdir -m 755 backup_scripts
+cp *.* backup_scripts/
+ls -la backup_scripts
+
+# Move files
+mv backup_scripts $HOME
+
+# Remove files
+rm *.txt
+```
+
 ## Reto 5
+
+Modificar el archivo [utilityHost.sh](http://utilityhost.sh/) para escribir la información solicitada a un archivo de log cuyo nombre será log donde yyyy representa el año, MM el mes, DD el día, HH la hora, mm los minutos y SS los segundos
+
+[UtilityHost.sh](http://utilityhost.sh/) lo creamos en las primeras clases
+Simplemente imprime el valor de unas variables.
+
+```shell
+#!/bin/bash
+#Reto 1
+
+option=2
+result=4
+
+echo"El valor de option es: $option"
+echo"El valor de result es: $result"
+```
+
+El objetivo del reto es agarrar esas variables y agregar su valor dentro de un archivo que vas a crear en el script. El nombre de este archivo será: **log** AÑO MES DIA hora minutos segundos.txt
+
+Ejemplo:
+
+```bash
+log20200812211806.txt
+```
+
 #  7. Empaquetamiento
 ## Empaquetamiento TAR, GZIP y PBZIP 2
+
+El empaquetamiento es un tema interesante para manejar respaldos u otro tipo de archivos para poder reducir el tamaño de uno o varios archivos para luego distribuirlos a través de la red u otra ubicación dentro del equipo.
+
+- `tar`: permite empaqueta múltiples archivos
+- `gzip`: Este solo nos permite empaquetar un único archivo, pero nos permite optimizar el tamaño del empaquetado. Suele usarse en conjunto con `tar`
+- `pbzip2`: Este comando permite soporta el multicore, multiprocesador. Solo podemos empaquetar un solo archivo.
+
+El ratio hace referencia a la relación del tamaño resultante del archivo comprimido con respecto a su tamaño original. En resumen no es más que una medida de proporción entre la entrada y salida.
+
+Dejo un link que me sirvio para entender mejor el tema, en él comparan diferentes herramientas que podemos usar para comprimir archivos: [gzip-vs-bzip2-vs-xz-performance-comparison](https://www.rootusers.com/gzip-vs-bzip2-vs-xz-performance-comparison/)
+
+RATIO es el nivel de compresión del archivo.
+Por ejemplo: si un archivo pesa 100 Mb.
+Sí seleccionas un RATIO de 1, el archivo pesara 90 Mb, pero será rápido el proceso.
+Sí seleccionas un RATIO de 5., el archivo pesara 50 MB, pero será mas lento el proceso de compresión.
+
+Hay que tener muy en claro que `tar` solamente agrupa multiples archivos en uno sólo, no comprime al menos que tu se lo especifiques.
+
+Si quisieramos agrupar y comprimir archivos en un sólo movimiento, hariamos lo siguiente:
+
+```shell
+$ tar czf shellCourse.tgz *.sh
+```
+
 ## Respaldo Empaquetado con clave
+
+> *tip* de seguridad para ofuscar los programas que desarrollemos en BASH Shell. Aquí les dejo en link. [Ofuscar Bash](https://blog.desdelinux.net/como-ofuscar-u-ocultar-codigo-de-nuestros-scripts-bash/)
+
+```sh
+#!/bin/bash
+
+zip -e shell_course.zip *.sh
+```
+
+Para verificar si tienen instalado el comando zip en su sistema el comando type les puede ser útil, tecleen en su terminal así:
+**type zip**.
+Y si está instalado les devolverá donde están los archivos binarios del comando
+
+> Agregar contraseñas a un archivo comprimida, no es una práctica segura. Se recomienda usar:
+>
+> ```sh
+> openssl enc -aes-256-cbc -e -in foo.tar.gz -out bar.tar.gz.enc
+> openssl aes-256-cbc -d -in out.tar.gz.enc -out decrypted.tar.gz
+> ```
+
 ## Transferir información red
+
+Más información sobre el comando [rsync](https://www.atareao.es/software-linux/sincronizacion-a-fondo-con-rsync/)
+
+```shell
+# ! /bin/bash
+# Programa para ejemplificar la forma de como transferir por la red utilizando las opciones de empaquetamiento para optimizar la velocidad de transferencia
+# Autor: Jose Suarez
+
+echo "Empaquetar todos los scripts de la carpeta ShellCourses y transferirlos a otro equipo utilizando el comando rsync"
+
+
+host=""
+usuario=""
+
+read -p "Ingrese el Host: " host
+read -p "Ingrese el Usuario: " usuario
+echo -e "\n En este momento se procederá a empaquetar la carpeta y transferir según los datos ingresados"
+
+rsync -avz $(pwd) $usuario@$host:/home/platzi
+```
+
+NOTA: En ambos host deben instalar anteriormente rsync con el siguiente comando:
+
+```shell
+sudo apt install rsync
+```
+
+Para los interesados en seguridad, este comando de forma invertida es decir: 
+
+```shell
+$ rsync -avz user@host/directory .
+```
+
+ trae los archivos del host destino al nuestro.
+
 ## Reto 6
+
+Modificar programa utilityHost. sh para empaquetar los logs generados utilizando algún formato de compresión, colocarle una clave y pasarlo a otra máquina a través de SSH, cuando se seleccione la opción 7. Backup de Información.
+
+```shell
+# !/bin/bash
+# Programa que muestra algunas funcionalidades basicas del sistema
+
+option=0
+usuario=$(logname)
+fechaArchivo=$(date +"%F")
+fechaAcceso=$(date +"%Y-%m-%d %H:%M:%S")
+archivoPath=~/Backup
+archivoName=log-$fechaArchivo.log
+
+if [ -d $archivoPath ]; then
+    if [ -f $archivoPath/$archivoName ]; then
+        echo -e "\nAccedió el usuario: $usuario el día: $fechaAcceso" >> $archivoPath/$archivoName
+    else
+        touch $archivoPath/$archivoName
+        echo -e "\nAccedió el usuario: $usuario el día: $fechaAcceso" >> $archivoPath/$archivoName
+    echo -e "\n  Operaciones realizadas:\n" >> $archivoPath/$archivoName
+    fi
+else
+    mkdir $archivoPath
+    touch $archivoPath/$archivoName
+    echo -e "\nAccedió el usuario: $usuario el día: $fechaAcceso" >> $archivoPath/$archivoName
+    echo -e "\n  Operaciones realizadas:\n" >> $archivoPath/$archivoName
+fi
+
+#Impresion del menú
+while :
+do
+    clear
+    echo "------------------------------------------------"
+    echo "-------------- Menú Principal ------------------"
+    echo "------------------------------------------------"
+    echo "-    1.- Procesos Actuales                     -"
+    echo "-    2.- Memoria Disponible                    -"
+    echo "-    3.- Espacio en Disco                      -"
+    echo "-    4.- Información de Red                    -"
+    echo "-    5.- Variables de entorno Configuradas     -"
+    echo "-    6.- Información del Programa              -"
+    echo "-    7.- Backup Información                    -"
+    echo "-    8.- Salir                                 -"
+    echo "------------------------------------------------"
+    
+    read -n1 -p "Ingrese la opción deseada [1-8]:  " option
+
+    case $option in
+    1) clear
+        echo -e "\n\tProcesos Actuales\n"
+        echo -e "\n\tProcesos Actuales\n" >> $archivoPath/$archivoName
+        ps aux
+        ps aux >> $archivoPath/$archivoName
+        echo -e "\n"
+        read -n1 -p "Presione una tecla para continuar..."
+        ;;
+    2) clear
+        echo -e "\n\tMemoria Disponible\n" 
+        echo -e "\n\tMemoria Disponible\n" >> $archivoPath/$archivoName
+        free -h
+        free -h >> $archivoPath/$archivoName
+        echo -e "\n"
+        read -n1 -p "Presione una tecla para continuar..."
+        ;;
+    3) clear
+        echo -e "\n\tMemoria en disco\n" 
+        echo -e "\n\tMemoria en disco\n" >> $archivoPath/$archivoName
+        du -h
+        du -h >> $archivoPath/$archivoName
+        echo -e "\n"
+        read -n1 -p "Presione una tecla para continuar..."
+        ;;
+    4) clear
+        echo -e "\n\tInformación de Red\n" 
+        echo -e "\n\tInformación de Red\n" >> $archivoPath/$archivoName
+        ifconfig
+        ifconfig >> $archivoPath/$archivoName
+        echo -e "\n"
+        read -n1 -p "Presione una tecla para continuar..."
+        ;;
+    5) clear
+        echo -e "\n\tVariables de entorno configuradas\n"
+        echo -e "\n\tVariables de entorno configuradas\n" >> $archivoPath/$archivoName
+        printenv
+        printenv >> $archivoPath/$archivoName
+        echo -e "\n"
+        read -n1 -p "Presione una tecla para continuar..."
+        ;;
+    6) clear
+        echo -e "\n\tInformación del Sistema\n"
+        echo -e "\n\tInformación del Sistema\n" >> $archivoPath/$archivoName
+        echo -e "\tPrograma que realiza funcionalidades basicas del OS"
+        echo -e "\tAutor: Adan Galicia"
+        echo -e "\tInformacón de contacto: algo9854@gmail.com"
+        echo -e "\n"
+        read -n1 -p "Presione una tecla para continuar..."
+        ;;
+    7) clear
+        echo -e "\n\tBackup Información\n"
+        echo -e "\n\tRealizacion de Backup\n" >> $archivoPath/$archivoName
+        read -p "Ingrese el host: " host
+        read -p "Ingrese el usuario: " user
+        read -p "Ingrese la ruta en donde quiera hacer el backup: " ruta
+        
+        zip -e backup-$fechaArchivo.zip $archivoPath/*.log
+        rsync -avz backup-$fechaArchivo.zip $user@$host:$ruta
+        ;;
+    8) clear
+        echo -e "\n\tAdios!\n"
+        exit
+        ;;
+    *) clear
+        echo -e "\n\tOpción no encontrada\n"
+        read -n1 -p "Presione una tecla para continuar..."
+        ;;
+    esac
+done
+```
+
 #  8. Funciones
 ## Crear funciones y Paso de Argumentos
 ## Funciones de instalar y desinstalar postgres
