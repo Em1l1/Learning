@@ -86,7 +86,7 @@ Tipos de Shells:
     **3. CSH:** En una shell diseñada para que los usuarios puedan escribir programas de scripting de shell con una sintaxis muy simiar a la de C. En muchas sistemas como Red Hat, csh es tcsh, una versión mejorada de csh.
     **4. BASH:** También conocida como Shell Bourne-Again, es una versión actualizada de SH creada por la Free Software Fundation. Es una de la shell más utilizada y conocida en el mundo. Incorpora alguna de las funcionalidades más avanzadas de KSH, CSH, SH y TCSH. Una de la funcionalidades más destacables de esta shell es la opción de ejecutar múltiples programas en segundo plano a la vez.
     **5. ZSH:** Potente intérprete de comandos que puede funcionar como shell interactiva y como intérprete de lenguaje de scripting. aún siendo compatible con Bash.
-
+    
     - [Tipos de shells](https://www.taringa.net/+linux/tipos-de-shells_wpzwm)
 
 Algunos comandos para conocer información sobre el resto de comandos:
@@ -543,32 +543,493 @@ Solicitar que se ingrese un valor del 1 al 5. Según el valor ingresado valor a 
 
 Los Arreglos son un tipo de variables que puede contener N cantidad de valores ya sean cadenas de texto, numéricos, etc. Estos siempre empiezan desde la posición número 0.
 
+Los Arreglos son un tipo de variables que puede contener N cantidad de valores ya sean cadenas de texto, numéricos, etc. Estos siempre empiezan desde la posición número 0.
+
+- Se declaran entre paréntesis y cada elemento se separa por un espacio.
+- En caso de texto se separa por una coma.
+- Un elemento puede ser una cadena de elementos que forman un rango y se declara entre llaves: {A…J} {10…20}. Escribir estos rangos juntos genera una operación distinta, que es iterar cada elemento del primer rango con cada elementos del segundo rango.
+- Para añadir valores: arregloNombre[posicion]=valor
+- Para quitar algún elemento: unset arregloNombre[posición]
+- Para imprimir todos los valores: echo “ ${arregloNombre[*]} ”
+- Para imprimir el tamaño: echo “ ${#arregloNombre[*]} ”
+- Para imprimir el valor en X posición: echo “ ${arregloNombre[X]} ”
+
+Para cambiar el color en vim ingresar :colorscheme y el nombre del esquema de color. Por ejemplo
+
+```bash
+:colorscheme desert
+```
+
+Para obtener la lista de esquemas de color instalador, ingresar :colorscheme, espacio y Ctrl + D.
+
+Para establecer el esquema de color por defecto , editar el archivo .vimrc y agregar una linea `colorscheme desert`.
+
+esquema de colores de Atom para vim:
+https://github.com/joshdick/onedark.vim
+
+Si quieren poder autocompletado:
+https://github.com/ycm-core/YouCompleteMe
+
+Y para manejar plugins con facilidad:
+https://github.com/VundleVim/Vundle.vim
+
 ## Sentencia for loop
 
+La sentencia For es esa que se suele utilizar mucho cuando se quiere recorrer o iterar sobre una lista de valores. En Bash también soporta el For loop expression el cual tiene tres bloques, tanto de inicialización, condición e iteración.
 
+Codigo un poco modulado, con opciones:
+
+```bash
+# ! /bin/bash
+# Programa para ejemplificar el uso de la sentencia de iteración for
+# Autor: Marco Toscano Freire - @martosfre
+function iterarListaNumeros   {
+  arregloNumeros=(1 2 3 4 5 6)
+  echo "Iterar en la Lista de Números"
+  for num in ${arregloNumeros[*]}
+  do
+      echo "Número: $num"
+  done
+}
+
+function iterarCadena {
+
+  echo "Iterar en la lista de Cadenas"
+  for nom in "Marco" "Pedro" "Luis" "Daniela"
+  do
+    echo "Nombre : $nom"
+  done
+}
+
+function iterarArchivos {
+  echo "Iterar en Archivos"
+  for fil in *
+  do
+      echo "Nombre archivo: $fil"
+  done
+}
+
+function iterarComando {
+  echo "Iterar utilizando un comando"
+  for fil in $(ls)
+  do
+      echo "Nombre archivo: $fil"
+  done
+}
+
+function iteracionTradicional {
+  echo "Iterar utilizando el formato tradcional"
+
+  for ((i=1; i<10; i++))
+  do
+      echo "Número: $i"
+  done
+}
+
+option=0
+
+echo -e "\n elija una opcion
+  1 iterar lista de numeros 
+  2 iterar lista de cadenas
+  3 iterar en Archivos
+  4 iterar utilizando comando
+  5 iteracion tradicional"
+
+read -n1 option
+echo -e "\n"
+
+case $option in
+  1) iterarListaNumeros ;;
+  2) iterarCadena ;;
+  3) iterarArchivos ;;
+  4) iterarComando ;;
+  5) iteracionTradicional;;
+  *) echo "opcion desconocida";;
+esac
+```
 
 ## Sentencia while loop
 
+El While itera una lista de valores basada en una condición lógica mientras esta sea verdadera.
 
+**Codigo:**
+
+```c
+# ! /bin/bash
+# Programa para ejemplificar el uso de la sentencia de iteración while
+# Autor: Jose Suarez
+
+numero=1
+
+while [ $numero -ne 10 ]
+do
+    echo "Imprimiendo $numero veces"
+    numero=$(( numero + 1 ))
+done
+```
+
+**Resultado:**
+
+```bash
+Imprimiendo 1 veces
+Imprimiendo 2 veces
+Imprimiendo 3 veces
+Imprimiendo 4 veces
+Imprimiendo 5 veces
+Imprimiendo 6 veces
+Imprimiendo 7 veces
+Imprimiendo 8 veces
+Imprimiendo 9 veces
+```
+
+**Codigo 2**
+
+```bash
+#!/bin/bash
+
+number=1
+
+while [ $number -ne 10 ]
+do
+    echo "Printing $number times"
+    number=$(( number + 1 ))
+done
+```
 
 ## Loop Anidados
 
+**Codigo:**
 
+```bash
+# ! /bin/bash
+# Programa para ejemplificar el uso de los loops anidados
+# Autor: Jose Suarez
+
+echo "Loops Anidados"
+for fil in $(ls)
+do
+    for nombre in {1..4}
+    do
+        echo "Nombre Archivo: $fil _ $nombre"
+    done
+done
+```
+
+**Script**
+
+```bash
+# ! /bin/bash
+# Programa para uso de loops anidados
+# Author Diego Beltran histagram @diegodevelops
+
+echo "Loops anidados"
+for fil in $(ls)
+do
+    for nombre in {1..4}
+    do
+        echo "nombre del archivo es:$fil y cuenta del anidado es $nombre"
+    done
+done
+
+# Termianl
+Saludos
+```
 
 ## Break y continue
 
+- Break se utiliza para salir de la ejecución de los ciclos for y while.
+- Continue se utiliza para continuar con la siguiente ejecución.
 
+- Que en el intérprete de comandos lee todo el **if** por que esta dentro de un bucle **for** y el **break** de este *‘if’* termina el bucle.
+- Pero hay un **elsif** que está anidado y su condición es que, si detecta algún $file que empiece con 4 entonces **continue** pero esta función pasa por alto dicho archivo ocultándolo, por lo tanto el bucle termina cuando llega al 10_download.sh
+- En resumidas cuentas la orden del **break** significa cuando finaliza y el **continue** lo oculta iterando hasta su condición principal y como estas condiciones están dentro del bucle **for**
+
+```bash
+#!/bin/bash
+# Programa para utilizar Break y Continue
+# DBZ
+
+
+echo "Sentencias break y continue"
+for fil in $(ls)
+do
+    for nombre in {1..3}
+    do
+        if [ $fil = "10_download.sh" ]; then
+            echo "Se encontro el archivo $fil y por eso se termian el bucle interno"
+            echo "************************************************************"
+            break;
+        elif [[ $fil == 4* ]]; then
+            echo "Se encontro el archivo $fil y continua"
+            echo "************************************************************"
+            continue;
+        else
+            echo "Nombre archivo:$fil _ $nombre"
+        fi
+    done
+done
+```
+
+```shell
+# !/bin/bash
+# Programa sobre el uso de break y continue
+# Autor: Luber Cueva
+
+echo "SENTENCIAS BREAK Y CONTINUE"
+
+for file in $(ls)  
+do
+    for name in {1..4}
+    do
+        echo "Hola"
+        if [ $file = "10_download.sh" ]; then
+            break;
+        elif [[ $file == 4* ]]; then
+            continue;
+        else           
+            echo "File archivo: $file _ $name"
+        fi
+
+        echo "Chao"
+    done
+done
+```
+
+El efecto de break es que solo llega a imprimir un “hola” y termina el for de adentro. Luego pasará al for de afuera, o sea que tendrá otro archivo (11_ …).
+
+```shell
+SENTENCIAS BREAK Y CONTINUE
+Hola
+Hola
+File archivo: 11_ifElseIfElse.sh _ 1
+Chao
+```
+
+En cambio con continue, imprime varios “Hola” y ya no los “Chao” y es por que a partir del continue ya no ejecuta lo que está a delante, sino que pasa a la siguiente iteración (continua con el archivo 4_ …).
+
+```bash
+Hola
+File archivo: 3_tipoOperadores.sh _ 3
+Chao
+Hola
+File archivo: 3_tipoOperadores.sh _ 4
+Chao
+Hola
+Hola
+Hola
+Hola
+Hola
+File archivo: 5_substitutionCommand.sh _ 1
+Chao
+Hola
+File archivo: 5_substitutionCommand.sh _ 2
+Chao
+```
 
 ## Menú de Opciones
 
+Respuesta a:
 
+# Menú de Opciones
+
+
+
+**Menu de opciones con una pequeña introduccion animada **
+
+```shell
+ # !/bin/bash
+# Owner @freddymm fixed version by @jordam
+
+option=0
+ini=0
+while :
+ do
+    if [ $ini == 0 ]; then
+    for ((i=0;i<3;i++))
+      do
+        clear
+        echo"███████████████████████████"
+        echo"███████▀▀▀░░░░░░░▀▀▀███████"
+        echo"████▀░░░░░░░░░░░░░░░░░▀████"
+        echo"███│░░░░░░░░░░░░░░░░░░░│███"
+        echo"██▌│░░░░░░░░░░░░░░░░░░░│▐██"
+        echo"██░└┐░░░░░░░░░░░░░░░░░┌┘░██"
+        echo"██░░└┐░░░░░░░░░░░░░░░┌┘░░██"
+        echo"██░░┌┘     ░░░░░     └┐░░██"
+        echo"██▌░│       ░░░       │░▐██"
+        echo"███░│      ░░ ░░      │░███"
+        echo"██▀─┘░░░░░░░   ░░░░░░░└─▀██"
+        echo"██▄░░░    ░░   ░░    ░░░▄██"
+        echo"████▄─┘   ░░░░░░░   └─▄████"
+        echo"█████░░  ─┬┬┬┬┬┬┬─  ░░█████"
+        echo"████▌░░░ ┬┼┼┼┼┼┼┼  ░░░▐████"
+        echo"█████▄░░░└┴┴┴┴┴┴┴┘░░░▄█████"
+        echo"███████▄░░░░░░░░░░░▄███████"
+        echo"██████████▄▄▄▄▄▄▄██████████"
+        echo"███████████████████████████"
+        echo"LOADING...LOADING...LOADING"
+        sleep 0.3
+        clear
+        echo"███████████████████████████"
+        echo"███████▀▀▀░░░░░░░▀▀▀███████"
+        echo"████▀░░░░░░░░░░░░░░░░░▀████"
+        echo"███│░░░░░░░░░░░░░░░░░░░│███"
+        echo"██▌│░░░░░░░░░░░░░░░░░░░│▐██"
+        echo"██░└┐░░░░░░░░░░░░░░░░░┌┘░██"
+        echo"██░░└┐░░░░░░░░░░░░░░░┌┘░░██"
+        echo"██░░┌┘▄▄▄▄▄░░░░░▄▄▄▄▄└┐░░██"
+        echo"██▌░│██████▌░░░▐██████│░▐██"
+        echo"███░│▐███▀▀░░▄░░▀▀███▌│░███"
+        echo"██▀─┘░░░░░░░▐█▌░░░░░░░└─▀██"
+        echo"██▄░░░▄▄▄▓░░▀█▀░░▓▄▄▄░░░▄██"
+        echo"████▄─┘██▌░░░░░░░▐██└─▄████"
+        echo"█████░░▐█─┬┬┬┬┬┬┬─█▌░░█████"
+        echo"████▌░░░▀┬┼┼┼┼┼┼┼┬▀░░░▐████"
+        echo"█████▄░░░└┴┴┴┴┴┴┴┘░░░▄█████"
+        echo"███████▄░░░░░░░░░░░▄███████"
+        echo"██████████▄▄▄▄▄▄▄██████████"
+        echo"███████████████████████████"
+        echo".....LOADING.....LOADING..."
+        sleep 0.3
+        clear
+    done
+    ini=1
+    else
+    clear
+    echo"_________________________________________"
+    echo"PGUTIL - Programa de Utilidad de Postgres"
+    echo"_________________________________________"
+    echo"             MENU PRINCIPAL              "
+    echo"_________________________________________"
+    echo"1. Instlar Postgres"
+    echo"2. Desintalar Postgres"
+    echo"3. Sacar un respaldo"
+    echo"4. Restaurar respaldo"
+    echo"5. Salir"
+    read -n1 -p "Ingrese una opcion [1-5]:    " option
+
+    echo-e"\n\n"
+
+    case$optionin
+            1)
+                echo-e"Instalando"
+                sleep 2
+                ;;
+            2)
+                echo"Desintalando"
+                sleep 2
+                ;;
+            3)
+                echo"Respaldando"
+                sleep 2
+                ;;
+            4)
+                echo"Restaurando"
+                sleep 2
+                ;;
+            5)
+                echo"Saliendo"
+                exit 0
+                ;;
+        esac
+    fi
+done
+```
 
 ## Reto 4
 
+Crear un menú con las siguientes opciones:
 
+1. Procesos Actuales,
+2. Memoria Disponible,
+3. Espacio en Disco,
+4. Información de Red,
+5. Variables de Entorno Configuradas,
+6. Información Programa
+7. Backup información
+8. Ingrese una opción.
+
+Posterior a esto vamos  a recuperar la opción ingresada, validarla e imprimir la opción y el título de acuerdo a lo ingresado
+
+```shell
+#!/bin/bash
+#Programa para validar procesos, memoria, recursos, variables.
+#by: devp
+echo ""
+echo "**** PROGRAMA VALIDACIÓN RECURSOS ****"
+echo ""
+opcion=0
+
+while :
+do
+        #Limpiar Pantalla
+        clear
+        echo " * Menú Principal * "
+        echo ""
+        echo "1)Proceso Actuales "
+        echo "2)Memoria Disponible "
+        echo "3)Espacio en disco "
+        echo "4)Informacion Red"
+        echo "5)Variables de entorno configuradas "
+        echo "6)Información Programa "
+        echo "7)Comprimir Arcivos SH"
+        echo "8)Salir "
+        echo ""
+        #Leer datos de usuario
+        read -n1 -p "Ingrese la opción a seleccionar (1 - 8): " opcion
+        #Validar opción ingresada
+        case $opcion in
+                1)
+                        echo -e "\n..Procesos Actuales.."
+                        ps axu
+                        sleep 3
+                        ;;
+                2)
+                        echo -e "\n..Memoria Disponible.."
+                        free
+                        sleep 3
+                        ;;
+                3)
+                        echo -e "\n..Espacion en disco.."
+                        df -h
+                        sleep 3
+                        ;;
+                4)
+                        echo -e "\n..Información Red.."
+                        ifconfig -a
+                        sleep 3
+                        ;;
+                5)
+                        echo -e "\n..Variables de Entorno Configuradas.."
+                        #printenv
+                        env -u VAR
+                        sleep 3
+                        ;;
+                6)
+                        echo -e "\n..Información Programa.."
+                        dpkg -l | more
+                        sleep 3
+                        ;;
+                7)
+                        echo -e "\n..Comprimiedo Archivos.."
+                        tar -czvf archivosCompresos.tar.gz *
+                        echo -e "\n SUCESS!!"
+                        sleep 3
+                        ;;
+                8)
+                        echo -e "\n..Saliendo, ¡¡Gracias!!"
+                        exit 0
+                        ;;
+        esac
+done
+```
 
 #  6. Archivos
 ## Archivos y Directorios
+
+- Para crear directorios utilizamos el comando **mkdir** seguido del nombre que queremos colocar.
+- Para crear archivos utilizamos el comando **touch** seguido del nombre que queremos colocar.
+
 ## Escribir dentro de archivos
 ## Leer Archivos
 ## Operaciones Archivos
