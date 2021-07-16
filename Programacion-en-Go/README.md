@@ -691,19 +691,190 @@ func main() {
 
 
 
-
 ## El uso de los keywords defer, break y continue
+
+Defer:
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	defer fmt.Println("Ejecutado al final pese a estar al comienzo gracias a 'Defer'.")
+	fmt.Println("Hola Mundo")
+}
+```
+
+Continue:
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	var i uint8 = 0
+	for i < 10 {
+		fmt.Println(i)
+		i++
+
+		// Continue
+		if i == 2 {
+			fmt.Println("¡El número que sigue es par!")
+			continue
+		}
+
+	}
+}
+```
+
+Break:
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	var i uint8 = 0
+	for i < 10 {
+		fmt.Println(i)
+		i++
+
+		// Break
+		if i == 8 {
+			fmt.Println("¡Break!")
+			break
+		}
+
+	}
+}
+```
 
 # 4. Estructuras de datos básicas
 
-
 ## Arrays y Slices
 
+>  En Go, los arrays poseen un tamaño fijo y son inmutables, mientras que en los slices su tamaño es dinámico y los puedes modificar.
+
+La diferencia principal entre los arrays es que estos tienen una longitud fija e invariable y deben declarase especifiandola
+
+```go
+x := [5]int{0, 1 ,2, 3, 4}
+```
+
+mientras que los Slices tienen una longitud variable y no hay que especificarla en la declaración
+
+```go
+var x [ ]float64
+```
+
+en este caso se crea un Slice con una longitud de cero
+Si queremos crear un slice deberiamos usar la funcion make:
+
+```go
+x := make([]float64, 5)
+```
+
+esto crea un Slice asociado a un array subjacente de longitud 5.
+Los Slices siempre están asociados a un array y aunque nunca pueden ser mas largos que el aray, pueden ser mas cortos.
+La función make también permite un tercer parámetro, que representa la capacidad del array, por lo que
+
+```go
+x := make([]float64, 5, 10)
+```
+
+representa un Slice de longitud 5 y capacidad de 10
 
 ## Recorrido de Slices con Range
 
+```go
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	isPalindromo("Ama")
+	isPalindromo("Amor a Roma")
+}
+
+func isPalindromo(text string) {
+	var textReverse string
+
+	for i := len(text) - 1; i >= 0; i-- {
+		textReverse += string(text[i])
+	}
+
+	if strings.ToLower(text) == strings.ToLower(textReverse) {
+		fmt.Println("Es palindromo")
+	} else {
+		fmt.Println("No es un palindromo")
+	}
+}
+```
+
+Solucion del reto
+
+```go
+func isPalindromo(text string) {
+	var textReverse string
+	text = strings.ToLower(text)// pasamos a minúsculas para que no genere error si se ingresan mayúsculas
+	text = strings.ReplaceAll(text, " ", "") // quitamos espacios para usar palíndromos con espacios y no genere error
+	for i := len(text) - 1; i >= 0; i-- {
+		textReverse += string(text[i])
+	}
+
+	if text == textReverse {
+		fmt.Println("Es Palindromo")
+	} else {
+		fmt.Println("No es un Palindromo")
+	}
+}
+
+func main()  {	
+	isPalindromo("Amita lava la tina") //No es un Palindromo
+	isPalindromo("Anita Lava la tina") //Es Palindromo
+}
+```
+
+![img](https://www.google.com/s2/favicons?domain=https://static.platzi.com/media/favicons/platzi_favicon.png)[strings · pkg.go.dev](https://godoc.org/strings)
 
 ## Llave valor con Maps
+
+La estructura de datos MAP son más eficientes que los Array o Slices, ya que usan de forma nativa concurrencia para ejecutar las operaciones.
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	m := make(map[string]int)
+
+	m["Jose"] = 14
+	m["Pepito"] = 20
+
+	fmt.Println(m)
+
+
+	// Recorrer un map
+	for i, v := range m {
+		fmt.Printf("%s tiene %d años\n", i, v)
+	}
+
+	// Encontrar un valor
+	value, ok := m["Jose"]
+	fmt.Println(value, ok)
+}
+```
+
+
+
+![img](https://www.google.com/s2/favicons?domain=https://static.platzi.com/media/favicons/platzi_favicon.png)[maps · pkg.go.dev](https://godoc.org/github.com/ross-oreto/go-list-map)
 
 
 ## Structs: La forma de hacer clases en Go
