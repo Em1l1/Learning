@@ -1360,9 +1360,663 @@ done
 
 #  8. Funciones
 ## Crear funciones y Paso de Argumentos
+
+Las funciones son bloques de código que realizan algo en especifico y que ayudan a organizar el código de nuestro programa.
+
+```shell
+#!/bin/bash
+
+option=0
+backup_directory=""
+restore_directory=""
+
+install_postgresql () {
+    echo -e "\nInstalling PostgreSQL..."
+}
+
+uninstall_postgresql () {
+    echo -e "\nUninstalling PostgreSQL..."
+}
+
+backup () {
+    echo -e "\nBackuping..."
+    echo -e "\nBackup directory: $1"
+}
+
+restore_backup () {
+    echo -e "\nRestoring backup..."
+    echo -e "\nRestore directory: $1"
+}
+
+while :
+do
+    clear
+    echo "-------------------------------------"
+    echo "PGUTIL - PostgreSQL utilities program"
+    echo "-------------------------------------"
+    echo "              MAIN MENU              "
+    echo "-------------------------------------"
+    echo "1. Install PostgreSQL"
+    echo "2. Uninstall PostgreSQL"
+    echo "3. Backup"
+    echo "4. Restore Backup"
+    echo "5. Exit"
+
+    read -n1 -p "Enter an option [1-5]: " option
+
+    case $option in
+    1)
+        install_postgresql
+        sleep 3
+        ;;
+    2)
+        uninstall_postgresql
+        sleep 3
+        ;;
+    3)
+        echo -e "\n"
+        read -p "Enter the backup directory: " backup_directory
+        backup $backup_directory
+        sleep 3
+        ;;
+    4)
+        echo -e "\n"
+        read -p "Enter the backup restore directory: " restore_directory 
+        restore_backup $restore_directory
+        sleep 3
+        ;;
+    5)
+        echo -e "\nExiting..."
+        exit 0
+        ;;
+    esac
+done
+```
+
+
+
 ## Funciones de instalar y desinstalar postgres
+
+**Ejecutar un comando con sudo desde un bash-script**
+
+```sh
+read -s -p "Ingresar cotraseña sudo" password
+echo "$password" | sudo comando
+```
+
+**Me parecio interesante este dato como tambien el resto del curso en general.**
+
+En bash tenemos algunas variables especiales, entre ellas aquí estamos utilizando **$?** esta variable guarda el código de salida del ultimo comando pipe utilizado. El cual está relacionado al hecho de si se pudo conectar los comandos o no con el pipe.
+
+En otras palabras si la conexión fue exitosa se almacena un numero 0 en caso contrario se almacena un numero 1, esto con relación a la última conexión entre comandos utilizados.
+
+Por esa razón en la función de instalar_postgres primero se ejecuta el comando **which psql** y el resultado de ese comando se conecta a la creación de una variable que se puede entender como un segundo comando en este caso si resulta exitosa esa conexión la variable **$?** guardara un numero 0 en caso contrario guardara un numero 1 y de ahí su importancia para validar procesos con un condicional **if**
+
+Para aplicaciones más complejas donde se necesita saber el código de salida de varias conexiones con pipe, no solamente de la última ejecutada, en algunas distribuciones de linux existe una matriz de códigos de salidas llamada **PIPESTATUS** en la cual utilizamos en índice del arreglo para buscar el código del pipe que estamos buscando
+
+```sh
+#!/bin/bash
+
+option=0
+backup_directory=""
+restore_directory=""
+
+install_postgresql () {
+    echo -e "\nVerifying PostgreSQL installation..."
+    is_pg_installed=$(which psql)
+    
+    if [ $? -eq 0 ]; then
+        echo -e "\nPostgreSQL is already installed on this server."
+    else
+        echo -e "\n"
+        read -s -p "Enter the sudo password: " password
+        echo -e "\n"
+        read -s -p "Enter the new PostgreSQL password: " postgresql_password
+
+        echo "$password" | sudo -S apt update
+        echo "$password" | sudo -S apt install postgresql postgresql-contrib -y
+        echo -e "\nInstalling PostgreSQL..."
+        
+        sudo -u postgres psql -c "ALTER USER postgres WITH PASSWORD '{postgresql_password}';"
+        
+        echo "$password" | sudo -S service postgresql enable
+        echo "$password" | sudo -S service postgresql start
+    fi
+
+    echo -e "\n"
+    read -n1 -s -r -p "Press [ENTER] to continue..."
+}
+
+uninstall_postgresql () {
+    echo -e "\n"
+    read -s -p "Enter the sudo password: " password
+
+    echo -e "\nUninstalling PostgreSQL..."
+    
+    echo "$password" | sudo -S service postgresql stop
+    echo "$password" | sudo -S apt remove postgresql\* --purge -y
+    echo "$password" | sudo -S rm -rf /etc/postgresql
+    echo "$password" | sudo -S rm -rf /etc/postgresql-common
+    echo "$password" | sudo -S rm -rf /var/lib/postgresql
+    echo "$password" | sudo -S userdel -r postgres
+    echo "$password" | sudo -S groupdel postgresql
+
+    echo -e "\n"
+    read -n1 -s -r -p "Press [ENTER] to continue..."
+}
+
+backup () {
+    echo -e "\nBackuping..."
+    echo -e "\nBackup directory: $1"
+}
+
+restore_backup () {
+    echo -e "\nRestoring backup..."
+    echo -e "\nRestore directory: $1"
+}
+
+while :
+do
+    clear
+    echo "-------------------------------------"
+    echo "PGUTIL - PostgreSQL utilities program"
+    echo "-------------------------------------"
+    echo "              MAIN MENU              "
+    echo "-------------------------------------"
+    echo "1. Install PostgreSQL"
+    echo "2. Uninstall PostgreSQL"
+    echo "3. Backup"
+    echo "4. Restore Backup"
+    echo "5. Exit"
+
+    read -n1 -p "Enter an option [1-5]: " option
+
+    case $option in
+    1)
+        install_postgresql
+        sleep 3
+        ;;
+    2)
+        uninstall_postgresql
+        sleep 3
+        ;;
+    3)
+        echo -e "\n"
+        read -p "Enter the backup directory: " backup_directory
+        backup $backup_directory
+        sleep 3
+        ;;
+    4)
+        echo -e "\n"
+        read -p "Enter the backup restore directory: " restore_directory 
+        restore_backup $restore_directory
+        sleep 3
+        ;;
+    5)
+        echo -e "\nExiting..."
+        exit 0
+        ;;
+    esac
+done
+```
+
+
+
 ## Funciones sacar y restaurar respaldos en postgres
+
+1. Al momento de crear un respaldo si el directorio de Respaldo ingresado por el
+   usuario no se encuentra se pregunta al Usuario si desea crear un directorio con
+   el nombre inicial ingresado.
+2. En el modulo de Restaurar, cambie el orden de los condicionales ya que este
+   orden no era el mas optimo. Si el usuario ingresa un Respaldo a Restaurar que no
+   se encuentra el programa igual crea la BD en Postgres inclusive si no utiliza el
+   respaldo que por supuesto NO fue encontrado lo cual no deberia suceder.
+3. Tambien agregue lineas de codigo para verificar si el directorio donde estan
+   los .bak que es ingresado por el usuario existe. De ser asi entonces se listan
+   los archivos .bak que alli se encuentran y de ese modo podemos escoger el .bak
+   que deseamos restaurar.
+4. Por ultimo agregue al menu la opcion de listar BD en postgres para asi
+   facilmente poder consultar sin tener que ir al terminal.
+
+```sh
+# ! /bin/bash
+# Programa para ejemplificar el uso del Break y Continue
+#Arnoldo Alvarez
+
+opcion=0
+fechaActual=`date +%Y%m%d`
+
+#Esta es la funcion instalar PostGres
+instalar_postgres () {
+ echo -e "\nVerificar si tenemos instalado PostGress..."
+ sleep 3
+ verifyInstall=$(which psql)
+ if [ $? -eq 0 ]; then
+     echo "PostGres ya se encuentra instalado en el equipo "
+ else
+      read -s -p "Introduzca password de administrador " password
+      read -s -p "Introduzca password a utilizar en PostGres " passwordPostgres
+      echo "$password" | sudo -S apt update
+      echo "$password" | sudo -S apt-get -y install postgresql postgresql-contrib
+      sudo -u postgres psql -c "ALTER USER postgres WITH PASSWORD '{$passwordPostgres}';"
+      echo "$password" | sudo -S systemctl enable postgresql.service
+      echo "$password" | sudo -S systemctl start postgresql.service
+ fi
+
+ read -n 1 -s -r -p "Presione [ENTER] para continuar..."
+
+}
+
+#Esta es la funcion desinstalar PostGres
+desinstalar_postgres () {
+    echo -e "\nVerificando si ya esta Desinstalado Postgres..."
+    verifyInstall=$(which psql)
+    if [ $? -eq 1 ]; then
+        echo " PostGres NO se encuentra instalado en el Equipo "
+    else
+        read -s -p "Introduzca password de administrador " password
+        echo -e "\n"
+        echo "$password" | sudo -S systemctl stop postgresql.service
+        echo "$password" | sudo -S apt-get -y --purge remove postgresql\*
+        echo "$password" | sudo -S rm -r /etc/postgresql
+        echo "$password" | sudo -S rm -r /etc/postgresql-common
+        echo "$password" | sudo -S rm -r /var/lib/postgresql
+        echo "$password" | sudo -S userdel -r postgres
+        echo "$password" | sudo -S groupdel postgresql
+fi
+
+read -n 1 -s -r -p "Presione [ENTER] para continuar..."
+
+}
+
+#Esta es la funcion Sacar Respaldo
+sacar_respaldo () {
+echo "Listar las bases de datos..."
+sudo -u postgres psql -c "\l"
+read -p "Elegir la BD a respaldar: " bddRespaldo
+echo -e "\n"
+        if [ -d "$1" ]; then
+                echo "Establecer permisos directorio"
+                echo "$password" | sudo -S chmod 755 $1
+                echo "Realizando respaldo..."
+                sudo -u postgres pg_dump -Fc $bddRespaldo > "$1/bddRespaldo$fechaActual.bak"
+                echo "Respaldo realizado Correctamente en la ubicacion: $1/bddRespaldo$fechaActual.bak"
+        else
+                echo -e  "\nEl directorio $1 No Existe"
+                echo -e "\n"
+                read -n1 -p "Desea crear el directorio $1 (s/n)" respbdd
+                if [ $respbdd = "s" ]; then
+                        sudo mkdir $1
+                        echo "$password" | sudo -S chmod 755 $1
+                        echo -e "\nRealizando respaldo..."
+                        sleep 3
+                        sudo -u postgres pg_dump -Fc $bddRespaldo > "$1/bddRespaldo$fechaActual.bak"
+                        echo "Respaldo realizado Correctamente en la ubicacion: $1/bddRespaldo$fechaActual.bak"
+                else
+                        echo -e "\nSaliendo sin realizar Respaldo..."
+                        sleep 3
+                fi
+
+                fi
+
+read -n 1 -s -r -p "Presione [ENTER] para continuar..."
+
+}
+
+#Esta es la funcion Restaurar Respaldo
+restaurar_respaldo () {
+read -p "Ingresar el directorio donde se encuentran los respaldos   " directorioBackup
+if [ -d $directorioBackup ]; then
+
+echo "Listando los archivos de Respaldos..."
+sleep 3
+ls -la $directorioBackup
+read -p "Ingresar el archivo .bak a restaurar:  " respaldoRestaurar
+#echo -e "\n"
+if [ -f "$directorioBackup/$respaldoRestaurar" ]; then
+
+        read -p "Ingresar nombre BD destino:  " bdDestino
+        verifyBdd= $(sudo -u postgres psql -lqt | cut -d \| -f 1 | grep -wq $bdDestino)
+        if [ $? -eq 0 ]; then
+                  echo "Restaurando en la Base de Datos destino...$bdDestino"
+                  sudo -u postgres pg_restore -Fc -d $bdDestino "$directorioBackup/$respaldoRestaurar"
+                  echo "Listar Bases de datos..."
+                  sudo -u postgres psql -c "\l"
+           else
+                  echo  "La BD destino no se encuentra..."
+                  echo  "Creando Base de Datos destino..."
+                  sleep 4
+                  sudo -u postgres psql -c "CREATE DATABASE $bdDestino"
+                  sudo -u postgres pg_restore -Fc -d $bdDestino "$directorioBackup/$respaldoRestaurar"
+                  echo "Listar Bases de datos..."
+                  sudo -u postgres psql -c "\l"
+          fi
+
+else
+        echo "No se encuentra el archivo de Respaldo Ingresado"
+        echo "Verifique nuevamente el nombre y vuelva a intentarlo..."
+fi
+else
+        echo "No se encuentra el directorio de Respaldos ingresado..."
+        echo "Verifique nuevamente el nombre y vuelva a intentarlo..."
+fi
+
+read -n 1 -s -r -p "Presione [ENTER] para continuar..."
+
+}
+
+lista_de_BD(){
+
+echo -e  "\Las Bases de Datos Actuales: "
+sudo -u postgres psql -c "\l"
+read -n 1 -s -r -p "Presione [ENTER] para continuar..."
+}
+
+while :
+do
+    #Limpiar la pantalla
+    clear
+    #Desplegar el menu de opciones
+    echo "----------------------------------------"
+    echo "PGUTIL - Programa de Utilidades PostGres"
+    echo "----------------------------------------"
+    echo "           MENU PRINCIPAL               "
+    echo "----------------------------------------"
+    echo "1.Instalar Postgres                     "
+    echo "2.Desinstalar Postgres                  "
+    echo "3.Hacer un respaldo                     "
+    echo "4.Restaurar respaldo                    "
+    echo "5.Listar Bases de Datos Actuales        "
+    echo "6.Salir                                 " 
+
+    #Leer los datos del Usuario - Capturar  Opcion
+    read -n1 -p "Ingrese una opcion [1-5]: " opcion
+
+    #Validar la opcion ingresada
+    case $opcion in
+
+        1) instalar_postgres
+
+          #sleep 3
+            ;;
+
+        2) desinstalar_postgres
+
+           #sleep 3
+            ;;
+
+        3)  echo -e "\n"
+            read -p "Indique Directorio: " directorioBackup
+            sacar_respaldo $directorioBackup
+
+
+            ;;
+
+        4)  echo -e "\n"
+            #read -p "Indique Directorio de Respaldos " directorioRespaldos
+            restaurar_respaldo $directorioRespaldos
+
+
+            ;;
+
+        5) lista_de_BD
+            ;;
+
+        6) echo -e "\nSaliendo del programa...."
+            exit 0
+            ;;
+    esac
+done
+```
+
 ## Reto 7
 
+Modificar nuestro programa [utiliyHost.sh](http://utiliyhost.sh/) para crear cinco funciones de acuerdo al menú creado anteriormente y completarlo con lo visto en clases.
+
+**Loading**
+
+```sh
+        echo"███████████████████████████"
+        echo"███████▀▀▀░░░░░░░▀▀▀███████"
+        echo"████▀░░░░░░░░░░░░░░░░░▀████"
+        echo"███│░░░░░░░░░░░░░░░░░░░│███"
+        echo"██▌│░░░░░░░░░░░░░░░░░░░│▐██"
+        echo"██░└┐░░░░░░░░░░░░░░░░░┌┘░██"
+        echo"██░░└┐░░░░░░░░░░░░░░░┌┘░░██"
+        echo"██░░┌┘▄▄▄▄▄░░░░░▄▄▄▄▄└┐░░██"
+        echo"██▌░│██████▌░░░▐██████│░▐██"
+        echo"███░│▐███▀▀░░▄░░▀▀███▌│░███"
+        echo"██▀─┘░░░░░░░▐█▌░░░░░░░└─▀██"
+        echo"██▄░░░▄▄▄▓░░▀█▀░░▓▄▄▄░░░▄██"
+        echo"████▄─┘██▌░░░░░░░▐██└─▄████"
+        echo"█████░░▐█─┬┬┬┬┬┬┬─█▌░░█████"
+        echo"████▌░░░▀┬┼┼┼┼┼┼┼┬▀░░░▐████"
+        echo"█████▄░░░└┴┴┴┴┴┴┴┘░░░▄█████"
+        echo"███████▄░░░░░░░░░░░▄███████"
+        echo"██████████▄▄▄▄▄▄▄██████████"
+        echo"███████████████████████████"
+        echo".....LOADING.....LOADING......CARGANDO"
+```
+
+**Reto 7**
+
+```sh
+# ! /bin/bash
+ # Programa para cumplir con el reto#3
+ #Arnoldo Alvarez
+ 
+ opcion=""
+ numA=0
+ numB=0
+ numC=0
+ #telRegex= '^\(?([0-9]{3})\)?([0-9]{3})[.]?([0-9]{4})$' #Solo acepta el formato telefonico (xxx)xxx.xxxx Ej:(706)612.4602
+ telRegex2='^\([0-9]\{3\}\)\([0-9]\{3\}\)\([0-9]*\)/(\1) \2 . \3/$'
+ pathArchivo=""
+ aritmetica=""
+ funcion=""
+ phone=""
+ respTel=""
+ respBackup=""
+ FILE=log.txt
+ FILE2=Zip.zip
+ DATE=`date +%y%m%d`
+ TIME=`date +%H%M%S`
+ 
+ coronavirus_guidelines() {
+ 
+          echo -e "\nLo que debes hacer es lo siguiente:
+               a) Lavarse las manos frecuentemente.
+               b) Toser o estornudar al interior de  tu codo.
+               c) No tocarse la cara.
+               d) Mantener cierta distancia social.
+               e) Quedarse voluntariamente en casa."
+ 
+               echo "$DATE-$TIME --- Guidelines de CoronaVirus consultadas" >> logs_reto7/$NEWFILE
+ 
+      read -n 1 -s -r -p "Presione [ENTER] para continuar..."
+  }
+Math_Function () {
+ 
+  echo    "Funciones Aritmeticas disponibles
+                      1.- Sumar
+                      2.- Multiplicar
+                      3.- Dividir"
+           echo -e "\n"
+           read -p "Escoja la funcion Aritmetica: " aritmetica
+ 
+           case $aritmetica in
+ 
+                "1")  funcion="suma"
+                      numC=$((numA + numB));;
+                "2")  funcion="Multiplicacion"
+                     numC=$((numA * numB));;
+                "3")  funcion="Division"
+                      numC=$((numA / numB));;
+                  *)  funcion="Funcion No definida"
+                      echo "$DATE-$TIME --- Opcion No encontrada,Funcion Matematica NO realizada"   >> logs_reto6/$NEWFILE
+                      echo "Opcion incorrecta";;
+           esac
+ 
+              echo "Resultado Matematico de la $funcion: $numC "
+              echo "$DATE-$TIME --- Usuario realiza funcion matematica $funcion:$numC" >> logs_reto7/$NEWFILE
+ 
+      read -n 1 -s -r -p "Presione [ENTER] para continuar..."
+ 
+ }
+Phone_Format () {
+ 
+      echo "$DATE-$TIME --- Usuario escoge chequear formato de numero telefonico" >> logs_reto7/$NEWFILE
+              read -p "Ingrese numero telefonico: " telefono
+ 
+              if [[ $telefono =~ $telRegex2 ]]; then
+                  echo "Formato correcto dentro de los EEUU"
+              else
+              phone=$telefono
+              plainPhone=$(echo $phone | sed "s/[()-.]//g")
+              echo "Formato Incorrecto dentro de los EEUU"
+              read -n1 -p "Convertir al formato (123)456.7890 s/n:  "  respTel
+              echo  -e "\n"
+               if [ $respTel = "s" ]; then
+                formatedPhone2=$(echo $plainPhone | sed "s/\([0-9]\{3\}\)\([0-9]\{3\}\)\([0-9]*\)/(\1) \2 . \3/")
+                echo "Numero convertido: $formatedPhone2 "
+                echo "$DATE-$TIME --- Usuario cambia formato del Numero Telefonico $telefono" >> logs_reto7/$NEWFILE
+               else
+ 
+                   echo "$DATE-$TIME --- Usuario responde NO para cambiar formato de  $telefono" >> logs_reto7/$NEWFILE
+                   echo "Volviendo al Menu Principal..."
+               fi
+              fi
+ 
+      read -n 1 -s -r -p "Presione [ENTER] para continuar..."
+ }
+Directory_Search () {
+ 
+      if [[ -d $dirPath  ]]; then
+ 
+                  echo "$DATE-$TIME --- Usuario consulta satisfactoriamente el directorio $dirPath" >> logs_reto7/$NEWFILE
+                  echo "El directorio $dirPath SI Existe"
+ 
+                  else
+                      echo "El directorio NO Existe o NO es un directorio"
+                      echo "$DATE-$TIME --- Usuario No encuentra $dirPath" >> logs_reto7/$NEWFILE
+              fi
+ 
+      read -n 1 -s -r -p "Presione [ENTER] para continuar..."
+ }
+ 
+ File_Search () {
+ 
+     if [[ -e $filePath  ]]; then
+               echo "$DATE-$TIME --- Usuario consulta el archivo $filePath" >> logs_reto7/$NEWFILE
+               cat $filePath
+           else
+               echo "No se encuentra el archivo o Nombre de archivo Incorrecto"
+               echo "$DATE-$TIME --- Usuario No encuentra $filePath" >> logs_reto7/$NEWFILE
+           fi
+ 
+      read -n 1 -s -r -p "Presione [ENTER] para continuar..."
+ 
+ }
+Backup_Shit () {
+ 
+     if [[ $respBackup = "s" ]]; then
+               echo -e  "\ncreando archivo tar..."
+               sleep 2
+               tar -cvf logs_reto7/backup_`date +%Y%m%d`_`date +%H%M%S`.tar logs_reto7/
+ 
+               echo -e "\nCreando archivo ZIP..."
+               echo "Debera introducir una Clave de Seguridad..."
+               sleep 2
+               zip -e logs_reto7/zip_`date +%Y%m%d`_`date +%H%M%S`.zip /shellCourse/logs_reto7/*.tar
+ 
+               echo "Transfieriendo archivo ZIP..."
+               echo "Clave de Administrador para Transferencias"
+               sleep 2
+               rsync -avz /shellCourse/logs_reto7/*.zip a2419@192.168.1.9:/$HOME/backup_logs_reto7/
+               echo "$DATE-$TIME --- Usuario ejecutando proceso de Respaldo" >> logs_reto7/$NEWFILE
+               sleep 3
+               echo -e  "\nBackup Realizado con Exito..."
+           else
+ 
+               echo "$DATE-$TIME --- Usuario cancela proceso de Respaldo " >> logs_reto7/$NEWFILE
+               echo -e "\nSaliendo del modulo de Respaldos..."
+               sleep 3
+           fi
+  }
+ #Se crea un archivo .log con fecha y hora y se mueve a un directorio de logs_reto5
+ NEWFILE=${FILE%.*}_`date +%Y%m%d`_`date +%H%M%S`.${FILE#*.}
+ touch $NEWFILE
+ mv $NEWFILE logs_reto6/
+  #echo "El archivo $NEWFILE fue creado con exito"
+ 
+ 
+ while :
+ do
+     clear
+     echo "archivo: $NEWFILE"
+ echo "Las opciones son las siguientes\n
+         1.- Para Saber como evitar CoronaVirus
+         2.- Realizar funciones numericas
+         3.- Para verificar formato de numero telefonico
+         4.- Para verificar un directorio
+         5.- Ver contenido de un Archivo
+         6.- Hacer Respaldo de Logs
+         7.- salir"
+ 
+ echo -e "\n"
+ read -n1  -p "Introduzca su Opcion: " opcion
+case $opcion in
+ 
+     "1") coronavirus_guidelines
+ 
+          ;;
+ 
+     "2") echo -e "\nIntroduzca el numero A: "
+          read
+          numA=$REPLY
+          echo -e "Introduzca el numero B: "
+          read
+          numB=$REPLY
+          Math_Function $numA $numB
+ 
+          ;;
+ 
+ 
+      "3")   echo -e "\n"
+             Phone_Format
+             ;;
+"4") echo -e "\n"
+          read -p "Ingrese la ruta de un directorio: " dirPath
+          Directory_Search $dirPath
+         ;;
+ 
+      "5")echo -e "\n"
+          read -p "Ingrese la ruta del archivo: " filePath
+          File_Search $filePath
+          ;;
+ 
+      "6")echo -e "\n"
+          read -n1 -p "Desea hacer Backup del Directorio logs_reto7 s/n: " respBackup
+          Backup_Shit $respBackup
+ 
+          ;;
+ 
+      "7")   echo -e "\n"
+             echo -e "Saliendo..."
+             echo "$DATE-$TIME --- Usuario sale de la aplicacion" >> logs_reto7/$NEWFILE
+             exit 0
+ 
+             ;;
+ 
+       *) echo "Opcion Incorrecta, Lo sentimos"
+ 
+ 
+       esac
+ done
+
+```
+
 #  9. Cierre del curso
-# Cierre
+## Cierre
+
+ [CheatSheet](https://devhints.io/bash) commands y extras del
